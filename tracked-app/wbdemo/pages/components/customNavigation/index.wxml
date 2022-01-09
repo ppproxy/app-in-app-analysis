@@ -1,0 +1,16 @@
+<view class="main" style="background: {{isCustom?'transparent':'#fff'}};{{isCustom?'border-bottom:0':''}}">
+    <view class="place-holder" style="height: {{statusBarHeight}}px; background-color:{{isCustom?'transparent':'#fff'}};"></view>
+    <view class="main-content" style="height: {{titleBarHeight}}px; padding-top: {{mainPaddingTop}}px;">
+        <view class="back-home">
+            <image catch:tap="goBack" class="back-icon" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{backIconSrc}}"></image>
+            <view class="line"></view>
+            <image catch:tap="goHome" class="home-icon" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{homeIconSrc}}"></image>
+        </view>
+        <view class="header-search" style="width: {{platform!=='windows'?'320rpx':'500rpx'}}" wx:if="{{isSearch}}">
+            <icon class="icon-small icon-search" size="22" style="" type="search"></icon>
+            <input bindconfirm="searchQuery" class="common-input" confirmType="search" style="width: {{platform!=='windows'?'320rpx':'500rpx'}}" value="{{query}}"></input>
+        </view>
+        <view class="header-text" style="top: {{statusBarHeight+mainPaddingTop+5}}px" wx:else>{{navigationTitle}}</view>
+    </view>
+</view>
+<view class="place-holder" style="height: {{totalTopHeight+0.5}}px;background: {{isCustom?'transparent':'#fff'}}"></view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "收藏记录",
+    "disableScroll": true,
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

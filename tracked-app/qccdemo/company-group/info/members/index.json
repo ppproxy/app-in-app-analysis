@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "成员企业",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

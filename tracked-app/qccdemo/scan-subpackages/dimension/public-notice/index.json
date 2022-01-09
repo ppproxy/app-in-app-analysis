@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "公示催告",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

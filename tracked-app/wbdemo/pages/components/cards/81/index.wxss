@@ -1,0 +1,17 @@
+.card-81 {
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: .5px solid #dcdcdc;
+}
+
+.pic {
+    width: 100%;
+    height: 420rpx;
+    background: #ebebeb;
+}
+
+.title {
+    padding: 20rpx;
+    font-size: 32rpx;
+    background: #fff;
+}

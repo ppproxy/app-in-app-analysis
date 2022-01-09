@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "会员中心",
+    "usingComponents": {
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-vip-to-svip": "/components/app-vip-to-svip/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

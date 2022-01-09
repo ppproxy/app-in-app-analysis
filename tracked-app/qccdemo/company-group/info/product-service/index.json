@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "产品服务",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

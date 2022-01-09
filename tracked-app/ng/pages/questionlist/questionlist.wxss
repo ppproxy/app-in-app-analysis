@@ -1,0 +1,23 @@
+.title {
+    width: 100%;
+    font-size: 36rpx;
+    text-align: center;
+    color: #af1616;
+    font-weight: 700;
+    margin: 3% 0;
+}
+
+.item {
+    width: 100%;
+    font-size: 32rpx;
+    color: #333;
+    border-bottom: 2rpx solid #af1616;
+    padding: 3%;
+}
+
+.img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

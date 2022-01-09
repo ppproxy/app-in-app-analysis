@@ -1,0 +1,4 @@
+<view class="title">题库</view>
+<view bindtap="chooseList" class="item" id="{{index}}" wx:for="{{questionlist}}" wx:key="index">
+        {{item.name}}
+    </view>

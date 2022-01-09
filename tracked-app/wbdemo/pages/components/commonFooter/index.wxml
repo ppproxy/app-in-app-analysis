@@ -1,0 +1,23 @@
+<view class="comment-bar-wrap" hoverClass="none" hoverStopPropagation="false">
+    <view class="bar-item">
+        <button catch:tap="goToHome" class="bar-item-wechat" hoverClass="none" id="goBackHome">
+            <image class="bar-icon-wechat" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="/assets/icons/icon_realtimehot_selected.png"></image>
+            <view class="bar-item-txt-wechat">热搜</view>
+        </button>
+    </view>
+    <view class="bar-item">
+        <button catchtap="goToWeiboHot" class="bar-item-wechat" hoverClass="none">
+            <image class="bar-icon-wechat" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="/assets/icons/icon_hotflow_selected.png"></image>
+            <view class="bar-item-txt-wechat">看点</view>
+        </button>
+    </view>
+    <view class="bar-item">
+        <text class="footer-left-line"></text>
+        <button class="bar-item-wechat" data-from="footBar" hoverClass="none" openType="share">
+            <image class="bar-icon-wechat" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="../../../assets/icons/button_icon_wechat.png"></image>
+            <view class="bar-item-txt-wechat">
+          分享
+        </view>
+        </button>
+    </view>
+</view>

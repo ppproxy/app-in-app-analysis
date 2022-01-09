@@ -1,0 +1,14 @@
+.ui-toast.data-v-509eb0de {
+    background-color: rgba(0,0,0,.8);
+    border-radius: 8rpx;
+    color: #fff;
+    font-size: 24rpx;
+    left: 125rpx;
+    line-height: 36rpx;
+    margin: auto;
+    padding: 15rpx 20rpx;
+    position: fixed;
+    top: 40vh;
+    width: 500rpx;
+    z-index: 1000;
+}

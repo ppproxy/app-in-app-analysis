@@ -1,0 +1,209 @@
+<view class="uni-container home data-v-f284fd66">
+    <view class="menu-tip-wrap data-v-f284fd66" wx:if="{{menuTipShow}}">
+        <view class="menu-arrow data-v-f284fd66"></view>
+        <text class="data-v-f284fd66">添加小程序，查找更便捷！</text>
+    </view>
+    <view class="{{[ 'data-v-f284fd66','fixed-input-condition-wrap '+(inputShow?'fade-in':'') ]}}" wx:if="{{inputShow}}">
+        <view catchtap="__e" class="fixed-input-wrap data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toSearchCompany',['$event'] ] ] ] ]}}">
+            <image class="fixed-small-input-icon data-v-f284fd66" lazyLoad="{{true}}" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/small_ic_search.png"></image>
+            <view class="fixed-input data-v-f284fd66">
+                <input bindconfirm="__e" bindinput="__e" class="fixed-input-item data-v-f284fd66" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'toSearch',['$event'] ] ] ],[ 'input',[ [ 'inputValue',['$event'] ] ] ] ]}}" disabled="{{!(platform==='mp-alipay'&&$root.g0>-1)}}" enableNative="{{platform!=='mp-alipay'}}" placeholder="请输入企业名、人名等关键词搜索" placeholderClass="input-height" placeholderStyle="color:#666;" type="text" value="{{inputKey}}" wx:if="{{platform==='mp-baidu'}}"></input>
+                <input bindconfirm="__e" bindinput="__e" class="fixed-input-item data-v-f284fd66" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'toSearch',['$event'] ] ] ],[ 'input',[ [ 'inputValue',['$event'] ] ] ] ]}}" disabled="{{!(platform==='mp-alipay'&&$root.g1>-1)}}" placeholder="请输入企业名、人名等关键词搜索" placeholderClass="input-height" placeholderStyle="color:#666;line-height:70rpx;" type="text" value="{{inputKey}}" wx:else></input>
+            </view>
+        </view>
+    </view>
+    <view class="home-tab fixed data-v-f284fd66" wx:if="{{tabShow&&reviewStatus!==1}}">
+        <view bindtap="__e" class="{{[ 'data-v-f284fd66','home-tab-item '+(tabIndex==='0'?'tab-active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tabClick',['$event'] ] ] ] ]}}" data-index="0" hoverClass="hover">商业快讯</view>
+        <view bindtap="__e" class="{{[ 'data-v-f284fd66','home-tab-item '+(tabIndex==='1'?'tab-active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tabClick',['$event'] ] ] ] ]}}" data-index="1" hoverClass="hover">监控日报</view>
+    </view>
+    <view class="fixed-date fixed data-v-f284fd66" wx:if="{{tabIndex==='0'&&dateFixedTagShow&&reviewStatus!==1}}">{{''+scrollDate+''}}</view>
+    <view bindtouchstart="__e" class="page data-v-f284fd66" data-event-opts="{{[ [ 'touchstart',[ [ 'hideMenuTip',['$event'] ] ] ] ]}}" wx:if="{{token||true}}">
+        <view bindtap="__e" class="home-vip-icon to-vip data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toVipRight',['$event'] ] ] ] ]}}" wx:if="{{bannerShow}}">
+            <view class="{{['data-v-f284fd66',true?'image':'',isSVIP?'sVip':'']}}"></view>
+            <view class="desc data-v-f284fd66">{{''+(isSVIP?'SVIP会员':isVIP?'VIP会员':'开通VIP')+''}}</view>
+            <view class="arrow-orange data-v-f284fd66"></view>
+        </view>
+        <view class="top-block-small data-v-f284fd66">
+            <view catchtap="__e" class="small-input-container data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toSearchCompany',['$event'] ] ] ] ]}}">
+                <image class="small-input-icon data-v-f284fd66" lazyLoad="{{true}}" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/small_ic_search.png"></image>
+                <view class="input-wrap data-v-f284fd66">
+                    <input bindconfirm="__e" bindinput="__e" class="input data-v-f284fd66" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'toSearch',['$event'] ] ] ],[ 'input',[ [ 'inputValue',['$event'] ] ] ] ]}}" disabled="{{platform!=='mp-alipay'}}" enableNative="{{platform!=='mp-alipay'}}" placeholder="请输入企业名、人名等关键词搜索" placeholderClass="input-height" type="text" value="{{inputKey}}" wx:if="{{platform==='mp-baidu'}}"></input>
+                    <input bindconfirm="__e" bindinput="__e" class="input data-v-f284fd66" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'toSearch',['$event'] ] ] ],[ 'input',[ [ 'inputValue',['$event'] ] ] ] ]}}" disabled="{{!(platform==='mp-alipay'&&$root.g2>-1)}}" placeholder="请输入企业名、人名等关键词搜索" placeholderClass="input-height" type="text" value="{{inputKey}}" wx:else></input>
+                </view>
+            </view>
+        </view>
+        <view class="applets data-v-f284fd66" wx:if="{{applets.length}}">
+            <view class="applets-wrap data-v-f284fd66">
+                <view catchtap="__e" class="applets-item data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toApplets',['$event'] ] ] ] ]}}" data-index="{{index}}" wx:for="{{applets}}" wx:key="index">
+                    <image class="img data-v-f284fd66" lazyLoad="{{true}}" src="{{item.img}}"></image>
+                    <view class="desc data-v-f284fd66">{{''+item.title+''}}</view>
+                    <image class="tag data-v-f284fd66" src="{{item.tag}}" wx:if="{{item.tag}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="swiper-ad data-v-f284fd66" wx:if="{{bannerList.length}}">
+            <swiper autoplay="{{bannerList.length>1}}" circular="{{bannerList.length>1}}" class="data-v-f284fd66" indicatorActiveColor="#FE5151" indicatorColor="#FFFFFF" indicatorDots="{{bannerList.length>1}}" interval="{{bannerList.length>1?5000:0}}">
+                <swiper-item class="data-v-f284fd66" wx:for="{{bannerList}}" wx:key="index">
+                    <button catchtap="__e" class="swiper-item data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'bannerAnalysis',['$event'] ] ] ] ]}}" data-index="{{item.index}}" data-url="{{item.dest}}" openType="contact" sendMessageImg="https://share.qichacha.com/lite-app-resources/html/images/download-share.png" sendMessagePath="/pages/home/index" sendMessageTitle="请根据系统回复进行操作" showMessageCard="{{true}}" style="{{'background-image: '+'url('+item.image+')'+';background-size: 100%;'}}" wx:if="{{item.dest==='xcx://self/contact'}}"></button>
+                    <button bindtap="__e" class="swiper-item data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toBannerDetail',['$event'] ] ] ] ]}}" data-index="{{item.index}}" data-url="{{item.dest}}" style="{{'background-image: '+'url('+item.image+')'+';background-size: 100%;'}}" wx:else></button>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="home-tab data-v-f284fd66" id="home-tab" wx:if="{{reviewStatus!==1}}">
+            <view bindtap="__e" class="{{[ 'data-v-f284fd66','home-tab-item '+(tabIndex==='0'?'tab-active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tabClick',['$event'] ] ] ] ]}}" data-index="0" hoverClass="hover">商业快讯</view>
+            <view bindtap="__e" class="{{[ 'data-v-f284fd66','home-tab-item '+(tabIndex==='1'?'tab-active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tabClick',['$event'] ] ] ] ]}}" data-index="1" hoverClass="hover">监控日报</view>
+        </view>
+        <view class="out-list-wrap data-v-f284fd66" hidden="{{!(tabIndex==='0'&&reviewStatus!=1)}}">
+            <view class="{{['data-v-f284fd66',refresh?'refreshIn':'']}}" id="refresh" wx:if="{{refresh}}">{{''+(refreshCount?'成功为您推荐'+refreshCount+'条新内容':'暂无新内容')+''}}</view>
+            <view bindtap="__e" class="flash-report data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toReportDetail',['$event'] ] ] ] ]}}" wx:if="{{flashReport}}">
+                <view class="flash-report-center data-v-f284fd66">
+                    <view class="report-title data-v-f284fd66" style="{{'background-image: url('+flashReport.reportTypeImg+')'}}"></view>
+                    <view class="report-week data-v-f284fd66" style="{{'background-image: url('+flashReport.weekImg+')'}}"></view>
+                    <view class="report-date data-v-f284fd66">{{''+flashReport.cdateStr+''}}</view>
+                    <view class="report-list data-v-f284fd66">
+                        <view class="report-list-item flex-box data-v-f284fd66" wx:if="{{item.feed_data&&item.feed_data.links&&item.feed_data.links.length}}" wx:for="{{flashReport.feeds}}" wx:key="index">
+                            <view class="circle flex-box data-v-f284fd66"></view>
+                            <view class="report-list-item-title line-1 data-v-f284fd66">{{item.feed_data.links[0].title}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="news-flash-wrap data-v-f284fd66">
+                <app-no-data bind:__l="__l" class="data-v-f284fd66" text="暂无数据" vueId="6b3d36ea-1" wx:if="{{!newsFlashLoading&&!newsFlashCanLoadNext&&!newsFlashListNew.length}}"></app-no-data>
+                <block wx:for="{{newsFlashListNew}}" wx:key="index">
+                    <view class="data-v-f284fd66" id="{{item.titlePublish}}" wx:if="{{!item.id}}">
+                        <view class="fixed-date data-v-f284fd66" id="{{item.titlePublish}}">{{item.PublishShow}}</view>
+                    </view>
+                    <view catchtap="__e" class="news-flash-item data-v-f284fd66" data-date="{{item.publishDate}}" data-event-opts="{{[ [ 'tap',[ [ 'toDetail',['$event'] ] ] ] ]}}" data-feedid="{{item.feed_id}}" data-id="{{item.id}}" data-name="{{item.title}}" id="{{'news'+index}}" wx:else>
+                        <view class="new-content-level flex-box data-v-f284fd66">
+                            <view class="content-level-left data-v-f284fd66">
+                                <image class="blue-circle data-v-f284fd66" lazyLoad="{{true}}" src="https://eciapp-img.qichacha.com/community/4c700cc7-7aa9-4944-a794-bd4cb54a5f901624367139957.png"></image>
+                                <view class="{{[ 'data-v-f284fd66','s-border-line '+(index===1?'':'whole') ]}}"></view>
+                            </view>
+                            <view class="content-level-right data-v-f284fd66">
+                                <view class="news-flash-time data-v-f284fd66">{{item.publishTime}}</view>
+                                <view class="news-flash-title data-v-f284fd66">
+                                    <view class="makeTop data-v-f284fd66" wx:if="{{item.top}}"></view>{{''+item.title+''}}</view>
+                                <view class="news-flash-tag data-v-f284fd66">
+                                    <text class="data-v-f284fd66" wx:for="{{item.tag}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">{{'#'+alt}}</text>
+                                </view>
+                                <view catchtap="__e" class="{{[ 'data-v-f284fd66','news-flash-content '+(item.isLineFeed?'line-5':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeLineFeed',['$event'] ] ] ] ]}}" data-index="{{index}}" data-linefeed="{{item.isLineFeed}}">{{''+item.content+''}}</view>
+                                <scroll-view class="news-flash-relation data-v-f284fd66" scrollX="true">
+                                    <view class="news-flash-relation-wrap data-v-f284fd66">
+                                        <view catchtap="__e" class="news-flash-relation-item data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toCopDetail',['$event'] ] ] ] ]}}" data-name="{{alt.name}}" data-unique="{{alt.keyNo}}" wx:for="{{item.entityList}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">{{''+alt.shortName+''}}</view>
+                                    </view>
+                                </scroll-view>
+                                <view class="collect-and-share data-v-f284fd66">
+                                    <view catchtap="__e" class="{{[ 'data-v-f284fd66','collect '+(item.IsFavor>0?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'collect',['$event'] ] ] ] ]}}" data-feedid="{{item.feed_id}}" data-id="{{item.id}}" data-index="{{index}}" data-is_favor="{{item.IsFavor}}"></view>
+                                    <view catchtap="__e" class="share data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'shareClick',['$event'] ] ] ] ]}}">
+                                        <button bindtap="__e" class="tips-share data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'showSharePopup',['$event'] ] ] ] ]}}" data-index="{{index}}"></button>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+                <app-bottom-loading background="#f3f3f3" bind:__l="__l" class="data-v-f284fd66" loadAll="{{!newsFlashCanLoadNext&&newsFlashListNew.length>10}}" loading="{{newsFlashLoading}}" vueId="6b3d36ea-2"></app-bottom-loading>
+            </view>
+        </view>
+        <view class="out-list-wrap data-v-f284fd66" hidden="{{!( (tabIndex==='1'||reviewStatus!=2)&&isInit )}}" style="{{(reportList.length?'margin-top:0;':'')+''+(reviewStatus==1?'margin-top:20rpx;':'')}}">
+            <view class="report-list-wrap data-v-f284fd66">
+                <view class="list-no-data-v2 data-v-f284fd66" wx:if="{{isLogin===true&&reportList.length===0&&reportListNoData&&(radarCompanyCount||radarPersonCount)}}">
+                    <view class="list-no-data-t1 data-v-f284fd66">暂时还没有监控日报，有更新会每日为您推送</view>
+                    <view class="list-no-data-t2 data-v-f284fd66">
+                        <view class="data-v-f284fd66">您已监控<text class="data-v-f284fd66">{{''+radarCompanyCount+''}}</text>家企业、<text class="data-v-f284fd66">{{''+radarPersonCount+''}}</text>位人员</view>
+                        <view class="data-v-f284fd66">还可监控<text class="data-v-f284fd66">{{''+surplusCompanyCount+''}}</text>家企业、<text class="data-v-f284fd66">{{''+surplusPersonCount+''}}</text>位人员</view>
+                    </view>
+                    <view bindtap="__e" class="list-no-data-t3 data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toRiskItemList',['$event'] ] ] ] ]}}">查看全部监控<view class="arrow data-v-f284fd66" style="margin-left:12rpx;width:13rpx;height:25rpx;position:relative;top:2rpx;"></view>
+                    </view>
+                    <view bindtap="__e" class="list-no-data-t4 data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toCheckLogin',['$event'] ] ] ] ]}}">
+                        <view class="data-v-f284fd66">
+                            <image class="right-arrow-blue data-v-f284fd66" lazyLoad="{{true}}" src="https://eciapp-img.qichacha.com/community/9f7e5b9d-841c-4506-959b-e4efc3f0b2381624414202814.png"></image>
+                        </view>继续监控</view>
+                </view>
+                <view class="list-no-data-v2 data-v-f284fd66" wx:if="{{reportList.length===0&&reportListNoData&&radarCompanyCount===0&&radarPersonCount===0||isLogin===false}}">
+                    <view class="list-no-data-t5 data-v-f284fd66">
+                        <view class="data-v-f284fd66">实时风险监控</view>
+                    </view>
+                    <view class="list-no-data-t6 data-v-f284fd66">快速获悉监控企业/人员发生的工商变更及风险动态</view>
+                    <view bindtap="__e" class="list-no-data-t4 data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toCheckLogin',['$event'] ] ] ] ]}}">
+                        <view class="data-v-f284fd66">
+                            <image class="right-arrow-blue data-v-f284fd66" lazyLoad="{{true}}" src="https://eciapp-img.qichacha.com/community/9f7e5b9d-841c-4506-959b-e4efc3f0b2381624414202814.png"></image>
+                        </view>添加监控</view>
+                    <view class="recommend-wrap data-v-f284fd66" wx:if="{{recommendList.length&&isLogin}}">
+                        <view class="recommend-box flex-col data-v-f284fd66">
+                            <view class="recommend-title-box flex-box data-v-f284fd66">
+                                <text class="recommend-title flex-1 data-v-f284fd66">推荐监控</text>
+                                <text catchtap="__e" class="monitor-all flex-shrink0 data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'addMonitor',['$event'] ] ] ] ]}}">一键监控</text>
+                            </view>
+                            <view class="recommend-item-wrap flex-box data-v-f284fd66">
+                                <view catchtap="__e" class="recommend-item data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toCopDetail',['$event'] ] ] ] ]}}" data-name="{{item.Name}}" data-unique="{{item.KeyNo}}" wx:for="{{recommendList}}" wx:key="index">
+                                    <view class="logo data-v-f284fd66">
+                                        <app-auto-logo bind:__l="__l" class="data-v-f284fd66" fontSize="30rpx" logo="{{item.ImageUrl}}" name="{{item.Name}}" size="48rpx" vueId="{{'6b3d36ea-3-'+index}}"></app-auto-logo>
+                                    </view>
+                                    <view class="name data-v-f284fd66">
+                                        <view class="line-2 data-v-f284fd66">{{item.Name}}</view>
+                                    </view>
+                                    <text class="desc data-v-f284fd66">{{'关注的'+(item.KeyNo[0]==='p'?'人员':'企业')+''}}</text>
+                                    <view catchtap="__e" class="monitor-box data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'addMonitor',['$event'] ] ] ] ]}}" data-param="{{item.KeyNo+'|'+item.Name}}">
+                                        <image class="yellow-plus-icon data-v-f284fd66" mode="widthFix" src="https://eciapp-img.qichacha.com/community/359bc09a-80ae-422e-b4b8-bcba4f1e20fc1624420226828.png"></image>
+                                        <text class="monitor-text data-v-f284fd66">监控</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="list-item data-v-f284fd66">
+                    <view bindtap="__e" class="{{['item data-v-f284fd66',item[$orig].hasRead&&'is-readed']}}" data-event-opts="{{[ [ 'tap',[ [ 'toReportList',['$event'] ] ] ] ]}}" data-index="{{index}}" wx:for="{{$root.l1}}" wx:key="index">
+                        <view class="title data-v-f284fd66">监控日报<rich-text class="date data-v-f284fd66" nodes="{{item[$orig].dateStr3}}"></rich-text>
+                        </view>
+                        <block wx:if="{{item[$orig].Changelist&&item[$orig].Changelist.length>0}}">
+                            <view class="summary-info data-v-f284fd66">
+                                <view class="top data-v-f284fd66">
+                                    <view class="line text-ellipsis data-v-f284fd66">
+                                        <text class="data-v-f284fd66" wx:if="{{item[$orig].CompanyCount>0}}">{{''+item[$orig].CompanyCount+' 家企业'}}</text>
+                                        <text class="data-v-f284fd66" wx:if="{{item[$orig].CompanyCount>0&&item[$orig].PersonCount>0}}">、</text>
+                                        <text class="data-v-f284fd66" wx:if="{{item[$orig].PersonCount>0}}">{{''+item[$orig].PersonCount+' 位人员'}}</text>
+                                        <text class="data-v-f284fd66">发生</text>
+                                        <text class="text data-v-f284fd66">{{''+' '+(item[$orig].Count?item[$orig].Count:0)+' '+''}}</text>
+                                        <text class="data-v-f284fd66">条风险动态</text>
+                                    </view>
+                                </view>
+                                <view class="level-wrapper data-v-f284fd66">
+                                    <view class="level-count data-v-f284fd66" wx:if="{{true}}">
+                                        <view class="level line-right data-v-f284fd66">风险</view>
+                                        <view class="{{['level-item data-v-f284fd66',alt.Count===0&&'disabled']}}" wx:for="{{item[$orig].LevelCountInfo}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                            <view class="data-v-f284fd66">{{alt.Name}}</view>
+                                            <view class="line-1 data-v-f284fd66" style="{{'color:'+(alt.Count?alt.Color:'')+';'}}">{{''+alt.Count+''}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="{{['monitor-wra data-v-f284fd66',item[$orig].CompanyCount+item[$orig].PersonCount>5&&'pb12']}}">
+                                <view class="monitor-item data-v-f284fd66" wx:for="{{item.l0}}" wx:for-index="k" wx:for-item="changeitem" wx:key="k">
+                                    <app-auto-logo bind:__l="__l" class="data-v-f284fd66" fontSize="15px" logo="{{changeitem.ImageUrl}}" name="{{changeitem.name}}" size="24px" vueId="{{'6b3d36ea-4-'+index+'-'+k}}"></app-auto-logo>
+                                    <text class=" font-15 line-1 data-v-f284fd66">{{changeitem.name}}</text>
+                                    <text class=" font-14 data-v-f284fd66">{{changeitem.ChangeCount}}</text>
+                                </view>
+                            </view>
+                            <view class="look-more line-top data-v-f284fd66" wx:if="{{item[$orig].CompanyCount+item[$orig].PersonCount>5}}">{{'查看更多 '+item[$orig].Count+' '+''}}<view class="arrow data-v-f284fd66" style="margin-left:12rpx;"></view>
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="summary-none data-v-f284fd66">未监控到相关企业/人员的风险出现变化</view>
+                            <view class="data-v-f284fd66" style="height:32rpx;"></view>
+                        </block>
+                    </view>
+                </view>
+                <app-bottom-loading bind:__l="__l" class="data-v-f284fd66" loadAll="{{!reportCanLoadNext&&reportList.length>5&&reportList.length<101}}" loading="{{isLogin&&reportLoading}}" vueId="6b3d36ea-5"></app-bottom-loading>
+                <view class="load-done font-13 blue data-v-f284fd66" wx:if="{{!reportCanLoadNext&&reportList.length>100}}">下载APP，查看更多数据</view>
+            </view>
+        </view>
+    </view>
+    <app-vip-pop bind:__l="__l" bind:hideVipPop="__e" class="data-v-f284fd66" data-event-opts="{{[ [ '^hideVipPop',[ ['cancel'] ] ] ]}}" isScroll="{{false}}" titleText="{{vipTip}}" vueId="6b3d36ea-6" wx:if="{{vipPop}}"></app-vip-pop>
+    <news-flash-share bind:__l="__l" bind:hideSharePopup="__e" bind:setBtnDataImage="__e" bind:showShareMenu="__e" class="data-v-f284fd66" data-event-opts="{{[ [ '^hideSharePopup',[ ['hideSharePopup'] ] ],[ '^setBtnDataImage',[ ['setBtnDataImage'] ] ],[ '^showShareMenu',[ ['showShareMenu'] ] ] ]}}" detail="{{detail}}" vueId="6b3d36ea-7" wx:if="{{sharePopupShow}}"></news-flash-share>
+    <image bindtap="__e" class="back-top data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'backTop',['$event'] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/home_back_top.png" wx:if="{{tabShow}}"></image>
+    <view catchtap="__e" class="home-login-btn data-v-f284fd66" data-event-opts="{{[ [ 'tap',[ [ 'toLogin',['$event'] ] ] ] ]}}" wx:if="{{!isLogin&&isInit}}">{{''+(platform==='mp-feishu'?'登录':'登录/注册')+''}}</view>
+    <app-monitor-pop bind:__l="__l" class="data-v-f284fd66" text1="{{monitorShowTextA}}" text2="{{monitorShowTextB}}" vueId="6b3d36ea-8" wx:if="{{monitorShow}}"></app-monitor-pop>
+</view>

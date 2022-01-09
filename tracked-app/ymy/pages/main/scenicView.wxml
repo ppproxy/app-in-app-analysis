@@ -1,0 +1,114 @@
+<view class="app" id="app">
+    <view class="view_banner">
+        <image class="db wp100" mode="widthFix" src="{{scenic.Photo}}"></image>
+    </view>
+    <view class="view_scenic_name tc">
+        <view class="index_scenic_h1 f18 b ell">{{scenic.Name}}</view>
+        <view class="index_scenic_tag mt5">
+            <view class="dib ml10 g9 f13">{{'开放时间：'+scenic.OpenHours}}</view>
+        </view>
+    </view>
+    <view class="top_line view_traffic pb15">
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'mapClick',['$event'] ] ] ] ]}}">
+            <view class="view_tit ml15 mt15">
+                <view class="view_tit_h2 f16 b">交通指南</view>
+            </view>
+            <view class="view_traffic_text flx ml15 mr15">
+                <view class="db">
+                    <view class="lt g6">
+                        <image class="view_traffic_icon w24 _img" src="/static/images/location_02.png" width="24"></image>{{scenic.Address}}</view>
+                    <view class="rt">
+                        <image class="w12 _img" height="12" src="/static/images/lefticon_mini.png" width="12"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="page-section page-section-gap ml15 mr15 mt10">
+            <map latitude="{{latitude}}" longitude="{{longitude}}" markers="{{covers}}" style="width:100%;height:200px;"></map>
+        </view>
+        <view class="view_intro_box rel mt10 ml15" wx:if="{{scenic.PublicTraffic}}">
+            <view class="view_intro_text g6">
+                <view class="f13 b">公共交通</view>
+                <view class="view_intro_dd f12 mt5 ell_bk">{{''+scenic.PublicTraffic+''}}</view>
+            </view>
+        </view>
+        <view class="view_intro_box rel mt10 ml15" wx:if="{{scenic.SelfTraffic}}">
+            <view class="view_intro_text g6">
+                <view class="f13 b">自驾游</view>
+                <view class="view_intro_dd f12 mt5 ell_bk">{{''+scenic.SelfTraffic+''}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="top_line view_traffic pb15" wx:if="{{false}}">
+        <view class="view_tit ml15 mt15">
+            <view class="view_tit_h2 f16 b">特色景点</view>
+        </view>
+        <view class="view_attractions_list mr15">
+            <view class="view_attractions_box">
+                <view class="dib rel">
+                    <image class="db br5 view_attractions_pic _img" height="120" src="/static/images/scenic_spot_img1.png" width="160"></image>
+                    <view class="abs fw f13 bg_bian ell br0055 wp100">射雕村</view>
+                </view>
+                <view class="dib rel">
+                    <image class="db br5 view_attractions_pic _img" height="120" src="/static/images/scenic_spot_img1.png" width="160"></image>
+                    <view class="abs fw f13 bg_bian ell br0055 wp100">射雕村</view>
+                </view>
+                <view class="dib rel">
+                    <image class="db br5 view_attractions_pic _img" height="120" src="/static/images/scenic_spot_img1.png" width="160"></image>
+                    <view class="abs fw f13 bg_bian ell br0055 wp100">射雕村</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="top_line view_traffic pb15" wx:if="{{false}}">
+        <view class="view_tit ml15 mt15">
+            <view class="view_tit_h2 f16 b">景区服务</view>
+        </view>
+        <view class="service_list fix">
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_wifi.png" width="27"></image>
+                <view class="db f12">无线网络</view>
+            </view>
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_food.png" width="27"></image>
+                <view class="db f12">餐饮</view>
+            </view>
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_parking.png" width="27"></image>
+                <view class="db f12">停车位</view>
+            </view>
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_guide.png" width="27"></image>
+                <view class="db f12">导游</view>
+            </view>
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_explain.png" width="27"></image>
+                <view class="db f12">讲解</view>
+            </view>
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_sos.png" width="27"></image>
+                <view class="db f12">紧急救助</view>
+            </view>
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_hospital.png" width="27"></image>
+                <view class="db f12">医疗</view>
+            </view>
+            <view class="lt tc wp25 tc">
+                <image class="w27 _img" src="/static/images/service_cablecar.png" width="27"></image>
+                <view class="db f12">游览车</view>
+            </view>
+        </view>
+    </view>
+    <view class="top_line view_traffic pb15">
+        <view class="view_tit ml15 mt15">
+            <view class="view_tit_h2 f16 b">景点介绍</view>
+        </view>
+        <view class="view_about ml15 mr15">
+            <view class="view_about_text ell_bk">
+                <view>
+                    <rich-text nodes="{{scenic.Memo}}"></rich-text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

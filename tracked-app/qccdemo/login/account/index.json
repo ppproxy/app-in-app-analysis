@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "合并账号",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "band-tab": "../components/bandTab/index",
+        "feed-pull-down-refresh": "../components/FeedPullDownRefresh/FeedPullDownRefresh",
+        "card-content": "../components/cardContent/index",
+        "network-toast": "../components/NetworkErrorToast/NetworkErrorToast"
+    },
+    "onReachBottomDistance": 200,
+    "singlePage": {
+        "navigationBarFit": "squeezed"
+    }
+}

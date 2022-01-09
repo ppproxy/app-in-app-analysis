@@ -1,0 +1,36 @@
+<view class="app mb70" data-title="我的优惠券">
+    <view class="my_invoice_nav">
+        <view class="my_invoice_nav_list f18 tc fix">
+            <view class="my_invoice_nav_box dib">
+                <navigator class="db" url="coupon">我的优惠券</navigator>
+            </view>
+            <view class="my_invoice_nav_box my_invoice_nav_clo dib">
+                <navigator class="db _a" href="javascript:void(0)">已使用</navigator>
+            </view>
+        </view>
+    </view>
+    <view class="my_coupon tickets_item" wx:if="{{coupons&&coupons.length>0}}">
+        <view class="bgwh br6 tickets_item_box tickets_overdue_box" wx:for="{{coupons}}" wx:for-index="__i0__" wx:key="ID">
+            <view class="tickets_item_pirce tc">
+                <view class="db fr f28 b _strong">{{'￥'+item.Amount}}</view>
+                <view class="dib fr f12">{{'满'+item.MinConsumeAmount+'减'+item.Amount}}</view>
+            </view>
+            <view class="tickets_item_tit">
+                <view class="f16 _h3">{{item.Name}}</view>
+                <view class="db g9 f12 n">{{item.EndTime+'截止'}}</view>
+            </view>
+            <view class="tickets_item_action">
+                <view class="dib fw f12 br6 tc">已经使用</view>
+            </view>
+        </view>
+    </view>
+    <view class="more f13 tc" wx:if="{{coupons&&coupons.length>=7}}">
+        <view class="dib mr10">—</view>我是有底线的<view class="dib ml10">—</view>
+    </view>
+    <view class="null_box nothing tc" wx:if="{{coupons.length==0}}">
+        <view class="nothing_pic">
+            <image class="w100 _img" height="100" src="/static/images/nothing.png" width="100"></image>
+        </view>
+        <view class="nothing_text mt20">暂时没有过期的优惠券</view>
+    </view>
+</view>

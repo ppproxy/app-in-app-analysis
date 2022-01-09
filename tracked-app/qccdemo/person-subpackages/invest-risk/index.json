@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "商业履历分析",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,29 @@
+<view class="ksp-image-cutter data-v-4e360878" hidden="{{!url}}">
+    <canvas canvasId="target" class="targetCanvas data-v-4e360878" style="{{'width:'+target.width+'px'+';'+'height:'+target.height+'px'+';'}}"></canvas>
+    <view class="body data-v-4e360878">
+        <image bindload="__e" class="image data-v-4e360878" data-event-opts="{{[ [ 'load',[ [ 'imageLoad',['$event'] ] ] ] ]}}" src="{{url}}" style="{{'left:'+image.left+'px'+';'+'top:'+image.top+'px'+';'+'width:'+image.width+'px'+';'+'height:'+image.height+'px'+';'}}" wx:if="{{url}}"></image>
+        <view class="mask data-v-4e360878" wx:if="{{mask.show}}"></view>
+        <view bindtouchcancel="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="plank data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','plank'] ] ] ],[ 'touchmove',[ [ 'touchMove',['$event'] ] ] ],[ 'touchend',[ [ 'touchEnd',['$event'] ] ] ],[ 'touchcancel',[ [ 'touchCancel',['$event'] ] ] ] ]}}">
+            <view catchtouchstart="__e" class="frame data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','frame'] ],[ 'touchHandle',['$event'] ] ] ] ]}}" style="{{'left:'+frame.left+'px'+';'+'top:'+frame.top+'px'+';'+'width:'+frame.width+'px'+';'+'height:'+frame.height+'px'+';'}}">
+                <canvas canvasId="canvas" class="canvas data-v-4e360878" style="{{'width:'+frame.width+'px'+';'+'height:'+frame.height+'px'+';'}}" wx:if="{{mask.show}}"></canvas>
+                <view class="rect data-v-4e360878"></view>
+                <view class="line-one data-v-4e360878"></view>
+                <view class="line-two data-v-4e360878"></view>
+                <view class="line-three data-v-4e360878"></view>
+                <view class="line-four data-v-4e360878"></view>
+                <view catchtouchstart="__e" class="frame-left data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','left'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+                <view catchtouchstart="__e" class="frame-right data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','right'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+                <view catchtouchstart="__e" class="frame-top data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','top'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+                <view catchtouchstart="__e" class="frame-bottom data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','bottom'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+                <view catchtouchstart="__e" class="frame-left-top data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','left-top'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+                <view catchtouchstart="__e" class="frame-left-bottom data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','left-bottom'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+                <view catchtouchstart="__e" class="frame-right-top data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','right-top'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+                <view catchtouchstart="__e" class="frame-right-bottom data-v-4e360878" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',['$event','right-bottom'] ],[ 'touchHandle',['$event'] ] ] ] ]}}"></view>
+            </view>
+        </view>
+    </view>
+    <view class="toolbar data-v-4e360878">
+        <button bindtap="__e" class="btn-cancel data-v-4e360878" data-event-opts="{{[ [ 'tap',[ [ 'oncancle',['$event'] ] ] ] ]}}">返回</button>
+        <button bindtap="__e" class="btn-ok data-v-4e360878" data-event-opts="{{[ [ 'tap',[ [ 'onok',['$event'] ] ] ] ]}}">确定</button>
+    </view>
+</view>

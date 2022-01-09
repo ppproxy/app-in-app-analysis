@@ -1,0 +1,5 @@
+<view class="network-error-box">
+    <image class="error-img" lazyLoad="{{true}}" lazyLoadMargin="0" src="https://simg.s.weibo.com/20201123_empty_failed.png"></image>
+    <text class="error-toast">{{text||'网络出错啦，请点击按钮重新加载'}}</text>
+    <button bind:tap="retryRequest" class="error-btn">重新加载</button>
+</view>

@@ -1,0 +1,17 @@
+.card-7 {
+    box-sizing: border-box;
+    padding: 20rpx;
+    background: #fff;
+    border-bottom: .5px solid #dcdcdc;
+}
+
+.desc {
+    font-family: PingFangSC-Regular;
+    font-size: 29rpx;
+    color: #333;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}

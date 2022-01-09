@@ -1,0 +1,11 @@
+<view class="piiic-placeholder-box" style="height: {{piiicCanvasHeight}}px">
+    <image lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="{{placeholderSrc}}" style="margin-top: {{placeholderOffsetY}}px; margin-left: 50%;transform: translateX(-50%); width: {{placeholderWidth}}px; height: {{placeholderHeight}}px"></image>
+    <view bind:tap="placeholderButtonClick" class="placeholder-bottom" style="height: {{placeholderBottomHeight}}px">
+        <view class="placeholder-button" wx:if="{{placeholderButton==='取消'}}">{{placeholderButton}}</view>
+        <view class="placeholder-button" wx:else>
+            <view>{{placeholderButton}}</view>
+            <view class="tip">（分享图片至朋友圈，与小伙伴一起分享）</view>
+        </view>
+    </view>
+</view>
+<painter bind:imgOK="onImgOK" palette="{{imgDraw}}" style="position: absolute; top: -9999rpx;"></painter>

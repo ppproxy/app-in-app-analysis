@@ -1,0 +1,16 @@
+<view catchtap="cardClick" class="card-25" data-query="{{cardData.title_info.title||cardData.title}}" style="border-radius: {{headerBar?0:'20rpx 20rpx 0 0'}}">
+    <view class="card-25-zone" style="display: flex;">
+        <view style="width: 160rpx;height: 160rpx;margin-right: 20rpx;border-radius: 6rpx;background: #ebebeb;">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(cardData.pics[0].url)}}"></image>
+            <image class="top-mark-pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="{{cardData.title_info.left_tag_img||cardData.left_tag_img}}"></image>
+        </view>
+        <view style="width: calc(100% - 180rpx);display: flex;flex-direction: column;justify-content: space-between;">
+            <text class="title-sub">{{cardData.title_info.title||cardData.title}}</text>
+            <view class="card-expand-content" style="color: {{cardData.desc_style.text_color}}" wx:if="{{cardData.title_info.desc||cardData.desc}}">{{cardData.title_info.desc||cardData.desc}}</view>
+            <view class="desc_2" style="color: {{cardData.tag_desc_style.text_color}};font-size: 24rpx;" wx:if="{{cardData.tag_desc}}">
+        {{cardData.tag_desc}} <text style="color: {{cardData.tag_info.tag_color}};background: {{cardData.tag_info.text_color}};padding: 4rpx;font-size: 22rpx;color: #689eea;background: #e8f1f9fc;padding: 2rpx 7px;font-size: 11px;border-radius: 20px;margin-left: 10rpx;" wx:if="{{cardData.tag_info&&cardData.tag_info.text.length}}">{{cardData.tag_info.text}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

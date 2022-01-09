@@ -1,0 +1,28 @@
+.open-app-button {
+    position: fixed;
+    right: 26rpx;
+    bottom: 420rpx;
+    z-index: 99999;
+    padding: 0;
+    background-color: transparent;
+    color: transparent;
+}
+
+.open-app-button,.open-app-button .wrap {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4rpx 24rpx 0 rgba(143,152,169,.24);
+}
+
+.open-app-button .wrap {
+    line-height: 1;
+    flex-direction: column;
+    color: #f36100;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    background: #fff;
+}

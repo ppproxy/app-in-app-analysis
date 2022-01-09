@@ -1,0 +1,4 @@
+<view class="card-35">
+    <image class="pics" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{item.url?utils.replaceHttps(item.url):utils.replaceHttps(item.pic_small)}}" wx:for="{{cardData.pics}}" wx:key="index"></image>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

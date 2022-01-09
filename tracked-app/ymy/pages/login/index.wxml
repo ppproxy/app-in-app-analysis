@@ -1,0 +1,16 @@
+<view class="data-v-4586967a">
+    <view class="data-v-4586967a" wx:if="{{!hasCode}}">
+        <view class="scenic_login data-v-4586967a">
+            <view class="scenic_login_logo tc data-v-4586967a">
+                <image class="scenic_login_pic br100 _img data-v-4586967a" src="{{scenic.Photo}}"></image>
+            </view>
+            <view class="scenic_login_tit tc data-v-4586967a">{{scenic.Name}}</view>
+            <view class="scenic_login_intro g9 f13 data-v-4586967a">{{''+memo+''}}</view>
+        </view>
+        <view class="scenic_login_action data-v-4586967a">
+            <button bindgetuserinfo="__e" class="scenic_login_btn f14 data-v-4586967a" data-event-opts="{{[ [ 'getuserinfo',[ [ 'onGotUserInfo',['$event'] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" type="primary" withCredentials="true">授权登录</button>
+            <button bindtap="__e" class="scenic_login_btn_cancel mt20 data-v-4586967a" data-event-opts="{{[ [ 'tap',[ [ 'gotoMain',['$event'] ] ] ] ]}}" type="default">暂不登录</button>
+        </view>
+    </view>
+    <view class="data-v-4586967a" wx:else></view>
+</view>

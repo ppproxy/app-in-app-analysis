@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "历史股权冻结",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "filter-list": "/components/filter-list/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

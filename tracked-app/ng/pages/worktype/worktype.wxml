@@ -1,0 +1,10 @@
+<view class="title">请选择您的工种</view>
+<radio-group bindchange="radioChange">
+    <view class="label">
+        <label class="ui-radio {{item.checked==true?'active':''}}" wx:for="{{items}}" wx:key="index">
+            <radio checked="{{item.checked}}" value="{{item.type}}"></radio>
+            <text class="text">{{item.name}}</text>
+        </label>
+    </view>
+</radio-group>
+<button bindtap="submit" class="button" type="primary">选好了</button>

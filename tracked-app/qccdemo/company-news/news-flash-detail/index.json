@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "新闻详情",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "news-flash-share": "/components/news-flash-share/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "企业类型变更",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

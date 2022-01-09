@@ -1,0 +1,9 @@
+<view>
+    <view class="action-sheet-mask" wx:if="{{show}}"></view>
+    <view class="action-sheet-dialog {{show&&actionSheetData.length?'active':''}}">
+        <button catch:tap="buttonAction" class="button-item" data-openType="{{item.openType}}" data-value="{{item.value}}" hoverClass="none" openType="{{item.openType}}" style="width: {{windowWidth}}px;height: 110rpx;" wx:for="{{actionSheetData}}" wx:key="index">
+            <view>{{item.text}}</view>
+        </button>
+        <view catch:tap="cancelAction" class="action-cancel">取消</view>
+    </view>
+</view>

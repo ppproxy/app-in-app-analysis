@@ -1,0 +1,54 @@
+<navbar class="page-navbar" gohome="{{false}}">登录</navbar>
+<view class="wbui-login">
+    <block wx:if="{{!isSmsCodePage}}">
+        <view class="wbui-logo"></view>
+        <view class="wbui-slogn">
+            <view class="wbui-slogn-t1">登录微博</view>
+            <view class="wbui-slogn-t2">分享生活 发现世界</view>
+        </view>
+        <view class="wbui-input-account" wx:if="{{isAccountLogin}}">
+            <view class="wbui-input-box">
+                <input bindinput="inputAccount" class="wbui-input" placeholder="手机号或者邮箱" placeholderClass="wbui-placeholder-color" type="text"></input>
+            </view>
+            <view class="wbui-input-mobile-bline"></view>
+            <view class="wbui-input-box">
+                <input bindinput="inputPwd" class="wbui-input" placeholder="请输入登录密码" placeholderClass="wbui-placeholder-color" type="password"></input>
+            </view>
+            <view class="wbui-err-msg">{{accountErrMsg}}</view>
+            <view class="wbui-input-mobile-bline"></view>
+        </view>
+        <view class="wbui-input-mobile" wx:else>
+            <view catchtap="country" class="wbui-select-code wbui-country-code">
+                <text class="wbui-select-code-tx">{{countryCode?'+'+countryCode:'+'+'86'}}</text>
+            </view>
+            <view class="wbui-input-box">
+                <input autoFocus="" bindinput="inputPhoneNumber" class="wbui-input" placeholder="输入手机号" placeholderClass="wbui-placeholder-color" type="number"></input>
+            </view>
+            <view class="wbui-err-msg">{{mobileErrMsgStr}}</view>
+            <view class="wbui-input-mobile-bline"></view>
+        </view>
+        <view class="wbui-choose-login" wx:if="{{isAccountLogin}}">
+            <view catchtap="accountLogin" class="wbui-btn wbui-btn-big wbui-btn-orange wbui-btn-margin {{!pwd||!account?'wbui-disabled':''}} {{isAccntBtnLogin?'wbui-animating':''}}" hoverClass="wbui-active">
+                <view class="wbui-loading wbui-white wbui-animating"></view>
+    登录
+   </view>
+            <view catchtap="changeLoginMode" class="wbui-btn wbui-btn-big wbui-btn-orange wbui-btn-ghost" hoverClass="wbui-active">用短信验证码登录</view>
+        </view>
+        <view class="wbui-choose-login" wx:else>
+            <view catchtap="getSmsCode" class="wbui-btn wbui-btn-big wbui-btn-orange wbui-btn-margin {{!phoneNumber?'wbui-disabled':''}} {{isSmsBtnLogin?'wbui-animating':''}}" hoverClass="wbui-active">
+                <view class="wbui-loading wbui-white wbui-animating"></view>
+    获取验证码
+   </view>
+            <view catchtap="changeLoginMode" class="wbui-btn wbui-btn-big wbui-btn-orange wbui-btn-ghost" hoverClass="wbui-active">用账号密码登录</view>
+        </view>
+        <view class="wbui-wxlogin">
+            <view class="wbui-wxlogin-agreement">
+                <view class="wbui-wxlogin-tx">登录注册即表示同意</view>
+                <view bind:tap="open" class="document-text" data-href="https://m.weibo.cn/c/regagreement?from=h5&showmenu=0&lang=zh_CN">用户协议</view>
+    、
+    <view bind:tap="open" class="document-text" data-href="https://m.weibo.cn/c/privacy?from=h5&wm=3349&showmenu=0&lang=zh_CN&areacode=0086">隐私条款</view>
+            </view>
+        </view>
+    </block>
+</view>
+<wbui-login-fail catchcancel="cancel" catchsmslogin="smslogin" catchwxlogin="wxlogin" model="{{mobileErrMsg}}" wx:if="{{mobileErrMsg}}"></wbui-login-fail>

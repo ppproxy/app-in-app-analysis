@@ -1,0 +1,14 @@
+<view>
+    <view class="uni-calender__body-date-week" wx:for="{{canlender.weeks}}" wx:for-index="week" wx:for-item="weeks" wx:key="week">
+        <view bindtap="__e" class="{{['uni-calender__date',canlender.month!==day.month||day.disable?'uni-calender__disable':'',(day.date==canlender.date&&!day.checked||day.multipleBegin||day.multipleEnd)&&canlender.month==day.month&&!day.disable?'uni-calender__date-current':'',lunar?'uni-calender__lunar':'',!day.isDay?'uni-calender__active':'',day.isDay?'uni-calender__is-day':'',day.multipleBegin||day.multipleEnd?'uni-calender__multiple':'',day.checked?'uni-calender__multiple-box':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectDays',[week,index,canlender.month===day.month,'$0','$1','$2'],[ [ ['canlender.weeks','',week],['','',index,'disable'] ],'canlender.lunar',[ ['canlender.weeks','',week],['','',index,'price'] ] ] ] ] ] ]}}" wx:for="{{weeks}}" wx:for-item="day" wx:key="index">
+            <view class="uni-calender__circle-box">
+                <view>{{day.date}}</view>
+                <view class="uni-calender__lunar fo mt5" wx:if="{{showPrice&&day.price!=null&&day.price>=0}}">{{'￥'+day.price}}</view>
+                <view class="uni-calender__lunar" wx:if="{{lunar}}">{{day.lunar}}</view>
+                <view class="uni-calender__data-circle" wx:if="{{day.have}}"></view>
+                <view class="uni-calender__lunar" wx:if="{{day.have&&!lunar}}">{{day.clockinfo.info}}</view>
+            </view>
+            <view class="{{['uni-calender_check-bg',day.checked?'uni-calender_check':'',day.multipleBegin?'calender_check-begin':'',day.multipleEnd?'calender_check-end':'']}}"></view>
+        </view>
+    </view>
+</view>

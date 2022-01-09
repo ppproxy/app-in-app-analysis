@@ -1,0 +1,145 @@
+.wbui-masklayer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.wbui-masklayer.wbui-visible {
+    animation: wbui-masklayer-visible .3s;
+}
+
+@keyframes wbui-masklayer-visible {
+    0% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: rgba(0,0,0,.5);
+    }
+}
+
+@-webkit-keyframes wbui-masklayer-visible {
+    0% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: rgba(0,0,0,.5);
+    }
+}
+
+.wbui-masklayer.wbui-hidden {
+    animation: wbui-masklayer-hidden .3s;
+}
+
+@keyframes wbui-masklayer-hidden {
+    0% {
+        background-color: rgba(0,0,0,.5);
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+@-webkit-keyframes wbui-masklayer-hidden {
+    0% {
+        background-color: rgba(0,0,0,.5);
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.wbui-dialog-masklayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.wbui-dialog {
+    background-color: #fff;
+    border-radius: 24rpx;
+    width: 540rpx;
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.wbui-dialog .wbui-title {
+    font-size: 34rpx;
+    font-family: PingFangSC-Medium;
+}
+
+.wbui-dialog .wbui-content,.wbui-dialog .wbui-title {
+    padding: 20rpx 30rpx 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.wbui-dialog .wbui-content {
+    font-size: 28rpx;
+    font-family: PingFangSC-Light;
+    line-height: 48rpx;
+}
+
+.wbui-dialog .wbui-line {
+    display: flex;
+    margin-top: 30rpx;
+    height: 1px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20x%3D%220%22%20y%3D%220%22%20viewBox%3D%220%200%204%204%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Crect%20x%3D%220%22%20y%3D%222%22%20width%3D%224%22%20height%3D%222%22%20fill%3D%22%23d0d0d0%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.wbui-dialog .wbui-bottombar {
+    display: flex;
+    flex-direction: row;
+    height: 90rpx;
+}
+
+.wbui-dialog .wbui-bottombar .wbui-act {
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    color: #636363;
+    width: auto;
+    border: none;
+    padding: 0;
+    background-color: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    width: 50%;
+}
+
+.wbui-dialog .wbui-bottombar .wbui-act::after {
+    border: none;
+}
+
+.wbui-dialog .wbui-bottombar .wbui-act.wbui-active {
+    opacity: .65;
+}
+
+.wbui-dialog .wbui-bottombar .wbui-act.wbui-orange {
+    color: #ff8200;
+}
+
+.wbui-dialog .wbui-bottombar .wbui-act.wbui-blue {
+    color: #5b9cd4;
+}
+
+.wbui-dialog .wbui-bottombar .wbui-vline {
+    height: 100%;
+    flex-shrink: 1;
+    width: 1px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20x%3D%220%22%20y%3D%220%22%20viewBox%3D%220%200%204%204%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%222%22%20height%3D%224%22%20fill%3D%22%23d0d0d0%22%2F%3E%3C%2Fsvg%3E");
+}

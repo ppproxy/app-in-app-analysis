@@ -1,0 +1,3 @@
+<view class="card-7" wx:if="{{cardData.desc}}">
+    <rich-text class="desc" nodes="{{cardData.desc}}"></rich-text>
+</view>

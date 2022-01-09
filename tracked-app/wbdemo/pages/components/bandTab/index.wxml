@@ -1,0 +1,16 @@
+<view class="band-tab">
+    <scroll-view class="channel-list" scrollLeft="{{scrollX}}" scrollWithAnimation="{{true}}" scrollX="true" wx:if="{{toolBarData&&toolBarData.length>4}}">
+        <view style="position:relative">
+            <view catchtap="switchTap" class="channel-list-view channel-list-item-scroll {{isToday?'today':''}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{toolBarData}}" wx:key="index">
+                <view class="channel-name {{index==activeIndex?'cur':''}}" data-name="{{item.name}}">{{item.name}}</view>
+            </view>
+            <view animation="{{tabAnimation}}" class="band-tab-cur" wx:if="{{tabAnimation}}"></view>
+        </view>
+    </scroll-view>
+    <view class="band-tab-content" wx:else>
+        <view catchtap="switchTap" class="channel-list-view channel-list-item" data-id="{{item.id}}" data-index="{{index}}" style="width: {{100/(toolBarData&&toolBarData.length)}}%" wx:for="{{toolBarData}}" wx:key="index">
+            <view class="channel-name {{index==activeIndex?'cur':''}}" data-name="{{item.name}}">{{item.name}}</view>
+        </view>
+        <view animation="{{tabAnimation}}" class="band-tab-cur" style="{{barStyle}}" wx:if="{{tabAnimation}}"></view>
+    </view>
+</view>

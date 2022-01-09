@@ -1,0 +1,13 @@
+<view class="section__ctn">
+    <image src="{{src}}"></image>
+</view>
+<view>
+    <view>
+        <input bindinput="getPhoneNumber" class="phone" id="phoneNumber" maxlength="11" placeholder="请输入手机号" type="text"></input>
+    </view>
+    <view>
+        <input bindinput="getPassword" class="pwd" id="password" placeholder="请输入密码" type="password"></input>
+    </view>
+    <button bindtap="login" class="log">登录</button>
+    <button bindtap="register" class="reg">注册</button>
+</view>

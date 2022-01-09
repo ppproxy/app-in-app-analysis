@@ -1,0 +1,14 @@
+<view class="card-19" wx:if="{{cardData.mode===2}}">
+    <view class="card-19-list" wx:for="{{cardData.group}}" wx:key="index">
+        <image class="card-19-pic" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(item.pic)}}"></image>
+        <view class="card-19-title" wx:if="{{item.item_title}}">{{item.item_title}}</view>
+        <view class="card-19-desc" wx:if="{{item.item_desc}}">{{item.item_desc}}</view>
+    </view>
+</view>
+<view class="card-19" wx:else>
+    <view catchtap="onClickTap" class="card-19-list-0 {{cardData.divider_color?'~border-right':''}}" data-scheme="{{item.scheme}}" style="width: {{100/(cardData.group&&cardData.group.length)}}%" wx:for="{{cardData.group}}" wx:key="index">
+        <image class="card-19-pic-0" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(item.pic)}}"></image>
+        <view class="card-19-title-sub-0" wx:if="{{item.title_sub}}">{{item.title_sub}}</view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

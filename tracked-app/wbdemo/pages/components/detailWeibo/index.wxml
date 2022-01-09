@@ -1,0 +1,36 @@
+<custom-navigation bind:searchQuery="searchQuery" class="header" isSearch="{{false}}" isShare="{{isShare}}" navigationTitle="微博正文" query="{{query}}" wx:if="{{scene!==1154}}"></custom-navigation>
+<add-guide bind:showAddGuide="showAddGuide" style="display:block;height:{{showGuide?'54rpx':'0'}}" wx:if="{{scene!==1154}}"></add-guide>
+<view class="container">
+    <view wx:if="{{errorPage}}">
+        <image class="error-page-img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="widthFix" src="https://h5.sinaimg.cn/upload/2016/04/11/319/h5-404.png"></image>
+        <view class="error-page-text">微博不存在或暂无查看权限!</view>
+    </view>
+    <view wx:else>
+        <view class="card">
+            <card-9 detail="{{true}}" id="weibo" parseText="{{parseText}}" retParseText="{{retParseText}}" wb="{{cardsData.mblog}}"></card-9>
+        </view>
+        <view class="~margin-top" wx:if="{{comment.state_code===0&&comment.root_comments.length}}">
+            <view class="comment">
+                <text class="comment-title">评论</text>
+            </view>
+            <comment comment="{{comment}}" id="comment" type="all"></comment>
+        </view>
+    </view>
+</view>
+<view animation="{{animation}}" catchtap="goToWeiboKandian" class="card-25" wx:if="{{!netWorkError&&showHotTips}}">
+    <view class="close-wrap">
+        <image catchtap="closeHotTips" class="close-img" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../assets/icons/more_icon_dislike.png"></image>
+    </view>
+    <swiper autoplay="{{!!animation}}" bindchange="hotTipSwiperChange" circular="{{true}}" interval="5000" style="height:201rpx" vertical="{{true}}">
+        <swiper-item wx:for="{{kandianDataList}}" wx:key="index">
+            <view class="card-25-zone">
+                <div class="img" style="background-image: url({{item.image}});"></div>
+                <view class="content">
+                    <view class="card-expand-content">{{item.text}}</view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<feed-open-app></feed-open-app>
+<common-footer cardData="{{cardsData}}" detail="{{true}}" query="{{query}}"></common-footer>

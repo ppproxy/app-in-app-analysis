@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "门票预定",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "uni-popup": "/components/uni-popup/uni-popup",
+        "notice-bar": "/components/uni-notice-bar/uni-notice-bar",
+        "uni-message": "/components/showmessage"
+    }
+}

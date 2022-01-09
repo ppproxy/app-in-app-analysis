@@ -1,0 +1,33 @@
+<view class="card-89" style="{{cardData.hide_bottom?'padding-bottom:20rpx':''}}">
+    <view class="wb-header" wx:if="{{!cardData.hide_bottom}}">
+        <avator wb="{{cardData.mblog}}"></avator>
+        <view class="text">
+            <view class="name {{cardData.mblog.user.mbrank===0?'gray':''}}">
+                <text>{{cardData.mblog.user&&cardData.mblog.user.name||''}}</text>
+                <text class="~sprite-img ~vipl{{cardData.mblog.user.mbrank}} ~vip-icon" wx:if="{{cardData.mblog.user.mbrank!==0}}"></text>
+            </view>
+            <view class="msg">{{createat}} <view class="source" wx:if="cardData.mblog.source&&cardData.mblog.source != ''">{{utils.nourl(cardData.mblog.source)}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="card-89-video" wx:for="{{cardData.mblog.url_objects}}" wx:key="index">
+        <view wx:if="{{item.object.object_type==='video'||item.object.object_type==='adFeedVideo'}}">
+            <view wx:if="{{video.show}}">
+                <video controls autoplay="{{true}}" class="video" muted="{{true}}" poster="{{item.object.object.image.url}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(item.object.object.stream.url)}}"></video>
+            </view>
+            <view bindtap="showvideo" class="videofeed" wx:else>
+                <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../../assets/icons/common_icon_play.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="wb-footer" wx:if="{{!cardData.hide_bottom}}">
+        <view class="forward">
+            <i class="m-font"></i>{{cardData.mblog.reposts_count!=0?utils.countNum(cardData.mblog.reposts_count):'转发'}}</view>
+        <view class="comment">
+            <i class="m-font"></i>{{cardData.mblog.comments_count!=0?utils.countNum(cardData.mblog.comments_count):'评论'}}</view>
+        <view class="like">
+            <i class="m-icon"></i>{{cardData.mblog.attitudes_count!=0?utils.countNum(cardData.mblog.attitudes_count):'赞'}}</view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

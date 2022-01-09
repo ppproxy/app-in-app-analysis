@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "custom-navigation": "../components/customNavigation/index",
+        "add-guide": "../components/AddGuide/AddGuide",
+        "card-content": "../components/cardContent/index",
+        "network-toast": "../components/NetworkErrorToast/NetworkErrorToast"
+    },
+    "onReachBottomDistance": 50
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "人物百科",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,142 @@
+.card-25 {
+    padding: 0 24rpx;
+    min-height: 141rpx;
+    background: #fff;
+    width: 100%;
+}
+
+.card-25,.card-25-zone {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.card-25-zone {
+    padding: 32rpx 0 31rpx;
+    border-bottom: .5px solid #eee;
+}
+
+.img {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.top-mark-pic {
+    display: inline-block;
+    top: 30rpx;
+    width: 38rpx;
+}
+
+.top-mark-pic,.top-mark-text {
+    position: absolute;
+    left: 0;
+    height: 40rpx;
+}
+
+.top-mark-text {
+    top: 32rpx;
+    width: 36rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #fff;
+    max-width: 40rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    vertical-align: middle;
+    font-family: Helvetica-Bold;
+}
+
+.content {
+    min-height: 100rpx;
+}
+
+.title-sub {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    font-size: 32rpx;
+    vertical-align: middle;
+    color: #333;
+    line-height: 32rpx;
+    font-family: PingFangSC-Regular;
+}
+
+.icon-topic-single {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.topic-title-flag {
+    width: 40rpx;
+    height: 28rpx;
+    margin-left: 8rpx;
+}
+
+.desc {
+    box-sizing: border-box;
+    font-size: 20rpx;
+    color: #ff8200;
+    font-family: PingFangSC-Regular;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,130,0,.05);
+    border-radius: 17rpx;
+}
+
+.desc_1 {
+    margin-right: 8rpx;
+}
+
+.desc_2 {
+    position: relative;
+}
+
+.desc-point {
+    position: absolute;
+    top: 8rpx;
+    width: 4rpx;
+    height: 4rpx;
+    border-radius: 50%;
+    background: #ff8200;
+}
+
+.desc_2_text {
+    padding-left: 12rpx;
+}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    right: 50rpx;
+    box-sizing: border-box;
+    height: 80rpx;
+    margin-top: -40rpx;
+}
+
+.button-pic {
+    width: 46rpx;
+    height: 46rpx;
+}
+
+.button-name {
+    font-size: 20rpx;
+    color: #5c7fa5;
+    margin-top: 5rpx;
+    margin-left: 5rpx;
+}
+
+.card-expand-content {
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular;
+    color: #939393;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 38rpx;
+    margin-bottom: 6rpx;
+}

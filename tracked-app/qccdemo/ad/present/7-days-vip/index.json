@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "领取专属礼券包",
+    "usingComponents": {
+        "app-download-pop": "/components/app-download-pop/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

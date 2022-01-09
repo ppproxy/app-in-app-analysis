@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "中国证券投资基金业协会提示",
+    "usingComponents": {
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-simple-footer": "/components/app-simple-footer/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

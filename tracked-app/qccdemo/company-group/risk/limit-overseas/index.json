@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "限制出境",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

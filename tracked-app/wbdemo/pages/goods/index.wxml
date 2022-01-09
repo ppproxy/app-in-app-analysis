@@ -1,0 +1,29 @@
+<view bind:loadData="refreshData" wx:if="{{netWorkError}}">
+    <network-toast></network-toast>
+</view>
+<view capture-bind:touchend="goodsTouchEnd" capture-bind:touchstart="goodsTouchStart" class="~container" wx:else>
+    <view>
+        <image class="~banner" mode="aspectFill" src="{{pic}}"></image>
+        <view class="~banner-mask"></view>
+    </view>
+    <view class="~header-bar {{headerBar?'~active':'~noactive'}}" style="display: {{scene===1154?'none':'flex'}}">
+        <view class="text" style="margin-top: {{statusBarHeight*2}}rpx">微博潮物</view>
+    </view>
+    <view class="~top-transparent"></view>
+    <view class="~sticky sticky-bar {{headerBar?'~border-bottom':''}}" style="top: {{scene===1154?'0':'170rpx'}};border-radius: {{headerBar?0:'20rpx 20rpx 0 0'}}">
+        <band-tab activeIndex="{{currentIndex}}" bind:switchTap="switchTap" toolBarData="{{channelList}}"></band-tab>
+    </view>
+    <feed-pull-down-refresh refreshed="{{refreshed}}" startLoading="{{refresh}}" text="{{refreshText}}"></feed-pull-down-refresh>
+    <swiper bindchange="beforeSwitchTab" class="tab-content" current="{{currentIndex}}" duration="300" style="height: {{swiper_height}}px">
+        <swiper-item skipHiddenItemLayout="{{true}}" wx:for="{{channelList}}" wx:key="index">
+            <view class="{{currentIndex===index?'list-dom':''}}">
+                <block wx:for="{{goodsListData[index]}}" wx:for-index="idx" wx:for-item="it" wx:key="idx">
+                    <view class="~title" wx:if="{{it.title}}">{{it.title}}</view>
+                    <view class="~margin-bottom">
+                        <card-content cardData="{{_item}}" class="card-content" is_show_zone="{{true}}" pageFrom="goods" wx:for="{{it.card_group}}" wx:for-index="_index" wx:for-item="_item" wx:key="_index"></card-content>
+                    </view>
+                </block>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

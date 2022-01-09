@@ -1,0 +1,32 @@
+<view class="card-3">
+    <view class="pics-content" style="flex: 0 0 {{100/picLength}}%;" wx:if="{{cardData.pics&&cardData.max_item_count>=index+1}}" wx:for="{{cardData.pics}}" wx:key="index">
+        <view class="content" wx:if="{{picLength===6}}">
+            <image class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{item.pic}}" style="width: 98rpx;height: 98rpx;"></image>
+            <view class="desc desc1" style="width: 98rpx;" wx:if="{{item.desc1}}">{{item.desc1}}</view>
+            <view class="desc desc2" style="width: 98rpx;" wx:if="{{item.desc2}}">{{item.desc2}}</view>
+        </view>
+        <view class="content" wx:if="{{picLength===5}}">
+            <image class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{item.pic}}" style="width: 125rpx;height: 125rpx;"></image>
+            <view class="desc desc1" style="width: 125rpx;" wx:if="{{item.desc1}}">{{item.desc1}}</view>
+            <view class="desc desc2" style="width: 125rpx;" wx:if="{{item.desc2}}">{{item.desc2}}</view>
+        </view>
+        <view class="content" wx:elif="{{picLength===4}}">
+            <image class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{item.pic}}" style="width: 160rpx;height: 160rpx;"></image>
+            <view class="desc desc1" style="width: 160rpx;" wx:if="{{item.desc1}}">{{item.desc1}}</view>
+            <view class="desc desc2" style="width: 160rpx;" wx:if="{{item.desc2}}">{{item.desc2}}</view>
+        </view>
+        <view class="content" wx:elif="{{picLength===3}}">
+            <image class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{item.pic}}" style="width: 220rpx;height: 220rpx;"></image>
+            <view class="desc desc1" style="width: 220rpx;" wx:if="{{item.desc1}}">{{item.desc1}}</view>
+            <view class="desc desc2" style="width: 220rpx;" wx:if="{{item.desc2}}">{{item.desc2}}</view>
+        </view>
+    </view>
+    <view class="users" wx:if="{{cardData.users&&cardData.max_item_count>=index+1}}" wx:for="{{cardData.users}}" wx:key="index">
+        <view style="position: relative;">
+            <image class="avatar_hd" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{item.avatar_hd||item.avatar_large}}"></image>
+            <text class="~sprite-img ~sign ~{{utils.getUserType(item)}}"></text>
+        </view>
+        <view class="screen_name">{{item.screen_name}}</view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

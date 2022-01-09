@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "常见问题",
+    "usingComponents": {
+        "collapse": "/components/collapse/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

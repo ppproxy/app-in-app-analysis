@@ -1,0 +1,7 @@
+<view class="app-no-data data-v-fa7ad6d0">
+    <view class="{{['wraper data-v-fa7ad6d0',center?'v-center':'']}}" wx:if="{{isInitial}}">
+        <image class="image data-v-fa7ad6d0" mode="aspectFit" src="{{icon}}" style="{{'height:'+height+';'+'width:'+width+';'+'margin-top:'+marginTop-160+'rpx'+';'}}"></image>
+        <view class="view data-v-fa7ad6d0">{{text}}</view>
+        <slot></slot>
+    </view>
+</view>

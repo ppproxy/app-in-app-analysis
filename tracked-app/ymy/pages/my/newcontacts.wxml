@@ -1,0 +1,67 @@
+<view class="app app_index" id="app">
+    <view class="contacts_add">
+        <view class="order">
+            <view class="data_list rel w_line ml15 mr15">
+                <view class="abs">
+                    <view class="ml5">联系人</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Name','$event',[] ] ] ] ] ]}}" placeholder="请输入联系人姓名" type="text" value="{{Name}}"></input>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15">
+                <view class="abs">
+                    <view class="ml5">手机号</view>
+                </view>
+                <view class="wp100 flx">
+                    <input bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Mobile','$event',[] ] ] ] ] ]}}" maxlength="11" placeholder="请输入手机号" type="number" value="{{Mobile}}"></input>
+                </view>
+            </view>
+            <view class="data_list rel ml15 mr15">
+                <view class="abs">
+                    <view class="ml5">身份证号</view>
+                </view>
+                <view class="wp100 flx">
+                    <input bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','IDCard','$event',[] ] ] ] ] ]}}" maxlength="18" placeholder="请输入身份证号" type="idcard" value="{{IDCard}}"></input>
+                </view>
+            </view>
+            <view class="data_list data_list_face rel ml15 mr15" wx:if="{{false}}">
+                <view class="abs">
+                    <view class="ml5">人脸输入</view>
+                </view>
+                <view class="wp100 flx">
+                    <view bindtap="__e" class="fix db" data-event-opts="{{[ [ 'tap',[ [ 'choosePhoto',['$event'] ] ] ] ]}}">
+                        <image class="my_contacts_rt_arrow rt w14 _img" src="/static/images/lefticon_mini.png" width="14"></image>
+                        <label class="rt g9 _span">上传人脸</label>
+                    </view>
+                </view>
+            </view>
+            <view class="data_list_face_main rel" wx:if="{{photo}}">
+                <image class="data_list_face_main_pic _img" src="{{photo}}"></image>
+                <view class="abs data_list_face_clo">
+                    <image class="data_list_face_clo_pic _img" src="/static/images/win_icon.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="order top_line">
+            <view bindtap="__e" class="data_list rel w_line ml15 mr15 cp" data-event-opts="{{[ [ 'tap',[ [ 'selectaction',['$event'] ] ] ] ]}}">
+                <view class="abs">
+                    <view class="ml5">设为本人账号</view>
+                </view>
+                <view class="wp100 flx">
+                    <image class="w22 rt select_icon _img" height="22" src="/static/images/select_1.png" width="22" wx:if="{{IsSelf}}"></image>
+                    <image class="w22 rt select_icon _img" height="22" src="/static/images/select_2.png" width="22" wx:else></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="my_contacts_action my_contacts_end _div" wx:if="{{!isCutting}}">
+        <view class="my_contacts_action_main _div">
+            <view>
+                <button bindtap="__e" class="my_contacts_action_btn my_contacts_action_btn_del db" data-event-opts="{{[ [ 'tap',[ [ 'del',['$event'] ] ] ] ]}}" wx:if="{{ID>0}}">删除</button>
+            </view>
+            <navigator bindtap="__e" class="my_contacts_action_btn db" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}" url="/pages/index/my_contacts">保存联系人</navigator>
+        </view>
+    </view>
+    <kps-image-cutter bind:__l="__l" bind:cancel="__e" bind:ok="__e" data-event-opts="{{[ [ '^ok',[ ['handlePhotoOk'] ] ],[ '^cancel',[ ['handlePhotoCancel'] ] ] ]}}" fixed="{{true}}" height="{{cutHeight}}" url="{{originPhoto}}" vueId="80f4a146-1" width="{{cutWidth}}"></kps-image-cutter>
+</view>

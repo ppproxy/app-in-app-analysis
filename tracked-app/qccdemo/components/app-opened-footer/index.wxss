@@ -1,0 +1,45 @@
+.app-opened-footer-tip.data-v-efc1e86a {
+    background-color: #e7f5ff;
+    color: #128bed;
+    font-size: 28rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    padding-left: 25rpx;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.app-opened-footer-item.data-v-efc1e86a {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    width: 680rpx;
+}
+
+.app-opened-footer-close.data-v-efc1e86a {
+    height: 68rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 68rpx;
+}
+
+.footer-name.data-v-efc1e86a {
+    display: inline-block;
+    max-width: 400rpx;
+}
+
+.app-opened-footer-close.data-v-efc1e86a:after {
+    background-image: url(https://share.qichacha.com/lite-app-resources/html/images/new-image/close-gray.png);
+    background-size: 100% 100%;
+    bottom: 0;
+    content: "";
+    height: 20rpx;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20rpx;
+}

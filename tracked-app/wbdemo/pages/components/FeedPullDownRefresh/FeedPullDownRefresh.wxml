@@ -1,0 +1,9 @@
+<view style="position:relative;z-index:100;">
+    <view class="content {{startLoading?'start-load':''}}" hidden="{{!startLoading}}">
+        <image class="loading" lazyLoad="{{true}}" lazyLoadMargin="0" src="/assets/icons/ic_loading.png"></image>
+        <text class="text">加载中...</text>
+    </view>
+    <view class="content {{startLoading?'':'finish-load'}}" hidden="{{startLoading}}" style="{{refreshed?'':'height: 0px;'}}">
+    {{text}}
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="app mb20" data-title="发票申请成功">
+    <view class="pay_top tc">
+        <image class="dib w80 _img" height="80" src="/static/images/win_icon.png" width="80"></image>
+        <view class="db f30 mt20">发票申请成功</view>
+        <view class="f13 g9 mt10">请前往填写的邮箱查收票据信息</view>
+    </view>
+    <view class="big_btn order_btn ml15 mt15 mr15">
+        <button name bindtap="__e" class="btn fw f18 wp100" data-event-opts="{{[ [ 'tap',[ [ 'handleClickLinks',['$event'] ] ] ] ]}}">完成</button>
+    </view>
+</view>

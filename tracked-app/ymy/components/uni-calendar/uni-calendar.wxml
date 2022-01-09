@@ -1,0 +1,40 @@
+<view>
+    <view bindtap="__e" class="{{['uni-calendar__mask',aniMaskShow?'ani-mask-show':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{maskShow&&!insert}}"></view>
+    <view class="{{['uni-calendar__box',aniMaskShow?'ani-calendar-show':'',insert?'uni-calendar__static':'']}}" wx:if="{{maskShow||insert}}">
+        <view class="uni-calendar__nav" wx:if="{{!insert}}">
+            <view bindtap="__e" class="uni-calendar__nav-item" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">取消</view>
+            <view bindtap="__e" class="uni-calendar__nav-item" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}">确认</view>
+        </view>
+        <view class="uni-calendar__wrapper">
+            <view class="uni-calenda__content">
+                <view class="uni-calendar__panel">
+                    <view bindtap="__e" class="uni-calendar__date-befor" data-event-opts="{{[ [ 'tap',[ [ 'dataBefor',[-1,'month'] ] ] ] ]}}">
+                        <text class="iconfont icon-jiantou"></text>
+                    </view>
+                    <view class="uni-calendar__panel-box">
+                        <view>{{canlender.year+'年'}}</view>
+                        <view>{{canlender.month+'月'}}</view>
+                    </view>
+                    <view bindtap="__e" class="uni-calendar__date-after uni-calendar__rollback" data-event-opts="{{[ [ 'tap',[ [ 'dataBefor',[1,'month'] ] ] ] ]}}">
+                        <text class="iconfont icon-jiantou "></text>
+                    </view>
+                    <view bindtap="__e" class="uni-calendar__backtoday" data-event-opts="{{[ [ 'tap',[ [ 'backtoday',['$event'] ] ] ] ]}}">回到今天</view>
+                </view>
+                <view class="uni-calendar__day-detail" wx:if="{{isLunar}}">
+                    <view>{{canlender.year+'年'+canlender.month+'月'+canlender.date+'日 （'+canlender.lunar.astro+')'}}</view>
+                    <view>{{''+canlender.lunar.gzYear+'年'+canlender.lunar.gzMonth+'月'+canlender.lunar.gzDay+'日 ('+canlender.lunar.Animal+'年)'+'\n\t\t\t\t\t\t'+canlender.lunar.IMonthCn+canlender.lunar.IDayCn+' '+(canlender.lunar.isTerm?canlender.lunar.Term:'')+''}}</view>
+                </view>
+                <view class="uni-calendar__header">
+                    <view class="uni-calendar__week">日</view>
+                    <view class="uni-calendar__week">一</view>
+                    <view class="uni-calendar__week">二</view>
+                    <view class="uni-calendar__week">三</view>
+                    <view class="uni-calendar__week">四</view>
+                    <view class="uni-calendar__week">五</view>
+                    <view class="uni-calendar__week">六</view>
+                </view>
+                <uni-calendar-item bind:__l="__l" bind:selectDays="__e" canlender="{{canlender}}" data-event-opts="{{[ [ '^selectDays',[ ['selectDays'] ] ] ]}}" lunar="{{isLunar}}" showPrice="{{showPrice}}" vueId="138a9022-1"></uni-calendar-item>
+            </view>
+        </view>
+    </view>
+</view>

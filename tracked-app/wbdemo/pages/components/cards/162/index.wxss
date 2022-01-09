@@ -1,0 +1,43 @@
+.card-162 {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 0 26rpx 0 55rpx;
+}
+
+.line-config {
+    position: relative;
+    padding: 20rpx 0;
+}
+
+.line {
+    left: 8.5rpx;
+    height: 100%;
+}
+
+.line,.point {
+    position: absolute;
+}
+
+.point {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18rpx;
+    height: 18rpx;
+    top: 34rpx;
+}
+
+.wrapper {
+    position: relative;
+    padding-left: 65rpx;
+}
+
+.time {
+    font-size: 28rpx;
+}
+
+.content {
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+}

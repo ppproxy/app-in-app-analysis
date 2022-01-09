@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "司法案件详情",
+    "usingComponents": {
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "ui-iphonex-spacer": "/components/ui-iphonex-spacer/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "裁判文书",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

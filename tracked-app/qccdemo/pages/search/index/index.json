@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "搜索",
+    "usingComponents": {
+        "app-auto-logo": "/components/app-auto-logo/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "filter-list": "/components/filter-list/index",
+        "app-download-pop": "/components/app-download-pop/index",
+        "sort-list": "/components/sort-list/index",
+        "app-more-phone": "/components/app-more-phone/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

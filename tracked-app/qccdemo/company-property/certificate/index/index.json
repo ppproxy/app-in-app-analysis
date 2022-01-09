@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "资质证书",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

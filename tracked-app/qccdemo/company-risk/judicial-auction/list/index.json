@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "司法拍卖",
+    "usingComponents": {
+        "app-simple-footer": "/components/app-simple-footer/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-opened-footer": "/components/app-opened-footer/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

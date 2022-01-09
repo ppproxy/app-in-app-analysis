@@ -1,0 +1,11 @@
+<view class="card-77">
+    <view class="title-left-color" style="background: {{cardData.title_left_color}}"></view>
+    <view class="content">
+        <view class="start-time">{{cardData.start_time}}</view>
+        <view class="content-text">
+            <view class="title">{{cardData.title}}</view>
+            <view class="desc">{{cardData.desc}}</view>
+        </view>
+        <view class="order-button">{{cardData.order_button.name}}</view>
+    </view>
+</view>

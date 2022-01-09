@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "融资动态",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

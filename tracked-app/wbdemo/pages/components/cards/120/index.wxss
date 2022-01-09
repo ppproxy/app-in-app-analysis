@@ -1,0 +1,23 @@
+.card-120 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-bottom: .5px solid #e5e5e5;
+}
+
+.card-120-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 151rpx;
+    background: transparent;
+}
+
+.still-img {
+    width: 48rpx;
+    height: 48rpx;
+    margin-left: 24rpx;
+}

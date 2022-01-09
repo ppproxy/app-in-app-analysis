@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "关联方认定",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

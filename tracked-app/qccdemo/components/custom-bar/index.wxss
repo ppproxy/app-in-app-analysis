@@ -1,0 +1,118 @@
+.custom .custom-space.data-v-79ba19e8 {
+    width: 100%;
+}
+
+.custom .custom-bar.data-v-79ba19e8 {
+    background-color: #187efd;
+    height: 140rpx;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.custom .custom-bar .custom-left.data-v-79ba19e8 {
+    bottom: 0;
+    left: 0;
+    padding-left: 20rpx;
+    padding-top: 44rpx;
+    position: absolute;
+    width: 550rpx;
+}
+
+.custom .custom-bar .custom-left .custom-icon1.data-v-79ba19e8 {
+    height: 100%;
+    width: 60rpx;
+}
+
+.custom .custom-bar .custom-left .custom-icon1 .image.data-v-79ba19e8 {
+    height: 46rpx;
+    position: relative;
+    top: 10rpx;
+    width: 46rpx;
+}
+
+.custom .custom-bar .custom-left .custom-icon2.data-v-79ba19e8 {
+    height: 100%;
+    width: 117rpx;
+}
+
+.custom .custom-bar .custom-left .custom-icon2 .image.data-v-79ba19e8 {
+    height: 46rpx;
+    position: relative;
+    top: 10rpx;
+    width: 46rpx;
+}
+
+.custom .custom-bar .custom-title.data-v-79ba19e8 {
+    border-radius: 8rpx;
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: 700;
+    padding: 20rpx 0;
+    text-align: center;
+}
+
+.custom .custom-bar .overlay.data-v-79ba19e8 {
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.custom .custom-bar .custom-list.data-v-79ba19e8 {
+    background-color: #fff;
+    border-radius: 8rpx;
+    box-shadow: 0 0 12rpx rgba(0,0,0,.1);
+    left: 60rpx;
+    position: absolute;
+    top: 118rpx;
+    width: 268rpx;
+    z-index: 2;
+}
+
+.custom .custom-bar .custom-list .custom-list-item+view.data-v-79ba19e8 {
+    border-top: 1rpx solid #f3f3f3;
+}
+
+.custom .custom-bar .custom-list .custom-list-item.data-v-79ba19e8 {
+    height: 80rpx;
+    line-height: 80rpx;
+    position: relative;
+}
+
+.custom .custom-bar .custom-list .custom-list-item.data-v-79ba19e8 :not(:last-child) :after {
+    position: absolute;
+}
+
+.custom .custom-bar .custom-list .custom-list-item .image.data-v-79ba19e8 {
+    display: block;
+    height: 40rpx;
+    margin-left: 28rpx;
+    margin-right: 22rpx;
+    width: 40rpx;
+}
+
+.custom .custom-bar .custom-list .custom-list-item .custom-item-title.data-v-79ba19e8 {
+    color: #666;
+    font-size: 28rpx;
+}
+
+.custom .custom-bar .custom-list.data-v-79ba19e8:after {
+    border-color: transparent transparent #fff;
+    border-style: solid;
+    border-width: 0 16rpx 22rpx;
+    content: "";
+    height: 0;
+    left: 26rpx;
+    position: absolute;
+    top: -16rpx;
+    width: 0;
+}
+
+.custom .custom-bar .v-hover.data-v-79ba19e8 {
+    background-color: #f1f3f4;
+}

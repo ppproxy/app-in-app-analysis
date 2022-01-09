@@ -1,0 +1,6 @@
+<view class="null_box nothing tc">
+    <view class="nothing_pic">
+        <image class="w100 _img" src="/static/images/nothing.png"></image>
+    </view>
+    <view class="nothing_text mt20">暂无数据</view>
+</view>

@@ -1,0 +1,19 @@
+<view bindtap="__e" class="overlay app-more-phone data-v-85644b1c" data-event-opts="{{[ [ 'tap',[ [ 'know',['$event'] ] ] ] ]}}" wx:if="{{show}}">
+    <view class="popup data-v-85644b1c" style="padding-top:0;">
+        <view class="pop-title  data-v-85644b1c" style="line-height:100rpx;">电话号码</view>
+        <view class="phone-pop-wrap data-v-85644b1c">
+            <view class="group-item data-v-85644b1c" wx:for="{{$root.l0}}" wx:key="index">
+                <view catchtap="__e" class="{{['data-v-85644b1c',true?'phone-num':'',true?'blue':'',!(isVIP||item[$orig].isShow)?'cover':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}" data-phone="{{isVIP||item[$orig].isShow?item[$orig].Tel:''}}">{{''+(isVIP||item[$orig].isShow?item[$orig].Tel:item.g0)+''}}</view>
+                <view class="phone-annual data-v-85644b1c">{{item[$orig].SourceFrom||'互联网'}}</view>
+            </view>
+        </view>
+        <view class="button-wrap data-v-85644b1c">
+            <view catchtap="__e" class="know-button data-v-85644b1c" data-event-opts="{{[ [ 'tap',[ [ 'know',['$event'] ] ] ] ]}}" hoverClass="hover" wx:if="{{isVIP}}">知道了</view>
+            <view class="know-button data-v-85644b1c" hoverClass="hover" wx:else>
+                <view catchtap="__e" class="data-v-85644b1c" data-event-opts="{{[ [ 'tap',[ [ 'showVipPop',['$event'] ] ] ] ]}}" wx:if="{{(!isIPhone||platform==='mp-alipay')&&!isSVIP&&platform!=='mp-toutiao'&&!$root.g1}}">开通VIP查看更多</view>
+                <view catchtap="__e" class="data-v-85644b1c" data-event-opts="{{[ [ 'tap',[ [ 'know',['$event'] ] ] ] ]}}" wx:else>暂不支持</view>
+            </view>
+        </view>
+    </view>
+    <app-vip-pop bind:__l="__l" bind:hideVipPop="__e" catch:tap="__e" class="data-v-85644b1c" data-event-opts="{{[ [ '^tap',[ [ '',['$event'] ] ] ],[ '^hideVipPop',[ ['cancel'] ] ] ]}}" isScroll="{{false}}" paySourceType="{{paySourceType}}" titleText="更多电话号码" vueId="06b891b4-1" wx:if="{{vipPop}}"></app-vip-pop>
+</view>

@@ -1,0 +1,113 @@
+.list {
+    color: #af1616;
+    margin: 3% 0 2% 5%;
+    font-weight: 700;
+}
+
+.introduction {
+    color: #666;
+    font-size: 28rpx;
+    margin: 0 0 3% 5%;
+}
+
+.everyday {
+    width: 90%;
+    margin: 0 auto;
+    border: 3rpx solid #ff5a28;
+    background-color: #fff;
+    color: #ff5a28;
+    display: flex;
+    border-radius: 25rpx;
+}
+
+.everyday_img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: #ff5a28;
+    color: #fff;
+    text-align: center;
+    line-height: 120rpx;
+    font-size: 36rpx;
+    font-weight: 900;
+    margin: 3% 3% 3% 5%;
+}
+
+.everyday_right view:nth-child(1) {
+    margin: 11% 0 9% 5%;
+    font-size: 36rpx;
+}
+
+.everyday_right view:nth-child(2) {
+    width: 100%;
+    margin-left: 5%;
+    font-size: 28rpx;
+}
+
+.everyday1 {
+    width: 90%;
+    margin: 5% auto;
+    border: 3rpx solid #ff6385;
+    background-color: #fff;
+    color: #ff6385;
+    display: flex;
+    border-radius: 25rpx;
+}
+
+.everyday_img1 {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: #ff6385;
+    color: #fff;
+    text-align: center;
+    line-height: 120rpx;
+    font-size: 36rpx;
+    font-weight: 900;
+    margin: 3% 3% 3% 5%;
+}
+
+.everyday2 {
+    width: 90%;
+    margin: 5% auto;
+    border: 3rpx solid #ff9b28;
+    background-color: #fff;
+    color: #ff9b28;
+    display: flex;
+    border-radius: 25rpx;
+}
+
+.everyday_img2 {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: #ff9b28;
+    color: #fff;
+    text-align: center;
+    line-height: 120rpx;
+    font-size: 36rpx;
+    font-weight: 900;
+    margin: 3% 3% 3% 5%;
+}
+
+.match {
+    width: 100%;
+    display: flex;
+}
+
+.match view {
+    width: 42%;
+    margin-left: 5%;
+    border: 2rpx solid #af1616;
+    border-radius: 25rpx;
+}
+
+.match view text {
+    display: block;
+    padding: 30% 0;
+    width: 100%;
+    text-align: center;
+    font: 46rpx;
+    font-weight: 700;
+    color: #af1616;
+}

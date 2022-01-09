@@ -1,0 +1,10 @@
+<view class="card-162">
+    <view class="line-config">
+        <view class="line" style="border-left: 1px solid {{cardData.line_config.line_color}}"></view>
+        <view class="point" style="background: {{cardData.line_config.point_color}}"></view>
+        <view class="wrapper">
+            <view class="time" style="color: {{cardData.timestamp.color}}">{{cardData.timestamp.value}}</view>
+            <view class="content" style="color: {{cardData.text.color}}">{{cardData.text.value}}</view>
+        </view>
+    </view>
+</view>

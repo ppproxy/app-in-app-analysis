@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "企业高管",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

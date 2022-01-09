@@ -1,0 +1,6 @@
+<view bindtap="onClickTap" class="card-6" data-scheme="{{cardData.scheme}}" wx:if="{{cardData.desc!=='更多热门文章'}}">
+    <view>
+    {{cardData.desc}}
+    <icon class="~iconfont ~icon-youjiantou-01 icon-right" size="16" wx:if="{{cardData.show_type===0}}"></icon>
+    </view>
+</view>

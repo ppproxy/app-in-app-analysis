@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "失信/被执行人",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

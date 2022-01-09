@@ -1,0 +1,6 @@
+<view class="data-v-1e462f11">
+    <app-launch-app bind:__l="__l" class="data-v-1e462f11" vueId="647d72de-1" wx:if="{{isInit}}"></app-launch-app>
+    <view class="app-page-loading data-v-1e462f11" wx:if="{{!isInit}}">
+        <view class="bg data-v-1e462f11"></view>
+    </view>
+</view>

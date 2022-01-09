@@ -1,0 +1,7 @@
+<view id="goBackHome">
+    <button class="open-app-button" hoverClass="none" size="mini" type="default">
+        <view catchtap="backHome" class="wrap">
+      热搜榜
+    </view>
+    </button>
+</view>

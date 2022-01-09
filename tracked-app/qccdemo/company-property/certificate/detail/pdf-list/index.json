@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "排污执行报告",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

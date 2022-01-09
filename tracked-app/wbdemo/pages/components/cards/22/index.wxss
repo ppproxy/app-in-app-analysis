@@ -1,0 +1,32 @@
+.card-22 {
+    box-sizing: border-box;
+    position: relative;
+    background: #fff;
+    border-bottom: .5px solid #e5e5e5;
+}
+
+.img {
+    width: 100%;
+    height: 200rpx;
+}
+
+.content-title {
+    font-size: 32rpx;
+}
+
+.content1,.content-title {
+    position: absolute;
+    left: 40rpx;
+    bottom: 20rpx;
+    color: #fff;
+}
+
+.content1 {
+    font-size: 28rpx;
+}
+
+.pic {
+    width: 100%;
+    height: 160px;
+    background: #ebebeb;
+}

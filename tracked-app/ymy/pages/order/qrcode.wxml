@@ -1,0 +1,18 @@
+<view class="app page">
+    <view class="one_qrcode ml15 mr15 bgwh rel">
+        <view class="one_qrcode_head tc">
+            <image class="one_qrcode_head_pic db w80 _img" height="80" src="/static/images/user.png" width="80"></image>
+        </view>
+        <view class="db wp100 tc">
+            <view class="one_qrcode_name dib fg">游客：138****1714</view>
+        </view>
+        <view class="one_qrcode_mun tc">
+            <view class="dib">9876*****</view>
+            <view class="dib cp">查看数字</view>
+        </view>
+        <view class="one_qrcode_main">
+            <image class="db w190 _img" src="/static/images/qr.png"></image>
+        </view>
+        <view class="tc mt40 g9">无需购票直接刷码入园</view>
+    </view>
+</view>

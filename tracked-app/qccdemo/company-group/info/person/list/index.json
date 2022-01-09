@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "集团人员",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

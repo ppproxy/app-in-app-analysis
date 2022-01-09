@@ -1,0 +1,30 @@
+<view class="page news-flash-share data-v-281c39a8">
+    <view class="share-popup data-v-281c39a8">
+        <canvas canvasId="btn-share-canvas" class="data-v-281c39a8" style="{{'width:'+btnCanvasWidth+'px;height:'+btnCanvasHeight+'px;position: absolute;top:-8000px'}}"></canvas>
+        <view class="share-popup-list data-v-281c39a8">
+            <view class="share-popup-list-box data-v-281c39a8" wx:if="{{sharePopupShow}}">
+                <view class="share-item data-v-281c39a8">
+                    <button catchtap="__e" class="tips-share data-v-281c39a8" data-event-opts="{{[ [ 'tap',[ [ 'showShareMenu',['$event'] ] ] ] ]}}" data-feed_id="{{feed_id}}" data-id="{{id}}" data-title="{{detail.newsContent.Title}}" openType="share"></button>
+                    <image class="data-v-281c39a8" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/html/images/news-flash/detail-share-wx.png"></image>
+                    <text class="data-v-281c39a8">微信</text>
+                </view>
+                <view class="share-item data-v-281c39a8">
+                    <button catchtap="__e" class="image-share data-v-281c39a8" data-event-opts="{{[ [ 'tap',[ [ 'toImageShare',['$event'] ] ] ] ]}}"></button>
+                    <image class="data-v-281c39a8" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/html/images/news-flash/detail-share-image.png"></image>
+                    <text class="data-v-281c39a8">图片</text>
+                </view>
+            </view>
+            <view catchtap="__e" class="{{[ 'data-v-281c39a8','share-popup-cancel '+(isIPhoneX?'isIPhoneX':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'hideSharePopup',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+    </view>
+    <view class="image-share-popup data-v-281c39a8" wx:if="{{imageShareShow}}">
+        <view class="image-share-canvas data-v-281c39a8">
+            <canvas canvasId="share-canvas" class="data-v-281c39a8" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;'}}"></canvas>
+            <image class="data-v-281c39a8" id="dataImage" src="{{dataImage}}" style="{{'width:'+canvasWidth+'px;height:'+canvasHeight+'px;'}}"></image>
+        </view>
+        <view class="confirm-save data-v-281c39a8" wx:if="{{dataImage}}">
+            <view catchtap="__e" class="save-image data-v-281c39a8" data-event-opts="{{[ [ 'tap',[ [ 'confirmSave',['$event'] ] ] ] ]}}">保存到相册</view>
+            <view catchtap="__e" class="{{[ 'data-v-281c39a8','save-image-cancel '+(isIPhoneX?'isIPhoneX':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'cancelSave',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+    </view>
+</view>

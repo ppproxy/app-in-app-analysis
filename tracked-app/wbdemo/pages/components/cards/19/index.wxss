@@ -1,0 +1,71 @@
+.card-19 {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    border-bottom: 2rpx solid #dcdcdc;
+    min-height: 140rpx;
+}
+
+.card-19-list {
+    flex-grow: 1;
+    width: 50%;
+    padding: 20rpx 0;
+    margin: 16rpx 0 16rpx 20rpx;
+    overflow: hidden;
+}
+
+.card-19-list:first-child {
+    border-right: .5px solid #dcdcdc;
+}
+
+.card-19-pic {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+    background: #ebebeb;
+}
+
+.card-19-title {
+    padding-left: 50rpx;
+    line-height: 40rpx;
+}
+
+.card-19-desc {
+    padding-left: 50rpx;
+    font-size: 24rpx;
+    color: #8e8e8e;
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    margin-top: 5rpx;
+}
+
+.card-19-list-0 {
+    position: relative;
+    margin: 20rpx 0;
+    border-right: .5px solid #e6e6e6;
+}
+
+.card-19-list-0:last-child {
+    border-right: none;
+}
+
+.card-19-pic-0 {
+    display: inline-block;
+    position: absolute;
+    width: 60rpx;
+    height: 60rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-19-title-sub-0 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 24rpx;
+    text-align: center;
+}

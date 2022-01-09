@@ -1,0 +1,37 @@
+.card-101 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15rpx;
+    background: #fff;
+    overflow: hidden;
+    height: 70rpx;
+    border-bottom: .5px solid #e5e5e5;
+}
+
+.left-tag-img {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 16rpx;
+}
+
+.title-info {
+    font-size: 32rpx;
+}
+
+.tag-img {
+    width: 50rpx;
+    height: 50rpx;
+    margin-left: 10px;
+}
+
+.right-tag {
+    position: absolute;
+    right: 20rpx;
+    color: #999;
+}
+
+.icon-right,.right-tag {
+    font-size: 24rpx;
+}

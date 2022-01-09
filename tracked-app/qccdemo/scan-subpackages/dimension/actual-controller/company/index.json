@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "实际控制人",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

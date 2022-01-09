@@ -1,0 +1,25 @@
+<view class="app _div">
+    <view class="index_notice">
+        <view class="index_notice_banner">
+            <image class="wp100 db" mode="widthFix" src="{{scenic.Photo}}"></image>
+        </view>
+        <view class="index_notice_cont pd15">
+            <view class="index_notice_tit f18 b">尊敬的游客朋友们：</view>
+            <view class="index_notice_text">
+                <rich-text nodes="{{scenic.Preferential}}"></rich-text>
+            </view>
+            <view class="mt10">
+                <checkbox-group bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'read',['$event'] ] ] ] ]}}">
+                    <label class="fr">
+                        <checkbox checked="{{alreadyRead}}" value="cb"></checkbox>我已阅读</label>
+                </checkbox-group>
+            </view>
+            <view class="mt15" wx:if="{{alreadyRead==true}}">
+                <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'buy',['$event'] ] ] ] ]}}" type="warn">开始购票</button>
+            </view>
+            <view class="mt15" wx:else>
+                <button class="btn" disabled="{{true}}" type="warn">开始购票</button>
+            </view>
+        </view>
+    </view>
+</view>

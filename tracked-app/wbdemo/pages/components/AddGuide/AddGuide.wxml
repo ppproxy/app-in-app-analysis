@@ -1,0 +1,13 @@
+<view class="add-guide" wx:if="{{showAddGuide}}">
+    <view>
+        <view>
+            <view class="content-box">
+                <image catch:tap="hideAddGuide" class="img-close" lazyLoad="{{true}}" lazyLoadMargin="0" src="https://h5.sinaimg.cn/upload/1035/467/2020/04/01/notice_icon_close.png"></image>
+                <view>点击右上角</view>
+                <image class="img-dot" lazyLoad="{{true}}" lazyLoadMargin="0" src="https://h5.sinaimg.cn/upload/1035/467/2020/04/01/notice_pic_option.png"></image>
+                <view>添加至我的小程序，快捷访问微博热搜</view>
+            </view>
+        </view>
+    </view>
+    <cover-view class="arrow" style="top: {{arrowTop}}px; right: {{arrowRight}}px;"></cover-view>
+</view>

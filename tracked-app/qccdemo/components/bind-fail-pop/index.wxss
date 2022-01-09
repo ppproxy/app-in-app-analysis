@@ -1,0 +1,70 @@
+.template-tip-img.data-v-07464404 {
+    flex-shrink: 0;
+    height: 24rpx;
+    margin-right: 10rpx;
+    margin-top: 6rpx;
+    width: 24rpx;
+}
+
+.template-button-know.data-v-07464404 {
+    background: none;
+    border: none;
+    color: #128bed;
+    font-size: 36rpx;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.template-input-tip-wrap.data-v-07464404 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    color: #999;
+    display: flex;
+    flex-direction: row;
+    font-size: 26rpx;
+    margin-top: 34rpx;
+    padding: 0 32rpx;
+}
+
+.template-tip-content.data-v-07464404 {
+    display: inline;
+}
+
+.auth-overlay.data-v-07464404 {
+    background: rgba(0,0,0,.2);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+}
+
+.auth-button-wrap.data-v-07464404 {
+    background: #fff;
+    border-radius: 8rpx;
+    margin: 35% 46rpx 0;
+}
+
+.auth-modal-title.data-v-07464404 {
+    color: #333;
+    font-size: 36rpx;
+    font-weight: 700;
+    padding-top: 52rpx;
+    text-align: center;
+}
+
+.template-bottom-wrap.data-v-07464404 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    border-top: 1rpx solid #eee;
+    display: flex;
+    flex-direction: row;
+    margin-top: 34rpx;
+    position: relative;
+}
+
+.template-button-know.data-v-07464404::after {
+    border: none;
+}

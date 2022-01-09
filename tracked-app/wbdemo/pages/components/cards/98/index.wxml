@@ -1,0 +1,16 @@
+<view style="position: relative">
+    <image class="back-pic-url" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.back_pic_url)}}"></image>
+    <view class="back-star-intro">
+        <view class="user-img">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.user.avatar_large)}}"></image>
+            <view class="~sprite-img ~sign-biger ~{{utils.getUserType(cardData)}}"></view>
+        </view>
+        <view class="screen-name">
+            <text>{{cardData.user.screen_name}}</text>
+            <text class="~sprite-img ~{{utils.getVipLevel(cardData)}} ~vip-icon-biger"></text>
+        </view>
+        <view class="followers-count">{{cardData.desc2}}</view>
+        <view class="star-desc1">{{cardData.desc1}}</view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

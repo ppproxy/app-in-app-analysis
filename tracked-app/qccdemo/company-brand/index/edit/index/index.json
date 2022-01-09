@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "品牌主页",
+    "navigationBarBackgroundColor": "#128BED",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

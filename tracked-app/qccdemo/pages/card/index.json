@@ -1,0 +1,8 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "名片",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

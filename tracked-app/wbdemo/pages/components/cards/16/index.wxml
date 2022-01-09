@@ -1,0 +1,15 @@
+<view class="card-16">
+    <block wx:for="{{cardData.group}}" wx:key="index">
+        <view class="m-item-box" wx:if="{{item.buttons}}">
+            <view class="m-box-center" wx:for="{{item.buttons}}" wx:for-item="_item" wx:key="index">
+                <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(_item.pic)}}"></image>
+                <view class="title-sub">{{_item.name}}</view>
+            </view>
+        </view>
+        <view class="item" wx:else>
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(item.pic)}}"></image>
+            <view class="title-sub">{{item.title_sub}}</view>
+        </view>
+    </block>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

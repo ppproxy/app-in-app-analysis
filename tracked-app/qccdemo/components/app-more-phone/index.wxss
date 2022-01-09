@@ -1,0 +1,93 @@
+.app-more-phone.data-v-85644b1c {
+    background: rgba(0,0,0,.7);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.app-more-phone .popup.data-v-85644b1c {
+    background: #fff;
+    border-radius: 8rpx;
+    margin-left: 46rpx;
+    margin-right: 46rpx;
+    margin-top: 160rpx;
+    padding: 56rpx 0 0;
+    position: relative;
+}
+
+.app-more-phone .pop-title.data-v-85644b1c {
+    color: #333;
+    font-size: 36rpx;
+    font-weight: 700;
+    text-align: center;
+}
+
+.app-more-phone .phone-pop-wrap.data-v-85644b1c {
+    box-sizing: border-box;
+    padding: 0 24rpx;
+}
+
+.app-more-phone .phone-num.data-v-85644b1c {
+    font-size: 28rpx;
+    position: relative;
+}
+
+.app-more-phone .phone-num.cover.data-v-85644b1c:after {
+    background-image: url(https://eciapp-img.qichacha.com/community/f7897f76-3b09-4b08-8548-394cf67cf2091608609783136.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 32rpx;
+    left: 45rpx;
+    margin-left: 6px;
+    position: absolute;
+    top: 3rpx;
+    width: 240rpx;
+}
+
+.app-more-phone .phone-annual.data-v-85644b1c {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.app-more-phone .group-item.data-v-85644b1c {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    align-items: center;
+    border-top: 1rpx solid #eee;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    font-size: 30rpx;
+    height: 100rpx;
+    justify-content: space-between;
+}
+
+.app-more-phone .know-button.data-v-85644b1c {
+    color: #128bed;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.app-more-phone .button-wrap.data-v-85644b1c {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    align-items: center;
+    border-top: 1rpx solid #eee;
+    display: flex;
+    flex-direction: row;
+    font-size: 36rpx;
+    justify-content: space-between;
+}

@@ -1,0 +1,3 @@
+<view class="card-47">
+    <image catchtap="preview" class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{item.pic_middle}}" wx:for="{{cardData.pics}}" wx:key="index"></image>
+</view>

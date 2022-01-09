@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ui-iphonex-spacer": "/components/ui-iphonex-spacer/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

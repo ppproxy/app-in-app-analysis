@@ -1,0 +1,115 @@
+<view class="card-9">
+    <view class="card-type" wx:if="{{wb.title&&wb.title.text}}">
+        <text class="card-type-title">{{wb.title.text}}</text>
+    </view>
+    <view bindtap="navigateTo" class="wb-detail">
+        <view class="wb-header">
+            <avator wb="{{wb}}"></avator>
+            <view class="text">
+                <view class="name {{wb.user.mbrank===0?'gray':''}}">
+                    <text>{{wb.user&&wb.user.name||''}}</text>
+                    <text class="~sprite-img ~vipl{{wb.user.mbrank}} ~vip-icon" wx:if="{{wb.user.mbrank!==0}}"></text>
+                </view>
+                <view class="msg">{{createat}} <view class="source" wx:if="wb.source&&wb.source != ''">{{utils.nourl(wb.source)}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="wb-content">
+            <view class="rich-text">
+                <block wx:for="{{wb.parseText}}" wx:key="index">
+                    <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{item.icon}}" wx:if="{{item.showIcon}}"></image>
+                    <text class="parse-text" data-item="{{item}}" wx:elif="{{item.tag==='normal'}}">{{item.content}}</text>
+                    <a catchtap="tapContent" class="parse-text topic" data-item="{{item}}" wx:elif="{{item.tag==='article'&&item.toShowArticle||item.tag==='wenda'&&item.toShowWenda}}">{{item.content}}</a>
+                    <a catchtap="tapContent" class="parse-text topic" data-item="{{item}}" wx:elif="{{item.tag!=='article'&&item.tag!=='wenda'}}">{{item.content}}</a>
+                </block>
+                <block wx:if="{{!detail&&wb.isLongText}}">
+                    <text class="parse-text">...</text>
+                    <text class="richstyle">全文</text>
+                </block>
+            </view>
+            <view class="media">
+                <view wx:if="{{wb.pic_ids&&wb.pic_ids.length>0&&wb.url_objects[0].object.object_type!=='video'}}">
+                    <ul class="ul {{wb.pic_ids.length===1?'one':wb.pic_ids.length===4?'four':''}}">
+                        <li catchtap="preview" class="li" data-id="{{item}}" data-ids="{{wb.pic_ids}}" style="{{wb.pic_ids.length==1?'width:452rpx':wb.pic_ids.length==4?'width: 50%':''}};{{wb.pic_ids.length==1?'height:310rpx':''}}" wx:for="{{wb.pic_ids}}" wx:key="index">
+                            <image class="image_box" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://ww3.sinaimg.cn/orj360/{{item}}.jpg" wx:if="{{wb.pic_ids.length==1}}"></image>
+                            <image class="image_box" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://ww3.sinaimg.cn/thumb150/{{item}}.jpg" wx:if="{{wb.pic_ids.length!=1}}"></image>
+                        </li>
+                    </ul>
+                </view>
+                <view catchtap="videoopt" class="~s-pb10" wx:if="{{item.object.object_type==='video'&&item.object.object.stream&&item.object.object.stream.url}}" wx:for="{{wb.url_objects}}" wx:key="index">
+                    <view wx:if="{{video.show}}">
+                        <video autoplay="{{true}}" bindfullscreenchange="fullScreenChange" bindplay="videoPlay" class="video" enablePlayGesture="{{true}}" id="video_{{wb.mid}}" poster="{{item.object.object.image.url}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(item.object.object.stream.url)}}"></video>
+                    </view>
+                    <view catchtap="showvideo" class="videofeed" wx:else>
+                        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                        <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../../assets/icons/common_icon_play.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="retweeted-blog" wx:if="{{wb.retweeted_status}}">
+                <view class="rich-text">
+                    <block wx:for="{{wb.retweeted_status.retParseText}}" wx:key="index">
+                        <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{item.icon}}" wx:if="{{item.showIcon}}"></image>
+                        <text catchtap="tapContent" class="parse-text" data-item="{{item}}" wx:elif="{{item.tag==='normal'}}">{{item.content}}</text>
+                        <a catchtap="tapContent" class="parse-text topic" data-item="{{item}}" wx:elif="{{item.tag==='article'&&item.toShowArticle||item.tag==='wenda'&&item.toShowWenda}}">{{item.content}}</a>
+                        <a catchtap="tapContent" class="parse-text topic" data-item="{{item}}" wx:elif="{{item.tag!=='article'&&item.tag!=='wenda'}}">{{item.content}}</a>
+                    </block>
+                </view>
+                <view class="media">
+                    <view wx:if="{{wb.retweeted_status.pic_ids&&wb.retweeted_status.pic_ids.length>0}}">
+                        <ul class="ul {{wb.retweeted_status.pic_ids.length===1?'one':wb.retweeted_status.pic_ids.length===4?'four':''}}">
+                            <li catchtap="preview" class="li" data-id="{{item}}" data-ids="{{wb.retweeted_status.pic_ids}}" style="{{wb.retweeted_status.pic_ids.length==1?'width:452rpx':wb.pic_ids.length==4?'width: 50%':''}};{{wb.retweeted_status.pic_ids.length==1?'height:310rpx':''}}" wx:for="{{wb.retweeted_status.pic_ids}}" wx:key="index">
+                                <image class="image_box" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://ww3.sinaimg.cn/orj360/{{item}}.jpg" wx:if="{{wb.retweeted_status.pic_ids.length==1}}"></image>
+                                <image class="image_box" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://ww3.sinaimg.cn/thumb150/{{item}}.jpg" wx:if="{{wb.retweeted_status.pic_ids.length!=1}}"></image>
+                            </li>
+                        </ul>
+                    </view>
+                    <view wx:for="{{wb.retweeted_status.url_objects}}" wx:key="index">
+                        <view class="~s-pb10" wx:if="{{item.object.object_type==='video'&&item.object.object.stream&&item.object.object.stream.url}}">
+                            <view wx:if="{{video.show}}">
+                                <video autoplay="{{true}}" bindfullscreenchange="fullScreenChange" bindplay="videoPlay" class="video" enablePlayGesture="{{true}}" id="video_retweeted_{{wb.mid}}" poster="{{utils.replaceHttps(item.object.object.image.url)}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(item.object.object.stream.url)}}"></video>
+                            </view>
+                            <view catchtap="showvideo" class="videofeed" wx:else>
+                                <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                                <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../../assets/icons/common_icon_play.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="wb-comment" wx:if="{{wb.comment_summary}}">
+            <view class="comment-list" wx:for="{{comment_summary}}" wx:key="index">
+                <text class="comment-name">{{item.name}}：</text>
+                <rich-text class="comment-text" nodes="{{item.text}}"></rich-text>
+            </view>
+        </view>
+        <view class="wb-footer">
+            <view class="footer-left" data-id="{{wb.id}}">
+                <view catchtap="cancalBubble" class="forward">
+                    <button class="forward-share" data-id="{{wb.id}}" data-picture="{{sharePic}}" data-text="{{wb.text}}" hoverClass="none" openType="share">
+                        <i class="m-font"></i>
+                        <text>{{wb.reposts_count!=0?utils.countNum(wb.reposts_count):'转发'}}</text>
+                    </button>
+                </view>
+                <view class="comment">
+                    <i class="m-font"></i>
+                    <text>{{wb.comments_count!=0?utils.countNum(wb.comments_count):'评论'}}</text>
+                </view>
+                <view catchtap="goToMiniProgram" class="like" data-id="{{wb.id}}">
+                    <i class="m-icon"></i>
+                    <text>{{wb.attitudes_count!=0?utils.countNum(wb.attitudes_count):'赞'}}</text>
+                </view>
+            </view>
+            <view catchtap="cancalBubble" class="wb-share">
+                <button class="bar-item-wechat" data-id="{{wb.id}}" data-picture="{{sharePic}}" data-text="{{wb.text}}" hoverClass="none" openType="share">
+                    <image class="bar-icon-wechat" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="../../../../assets/icons/button_icon_wechat_gray.png"></image>
+                    <view class="bar-item-txt-wechat">
+						分享
+					</view>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

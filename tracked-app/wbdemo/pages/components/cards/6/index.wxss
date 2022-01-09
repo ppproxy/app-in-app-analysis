@@ -1,0 +1,15 @@
+.card-6 {
+    box-sizing: border-box;
+    padding: 16rpx 0;
+    font-size: 28rpx;
+    color: #8e8e8e;
+    text-align: center;
+    background: #fff;
+    border-bottom: .5px solid #dcdcdc;
+}
+
+.icon-right {
+    font-size: 24rpx;
+    vertical-align: top;
+    margin-left: 6rpx;
+}

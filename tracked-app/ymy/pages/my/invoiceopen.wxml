@@ -1,0 +1,109 @@
+<view class="app mb70">
+    <view class="contacts_add">
+        <view class="order">
+            <view class="data_list data_list_face w_line rel ml15 mr15">
+                <view class="abs">
+                    <view>抬头类型</view>
+                </view>
+                <view class="wp100 flx rt">
+                    <radio-group class="rt">
+                        <label bindtap="__e" class="radio ml15" data-event-opts="{{[ [ 'tap',[ [ 'changeInput',[index] ] ] ] ]}}" value="{{item.value}}" wx:for="{{Items}}">
+                            <radio bindinput="__e" checked="{{item.isCheck}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Kind','$event',[] ] ] ] ] ]}}" value="{{Kind}}"></radio>{{item.name}}</label>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15">
+                <view class="abs">
+                    <view class="ml5">发票抬头</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','BuyerName','$event',[] ] ] ] ] ]}}" placeholder="请输入发票抬头" type="text" value="{{BuyerName}}"></input>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15" wx:if="{{Kind==2}}">
+                <view class="abs">
+                    <view class="ml5">公司税号</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','TaxNumber','$event',[] ] ] ] ] ]}}" placeholder="请输入公司税号" type="text" value="{{TaxNumber}}"></input>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15">
+                <view class="abs">
+                    <view class="ml5">联系电话</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Phone','$event',[] ] ] ] ] ]}}" placeholder="请输入手机号" type="text" value="{{Phone}}"></input>
+                </view>
+            </view>
+            <view bindtap="__e" class="data_list rel ml15 mr15 data_list_more" data-event-opts="{{[ [ 'tap',[ [ 'more',['$event'] ] ] ] ]}}" wx:if="{{Kind==2}}">
+                <view class="abs">
+                    <view class="ml5">更多内容</view>
+                </view>
+                <view class="rt mr5 fix">
+                    <image class="w14 rt mt15 _img" src="/static/images/lefticon_mini.png" width="14"></image>
+                    <view class="rt g9">填写备注、地址(非必填)</view>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15" wx:if="{{More&&Kind==2}}">
+                <view class="abs">
+                    <view class="ml5">银行信息</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Bank','$event',[] ] ] ] ] ]}}" placeholder="请输入银行信息" type="text" value="{{Bank}}"></input>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15" wx:if="{{More&&Kind==2}}">
+                <view class="abs">
+                    <view class="ml5">公司地址</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Address','$event',[] ] ] ] ] ]}}" placeholder="请输入公司地址" type="text" value="{{Address}}"></input>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15" wx:if="{{More&&Kind==2}}">
+                <view class="abs">
+                    <view class="ml5">公司电话</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Telephone','$event',[] ] ] ] ] ]}}" placeholder="请输入公司电话" type="text" value="{{Telephone}}"></input>
+                </view>
+            </view>
+            <view class="data_list rel w_line ml15 mr15" wx:if="{{More&&Kind==2}}">
+                <view class="abs">
+                    <view class="ml5">备注</view>
+                </view>
+                <view class="wp100 flx">
+                    <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Memo','$event',[] ] ] ] ] ]}}" placeholder="请输入备注信息" type="text" value="{{Memo}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="order top_line">
+            <view class="data_list rel ml15 mr15 cp">
+                <view class="abs">
+                    <view class="ml5">总金额</view>
+                </view>
+                <view class="wp100 flx tr">
+                    <view class="dib fo">{{TotalPrice}}<view class="dib g9">元</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="my_invoice_user">
+            <view class="my_invoice_user_tit">接收方式</view>
+            <view class="order">
+                <view class="data_list rel w_line ml15 mr15">
+                    <view class="abs">
+                        <view class="ml5">电子邮件</view>
+                    </view>
+                    <view class="wp100 flx">
+                        <input name bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Email','$event',[] ] ] ] ] ]}}" placeholder="用于向你发送电子发票" type="text" value="{{Email}}"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="big_btn order_btn ml15 mt15 mr15">
+            <button bindtap="__e" class="btn fw f18 wp100" data-event-opts="{{[ [ 'tap',[ [ 'addInvoice',['$event'] ] ] ] ]}}">提交发票</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,229 @@
+.vip2svip-mask.data-v-4c5e9c34 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.5);
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    padding: 0 80rpx;
+    position: fixed;
+    top: 0;
+    transition: all .5s;
+    width: 100%;
+    z-index: 99999;
+}
+
+.vip2svip-mask.show.data-v-4c5e9c34 {
+    display: flex;
+    opacity: 1;
+}
+
+.vip2svip-mask.hide.data-v-4c5e9c34 {
+    display: none;
+    opacity: 0;
+}
+
+.vip2svip-mask .vip2svip-wrapper.data-v-4c5e9c34 {
+    background-color: #fff;
+    border-radius: 8rpx;
+    min-height: 720rpx;
+    padding-bottom: 40rpx;
+    width: 100%;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper.data-v-4c5e9c34,.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header.data-v-4c5e9c34,.vip2svip-mask .vip2svip-wrapper.data-v-4c5e9c34 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header.data-v-4c5e9c34 {
+    border-radius: 8rpx 8rpx 0 0;
+    height: 176rpx;
+    padding-top: 40rpx;
+    width: 100%;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header .status.data-v-4c5e9c34 {
+    -webkit-box-align: center;
+    align-items: center;
+    color: #864d07;
+    display: flex;
+    font-size: 34rpx;
+    font-weight: 700;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header .status view.data-v-4c5e9c34 {
+    display: inline;
+    font-weight: 700;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header .status .icon-bar.data-v-4c5e9c34,.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header .status image.data-v-4c5e9c34 {
+    height: 40rpx;
+    margin-left: 6rpx;
+    width: 40rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header .status .icon-bar.vip-icon.data-v-4c5e9c34 {
+    background: url(https://eciapp-img.qichacha.com/community/48c9de69-9a89-466c-8618-0c720c246bb11624360286824.png) no-repeat 50%;
+    background-size: cover;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header .status .icon-bar.svip-icon.data-v-4c5e9c34 {
+    background: url(https://eciapp-img.qichacha.com/community/4d90deef-d8f6-4d17-8850-b1ff12c831741624360296748.png) no-repeat 50%;
+    background-size: cover;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header .date.data-v-4c5e9c34 {
+    color: #864d07;
+    font-size: 24rpx;
+    margin-top: 8rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header.bg-vip.data-v-4c5e9c34 {
+    background: url(https://eciapp-img.qichacha.com/community/a69899ca-bb37-48e7-85b1-f75f82f02d571624360341313.png) no-repeat top;
+    background-size: cover;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.header.bg-svip.data-v-4c5e9c34 {
+    background: url(https://eciapp-img.qichacha.com/community/fefdff42-7983-41bc-9ec0-8b78215ee42e1624360372269.png) no-repeat top;
+    background-size: cover;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.vip-bar.data-v-4c5e9c34 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    background: url(https://eciapp-img.qichacha.com/community/befc7ea9-b566-45bd-afd6-0a38121db6021624360398219.png) no-repeat 50%;
+    background-size: cover;
+    color: #bb833d;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40rpx;
+    margin-top: -20rpx;
+    min-height: 104rpx;
+    padding: 16rpx 24rpx;
+    position: relative;
+    width: calc(100% - 96rpx);
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.vip-bar.data-v-4c5e9c34::before {
+    border: 1px solid #bb833d;
+    border-radius: 16rpx;
+    content: "";
+    height: 200%;
+    left: -50%;
+    position: absolute;
+    top: -50%;
+    transform: scale(.5);
+    width: 200%;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.vip-bar .title.data-v-4c5e9c34 {
+    font-size: 28rpx;
+    font-weight: 700;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.vip-bar .date.data-v-4c5e9c34 {
+    font-size: 24rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content.data-v-4c5e9c34 {
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0 40rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .title.data-v-4c5e9c34 {
+    display: flex;
+    font-size: 30rpx;
+    font-weight: 700;
+    margin-bottom: 24rpx;
+    position: relative;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .title.data-v-4c5e9c34::before {
+    background-color: #333;
+    content: "";
+    height: 1px;
+    left: -60rpx;
+    position: absolute;
+    top: 20rpx;
+    transform: scaleY(.5);
+    width: 44rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .title.data-v-4c5e9c34::after {
+    background-color: #333;
+    content: "";
+    height: 1px;
+    position: absolute;
+    right: -60rpx;
+    top: 20rpx;
+    transform: scaleY(.5);
+    width: 44rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .item.data-v-4c5e9c34 {
+    font-size: 28rpx;
+    text-align: left;
+    width: 100%;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .item .jump.data-v-4c5e9c34 {
+    color: #864d07;
+    display: inline;
+    font-weight: 700;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .item .jump>image.data-v-4c5e9c34 {
+    left: 4rpx;
+    position: relative;
+    top: 4rpx;
+    width: 12rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .item+.item.data-v-4c5e9c34 {
+    margin-top: 24rpx;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .contact.data-v-4c5e9c34 {
+    color: #999;
+    font-size: 26rpx;
+    margin-top: 24rpx;
+    text-align: left;
+    width: 100%;
+}
+
+.vip2svip-mask .vip2svip-wrapper .click-wrapper>.content .contact view.data-v-4c5e9c34 {
+    color: #128bed;
+    display: inline;
+}
+
+.vip2svip-mask .vip2svip-wrapper>.button.data-v-4c5e9c34 {
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #f7d3a3;
+    border-radius: 8rpx;
+    color: #864d07;
+    display: flex;
+    font-size: 32rpx;
+    height: 88rpx;
+    justify-content: center;
+    margin-top: 48rpx;
+    width: calc(100% - 96rpx);
+}

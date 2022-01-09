@@ -1,0 +1,13 @@
+<view bindtap="__e" class="uni-noticebar data-v-24a05de4" data-event-opts="{{[ [ 'tap',[ [ 'onClick',['$event'] ] ] ] ]}}" style="{{'background-color:'+backgroundColor+';'}}" wx:if="{{show}}">
+    <uni-icons bind:__l="__l" bind:click="__e" class="uni-noticebar-close data-v-24a05de4" color="{{color}}" data-event-opts="{{[ [ '^click',[ ['close'] ] ] ]}}" size="12" type="closeempty" vueId="6f6bdfa2-1" wx:if="{{showClose===true||showClose==='true'}}"></uni-icons>
+    <uni-icons bind:__l="__l" class="uni-noticebar-icon data-v-24a05de4" color="{{color}}" size="14" type="sound" vueId="6f6bdfa2-2" wx:if="{{showIcon===true||showIcon==='true'}}"></uni-icons>
+    <view class="{{['uni-noticebar__content-wrapper data-v-24a05de4 vue-ref',scrollable?'uni-noticebar__content-wrapper--scrollable':'',!scrollable&&(single||moreText)?'uni-noticebar__content-wrapper--single':'']}}" data-ref="textBox">
+        <view class="{{['uni-noticebar__content data-v-24a05de4',scrollable?'uni-noticebar__content--scrollable':'',!scrollable&&(single||moreText)?'uni-noticebar__content--single':'']}}" id="{{elIdBox}}">
+            <text class="{{['uni-noticebar__content-text data-v-24a05de4 vue-ref',scrollable?'uni-noticebar__content-text--scrollable':'',!scrollable&&(single||moreText)?'uni-noticebar__content-text--single':'']}}" data-ref="animationEle" id="{{elId}}" style="{{'color:'+color+';'+'width:'+wrapWidth+'px'+';'+'animation-duration:'+animationDuration+';'+'-webkit-animation-duration:'+animationDuration+';'+'animation-play-state:'+(webviewHide?'paused':animationPlayState)+';'+'-webkit-animation-play-state:'+(webviewHide?'paused':animationPlayState)+';'+'animation-delay:'+animationDelay+';'+'-webkit-animation-delay:'+animationDelay+';'}}">{{text}}</text>
+        </view>
+    </view>
+    <view bindtap="__e" class="uni-noticebar__more data-v-24a05de4" data-event-opts="{{[ [ 'tap',[ [ 'clickMore',['$event'] ] ] ] ]}}" wx:if="{{showGetMore===true||showGetMore==='true'}}">
+        <text class="uni-noticebar__more-text data-v-24a05de4" style="{{'color:'+moreColor+';'}}" wx:if="{{moreText}}">{{moreText}}</text>
+        <uni-icons bind:__l="__l" class="data-v-24a05de4" color="{{moreColor}}" size="14" type="arrowright" vueId="6f6bdfa2-3"></uni-icons>
+    </view>
+</view>

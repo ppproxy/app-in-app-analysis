@@ -1,0 +1,188 @@
+function formatNumber(n) {
+    n = n.toString();
+    return (n[(1)] ? n : '0' + n)
+};
+
+function formatTime(date) {
+    date = getDate(date);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    return ([year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':'))
+};
+
+function formatVideoTime(duration) {
+    if (!duration) {
+        return
+    };
+    var time = '';
+    var hour = parseInt(duration / 3600);
+    var minute = parseInt(duration % 3600 / 60);
+    var second = parseInt(duration % 60);
+    if (hour > 0) {
+        if (hour < 10) {
+            time += '0' + hour + ':'
+        } else {
+            time += hour + ':'
+        }
+    };
+    if (minute > 0) {
+        if (minute < 10) {
+            time += '0' + minute + ':'
+        } else {
+            time += minute + ':'
+        }
+    } else {
+        time += '00:'
+    };
+    if (second > 0) {
+        if (second < 10) {
+            time += '0' + second
+        } else {
+            time += second
+        }
+    } else {
+        time += '00'
+    };
+    return (time)
+};
+
+function replaceHttps(value) {
+    if (value) {
+        var regexp = getRegExp('^http:', '');
+        return (value ? value.replace(regexp, 'https:') : '')
+    };
+    return (value)
+};
+
+function imageSize(url, tar) {
+    if (url) {
+        var regexp = getRegExp('\x5c/+', 'g');
+        var arr_url = url.split(regexp);
+        return (arr_url[(0)] + '//' + arr_url[(1)] + '/' + tar + '/' + arr_url[((nt_3 = (arr_url.length - 1), null == nt_3 ? undefined : 'number' === typeof nt_3 ? nt_3 : "" + nt_3))])
+    }
+};
+
+function videoTime(value) {
+    var hours = parseInt((value) / 3600);
+    var mins = parseInt((value % 3600) / 60);
+    var seconds = Math.floor(value % 60);
+    if (hours == 0) {
+        return (zeroTo(mins) + ':' + zeroTo(seconds))
+    } else {
+        return (zeroTo(hours) + ':' + zeroTo(mins) + ':' + zeroTo(seconds))
+    }
+};
+
+function zeroTo(value) {
+    return ((value < 10 ? '0' : '') + value)
+};
+
+function countNum(num) {
+    if (num > 100000000) {
+        return ((num / 100000000).toFixed(1) * 10 / 10 + '亿')
+    } else if (num > 10000) {
+        return ((num / 10000).toFixed(1) * 10 / 10 + '万')
+    } else {
+        return (num)
+    }
+};
+
+function getUserType(data) {
+    var user = data ? ((data.wb && data.wb.user) || data.user || data) : ({});
+    if (user) {
+        if (user.verified) {
+            if (user.verified_type == 0) {
+                if (user.verified_type_ext && user.verified_type_ext == 1) {
+                    return ('goldv')
+                } else {
+                    return ('yellowv')
+                }
+            } else {
+                return ('bluev')
+            }
+        } else {
+            if (user.verified_type == 220) {
+                return ('club')
+            } else if (user.verified_type == 10) {
+                return ('vgirl')
+            }
+        }
+    }
+};
+
+function getVipLevel(data) {
+    var user = data ? ((data.wb && data.wb.user) || data.user || data) : ({});
+    if (user.mbrank) {
+        if (user.mbrank != 0) {
+            return ('vipl' + user.mbrank)
+        }
+    }
+};
+
+function parseScheme(sceme, name) {
+    if (sceme) {
+        return (decodeURIComponent(sceme).indexOf(name))
+    };
+    return (false)
+};
+
+function parseSchemeByKey(scheme, key) {
+    if (scheme) {
+        scheme = decodeURIComponent(scheme);
+        if (scheme.indexOf('?') > -1) {
+            scheme = scheme.split('?')[(1)]
+        };
+        scheme = scheme.split('\x26');
+        var obj = ({});
+        for (var i = 0; i < scheme.length; i++) {
+            var data = scheme[((nt_5 = (i), null == nt_5 ? undefined : 'number' === typeof nt_5 ? nt_5 : "" + nt_5))].split('\x3d');
+            if (!obj[((nt_6 = (data[(0)]), null == nt_6 ? undefined : 'number' === typeof nt_6 ? nt_6 : "" + nt_6))]) {
+                obj[((nt_8 = (data[(0)]), null == nt_8 ? undefined : 'number' === typeof nt_8 ? nt_8 : "" + nt_8))] = data[(1)]
+            }
+        };
+        return (obj[((nt_11 = (key), null == nt_11 ? undefined : 'number' === typeof nt_11 ? nt_11 : "" + nt_11))] ? obj[((nt_12 = (key), null == nt_12 ? undefined : 'number' === typeof nt_12 ? nt_12 : "" + nt_12))] : '')
+    }
+};
+
+function removeTopicFlag(query) {
+    if (query) {
+        var regexp = getRegExp('\x5c#', 'g');
+        return (query.replace(regexp, ''))
+    };
+    return (query)
+};
+
+function judgeIsTopic(query) {
+    query = decodeURIComponent(query);
+    var indexOf = query.indexOf('#');
+    return (indexOf > -1)
+};
+
+function nourl(url) {
+    if (!url || url == '') {
+        return ('')
+    };
+    var regexp = getRegExp('\x3c\x5c/?[^\x3e]*\x3e', 'g');
+    var source = url.replace(regexp, '');
+    return ('来自' + source)
+};
+module.exports = ({
+    formatNumber: formatNumber,
+    formatTime: formatTime,
+    formatVideoTime: formatVideoTime,
+    replaceHttps: replaceHttps,
+    imageSize: imageSize,
+    videoTime: videoTime,
+    countNum: countNum,
+    getUserType: getUserType,
+    getVipLevel: getVipLevel,
+    parseScheme: parseScheme,
+    judgeIsTopic: judgeIsTopic,
+    nourl: nourl,
+    parseSchemeByKey: parseSchemeByKey,
+    removeTopicFlag: removeTopicFlag,
+});

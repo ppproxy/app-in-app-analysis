@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "人员列表",
+    "usingComponents": {
+        "app-no-data": "/components/app-no-data/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "filter-list": "/components/filter-list/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "监控",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-no-data": "/components/app-no-data/index",
+        "filter-list": "/components/filter-list/index",
+        "app-auto-logo": "/components/app-auto-logo/index",
+        "app-monitor-pop": "/components/app-monitor-pop/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

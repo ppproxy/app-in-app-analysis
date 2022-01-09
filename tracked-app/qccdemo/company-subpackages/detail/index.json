@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "企业主页",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "app-monitor-pop": "/components/app-monitor-pop/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-download-pop": "/components/app-download-pop/index",
+        "app-launch-app": "/components/app-launch-app/index",
+        "custom-bar": "/components/custom-bar/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

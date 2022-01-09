@@ -1,0 +1,254 @@
+page::after {
+    animation: shadow-preload .1s;
+    animation-delay: 3s;
+    content: "";
+    left: -1000px;
+    position: fixed;
+    top: -1000px;
+}
+
+@-webkit-keyframes shadow-preload {
+    0% {
+        background-image: url(https://cdn.dcloud.net.cn/img/shadow-grey.png);
+    }
+
+    100% {
+        background-image: url(https://cdn.dcloud.net.cn/img/shadow-grey.png);
+    }
+}
+
+@keyframes shadow-preload {
+    0% {
+        background-image: url(https://cdn.dcloud.net.cn/img/shadow-grey.png);
+    }
+
+    100% {
+        background-image: url(https://cdn.dcloud.net.cn/img/shadow-grey.png);
+    }
+}
+
+page {
+    background-color: #f3f3f3;
+    word-break: break-all;
+}
+
+page::after {
+    content: none!important;
+    display: none!important;
+}
+
+page scroll-view {
+    position: relative;
+}
+
+page view {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+page image {
+    background-repeat: no-repeat!important;
+}
+
+page button::after {
+    border: none;
+}
+
+page button {
+    border: none;
+    height: auto;
+}
+
+page input {
+    background-color: initial;
+    border: none;
+    line-height: 1;
+    list-style: none;
+    outline: none;
+    padding: 0;
+}
+
+page button.disabled {
+    background-color: #ccc;
+    color: #666;
+}
+
+page scroll-view {
+    box-sizing: border-box;
+}
+
+page .clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+page .line-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+page .line-2 {
+    -webkit-line-clamp: 2;
+}
+
+page .line-2,page .line-3 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+}
+
+page .line-3 {
+    -webkit-line-clamp: 3;
+}
+
+page .line-4 {
+    -webkit-line-clamp: 4;
+}
+
+page .line-4,page .line-5 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+}
+
+page .line-5 {
+    -webkit-line-clamp: 5;
+}
+
+page .red {
+    color: #ff475d;
+}
+
+page .block-padding-10 {
+    display: inline-block;
+    padding: 0 10rpx;
+}
+
+page .gray {
+    color: grey;
+}
+
+page .blue {
+    color: #128bed!important;
+}
+
+page .font-11 {
+    font-size: 22rpx;
+}
+
+page .font-12 {
+    font-size: 24rpx;
+}
+
+page .font-13 {
+    font-size: 26rpx;
+}
+
+page .font-14 {
+    font-size: 28rpx;
+}
+
+page .font-15 {
+    font-size: 30rpx;
+}
+
+page .font-16 {
+    font-size: 32rpx;
+}
+
+page .color-3 {
+    color: #333;
+}
+
+page .color-6 {
+    color: #666;
+}
+
+page .color-9 {
+    color: #999;
+}
+
+page .color-8a {
+    color: #8a8a8a;
+}
+
+page .hidden {
+    overflow: hidden;
+}
+
+page .fr {
+    float: right;
+}
+
+page .fl {
+    float: left;
+}
+
+page .clear-fix {
+    overflow: hidden;
+}
+
+page .flex-box {
+    display: flex;
+}
+
+page .flex-1 {
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+page .flex-shrink0 {
+    flex-shrink: 0;
+}
+
+page .space-24 {
+    display: inline-block;
+    width: 24rpx;
+}
+
+page .space-48 {
+    display: inline-block;
+    width: 48rpx;
+}
+
+page .inline {
+    display: inline;
+}
+
+page .inline-block {
+    display: inline-block;
+}
+
+page .line-bottom {
+    position: relative;
+}
+
+page .line-bottom:before {
+    border-bottom: 2rpx solid #eee;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    transform: scaleY(.5);
+    transform-origin: 0 100%;
+    width: 100%;
+}
+
+page .vertical-center {
+    -webkit-box-pack: left;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    justify-content: left;
+}
+
+[bind-data-custom-hidden="true"],[data-custom-hidden="true"] {
+    display: none!important;
+}

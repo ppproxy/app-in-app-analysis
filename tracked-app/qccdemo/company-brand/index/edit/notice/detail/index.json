@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "编辑企业公告",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

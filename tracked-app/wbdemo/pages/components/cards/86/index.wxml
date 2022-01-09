@@ -1,0 +1,5 @@
+<scroll-view class="card-86" scrollX="{{true}}">
+    <view class="sub-cards" style="width: {{cardData.sub_cards&&cardData.sub_cards.length*300+10*(cardData.sub_cards.length-1)}}rpx;">
+        <card-87 cardData="{{item}}" class="_card-87" wx:for="{{cardData.sub_cards}}" wx:key="index"></card-87>
+    </view>
+</scroll-view>

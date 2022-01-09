@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "参股控股",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

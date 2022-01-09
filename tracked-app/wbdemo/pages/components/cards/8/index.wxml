@@ -1,0 +1,10 @@
+<view catchtap="onClickTap" class="card-8" data-query="{{cardData.title_sub}}" data-scheme="{{cardData.scheme}}">
+    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.pic)}}" wx:if="{{cardData.pic}}"></image>
+    <view style="{{cardData.pic?'padding-left: 160rpx':''}}">
+        <view class="title" wx:if="{{cardData.title}}">{{cardData.title}}</view>
+        <view class="title-sub" style="{{!cardData.desc1?'margin-top: 25rpx;':''}}">{{cardData.title_sub}}</view>
+        <view class="desc1" wx:if="{{cardData.desc1}}">{{cardData.desc1}}</view>
+        <view class="desc2" wx:if="{{cardData.desc2}}">{{cardData.desc2}}</view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

@@ -1,0 +1,35 @@
+.card-42 {
+    box-sizing: border-box;
+    padding: 16rpx 0;
+    height: 72rpx;
+    background: #fff;
+    border-top: .5px solid #dcdcdc;
+    border-bottom: .5px solid #dcdcdc;
+    overflow: hidden;
+}
+
+.title {
+    padding-left: 20rpx;
+    font-size: 28rpx;
+    color: #595959;
+    border-left: 6rpx solid #e48938;
+}
+
+.desc {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-right: 20rpx;
+}
+
+.desc .text {
+    color: #595959;
+    font-size: 12px;
+    margin-right: 10rpx;
+}
+
+.icon-right {
+    font-size: 24rpx;
+    color: #e48938;
+    font-weight: 700;
+}

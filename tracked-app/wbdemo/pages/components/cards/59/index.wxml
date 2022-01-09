@@ -1,0 +1,87 @@
+<view class="card-59">
+    <view class="card-59-pic" wx:if="{{cardData.left_element.mblog.id}}">
+        <view bindtap="preview" class="videofeed" data-ids="{{cardData.left_element.mblog.pic_ids}}" wx:if="{{cardData.left_element.mblog.original_pic}}">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.left_element.mblog.original_pic)}}"></image>
+        </view>
+        <view bindtap="preview" class="videofeed" data-ids="{{cardData.left_element.mblog.pic_ids}}" wx:elif="{{cardData.left_element.mblog.pic_ids&&cardData.left_element.mblog.pic_ids.length}}">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/middle/{{cardData.left_element.mblog.pic_ids[0]}}.jpg"></image>
+        </view>
+        <view wx:else>
+            <block wx:for="{{cardData.left_element.mblog.url_objects}}" wx:key="index">
+                <view wx:if="{{item.object.object_type==='video'}}">
+                    <view wx:if="{{cardData.left_element.show}}">
+                        <video autoplay="{{true}}" bindplay="videoPlay" class="video" id="video_{{cardData.left_element.mblog.mid}}" poster="{{item.object.object.image.url}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(item.object.object.stream.url)}}"></video>
+                    </view>
+                    <view catchtap="showvideo" class="videofeed" data-type="left_element" wx:else>
+                        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                        <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../../assets/icons/common_icon_play.png"></image>
+                    </view>
+                </view>
+                <view class="article" wx:elif="{{item.object.object.author&&item.object.object_type==='article'}}">
+                    <view class="msg">
+                        <view class="logo">&nbsp;</view>
+                        <view>
+                            <image class="avator" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(item.object.object.author.avatar_large)}}" style="width: 40rpx;height: 40rpx;background: #ebebeb;"></image>{{item.object.object.author.display_name}}
+            </view>
+                        <view class="title">{{item.object.object.display_name}}</view>
+                    </view>
+                    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                </view>
+            </block>
+        </view>
+        <view class="content">
+            <view class="desc1">{{cardData.left_element.desc1}}</view>
+            <view style="position: relative;overflow: hidden;">
+                <avator type="small" wb="{{cardData.left_element.mblog}}"></avator>
+                <text class="name">{{cardData.left_element.mblog.user.name}}</text>
+                <view class="attitudes_count">
+                    <view class="icon-good ~sprite-img ~sign ~{{cardData.left_element.mblog.user.like?'good':'ngood'}} ~small"></view>
+                    <text>{{cardData.left_element.mblog.attitudes_count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="card-59-pic" wx:if="{{cardData.right_element.mblog.id}}">
+        <view bindtap="preview" class="videofeed" data-ids="{{cardData.right_element.mblog.pic_ids}}" wx:if="{{cardData.right_element.mblog.original_pic}}">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.right_element.mblog.original_pic)}}"></image>
+        </view>
+        <view bindtap="preview" class="videofeed" data-ids="{{cardData.right_element.mblog.pic_ids}}" wx:elif="{{cardData.right_element.mblog.pic_ids&&cardData.right_element.mblog.pic_ids.length}}">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/middle/{{cardData.right_element.mblog.pic_ids[0]}}.jpg"></image>
+        </view>
+        <view wx:else>
+            <block wx:for="{{cardData.right_element.mblog.url_objects}}" wx:key="index">
+                <view wx:if="{{item.object.object_type==='video'}}">
+                    <view wx:if="{{cardData.right_element.show}}">
+                        <video autoplay="{{true}}" bindfullscreenchange="fullScreenChange" bindplay="videoPlay" class="video" id="video_{{cardData.right_element.mblog.mid}}" poster="{{item.object.object.image.url}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(item.object.object.stream.url)}}"></video>
+                    </view>
+                    <view catchtap="showvideo" class="videofeed" data-type="right_element" wx:else>
+                        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                        <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../../assets/icons/common_icon_play.png"></image>
+                    </view>
+                </view>
+                <view class="article" wx:elif="{{item.object.object.author&&item.object.object_type==='article'}}">
+                    <view class="msg">
+                        <view class="logo">&nbsp;</view>
+                        <view>
+                            <image class="avator" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(item.object.object.author.avatar_large)}}" style="width: 40rpx;height: 40rpx;background: #ebebeb;"></image>{{item.object.object.author.display_name}}
+            </view>
+                        <view class="title">{{item.object.object.display_name}}</view>
+                    </view>
+                    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                </view>
+            </block>
+        </view>
+        <view class="content">
+            <view class="desc1">{{cardData.right_element.desc1}}</view>
+            <view style="position: relative;overflow: hidden;">
+                <avator type="small" wb="{{cardData.right_element.mblog}}"></avator>
+                <text class="name">{{cardData.right_element.mblog.user.name}}</text>
+                <view class="attitudes_count">
+                    <view class="icon-good ~sprite-img ~sign ~{{cardData.right_element.mblog.user.like?'good':'ngood'}} ~small"></view>
+                    <text>{{cardData.right_element.mblog.attitudes_count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

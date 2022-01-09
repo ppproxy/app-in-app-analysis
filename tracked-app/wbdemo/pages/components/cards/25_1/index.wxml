@@ -1,0 +1,24 @@
+<view catchtap="cardClick" class="card-25" data-query="{{cardData.title_sub}}" style="border-radius: {{headerBar?0:'20rpx 20rpx 0 0'}}">
+    <view class="card-25-zone">
+        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(cardData.pic)}}"></image>
+        <image class="top-mark-pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="/assets/icons/{{cardData.top_mark_text<=3?'icon_number_background':'icon_number_background_normal'}}.png"></image>
+        <text class="top-mark-text" style="font-size: {{cardData.top_mark_text>=10?'22rpx':'24rpx'}}">{{cardData.top_mark_text}}</text>
+        <view class="content">
+            <view style="display:flex;align-items:centerposition:relative;margin-bottom:12rpx;">
+                <image class="icon-topic-single" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="/assets/icons/icon_topic_single.png"></image>
+                <view class="title-sub" style="max-width: {{cardData.title_flag_pic?'80%':'100%'}}">{{utils.removeTopicFlag(cardData.title_sub)}}</view>
+                <image class="icon-topic-single" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="/assets/icons/icon_topic_single.png"></image>
+                <image class="topic-title-flag" lazyLoad="{{true}}" lazyLoadMargin="0" mode="heightFix" src="{{cardData.title_flag_pic}}" wx:if="{{cardData.title_flag_pic}}"></image>
+            </view>
+            <view class="card-expand-content" wx:if="{{cardData.card_expand&&cardData.card_expand.content}}">{{cardData.card_expand.content}}</view>
+            <view class="desc">
+                <text class="desc_1">{{cardData.desc_arr[0]}} </text>
+                <view class="desc_2" wx:if="{{cardData.desc_arr[1]}}">
+                    <text class="desc-point"></text>
+                    <text class="desc_2_text">{{cardData.desc_arr[1]}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

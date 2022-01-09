@@ -1,0 +1,28 @@
+<view class="app_index">
+    <view class="my_contacts" wx:if="{{contactsList&&contactsList.length>0}}">
+        <navigator url="{{'newcontacts?userid='+contacts[$orig].ID}}" wx:for="{{$root.l0}}" wx:for-index="i" wx:for-item="contacts" wx:key="i">
+            <view class="my_contacts_box">
+                <view class="my_contacts_icon">{{contacts.g0}}</view>
+                <view class="my_contacts_text">
+                    <view class="my_contacts_name b f16 g3">{{contacts[$orig].Name+''}}<view class="dib n f12 my_contacts_name_tags ml10" wx:if="{{contacts[$orig].IsSelf}}">账户本人</view>
+                    </view>
+                    <view class="my_contacts_phone g6 f13 mt5">{{contacts[$orig].IDCard}}</view>
+                </view>
+                <view class="my_contacts_rt">
+                    <image class="my_contacts_rt_arrow w12 _img" src="/static/images/lefticon_mini.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <view class="more f13 tc" wx:if="{{contactsList&&contactsList.length>=7}}">
+            <view class="dib mr10">—</view>没有更多了<view class="dib ml10">—</view>
+        </view>
+    </view>
+    <view class="more f13 tc" wx:else>
+        <view class="dib mr10">—</view>暂无联系人<view class="dib ml10">—</view>
+    </view>
+    <view class="my_contacts_action my_contacts_end _div">
+        <view class="my_contacts_action_main _div">
+            <navigator class="my_contacts_action_btn db" url="newcontacts">新增联系人</navigator>
+        </view>
+    </view>
+</view>

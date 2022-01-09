@@ -1,0 +1,12 @@
+<view class="{{['data-v-716a9716',true?'sort':'']}}" style="{{'position:fixed;'}}">
+    <view bindtap="__e" class="{{[ 'data-v-716a9716','condition-pop '+(item.show?'':'condition-pop-hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" style="{{'top:'+filterStyle.top+80+'rpx;'+(isFlow?'position:absolute;':'position:fixed;')}}" wx:for="{{sortArr}}" wx:key="index">
+        <view class="condition-pop-wrap data-v-716a9716">
+            <view class="condition-pop-center data-v-716a9716">
+                <view catchtap="__e" class="sort-item data-v-716a9716" data-event-opts="{{[ [ 'tap',[ [ 'selectFilter',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" wx:for="{{item.list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                    <text class="sort-item-text data-v-716a9716">{{alt.label}}</text>
+                    <image class="condition-img data-v-716a9716" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_condition_selected.png" wx:if="{{alt.value===item.value}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "工商信息",
+    "usingComponents": {
+        "app-monitor-pop": "/components/app-monitor-pop/index",
+        "app-report-pop": "/components/app-report-pop/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-opened-footer": "/components/app-opened-footer/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

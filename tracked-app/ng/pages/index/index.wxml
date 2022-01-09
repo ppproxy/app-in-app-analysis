@@ -1,0 +1,31 @@
+<view class="list">答题练习</view>
+<view class="introduction">坚持练习掌握知识</view>
+<view class="everyday_all">
+    <view bindtap="gotoExercise" class="everyday">
+        <view class="everyday_img">
+            练
+        </view>
+        <view class="everyday_right">
+            <view>每日练习</view>
+            <view>不积小流，无以成江海</view>
+        </view>
+    </view>
+    <view bindtap="gotoExam" class="everyday1">
+        <view class="everyday_img1">
+            刷
+        </view>
+        <view class="everyday_right">
+            <view>重复刷题</view>
+            <view>术业有专攻，道义有精论</view>
+        </view>
+    </view>
+    <view bindtap="gotoRank" class="everyday2">
+        <view class="everyday_img2">
+            誉
+        </view>
+        <view class="everyday_right">
+            <view>荣耀排名</view>
+            <view>忠诚是通向荣誉之路</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+.swiper-slide {
+    height: 10px;
+}
+
+.swiper-slide-active {
+    height: auto;
+}

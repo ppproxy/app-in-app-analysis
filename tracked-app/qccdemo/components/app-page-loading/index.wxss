@@ -1,0 +1,25 @@
+.app-page-loading.data-v-1e462f11 {
+    background-color: #fff;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateZ(0);
+    width: 750rpx;
+    z-index: 9999;
+}
+
+.app-page-loading>.bg.data-v-1e462f11 {
+    background-image: url(https://share.qichacha.com/lite-app-resources/html/images/common/report_loading-new.GIF);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 208rpx;
+    left: 50%;
+    margin-left: -240rpx;
+    margin-top: -104rpx;
+    position: absolute;
+    top: 45%;
+    width: 480rpx;
+}

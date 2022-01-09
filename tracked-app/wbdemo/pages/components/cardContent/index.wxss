@@ -1,0 +1,15 @@
+.gray-line {
+    width: 750rpx;
+    height: 20rpx;
+    background-color: #f2f2f2;
+    border-bottom: .5px solid #e6e6e6;
+    border-top: .5px solid #e6e6e6;
+}
+
+.card-placeholder {
+    display: block;
+    background: url(https://h5.sinaimg.cn/upload/100/843/2019/09/19/card_placeholder.png)no-repeat 50%;
+    background-size: 100% 370rpx;
+    width: 100%;
+    height: 370rpx;
+}

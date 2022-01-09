@@ -1,0 +1,13 @@
+<view class="card-10" wx:if="{{cardData.user.avatar_large}}">
+    <view class="user-img">
+        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.user.avatar_large)}}"></image>
+        <view class="~sprite-img ~sign-biger ~{{utils.getUserType(cardData)}}"></view>
+    </view>
+    <view class="screen-name">
+        <text>{{cardData.user.screen_name}}</text>
+        <text class="~sprite-img ~{{utils.getVipLevel(cardData)}} ~vip-icon-biger"></text>
+    </view>
+    <view class="desc1" wx:if="{{cardData.desc1}}">{{cardData.desc1}}</view>
+    <view class="followers-count" wx:if="{{cardData.user&&cardData.user.followers_count}}">粉丝：{{utils.countNum(cardData.user.followers_count)}}</view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

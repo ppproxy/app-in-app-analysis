@@ -1,0 +1,7 @@
+<view wx:if="{{launchFromApp}}">
+    <button appParameter="sinaweibo://discover" binderror="launchAppError" class="open-app-button" hoverClass="none" openType="launchApp" size="mini" type="default">
+        <view class="wrap">
+      打开app
+    </view>
+    </button>
+</view>

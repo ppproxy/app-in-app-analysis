@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "风险图谱",
+    "pageOrientation": "landscape",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

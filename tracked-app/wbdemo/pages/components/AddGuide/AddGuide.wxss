@@ -1,0 +1,44 @@
+.add-guide {
+    z-index: 10000001;
+    width: 750rpx;
+    height: 54rpx;
+    display: flex;
+    align-items: center;
+    font-family: PingFang-SC-Medium;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.add-guide,.arrow {
+    position: fixed;
+    background-color: #ff9406;
+}
+
+.arrow {
+    width: 20rpx;
+    height: 20rpx;
+    transform: rotate(45deg);
+    white-space: normal;
+    line-height: inherit;
+}
+
+.content-box {
+    display: flex;
+    align-items: center;
+}
+
+.img-close {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 0 18rpx;
+}
+
+.img-dot {
+    height: 24rpx;
+    width: 52rpx;
+    margin: 0 4rpx;
+}
+
+.guide-place-holder {
+    height: 74rpx;
+}

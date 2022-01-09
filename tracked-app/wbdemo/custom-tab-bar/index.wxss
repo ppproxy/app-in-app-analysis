@@ -1,0 +1,32 @@
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 96rpx;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-bar-item {
+    flex: 1;
+    text-align: center;
+    flex-direction: column;
+    width: 33.3%;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.tab-bar-item:last-child {
+    border-right: none;
+}
+
+.menu-img {
+    width: 52rpx;
+    height: 52rpx;
+    vertical-align: top;
+    margin-top: 10rpx;
+}

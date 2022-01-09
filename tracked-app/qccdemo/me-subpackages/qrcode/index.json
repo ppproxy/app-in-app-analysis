@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "小程序二维码",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

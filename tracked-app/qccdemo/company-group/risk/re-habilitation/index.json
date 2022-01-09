@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "破产重整",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

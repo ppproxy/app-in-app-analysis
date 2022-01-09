@@ -1,0 +1,159 @@
+<view class="uni-wrap data-v-00db3cfb" style="{{'background-color:'+background+';'}}">
+    <scroll-view class="scroll-wrap data-v-00db3cfb" scrollY="true">
+        <block wx:if="{{needSVip}}">
+            <view class="app-vip-products data-v-00db3cfb">
+                <view class="{{['product-items-wrapper swiper-no-swiping data-v-00db3cfb',vipOrderList&&vipOrderList.length>3?'can-scroll':'']}}">
+                    <view bindtap="__e" class="{{['product-item data-v-00db3cfb',product[$orig].goods_id===sVipSelectGood.goods_id?'selected':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectProduct',['$event'] ] ] ] ]}}" data-item="{{product.g0}}" wx:for="{{$root.l0}}" wx:for-index="n" wx:for-item="product" wx:key="n">
+                        <view class="wrapper data-v-00db3cfb"></view>
+                        <view class="product-item-container data-v-00db3cfb">
+                            <view class="recommend data-v-00db3cfb" wx:if="{{product[$orig].is_recommended==='1'}}"></view>
+                            <view class="name data-v-00db3cfb">{{''+(product[$orig].goods_short_name||product.g1)+''}}</view>
+                            <view class="original-price data-v-00db3cfb">{{'￥'+product[$orig].price+''}}</view>
+                            <view class="price-per-day data-v-00db3cfb">
+                                <image class="good data-v-00db3cfb" src="https://eciapp-img.qichacha.com/community/0a3d6a6e-ed4f-4351-ad9d-6344321d8b191619329955437.png"></image>{{''+product[$orig].pricePerDay+' 元/天'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="discount-info data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'couponPopOpen',['$event'] ] ] ] ]}}" wx:if="{{showCouponTab}}">
+                <text class="dis-title data-v-00db3cfb">优惠券</text>
+                <view class="discount-right data-v-00db3cfb">
+                    <view class="selected-coupon data-v-00db3cfb" wx:if="{{selectCoupon}}">
+                        <view class="unlimit data-v-00db3cfb" style="margin-left:3px;">已含优惠券</view>
+                        <view class="dis-count unlimit data-v-00db3cfb">
+                            <text class="inline-block data-v-00db3cfb" style="font-weight:bold;padding:0 2rpx 0 6rpx;">-</text>{{''+'￥'+selectCoupon.coupon_value+''}}</view>
+                        <image class="data-v-00db3cfb" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    </view>
+                    <view catchtap="__e" class="total data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'getCouponPop',['$event'] ] ] ] ]}}" wx:else>
+                        <text class="data-v-00db3cfb">{{'有'+couponList.length+'张可用优惠券'}}</text>
+                        <image class="data-v-00db3cfb" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="discount-info line-bottom data-v-00db3cfb" style="margin-bottom:0;">
+                <view class="dis-title data-v-00db3cfb">SVIP特权</view>
+                <view class="discount-right data-v-00db3cfb">
+                    <text bindtap="__e" class="unlimit data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'toIntroduce',['$event'] ] ] ] ]}}">详细特权</text>
+                    <image class="data-v-00db3cfb" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                </view>
+            </view>
+            <image class="vip-img data-v-00db3cfb" lazyLoad="{{false}}" mode="widthFix" src="{{item.img}}" wx:for="{{sVipPrivilegeList}}" wx:key="index"></image>
+        </block>
+        <block wx:else>
+            <view class="app-vip-products data-v-00db3cfb">
+                <view class="{{['product-items-wrapper swiper-no-swiping data-v-00db3cfb',vipOrderList&&vipOrderList.length>3?'can-scroll':'']}}">
+                    <view bindtap="__e" class="{{['product-item data-v-00db3cfb',product[$orig].goods_id===vipSelectGood.goods_id?'selected':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectProduct',['$event'] ] ] ] ]}}" data-item="{{product.g2}}" wx:for="{{$root.l1}}" wx:for-index="n" wx:for-item="product" wx:key="n">
+                        <view class="wrapper data-v-00db3cfb"></view>
+                        <view class="product-item-container data-v-00db3cfb">
+                            <view class="recommend data-v-00db3cfb" wx:if="{{product[$orig].is_recommended==='1'}}"></view>
+                            <view class="name data-v-00db3cfb">{{''+(product[$orig].goods_short_name||product.g3)+''}}</view>
+                            <view class="original-price data-v-00db3cfb">{{'￥'+product[$orig].price+''}}</view>
+                            <view class="price-per-day data-v-00db3cfb">
+                                <image class="good data-v-00db3cfb" src="https://eciapp-img.qichacha.com/community/0a3d6a6e-ed4f-4351-ad9d-6344321d8b191619329955437.png"></image>{{''+product[$orig].pricePerDay+' 元/天'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="discount-info data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'couponPopOpen',['$event'] ] ] ] ]}}" wx:if="{{showCouponTab}}">
+                <text class="dis-title data-v-00db3cfb">优惠券</text>
+                <view class="discount-right data-v-00db3cfb">
+                    <view class="selected-coupon data-v-00db3cfb" wx:if="{{selectCoupon}}">
+                        <view class="unlimit data-v-00db3cfb" style="margin-left:3px;">已含优惠券</view>
+                        <view class="dis-count unlimit data-v-00db3cfb">
+                            <text class="inline-block data-v-00db3cfb" style="font-weight:bold;padding:0 2rpx 0 6rpx;">-</text>{{''+'￥'+selectCoupon.coupon_value+''}}</view>
+                        <image class="data-v-00db3cfb" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    </view>
+                    <view catchtap="__e" class="total data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'getCouponPop',['$event'] ] ] ] ]}}" wx:else>
+                        <text class="data-v-00db3cfb">{{'有'+couponList.length+'张可用优惠券'}}</text>
+                        <image class="data-v-00db3cfb" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    </view>
+                </view>
+            </view>
+            <image class="vip-img data-v-00db3cfb" lazyLoad="{{false}}" mode="widthFix" src="{{item.img}}" wx:for="{{vipPrivilegeList}}" wx:key="index"></image>
+            <view bindtap="__e" class="view-all data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'toIntroduce',['$event'] ] ] ] ]}}">查看全部VIP特权<view class="arrow data-v-00db3cfb"></view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="app-pay-bar data-v-00db3cfb">
+        <view bindtap="__e" class="btn data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'confirmPay',['$event'] ] ] ] ]}}" style="{{'background-color:'+(!needSVip?'#D7A860':'#3F3F40')+';'+'color:'+(!needSVip?'#FFF':'#D7A860')+';'}}">
+            <block wx:if="{{!needSVip}}">
+                <view class="title data-v-00db3cfb" wx:if="{{!isVIP&&!isSVIP}}">{{'立即支付￥'+totalAmount+' 成为VIP'}}</view>
+                <view class="title data-v-00db3cfb" wx:else>{{'立即支付￥'+totalAmount+' 续费VIP'}}</view>
+            </block>
+            <block wx:if="{{needSVip}}">
+                <view class="title data-v-00db3cfb" wx:if="{{!isSVIP}}">{{'立即支付￥'+totalAmount+' 成为SVIP'}}</view>
+                <view class="title data-v-00db3cfb" wx:else>{{'立即支付￥'+totalAmount+' 续费SVIP'}}</view>
+            </block>
+            <view class="desc data-v-00db3cfb">支付后免费邮寄发票</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="coupon-pop data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'closeCouponPop',['$event'] ] ] ] ]}}" style="{{'top:'+(customTop?'40%':'50%')+';'}}" wx:if="{{couponPop}}">
+        <view class="{{[ 'data-v-00db3cfb','pop-body '+(isIPhoneX?'page-padding-bottom':'') ]}}" style="{{platform==='mp-360'&&isTabBarPage?'bottom:44.5px':''}}">
+            <view catchtap="__e" class="pop-main data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+                <view class="{{[ 'data-v-00db3cfb','pop-title '+(isIPhone?'':'android') ]}}">
+                    <text class="data-v-00db3cfb">优惠券</text>
+                    <view catchtap="__e" class="off-btn data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'closeCouponPop',['$event'] ] ] ] ]}}">
+                        <image class="data-v-00db3cfb" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/close-icon.png"></image>
+                    </view>
+                </view>
+                <view class="{{[ 'data-v-00db3cfb','pop-tab '+(isIPhone?'':'android') ]}}">
+                    <text catchtap="__e" class="{{['data-v-00db3cfb',true?'pop-tab':'',currentTab===0?'item-active':'']}}" data-cut="0" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',['$event'] ] ] ] ]}}">{{'可使用优惠券'+couponCount+''}}</text>
+                    <text catchtap="__e" class="{{['data-v-00db3cfb',true?'pop-tab':'',currentTab===1?'item-active':'']}}" data-cut="1" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',['$event'] ] ] ] ]}}">{{'不可使用优惠券'+unCouponCount+''}}</text>
+                </view>
+                <swiper bindchange="__e" class="swiper-wrap data-v-00db3cfb" current="{{currentTab}}" data-event-opts="{{[ [ 'change',[ [ 'changeTab2',['$event'] ] ] ] ]}}" duration="{{1000}}" interval="{{5000}}">
+                    <swiper-item class="swiper-tab data-v-00db3cfb">
+                        <scroll-view bindscrolltolower="__e" class="list-container data-v-00db3cfb" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMoreCoupon',['$event'] ] ] ] ]}}" lowerThreshold="5" scrollY="{{true}}">
+                            <view class="conainer data-v-00db3cfb" wx:if="{{couponList.length}}" wx:for="{{$root.l2}}" wx:key="index">
+                                <image class="coupon-img data-v-00db3cfb" src="https://eciapp-img.qichacha.com/community/b31a177c-bae7-44fd-8ae7-06a3e55a38f61619513749916.png"></image>
+                                <view catchtap="__e" class="coupon-wrap data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'selectCouponClick',['$event'] ] ] ] ]}}" data-index="{{index}}" data-item="{{item.g4}}">
+                                    <view class="left-part data-v-00db3cfb">
+                                        <view class="price data-v-00db3cfb">
+                                            <text class="data-v-00db3cfb">￥</text>
+                                            <text class="bigger data-v-00db3cfb">{{item[$orig].coupon_value}}</text>
+                                        </view>
+                                        <view class="coupon-info data-v-00db3cfb">
+                                            <view class="title data-v-00db3cfb">{{item[$orig].coupon_title}}</view>
+                                            <view class="{{[ 'data-v-00db3cfb','time '+(isIPhone?'':'android') ]}}">{{''+item[$orig].timeDesc+''}}</view>
+                                        </view>
+                                    </view>
+                                    <image class="select data-v-00db3cfb" src="https://eciapp-img.qichacha.com/community/13035909-597c-4e34-bf22-eb849f7b58c41619513650128.png" wx:if="{{item[$orig].select}}"></image>
+                                    <view class="un-select data-v-00db3cfb" wx:else></view>
+                                </view>
+                                <view class="coupon-desc data-v-00db3cfb">{{item[$orig].coupon_description}}</view>
+                            </view>
+                            <view class="empty data-v-00db3cfb" wx:if="{{!couponList.length}}">
+                                <image class="data-v-00db3cfb" src="https://eciapp-img.qichacha.com/community/2ff8a225-92a4-4807-b1fe-f8edbb72cb311619349006662.png"></image>
+                                <text class="data-v-00db3cfb">暂时还没有优惠券</text>
+                            </view>
+                        </scroll-view>
+                    </swiper-item>
+                    <swiper-item class="swiper-tab un-usable data-v-00db3cfb">
+                        <scroll-view bindscrolltolower="__e" class="list-container data-v-00db3cfb" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMoreUnCoupon',['$event'] ] ] ] ]}}" lowerThreshold="5" scrollY="{{true}}">
+                            <view catchtap="__e" class="conainer data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{unCouponList.length}}" wx:for="{{unCouponList}}" wx:key="index">
+                                <image class="coupon-img data-v-00db3cfb" src="https://eciapp-img.qichacha.com/community/3f0a4568-b99a-44b7-8a79-5969b66a2c3d1619513756266.png"></image>
+                                <view class="coupon-wrap data-v-00db3cfb">
+                                    <view class="left-part data-v-00db3cfb">
+                                        <view class="price data-v-00db3cfb">
+                                            <text class="data-v-00db3cfb">￥</text>
+                                            <text class="bigger data-v-00db3cfb">{{item.coupon_value}}</text>
+                                        </view>
+                                        <view class="coupon-info data-v-00db3cfb">
+                                            <view class="title data-v-00db3cfb">{{item.coupon_title}}</view>
+                                            <view class="{{[ 'data-v-00db3cfb','df time '+(isIPhone?'':'android') ]}}">{{''+item.timeDesc+''}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupon-desc data-v-00db3cfb">{{item.coupon_description}}</view>
+                            </view>
+                            <view catchtap="__e" class="empty data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{!unCouponList.length}}">
+                                <image class="data-v-00db3cfb" src="https://eciapp-img.qichacha.com/community/2ff8a225-92a4-4807-b1fe-f8edbb72cb311619349006662.png"></image>
+                                <text class="data-v-00db3cfb">暂时还没有优惠券</text>
+                            </view>
+                        </scroll-view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view catchtap="__e" class="selet-donw data-v-00db3cfb" data-event-opts="{{[ [ 'tap',[ [ 'couponPopHandle',['$event'] ] ] ] ]}}">确认</view>
+        </view>
+    </view>
+</view>

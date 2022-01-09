@@ -1,0 +1,32 @@
+<navbar class="page-navbar" gohome="{{true}}">微博</navbar>
+<view class="wbui-login">
+    <view class="wbui-sms">
+        <view class="wbui-sms-t">短信验证码登录</view>
+        <view class="wbui-wxlogin-agreement">
+            <view class="wbui-wxlogin-tx">登录注册即表示同意</view>
+            <view bind:tap="open" class="document-text" data-href="https://m.weibo.cn/c/regagreement?from=h5&showmenu=0&lang=zh_CN">用户协议</view>
+   、
+   <view bind:tap="open" class="document-text" data-href="https://m.weibo.cn/c/privacy?from=h5&wm=3349&showmenu=0&lang=zh_CN&areacode=0086">隐私条款</view>
+        </view>
+        <view class="wbui-input-code">
+            <view class="wbui-input-flex">
+                <view class="wbui-input-box">
+                    <input autoFocus="" bindinput="inputSmsCode" class="wbui-input" placeholder="输入验证码" placeholderClass="wbui-placeholder-color"></input>
+                </view>
+                <view class="wbui-timing">
+                    <view class="wbui-countdown" wx:if="{{timing}}">{{countdown}}秒后可重新获取</view>
+                    <view catchtap="getSmsCode" class="wbui-resend" wx:else>重新获取</view>
+                </view>
+            </view>
+            <view class="wbui-err-msg">{{codeErrMsg}}</view>
+            <view class="wbui-input-mobile-bline"></view>
+        </view>
+        <view class="wbui-operate">
+            <view catchtap="smsLogin" class="wbui-btn wbui-btn-big wbui-btn-orange {{!smsCode?'wbui-disabled':''}} {{isSmsLgnBtnLogin?'wbui-animating':''}}" hoverClass="wbui-active">
+                <view class="wbui-loading wbui-white wbui-animating"></view>
+    登录
+   </view>
+            <view class="wbui-sms-info"></view>
+        </view>
+    </view>
+</view>

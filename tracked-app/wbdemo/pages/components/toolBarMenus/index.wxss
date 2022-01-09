@@ -1,0 +1,59 @@
+.tool-bar-menus {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+    display: flex;
+    background: #f9f9f9;
+    border-top: .5px solid #dadada;
+}
+
+.tab-bar-click {
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    height: calc(89rpx + env(safe-area-inset-bottom));
+    line-height: calc(89rpx + env(safe-area-inset-bottom));
+    z-index: 10;
+}
+
+.item,.tab-bar-click {
+    flex-grow: 1;
+    width: 33.3%;
+}
+
+.item {
+    text-align: center;
+    margin: 26rpx 0;
+    padding: 0 30rpx;
+    font-size: 26rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    border-right: 2rpx solid #dadada;
+}
+
+.img {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.icon-add,.icon-edit,.img {
+    vertical-align: top;
+    margin-right: 10rpx;
+}
+
+.icon-edit {
+    font-size: 40rpx;
+}
+
+.icon-share {
+    vertical-align: top;
+    margin-right: 10rpx;
+}
+
+.icon-more {
+    font-size: 24rpx;
+    margin-right: 10rpx;
+}

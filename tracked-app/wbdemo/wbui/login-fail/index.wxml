@@ -1,0 +1,14 @@
+<view class="wbui-masklayer wbui-dialog-masklayer wbui-visible">
+    <view class="wbui-dialog">
+        <text class="wbui-content">{{err.getErrmsg(model)}}</text>
+        <view class="wbui-line"></view>
+        <view class="wbui-bottombar">
+            <button catchtap="cancel" class="wbui-act" hoverClass="wbui-active">取消</button>
+            <view class="wbui-vline"></view>
+            <button catch:tap="smslogin" class="wbui-act wbui-blue" hoverClass="wbui-active" wx:if="{{err.getErrorType(model)=='notAllowUniquePhone'}}">国际手机登录</button>
+            <button catch:tap="smslogin" class="wbui-act wbui-blue" hoverClass="wbui-active" wx:elif="{{err.getErrorType(model)=='smslog'}}">短信登录</button>
+            <button class="wbui-act wbui-blue" hoverClass="wbui-active" openType="contact" wx:else>微博客服</button>
+        </view>
+    </view>
+</view>
+<wxs module="err" src="../script/err.wxs" />

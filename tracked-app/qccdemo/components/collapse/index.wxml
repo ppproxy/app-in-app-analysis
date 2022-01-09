@@ -1,0 +1,9 @@
+<view class="collapse data-v-4a1f0422">
+    <view class="block data-v-4a1f0422">
+        <view bindtap="__e" class="title data-v-4a1f0422" data-event-opts="{{[ [ 'tap',[ [ 'collapse',['$event'] ] ] ] ]}}">
+            <text class="data-v-4a1f0422">{{title}}</text>
+            <image class="{{[ 'data-v-4a1f0422','title-img '+(isCollapse?'rotate':'') ]}}" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+        </view>
+        <rich-text class="content data-v-4a1f0422" nodes="{{content}}" wx:if="{{isCollapse}}"></rich-text>
+    </view>
+</view>

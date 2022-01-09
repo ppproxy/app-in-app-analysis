@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "实际控制人变更",
+    "usingComponents": {
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-simple-footer": "/components/app-simple-footer/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

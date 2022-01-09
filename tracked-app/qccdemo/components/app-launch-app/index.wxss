@@ -1,0 +1,21 @@
+.app-button.data-v-3c8d4771 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background: #008df5;
+    border: none;
+    border-radius: 42rpx 0 0 42rpx;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    font-size: 28rpx;
+    height: 84rpx;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: calc(100vh - 365rpx);
+    width: 200rpx;
+    z-index: 100;
+}

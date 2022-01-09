@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "投资事件",
+    "usingComponents": {
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-opened-footer": "/components/app-opened-footer/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

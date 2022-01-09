@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "竞价成功确认书",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

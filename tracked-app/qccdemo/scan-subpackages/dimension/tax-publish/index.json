@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "税务行政处罚",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

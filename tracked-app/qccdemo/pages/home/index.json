@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "企查查",
+    "navigationBarBackgroundColor": "#3049BD",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f3f3f3",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "news-flash-share": "/components/news-flash-share/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-auto-logo": "/components/app-auto-logo/index",
+        "app-monitor-pop": "/components/app-monitor-pop/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

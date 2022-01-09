@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "环保处罚",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

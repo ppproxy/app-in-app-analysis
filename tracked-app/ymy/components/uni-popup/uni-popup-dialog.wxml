@@ -1,0 +1,22 @@
+<view class="uni-popup-dialog data-v-2fab037e">
+    <view class="uni-dialog-title data-v-2fab037e">
+        <text class="{{['uni-dialog-title-text data-v-2fab037e','uni-popup__'+dialogType]}}">{{title}}</text>
+    </view>
+    <view class="uni-dialog-content data-v-2fab037e">
+        <view class="uni-dialog-content-html data-v-2fab037e" wx:if="{{mode==='base'}}">
+            <rich-text nodes="{{content}}"></rich-text>
+        </view>
+        <input bindinput="__e" class="uni-dialog-input data-v-2fab037e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','val','$event',[] ] ] ] ] ]}}" focus="{{false}}" placeholder="{{placeholder}}" type="text" value="{{val}}" wx:else></input>
+    </view>
+    <view class="uni-dialog-button-group data-v-2fab037e">
+        <view bindtap="__e" class="uni-dialog-button data-v-2fab037e" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+            <text class="uni-dialog-button-text data-v-2fab037e">取消</text>
+        </view>
+        <view bindtap="__e" class="uni-dialog-button uni-border-left data-v-2fab037e" data-event-opts="{{[ [ 'tap',[ [ 'onOk',['$event'] ] ] ] ]}}" wx:if="{{number2===0}}">
+            <text class="uni-dialog-button-text uni-button-color data-v-2fab037e">确定</text>
+        </view>
+        <view class="uni-dialog-button uni-border-left data-v-2fab037e" wx:else>
+            <text class="uni-dialog-button-text data-v-2fab037e">{{'确定('+number2+')'}}</text>
+        </view>
+    </view>
+</view>

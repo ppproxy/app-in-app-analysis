@@ -1,0 +1,15 @@
+<view class="ios-vip-overlay data-v-cd4740f0">
+    <view class="popup ios-pop data-v-cd4740f0" wx:if="{{!isCopy}}">
+        <view bindtap="__e" class="close-img data-v-cd4740f0" data-event-opts="{{[ [ 'tap',[ [ 'radarCancel',['$event'] ] ] ] ]}}" mode="scaleToFill">
+            <image class="image data-v-cd4740f0" mode="scaleToFill" src="https://share.qichacha.com/lite-app-resources/html/images/new-image/close.png"></image>
+        </view>
+        <view class="button-wrap data-v-cd4740f0">
+            <button bindcontact="__e" bindtap="__e" class="ios-vip-button data-v-cd4740f0" data-event-opts="{{[ [ 'contact',[ [ 'handleContact',['$event'] ] ] ],[ 'tap',[ [ 'radarCancel',['$event'] ] ] ] ]}}" hoverClass="hover" openType="contact" sendMessageImg="https://share.qichacha.com/lite-app-resources/html/images/download-share.png" sendMessagePath="/ad/recommender/use/index" sendMessageTitle="请根据系统回复进行操作" showMessageCard="{{true}}">前往下载APP</button>
+        </view>
+    </view>
+    <view class="pop-center data-v-cd4740f0" wx:if="{{isCopy&&show}}">
+        <view class="pop-main data-v-cd4740f0"></view>
+        <view class="arrow data-v-cd4740f0"></view>
+        <view bindtap="__e" class="pop-btn data-v-cd4740f0" data-event-opts="{{[ [ 'tap',[ [ 'cancel',['$event'] ] ] ] ]}}">知道了</view>
+    </view>
+</view>

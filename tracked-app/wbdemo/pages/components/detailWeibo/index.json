@@ -1,0 +1,15 @@
+{
+    "usingComponents": {
+        "custom-navigation": "../customNavigation/index",
+        "add-guide": "../../components/AddGuide/AddGuide",
+        "card-9": "../cards/9/index",
+        "comment": "../comment/index",
+        "feed-open-app": "../feedOpenApp/index",
+        "common-footer": "../commonFooter/index"
+    },
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 200,
+    "singlePage": {
+        "navigationBarFit": "squeezed"
+    }
+}

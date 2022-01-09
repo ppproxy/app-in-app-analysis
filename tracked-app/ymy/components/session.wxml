@@ -1,0 +1,18 @@
+<uni-popup bind:__l="__l" class="vue-ref" data-ref="popup" type="bottom" vueId="748a0e3b-1" vueSlots="{{['default']}}">
+    <view>
+        <view class="popup_tickets_cont bgwh">
+            <view class="popup_tickets_tit fix">
+                <view bindtap="__e" class="g9 popup_tickets_tit_btn lt" data-event-opts="{{[ [ 'tap',[ ['cancelClick'] ] ] ]}}">取消</view>
+                <view bindtap="__e" class="fb popup_tickets_tit_btn rt" data-event-opts="{{[ [ 'tap',[ ['confirmClick'] ] ] ]}}">确定</view>
+            </view>
+            <view class="order_tickets_list fix tc mt15">
+                <view bindtap="__e" class="{{['lt wp50',sessionId==item.ID?'order_tickets_list_clo':'',item.Number<=0||item.Status==false?'order_tickets_list_null':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'sessionClick',['$0'],[ [ ['sessions','ID',item.ID] ] ] ] ] ] ]}}" wx:for="{{sessions}}" wx:for-index="__i0__" wx:key="ID">
+                    <view class="order_tickets_box cp" wx:if="{{item.Status}}">
+                        <view class="fr f16 b">{{item.Name}}</view>
+                        <view class="f12 g6 mt2">{{'剩余'+item.Number+'位'}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</uni-popup>

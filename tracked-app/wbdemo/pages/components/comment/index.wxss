@@ -1,0 +1,183 @@
+.comment {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 0 30rpx 30rpx;
+}
+
+.comment-reply {
+    box-sizing: border-box;
+    padding: 20rpx 30rpx 30rpx;
+}
+
+.view-blog {
+    color: #00f;
+}
+
+.wb-header {
+    display: flex;
+    padding-top: 20rpx;
+}
+
+.wb-header .text {
+    vertical-align: top;
+    margin-left: 20rpx;
+    flex: 1;
+}
+
+.wb-header .text .name {
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    color: #6d6d6d;
+    line-height: 44rpx;
+}
+
+.wb-header .text .msg {
+    display: block;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #898989;
+}
+
+.wb-header .attent {
+    padding: 0 18rpx;
+    font-size: 22rpx;
+    color: #fe8c15;
+    border: 1px solid #fe8c15;
+    line-height: 56rpx;
+    height: 56rpx;
+    border-radius: 28rpx;
+}
+
+.wb-header .attent .em {
+    font-size: 42rpx;
+    vertical-align: top;
+    line-height: 48rpx;
+}
+
+.comment-content {
+    position: relative;
+    padding-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.rich-node,.rich-node .parse-text {
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular;
+    color: #333;
+}
+
+.rich-node .parse-text {
+    display: inline;
+    line-height: 46rpx;
+    word-break: break-all;
+}
+
+.rich-node .parse-text.topic {
+    color: #4b73a0;
+}
+
+.rich-node .parse-text.emotion {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.like {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.like .m-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 34rpx;
+    height: 34rpx;
+    background-image: url(https://h5.sinaimg.cn/upload/1035/467/2020/04/01/bottombar_comment_icon_zan.png);
+    background-size: 34rpx 34rpx;
+    margin-right: 12rpx;
+}
+
+.like-number {
+    font-size: 26rpx;
+    color: #8e8e8e;
+    vertical-align: middle;
+}
+
+.more {
+    background-color: #f7f7f7;
+    padding: 16rpx 20rpx;
+    margin-top: 10rpx;
+}
+
+.some-person {
+    color: #666;
+    margin-right: 12rpx;
+    margin-left: 2rpx;
+}
+
+.link-text,.more-comment-text,.some-person {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+}
+
+.more-comment-text {
+    color: #333;
+    line-height: 45rpx;
+}
+
+.link-user {
+    font-size: 30rpx;
+}
+
+.link-user,.link-user-replay {
+    font-family: PingFangSC-Regular;
+    color: #4b73a0;
+}
+
+.link-user-replay {
+    font-size: 32rpx;
+}
+
+.icon-right {
+    font-size: 20rpx;
+    color: #4b73a0;
+    font-weight: 700;
+    margin-left: 10rpx;
+}
+
+.image_box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #ebebeb;
+}
+
+.comment-image {
+    display: block;
+    width: 244rpx;
+    height: 244rpx;
+    border-radius: 16rpx;
+    margin: 12rpx 0 8rpx;
+    line-height: 0;
+}
+
+.error-page-img {
+    width: 750rpx;
+    margin-top: 40%;
+}
+
+.error-page-text {
+    font-size: 32rpx;
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.more-detail {
+    padding-top: 30rpx;
+    text-align: center;
+    color: #507daf;
+}

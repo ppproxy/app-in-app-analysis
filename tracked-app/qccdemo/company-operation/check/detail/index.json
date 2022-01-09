@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "抽查检查详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

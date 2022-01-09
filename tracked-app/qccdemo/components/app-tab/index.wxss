@@ -1,0 +1,43 @@
+.app-tab-wrap.data-v-597983c4 {
+    background: #fff;
+    height: 80rpx;
+    left: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.app-tab-wrap .tab.data-v-597983c4 {
+    height: 100%;
+    width: 200%;
+}
+
+.app-tab-wrap .tab-item.data-v-597983c4 {
+    color: #666;
+    flex-shrink: 0;
+    float: left;
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+    position: relative;
+}
+
+.app-tab-wrap .tab-item-active.data-v-597983c4 {
+    color: #128bed;
+    position: relative;
+}
+
+.app-tab-wrap .tab-item-active.data-v-597983c4:after {
+    background-color: #128bed;
+    color: #128bed;
+    content: "";
+    height: 4rpx;
+    left: 50%;
+    margin-left: -15rpx;
+    position: absolute;
+    top: 76rpx;
+    width: 30rpx;
+}

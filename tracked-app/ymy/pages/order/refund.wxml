@@ -1,0 +1,28 @@
+<view class="app_index popup_user">
+    <view class="my_contacts" wx:if="{{users&&users.length>0}}">
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'userClick',['$0'],[ [ ['users','IDCard',player[$orig].IDCard,'IDCard'] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:for-item="player" wx:key="IDCard">
+            <view class="my_contacts_box">
+                <view class="my_contacts_icon">{{player.g0}}</view>
+                <view class="my_contacts_text">
+                    <view class="my_contacts_name b f16 g3">{{player[$orig].Name+''}}</view>
+                    <view class="my_contacts_phone g6 f12 mt5"></view>
+                    <view class="my_contacts_phone g6 f12 mt5">{{'身份证：'+player.m0}}</view>
+                </view>
+                <view class="my_contacts_rt" wx:if="{{player[$orig].Status==1}}">
+                    <image class="w22 rt select_icon _img" src="/static/images/select_1.png" wx:if="{{player[$orig].IsSelected}}"></image>
+                    <image class="w22 rt select_icon _img" src="/static/images/select_2.png" wx:else></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="more f13 tc" wx:else>
+        <view class="dib mr10">—</view>暂无数据<view class="dib ml10">—</view>
+    </view>
+    <view class="my_contacts_action bgwh my_contacts_end">
+        <view class="my_contacts_action_main">
+            <view>
+                <button bindtap="__e" class="my_contacts_action_btn db br0 f14" data-event-opts="{{[ [ 'tap',[ [ 'cancelOrder',['$event'] ] ] ] ]}}">确认退单</button>
+            </view>
+        </view>
+    </view>
+</view>

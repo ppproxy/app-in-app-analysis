@@ -1,0 +1,80 @@
+<view>
+    <view class="fix my_top" wx:if="{{isLogin}}">
+        <image class="rt br100" src="{{userInfo.avatarUrl}}"></image>
+        <view class="lt mt2">
+            <view class="f24 n">{{userInfo.nickName}}</view>
+            <view class="f12 mt5">{{userInfo.province+'  '+userInfo.city}}</view>
+        </view>
+    </view>
+    <view class="fix my_top" wx:else>
+        <image class="rt br0" src="/static/images/user.png"></image>
+        <view bindtap="__e" class="f24 n" data-event-opts="{{[ [ 'tap',[ ['loginClick'] ] ] ]}}">未登录</view>
+        <view class="f12 mt5">你还没登录哦~</view>
+    </view>
+    <view class="my_nav top_line">
+        <view class="my_nav_box fix">
+            <navigator class="db fix" openType="switchTab" url="../order/index">
+                <view class="my_nav_lt fix lt">
+                    <image class="lt my_nav_icon _img" src="/static/images/my_n1.png" width="25"></image>
+                    <view class="lt dib g3">我的订单</view>
+                </view>
+                <view class="rt mr15">
+                    <image class="w14 _img" src="/static/images/lefticon_mini.png" width="14"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="my_nav_box fix" wx:if="{{isInvoice==true}}">
+            <navigator class="db fix" url="coupon">
+                <view class="my_nav_lt fix lt">
+                    <image class="lt my_nav_icon _img" src="{{$root.m0}}" width="25"></image>
+                    <view class="lt dib g3">我的优惠券</view>
+                </view>
+                <view class="rt mr15">
+                    <image class="w14 _img" src="{{$root.m1}}" width="14"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="my_nav_box fix">
+            <navigator class="db fix" url="contacts">
+                <view class="my_nav_lt fix lt">
+                    <image class="lt my_nav_icon _img" src="/static/images/my_n3.png" width="25"></image>
+                    <view class="lt dib g3">常用联系人</view>
+                </view>
+                <view class="rt mr15">
+                    <image class="w14 _img" src="/static/images/lefticon_mini.png" width="14"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="my_nav_box fix" wx:if="{{isInvoice==true}}">
+            <navigator class="db fix" url="invoice">
+                <view class="my_nav_lt fix lt">
+                    <image class="lt my_nav_icon _img" src="/static/images/my_n4.png" width="25"></image>
+                    <view class="lt dib g3">我的发票</view>
+                </view>
+                <view class="rt mr15">
+                    <image class="w14 _img" src="/static/images/lefticon_mini.png" width="14"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="my_nav_box fix">
+            <view bindtap="__e" class="db fix" data-event-opts="{{[ [ 'tap',[ [ 'phoneClick',['$0'],['servicePhone'] ] ] ] ]}}">
+                <view class="my_nav_lt fix lt">
+                    <image class="lt my_nav_icon _img" src="/static/images/my_n2.png" width="25"></image>
+                    <view class="lt dib g3">服务电话</view>
+                </view>
+                <view class="rt f13 g9 mr15">{{servicePhone}}</view>
+            </view>
+        </view>
+        <view class="my_nav_box fix">
+            <view bindtap="__e" class="db fix" data-event-opts="{{[ [ 'tap',[ [ 'logOut',['$event'] ] ] ] ]}}">
+                <view class="my_nav_lt fix lt">
+                    <image class="lt my_nav_icon _img" src="/static/images/logout.png" width="25"></image>
+                    <view class="lt dib g3">退出登录</view>
+                </view>
+                <view class="rt mr15">
+                    <image class="w14 _img" src="/static/images/lefticon_mini.png" width="14"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

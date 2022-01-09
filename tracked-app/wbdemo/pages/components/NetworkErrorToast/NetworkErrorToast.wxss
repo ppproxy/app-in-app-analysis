@@ -1,0 +1,36 @@
+.network-error-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50%;
+}
+
+.error-img {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.error-toast {
+    margin-top: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #999;
+    text-align: center;
+}
+
+.error-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2rpx solid #d2d2d2;
+    border-radius: 100rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #636363;
+    text-align: center;
+    margin-top: 48rpx;
+    width: 368rpx;
+    height: 74rpx;
+}

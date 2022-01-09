@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/single/single",
+    "pages/error/error",
+    "pages/worktype/worktype",
+    "pages/questionlist/questionlist",
+    "pages/rank/rank",
+    "pages/mine/mine",
+    "pages/random/random",
+    "pages/news/news",
+    "pages/content/content",
+    "pages/update/update"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#af1616",
+    "navigationBarTitleText": "南广爱答",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#af1616",
+    "borderStyle": "black",
+    "list": [
+      {
+        "text": "新闻",
+        "pagePath": "pages/news/news",
+        "iconPath": "images/xinwen1.png",
+        "selectedIconPath": "images/xinwen.png"
+      },
+      {
+        "text": "答题",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/study1.png",
+        "selectedIconPath": "images/study.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/my1.png",
+        "selectedIconPath": "images/my.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

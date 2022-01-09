@@ -1,0 +1,12 @@
+<view bindtap="onClickTap" data-query="{{utils.parseSchemeByKey(cardData.scheme,'q')}}" data-scheme="{{cardData.scheme}}">
+    <view class="card-4" style="border-bottom: {{no_border_bottom?'0':'0.5px solid #e5e5e5'}}">
+        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(cardData.pic)}}" wx:if="{{cardData.pic}}"></image>
+        <view class="hot-title" style="max-width: {{cardData.icon?cardData.number>17?cardData.number>=19?'100%':'85%':'83%':'90%'}}">
+            <text class="{{cardData.card_type_name==='热搜引导词'?'index_desc':cardData.number>=19?cardData.icon?'desc_max':'desc_no_icon':'desc'}}">{{cardData.desc}}</text>
+            <text class="desc-extr-number" style="margin-left: {{cardData.number>17?'26rpx':'20rpx'}}" wx:if="{{cardData.hot_number&&cardData.number<19}}">{{cardData.hot_number}}</text>
+            <image class="emotion" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFit" src="{{cardData.emotion}}" wx:if="{{cardData.emotion}}"></image>
+        </view>
+        <image class="icon" lazyLoad="{{true}}" lazyLoadMargin="0" mode="heightFix" src="{{cardData.icon}}" wx:if="{{cardData.icon}}"></image>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

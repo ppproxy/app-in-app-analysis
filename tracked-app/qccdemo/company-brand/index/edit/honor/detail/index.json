@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "编辑荣誉资质",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

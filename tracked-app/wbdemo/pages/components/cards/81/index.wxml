@@ -1,0 +1,4 @@
+<view class="card-81">
+    <image class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{cardData.mblog.page_info.page_pic}}"></image>
+    <view class="title">{{cardData.live_bottom_info.title}}</view>
+</view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "uni-notice-bar": "/components/uni-notice-bar/uni-notice-bar",
+        "uni-popup": "/components/uni-popup/uni-popup",
+        "notice-bar": "/components/uni-notice-bar/uni-notice-bar"
+    }
+}

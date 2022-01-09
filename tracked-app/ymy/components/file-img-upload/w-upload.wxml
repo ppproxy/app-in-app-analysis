@@ -1,0 +1,27 @@
+<view class="w-upload data-v-5f2291c5">
+    <view class="fileBox data-v-5f2291c5" wx:if="{{fileShow}}">
+        <view class="filePath data-v-5f2291c5" wx:for="{{fileList}}" wx:for-index="index1" wx:for-item="j" wx:key="index1">
+            <view bindtap="__e" class="text1 data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ [ 'wpriven',['$0'],[ [ ['fileList','',index1,'src'] ] ] ] ] ] ]}}">{{j.name}}</view>
+            <view bindtap="__e" class="w-edit data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ [ 'wdelete',[index1,'$0',1],['fileList'] ] ] ] ]}}">
+                <text class="w-btn1 data-v-5f2291c5">x</text>
+            </view>
+        </view>
+        <view bindtap="__e" class="addItem data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ ['upLoadFile'] ] ] ]}}" wx:if="{{fileList.length==0}}">+</view>
+    </view>
+    <view class="imgList data-v-5f2291c5" wx:if="{{imgShow}}">
+        <view class="imgItem data-v-5f2291c5" wx:for="{{imgList}}" wx:for-index="index2" wx:for-item="k" wx:key="index2">
+            <image mode bindtap="__e" class="w-img data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ [ 'wpriven',['$0'],[ [ ['imgList','',index2,'src'] ] ] ] ] ] ]}}" src="{{k.src}}"></image>
+            <text bindtap="__e" class="cancel data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ [ 'wdelete',[index2,'$0',2],['imgList'] ] ] ] ]}}">x</text>
+        </view>
+        <view bindtap="__e" class="addItem data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ [ 'upLoadImg',[1] ] ] ] ]}}" wx:if="{{imgList.length==0}}">+</view>
+    </view>
+    <view class="w-drawer data-v-5f2291c5">
+        <view class="{{['w-setbox data-v-5f2291c5',isshow?'wShow':'']}}">
+            <view class="w-header data-v-5f2291c5">
+                <view bindtap="__e" class="w-item w-item1 data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ [ 'wselect',[index] ] ] ] ]}}" wx:for="{{selectList}}" wx:for-item="i" wx:key="index">{{i}}</view>
+                <view class="w-line data-v-5f2291c5"></view>
+                <view bindtap="__e" class="w-item data-v-5f2291c5" data-event-opts="{{[ [ 'tap',[ [ 'wclose',['$event'] ] ] ] ]}}">取消</view>
+            </view>
+        </view>
+    </view>
+</view>

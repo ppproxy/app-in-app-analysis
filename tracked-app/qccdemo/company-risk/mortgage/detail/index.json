@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "动产抵押详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

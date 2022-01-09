@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "标的物介绍",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

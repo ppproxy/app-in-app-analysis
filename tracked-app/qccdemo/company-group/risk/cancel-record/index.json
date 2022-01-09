@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "注销备案",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

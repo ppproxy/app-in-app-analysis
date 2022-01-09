@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "企业年报详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "关于全国法院终本案件信息说明",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

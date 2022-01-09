@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "custom-navigation": "../components/customNavigation/index",
+        "avator": "../components/avator/index",
+        "comment": "../components/comment/index",
+        "common-footer": "../components/commonFooter/index"
+    },
+    "onReachBottomDistance": 200
+}

@@ -1,0 +1,5 @@
+<scroll-view class="app-tab-wrap data-v-597983c4" scrollLeft="{{scrollLeft}}" scrollX="{{true}}" scrollY="{{false}}">
+    <view class="tab clearfix data-v-597983c4" style="{{'width:'+tabWidth+'px;'}}">
+        <view bindtap="__e" class="{{[ 'data-v-597983c4','tab-item '+(tabIndex===index?'tab-item-active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'tabClick',['$event'] ] ] ] ]}}" data-index="{{index}}" hover="{{true}}" hoverClass="v-hover" id="{{'tab'+index}}" wx:for="{{tabList}}" wx:key="index">{{''+item.title+''}}</view>
+    </view>
+</scroll-view>

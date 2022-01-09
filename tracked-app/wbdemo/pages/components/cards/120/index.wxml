@@ -1,0 +1,11 @@
+<view catchtap="cardClick" class="card-120">
+    <view class="card-120-mask" style="height: {{swiper_height}}px"></view>
+    <block wx:if="{{cardData.still_dict}}">
+        <image class="still-img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{cardData.still_dict.icon}}" wx:if="{{cardData.still_dict.icon}}"></image>
+    </block>
+    <swiper autoplay="{{true}}" bindchange="swiperChange" circular="{{true}}" easingFunction="easeInOutCubic" interval="{{cardData.time_interval*1000}}" style="width:100%;height: {{swiper_height}}px" vertical="{{true}}">
+        <swiper-item class="swiper-item" wx:for="{{cardData.groups}}" wx:key="index">
+            <card-content cardData="{{item}}" class="card-content-120" data-item="{{item}}" is_show_zone="{{true}}" no_border_bottom="{{true}}" style="display:block"></card-content>
+        </swiper-item>
+    </swiper>
+</view>

@@ -1,0 +1,57 @@
+<view class="app _div">
+    <view class="index_scenic ml10 mr10 mt10 _div">
+        <view class="index_banner _div">
+            <image class="db wp100 br5" mode="widthFix" src="{{scenic.Photo}}"></image>
+        </view>
+    </view>
+    <view class="index_date">
+        <view class="index_date_head df justify_between align_center fw bgr">
+            <view class="df align_center">
+                <view class="f16">{{todaySession.Time}}</view>
+                <view class="ml5 f13">今日</view>
+            </view>
+            <view class="f13">
+                <view wx:for="{{todaySession.StockList}}" wx:for-index="__i0__" wx:for-item="session">{{session.Name+'余票 : '+(session.Status?session.Number:'已止票')}}</view>
+            </view>
+        </view>
+        <view class="index_date_cont df align_center justify_between">
+            <view class="tc index_date_box" wx:for="{{sessions}}" wx:for-index="__i1__">
+                <view class="f12 g6">{{item.Time}}</view>
+                <view class="f12 fr" wx:for="{{item.StockList}}" wx:for-index="__i2__" wx:for-item="session">{{session.Name+':'+session.Number}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="index_tickets index_tickets_ymy _div">
+        <view class="tickets_list ml10 mr10 _div">
+            <view class="index_tickets_cont _div">
+                <view class="ymy_tickets" wx:for="{{products}}" wx:for-index="i" wx:for-item="ticket">
+                    <view class="ymy_tickets_tit df align_center justify_between">
+                        <view class="ymy_tickets_name line_clamp1">{{ticket.Name}}</view>
+                        <view bindtap="__e" class="fb f14 cp" data-event-opts="{{[ [ 'tap',[ [ 'open2',['$0'],[ [ ['products','',i,'BookingContent'] ] ] ] ] ] ]}}">购买须知</view>
+                    </view>
+                    <view class="ymy_tickets_main f14">
+                        <view class="{{['ymy_tickets_b1',tag.IsRed?'fr':'']}}" wx:for="{{ticket.Tags}}" wx:for-index="i" wx:for-item="tag">{{tag.Tag}}</view>
+                    </view>
+                    <view class="ymy_tickets_action df align_center justify_between ml10">
+                        <view class="ymy_tickets_pirce fr f16 b">{{'¥'+ticket.SalePrice}}</view>
+                        <view class="ymy_tickets_action_rt">
+                            <navigator bindtap="__e" class="tickets_action_btn db bgr fw f13 tc" data-event-opts="{{[ [ 'tap',[ [ 'bookClick',['$0','$1','$2','$3'],[ [ ['products','',i,'ID'] ],'scenic.Name',[ ['products','',i,'ConfirmInfo'] ],'scenic.CountdownTimes' ] ] ] ] ]}}" url="/pages/index/order">立即购买</navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="popup2" type="bottom" vueId="5c473d4a-1" vueSlots="{{['default']}}">
+        <view class="popup_notice bgwh">
+            <view class="popup_tickets_tit fix _div">
+                <view class="g3 ml10 b f15 popup_tickets_tit_btn lt _div">购票须知</view>
+                <view bindtap="__e" class="fb popup_tickets_tit_btn rt _div" data-event-opts="{{[ [ 'tap',[ [ 'close2',['$event'] ] ] ] ]}}">确定</view>
+            </view>
+            <view class="popup_notice_text ell_bk">
+                <rich-text nodes="{{productBookingContent}}"></rich-text>
+            </view>
+        </view>
+    </uni-popup>
+    <uni-message bind:__l="__l" bind:confirm="__e" class="vue-ref" data-event-opts="{{[ [ '^confirm',[ ['confirmSuccess'] ] ] ]}}" data-ref="unimessage" vueId="5c473d4a-2"></uni-message>
+</view>

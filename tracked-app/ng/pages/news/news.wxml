@@ -1,0 +1,18 @@
+<view class="style-roll">
+    <view class="swiper-container">
+        <swiper autoplay="{{autoplay}}" bindchange="swiperChange" circular="{{duration}}" class="swiper" current="{{swiperCurrent}}" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+            <swiper-item wx:if="{{index<5}}" wx:for="{{news}}" wx:key="unique">
+                <image bindtap="swipclick" class="img" src="{{item.imgUrl}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
+<view class="news_all" wx:if="{{index>=5}}" wx:for="{{news}}" wx:key="unique">
+    <view bindtap="opencontent" class="news" data-newsid="{{news[index].id}}">
+        <text class="news_title {{isShowAllContent?'content-all':'content-breif'}}">{{news[index].title}}</text>
+        <view class="news_time">
+            <text>{{news[index].publish}}</text>
+            <text>{{news[index].updateTimeStr}}</text>
+        </view>
+    </view>
+</view>

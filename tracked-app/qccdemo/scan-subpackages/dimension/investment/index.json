@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "对外投资变更",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

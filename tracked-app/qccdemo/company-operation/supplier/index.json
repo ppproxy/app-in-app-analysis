@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "供应商",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

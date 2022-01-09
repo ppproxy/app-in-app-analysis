@@ -1,0 +1,34 @@
+<view catchtap="cardClick" data-query="{{utils.parseSchemeByKey(cardData.scheme,'q')}}">
+    <view class="card-101">
+        <image class="left-tag-img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.title_info.left_tag_img||cardData.left_tag_img}}" wx:if="{{cardData.title_info.left_tag_img||cardData.left_tag_img}}"></image>
+        <text class="title-info {{cardData.pics.length==1?'title-info-1':''}}" style="{{cardData.title_info.title_is_bold?'font-weight: bold;':''}}">{{cardData.title_info.title||cardData.title}}</text>
+        <image class="tag-img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.title_info.tag_img||cardData.tag_img}}" wx:if="{{cardData.title_info.tag_img||cardData.tag_img}}"></image>
+        <view class="right-tag" wx:if="{{cardData.title_info.desc}}">
+            <text wx:if="{{cardData.title_info.desc||cardData.desc}}">{{cardData.title_info.desc||cardData.desc}}</text>
+            <icon class="~iconfont ~icon-youjiantou-01 icon-right" size="16"></icon>
+        </view>
+    </view>
+    <view class="card-102" style="height: {{cardData.pics.length==1?'170rpx':'292rpx'}}">
+        <view class="title" wx:if="{{cardData.title}}">{{cardData.title}}</view>
+        <card-35 cardData="{{cardData}}" wx:if="{{cardData.pics.length>1}}"></card-35>
+        <view class="card-102-desc" wx:else>
+            <view class="card-102-desc-left">
+                <view class="card-expand-content" style="color: {{cardData.desc_style.text_color}}" wx:if="{{cardData.title_info.desc||cardData.desc}}">
+          {{cardData.title_info.desc||cardData.desc}}
+        </view>
+                <view class="desc-info">
+                    <view class="desc-info-vote" style="color: {{cardData.tag_info.tag_color}};background: {{cardData.tag_info.text_color}};color: #689eea;background: #e8f1f9fc;padding: 2rpx 7px;border-radius: 20px;" wx:if="{{cardData.tag_info&&cardData.tag_info.text.length}}">
+                        <image class="vote-img" src="{{cardData.tag_info.pic}}"></image>
+            {{cardData.tag_info.text}}
+          </view>
+                    <view class="desc-info-tag" style="color: {{cardData.tag_desc_style.text_color}};font-size: 24rpx;" wx:if="{{cardData.tag_desc}}">
+            {{cardData.tag_desc}}
+          </view>
+                </view>
+            </view>
+            <image class="card-102-desc-right" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.pics[0].url)}}" wx:if="{{cardData.pics.length==1}}"></image>
+        </view>
+        <view class="source" wx:if="{{cardData.source}}">{{cardData.source}}</view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

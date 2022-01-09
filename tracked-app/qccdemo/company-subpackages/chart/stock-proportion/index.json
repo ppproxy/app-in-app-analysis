@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "股权结构",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

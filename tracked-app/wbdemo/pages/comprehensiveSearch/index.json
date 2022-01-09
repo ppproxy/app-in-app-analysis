@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "custom-navigation": "../components/customNavigation/index",
+        "add-guide": "../components/AddGuide/AddGuide",
+        "topic-head": "../components/topicHead/index",
+        "band-tab": "../components/bandTab/index",
+        "feed-pull-down-refresh": "../components/FeedPullDownRefresh/FeedPullDownRefresh",
+        "card-content": "../components/cardContent/index",
+        "feed-open-app": "../components/feedOpenApp/index",
+        "common-footer": "../components/commonFooter/index",
+        "network-toast": "../components/NetworkErrorToast/NetworkErrorToast"
+    },
+    "singlePage": {
+        "navigationBarFit": "squeezed"
+    }
+}

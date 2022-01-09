@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "大股东变更",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

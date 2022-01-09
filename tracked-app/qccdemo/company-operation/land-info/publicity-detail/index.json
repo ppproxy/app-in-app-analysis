@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "地块公示详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

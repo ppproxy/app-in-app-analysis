@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "当事人全部案件",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

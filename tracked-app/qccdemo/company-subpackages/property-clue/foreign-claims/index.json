@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "对外债权",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

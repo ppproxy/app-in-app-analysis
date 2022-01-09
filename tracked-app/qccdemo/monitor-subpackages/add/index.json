@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "添加监控",
+    "usingComponents": {
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-monitor-pop": "/components/app-monitor-pop/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

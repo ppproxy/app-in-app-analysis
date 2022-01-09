@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "用户使用协议",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

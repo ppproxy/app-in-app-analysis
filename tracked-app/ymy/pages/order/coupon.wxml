@@ -1,0 +1,24 @@
+<view>
+    <view class="my_coupon tickets_item" wx:if="{{coupons.length>0}}">
+        <view bindtap="__e" class="bgwh br6 tickets_item_box" data-event-opts="{{[ [ 'tap',[ [ 'couponClick',['$0'],[ [ ['coupons','ID',item.ID] ] ] ] ] ] ]}}" wx:for="{{coupons}}" wx:for-index="__i0__" wx:key="ID">
+            <view class="tickets_item_pirce tc">
+                <view class="db fr f28 b">{{'￥'+item.Amount}}</view>
+                <view class="dib fr f12">{{'满'+item.MinConsumeAmount+'减'+item.Amount}}</view>
+            </view>
+            <view class="tickets_item_tit">
+                <view class="f16">{{item.Name}}</view>
+                <view class="db g9 f12 n">{{item.EndTime+'截止'}}</view>
+            </view>
+            <view class="tickets_item_action">
+                <image class="w22 _img" height="22" src="/static/images/select_1.png" width="22" wx:if="{{item.IsSelected}}"></image>
+                <image class="w22 _img" height="22" src="/static/images/select_2.png" width="22" wx:else></image>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <null-data bind:__l="__l" vueId="e0328cf4-1"></null-data>
+    </view>
+    <view class="big_btn order_btn order_btn_new">
+        <button name bindtap="__e" class="btn fw f18 wp100" data-event-opts="{{[ [ 'tap',[ [ 'cancelClick',['$event'] ] ] ] ]}}" type="button">不使用优惠券</button>
+    </view>
+</view>

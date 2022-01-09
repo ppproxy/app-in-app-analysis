@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "私募基金",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

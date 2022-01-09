@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "投资方详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

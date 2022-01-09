@@ -1,0 +1,33 @@
+.app-no-data.data-v-fa7ad6d0 {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.app-no-data>.wraper.data-v-fa7ad6d0 {
+    left: 0;
+    margin-top: -160rpx;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+}
+
+.app-no-data>.wraper.v-center.data-v-fa7ad6d0 {
+    margin-top: 0;
+    transform: translateY(-50%);
+}
+
+.app-no-data>.wraper>.image.data-v-fa7ad6d0 {
+    height: 200rpx;
+    margin-bottom: 20rpx;
+    width: 200rpx;
+}
+
+.app-no-data>.wraper>.view.data-v-fa7ad6d0 {
+    color: #8a8a8a;
+    font-size: 30rpx;
+}

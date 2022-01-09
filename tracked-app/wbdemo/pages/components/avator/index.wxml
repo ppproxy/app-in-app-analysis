@@ -1,0 +1,5 @@
+<view class="avator {{type}} {{isComment}}">
+    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{wb.user&&wb.user.profile_image_url||'https://tvax1.sinaimg.cn/default/images/default_avatar_male_50.gif?KID=imgbed,tva&Expires=1584015758&ssig=Xe4IV1NdsJ'}}"></image>
+    <view class="~sprite-img ~sign ~{{utils.getUserType(wb)}} ~{{type}}" wx:if="{{wb.user&&wb.user.profile_image_url}}"></view>
+</view>
+<wxs module="utils" src="../../../utils/utils.wxs" />

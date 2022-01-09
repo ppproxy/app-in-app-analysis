@@ -1,0 +1,31 @@
+.card-99 {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+
+.content {
+    position: relative;
+    flex-grow: 1;
+    width: 33.3%;
+    height: 280rpx;
+    margin-right: 4rpx;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.content:last-child {
+    margin-right: 0;
+}
+
+.attitudes-count {
+    position: absolute;
+    bottom: 10rpx;
+    left: 10rpx;
+    font-size: 20rpx;
+    color: #fff;
+}

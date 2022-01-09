@@ -1,0 +1,10 @@
+<view class="card-101">
+    <image class="left-tag-img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.title_info.left_tag_img||cardData.left_tag_img}}"></image>
+    <text class="title-info" style="{{cardData.title_info.title_is_bold?'font-weight: bold;':''}}">{{cardData.title_info.title||cardData.title}}</text>
+    <image class="tag-img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.title_info.tag_img||cardData.tag_img}}" wx:if="{{cardData.title_info.tag_img||cardData.tag_img}}"></image>
+    <view class="right-tag">
+        <text wx:if="{{cardData.title_info.desc||cardData.desc}}">{{cardData.title_info.desc||cardData.desc}}</text>
+        <icon class="~iconfont ~icon-youjiantou-01 icon-right" size="16"></icon>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

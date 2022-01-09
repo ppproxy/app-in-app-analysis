@@ -1,0 +1,43 @@
+<progress active activeMode="forwards" class="progress" color="#af1616" percent="{{precent}}" strokeWidth="5"></progress>
+<view wx:if="{{current<=total&&isNotEnd}}">
+    <view class="title">当前第{{current}}题/共{{total}}题</view>
+    <view class="question_all">
+        <view class="question_type">
+            <text>{{question.type}}</text>
+        </view>
+        <view class="question">题目：{{question.title}}</view>
+        <radio-group bindchange="radioChange" class="answer" wx:if="{{question.type=='单选'||question.type=='判断'}}">
+            <view class="window" wx:for="{{question.options}}" wx:key="unique">
+                <radio checked="{{isChecked}}" value="{{item.code}}"></radio>
+                <text class="option">{{item.code}}:{{item.option}}</text>
+            </view>
+        </radio-group>
+        <checkbox-group bindchange="radioChange" class="answer" wx:if="{{question.type=='多选'}}">
+            <view class="window" wx:for="{{question.options}}" wx:key="unique">
+                <checkbox checked="{{isChecked}}" value="{{item.code}}"></checkbox>
+                <text class="option">{{item.code}}:{{item.option}}</text>
+            </view>
+        </checkbox-group>
+        <text class="clock">
+    倒计时：{{clock}} {{micro_second}}
+  </text>
+        <button bindtap="submit" class="submit" type="primary">提交答题</button>
+        <button bindtap="earlySubmit" class="submit" type="warn">提前交卷</button>
+    </view>
+</view>
+<view class="summary_all" wx:else>
+    <view class="summary_soc">+{{userScore}}分</view>
+    <view class="summary_top">
+        <view class="summary">正确率：{{correctRate}}%</view>
+        <view class="summary">用时：{{timeConsume}}</view>
+    </view>
+    <view class="summary_top">
+        <view class="summary">总题数：{{total}}题</view>
+        <view class="summary">答错: {{userError}}题</view>
+    </view>
+    <view class="buttonGroup">
+        <button bindtap="getErrorOptions" class="button" wx:if="{{userError>0}}">查看错题</button>
+        <button bindtap="redo" class="button" type="primary">再来一轮</button>
+        <button bindtap="gotoIndex" class="button" type="warn">回到首页</button>
+    </view>
+</view>

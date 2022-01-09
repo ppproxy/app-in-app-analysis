@@ -1,0 +1,15 @@
+{
+    "usingComponents": {
+        "band-tab": "../components/bandTab/index",
+        "feed-pull-down-refresh": "../components/FeedPullDownRefresh/FeedPullDownRefresh",
+        "card-content": "../components/cardContent/index",
+        "login-group": "../components/LoginGroup/LoginGroup",
+        "network-toast": "../components/NetworkErrorToast/NetworkErrorToast"
+    },
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 200,
+    "singlePage": {
+        "navigationBarFit": "squeezed"
+    }
+}

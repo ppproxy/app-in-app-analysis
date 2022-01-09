@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "发行相关",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

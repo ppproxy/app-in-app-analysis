@@ -1,0 +1,7 @@
+<view style="position: relative;{{customStyle}};{{painterStyle}}">
+    <canvas canvasId="photo" style="{{photoStyle}};position: absolute; left: -9999px; top: -9999rpx;"></canvas>
+    <canvas canvasId="bottom" style="{{painterStyle}};position: absolute;"></canvas>
+    <canvas canvasId="k-canvas" style="{{painterStyle}};position: absolute;"></canvas>
+    <canvas canvasId="top" style="{{painterStyle}};position: absolute;"></canvas>
+    <canvas bindtouchcancel="onTouchCancel" bindtouchend="onTouchEnd" bindtouchmove="onTouchMove" bindtouchstart="onTouchStart" canvasId="front" disableScroll="{{true}}" style="{{painterStyle}};position: absolute;"></canvas>
+</view>

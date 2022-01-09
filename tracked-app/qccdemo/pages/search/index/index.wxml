@@ -1,0 +1,590 @@
+<view class="uni-container search-page flex-box data-v-fa88effc">
+    <view class="fixed-wrap flex-shrink0 data-v-fa88effc">
+        <view class="search line-bottom data-v-fa88effc">
+            <view class="input-box flex-box data-v-fa88effc">
+                <view class="input flex-box data-v-fa88effc" style="{{key.length>1&&(tabIndex===1||tabIndex===4)?'margin-right: 20rpx;':''}}">
+                    <image class="search-icon data-v-fa88effc" mode="widthFix" src="https://eciapp-img.qichacha.com/community/142c5e2b-4625-49b8-8379-a6f3cb95eecf1627872401763.png"></image>
+                    <input bindconfirm="__e" bindfocus="__e" bindinput="__e" class="normal show-search-icon data-v-fa88effc" confirmType="搜索" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','key','$event',[] ] ],[ 'searchKeyChange',['$event'] ] ] ],[ 'focus',[ [ 'inputFocus',['$event'] ] ] ],[ 'confirm',[ [ 'setSearchHistory',['$event'] ] ] ] ]}}" enableNative="{{false}}" focus="{{focus}}" placeholder="{{placeholder[tabIndex]}}" placeholderStyle="color:#666;" type="text" value="{{key}}"></input>
+                    <image catchtap="__e" class="remove-icon data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" mode="widthFix" src="https://eciapp-img.qichacha.com/community/dc40ed07-5427-4d9e-9ed8-3e1c5f37cf691624863823158.png" wx:if="{{key}}"></image>
+                </view>
+                <view class="sort flex-shrink0 data-v-fa88effc" wx:if="{{key.length>1&&!(tabIndex===1||tabIndex===4)}}">
+                    <image catchtap="__e" class="sort-icon data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toggleSort',['$event'] ] ] ] ]}}" mode="widthFix" src="https://eciapp-img.qichacha.com/community/42053569-f0f0-4995-9a8c-68b9ffa450591624864353445.png"></image>
+                </view>
+                <block wx:else>
+                    <view catchtap="__e" class="cancel flex-shrink0 data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'backToHome',['$event'] ] ] ] ]}}" wx:if="{{key.length<2}}">取消</view>
+                </block>
+            </view>
+        </view>
+        <view class="tab-wrap data-v-fa88effc">
+            <view catchtap="__e" class="tab-col data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'tabClick',['$event'] ] ] ] ]}}" data-index="{{index}}" wx:for="{{tabList}}" wx:key="index">
+                <view class="{{['data-v-fa88effc',true?'tab-title':'',tabIndex===index?'active':'']}}">{{''+item.name+''}}</view>
+            </view>
+            <sort-list bind:__l="__l" bind:callBack="__e" class="data-v-fa88effc vue-ref-in-for" data-event-opts="{{[ [ '^callBack',[ ['filterCallBack'] ] ] ]}}" data-ref="{{'sort_'+index}}" filterStyle="{{top:0}}" sortList="{{item}}" vueId="{{'a2b08582-1-'+index}}" wx:if="{{!(index===1||index===4)}}" wx:for="{{sortList}}" wx:key="index"></sort-list>
+        </view>
+    </view>
+    <view class="content-wrap flex-1 data-v-fa88effc">
+        <swiper bindchange="__e" class="sp data-v-fa88effc" current="{{tabIndex}}" data-event-opts="{{[ [ 'change',[ [ 'spChange',['$event'] ] ] ] ]}}">
+            <swiper-item class="sp-item data-v-fa88effc" wx:for="{{$root.l7}}" wx:key="index">
+                <block wx:if="{{key&&key.length>1}}">
+                    <view class="risk-tab flex-shrink0 data-v-fa88effc" wx:if="{{index===2}}">
+                        <view catchtap="__e" class="{{['item data-v-fa88effc',list2Valid===1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'list2Tab',['$event'] ] ] ] ]}}" data-valid="{{1}}">{{'当前风险\n              '+(list2Count.valid1>999?'999+':list2Count.valid1)+''}}</view>
+                        <view catchtap="__e" class="{{['item data-v-fa88effc',list2Valid===0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'list2Tab',['$event'] ] ] ] ]}}" data-valid="{{0}}">{{'历史风险\n              '+(list2Count.valid0>999?'999+':list2Count.valid0)+''}}</view>
+                    </view>
+                    <view class="flex-shrink0 filter-wrap data-v-fa88effc" wx:if="{{index!==2}}">
+                        <templete bind:__l="__l" class="data-v-fa88effc" vueId="{{'a2b08582-2-'+index}}" vueSlots="{{['default']}}" wx:if="{{index===0}}">
+                            <filter-list bind:__l="__l" bind:callBack="__e" class="data-v-fa88effc vue-ref-in-for" count="{{list0.company.count}}" data-event-opts="{{[ [ '^callBack',[ ['filterCallBack'] ] ] ]}}" data-ref="{{'filter'+index}}" filter="{{filterArr[index]}}" vueId="{{'a2b08582-3-'+index+','+'a2b08582-2-'+index}}" wx:if="{{filterArr[index]&&filterArr[index].length}}"></filter-list>
+                        </templete>
+                        <block wx:else>
+                            <templete bind:__l="__l" class="data-v-fa88effc" vueId="{{'a2b08582-4-'+index}}" vueSlots="{{['default']}}" wx:if="{{index===1}}">
+                                <filter-list bind:__l="__l" bind:callBack="__e" class="data-v-fa88effc vue-ref-in-for" data-event-opts="{{[ [ '^callBack',[ ['filterCallBack'] ] ] ]}}" data-ref="{{'filter'+index}}" filter="{{filterArr[index]}}" vueId="{{'a2b08582-5-'+index+','+'a2b08582-4-'+index}}" wx:if="{{filterArr[index]&&filterArr[index].length}}"></filter-list>
+                            </templete>
+                            <block wx:else>
+                                <templete bind:__l="__l" class="data-v-fa88effc" vueId="{{'a2b08582-6-'+index}}" vueSlots="{{['default']}}" wx:if="{{index===3}}">
+                                    <filter-list bind:__l="__l" bind:callBack="__e" class="data-v-fa88effc vue-ref-in-for" data-custom-hidden="{{!(params[3].groupyear||params[3].type||list3.count)}}" data-event-opts="{{[ [ '^callBack',[ ['filterCallBack'] ] ] ]}}" data-ref="{{'filter'+index}}" filter="{{filterArr[index]}}" vueId="{{'a2b08582-7-'+index+','+'a2b08582-6-'+index}}" wx:if="{{filterArr[index]&&filterArr[index].length}}"></filter-list>
+                                </templete>
+                                <block wx:else>
+                                    <templete bind:__l="__l" class="data-v-fa88effc" vueId="{{'a2b08582-8-'+index}}" vueSlots="{{['default']}}" wx:if="{{index===4&&(params[4].startyear||params[4].type||list4.count)}}">
+                                        <filter-list bind:__l="__l" bind:callBack="__e" class="data-v-fa88effc vue-ref-in-for" data-event-opts="{{[ [ '^callBack',[ ['filterCallBack'] ] ] ]}}" data-ref="{{'filter'+index}}" filter="{{filterArr[index]}}" vueId="{{'a2b08582-9-'+index+','+'a2b08582-8-'+index}}" wx:if="{{filterArr[index]&&filterArr[index].length}}"></filter-list>
+                                    </templete>
+                                </block>
+                            </block>
+                        </block>
+                    </view>
+                    <view class="flex-shrink0 filter-wrap data-v-fa88effc" hidden="{{!(index===2&&list2Valid===1)}}">
+                        <filter-list bind:__l="__l" bind:callBack="__e" class="data-v-fa88effc vue-ref-in-for" data-event-opts="{{[ [ '^callBack',[ ['filterCallBack'] ] ] ]}}" data-ref="{{'filter'+index+'_1'}}" filter="{{filterArr[index][1]}}" filterStyle="{{top:88}}" vueId="{{'a2b08582-10-'+index}}" wx:if="{{filterArr[index][1]&&filterArr[index][1].length}}"></filter-list>
+                    </view>
+                    <view class="flex-shrink0 filter-wrap data-v-fa88effc" hidden="{{!(index===2&&list2Valid===0&&isVIP)}}">
+                        <filter-list bind:__l="__l" bind:callBack="__e" class="data-v-fa88effc vue-ref-in-for" data-event-opts="{{[ [ '^callBack',[ ['filterCallBack'] ] ] ]}}" data-ref="{{'filter'+index+'_'+0}}" filter="{{filterArr[index][0]}}" filterStyle="{{top:88}}" vueId="{{'a2b08582-11-'+index}}" wx:if="{{filterArr[index][0]&&filterArr[index][0].length}}"></filter-list>
+                    </view>
+                    <block wx:if="{{index===0}}">
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" wx:if="{{list0.person.count&&list0FixedShow[0]&&scrollTop[index]>0}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list0.person.title}}"></rich-text>
+                            <view catchtap="__e" class="tip-right flex-shrink0 vertical-center data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toAllPerson',['$event'] ] ] ] ]}}" wx:if="{{list0.person.count>5}}">
+                                <text class="view-all data-v-fa88effc">查看全部</text>
+                                <image class="arrow data-v-fa88effc" mode="widthFix" src="https://eciapp-img.qichacha.com/community/38d8efad-235a-4588-95e8-ba37b9b6d31a1627872411987.png"></image>
+                            </view>
+                        </view>
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" wx:if="{{list0.object.count&&list0FixedShow[1]&&scrollTop[index]>0}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list0.object.title}}"></rich-text>
+                            <view catchtap="__e" class="tip-right flex-shrink0 vertical-center data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toAllObject',['$event'] ] ] ] ]}}" wx:if="{{list0.object.count>5}}">
+                                <text class="view-all data-v-fa88effc">查看全部</text>
+                                <image class="arrow data-v-fa88effc" mode="widthFix" src="https://eciapp-img.qichacha.com/community/38d8efad-235a-4588-95e8-ba37b9b6d31a1627872411987.png"></image>
+                            </view>
+                        </view>
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" wx:if="{{list0.company.list.length&&list0FixedShow[2]&&scrollTop[index]>0}}">
+                            <rich-text class="tip-left flex-shrink0 vertical-center data-v-fa88effc" nodes="{{list0.company.title}}"></rich-text>
+                            <view catchtap="__e" class="export blue vertical-center data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'sendDataClick',['$event'] ] ] ] ]}}">导出数据</view>
+                            <view class="page-change flex-1 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index]+'/'+allPage[index]+' '+'页'}}</view>
+                        </view>
+                    </block>
+                    <block wx:if="{{index===1}}">
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" wx:if="{{list1.count&&scrollTop[index]>0}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list1.title}}"></rich-text>
+                        </view>
+                    </block>
+                    <block wx:if="{{index===2}}">
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" style="top:166rpx;" wx:if="{{list2.valid1.count&&scrollTop[index][1]>list2RiskCompanyTop&&list2Valid===1&&list2.valid1.list.length}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list2.valid1.title}}"></rich-text>
+                            <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index][1]+'/'+allPage[index][1]+' '+'页'}}</view>
+                        </view>
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" style="top:168rpx;" wx:if="{{list2.valid0.count&&isVIP&&scrollTop[index][0]>0&&list2Valid===0&&list2.valid0.list.length}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list2.valid0.title}}"></rich-text>
+                            <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index][0]+'/'+allPage[index][0]+' '+'页'}}</view>
+                        </view>
+                    </block>
+                    <block wx:if="{{index===3}}">
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" wx:if="{{list3.count&&scrollTop[index]>0}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list3.title}}"></rich-text>
+                            <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index]+'/'+allPage[index]+' '+'页'}}</view>
+                        </view>
+                    </block>
+                    <block wx:if="{{index===4}}">
+                        <view class="{{['search-tip flex-box data-v-fa88effc',true?'fixed':'']}}" wx:if="{{list4.count&&scrollTop[index]>0}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list4.title}}"></rich-text>
+                            <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index]+'/'+allPage[index]+' '+'页'}}</view>
+                        </view>
+                    </block>
+                    <scroll-view bindscroll="__e" bindscrolltolower="__e" class="{{[ 'data-v-fa88effc','scroll-wrap flex-1 risk-wrap '+(index===2&&list2Valid===1?'show':'hide') ]}}" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMore',['$event'] ] ] ],[ 'scroll',[ [ 'scrolling',['$event'] ] ] ] ]}}" lowerThreshold="50" scrollY="{{true}}" style="height:calc(100vh - 330rpx);" wx:if="{{index===2&&list2Valid===1}}">
+                        <block wx:if="{{list2.valid1.count}}">
+                            <view catchtap="__e" class="flex-box risk-company data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toCopDetail',['$event'] ] ] ] ]}}" data-name="{{list2RiskTop.Name}}" data-unique="{{list2RiskTop.KeyNo}}" id="search-tip2" style="margin-top:20rpx;" wx:if="{{list2RiskTop.KeyNo}}">
+                                <view class="logo flex-shrink0 data-v-fa88effc">
+                                    <app-auto-logo bind:__l="__l" class="data-v-fa88effc" logo="{{list2RiskTop.ImageUrl}}" name="{{list2RiskTop.Name}}" size="72rpx" vueId="{{'a2b08582-12-'+index}}"></app-auto-logo>
+                                </view>
+                                <view class="{{['data-v-fa88effc',' name flex-1']}}">{{''+list2RiskTop.Name+''}}</view>
+                                <view class="status vertical-center flex-shrink0 data-v-fa88effc" style="{{'color:'+list2RiskTop.StatusColor+';border:2rpx solid '+list2RiskTop.StatusColor+';'}}">{{''+list2RiskTop.ShortStatus+''}}</view>
+                            </view>
+                            <scroll-view class="risk-right-wrap data-v-fa88effc" scrollX="{{true}}" wx:if="{{list2RiskTop.Result&&list2RiskTop.Result.length}}">
+                                <view class="risk-item-wrap data-v-fa88effc" style="{{'width:'+list2RiskTop.Result.length*220+'rpx;'}}">
+                                    <view catchtap="__e" class="self-risk-wrap data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toScan',['$event'] ] ] ] ]}}" data-index="{{ind}}" data-name="{{list2RiskTop.Name}}" data-unique="{{list2RiskTop.KeyNo}}" wx:for="{{list2RiskTop.Result}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                        <view class="self-risk flex-box vertical-center data-v-fa88effc">
+                                            <view class="self-risk-text data-v-fa88effc">{{alt.Title}}</view>
+                                            <view class="{{[ 'data-v-fa88effc','self-risk-num '+(alt.TotalCount>0?'self-risk-num-animate':'') ]}}">{{''+( (alt.TotalCount>999?'999+':alt.TotalCount)||'0' )+''}}</view>
+                                        </view>
+                                        <view class="self-risk-desc data-v-fa88effc" wx:for="{{alt.List}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">
+                                            <text class="self-risk-desc-item data-v-fa88effc">{{alt2.desc+'('+alt2.count+')'}}</text>
+                                        </view>
+                                        <view class="self-risk-nodata data-v-fa88effc" wx:if="{{alt.List.length===0}}">{{''+(alt.EmptyDataDesc||'暂无风险信息')+''}}</view>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </block>
+                        <view class="search-tip flex-box data-v-fa88effc" style="top:166rpx;" wx:if="{{list2.valid1.count&&list2.valid1.list.length}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list2.valid1.title}}"></rich-text>
+                            <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index][1]+'/'+allPage[index][1]+' '+'页'}}</view>
+                        </view>
+                        <view class="brand-wrap data-v-fa88effc">
+                            <view bindtouchstart="__e" catchtap="__e" class="{{['data-v-fa88effc',true?'brand-item':'',(alt[$orig].Id||alt[$orig].H5Url)&&alt[$orig].Type!==12&&alt[$orig].Type!==31&&alt[$orig].Type!==30&&alt[$orig].Type!==22&&alt[$orig].Type!==28&&alt[$orig].Type!==34?'arrow':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toRiskDetail',['$event'] ] ] ],[ 'touchstart',[ [ 'trackEvent',['$event'] ] ] ] ]}}" data-h5="{{alt[$orig].H5Url}}" data-id="{{alt[$orig].Id}}" data-object="{{alt.g0}}" data-type="{{alt[$orig].Type}}" id="{{'t_'+index+'_1_'+ind}}" wx:for="{{item.l0}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                <view class="brand-top flex-box data-v-fa88effc">
+                                    <view class="title-wrap flex-1 data-v-fa88effc">
+                                        <rich-text class="title data-v-fa88effc" nodes="{{alt[$orig].Title}}"></rich-text>
+                                        <view class="tag-wrap data-v-fa88effc">
+                                            <view class="tag data-v-fa88effc" style="{{'background-color:'+alt2.bg+';color:'+alt2.Color+';'}}" wx:for="{{alt[$orig].Tags}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">{{''+alt2.Name+''}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="brand-bottom data-v-fa88effc">
+                                    <view class="row flex-box data-v-fa88effc" wx:for="{{alt[$orig].DataList}}" wx:for-index="ind1" wx:for-item="alt1" wx:key="ind1">
+                                        <view class="row-title flex-shrink0 data-v-fa88effc">{{''+alt1.label+'：'+''}}</view>
+                                        <view class="row-subtitle flex-1 vertical-center data-v-fa88effc">
+                                            <rich-text class="data-v-fa88effc" nodes="{{alt1.value}}"></rich-text>
+                                        </view>
+                                    </view>
+                                    <view class="row flex-box data-v-fa88effc" wx:if="{{alt[$orig].HitReason.Field}}">
+                                        <view class="row-title flex-shrink0 flex-box data-v-fa88effc">
+                                            <image class="item-bottom-logo flex-shrink0 data-v-fa88effc" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_Enclosure.png"></image>
+                                            <view class="flex-1 data-v-fa88effc">{{''+alt[$orig].HitReason.Field+'：'+''}}</view>
+                                        </view>
+                                        <view class="row-subtitle flex-1 vertical-center data-v-fa88effc">
+                                            <rich-text class="data-v-fa88effc" nodes="{{alt[$orig].HitReason.Value}}"></rich-text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <app-bottom-loading bind:__l="__l" class="data-v-fa88effc" loadAll="{{!canLoadNext[index][1]&&pageIndex[index][1]<=9&&pageIndex[index][1]>1&&list2.valid1.list.length}}" loading="{{loading[index][1]&&canLoadNext[index][1]}}" vueId="{{'a2b08582-13-'+index}}"></app-bottom-loading>
+                        <view class="app-text data-v-fa88effc" wx:if="{{!canLoadNext[index][1]&&pageIndex[index][1]>9}}">下载APP，查看更多数据</view>
+                        <view bindtap="__e" class="app-button data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toDownload',['$event'] ] ] ] ]}}" wx:if="{{!canLoadNext[index][1]&&pageIndex[index][1]>9}}">前往下载企查查APP</view>
+                        <view class="data-v-fa88effc" style="height:15px;" wx:if="{{!canLoadNext[index][1]&&pageIndex[index][1]>1}}"></view>
+                        <app-no-data bind:__l="__l" class="data-v-fa88effc" text="暂时没找到相关数据" vueId="{{'a2b08582-14-'+index}}" wx:if="{{!loading[index][1]&&!canLoadNext[index][1]&&!list2.valid1.list.length}}"></app-no-data>
+                    </scroll-view>
+                    <scroll-view bindscroll="__e" bindscrolltolower="__e" class="{{[ 'data-v-fa88effc','scroll-wrap flex-1 risk-wrap '+(index===2&&list2Valid===0?'show':'hide') ]}}" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMore',['$event'] ] ] ],[ 'scroll',[ [ 'scrolling',['$event'] ] ] ] ]}}" lowerThreshold="50" scrollY="{{true}}" style="{{isVIP?'height:calc(100vh - 330rpx);':'height:calc(100vh - 256rpx)'}}">
+                        <view class="search-tip flex-box data-v-fa88effc" style="top:168rpx;" wx:if="{{list2.valid0.count&&isVIP&&list2.valid0.list.length}}">
+                            <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list2.valid0.title}}"></rich-text>
+                            <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index][0]+'/'+allPage[index][0]+' '+'页'}}</view>
+                        </view>
+                        <view class="brand-wrap data-v-fa88effc">
+                            <view bindtouchstart="__e" catchtap="__e" class="{{['data-v-fa88effc',true?'brand-item':'',(alt[$orig].Id||alt[$orig].H5Url)&&alt[$orig].Type!==12&&alt[$orig].Type!==31&&alt[$orig].Type!==30&&alt[$orig].Type!==22&&alt[$orig].Type!==28&&alt[$orig].Type!==34?'arrow':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toRiskDetail',['$event'] ] ] ],[ 'touchstart',[ [ 'trackEvent',['$event'] ] ] ] ]}}" data-h5="{{alt[$orig].H5Url}}" data-id="{{alt[$orig].Id}}" data-object="{{alt.g1}}" data-type="{{alt[$orig].Type}}" id="{{'t_'+index+'_0_'+ind}}" wx:for="{{item.l1}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                <view class="brand-top flex-box data-v-fa88effc">
+                                    <view class="title-wrap flex-1 data-v-fa88effc">
+                                        <rich-text class="title data-v-fa88effc" nodes="{{alt[$orig].Title}}"></rich-text>
+                                        <view class="tag-wrap data-v-fa88effc">
+                                            <view class="tag data-v-fa88effc" style="{{'background-color:'+alt2.bg+';color:'+alt2.Color+';'}}" wx:for="{{alt[$orig].Tags}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">{{''+alt2.Name+''}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="brand-bottom data-v-fa88effc">
+                                    <view class="row flex-box data-v-fa88effc" wx:for="{{alt[$orig].DataList}}" wx:for-index="ind1" wx:for-item="alt1" wx:key="ind1">
+                                        <view class="row-title flex-shrink0 data-v-fa88effc">{{''+alt1.label+'：'+''}}</view>
+                                        <view class="row-subtitle flex-1 vertical-center data-v-fa88effc">
+                                            <rich-text class="data-v-fa88effc" nodes="{{alt1.value}}"></rich-text>
+                                        </view>
+                                    </view>
+                                    <view class="row flex-box data-v-fa88effc" wx:if="{{alt[$orig].HitReason.Field}}">
+                                        <view class="row-title flex-shrink0 flex-box data-v-fa88effc">
+                                            <image class="item-bottom-logo flex-shrink0 data-v-fa88effc" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_Enclosure.png"></image>
+                                            <view class="flex-1 data-v-fa88effc">{{''+alt[$orig].HitReason.Field+'：'+''}}</view>
+                                        </view>
+                                        <view class="row-subtitle flex-1 vertical-center data-v-fa88effc">
+                                            <rich-text class="data-v-fa88effc" nodes="{{alt[$orig].HitReason.Value}}"></rich-text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <app-bottom-loading bind:__l="__l" class="data-v-fa88effc" loadAll="{{!canLoadNext[index][0]&&pageIndex[index][0]<=9&&pageIndex[index][0]>1&&list2.valid0.list.length}}" loading="{{loading[index][0]&&canLoadNext[index][0]}}" vueId="{{'a2b08582-15-'+index}}"></app-bottom-loading>
+                        <view class="app-text data-v-fa88effc" wx:if="{{!canLoadNext[index][0]&&pageIndex[index][0]>9}}">下载APP，查看更多数据</view>
+                        <view bindtap="__e" class="app-button data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toDownload',['$event'] ] ] ] ]}}" wx:if="{{!canLoadNext[index][0]&&pageIndex[index][0]>9}}">前往下载企查查APP</view>
+                        <view class="data-v-fa88effc" style="height:15px;" wx:if="{{!canLoadNext[index][0]&&pageIndex[index][0]>1}}"></view>
+                        <app-no-data bind:__l="__l" class="data-v-fa88effc" text="暂时没找到相关数据" vueId="{{'a2b08582-16-'+index}}" wx:if="{{!loading[index][0]&&!canLoadNext[index][0]&&!list2.valid0.list.length}}"></app-no-data>
+                        <app-vip-pop bind:__l="__l" bind:hideVipPop="__e" class="data-v-fa88effc" data-event-opts="{{[ [ '^hideVipPop',[ ['cancelVip'] ] ] ]}}" divCall="{{true}}" isScroll="{{true}}" paySourceType="查历史风险" titleText="历史风险" vueId="{{'a2b08582-17-'+index}}" wx:if="{{!isVIP&&list2.valid0.count}}"></app-vip-pop>
+                    </scroll-view>
+                    <scroll-view bindscroll="__e" bindscrolltolower="__e" class="scroll-wrap flex-1 data-v-fa88effc" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMore',['$event'] ] ] ],[ 'scroll',[ [ 'scrolling',['$event'] ] ] ] ]}}" lowerThreshold="50" scrollY="{{true}}" style="height:calc(100vh - 250rpx);" wx:if="{{index!==2}}">
+                        <block wx:if="{{index===0}}">
+                            <view class="search-tip flex-box data-v-fa88effc" wx:if="{{list0.person.count&&list0.company.count}}">
+                                <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list0.person.title}}"></rich-text>
+                                <view catchtap="__e" class="tip-right flex-shrink0 vertical-center data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toAllPerson',['$event'] ] ] ] ]}}" wx:if="{{list0.person.count>5}}">
+                                    <text class="view-all data-v-fa88effc">查看全部</text>
+                                    <image class="arrow data-v-fa88effc" mode="widthFix" src="https://eciapp-img.qichacha.com/community/38d8efad-235a-4588-95e8-ba37b9b6d31a1627872411987.png"></image>
+                                </view>
+                            </view>
+                            <view class="person-wrap data-v-fa88effc" wx:if="{{list0.person.count&&list0.company.count}}">
+                                <scroll-view class="person data-v-fa88effc" scrollX="{{true}}">
+                                    <view class="flex-box sub-wrap data-v-fa88effc">
+                                        <view catchtap="__e" class="flex-shrink0 person-item flex-box data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toCompanyRelatedPersonDetail',['$event'] ] ] ] ]}}" data-name="{{alt.name}}" data-unique="{{alt.keyNo}}" wx:for="{{list0.person.list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                            <view class="person-top flex-shrink0 flex-box data-v-fa88effc">
+                                                <view class="image left vertical-center flex-shrink0 data-v-fa88effc">
+                                                    <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="40rpx" logo="{{alt.avatar}}" name="{{alt.name}}" size="72rpx" vueId="{{'a2b08582-18-'+index+'-'+ind}}"></app-auto-logo>
+                                                </view>
+                                                <view class="right flex-1 flex-box data-v-fa88effc">
+                                                    <view class="title vertical-center flex-shrink0 flex-box data-v-fa88effc">
+                                                        <view class="title-rich flex-shrink0 data-v-fa88effc" style="max-width:92rpx;">
+                                                            <view class="line-1 data-v-fa88effc">{{''+alt.name+''}}</view>
+                                                        </view>
+                                                        <view class="desc flex-shrink0 line-1 data-v-fa88effc" style="max-width:106rpx;">{{''+alt.roleDesc+''}}</view>
+                                                    </view>
+                                                    <view class="content flex-1 data-v-fa88effc">
+                                                        <view class="content-rich line-1 data-v-fa88effc">他有<text class="count data-v-fa88effc">{{''+alt.count+''}}</text>家公司</view>
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class="person-bottom data-v-fa88effc">
+                                                <view class="person-related vertical-center data-v-fa88effc">
+                                                    <view class="address line-1 data-v-fa88effc">{{''+alt.provinceinfo[0].P_LABEL+''}}<text class="red data-v-fa88effc">{{''+(alt.provinceinfo[0].C||'-')+''}}</text>家</view>
+                                                    <view class="info line-1 data-v-fa88effc">{{''+alt.provinceinfo[0].N+''}}</view>
+                                                    <block wx:if="{{alt.provinceinfo[0].C>1}}">等</block>
+                                                </view>
+                                                <view class="person-related vertical-center data-v-fa88effc" wx:if="{{alt.otherCount}}">
+                                                    <view class="address data-v-fa88effc">其他<text class="red data-v-fa88effc">{{''+alt.otherCount+''}}</text>家</view>
+                                                    <view class="info line-1 data-v-fa88effc">{{''+alt.provinceinfo[1].N+''}}</view>
+                                                    <block wx:if="{{alt.otherCount>1}}">等</block>
+                                                </view>
+                                            </view>
+                                        </view>
+                                        <view catchtap="__e" class="more vertical-center flex-shrink0 data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toAllPerson',['$event'] ] ] ] ]}}" wx:if="{{list0.person.count>10}}">
+                                            <view class="more-text data-v-fa88effc">查看全部</view>
+                                            <image class="more-icon data-v-fa88effc" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/ic_more_arrow.png"></image>
+                                        </view>
+                                    </view>
+                                </scroll-view>
+                            </view>
+                            <view class="search-tip flex-box data-v-fa88effc" wx:if="{{list0.object.count&&list0.company.count}}">
+                                <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list0.object.title}}"></rich-text>
+                                <view catchtap="__e" class="tip-right flex-shrink0 vertical-center data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toAllObject',['$event'] ] ] ] ]}}" wx:if="{{list0.object.count>5}}">
+                                    <text class="view-all data-v-fa88effc">查看全部</text>
+                                    <image class="arrow data-v-fa88effc" mode="widthFix" src="https://eciapp-img.qichacha.com/community/38d8efad-235a-4588-95e8-ba37b9b6d31a1627872411987.png"></image>
+                                </view>
+                            </view>
+                            <view class="object-wrap data-v-fa88effc" wx:if="{{list0.object.count&&list0.company.count}}">
+                                <scroll-view class="object data-v-fa88effc" scrollX="{{true}}">
+                                    <view class="flex-box sub-wrap data-v-fa88effc">
+                                        <view catchtap="__e" class="flex-shrink0 object-item flex-box data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toObject',['$event'] ] ] ] ]}}" data-name="{{alt.name}}" data-url="{{alt.mpUrl}}" wx:for="{{list0.object.list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                            <image class="type data-v-fa88effc" mode="widthFix" src="{{alt.typeImg}}"></image>
+                                            <view class="image left vertical-center flex-shrink0 data-v-fa88effc">
+                                                <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="40rpx" logo="{{alt.imageUrl}}" name="{{alt.name}}" size="72rpx" vueId="{{'a2b08582-19-'+index+'-'+ind}}"></app-auto-logo>
+                                            </view>
+                                            <view class="right flex-1 data-v-fa88effc">
+                                                <view class="title line-1 data-v-fa88effc">
+                                                    <rich-text class="title-rich data-v-fa88effc" nodes="{{alt.name}}"></rich-text>
+                                                </view>
+                                                <view class="content content1 line-1 data-v-fa88effc">
+                                                    <rich-text class="content-rich data-v-fa88effc" nodes="{{alt.subTitle}}"></rich-text>
+                                                </view>
+                                                <view class="content line-1 data-v-fa88effc">
+                                                    <rich-text class="content-rich data-v-fa88effc" nodes="{{alt.subTitle2}}"></rich-text>
+                                                </view>
+                                            </view>
+                                        </view>
+                                        <view catchtap="__e" class="more vertical-center flex-shrink0 data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toAllObject',['$event'] ] ] ] ]}}" wx:if="{{list0.object.count>5}}">
+                                            <view class="more-text data-v-fa88effc">查看全部</view>
+                                            <image class="more-icon data-v-fa88effc" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/ic_more_arrow.png"></image>
+                                        </view>
+                                    </view>
+                                </scroll-view>
+                            </view>
+                            <view class="search-tip flex-box data-v-fa88effc" wx:if="{{list0.company.list.length}}">
+                                <rich-text class="tip-left flex-shrink0 vertical-center data-v-fa88effc" nodes="{{list0.company.title}}"></rich-text>
+                                <view catchtap="__e" class="export blue vertical-center data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'sendDataClick',['$event'] ] ] ] ]}}">导出数据</view>
+                                <view class="page-change flex-1 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index]+'/'+allPage[index]+' '+'页'}}</view>
+                            </view>
+                            <view bindtap="__e" class="company-wrap data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toCompanyDetail',['$event'] ] ] ] ]}}" data-name="{{alt[$orig].Name}}" data-unique="{{alt[$orig].KeyNo}}" hoverClass="hover" id="{{'t_'+index+'_'+ind}}" style="{{alt[$orig].OperName||alt[$orig].RegistCapi||alt[$orig].StartDate?'':'padding:30rpx 0;'}}" wx:for="{{item.l2}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                <view class="title-wrap data-v-fa88effc">
+                                    <view class="title-wrap-left data-v-fa88effc">
+                                        <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="30rpx" logo="{{alt[$orig].ImageUrl}}" name="{{alt[$orig].Name}}" size="48rpx" vueId="{{'a2b08582-20-'+index+'-'+ind}}"></app-auto-logo>
+                                        <view class="company-title data-v-fa88effc">
+                                            <rich-text class="data-v-fa88effc" nodes="{{alt[$orig].richName||alt[$orig].Name}}"></rich-text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="tag-wrap data-v-fa88effc">
+                                    <view class="title-left-position data-v-fa88effc" style="{{'background-color:'+alt[$orig].StatusBackground+';'+'color:'+alt[$orig].StatusColor+';'}}" wx:if="{{alt[$orig].ShortStatus}}">{{''+alt[$orig].ShortStatus+''}}</view>
+                                    <view class="title-left-position q data-v-fa88effc" wx:if="{{alt[$orig].IsAuth}}">
+                                        <view class="qcc-rz data-v-fa88effc"></view>企查查认证</view>
+                                    <view class="title-left-position n data-v-fa88effc" wx:for="{{alt[$orig].TagsInfo}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">{{''+(alt2.n==='A股'||alt2.n==='港股'?alt2.n+' | '+alt2.s+' '+alt2.d:alt2.n)+''}}</view>
+                                </view>
+                                <view class="table-data flex-box data-v-fa88effc" wx:if="{{alt[$orig].showFields&&!!(alt[$orig].showFields[0].name||alt[$orig].showFields[1].v||alt[$orig].showFields[2].v)}}">
+                                    <view class="{{['data-v-fa88effc',ind2!==1?'flex-1':'',ind2===1?'border':'',ind2===1?'flex-shrink0':'']}}" wx:for="{{alt[$orig].showFields}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">
+                                        <view class="table-top line-1 data-v-fa88effc">{{''+(alt2.k||'-')+''}}</view>
+                                        <view catchtap="__e" class="{{['data-v-fa88effc',true?'table-bottom':'',true?'line-1':'',alt2.url?'blue':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'legalClick',['$event'] ] ] ] ]}}" data-name="{{alt2.name||''}}" data-unique="{{alt[$orig].OperId||alt[$orig].KeyNo}}" wx:if="{{ind2===0}}">
+                                            <rich-text class="line-1 data-v-fa88effc" nodes="{{alt2.v}}"></rich-text>
+                                        </view>
+                                        <view class="{{['data-v-fa88effc',true?'table-bottom':'',true?'line-1':'']}}" wx:else>
+                                            <rich-text class="line-1 data-v-fa88effc" nodes="{{alt2.v}}"></rich-text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view catchtap="__e" class="scan-wrap flex-box data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toScan',['$event'] ] ] ] ]}}" data-name="{{alt[$orig].Name}}" data-unique="{{alt[$orig].KeyNo}}" wx:if="{{alt[$orig].RiskSetting&&alt[$orig].RiskSetting.Icon}}">
+                                    <view class="image flex-shrink0 vertical-center data-v-fa88effc">
+                                        <image class="icon data-v-fa88effc" src="{{alt[$orig].RiskSetting.Icon}}"></image>
+                                    </view>
+                                    <view class="rich-wrap flex-1 vertical-center data-v-fa88effc">
+                                        <rich-text class="line-1 data-v-fa88effc" nodes="{{alt[$orig].RiskSetting.Label}}"></rich-text>
+                                    </view>
+                                    <view class="arrow flex-shrink0 vertical-center data-v-fa88effc"></view>
+                                </view>
+                                <view class="data-v-fa88effc" style="height:28rpx;" wx:if="{{alt[$orig].RiskSetting&&alt[$orig].RiskSetting.Icon}}"></view>
+                                <view class="item-bottom flex-box data-v-fa88effc" wx:if="{{alt[$orig].bottomDesc||alt[$orig].ContactNumber||alt[$orig].GW||alt[$orig].Address}}">
+                                    <view bindtap="__e" class="flex-1 flex-box data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'trackEvent',['$event'] ] ] ] ]}}" data-object="{{alt.g2}}">
+                                        <image class="item-bottom-logo flex-shrink0 data-v-fa88effc" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_Enclosure.png" wx:if="{{alt[$orig].bottomDesc}}"></image>
+                                        <view class="bottom-desc line-1 flex-1 data-v-fa88effc">
+                                            <rich-text class="data-v-fa88effc" nodes="{{alt[$orig].bottomDesc}}"></rich-text>
+                                        </view>
+                                    </view>
+                                    <view class="company-desc-right flex-box flex-shrink0 data-v-fa88effc">
+                                        <view catchtap="__e" class="btn data-v-fa88effc" data-contact="{{alt[$orig].ContactNumber}}" data-event-opts="{{[ [ 'tap',[ [ 'getMorePhoneUrl',['$event'] ] ] ] ]}}" data-unique="{{alt[$orig].KeyNo}}" style="background-image:url('https://eciapp-img.qichacha.com/community/066ae81e-54f6-4482-9f9d-5c4b285564411627869460330.png');" wx:if="{{alt[$orig].ContactNumber}}"></view>
+                                        <view catchtap="__e" class="btn data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'copyText',['$event'] ] ] ] ]}}" data-text="{{alt[$orig].GW}}" style="background-image:url('https://eciapp-img.qichacha.com/community/fa0ebb05-6b72-4e9a-aad0-7c0749b3f0041627869033404.png');" wx:if="{{alt[$orig].GW}}"></view>
+                                        <view catchtap="__e" class="btn data-v-fa88effc" data-address="{{alt[$orig].Address}}" data-event-opts="{{[ [ 'tap',[ [ 'openAddress',['$event'] ] ] ] ]}}" data-name="{{alt[$orig].Name}}" style="background-image:url('https://eciapp-img.qichacha.com/community/1d7da05f-9b1f-4211-9c89-870089af1f391627869036347.png');" wx:if="{{alt[$orig].Address}}"></view>
+                                    </view>
+                                </view>
+                            </view>
+                            <app-bottom-loading bind:__l="__l" class="data-v-fa88effc" loadAll="{{false}}" loading="{{loading[index]&&canLoadNext[index]}}" vueId="{{'a2b08582-21-'+index}}"></app-bottom-loading>
+                            <view class="vip-tips-wrap data-v-fa88effc" wx:if="{{!isVIP&&!canLoadNext[index]&&pageIndex[index]===1&&!loading[index]&&list0.company.list.length>=40||NewCompanyLimitation}}">
+                                <view bindtap="__e" class="vip-tips data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'loadMoreCompanyData',['$event'] ] ] ] ]}}">
+                                    <view class="vip-tips-item data-v-fa88effc">
+                                        <view class="tip-text data-v-fa88effc" wx:if="{{(!isIPhone||platform==='mp-alipay')&&!isSVIP&&platform!=='mp-toutiao'&&!item.g3}}">成为<text class="red data-v-fa88effc">VIP会员</text>{{'，可查看全部5000+'+(NewCompanyLimitation?'新增':'')+'企业'}}</view>
+                                        <view class="tip-text data-v-fa88effc" wx:else>{{'暂不支持查看全部5000+'+(NewCompanyLimitation?'新增':'')+'企业'}}</view>
+                                        <view class="tip-btn data-v-fa88effc" wx:if="{{(!isIPhone||platform==='mp-alipay')&&!isSVIP&&platform!=='mp-toutiao'&&!item.g4}}">
+                                            <view class="tip-btn-img-wrap data-v-fa88effc">
+                                                <image class="tip-btn-img data-v-fa88effc" src="https://eciapp-img.qichacha.com/community/03a637a1-39d0-4fd6-b31a-1e294b69c2f01627904151505.png"></image>
+                                            </view>
+                                            <text class="data-v-fa88effc">立即开通VIP</text>
+                                        </view>
+                                        <view class="tip-btn data-v-fa88effc" style="background:#EEEEEE;color:#999;" wx:else>暂不支持</view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="app-text data-v-fa88effc" wx:if="{{isVIP&&!canLoadNext[index]&&pageIndex[index]>1}}">下载APP，查看更多数据</view>
+                            <view bindtap="__e" class="app-button data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toDownload',['$event'] ] ] ] ]}}" wx:if="{{isVIP&&!canLoadNext[index]&&pageIndex[index]>1}}">前往下载企查查APP</view>
+                            <view class="data-v-fa88effc" style="height:15px;" wx:if="{{!canLoadNext[index]&&pageIndex[index]>1}}"></view>
+                            <app-no-data bind:__l="__l" class="data-v-fa88effc" text="暂时没找到相关数据" vueId="{{'a2b08582-22-'+index}}" wx:if="{{!loading[index]&&!canLoadNext[index]&&!list0.company.list.length}}"></app-no-data>
+                        </block>
+                        <block wx:if="{{index===1}}">
+                            <view class="search-tip flex-box data-v-fa88effc" wx:if="{{list1.count}}">
+                                <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list1.title}}"></rich-text>
+                            </view>
+                            <view class="boss-wrap data-v-fa88effc">
+                                <view catchtap="__e" class="boss-item data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toPersonDetail',['$event'] ] ] ] ]}}" data-name="{{alt.name}}" data-unique="{{alt.id}}" id="{{'t_'+index+'_'+ind}}" wx:for="{{list1.list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                    <view class="boss-head data-v-fa88effc">
+                                        <view class="boss-head-logo data-v-fa88effc">
+                                            <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="40rpx" logo="{{alt.avatar||''}}" name="{{alt.name||''}}" size="88rpx" vueId="{{'a2b08582-23-'+index+'-'+ind}}"></app-auto-logo>
+                                        </view>
+                                        <view class="boss-head-title data-v-fa88effc">
+                                            <view class="color-3 font-16 data-v-fa88effc">{{alt.name}}</view>
+                                            <view class="color-6 font-13 data-v-fa88effc">共关联<text class="red data-v-fa88effc">{{''+' '+alt.count+' '+''}}</text>家企业，主要分布：</view>
+                                        </view>
+                                    </view>
+                                    <view class="data-v-fa88effc">
+                                        <view class="{{['data-v-fa88effc','hot-head-company space-between color-3 font-13 flex-box']}}" wx:for="{{alt.provinceinfo}}" wx:for-index="index2" wx:for-item="alt2" wx:key="index2">
+                                            <view class="flex-shrink0 data-v-fa88effc">{{''+alt2.P_LABEL+'(共'}}<text class="red data-v-fa88effc">{{''+' '+alt2.C+' '+''}}</text>家)</view>
+                                            <view class="company-name data-v-fa88effc">
+                                                <text class="fr data-v-fa88effc" wx:if="{{alt2.C>1}}">等</text>
+                                                <text class="limit-width line-1 data-v-fa88effc" wx:if="{{alt2.C<2}}">{{''+alt2.N+''}}</text>
+                                                <text class="limit-width line-1 data-v-fa88effc" wx:else>{{''+alt2.N+'...'+''}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="hot-partner color-9 font-12 data-v-fa88effc" wx:if="{{alt.partner.length}}">他的合作伙伴</view>
+                                    <scroll-view class="partner-container flex-box data-v-fa88effc" scrollX="{{true}}" wx:if="{{alt.partner.length}}">
+                                        <view class="flex-box data-v-fa88effc">
+                                            <view catchtap="__e" class="partner-item flex-shrink0 data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toPartner',['$event'] ] ] ] ]}}" data-name="{{alt2.E||''}}" data-unique="{{alt2.D}}" wx:for="{{alt.partner}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">
+                                                <view class="item-title flex-box data-v-fa88effc">
+                                                    <view class="image data-v-fa88effc">
+                                                        <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="30rpx" logo="{{alt2.avatar||''}}" name="{{alt2.E||''}}" size="60rpx" vueId="{{'a2b08582-24-'+index+'-'+ind+'-'+ind2}}"></app-auto-logo>
+                                                    </view>
+                                                    <view class="right flex-1 data-v-fa88effc">
+                                                        <view class="{{[ 'data-v-fa88effc','text line-1 color-3 '+(alt2.D?'blue':'') ]}}">{{''+alt2.E+''}}</view>
+                                                        <view class="partner-count color-6 font-11 data-v-fa88effc">合作<text class="red data-v-fa88effc">{{''+' '+alt2.A+' '+''}}</text>次数</view>
+                                                    </view>
+                                                </view>
+                                                <view class="line-2 color-6 font-11 data-v-fa88effc">{{''+alt2.C+''}}</view>
+                                            </view>
+                                        </view>
+                                    </scroll-view>
+                                </view>
+                            </view>
+                            <app-bottom-loading bind:__l="__l" class="data-v-fa88effc" loadAll="{{!canLoadNext[index]&&pageIndex[index]<=9&&pageIndex[index]>1&&list1.list.length}}" loading="{{loading[index]&&canLoadNext[index]}}" vueId="{{'a2b08582-25-'+index}}"></app-bottom-loading>
+                            <view class="app-text data-v-fa88effc" wx:if="{{!canLoadNext[index]&&pageIndex[index]>9}}">下载APP，查看更多数据</view>
+                            <view bindtap="__e" class="app-button data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toDownload',['$event'] ] ] ] ]}}" wx:if="{{!canLoadNext[index]&&pageIndex[index]>9}}">前往下载企查查APP</view>
+                            <view class="data-v-fa88effc" style="height:15px;" wx:if="{{!canLoadNext[index]&&pageIndex[index]>1}}"></view>
+                            <app-no-data bind:__l="__l" class="data-v-fa88effc" text="暂时没找到相关数据" vueId="{{'a2b08582-26-'+index}}" wx:if="{{!loading[index]&&!canLoadNext[index]&&!list1.list.length}}"></app-no-data>
+                        </block>
+                        <block wx:if="{{index===3}}">
+                            <view class="search-tip flex-box data-v-fa88effc" wx:if="{{list3.count}}">
+                                <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list3.title}}"></rich-text>
+                                <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index]+'/'+allPage[index]+' '+'页'}}</view>
+                            </view>
+                            <view class="brand-wrap data-v-fa88effc">
+                                <view bindtouchstart="__e" catchtap="__e" class="{{['data-v-fa88effc',true?'brand-item':'',alt.hasArrow?'arrow':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toBrandDetail',['$event'] ] ] ],[ 'touchstart',[ [ 'trackEvent',['$event'] ] ] ] ]}}" data-object="{{item.g5}}" data-url="{{alt.mpUrl}}" id="{{'t_'+index+'_'+ind}}" wx:for="{{list3.list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                    <view class="brand-top flex-box data-v-fa88effc">
+                                        <view class="icon flex-shrink0 data-v-fa88effc" wx:if="{{alt.titleElement.hasImage}}">
+                                            <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="30rpx" logo="{{alt.titleElement.image.imageUrl}}" size="64rpx" vueId="{{'a2b08582-27-'+index+'-'+ind}}"></app-auto-logo>
+                                        </view>
+                                        <view class="title-wrap flex-1 data-v-fa88effc">
+                                            <rich-text class="title data-v-fa88effc" nodes="{{alt.titleElement.title}}"></rich-text>
+                                            <view class="tag-wrap data-v-fa88effc" wx:if="{{alt.titleElement&&alt.titleElement.tags&&alt.titleElement.tags.length}}">
+                                                <view class="tag data-v-fa88effc" style="{{'background-color:'+alt2.bg+';color:'+alt2.color+';'}}" wx:for="{{alt.titleElement.tags}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">{{''+alt2.text+''}}</view>
+                                            </view>
+                                        </view>
+                                        <view class="status-wrap flex-shrink0 data-v-fa88effc" wx:if="{{alt.titleElement&&alt.titleElement.tag&&alt.titleElement.tag.text}}">
+                                            <view class="status data-v-fa88effc" style="{{'border:2rpx solid '+alt.titleElement.tag.borderColor+';color:'+alt.titleElement.tag.textColor+';'}}">{{''+alt.titleElement.tag.text+''}}</view>
+                                        </view>
+                                    </view>
+                                    <view class="brand-bottom data-v-fa88effc" style="{{'padding-left:'+(alt.titleElement.hasImage?'88rpx':'')+';'}}">
+                                        <view class="row flex-box data-v-fa88effc" wx:for="{{alt.contentElement.dataList}}" wx:for-index="ind1" wx:for-item="alt1" wx:key="ind1">
+                                            <view class="row-title flex-shrink0 data-v-fa88effc">{{''+alt1.label+'：'+''}}</view>
+                                            <view class="row-subtitle flex-1 vertical-center data-v-fa88effc">
+                                                <block wx:if="{{alt1.highlight.length}}">
+                                                    <rich-text catchtap="__e" class="data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toCopDetail',['$event'] ] ] ] ]}}" data-unique="{{alt2.keyNo}}" nodes="{{alt2.rich}}" wx:for="{{alt1.highlight}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2"></rich-text>
+                                                </block>
+                                                <rich-text class="data-v-fa88effc" nodes="{{alt1.value}}" wx:else></rich-text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <app-bottom-loading bind:__l="__l" class="data-v-fa88effc" loadAll="{{!canLoadNext[index]&&pageIndex[index]<=9&&pageIndex[index]>1&&list3.list.length}}" loading="{{loading[index]&&canLoadNext[index]}}" vueId="{{'a2b08582-28-'+index}}"></app-bottom-loading>
+                            <view class="app-text data-v-fa88effc" wx:if="{{!canLoadNext[index]&&pageIndex[index]>9}}">下载APP，查看更多数据</view>
+                            <view bindtap="__e" class="app-button data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toDownload',['$event'] ] ] ] ]}}" wx:if="{{!canLoadNext[index]&&pageIndex[index]>9}}">前往下载企查查APP</view>
+                            <view class="data-v-fa88effc" style="height:15px;" wx:if="{{!canLoadNext[index]&&pageIndex[index]>1}}"></view>
+                            <app-no-data bind:__l="__l" class="data-v-fa88effc" text="暂时没找到相关数据" vueId="{{'a2b08582-29-'+index}}" wx:if="{{!loading[index]&&!canLoadNext[index]&&!list3.list.length}}"></app-no-data>
+                        </block>
+                        <block wx:if="{{index===4}}">
+                            <view class="search-tip flex-box data-v-fa88effc" wx:if="{{list4.count}}">
+                                <rich-text class="tip-left flex-1 vertical-center data-v-fa88effc" nodes="{{list4.title}}"></rich-text>
+                                <view class="page-change flex-shrink0 vertical-center data-v-fa88effc">{{'第'+' '+currentPage[index]+'/'+allPage[index]+' '+'页'}}</view>
+                            </view>
+                            <view class="brand-wrap data-v-fa88effc">
+                                <view bindtouchstart="__e" catchtap="__e" class="{{['data-v-fa88effc',true?'brand-item':'',alt[$orig].hasArrow?'arrow':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toBrandDetail',['$event'] ] ] ],[ 'touchstart',[ [ 'trackEvent',['$event'] ] ] ] ]}}" data-object="{{item.g6}}" data-url="{{alt[$orig].mpUrl}}" id="{{'t_'+index+'_'+ind}}" wx:for="{{item.l5}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                    <view class="brand-top flex-box data-v-fa88effc">
+                                        <view class="icon flex-shrink0 data-v-fa88effc" wx:if="{{alt[$orig].titleElement.hasImage}}">
+                                            <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="30rpx" logo="{{alt[$orig].titleElement.image.imageUrl}}" size="64rpx" vueId="{{'a2b08582-30-'+index+'-'+ind}}"></app-auto-logo>
+                                        </view>
+                                        <view class="title-wrap flex-1 data-v-fa88effc">
+                                            <rich-text class="title data-v-fa88effc" nodes="{{alt[$orig].titleElement.title}}"></rich-text>
+                                            <view class="tag-wrap data-v-fa88effc">
+                                                <view class="tag data-v-fa88effc" style="{{'background-color:'+alt2.bg+';color:'+alt2.color+';'}}" wx:for="{{alt[$orig].titleElement.tags}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">{{''+alt2.text+''}}</view>
+                                            </view>
+                                        </view>
+                                        <view class="status-wrap flex-shrink0 data-v-fa88effc" wx:if="{{alt[$orig].titleElement&&alt[$orig].titleElement.tag&&alt[$orig].titleElement.tag.text}}">
+                                            <view class="status data-v-fa88effc" style="{{'border:2rpx solid '+alt[$orig].titleElement.tag.borderColor+';color:'+alt[$orig].titleElement.tag.textColor+';'}}">{{''+alt[$orig].titleElement.tag.text+''}}</view>
+                                        </view>
+                                    </view>
+                                    <view class="brand-bottom data-v-fa88effc" style="padding-left:88rpx;">
+                                        <view class="row flex-box data-v-fa88effc" wx:for="{{alt.l4}}" wx:for-index="ind1" wx:for-item="alt1" wx:key="ind1">
+                                            <view class="row-title flex-shrink0 data-v-fa88effc">{{''+alt1[$orig].label+'：'+''}}</view>
+                                            <view class="row-subtitle flex-1 vertical-center data-v-fa88effc">
+                                                <block wx:if="{{alt1[$orig].highlight.length}}">
+                                                    <block wx:for="{{alt1.l3}}" wx:for-index="ind2" wx:for-item="alt2" wx:key="ind2">
+                                                        <text class="inline-block data-v-fa88effc" style="padding:0 6rpx;" wx:if="{{alt2[$orig].more}}">{{''+' ... '+''}}</text>
+                                                        <text class="blue data-v-fa88effc" wx:if="{{alt2[$orig].more}}">{{alt2[$orig].rich}}</text>
+                                                        <rich-text bindtouchstart="__e" catchtap="__e" class="inline-block data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toCopDetail',['$event'] ] ] ],[ 'touchstart',[ [ 'trackEvent',['$event'] ] ] ] ]}}" data-object="{{alt2.g7}}" data-unique="{{alt2[$orig].keyNo}}" nodes="{{alt2[$orig].rich}}" style="{{alt2[$orig].more?'display:inline-block;':''}}" wx:else></rich-text>
+                                                    </block>
+                                                </block>
+                                                <rich-text class="data-v-fa88effc" nodes="{{alt1[$orig].value}}" wx:else></rich-text>
+                                            </view>
+                                        </view>
+                                        <view class="info-wrap data-v-fa88effc" wx:if="{{alt[$orig].descElement&&alt[$orig].descElement.text}}">
+                                            <view class="info line-2 data-v-fa88effc">{{''+alt[$orig].descElement.text+''}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <app-bottom-loading bind:__l="__l" class="data-v-fa88effc" loadAll="{{!canLoadNext[index]&&pageIndex[index]<=9&&pageIndex[index]>1&&list4.list.length}}" loading="{{loading[index]&&canLoadNext[index]}}" vueId="{{'a2b08582-31-'+index}}"></app-bottom-loading>
+                            <view class="app-text data-v-fa88effc" wx:if="{{!canLoadNext[index]&&pageIndex[index]>9}}">下载APP，查看更多数据</view>
+                            <view bindtap="__e" class="app-button data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toDownload',['$event'] ] ] ] ]}}" wx:if="{{!canLoadNext[index]&&pageIndex[index]>9}}">前往下载企查查APP</view>
+                            <view class="data-v-fa88effc" style="height:15px;" wx:if="{{!canLoadNext[index]&&pageIndex[index]>1}}"></view>
+                            <app-no-data bind:__l="__l" class="data-v-fa88effc" text="暂时没找到相关数据" vueId="{{'a2b08582-32-'+index}}" wx:if="{{!loading[index]&&!canLoadNext[index]&&!list4.list.length}}"></app-no-data>
+                        </block>
+                    </scroll-view>
+                </block>
+                <scroll-view class="scroll-wrap flex-1 data-v-fa88effc" scrollY="{{true}}" style="height:100%;" wx:else>
+                    <view class="search-module data-v-fa88effc">
+                        <view class="recent-search data-v-fa88effc" wx:if="{{!!recentList[index].length}}">
+                            <view class="title data-v-fa88effc">最近搜索<text catchtap="__e" class="delete data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'deleteRecentKey',['$event'] ] ] ] ]}}"></text>
+                            </view>
+                            <view class="{{['list data-v-fa88effc',!recentListExpand[index]?'expand-list':'']}}">
+                                <view class="data-v-fa88effc" id="{{'recent-search'+index}}">
+                                    <view class="list-item data-v-fa88effc" wx:for="{{recentList[index]}}" wx:for-index="rIndex" wx:for-item="recent" wx:key="rIndex">
+                                        <text bindlongtap="__e" bindtap="__e" bindtouchend="__e" bindtouchstart="__e" class="text-ellipsis data-v-fa88effc" data-event-opts="{{[ [ 'touchstart',[ [ 'bindTouchStart',['$event'] ] ] ],[ 'touchend',[ [ 'bindTouchEnd',['$event'] ] ] ],[ 'longtap',[ [ 'bingLongTap',['$event'] ] ] ],[ 'tap',[ [ 'bindKeyTap',['$event'] ] ] ] ]}}" data-index="{{rIndex}}" data-key="{{recent.key}}">{{''+recent.key+''}}</text>
+                                        <view catchtap="__e" class="close data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'deleteRecent',['$event'] ] ] ] ]}}" data-index="{{rIndex}}" wx:if="{{recent.active}}"></view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view catchtap="__e" class="spread data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'expendRecent',['$event'] ] ] ] ]}}" wx:if="{{showMoreRecent[index]}}">
+                                <image class="{{[ 'data-v-fa88effc','block-title-arrow '+(recentListExpand[index]?'up':'down') ]}}" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/down-icon.png"></image>
+                            </view>
+                        </view>
+                        <view class="history-search data-v-fa88effc" wx:if="{{!!recentCopList[index].length&&index<=1}}">
+                            <view class="title data-v-fa88effc">浏览历史<text catchtap="__e" class="delete data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'deleteScanHistory',['$event'] ] ] ] ]}}"></text>
+                            </view>
+                            <view class="list-wrap data-v-fa88effc">
+                                <view catchtap="__e" class="list flex-box data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'toHistoryDetail',['$event'] ] ] ] ]}}" data-key="{{his[$orig]}}" data-name="{{his[$orig].name}}" data-unique="{{his[$orig].keyNo}}" wx:for="{{item.l6}}" wx:for-index="rIndex" wx:for-item="his" wx:key="rIndex">
+                                    <view class="image flex-shrink0 data-v-fa88effc">
+                                        <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="30rpx" logo="{{his[$orig].image}}" name="{{his[$orig].name}}" size="48rpx" vueId="{{'a2b08582-33-'+index+'-'+rIndex}}"></app-auto-logo>
+                                    </view>
+                                    <view class="name flex-1 data-v-fa88effc">
+                                        <view class="line-1 data-v-fa88effc">{{''+his[$orig].name+''}}</view>
+                                    </view>
+                                    <view class="time flex-shrink0 data-v-fa88effc">{{''+his.m0+''}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="hot-search data-v-fa88effc" wx:if="{{hotList[index].length}}">
+                            <view class="title data-v-fa88effc">热门搜索</view>
+                            <view class="list clearfix data-v-fa88effc">
+                                <block wx:if="{{index===1}}">
+                                    <view bindtap="__e" class="{{['data-v-fa88effc','person-item']}}" data-event-opts="{{[ [ 'tap',[ [ 'toPersonHotDetail',['$event'] ] ] ] ]}}" data-name="{{hot.key.name}}" data-unique="{{hot.key.unique}}" wx:for="{{hotList[index]}}" wx:for-index="hIndex" wx:for-item="hot" wx:key="hIndex">
+                                        <view class="image flex-shrink0 data-v-fa88effc">
+                                            <app-auto-logo bind:__l="__l" class="data-v-fa88effc" fontSize="30rpx" logo="{{hot.key.faceimg}}" name="{{hot.key.name}}" size="64rpx" vueId="{{'a2b08582-34-'+index+'-'+hIndex}}"></app-auto-logo>
+                                        </view>
+                                        <view class="name flex-1 line-1 data-v-fa88effc">{{''+hot.key.name+''}}</view>
+                                    </view>
+                                </block>
+                                <block wx:else>
+                                    <block wx:if="{{index===2}}">
+                                        <view bindtap="__e" class="{{['data-v-fa88effc','list-item list-item-'+hIndex+1]}}" data-event-opts="{{[ [ 'tap',[ [ 'fillSearchInput',['$event'] ] ] ] ]}}" data-key="{{hot.value}}" style="width:100%;" wx:for="{{hotList[index]}}" wx:for-index="hIndex" wx:for-item="hot" wx:key="hIndex">
+                                            <text class="icon data-v-fa88effc">{{hIndex+1}}</text>{{''+hot.key+''}}</view>
+                                    </block>
+                                    <block wx:else>
+                                        <view bindtap="__e" class="{{['data-v-fa88effc','list-item list-item-'+hIndex+1]}}" data-event-opts="{{[ [ 'tap',[ [ 'fillHotSearchInput',['$event'] ] ] ] ]}}" data-key="{{hot.key}}" wx:for="{{hotList[index]}}" wx:for-index="hIndex" wx:for-item="hot" wx:key="hIndex">
+                                            <text class="icon data-v-fa88effc">{{hIndex+1}}</text>{{''+hot.key+''}}</view>
+                                    </block>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <app-download-pop bind:__l="__l" bind:hideDownloadPop="__e" class="data-v-fa88effc" data-event-opts="{{[ [ '^hideDownloadPop',[ ['hideDownloadPop'] ] ] ]}}" isCopy="{{true}}" vueId="a2b08582-35" wx:if="{{downloadPop}}"></app-download-pop>
+    <app-more-phone bind:__l="__l" class="data-v-fa88effc vue-ref" currentContact="{{currentContact}}" data-ref="app-more-phone" paySourceType="搜索结果-更多号码" unique="{{currentUnique}}" vueId="a2b08582-36"></app-more-phone>
+    <view class="custom-dialog-wrapper data-v-fa88effc" wx:if="{{exportPop}}">
+        <view class="mask data-v-fa88effc"></view>
+        <view class="modal container data-v-fa88effc">
+            <view class="data-v-fa88effc">
+                <view class="header data-v-fa88effc">导出数据</view>
+            </view>
+            <view class="data-v-fa88effc">
+                <view class="body data-v-fa88effc">
+                    <input bindinput="__e" class="export-input data-v-fa88effc" data-event-opts="{{[ [ 'input',[ [ 'exportEmailInput',['$event'] ] ] ] ]}}" enableNative="{{false}}" maxlength="50" name="email" placeholder="请输入邮箱地址" placeholderStyle="color:#666;" type="text" value="{{exportEmail}}"></input>
+                </view>
+            </view>
+            <view class=" footer flex-box _div data-v-fa88effc">
+                <button catchtap="__e" class="cancel-btn data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'exportCancel',['$event'] ] ] ] ]}}">取消</button>
+                <button catchtap="__e" class="confirm-btn data-v-fa88effc" data-event-opts="{{[ [ 'tap',[ [ 'exportConfirm',['$event'] ] ] ] ]}}">发送</button>
+            </view>
+        </view>
+    </view>
+    <app-vip-pop bind:__l="__l" bind:hideVipPop="__e" class="data-v-fa88effc" data-event-opts="{{[ [ '^hideVipPop',[ ['cancel'] ] ] ]}}" isScroll="{{false}}" paySourceType="{{paySourceType}}" titleText="{{vipTip}}" vueId="a2b08582-37" wx:if="{{vipPop}}"></app-vip-pop>
+    <app-page-loading bind:__l="__l" class="data-v-fa88effc" vueId="a2b08582-38" wx:if="{{!token}}"></app-page-loading>
+</view>

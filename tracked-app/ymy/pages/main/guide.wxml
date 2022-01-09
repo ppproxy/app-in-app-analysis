@@ -1,0 +1,64 @@
+<view class="pb15">
+    <view class="guide_banner">
+        <image class="db wp100" mode="widthFix" src="/static/images/guide_banner.png"></image>
+    </view>
+    <view class="guide_main">
+        <view class="guide_tit df align_center w_line">
+            <view class="b f16">填写注册资料</view>
+        </view>
+        <view class="guide_item">
+            <view class="guide_cell df align_center w_line justify_between">
+                <view class="guide_cell_name">真实姓名</view>
+                <view class="guide_cell_val">
+                    <input bindinput="__e" class="txt" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','UserName','$event',[] ] ] ] ] ]}}" placeholder="输入真实姓名" type="text" value="{{UserName}}"></input>
+                </view>
+            </view>
+            <view class="guide_cell df align_center w_line justify_between">
+                <view class="guide_cell_name">手机号码</view>
+                <view class="guide_cell_val">
+                    <input bindinput="__e" class="txt" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Mobile','$event',[] ] ] ] ] ]}}" placeholder="输入手机号码" type="number" value="{{Mobile}}"></input>
+                </view>
+            </view>
+            <view class="guide_cell df align_center w_line justify_between">
+                <view class="guide_cell_name">身份证号</view>
+                <view class="guide_cell_val">
+                    <input bindinput="__e" class="txt" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','IDCard','$event',[] ] ] ] ] ]}}" placeholder="输入身份证号" type="idcard" value="{{IDCard}}"></input>
+                </view>
+            </view>
+            <view class="guide_cell df align_center w_line justify_between">
+                <view class="guide_cell_name">导游证号</view>
+                <view class="guide_cell_val">
+                    <input bindinput="__e" class="txt" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','GuideCode','$event',[] ] ] ] ] ]}}" placeholder="输入导游证件号" type="text" value="{{GuideCode}}"></input>
+                </view>
+            </view>
+            <view class="guide_cell df align_center w_line justify_between">
+                <view class="guide_cell_name">电子邮箱</view>
+                <view class="guide_cell_val">
+                    <input bindinput="__e" class="txt" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','Email','$event',[] ] ] ] ] ]}}" placeholder="输入电子邮箱" type="text" value="{{Email}}"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="guide_upload">
+        <view class="guide_tit df align_center w_line">
+            <view class="b f16">电子导游证</view>
+            <view bindtap="__e" class="fb f14 ml10" data-event-opts="{{[ [ 'tap',[ [ 'openExample',['$event'] ] ] ] ]}}">查看示例</view>
+        </view>
+        <view class="guide_upload_btn mt10">
+            <w-upload fileType imgType token bind:__l="__l" bind:imgSuccess="__e" bind:updateImgList="__e" class="vue-ref" data-event-opts="{{[ [ '^updateImgList',[ ['updateImgList'] ] ],[ '^imgSuccess',[ ['imgSuccess'] ] ] ]}}" data-ref="wUpload" imgList="{{imgList}}" imgShow="{{true}}" requestUrl="https://fx.minticket.cn/System/Upload" uploadName="upload_resource" vueId="d7c840f2-1"></w-upload>
+        </view>
+        <view class="f12 g9 mt5">请上传电子导游证照片，确保证件号码清晰可见</view>
+    </view>
+    <view class="big_btn order_btn ml15 mt15 mr15 _div">
+        <view bindtap="__e" class="btn fw f18 wp100" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">立即注册</view>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="popupExample" type="center" vueId="d7c840f2-2" vueSlots="{{['default']}}">
+        <view class="guide_exp">
+            <image class="db wp100 guide_exp_pic" mode="aspectFit" src="/static/images/guide_exp.png"></image>
+            <view class="guide_exp_action df align_center justify_between">
+                <view bindtap="__e" class="guide_exp_btn g3" data-event-opts="{{[ [ 'tap',[ [ 'closeExample',['$event'] ] ] ] ]}}">关闭</view>
+                <view bindtap="__e" class="guide_exp_btn fb" data-event-opts="{{[ [ 'tap',[ [ 'closeExample',['$event'] ] ] ] ]}}">知道了</view>
+            </view>
+        </view>
+    </uni-popup>
+</view>

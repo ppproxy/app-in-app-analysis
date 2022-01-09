@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "feed-pull-down-refresh": "../components/FeedPullDownRefresh/FeedPullDownRefresh",
+        "network-toast": "../components/NetworkErrorToast/NetworkErrorToast"
+    },
+    "onReachBottomDistance": 200
+}

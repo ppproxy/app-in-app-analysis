@@ -1,0 +1,174 @@
+{
+  "type": "Program",
+  "start": 0,
+  "end": 235,
+  "body": [
+    {
+      "type": "FunctionDeclaration",
+      "start": 0,
+      "end": 117,
+      "id": {
+        "type": "Identifier",
+        "start": 9,
+        "end": 25,
+        "name": "goCompetitionOne"
+      },
+      "expression": false,
+      "generator": false,
+      "async": false,
+      "params": [],
+      "body": {
+        "type": "BlockStatement",
+        "start": 28,
+        "end": 117,
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "start": 34,
+            "end": 115,
+            "expression": {
+              "type": "CallExpression",
+              "start": 34,
+              "end": 114,
+              "callee": {
+                "type": "MemberExpression",
+                "start": 34,
+                "end": 47,
+                "object": {
+                  "type": "Identifier",
+                  "start": 34,
+                  "end": 36,
+                  "name": "wx"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 37,
+                  "end": 47,
+                  "name": "navigateTo"
+                },
+                "computed": false,
+                "optional": false
+              },
+              "arguments": [
+                {
+                  "type": "ObjectExpression",
+                  "start": 48,
+                  "end": 113,
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "start": 58,
+                      "end": 107,
+                      "method": false,
+                      "shorthand": false,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 58,
+                        "end": 61,
+                        "name": "url"
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "start": 63,
+                        "end": 107,
+                        "value": "/pages/random/random?question=competition1",
+                        "raw": "\"/pages/random/random?question=competition1\""
+                      },
+                      "kind": "init"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "start": 118,
+      "end": 235,
+      "id": {
+        "type": "Identifier",
+        "start": 127,
+        "end": 143,
+        "name": "goCompetitionTwo"
+      },
+      "expression": false,
+      "generator": false,
+      "async": false,
+      "params": [],
+      "body": {
+        "type": "BlockStatement",
+        "start": 146,
+        "end": 235,
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "start": 152,
+            "end": 233,
+            "expression": {
+              "type": "CallExpression",
+              "start": 152,
+              "end": 232,
+              "callee": {
+                "type": "MemberExpression",
+                "start": 152,
+                "end": 165,
+                "object": {
+                  "type": "Identifier",
+                  "start": 152,
+                  "end": 154,
+                  "name": "wx"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 155,
+                  "end": 165,
+                  "name": "navigateTo"
+                },
+                "computed": false,
+                "optional": false
+              },
+              "arguments": [
+                {
+                  "type": "ObjectExpression",
+                  "start": 166,
+                  "end": 231,
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "start": 176,
+                      "end": 225,
+                      "method": false,
+                      "shorthand": false,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 176,
+                        "end": 179,
+                        "name": "url"
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "start": 181,
+                        "end": 225,
+                        "value": "/pages/random/random?question=competetion2",
+                        "raw": "\"/pages/random/random?question=competetion2\""
+                      },
+                      "kind": "init"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "sourceType": "module"
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": " 增资记录",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,71 @@
+<custom-navigation bind:searchQuery="searchQuery" isCustom="{{isCustom}}" isShare="{{isShare}}" query="{{query}}" style="{{headData.scheme?'position:fixed;top:0;z-index:100':''}}" wx:if="{{scene!==1154}}"></custom-navigation>
+<feed-pull-down-refresh refreshed="{{refreshed}}" startLoading="{{refresh}}" style="position:absolute;top:{{totalTopHeight+0.5}}px" text="{{refreshText}}" wx:if="{{headData.scheme}}"></feed-pull-down-refresh>
+<view bind:loadData="refreshData" wx:if="{{netWorkError}}">
+    <network-toast></network-toast>
+</view>
+<scroll-view enableBackToTop scrollWithAnimation scrollY bindscroll="scrollHandler" bindscrolltolower="reachBottomHandler" bindtouchend="touchEnd" bindtouchstart="touchStart" class="card-detail" scrollTop="{{scrollToTop}}" style="height: calc(100% - 96rpx - {{platform!=='windows'?'env(safe-area-inset-bottom)':'0px'}});" wx:else>
+    <view>
+        <view class="topic-head-bg" wx:if="{{headData.scheme}}">
+            <image class="topic-head-img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{headData.background_url?headData.background_url:imagePath}}"></image>
+        </view>
+        <topic-head cardDesc="{{cardDesc}}" class="topic-head" headData="{{headData}}" wx:if="{{headData.scheme}}"></topic-head>
+        <view class="pos_rel border-bottom channel-list" style="top: {{headData.scheme?totalTopHeight+0.5:0}}px">
+            <band-tab activeIndex="{{currentIndex}}" bind:switchTap="switchTap" scrollX="{{scrollX}}" toolBarData="{{channelList}}"></band-tab>
+        </view>
+        <feed-pull-down-refresh refreshed="{{refreshed}}" startLoading="{{refresh}}" text="{{refreshText}}" wx:if="{{!headData.scheme}}"></feed-pull-down-refresh>
+        <swiper bindchange="beforeSwitchTab" class="tab-content" current="{{currentIndex}}" duration="300" style="height:{{swiper_height}}px">
+            <swiper-item class="feed-list" skipHiddenItemLayout="{{true}}" wx:for="{{channelList}}" wx:for-index="tabId" wx:key="tabId">
+                <view id="card-view" style="height:400px" wx:if="{{cardsData[currentIndex]&&!cardsData[currentIndex].length&&tabId===currentIndex}}">
+                    <view class="no-data">
+                        <image class="no-data-pic" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../assets/icons/anomaly-icon-logo.png"></image>
+                        <view class="no-data-text">这里还没有内容</view>
+                    </view>
+                </view>
+                <view id="card-view-{{tabId}}" style="position:relative;min-height:300px;margin-top:16rpx;" wx:else>
+                    <block wx:if="{{item&&item.length>0}}" wx:for="{{cardsData[tabId]}}" wx:key="index">
+                        <block wx:for="{{item}}" wx:for-index="idx" wx:for-item="child" wx:key="idx">
+                            <view class="card_dom ~margin-bottom {{child.show_type!==1?child.card_group?'~margin-bottom':'':''}}" wx:if="{{child.card_type===11&&child.card_group}}">
+                                <view class="title" wx:if="{{child.title}}">{{child.title}}</view>
+                                <card-content bind:cardClick="cardClick" bind:fullScreenChange="fullScreenChange" bind:searchQuery="searchQuery" cardData="{{_item}}" class="card-content" from="detail" query="{{query}}" wx:for="{{child.card_group}}" wx:for-index="_index" wx:for-item="_item" wx:key="_index"></card-content>
+                            </view>
+                            <view class="card_dom ~margin-bottom" wx:elif="{{child.card_type!==11}}">
+                                <card-content bind:cardClick="cardClick" bind:fullScreenChange="fullScreenChange" cardData="{{child}}" class="card-content" from="detail" query="{{query}}"></card-content>
+                            </view>
+                        </block>
+                    </block>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</scroll-view>
+<feed-open-app></feed-open-app>
+<view animation="{{animation}}" catchtap="goToWeiboKandian" class="card-25" wx:if="{{!netWorkError&&showHotTips}}">
+    <view class="close-wrap">
+        <image catchtap="closeHotTips" class="close-img" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../assets/icons/more_icon_dislike.png"></image>
+    </view>
+    <swiper autoplay="{{!!animation}}" bindchange="hotTipSwiperChange" circular="{{true}}" interval="5000" style="height:201rpx" vertical="{{true}}">
+        <swiper-item wx:for="{{kandianDataList}}" wx:key="index">
+            <view class="card-25-zone">
+                <div class="img" style="background-image: url({{item.image}});"></div>
+                <view class="content">
+                    <view class="card-expand-content">
+                        <block wx:for="{{item.source.mblog.parseText}}" wx:key="index">
+                            <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{item.icon}}" wx:if="{{item.showIcon}}"></image>
+                            <view class="parse-text" data-item="{{item}}" wx:elif="{{item.tag==='normal'}}">{{item.content}}</view>
+                            <a class="parse-text topic" data-item="{{item}}" wx:elif="{{item.tag==='article'&&item.toShowArticle||item.tag==='wenda'&&item.toShowWenda}}">
+                {{item.content}}
+              </a>
+                            <a class="parse-text topic" data-item="{{item}}" wx:elif="{{item.tag!=='article'&&item.tag!=='wenda'}}">
+                {{item.content}}
+              </a>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<canvas canvasId="{{topicShareCvsId}}" style="position: fixed; left: 3000px; width: {{topicShareCvsWidth}}px; height: {{topicShareCvsHeight}}px"></canvas>
+<canvas canvasId="{{canvasId}}" style="position: fixed; left: 3000px; width: {{canvasWidth}}px; height: {{canvasHeight}}px"></canvas>
+<common-footer cardData="{{cardsData[0]}}" current="{{currentIndex}}" headData="{{headData}}" query="{{query}}" toolBarData="{{channelList}}" wx:if="{{cardsData[0][0]&&cardsData[0][0].length}}"></common-footer>
+<wxs module="utils" src="../../utils/utils.wxs" />

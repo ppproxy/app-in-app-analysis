@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "查查早报",
+    "usingComponents": {
+        "app-no-data": "/components/app-no-data/index",
+        "ui-iphonex-spacer": "/components/ui-iphonex-spacer/index",
+        "app-auto-logo": "/components/app-auto-logo/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

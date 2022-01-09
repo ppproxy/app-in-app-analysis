@@ -1,0 +1,17 @@
+<view class="uni-wrap data-v-91b10436" style="{{'background-color:'+background+';'}}">
+    <view class="load data-v-91b10436" wx:if="{{(loadAll||loading)&&isInitial}}">
+        <view class="load-ani data-v-91b10436" style="background-color:#f3f3f3;padding:20rpx 0;margin:0 0;" wx:if="{{loading}}">
+            <view class="circle-wrap data-v-91b10436">
+                <view class="circle-layout data-v-91b10436">
+                    <view class="layout-left data-v-91b10436">
+                        <view class="circle-left data-v-91b10436"></view>
+                    </view>
+                    <view class="layout-right data-v-91b10436">
+                        <view class="circle-right data-v-91b10436"></view>
+                    </view>
+                </view>
+            </view>正在加载</view>
+        <view class="load-over data-v-91b10436" style="background-color:#f3f3f3;" wx:if="{{loadAll&&!loading}}">已经全部加载完毕</view>
+    </view>
+    <ui-iphonex-spacer bind:__l="__l" class="data-v-91b10436" vueId="340ea4fc-1"></ui-iphonex-spacer>
+</view>

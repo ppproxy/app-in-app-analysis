@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "app-monitor-pop": "/components/app-monitor-pop/index",
+        "app-report-pop": "/components/app-report-pop/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-auto-logo": "/components/app-auto-logo/index",
+        "custom-bar": "/components/custom-bar/index",
+        "filter-list": "/components/filter-list/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

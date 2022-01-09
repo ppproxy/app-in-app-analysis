@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "股权链",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

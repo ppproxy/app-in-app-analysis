@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "企查查-招投标 一站式招投标服务",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

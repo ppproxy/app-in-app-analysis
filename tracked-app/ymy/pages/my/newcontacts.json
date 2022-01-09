@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "新增联系人",
+    "usingComponents": {
+        "kps-image-cutter": "/components/ksp-image-cutter/ksp-image-cutter"
+    }
+}

@@ -1,0 +1,133 @@
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000000;
+    box-sizing: border-box;
+    border-bottom: .5px solid #e5e5e5;
+}
+
+.main,.place-holder {
+    width: 750rpx;
+    background: #fff;
+}
+
+.main-content {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.back-home {
+    display: inline-block;
+    position: relative;
+    margin-left: 14rpx;
+    width: 174rpx;
+    height: 60rpx;
+    border: .5px solid #e6e6e6;
+    border-radius: 30rpx;
+}
+
+.back-icon {
+    display: inline-block;
+    margin-top: 10rpx;
+    margin-left: 24rpx;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.header-search {
+    position: relative;
+    width: 320rpx;
+    height: 60rpx;
+    padding-left: 15rpx;
+    vertical-align: top;
+    border-radius: 32rpx;
+}
+
+.icon-search {
+    position: absolute;
+    margin: 0 10rpx;
+    z-index: 10;
+    top: 10rpx;
+}
+
+.common-input {
+    box-sizing: border-box;
+    position: absolute;
+    padding: 5rpx 20rpx 5rpx 50rpx;
+    background: #e3e4e6;
+    font-size: 24rpx;
+    width: 320rpx;
+    height: 60rpx;
+    border-radius: 32rpx;
+}
+
+.line {
+    position: absolute;
+    top: 12rpx;
+    left: 86rpx;
+    width: 1rpx;
+    height: 36rpx;
+    background: #cacaca;
+    transform: scaleX(.5);
+}
+
+.home-icon {
+    display: inline-block;
+    margin-top: 10rpx;
+    margin-left: 46rpx;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.header-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+    max-width: 45%;
+}
+
+.section {
+    vertical-align: top;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+    background: #e3e4e6;
+    border-radius: 32rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.feed-section {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 320rpx;
+    margin-left: 26rpx;
+}
+
+.search-icon {
+    position: absolute;
+    top: 15rpx;
+    left: 16rpx;
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 16rpx;
+}
+
+.default-text {
+    max-width: 250rpx;
+    margin-left: 56rpx;
+    display: inline-block;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #333;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

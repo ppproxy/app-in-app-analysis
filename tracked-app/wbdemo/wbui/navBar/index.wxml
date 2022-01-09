@@ -1,0 +1,16 @@
+<view class="wbui-navbar {{theme?'wbui-'+theme:''}} {{transparent?'wbui-transparent':''}}" style="height: {{height}}px; padding-top: {{paddingTop}}px;">
+    <view class="wbui-leftbar {{gohome&&goback?'':'wbui-small'}}" wx:if="{{gohome||goback}}">
+        <view catchtap="onBack" class="wbui-act" hoverClass="wbui-active" wx:if="{{goback}}">
+            <view class="wbui-icon wbui-icon-back"></view>
+        </view>
+        <view class="wbui-vline" wx:if="{{gohome&&goback}}"></view>
+        <view catchtap="onHome" class="wbui-act" hoverClass="wbui-active" wx:if="{{gohome}}">
+            <view class="wbui-icon wbui-icon-home"></view>
+        </view>
+    </view>
+    <view class="wbui-leftbar wbui-border-clear" wx:elif="{{leftbar}}"></view>
+    <view class="wbui-titlebar">
+        <slot></slot>
+    </view>
+    <view class="wbui-rightbar"></view>
+</view>

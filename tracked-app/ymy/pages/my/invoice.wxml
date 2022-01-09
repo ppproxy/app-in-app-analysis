@@ -1,0 +1,50 @@
+<view class="app mb70" wx:if="{{isLogin}}">
+    <view class="my_invoice_nav">
+        <view class="my_invoice_nav_list f18 tc fix">
+            <view class="my_invoice_nav_box my_invoice_nav_clo dib">
+                <navigator class="db fix" url="invoice">可开票</navigator>
+            </view>
+            <view class="my_invoice_nav_box dib">
+                <navigator class="db fix" url="invoicecomplete">已开票</navigator>
+            </view>
+        </view>
+    </view>
+    <view class="my_invoice">
+        <view class="my_contacts" wx:if="{{orders&&orders.length>0}}">
+            <view bindtap="__e" class="my_contacts_box my_invoice_box" data-event-opts="{{[ [ 'tap',[ [ 'orderClick',['$0'],[ [ ['orders','',i,'OrderID'] ] ] ] ] ] ]}}" wx:for="{{orders}}" wx:for-index="i" wx:key="i">
+                <view class="my_invoice_price f14 g9">
+                    <view class="dib f20 mr5 fo">{{item.TotalSalePrice}}</view>元</view>
+                <view class="my_contacts_text">
+                    <view class="my_contacts_name b f16 g3">{{item.Items[0].ProductName}}<view class="dib n f12 my_contacts_name_tags ml10">{{item.Items[0].Number+'张'}}</view>
+                    </view>
+                    <view class="my_contacts_phone g6 f12 mt5">{{item.CreateTime}}</view>
+                </view>
+                <view class="my_contacts_rt">
+                    <image class="w22 rt select_icon _img" src="/static/images/select_1.png" wx:if="{{item.IsSelected}}"></image>
+                    <image class="w22 rt select_icon _img" src="/static/images/select_2.png" wx:else></image>
+                </view>
+            </view>
+        </view>
+        <view class="more f13 tc" wx:else>
+            <view class="dib mr10">—</view>暂无完成订单<view class="dib ml10">—</view>
+        </view>
+        <view class="my_contacts_action">
+            <view class="my_contacts_action_main fix">
+                <view bindtap="__e" class="my_contacts_action_all fix lt" data-event-opts="{{[ [ 'tap',[ [ 'checkAll',['$event'] ] ] ] ]}}">
+                    <image class="w22 lt select_icon _img" height="22" src="/static/images/select_2.png" width="22" wx:if="{{!allSelected}}"></image>
+                    <image class="w22 lt select_icon _img" height="22" src="/static/images/select_1.png" width="22" wx:else></image>
+                    <view class="dib lt">全部选择</view>
+                </view>
+                <view bindtap="__e" class="my_contacts_action_btn rt db" data-event-opts="{{[ [ 'tap',[ [ 'submitData',['$event'] ] ] ] ]}}">开发票</view>
+            </view>
+        </view>
+    </view>
+    <view class="more f13 tc dn">
+        <view class="dib mr10">—</view>我是有底线的<view class="dib ml10">—</view>
+    </view>
+</view>
+<view wx:else>
+    <view class="more f13 tc">
+        <view class="dib mr10">—</view>请先登录<view class="dib ml10">—</view>
+    </view>
+</view>

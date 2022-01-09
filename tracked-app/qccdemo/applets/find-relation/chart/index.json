@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "找关系",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

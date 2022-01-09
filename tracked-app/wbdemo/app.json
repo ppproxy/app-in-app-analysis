@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/today/index",
+    "pages/topic/index",
+    "pages/goods/index",
+    "pages/hotflow/index",
+    "pages/comprehensiveSearch/index",
+    "pages/components/detailWeibo/index",
+    "pages/getPhoto/index",
+    "pages/commentList/index",
+    "pages/moreList/index"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F9F9F9",
+    "navigationBarTitleText": "微博热搜",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#333333",
+    "selectedColor": "#FF8200",
+    "borderStyle": "black",
+    "backgroundColor": "#F9F9F9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "热搜",
+        "iconPath": "assets/icons/icon_realtimehot.png",
+        "selectedIconPath": "assets/icons/icon_realtimehot_selected.png"
+      },
+      {
+        "pagePath": "pages/topic/index",
+        "text": "热议",
+        "iconPath": "assets/icons/icon_topic.png",
+        "selectedIconPath": "assets/icons/icon_topic_selected.png"
+      },
+      {
+        "pagePath": "pages/hotflow/index",
+        "text": "热点",
+        "iconPath": "assets/icons/icon_hotflow.png",
+        "selectedIconPath": "assets/icons/icon_hotflow_selected.png"
+      },
+      {
+        "pagePath": "pages/goods/index",
+        "text": "潮物",
+        "iconPath": "assets/icons/icon_goods.png",
+        "selectedIconPath": "assets/icons/icon_goods_selected.png"
+      },
+      {
+        "pagePath": "pages/today/index",
+        "text": "今日",
+        "iconPath": "assets/icons/icon_goods.png",
+        "selectedIconPath": "assets/icons/icon_goods_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,24 @@
+<custom-navigation class="header" isSearch="{{false}}" navigationTitle="{{query}}"></custom-navigation>
+<add-guide bind:showAddGuide="showAddGuide" class="add-guide" style="display:block;height:{{showGuide?'54rpx':'0'}}"></add-guide>
+<view bind:loadData="refreshData" wx:if="{{netWorkError}}">
+    <network-toast></network-toast>
+</view>
+<view class="container">
+    <view class="no-data" wx:if="{{noData}}">
+        <image class="no-data-pic" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../assets/icons/anomaly-icon-logo.png"></image>
+        <view class="no-data-text">这里还没有内容</view>
+    </view>
+    <block wx:else>
+        <block wx:for="{{cardList}}" wx:key="index">
+            <block wx:for="{{item}}" wx:for-index="idx" wx:for-item="child" wx:key="idx">
+                <view class="~margin-bottom" wx:if="{{child.card_type===11}}">
+                    <view class="~title" wx:if="{{child.title}}">{{child.title}}</view>
+                    <card-content bind:cardClick="cardClick" bind:fullScreenChange="fullScreenChange" cardData="{{_item}}" class="card-content" from="search" query="{{query}}" style="display:block;{{_item.card_type===9?'margin-bottom:16rpx':''}}" wx:for="{{child.card_group}}" wx:for-index="_index" wx:for-item="_item" wx:key="_index"></card-content>
+                </view>
+                <view class="~margin-bottom" wx:else>
+                    <card-content bind:cardClick="cardClick" bind:fullScreenChange="fullScreenChange" cardData="{{child}}" class="card-content" from="search" query="{{query}}"></card-content>
+                </view>
+            </block>
+        </block>
+    </block>
+</view>

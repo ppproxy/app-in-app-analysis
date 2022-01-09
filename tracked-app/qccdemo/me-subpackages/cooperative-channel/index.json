@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "合作商通道",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "竞品信息",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

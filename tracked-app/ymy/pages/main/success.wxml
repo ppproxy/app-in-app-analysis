@@ -1,0 +1,9 @@
+<view>
+    <view class="pay_top tc">
+        <image class="dib w80 _img" src="/static/images/win_icon.png"></image>
+        <view class="db f30 mt20">{{msg}}</view>
+    </view>
+    <view class="big_btn order_btn ml15 mt15 mr15 tc">
+        <navigator class="btn res_btn" openType="switchTab" url="/pages/main/index">返回首页</navigator>
+    </view>
+</view>

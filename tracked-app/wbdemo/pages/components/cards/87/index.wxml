@@ -1,0 +1,5 @@
+<view class="card-87">
+    <image class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{cardData.pic}}"></image>
+    <view class="pic-mask"></view>
+    <text class="title-sub" wx:if="{{cardData.title_sub}}">{{cardData.title_sub}}</text>
+</view>

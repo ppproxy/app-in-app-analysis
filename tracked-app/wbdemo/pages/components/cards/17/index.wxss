@@ -1,0 +1,36 @@
+.card-17 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 25rpx 10rpx;
+    background: #fff;
+}
+
+.card-17,.title-sub {
+    box-sizing: border-box;
+}
+
+.title-sub {
+    position: relative;
+    flex-grow: 1;
+    padding: 5rpx 26rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    font-size: 32rpx;
+}
+
+.title-sub::after {
+    content: "";
+    position: absolute;
+    top: 12rpx;
+    right: 0;
+    width: 1rpx;
+    height: 32rpx;
+    border-right: .5px solid #dcdcdc;
+}
+
+.col-2:nth-of-type(even)::after,.title-sub:last-child::after {
+    border-right: 0;
+}

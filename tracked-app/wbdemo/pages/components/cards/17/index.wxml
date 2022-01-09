@@ -1,0 +1,3 @@
+<view class="card-17">
+    <view bindtap="onClickTap" class="title-sub {{cardData.col===2?'col-2':''}}" data-query="{{utils.judgeIsTopic(item.scheme)?'#'+item.title_sub+'#':item.title_sub}}" data-scheme="{{item.scheme}}" style="width: {{100/cardData.col}}%" wx:for="{{cardData.group}}" wx:key="index">{{item.title_sub}}</view>
+</view>

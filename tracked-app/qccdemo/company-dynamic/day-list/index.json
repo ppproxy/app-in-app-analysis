@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-auto-logo": "/components/app-auto-logo/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

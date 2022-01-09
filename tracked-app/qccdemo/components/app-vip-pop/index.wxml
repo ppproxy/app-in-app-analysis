@@ -1,0 +1,49 @@
+<view catchtap="__e" class="page vip-pop data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{(needSVip?!isSVIP:!isVIP)||renewShow}}">
+    <view class="{{['data-v-7445ecaa',isScroll?'vip-pop-wrap ios-scroll-vip-overlay':'vip-pop-wrap ios-vip-overlay']}}" style="{{isScroll?'background: url(https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/bg_purchase_vip_person.png) no-repeat;background-size: 100% 100%;':''}}" wx:if="{{!isLogin}}">
+        <view class="popup ios-pop data-v-7445ecaa" style="{{'padding-bottom:'+0+';'}}">
+            <view class="pop-title data-v-7445ecaa">提示</view>
+            <view class="pop-subtitle data-v-7445ecaa" style="padding:10rpx 20rpx;text-align:center;">{{'未登录的用户暂时无法查看'+(titleText==='提示'?'该功能':titleText)+''}}</view>
+            <view class="button-wrap data-v-7445ecaa">
+                <button bindtap="__e" class="know data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'toLogin',['$event'] ] ] ] ]}}" hoverClass="hover">去登录</button>
+            </view>
+        </view>
+    </view>
+    <block wx:else>
+        <view class="{{['data-v-7445ecaa',isScroll?'vip-pop-wrap ios-scroll-vip-overlay':'vip-pop-wrap ios-vip-overlay']}}" style="{{isScroll?'background: url(https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/bg_purchase_vip_person.png) no-repeat;background-size: 100% 100%;':''}}" wx:if="{{isIPhone&&platform!=='mp-alipay'||platform==='mp-toutiao'||$root.g0}}">
+            <view class="popup ios-pop data-v-7445ecaa" style="{{'top:'+top+';'+'padding-bottom:'+(type===0||type===2?'0':'')+';'}}">
+                <view bindtap="__e" class="close-img data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'cancel',['$event'] ] ] ] ]}}" mode="scaleToFill" wx:if="{{type!==0&&type!==3}}">
+                    <image class="image data-v-7445ecaa" mode="scaleToFill" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/close-icon.png"></image>
+                </view>
+                <view class="pop-title data-v-7445ecaa" wx:if="{{type===0}}">{{titleText==='提示'?titleText:titleText+'为'+(needSVip?'SVIP':'VIP')+'功能'}}</view>
+                <view class="pop-subtitle data-v-7445ecaa" wx:if="{{type===0}}">暂不支持直接查看</view>
+                <view class="pop-title data-v-7445ecaa" wx:if="{{type===1}}">绑定微信号</view>
+                <view class="pop-subtitle data-v-7445ecaa" wx:if="{{type===1}}">{{'iOS客户端\n        '+(isVip&&titleText==='提示'?'续费':'购买')+'\n        会员需绑定微信号'}}</view>
+                <image class="icon data-v-7445ecaa" mode="scaleToFill" src="https://share.qichacha.com/lite-app-resources/html/images/ic_bduni.png" wx:if="{{type===1}}"></image>
+                <view class="pop-title data-v-7445ecaa" wx:if="{{type===2}}">{{titleText==='提示'?titleText:titleText+'为'+(needSVip?'SVIP':'VIP')+'功能'}}</view>
+                <view class="pop-subtitle data-v-7445ecaa" wx:if="{{type===2}}">暂不支持查看</view>
+                <view class="pop-title data-v-7445ecaa" wx:if="{{type===3}}">{{'恭喜你，\n        '+(isVip&&titleText==='提示'?'续费':'购买')+'\n        成功'}}</view>
+                <view class="pop-subtitle data-v-7445ecaa" wx:if="{{type===3}}">来刷新页面查看VIP功能吧</view>
+                <image class="icon data-v-7445ecaa" mode="scaleToFill" src="https://share.qichacha.com/lite-app-resources/html/images/ic_ktcg.png" wx:if="{{type===3}}"></image>
+                <view class="pop-title data-v-7445ecaa" wx:if="{{type===4}}">{{'付款取消或者尚未\n        '+(isVip&&titleText==='提示'?'续费':'购买')+'\n        成功'}}</view>
+                <view class="pop-subtitle data-v-7445ecaa" wx:if="{{type===4}}">如有问题，请拨打客服电话<text catchtap="__e" class="blue data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'makePhone',['$event'] ] ] ] ]}}" data-value="4009282212">400-928-2212</text>
+                </view>
+                <image class="icon data-v-7445ecaa" mode="scaleToFill" src="https://share.qichacha.com/lite-app-resources/html/images/ic_fksb.png" wx:if="{{type===4}}"></image>
+                <view class="button-wrap data-v-7445ecaa">
+                    <button bindtap="__e" class="know data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'cancel',['$event'] ] ] ] ]}}" hoverClass="hover" wx:if="{{type===0}}">知道了</button>
+                    <button bindtap="__e" class="ios-vip-button data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'bindGetUserInfo',['$event'] ] ] ] ]}}" hoverClass="hover" wx:if="{{type===1}}">去绑定</button>
+                    <button bindtap="__e" class="know goqcc data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'reportAnalytics',['$event'] ] ] ] ]}}" hoverClass="hover" openType="contact" sendMessageImg="https://share.qichacha.com/lite-app-resources/html/images/download-share.png" sendMessagePath="/pages/home/index" sendMessageTitle="请根据系统回复进行操作" showMessageCard="{{true}}" wx:if="{{type===2}}">去企查查看</button>
+                    <button bindtap="__e" class="ios-vip-button data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'cancel',['$event'] ] ] ] ]}}" hoverClass="hover" wx:if="{{type===3||type===4}}">确定</button>
+                </view>
+            </view>
+        </view>
+        <view class="{{['data-v-7445ecaa',isScroll?'vip-pop-wrap scroll-vip-overlay':'overlay vip-pop-wrap']}}" style="{{isScroll?'background: url(https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/bg_purchase_vip_person.png) no-repeat;background-size: 100% 100%;':''}}" wx:else>
+            <view class="popup data-v-7445ecaa" style="{{'top:'+top+';'+'padding-top:'+0+';'+'border-radius:'+'16rpx'+';'}}">
+                <view bindtap="__e" class="close-img data-v-7445ecaa" data-event-opts="{{[ [ 'tap',[ [ 'cancel',['$event'] ] ] ] ]}}" wx:if="{{!isScroll}}">
+                    <image class=" image data-v-7445ecaa" mode="scaleToFill" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/close-icon.png"></image>
+                </view>
+                <view class="pay-title data-v-7445ecaa" style="{{'background-image:'+'url('+bgImg+')'+';'}}">{{'成为'+(needSVip?'SVIP':'VIP')+'·开启'+(titleText==='此功能'?'更多':titleText)+'功能'}}</view>
+                <app-vip-pay bind:__l="__l" bind:couponPop="__e" class="data-v-7445ecaa" customTop="{{customTop}}" data-event-opts="{{[ [ '^couponPop',[ ['toggleCouponPop'] ] ] ]}}" isScroll="{{isScroll}}" isTabBarPage="{{isTabBarPage}}" needSVip="{{needSVip}}" paySourceType="{{paySource}}" vueId="7baccf19-1"></app-vip-pay>
+            </view>
+        </view>
+    </block>
+</view>

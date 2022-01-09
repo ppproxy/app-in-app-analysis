@@ -1,0 +1,200 @@
+.uni-popup.data-v-7da806a4 {
+    position: fixed;
+    z-index: 99;
+}
+
+.uni-popup__mask.data-v-7da806a4 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.4);
+    opacity: 0;
+}
+
+.mask-ani.data-v-7da806a4 {
+    transition-property: opacity;
+    transition-duration: .2s;
+}
+
+.uni-bottom-mask.data-v-7da806a4,.uni-center-mask.data-v-7da806a4,.uni-top-mask.data-v-7da806a4 {
+    opacity: 1;
+}
+
+.uni-popup__wrapper.data-v-7da806a4 {
+    display: block;
+    position: absolute;
+}
+
+.top.data-v-7da806a4 {
+    top: 0;
+}
+
+.bottom.data-v-7da806a4 {
+    bottom: 0;
+}
+
+.uni-popup__wrapper-box.data-v-7da806a4 {
+    display: block;
+    position: relative;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.content-ani.data-v-7da806a4 {
+    transition-property: opacity,-webkit-transform;
+    transition-property: transform,opacity;
+    transition-property: transform,opacity,-webkit-transform;
+    transition-duration: .2s;
+}
+
+.uni-bottom-content.data-v-7da806a4,.uni-top-content.data-v-7da806a4 {
+    transform: translateY(0);
+}
+
+.uni-center-content.data-v-7da806a4 {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.uni-popup-message.data-v-2b5e1e44 {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    background-color: #e1f3d8;
+    padding: 10px 15px;
+    border: 1px solid #eee;
+}
+
+.uni-popup-message-text.data-v-2b5e1e44 {
+    font-size: 14px;
+    padding: 0;
+}
+
+.uni-popup__success.data-v-2b5e1e44 {
+    background-color: #e1f3d8;
+}
+
+.uni-popup__success-text.data-v-2b5e1e44 {
+    color: #67c23a;
+}
+
+.uni-popup__warn.data-v-2b5e1e44 {
+    background-color: #faecd8;
+}
+
+.uni-popup__warn-text.data-v-2b5e1e44 {
+    color: #e6a23c;
+}
+
+.uni-popup__error.data-v-2b5e1e44 {
+    background-color: #fde2e2;
+}
+
+.uni-popup__error-text.data-v-2b5e1e44 {
+    color: #f56c6c;
+}
+
+.uni-popup__info.data-v-2b5e1e44 {
+    background-color: #f2f6fc;
+}
+
+.uni-popup__info-text.data-v-2b5e1e44 {
+    color: #909399;
+}
+
+.uni-popup-dialog.data-v-2fab037e {
+    width: 300px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.uni-dialog-title.data-v-2fab037e {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.uni-dialog-title-text.data-v-2fab037e {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.uni-dialog-content.data-v-2fab037e {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 5px 15px 15px;
+}
+
+.uni-dialog-content-text.data-v-2fab037e {
+    font-size: 14px;
+    color: #6e6e6e;
+}
+
+.uni-dialog-button-group.data-v-2fab037e {
+    flex-direction: row;
+    border-top: 1px solid #f5f5f5;
+}
+
+.uni-dialog-button-group.data-v-2fab037e,.uni-dialog-button.data-v-2fab037e {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+.uni-dialog-button.data-v-2fab037e {
+    -webkit-box-flex: 1;
+    flex: 1;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 45px;
+}
+
+.uni-border-left.data-v-2fab037e {
+    border-left: 1px solid #f0f0f0;
+}
+
+.uni-dialog-button-text.data-v-2fab037e {
+    font-size: 14px;
+}
+
+.uni-button-color.data-v-2fab037e {
+    color: #007aff;
+}
+
+.uni-dialog-input.data-v-2fab037e {
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-size: 14px;
+}
+
+.uni-popup__success.data-v-2fab037e {
+    color: #4cd964;
+}
+
+.uni-popup__warn.data-v-2fab037e {
+    color: #f0ad4e;
+}
+
+.uni-popup__error.data-v-2fab037e {
+    color: #dd524d;
+}
+
+.uni-popup__info.data-v-2fab037e {
+    color: #909399;
+}

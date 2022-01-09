@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "产品详情",
+    "usingComponents": {
+        "news-flash-share": "/components/news-flash-share/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

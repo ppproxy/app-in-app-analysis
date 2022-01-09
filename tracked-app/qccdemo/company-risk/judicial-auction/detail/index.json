@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "司法拍卖详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

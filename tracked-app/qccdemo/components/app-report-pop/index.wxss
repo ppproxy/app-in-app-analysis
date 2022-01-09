@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+.app-report-pop .report-pop.data-v-8c596250 {
+    background-color: rgba(0,0,0,.4);
+    color: #333;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 750rpx;
+    z-index: 999;
+}
+
+.app-report-pop .report-pop-center.data-v-8c596250 {
+    background-color: #fff;
+    bottom: 0;
+    height: 670rpx;
+    left: 0;
+    margin: auto;
+    padding-bottom: 30rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 660rpx;
+}
+
+.app-report-pop .report-pop-title.data-v-8c596250 {
+    background-color: #f3f3f3;
+    font-size: 36rpx;
+    font-weight: 600;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+}
+
+.app-report-pop .report-image.data-v-8c596250 {
+    -webkit-box-flex: .75;
+    flex: .75;
+    padding-top: 28rpx;
+    text-align: right;
+}
+
+.app-report-pop .report-image .report-image-item.data-v-8c596250 {
+    height: 176rpx;
+    width: 120rpx;
+}
+
+.app-report-pop .report-item-wrap.data-v-8c596250 {
+    -webkit-box-flex: 2.54;
+    flex: 2.54;
+    padding: 28rpx 20rpx 0;
+}
+
+.app-report-pop .report-item-title.data-v-8c596250 {
+    font-size: 30rpx;
+    font-weight: 600;
+    line-height: 42rpx;
+}
+
+.app-report-pop .report-item-title .text.data-v-8c596250 {
+    display: inline-block;
+    height: 25rpx;
+    position: relative;
+    width: 25rpx;
+}
+
+.app-report-pop .report-item-title .vip-icon.data-v-8c596250 {
+    display: block;
+    height: 25rpx;
+    left: 5rpx;
+    position: absolute;
+    top: 2rpx;
+    width: 25rpx;
+}
+
+.app-report-pop .report-item-content.data-v-8c596250 {
+    color: #999;
+    font-size: 24rpx;
+    font-weight: 300;
+    line-height: 34rpx;
+}
+
+.app-report-pop .view-case.data-v-8c596250 {
+    color: #128bed;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    margin-top: 34rpx;
+}
+
+.app-report-pop .report-mail.data-v-8c596250 {
+    margin-top: 42rpx;
+    position: relative;
+}
+
+.app-report-pop .report-mail.data-v-8c596250:after {
+    content: "接收邮箱：";
+    font-size: 26rpx;
+    height: 26rpx;
+    left: 30rpx;
+    line-height: 26rpx;
+    position: absolute;
+    top: 16rpx;
+}
+
+.app-report-pop .report-mail .report-mail-item.data-v-8c596250 {
+    background-color: #ececec;
+    border-radius: 5rpx;
+    box-sizing: border-box;
+    display: block;
+    font-size: 26rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-left: 156rpx;
+    padding-left: 18rpx;
+    width: 472rpx;
+}
+
+.app-report-pop .report-format.data-v-8c596250 {
+    margin-top: 30rpx;
+    position: relative;
+}
+
+.app-report-pop .report-format.data-v-8c596250:after {
+    content: "报告格式：";
+    font-size: 26rpx;
+    height: 26rpx;
+    left: 30rpx;
+    line-height: 26rpx;
+    position: absolute;
+    top: 16rpx;
+}
+
+.app-report-pop .report-format .report-format-list.data-v-8c596250 {
+    border-radius: 5rpx;
+    box-sizing: border-box;
+    display: block;
+    font-size: 26rpx;
+    height: 60rpx;
+    margin-left: 156rpx;
+    width: 472rpx;
+}
+
+.app-report-pop .report-format-list-item.data-v-8c596250 {
+    border: 1px solid #eee;
+    border-radius: 7rpx;
+    display: inline-block;
+    height: 56rpx;
+    line-height: 52rpx;
+    margin-right: 26rpx;
+    padding: 0 26rpx;
+    text-align: center;
+}
+
+.app-report-pop .report-format-list-item.data-v-8c596250:last-of-type {
+    margin-right: 0;
+}
+
+.app-report-pop .report-format-list-item.active.data-v-8c596250 {
+    border: 1px solid #128bed;
+}
+
+.app-report-pop .free.data-v-8c596250 {
+    color: #ff475d;
+    font-size: 20rpx;
+}
+
+.app-report-pop .report-tip.data-v-8c596250 {
+    color: #666;
+    font-size: 20rpx;
+    margin-left: 156rpx;
+    margin-top: 18rpx;
+}
+
+.app-report-pop .list-button.data-v-8c596250 {
+    margin-top: 46rpx;
+}
+
+.app-report-pop .list-button .cancel.data-v-8c596250 {
+    background-color: #f4f8ff;
+    margin-left: 30rpx;
+}
+
+.app-report-pop .list-button .cancel.data-v-8c596250,.app-report-pop .send.data-v-8c596250 {
+    border-radius: 6rpx;
+    display: inline-block;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    width: 288rpx;
+}
+
+.app-report-pop .send.data-v-8c596250 {
+    background-color: #128bed;
+    color: #fff;
+    margin-left: 20rpx;
+}

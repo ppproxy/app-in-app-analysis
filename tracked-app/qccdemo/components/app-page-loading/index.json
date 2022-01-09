@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "app-launch-app": "/components/app-launch-app/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

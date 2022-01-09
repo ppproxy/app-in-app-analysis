@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "绑定手机号",
+    "usingComponents": {
+        "bind-fail-pop": "/components/bind-fail-pop/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

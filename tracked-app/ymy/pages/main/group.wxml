@@ -1,0 +1,30 @@
+<view class="pb15">
+    <view class="db wp100">
+        <image class="wp100 db" mode="widthFix" src="{{scenic.Photo}}"></image>
+    </view>
+    <uni-notice-bar bind:__l="__l" class="notice_mb" scrollable="true" showIcon="true" single="true" speed="{{scenic.NoticeBarSpeed}}" text="{{scenic.Notice}}" vueId="46b64438-1" wx:if="{{scenic.Notice}}"></uni-notice-bar>
+    <view class="classify_nav df align_center">
+        <view class="classify_nav_box" wx:for="{{groups}}" wx:for-index="ind" wx:for-item="group" wx:key="ind">
+            <navigator class="tc classify_nav_link df align_center justify_center" url="{{'/pages/main/list?id='+group.ID}}">
+                <image class="w42" src="{{group.Photo}}"></image>
+                <view class="f16 b mt20">{{group.Name}}</view>
+            </navigator>
+        </view>
+    </view>
+    <view bindtap="__e" class="df align_center justify_between notic_group" data-event-opts="{{[ [ 'tap',[ [ 'open',['$event'] ] ] ] ]}}">
+        <image class="w20" src="../../static/images/notice_icon.png"></image>
+        <view class="f15 ml15 notic_group_name">购票须知</view>
+        <image class="w16 notic_group_arrow" src="../../static/images/arrow_down.png"></image>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="popup" type="bottom" vueId="46b64438-2" vueSlots="{{['default']}}">
+        <view class="popup_notice bgwh">
+            <view class="popup_tickets_tit fix _div">
+                <view class="g3 ml10 b f15 popup_tickets_tit_btn lt _div">购票须知</view>
+                <view bindtap="__e" class="fb popup_tickets_tit_btn rt _div" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">确定</view>
+            </view>
+            <view class="popup_notice_text ell_bk">
+                <rich-text nodes="{{scenic.BookNotice}}"></rich-text>
+            </view>
+        </view>
+    </uni-popup>
+</view>

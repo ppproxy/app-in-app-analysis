@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "开户银行",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

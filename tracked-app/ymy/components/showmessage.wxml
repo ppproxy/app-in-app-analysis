@@ -1,0 +1,3 @@
+<uni-popup bind:__l="__l" class="vue-ref" data-ref="popup" type="center" vueId="9f13e532-1" vueSlots="{{['default']}}">
+    <uni-popup-dialog beforeClose="{{true}}" bind:__l="__l" bind:close="__e" bind:confirm="__e" class="vue-ref" content="{{content}}" data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^confirm',[ ['confirmClick'] ] ] ]}}" data-ref="popupDialog" duration="{{0}}" mode="base" type="input" vueId="{{'9f13e532-2'+','+'9f13e532-1'}}"></uni-popup-dialog>
+</uni-popup>

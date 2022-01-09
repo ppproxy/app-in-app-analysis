@@ -1,0 +1,55 @@
+.title {
+    margin-left: 20rpx;
+    margin-bottom: 50rpx;
+    text-align: center;
+    font-size: large;
+}
+
+.button,.title {
+    margin-top: 50rpx;
+}
+
+.ui-radio checkbox,.ui-radio radio {
+    display: none;
+}
+
+.label {
+    margin-left: 10rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ui-radio {
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.ui-radio,.ui-radio.active {
+    width: 30%;
+    height: 70rpx;
+    text-align: center;
+    margin: 10rpx;
+    white-space: nowrap;
+}
+
+.ui-radio.active {
+    background-color: #1aad19;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #1aad19;
+}
+
+.text {
+    color: #000;
+}
+
+.text,.ui-radio.active .text {
+    line-height: 70rpx;
+    font-size: 14px;
+}
+
+.ui-radio.active .text {
+    color: #fff;
+}

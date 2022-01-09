@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "税务登记号",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

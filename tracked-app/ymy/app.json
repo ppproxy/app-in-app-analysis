@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/main/index",
+    "pages/main/scenicView",
+    "pages/main/list",
+    "pages/my/index",
+    "pages/my/contacts",
+    "pages/my/newcontacts",
+    "pages/order/index",
+    "pages/order/create",
+    "pages/order/selectuser",
+    "pages/order/success",
+    "pages/order/detail",
+    "pages/order/qrcode",
+    "pages/login/index",
+    "pages/my/invoice",
+    "pages/my/invoiceopen",
+    "pages/my/invoiceresult",
+    "pages/my/invoicecomplete",
+    "pages/my/coupon",
+    "pages/order/coupon",
+    "pages/my/couponuse",
+    "pages/main/guide",
+    "pages/main/group",
+    "pages/order/refund",
+    "pages/main/success"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "圆明园遗址公园",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/main/index",
+        "text": "首页",
+        "iconPath": "static/images/n1_2.png",
+        "selectedIconPath": "static/images/n1_1.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "static/images/n2_2.png",
+        "selectedIconPath": "static/images/n2_1.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "static/images/n3_2.png",
+        "selectedIconPath": "static/images/n3_1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

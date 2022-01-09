@@ -1,0 +1,7 @@
+<view class="app-auto-logo data-v-33d2977e" style="{{'width:'+size+';'+'height:'+size+';'}}">
+    <image binderror="__e" class="data-v-33d2977e" data-event-opts="{{[ [ 'error',[ [ 'loadImage',['$event'] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFit" src="{{logo}}" style="{{'width:'+size+';'+'height:'+size+';'+'border-radius:'+radius+';'}}" wx:if="{{loadingLogoSuccess&&logo}}"></image>
+    <block wx:else>
+        <image binderror="__e" class="data-v-33d2977e" data-event-opts="{{[ [ 'error',[ [ 'loadImage',['$event'] ] ] ] ]}}" lazyLoad="{{true}}" src="{{defaultLogo}}" style="{{'width:'+size+';'+'height:'+size+';'+'border-radius:'+radius+';'}}" wx:if="{{defaultLogo}}"></image>
+        <text class="data-v-33d2977e" style="{{'font-size:'+fontSize+';'+'line-height:'+$root.m0+';'+'width:'+size+';'+'height:'+size+';'+'border-radius:'+radius+';'+'background-color:'+backgroundColor+';'}}" wx:else>{{''+showText+''}}</text>
+    </block>
+</view>

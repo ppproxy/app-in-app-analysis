@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "食品安全不合格详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

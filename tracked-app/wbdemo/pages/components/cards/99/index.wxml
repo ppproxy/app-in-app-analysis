@@ -1,0 +1,7 @@
+<view class="card-99">
+    <view class="content" wx:for="{{cardData.segments}}" wx:key="index">
+        <text class="img" lazyLoad="true" src="{{utils.replaceHttps( item.slides[0] )}}"></text>
+        <view class="attitudes-count">{{item.attitudes_count}}</view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

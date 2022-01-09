@@ -1,0 +1,35 @@
+<view class="app-report-pop data-v-8c596250">
+    <view class="report-pop data-v-8c596250">
+        <view class="report-pop-center data-v-8c596250">
+            <view class="report-pop-title data-v-8c596250">报告</view>
+            <view class="report-pop-body data-v-8c596250">
+                <view class="flex-box data-v-8c596250">
+                    <view class="report-image data-v-8c596250">
+                        <image class="report-image-item data-v-8c596250" src="https://share.qichacha.com/lite-app-resources/html/images/report-image/dongjiangao.png"></image>
+                    </view>
+                    <view class="report-item-wrap data-v-8c596250">
+                        <view class="report-item-title data-v-8c596250">董监高投资任职及风险报告<view class="text data-v-8c596250">
+                                <image class="vip-icon data-v-8c596250" src="https://share.qichacha.com/lite-app-resources/html/images/report-image/VIP.png"></image>
+                            </view>
+                        </view>
+                        <view class="report-item-content data-v-8c596250">深度挖掘企业法人、股东、高管对外投资、任职及自身风险信息</view>
+                        <view bindtap="__e" class="view-case data-v-8c596250" data-event-opts="{{[ [ 'tap',[ [ 'showDetail',['$event'] ] ] ] ]}}" data-view_url="{{goods_sample}}" wx:if="{{goods_sample}}">查看样本</view>
+                    </view>
+                </view>
+                <view class="report-mail data-v-8c596250">
+                    <input bindinput="__e" class="report-mail-item data-v-8c596250" data-event-opts="{{[ [ 'input',[ [ 'changeMail',['$event'] ] ] ] ]}}" enableNative="{{false}}" maxlength="30" placeholder="请输入您的邮箱地址" placeholderStyle="color:#666;" type="text" value="{{mail}}"></input>
+                </view>
+                <view class="report-format data-v-8c596250">
+                    <view class="report-format-list data-v-8c596250">
+                        <view bindtap="__e" class="{{[ 'data-v-8c596250','report-format-list-item '+(reportFormat==='1'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeFormat',['$event'] ] ] ] ]}}" data-type="1">PDF</view>
+                        <view bindtap="__e" class="{{[ 'data-v-8c596250','report-format-list-item '+(reportFormat==='12'?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeFormat',['$event'] ] ] ] ]}}" data-type="12">Word<text class="free data-v-8c596250">（限时免费）</text>+ PDF</view>
+                    </view>
+                </view>
+                <view class="list-button data-v-8c596250">
+                    <view bindtap="__e" class="cancel data-v-8c596250" data-event-opts="{{[ [ 'tap',[ [ 'hideReport',['$event'] ] ] ] ]}}">取消</view>
+                    <view bindtap="__e" class="send data-v-8c596250" data-event-opts="{{[ [ 'tap',[ [ 'submit',['$event'] ] ] ] ]}}">发送</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

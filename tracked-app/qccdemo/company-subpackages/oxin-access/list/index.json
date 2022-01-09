@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "招标人脉",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

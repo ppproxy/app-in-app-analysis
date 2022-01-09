@@ -1,0 +1,171 @@
+<view class="pb15">
+    <view class="view_traffic pb15" wx:if="{{false}}">
+        <view class="view_tit ml15 mt15">
+            <view class="view_tit_h2 f16 b">预订须知</view>
+        </view>
+        <view class="view_about ml15 mr15">
+            <view class="view_about_text ell_bk">
+                <view class="ell_bk" wx:if="{{!showMore}}">{{product.Intro+'...'}}</view>
+                <view class="ell_bk" wx:if="{{showMore}}">
+                    <rich-text nodes="{{productBookingContent}}"></rich-text>
+                </view>
+                <view bindtap="__e" class="dib fb cp" data-event-opts="{{[ [ 'tap',[ [ 'showClick',['$event'] ] ] ] ]}}">{{!showMore?showtext+' >':'< '+showtext}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="order top_line">
+        <view class="order_tit f16 b w_line ml15 mr15">{{product.Scenic}}</view>
+        <view class="data_list rel w_line ml15 mr15">
+            <view class="abs">
+                <view class="ml5">票名</view>
+            </view>
+            <view class="wp100 flx">
+                <view class="db rt">{{product.Name}}</view>
+            </view>
+        </view>
+        <view class="data_list order_day rel w_line ml15 mr15">
+            <view class="abs">
+                <view class="ml5">游玩日期</view>
+            </view>
+            <view class="wp100 flx">
+                <view class="rt fix">
+                    <view class="db lt ml5 minwp70" wx:for="{{$root.l0}}" wx:for-index="__i0__" wx:key="Time">
+                        <view bindtap="__e" class="{{['tc brb fb f12 order_day_box',selectedDay==item[$orig].Time?'order_day_clo':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'dayClick',['$0'],[ [ ['twoDaysPrice','Time',item[$orig].Time,'Time'] ] ] ] ] ] ]}}">
+                            <view class="order_day_text">{{item.g0}}</view>
+                            <view class="order_day_price">{{'￥'+item[$orig].Price}}</view>
+                        </view>
+                    </view>
+                    <view class="db lt ml5 minwp70" wx:if="{{daysPrice&&daysPrice.length>=3}}">
+                        <view bindtap="__e" class="{{['tc brb fb f12 order_day_box',moreDay!='更多日期'?'order_day_clo':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'openCalendar',['$event'] ] ] ] ]}}">
+                            <view class="{{[moreDay=='更多日期'?'order_day_more':'order_day_text']}}">{{moreDay}}</view>
+                            <view class="order_day_price" wx:if="{{moreDay!='更多日期'}}">{{'￥'+price}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="data_list rel w_line ml15 mr15" wx:if="{{sessions&&sessions.length>0}}">
+            <view class="abs">
+                <view class="ml5">时间段</view>
+            </view>
+            <view bindtap="__e" class="wp100 flx cp" data-event-opts="{{[ [ 'tap',[ [ 'showSessionClick',['$event'] ] ] ] ]}}">
+                <image class="rt arrow_icon w912 _img" src="/static/images/lefticon_mini.png"></image>
+                <view class="db rt">
+                    <view class="{{['data_list_tips',sessionId>0?'fb':'fb']}}">{{sessionName}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="data_list rel w_line ml15 mr15">
+            <view class="abs">
+                <view class="ml5">数量</view>
+            </view>
+            <view class="wp100 flx">
+                <view class="tl_quantity flx rt">
+                    <view bindtap="__e" class="subtract_btn dib" data-event-opts="{{[ [ 'tap',[ [ 'subClick',['$event'] ] ] ] ]}}">
+                        <image class="db w20 _img" src="/static/images/reduce_icon.png"></image>
+                    </view>
+                    <view class="ml10 mr10 dib f16">{{number}}</view>
+                    <view bindtap="__e" class="subtract_btn dib" data-event-opts="{{[ [ 'tap',[ [ 'addClick',['$event'] ] ] ] ]}}">
+                        <image class="db w20 _img" src="/static/images/plus_icon.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="data_list rel ml15 mr15">
+            <view class="abs">
+                <view class="ml5">合计</view>
+            </view>
+            <view class="wp100 flx">
+                <view class="db rt">
+                    <view class="data_list_price fr">{{'￥'+TotalPrice}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="order top_line">
+        <view wx:if="{{needPlayer&&contactAllowInput}}" wx:for="{{players}}" wx:key="index">
+            <view class="data_list play_user_act rel ml15 mr15">
+                <view class="abs">
+                    <view class="ml5">{{'游览人'+index+1}}</view>
+                </view>
+                <view bindtap="__e" class="wp100 flx cp" data-event-opts="{{[ [ 'tap',[ [ 'selectUser',[1,1,index] ] ] ] ]}}">
+                    <view class="db rt">
+                        <view class="data_list_tips fb">选择</view>
+                    </view>
+                    <image class="rt w16 select_user_icon _img" src="/static/images/select_user_icon.png"></image>
+                </view>
+            </view>
+            <view class="order_user">
+                <view class="order_user_list rel w_line bgwh">
+                    <view class="abs">
+                        <view class="ml5">姓名</view>
+                    </view>
+                    <view class="wp100 flx">
+                        <input bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','Name','$event',[] ],[ [ ['players','',index] ] ] ] ] ] ]}}" placeholder="请输入游玩人姓名" type="text" value="{{item.Name}}"></input>
+                    </view>
+                </view>
+                <view class="order_user_list rel w_line bgwh" wx:if="{{index==0}}">
+                    <view class="abs">
+                        <view class="ml5">手机号码</view>
+                    </view>
+                    <view class="wp100 flx">
+                        <input bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','Mobile','$event',[] ],[ [ ['players','',index] ] ] ] ] ] ]}}" placeholder="请输入手机号码" type="number" value="{{item.Mobile}}"></input>
+                    </view>
+                </view>
+                <view class="order_user_list rel w_line bgwh">
+                    <view class="abs">
+                        <view bindtap="__e" class="ml5 fix" data-event-opts="{{[ [ 'tap',[ [ 'cardTypeChange',[index] ] ] ] ]}}">
+                            <image class="rt arrow_icon _img" height="12" src="/static/images/lefticon_mini.png" width="12"></image>{{item.CardTypeName}}</view>
+                    </view>
+                    <view class="wp100 flx" wx:if="{{item.CardTypeName=='身份证'}}">
+                        <input bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','IDCard','$event',[] ],[ [ ['players','',index] ] ] ] ] ] ]}}" placeholder="请输入证件号码" type="idcard" value="{{item.IDCard}}"></input>
+                    </view>
+                    <view class="wp100 flx" wx:if="{{item.CardTypeName!='身份证'}}">
+                        <input bindinput="__e" class="txt wp100 tr" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','IDCard','$event',[] ],[ [ ['players','',index] ] ] ] ] ] ]}}" placeholder="请输入证件号码" type="text" value="{{item.IDCard}}"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="data_list play_user_act rel w_line ml15 mr15" wx:if="{{needPlayer&&!contactAllowInput}}">
+            <view class="abs">
+                <view class="ml5">游玩人员</view>
+            </view>
+            <navigator class="wp100 flx cp" url="{{'selectuser?model=1&number='+number}}">
+                <image class="rt arrow_icon w12 _img" src="{{$root.m0}}"></image>
+                <view class="db rt">
+                    <view class="data_list_tips g9" wx:if="{{!players||players.length<=0}}">选择游玩人员</view>
+                    <view class="data_list_tips fb" wx:else>{{'已选择 '+players.length+' 位游玩人'}}</view>
+                </view>
+            </navigator>
+            <view class="play_user fix">
+                <view class="play_user_box" wx:for="{{players}}" wx:key="index">
+                    <view class="play_user_dl">
+                        <view class="play_user_name">
+                            <view class="dib f16 b">{{item.Name}}</view>
+                            <view class="dib f12 ml5">{{'('+item.Mobile+')'}}</view>
+                        </view>
+                        <view class="play_user_idcard f12">{{'身份证：'+item.IDCard}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="popup" type="bottom" vueId="0b6e0670-1" vueSlots="{{['default']}}">
+        <view class="order_xz_intro">
+            <view class="order_xz_intro_tit">
+                <view>购票需知</view>
+                <view bindtap="__e" class="order_xz_intro_close fb f13" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">返回</view>
+            </view>
+            <scroll-view scrollY="true">
+                <view class="ell_bk">
+                    <rich-text nodes="{{productBookingContent}}"></rich-text>
+                </view>
+            </scroll-view>
+        </view>
+    </uni-popup>
+    <view class="big_btn order_btn order_btn_new">
+        <button bindtap="__e" class="btn fw f18 wp100" data-event-opts="{{[ [ 'tap',[ ['createOrder'] ] ] ]}}" type="warn">提交订单</button>
+    </view>
+    <uni-calendar bind:__l="__l" bind:confirm="__e" class="vue-ref" data-event-opts="{{[ [ '^confirm',[ ['confirm'] ] ] ]}}" data-ref="calendar" daysPrice="{{daysPrice}}" endDate="{{endDate}}" isPrice="{{isPrice}}" lunar="{{lunar}}" startDate="{{startDate}}" vueId="0b6e0670-2"></uni-calendar>
+    <uni-session bind:__l="__l" bind:confirm="__e" bind:updateSessions="__e" class="vue-ref" data-event-opts="{{[ [ '^updateSessions',[ [ '__set_sync',['$0','sessions','$event'],[''] ] ] ],[ '^confirm',[ ['sessionConfirm'] ] ] ]}}" data-ref="unisession" sessions="{{sessions}}" vueId="0b6e0670-3"></uni-session>
+</view>

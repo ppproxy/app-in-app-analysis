@@ -1,0 +1,21 @@
+.card-86 {
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    border-bottom: .5px solid #dcdcdc;
+}
+
+._card-87 {
+    float: left;
+    margin-right: 10rpx;
+}
+
+._card-87:last-child {
+    margin-right: 0;
+}
+
+.sub-cards {
+    padding: 0 20rpx;
+    overflow-x: scroll;
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "工商风险",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

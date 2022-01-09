@@ -1,0 +1,4 @@
+<view bindtap="__e" class="app-opened-footer-tip data-v-efc1e86a" data-event-opts="{{[ [ 'tap',[ [ 'toCompany',['$event'] ] ] ] ]}}" data-name="{{name}}" data-unique="{{unique}}" data-url="/company-subpackages/detail/index" style="{{'bottom:'+bottom+'rpx;height: '+68+paddingBottom+'rpx;'}}" wx:if="{{show}}">
+    <view class="app-opened-footer-item data-v-efc1e86a">查看<view class="footer-name line-1 data-v-efc1e86a">{{(name||'该企业')+''}}</view>的更多信息</view>
+    <view catchtap="__e" class="app-opened-footer-close data-v-efc1e86a" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"></view>
+</view>

@@ -1,0 +1,18 @@
+<view catchtap="onClickTap" class="card-25" data-query="{{utils.parseSchemeByKey(cardData.scheme,'q')}}" data-scheme="{{cardData.scheme}}" style="border-bottom: {{no_border_bottom?'0':'0.5px solid #e5e5e5'}}">
+    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(cardData.pic)}}"></image>
+    <image class="top-mark-pic" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.top_mark_pic}}" wx:if="{{cardData.top_mark_pic}}"></image>
+    <text class="top-mark-text">{{cardData.top_mark_text}}</text>
+    <view class="content">
+        <view style="display:flex;align-items:center">
+            <view class="title-sub" style="max-width: {{cardData.title_flag_pic?'92%':'100%'}}">{{cardData.title_sub}}</view>
+            <image class="topic-title-flag" lazyLoad="{{true}}" lazyLoadMargin="0" mode="heightFix" src="{{cardData.title_flag_pic}}" wx:if="{{cardData.title_flag_pic}}"></image>
+        </view>
+        <view class="desc">{{cardData.desc}}</view>
+    </view>
+    <view class="buttons" style="display:none" wx:if="{{cardData.buttons}}">
+        <image class="button-pic" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.buttons[0].pic}}"></image>
+        <view class="button-name">{{cardData.buttons[0].name}}</view>
+    </view>
+    <view class="card-expand-content" wx:if="{{cardData.card_expand&&cardData.card_expand.content}}">{{cardData.card_expand.content}}</view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

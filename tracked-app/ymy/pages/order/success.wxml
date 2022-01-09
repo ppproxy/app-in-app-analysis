@@ -1,0 +1,10 @@
+<view>
+    <view class="pay_top tc">
+        <image class="dib w80 _img" src="/static/images/win_icon.png"></image>
+        <view class="db f30 mt20">创建成功</view>
+    </view>
+    <view class="big_btn order_btn ml15 mt15 mr15 tc">
+        <navigator class="btn res_btn" openType="switchTab" url="../order/index">订单管理</navigator>
+        <navigator class="btn mini_btn ml10" openType="switchTab" url="../main/index">继续购买</navigator>
+    </view>
+</view>

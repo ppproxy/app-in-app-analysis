@@ -1,0 +1,119 @@
+.card-89 {
+    box-sizing: border-box;
+    padding: 20rpx 20rpx 0;
+    background: #fff;
+    border-bottom: .5px solid #dcdcdc;
+    overflow: hidden;
+}
+
+.wb-header {
+    padding-bottom: 20rpx;
+    display: flex;
+}
+
+.wb-header .text {
+    vertical-align: top;
+    margin-left: 20rpx;
+    flex: 1;
+}
+
+.wb-header .text .name {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    color: #f36100;
+    line-height: 44rpx;
+}
+
+.wb-header .text .msg {
+    margin-top: 6rpx;
+    font-size: 24rpx;
+    color: #898989;
+}
+
+.wb-header .text .msg .source {
+    display: inline-block;
+    width: 350rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.video,.videofeed {
+    width: 100%;
+    display: block;
+    height: 394rpx;
+}
+
+.videofeed {
+    position: relative;
+}
+
+.videofeed .img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    background: #ebebeb;
+}
+
+.videofeed .pause {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 128rpx;
+    height: 128rpx;
+}
+
+.videofeed .during {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-size: 32rpx;
+    transform: translateX(-50%);
+}
+
+.wb-footer {
+    display: flex;
+    margin-top: 20rpx;
+    border-top: .5px solid #dcdcdc;
+}
+
+.wb-footer .comment,.wb-footer .forward,.wb-footer .like {
+    flex: 1;
+    text-align: center;
+    font-size: 24rpx;
+    color: #8e8e8e;
+    line-height: 74rpx;
+    height: 74rpx;
+}
+
+.wb-footer .m-font {
+    font-family: marvelfont;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-size: 32rpx;
+    vertical-align: top;
+    margin-right: 14rpx;
+}
+
+.wb-footer .forward .m-font::before {
+    content: "\E004";
+}
+
+.wb-footer .comment .m-font::before {
+    content: "\E003";
+}
+
+.wb-footer .like .m-icon {
+    display: inline-block;
+    vertical-align: top;
+    width: 32rpx;
+    height: 32rpx;
+    background-image: url(https://h5.sinaimg.cn/marvel/v1.4.5/img/sprite.svg);
+    background-size: 90rpx 1710rpx;
+    background-position: -30rpx -750rpx;
+    margin: 21rpx 12rpx 21rpx 0;
+}

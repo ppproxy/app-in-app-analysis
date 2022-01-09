@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "历史股东镜像",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

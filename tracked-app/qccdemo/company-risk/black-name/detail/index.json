@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "黑名单详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

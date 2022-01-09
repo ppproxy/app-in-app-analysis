@@ -1,0 +1,10 @@
+<custom-navigation bind:searchQuery="searchQuery" class="header" isSearch="{{false}}" navigationTitle="评论" query="{{query}}"></custom-navigation>
+<view wx:if="{{errorPage}}">
+    <image class="error-page-img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="widthFix" src="https://h5.sinaimg.cn/upload/2016/04/11/319/h5-404.png"></image>
+    <view class="error-page-text">微博不存在或暂无查看权限!</view>
+</view>
+<scroll-view scrollY class="container" wx:else>
+    <comment currentReplyData="{{currentReplyData}}" hotFlowChild="{{hotFlowChild}}" id="comment" mid="{{mid}}" type="replay"></comment>
+</scroll-view>
+<common-footer cardData="{{cardsData}}" detail="{{true}}" query="{{query}}"></common-footer>
+<wxs module="utils" src="../../utils/utils.wxs" />

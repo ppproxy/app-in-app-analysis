@@ -1,0 +1,37 @@
+<view class="custom data-v-79ba19e8">
+    <view class="custom-space data-v-79ba19e8" style="{{'height:'+height+';'}}"></view>
+    <view class="custom-bar data-v-79ba19e8" style="{{'height:'+height+';'}}">
+        <view class="custom-left flex-box vertical-center data-v-79ba19e8">
+            <view bindtap="__e" class="custom-icon1 flex-shrink0 data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}">
+                <image class="image data-v-79ba19e8" src="https://eciapp-img.qichacha.com/community/222eef02-8f0b-459d-a1f8-f75997bcba3c1630900955560.png"></image>
+            </view>
+            <view bindtap="__e" class="custom-icon2 flex-shrink0 data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                <image class="image data-v-79ba19e8" src="https://eciapp-img.qichacha.com/community/126424c1-8db0-4c76-8015-a2dee0d523cf1630661656029.png"></image>
+            </view>
+            <view class="custom-title flex-1 data-v-79ba19e8">{{''+title+''}}</view>
+        </view>
+        <view class="custom-list data-v-79ba19e8" style="{{'top:'+'calc('+height+')'+';'}}" wx:if="{{show}}">
+            <view catchtap="__e" class="custom-list-item flex-box vertical-center data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$event'] ] ] ] ]}}" data-text="首页" data-type="1" data-url="/pages/home/index" hoverClass="v-hover">
+                <image class="image flex-shrink0 data-v-79ba19e8" src="https://eciapp-img.qichacha.com/community/12919f4a-7d12-4f01-997e-29cec31ee1dd1630663649316.png"></image>
+                <view class="custom-item-title flex-1 vertical-center data-v-79ba19e8">首页</view>
+            </view>
+            <view catchtap="__e" class="custom-list-item flex-box vertical-center data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$event'] ] ] ] ]}}" data-text="搜索" data-url="/pages/search/index/index" hoverClass="v-hover">
+                <image class="image flex-shrink0 data-v-79ba19e8" src="https://eciapp-img.qichacha.com/community/1be17e27-875d-423d-81d1-7a3da8e97d811630663652255.png"></image>
+                <view class="custom-item-title flex-1 vertical-center data-v-79ba19e8" hoverClass="v-hover">搜索</view>
+            </view>
+            <view catchtap="__e" class="custom-list-item flex-box vertical-center data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$event'] ] ] ] ]}}" data-text="我的关注" data-url="/me-subpackages/my-concern/index/index" hoverClass="v-hover">
+                <image class="image flex-shrink0 data-v-79ba19e8" src="https://eciapp-img.qichacha.com/community/d66ab561-7cf0-4fba-a059-b7c68b6298f01630663658311.png"></image>
+                <view class="custom-item-title flex-1 vertical-center data-v-79ba19e8">我的关注</view>
+            </view>
+            <view catchtap="__e" class="custom-list-item flex-box vertical-center data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$event'] ] ] ] ]}}" data-text="我的监控" data-type="1" data-url="/pages/monitor/index" hoverClass="v-hover">
+                <image class="image flex-shrink0 data-v-79ba19e8" src="https://eciapp-img.qichacha.com/community/0d9bb930-361c-481c-9244-f2b133e249e71630663666424.png"></image>
+                <view class="custom-item-title flex-1 vertical-center data-v-79ba19e8">我的监控</view>
+            </view>
+            <view catchtap="__e" class="custom-list-item flex-box vertical-center data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$event'] ] ] ] ]}}" data-text="个人中心" data-type="1" data-url="/pages/me/index" hoverClass="v-hover">
+                <image class="image flex-shrink0 data-v-79ba19e8" src="https://eciapp-img.qichacha.com/community/96ff8547-2407-4193-80e6-def4f639df941630663669494.png"></image>
+                <view class="custom-item-title flex-1 vertical-center data-v-79ba19e8">个人中心</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="overlay data-v-79ba19e8" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" wx:if="{{show}}"></view>
+    </view>
+</view>

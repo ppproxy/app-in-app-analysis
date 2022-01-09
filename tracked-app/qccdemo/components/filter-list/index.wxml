@@ -1,0 +1,188 @@
+<view class="{{['data-v-bace4984',true?'filter':'']}}" style="{{isFlow?'position:absolute;':'position:absolute;'}}">
+    <view class="{{['data-v-bace4984',filterArr&&filterArr[0]&&filterArr[0].isDynamic?'self-wrap':'block-title flex-box']}}" style="{{'top:'+filterStyle.top+'rpx;'+(isFlow?'position:absolute;width:100vw;':'position:fixed;')}}">
+        <block wx:for="{{$root.l4}}" wx:key="index">
+            <view class="filter-common flex-box data-v-bace4984" wx:if="{{item[$orig]&&item[$orig].isDynamic}}">
+                <scroll-view class="filter-title flex-shrink0 data-v-bace4984" scrollX="{{true}}">
+                    <view class="flex-box filter-wrap data-v-bace4984">
+                        <view catchtap="__e" class="{{[ 'data-v-bace4984','filter-item flex-shrink0 '+(alt.active?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'dynamicTagClick',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" wx:for="{{item[$orig].tag}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">{{''+alt.name+''}}</view>
+                    </view>
+                </scroll-view>
+                <view bindtap="__e" class="{{[ 'data-v-bace4984','filter-more filter-item flex-shrink0 '+(item[$orig].show||item[$orig].value?'active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'showFilter',['$event'] ] ] ] ]}}" data-index="{{index}}" style="padding-left:0;">
+                    <view class="line-1 text data-v-bace4984">{{''+(item[$orig].subLabel?item[$orig].subLabel:'更多类型')+''}}</view>
+                    <view class="{{[ 'data-v-bace4984','filter-arrow '+(item[$orig].show?'active ':'')+(item[$orig].value?'active2 ':'') ]}}"></view>
+                </view>
+            </view>
+            <view bindtap="__e" class="condition-wrap data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'showFilter',['$event'] ] ] ] ]}}" data-index="{{index}}" wx:else>
+                <text class="{{[ 'data-v-bace4984','condition-text '+(item[$orig].show||item[$orig].value||item[$orig].type===5&&hasType5Params?'blue':'') ]}}" hoverClass="blue">{{''+(item[$orig].subLabel?item[$orig].subLabel:item[$orig].label)+''}}</text>
+                <image class="{{[ 'data-v-bace4984','condition-img-title '+(item[$orig].show?'condition-img-show':'') ]}}" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/arrow-down.png"></image>
+            </view>
+            <view bindtap="__e" class="{{[ 'data-v-bace4984','condition-pop type1 '+(item[$orig].show?'':'condition-pop-hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" style="{{'top:'+80+'rpx;'+(isFlow?'position:absolute;':'position:absolute;')}}" wx:if="{{item[$orig].type===1}}">
+                <view class="condition-pop-wrap data-v-bace4984">
+                    <view class="condition-pop-center data-v-bace4984">
+                        <view catchtap="__e" class="{{['data-v-bace4984',true?'sort-item':'',alt.value===item[$orig].value?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectFilter',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" wx:for="{{item[$orig].list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                            <text class="sort-item-text data-v-bace4984">{{alt.desc}}</text>
+                            <image class="condition-img data-v-bace4984" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_condition_selected.png" wx:if="{{alt.value==item[$orig].value}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <block wx:else>
+                <view bindtap="__e" class="{{[ 'data-v-bace4984','condition-pop type2 '+(item[$orig].show?'':'condition-pop-hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" style="{{'top:'+80+'rpx;'+(isFlow?'position:absolute;':'position:absolute;')}}" wx:if="{{item[$orig].type===2}}">
+                    <view class="condition-pop-wrap data-v-bace4984">
+                        <view catchtap="__e" class="condition-block data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'doNothing',['$event'] ] ] ] ]}}">
+                            <view class="filter-content-wrap data-v-bace4984" wx:for="{{item[$orig].list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                <view class="{{[ 'data-v-bace4984','filter-title '+(!ind?'no-border':'') ]}}">
+                                    <text class="data-v-bace4984">{{alt.title}}</text>
+                                </view>
+                                <view class="filter-tag-wrap data-v-bace4984">
+                                    <view catchtap="__e" class="{{[ 'data-v-bace4984','filter-tag '+(subAlt.value==alt.value?'filter-active':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectFilterScope',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind2="{{subInd}}" data-index="{{index}}" wx:for="{{alt.list}}" wx:for-index="subInd" wx:for-item="subAlt" wx:key="subInd">{{''+subAlt.desc+''}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="filter-num data-v-bace4984">已帮您筛选出<text class="block-padding-10 data-v-bace4984">{{count+''}}</text>条数据</view>
+                        <view class="button-wrap data-v-bace4984">
+                            <view catchtap="__e" class="filter-button reset data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'reset',['$event'] ] ] ] ]}}" data-index="{{index}}">重置</view>
+                            <view catchtap="__e" class="filter-button confirm data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" data-index="{{index}}">确定</view>
+                        </view>
+                    </view>
+                </view>
+                <block wx:else>
+                    <view bindtap="__e" class="{{[ 'data-v-bace4984','condition-pop type3 '+(item[$orig].show?'':'condition-pop-hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" style="{{'top:'+80+'rpx;'+(isFlow?'position:absolute;':'position:absolute;')}}" wx:if="{{item[$orig].type===3}}">
+                        <view class="filter-col-wrap data-v-bace4984" style="{{'height:'+(item[$orig].list[item[$orig].selectIndex].list.length>10?'calc(100vh - 550rpx)':'auto')+';'}}">
+                            <view class="filter-col filter-second data-v-bace4984" style="{{'height:'+(item[$orig].list[item[$orig].selectIndex].list.length>10?'calc(100vh - 550rpx)':'auto')+';'}}">
+                                <view catchtap="__e" class="{{[ 'data-v-bace4984','filter-item-1 '+(item[$orig].selectIndex===ind?'filter-first':'') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType3Level1',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" wx:for="{{item[$orig].list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">{{''+alt.desc+''}}</view>
+                            </view>
+                            <scroll-view class="filter-col filter-first data-v-bace4984" scrollTop="{{0}}" scrollY="{{true}}" style="{{'height:'+(item[$orig].list[item[$orig].selectIndex].list.length>10?'calc(100vh - 550rpx)':'auto')+';'}}">
+                                <view class="data-v-bace4984">
+                                    <view catchtap="__e" class="filter-item-2 data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'selectType3Level2',['$event'] ] ] ] ]}}" data-ind="{{subInd}}" data-index="{{index}}" wx:for="{{item[$orig].list[item[$orig].selectIndex].list}}" wx:for-index="subInd" wx:for-item="subAlt" wx:key="subInd">
+                                        <text class="data-v-bace4984">{{subAlt.desc}}</text>
+                                        <image class="filter-img data-v-bace4984" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_condition_selected.png" wx:if="{{item[$orig].subValue===subAlt.value&&item[$orig].value===item[$orig].list[item[$orig].selectIndex].value&&!!(item[$orig].subLabel===subAlt.label||item[$orig]&&item[$orig].isDynamic&&subAlt.label==='全部类型')}}"></image>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                    <block wx:else>
+                        <view bindtap="__e" class="{{[ 'data-v-bace4984','condition-pop type4 '+(item[$orig].show?'':'condition-pop-hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" style="{{'top:'+79+'rpx;'+(isFlow?'position:absolute;':'position:absolute;')}}" wx:if="{{item[$orig].type===4}}">
+                            <view class="condition-block flex-box data-v-bace4984">
+                                <view class="condition-first-wrap flex-1 data-v-bace4984">
+                                    <view catchtap="__e" class="{{[ 'data-v-bace4984','condition-item '+(item[$orig].selectIndex===ind?'filter-first':'') ]}}" data-desc="{{alt.desc}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType4Level1',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" data-list="{{alt.list}}" data-value="{{alt.value}}" wx:for="{{item[$orig].list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                        <text class="data-v-bace4984">{{alt.desc}}</text>
+                                        <image class="condition-img data-v-bace4984" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_condition_selected.png" wx:if="{{item[$orig].autoColumn&&item[$orig].value===alt.value&&!item[$orig].list[item[$orig].selectIndex].list.length&&!!(!item[$orig].list[item[$orig].selectIndex].list[item[$orig].selectSubIndex]||!item[$orig].list[item[$orig].selectIndex].list[item[$orig].selectSubIndex].list||!item[$orig].list[item[$orig].selectIndex].list[item[$orig].selectSubIndex].list.length)}}"></image>
+                                    </view>
+                                </view>
+                                <view class="condition-second-wrap flex-1 data-v-bace4984" wx:if="{{!item[$orig].autoColumn||!!(item[$orig].list[item[$orig].selectIndex].list&&item[$orig].list[item[$orig].selectIndex].list.length)}}">
+                                    <view catchtap="__e" class="{{[ 'data-v-bace4984','condition-item '+(item[$orig].selectSubIndex===ind?'filter-second':'') ]}}" data-desc="{{alt[$orig].desc}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType4Level2',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" data-list="{{alt[$orig].list}}" data-value="{{alt[$orig].value}}" wx:for="{{item.l0}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                        <text class="data-v-bace4984">{{alt[$orig].desc}}</text>
+                                        <image class="condition-img data-v-bace4984" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_condition_selected.png" wx:if="{{item[$orig].subLabel===alt[$orig].desc&&!item[$orig].thirdValue||!!(item[$orig].autoColumn&&item[$orig].subLabel===item[$orig].label&&item[$orig].subValue===alt[$orig].value&&alt.g0===0&&!item[$orig].thirdValue)}}"></image>
+                                    </view>
+                                </view>
+                                <view class="condition-third-wrap flex-1 data-v-bace4984" wx:if="{{!item[$orig].autoColumn||!!(item[$orig].list[item[$orig].selectIndex].list[item[$orig].selectSubIndex]&&item[$orig].list[item[$orig].selectIndex].list[item[$orig].selectSubIndex].list&&item[$orig].list[item[$orig].selectIndex].list[item[$orig].selectSubIndex].list.length)}}">
+                                    <view catchtap="__e" class="condition-item data-v-bace4984" data-desc="{{alt.desc}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType4Level3',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" data-list="{{alt.list}}" data-value="{{alt.value}}" wx:for="{{item[$orig].list[item[$orig].selectIndex].list[item[$orig].selectSubIndex].list}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                        <text class="data-v-bace4984">{{alt.desc}}</text>
+                                        <image class="condition-img data-v-bace4984" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/icon_condition_selected.png" wx:if="{{item[$orig].subLabel===alt.label&&item[$orig].thirdValue===alt.value}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <block wx:else>
+                            <view bindtap="__e" class="{{[ 'data-v-bace4984','condition-pop type5 '+(item[$orig].show?'':'condition-pop-hide') ]}}" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" style="{{'top:'+80+'rpx;'+(isFlow?'position:absolute;':'position:absolute;')}}" wx:if="{{item[$orig].type===5}}">
+                                <view class="condition-pop-wrap data-v-bace4984">
+                                    <view catchtap="__e" class="condition-block data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+                                        <view class="filter-content-wrap data-v-bace4984" wx:for="{{item.l3}}" wx:for-index="ind" wx:for-item="alt" wx:key="ind">
+                                            <view class="data-v-bace4984" style="height:20rpx;width:100%;background-color:#f3f3f3;" wx:if="{{alt[$orig].title}}"></view>
+                                            <view bindtap="__e" class="{{['data-v-bace4984','filter-title ']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleType5',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-index="{{index}}" wx:if="{{alt[$orig].title}}">
+                                                <view class="filter-title-title data-v-bace4984">{{''+alt[$orig].title+''}}</view>
+                                                <image class="{{['data-v-bace4984',true?'filter-arrow':'',alt[$orig].show?'transform':'']}}" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/down-icon.png"></image>
+                                            </view>
+                                            <block wx:if="{{(item[$orig].show&&alt1[$orig].needVip||!alt1[$orig].needVip)&&alt[$orig].show&&alt1[$orig].show}}" wx:for="{{alt.l2}}" wx:for-index="ind1" wx:for-item="alt1" wx:key="ind1">
+                                                <view class="{{[ 'data-v-bace4984','filter-title '+(!ind1?'no-border':'') ]}}">
+                                                    <view class="filter-title-item data-v-bace4984">{{''+alt1[$orig].title+''}}<view class="vip-icon data-v-bace4984" wx:if="{{alt1[$orig].needVip}}"></view>
+                                                    </view>
+                                                </view>
+                                                <view class="filter-tag-wrap data-v-bace4984" wx:if="{{alt1[$orig].type===1}}">
+                                                    <block wx:for="{{alt1[$orig].list}}" wx:for-index="subInd" wx:for-item="subAlt" wx:key="subInd">
+                                                        <view class="{{['data-v-bace4984',true?'date-wrap':'',true?'flex-box':'',alt1[$orig].start||alt1[$orig].end?'active':'']}}" style="width:410rpx;" wx:if="{{subAlt.diyInput}}">
+                                                            <view class="start flex-1 data-v-bace4984">
+                                                                <label class="data-v-bace4984">
+                                                                    <input bindinput="__e" class="input data-v-bace4984" data-event-opts="{{[ [ 'input',[ [ 'type5InputStartChange',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" maxlength="{{subAlt.maxLength?subAlt.maxLength:50}}" placeholder="{{'最低'+subAlt.label}}" placeholderStyle="color:#bbb;" style="width:100%;height:100%;" type="number" value="{{alt1[$orig].start}}"></input>
+                                                                </label>
+                                                            </view>
+                                                            <view class="to flex-shrink0 data-v-bace4984"></view>
+                                                            <view class="end flex-1 data-v-bace4984">
+                                                                <label class="data-v-bace4984">
+                                                                    <input bindinput="__e" class="input data-v-bace4984" data-event-opts="{{[ [ 'input',[ [ 'type5InputEndChange',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" enableNative="{{false}}" maxlength="{{subAlt.maxLength?subAlt.maxLength:50}}" placeholder="{{'最高'+subAlt.label}}" placeholderStyle="color:#bbb;" style="width:100%;height:100%;" type="number" value="{{alt1[$orig].end}}"></input>
+                                                                </label>
+                                                            </view>
+                                                            <view class="unit data-v-bace4984">{{subAlt.unit}}</view>
+                                                        </view>
+                                                        <block wx:else>
+                                                            <view class="{{['data-v-bace4984',true?'date-wrap':'',true?'flex-box':'',alt1[$orig].start&&alt1[$orig].end?'active':'']}}" style="width:490rpx;" wx:if="{{subAlt.diyDate2}}">
+                                                                <view class="start flex-1 flex-box data-v-bace4984" style="padding-right:14rpx;">
+                                                                    <view class="flex-1 data-v-bace4984">
+                                                                        <picker bindchange="__e" class="data-v-bace4984" data-event-opts="{{[ [ 'change',[ [ 'type5Date2StartChange',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" mode="date">
+                                                                            <text class="data-v-bace4984" style="line-height:46rpx;">{{''+(alt1[$orig].start?alt1[$orig].start:'最低'+subAlt.label)+''}}</text>
+                                                                        </picker>
+                                                                    </view>
+                                                                    <view bindtap="__e" class="close flex-shrink0 data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'type5ClearStart',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" wx:if="{{alt1[$orig].start}}">
+                                                                        <view class="{{[ 'data-v-bace4984','close-item '+(alt1[$orig].end?'active':'') ]}}"></view>
+                                                                    </view>
+                                                                </view>
+                                                                <view class="to flex-shrink0 data-v-bace4984"></view>
+                                                                <view class="end flex-1 flex-box data-v-bace4984">
+                                                                    <view class="flex-1 data-v-bace4984">
+                                                                        <picker bindchange="__e" class="data-v-bace4984" data-event-opts="{{[ [ 'change',[ [ 'type5Date2EndChange',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" mode="date">
+                                                                            <text class="data-v-bace4984" style="line-height:46rpx;">{{''+(alt1[$orig].end?alt1[$orig].end:'最高'+subAlt.label)+''}}</text>
+                                                                        </picker>
+                                                                    </view>
+                                                                    <view bindtap="__e" class="close flex-shrink0 data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'type5ClearEnd',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" wx:if="{{alt1[$orig].end}}">
+                                                                        <view class="{{[ 'data-v-bace4984','close-item '+(alt1[$orig].start?'active':'') ]}}"></view>
+                                                                    </view>
+                                                                </view>
+                                                                <view class="unit data-v-bace4984">{{subAlt.unit}}</view>
+                                                            </view>
+                                                            <block wx:else>
+                                                                <view class="{{['data-v-bace4984',true?'date-wrap':'',true?'flex-box':'',alt1[$orig].start&&alt1[$orig].end?'active':'']}}" wx:if="{{alt1[$orig].key==='date'&&subAlt.diyDate}}">
+                                                                    <view class="start flex-1 data-v-bace4984">
+                                                                        <picker bindcancel="__e" bindchange="__e" class="data-v-bace4984" data-event-opts="{{[ [ 'change',[ [ 'type5DateStartChange',['$event'] ] ] ],[ 'cancel',[ [ 'type5DateStartCancel',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" mode="date">
+                                                                            <text class="data-v-bace4984">{{''+(alt1[$orig].start?alt1[$orig].start:'开始日期')+''}}</text>
+                                                                        </picker>
+                                                                    </view>
+                                                                    <view class="to flex-shrink0 data-v-bace4984"></view>
+                                                                    <view class="end flex-1 data-v-bace4984">
+                                                                        <picker bindcancel="__e" bindchange="__e" class="data-v-bace4984" data-event-opts="{{[ [ 'change',[ [ 'type5DateEndChange',['$event'] ] ] ],[ 'cancel',[ [ 'type5DateEndCancel',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" mode="date">
+                                                                            <text class="data-v-bace4984">{{''+(alt1[$orig].end?alt1[$orig].end:'结束日期')+''}}</text>
+                                                                        </picker>
+                                                                    </view>
+                                                                    <view bindtap="__e" class="close flex-shrink0 data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'type5Clear',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" wx:if="{{alt1[$orig].start}}">
+                                                                        <view class="{{[ 'data-v-bace4984','close-item '+(alt1[$orig].start?'active':'') ]}}"></view>
+                                                                    </view>
+                                                                </view>
+                                                                <view catchtap="__e" class="{{['data-v-bace4984',true?'filter-tag':'',true?'vertical-center':'',subAlt.value===alt1[$orig].value&&!alt1[$orig].start?'filter-active':'',alt1[$orig].needVip&&!isVIP?'filter-disabled':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType5',['$event'] ] ] ] ]}}" data-ind="{{ind}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" wx:else>{{''+subAlt.desc+''}}</view>
+                                                            </block>
+                                                        </block>
+                                                    </block>
+                                                </view>
+                                                <block wx:else>
+                                                    <view class="filter-tag-wrap data-v-bace4984" wx:if="{{alt1[$orig].type===2}}">
+                                                        <view catchtap="__e" class="{{['data-v-bace4984',true?'filter-tag':'',true?'vertical-center':'',subAlt.g1?'filter-active':'']}}" data-alt="{{alt1[$orig]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType5Dep2',['$event'] ] ] ] ]}}" data-ind="{{ind1}}" data-ind1="{{ind1}}" data-ind2="{{subInd}}" data-index="{{index}}" wx:for="{{alt1.l1}}" wx:for-index="subInd" wx:for-item="subAlt" wx:key="subInd">{{''+subAlt[$orig].desc+''}}</view>
+                                                    </view>
+                                                </block>
+                                            </block>
+                                        </view>
+                                    </view>
+                                    <view class="filter-num data-v-bace4984">已帮您筛选出<text class="red data-v-bace4984">{{count+''}}</text>条数据</view>
+                                    <view class="button-wrap data-v-bace4984">
+                                        <view catchtap="__e" class="filter-button reset data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'reset',['$event'] ] ] ] ]}}" data-index="{{index}}">重置</view>
+                                        <view catchtap="__e" class="filter-button confirm data-v-bace4984" data-event-opts="{{[ [ 'tap',[ [ 'overlayClick',['$event'] ] ] ] ]}}" data-index="{{index}}">确定</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </block>
+    </view>
+    <view class="{{['data-v-bace4984',transform?'transform':'']}}"></view>
+</view>

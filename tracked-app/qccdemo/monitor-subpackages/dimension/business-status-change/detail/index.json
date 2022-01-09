@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "经营状态变更",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

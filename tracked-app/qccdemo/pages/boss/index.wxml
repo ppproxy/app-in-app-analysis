@@ -1,0 +1,34 @@
+<view class="uni-container data-v-677d1238">
+    <view class="page data-v-677d1238" wx:if="{{isInit}}">
+        <view class="search-bar data-v-677d1238">
+            <view class="input-wrap data-v-677d1238">
+                <view bindtap="__e" class="input-left-wrap data-v-677d1238" data-event-opts="{{[ [ 'tap',[ [ 'toSearchBoss',['$event'] ] ] ] ]}}">
+                    <image class="small-input-icon data-v-677d1238" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/small_ic_search.png"></image>
+                    <input class="data-v-677d1238" disabled="{{true}}" enableNative="{{false}}" placeholder="请输入老板、股东、高管姓名，如'陈德强 苏州'" placeholderClass="input-color" placeholderStyle="color:#999;" type="text"></input>
+                </view>
+            </view>
+        </view>
+        <scroll-view class="scroll data-v-677d1238" scrollY="{{true}}">
+            <view class="title line-bottom data-v-677d1238">热门人物</view>
+            <view class="block-wrap data-v-677d1238">
+                <view bindtap="__e" class="list-block data-v-677d1238" data-event-opts="{{[ [ 'tap',[ [ 'toCopDetail',['$event'] ] ] ] ]}}" data-name="{{item.PersonName}}" data-unique="{{item.PersonId}}" wx:for="{{list}}" wx:key="index">
+                    <view class="common-left data-v-677d1238">
+                        <view class="common-wrap data-v-677d1238">
+                            <app-auto-logo bind:__l="__l" class="common-logo data-v-677d1238" fontSize="60rpx" logo="{{item.Avatar}}" name="{{item.PersonName}}" size="120rpx" vueId="{{'9bf3cd86-1-'+index}}"></app-auto-logo>
+                        </view>
+                    </view>
+                    <view class="common-right flex-1 data-v-677d1238">
+                        <view class="common-person line-1 flex-box data-v-677d1238">
+                            <view class="flex-1 data-v-677d1238">{{''+(item.PersonName||'-')+''}}</view>
+                            <view class="flex-shrink0 data-v-677d1238" wx:if="{{item.PersonPosition}}">{{''+(item.PersonPosition||'-')+''}}</view>
+                        </view>
+                        <view class="common-name line-1 data-v-677d1238" wx:if="{{item.CompanyName}}">{{''+(item.CompanyName||'-')+''}}</view>
+                        <view class="common-desc data-v-677d1238">{{item.TopicTitle?'#'+item.TopicTitle+'#':'-'}}</view>
+                    </view>
+                </view>
+            </view>
+            <app-no-data bind:__l="__l" class="data-v-677d1238" text="Oops，小查没有找到相关数据~" vueId="9bf3cd86-2" wx:if="{{!loading&&list.length<1}}"></app-no-data>
+        </scroll-view>
+    </view>
+    <app-page-loading bind:__l="__l" class="data-v-677d1238" isInit="{{isInit}}" vueId="9bf3cd86-3" wx:if="{{!isInit}}"></app-page-loading>
+</view>

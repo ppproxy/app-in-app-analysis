@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "商标",
+    "usingComponents": {
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

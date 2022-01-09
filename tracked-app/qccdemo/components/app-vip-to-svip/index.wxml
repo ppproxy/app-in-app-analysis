@@ -1,0 +1,27 @@
+<view bindtap="__e" class="{{['data-v-4c5e9c34',true?'vip2svip-mask':'',showVipAlert?'show':'',!showVipAlert?'hide':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClose',['$event'] ] ] ] ]}}">
+    <view catchtap="__e" class="vip2svip-wrapper data-v-4c5e9c34" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+        <view class="click-wrapper data-v-4c5e9c34">
+            <view class="{{['header data-v-4c5e9c34',isVIP&&!isSVIP?'bg-vip':'bg-svip']}}">
+                <view class="status data-v-4c5e9c34">您正在享受<label class="_span data-v-4c5e9c34">{{(isVIP&&!isSVIP?'VIP':'SVIP')+'权益'}}</label>
+                    <view class="{{['icon-bar data-v-4c5e9c34',isVIP&&!isSVIP?'vip-icon':'svip-icon']}}"></view>
+                </view>
+                <view class="date data-v-4c5e9c34">{{'到期日期：'+(isVIP&&!isSVIP?vipDeadLine:svipDeadLine)+''}}</view>
+            </view>
+            <view class="vip-bar data-v-4c5e9c34" wx:if="{{isSVIP}}">
+                <view class="title data-v-4c5e9c34">您有VIP权益待使用</view>
+                <view class="date data-v-4c5e9c34">{{'到期日期：'+vipDeadLine}}</view>
+            </view>
+            <view class="content data-v-4c5e9c34">
+                <view class="title data-v-4c5e9c34">升级规则</view>
+                <view class="item data-v-4c5e9c34">VIP用户可通过直接购买升级成为SVIP会员，额外<view catchtap="__e" class="jump data-v-4c5e9c34" data-event-opts="{{[ [ 'tap',[ [ 'navToUserRights',['$event'] ] ] ] ]}}">享受16项特权<image class="data-v-4c5e9c34" mode="widthFix" src="https://eciapp-img.qichacha.com/community/f95f35f7-8e0a-421a-a441-6d6b5e0755871624360434237.png"></image>
+                    </view>
+                </view>
+                <view class="item data-v-4c5e9c34">升级SVIP后，将优先使用SVIP权益，并消耗SVIP日期。</view>
+                <view class="item data-v-4c5e9c34">升级SVIP后，原先未使用完的VIP权益将被保留并顺延。在SVIP到期后，再重新使用VIP权益，并消耗VIP日期。</view>
+                <view class="contact data-v-4c5e9c34">如有疑问可咨询客服：<view catchtap="__e" class="data-v-4c5e9c34" data-event-opts="{{[ [ 'tap',[ [ 'callTelephone',['$event'] ] ] ] ]}}" data-tel="400-928-2212">400-928-2212</view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="__e" class="button data-v-4c5e9c34" data-event-opts="{{[ [ 'tap',[ [ 'handleClose',['$event'] ] ] ] ]}}">我知道了</view>
+    </view>
+</view>

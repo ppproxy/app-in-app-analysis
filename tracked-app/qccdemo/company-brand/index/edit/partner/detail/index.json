@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "添加合作伙伴",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

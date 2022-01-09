@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "会员特权",
+    "usingComponents": {
+        "app-no-data": "/components/app-no-data/index",
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

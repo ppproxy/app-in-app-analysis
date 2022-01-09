@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "专利",
+    "usingComponents": {
+        "app-simple-footer": "/components/app-simple-footer/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-opened-footer": "/components/app-opened-footer/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "filter-list": "/components/filter-list/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

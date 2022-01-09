@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "送达公告",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "filter-list": "/components/filter-list/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

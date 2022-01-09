@@ -1,0 +1,32 @@
+<view class="app mb70" wx:if="{{isLogin}}">
+    <view class="my_invoice_nav">
+        <view class="my_invoice_nav_list f18 tc fix">
+            <view class="my_invoice_nav_box dib">
+                <navigator class="db fix" url="invoice">可开票</navigator>
+            </view>
+            <view class="my_invoice_nav_box my_invoice_nav_clo dib">
+                <navigator class="db fix" url="invoicecomplete">已开票</navigator>
+            </view>
+        </view>
+    </view>
+    <view class="my_invoice my_invoice_finish">
+        <view class="my_contacts" wx:if="{{orders&&orders.length>0}}">
+            <view class="my_contacts_box my_invoice_box" wx:for="{{orders}}" wx:for-index="i" wx:key="OrderID">
+                <view class="my_invoice_price f14 g9">
+                    <view class="dib f20 mr5 fo">{{item.TotalMoney}}</view>元</view>
+                <view class="my_contacts_text">
+                    <view class="my_contacts_name b f14 g3">{{item.BuyerName}}</view>
+                    <view class="my_contacts_phone g6 f12 mt5">{{item.CreateTime}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="more f13 tc" wx:else>
+            <view class="dib mr10">—</view>暂无已开发票<view class="dib ml10">—</view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view class="more f13 tc">
+        <view class="dib mr10">—</view>请先登录<view class="dib ml10">—</view>
+    </view>
+</view>

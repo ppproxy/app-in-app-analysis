@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "投资链",
+    "usingComponents": {
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

@@ -1,0 +1,79 @@
+<view class="card-164">
+    <view class="card-164-pic" wx:if="{{cardData.left_element.mblog.id}}">
+        <view bindtap="preview" class="videofeed {{cardData.left_element.pic_width===1&&cardData.left_element.pic_height===1?'video-1-1':'video-16-9'}}" data-ids="{{cardData.left_element.mblog.pic_ids}}" wx:if="{{cardData.left_element.mblog.pic_ids&&cardData.left_element.mblog.pic_ids.length}}">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/middle/{{cardData.left_element.mblog.pic_ids[0]}}.jpg"></image>
+            <view class="img-mask" wx:if="{{cardData.left_element.mblog.pic_ids.length>1}}">
+                <image class="small_photo" lazyLoad="{{true}}" lazyLoadMargin="0" src="https://simg.s.weibo.com/20201224_video_card_small_photo.png"></image>
+                <text class="img-number">{{cardData.left_element.mblog.pic_ids.length}}</text>
+            </view>
+        </view>
+        <view wx:else>
+            <view wx:if="{{item.object.object_type==='video'}}" wx:for="{{cardData.left_element.mblog.url_objects}}" wx:key="index">
+                <view wx:if="{{cardData.left_element.show}}">
+                    <video autoplay="{{true}}" bindfullscreenchange="fullScreenChange" bindplay="videoPlay" class="video {{cardData.left_element.pic_width===1&&cardData.left_element.pic_height===1?'video-1-1':'video-16-9'}}" id="video_{{cardData.left_element.mblog.mid}}" poster="{{item.object.object.image.url}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(item.object.object.stream.url)}}"></video>
+                </view>
+                <view catchtap="showvideo" class="videofeed {{cardData.left_element.pic_width===1&&cardData.left_element.pic_height===1?'video-1-1':'video-16-9'}}" data-type="left_element" wx:else>
+                    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                    <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../../assets/icons/common_icon_play.png"></image>
+                    <text class="duration">{{utils.formatVideoTime(item.object.object.duration)}}</text>
+                    <view class="video-mask"></view>
+                </view>
+            </view>
+        </view>
+        <view class="content">
+            <view class="desc1" style="-webkit-line-clamp: {{cardData.left_element.text_max_line}};height: {{cardData.left_element.text_max_line*40}}rpx;">
+                <image class="tag-icons" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.left_element.tag_icons[0]}}" wx:if="{{cardData.left_element.tag_icons&&cardData.left_element.tag_icons.length}}"></image>
+                <text>{{cardData.left_element.text}}</text>
+            </view>
+            <view class="content-zone">
+                <view class="user-zone">
+                    <avator type="small" wb="{{cardData.left_element.mblog}}"></avator>
+                    <text class="name">{{cardData.left_element.mblog.user.name}}</text>
+                </view>
+                <view class="attitudes_count">
+                    <view class="icon-good ~sprite-img ~sign ~{{cardData.left_element.mblog.user.like?'good':'ngood'}} ~small"></view>
+                    <text>{{cardData.left_element.mblog.attitudes_count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="card-164-pic" wx:if="{{cardData.right_element.mblog.id}}">
+        <view bindtap="preview" class="videofeed {{cardData.right_element.pic_width===1&&cardData.right_element.pic_height===1?'video-1-1':'video-16-9'}}" data-ids="{{cardData.right_element.mblog.pic_ids}}" wx:if="{{cardData.right_element.mblog.pic_ids&&cardData.right_element.mblog.pic_ids.length}}">
+            <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/middle/{{cardData.right_element.mblog.pic_ids[0]}}.jpg"></image>
+            <view class="img-mask" wx:if="{{cardData.right_element.mblog.pic_ids.length>1}}">
+                <image class="small_photo" lazyLoad="{{true}}" lazyLoadMargin="0" src="https://simg.s.weibo.com/20201224_video_card_small_photo.png"></image>
+                <text class="img-number">{{cardData.right_element.mblog.pic_ids.length}}</text>
+            </view>
+        </view>
+        <view wx:else>
+            <view wx:if="{{item.object.object_type==='video'}}" wx:for="{{cardData.right_element.mblog.url_objects}}" wx:key="index">
+                <view wx:if="{{cardData.right_element.show}}">
+                    <video autoplay="{{true}}" bindfullscreenchange="fullScreenChange" bindplay="videoPlay" class="video {{cardData.right_element.pic_width===1&&cardData.right_element.pic_height===1?'video-1-1':'video-16-9'}}" id="video_{{cardData.right_element.mblog.mid}}" poster="{{item.object.object.image.url}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(item.object.object.stream.url)}}"></video>
+                </view>
+                <view catchtap="showvideo" class="videofeed {{cardData.right_element.pic_width===1&&cardData.right_element.pic_height===1?'video-1-1':'video-16-9'}}" data-type="right_element" wx:else>
+                    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.object.object.image.url)}}"></image>
+                    <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../../../assets/icons/common_icon_play.png"></image>
+                    <text class="duration">{{utils.formatVideoTime(item.object.object.duration)}}</text>
+                    <view class="video-mask"></view>
+                </view>
+            </view>
+        </view>
+        <view class="content">
+            <view class="desc1" style="-webkit-line-clamp: {{cardData.right_element.text_max_line}};height: {{cardData.right_element.text_max_line*40}}rpx;">
+                <image class="tag-icons" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{cardData.right_element.tag_icons[0]}}" wx:if="{{cardData.right_element.tag_icons&&cardData.right_element.tag_icons.length}}"></image>
+                <text>{{cardData.right_element.text}}</text>
+            </view>
+            <view class="content-zone">
+                <view class="user-zone">
+                    <avator type="small" wb="{{cardData.right_element.mblog}}"></avator>
+                    <text class="name">{{cardData.right_element.mblog.user.name}}</text>
+                </view>
+                <view class="attitudes_count">
+                    <view class="icon-good ~sprite-img ~sign ~{{cardData.right_element.mblog.user.like?'good':'ngood'}} ~small"></view>
+                    <text>{{cardData.right_element.mblog.attitudes_count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "机构股权分布",
+    "pageOrientation": "landscape",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

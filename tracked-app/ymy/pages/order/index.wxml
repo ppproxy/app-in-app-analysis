@@ -1,0 +1,58 @@
+<view class="app" wx:if="{{isLogin}}">
+    <view wx:if="{{orders&&orders.length>0}}">
+        <view class="my_order_view">
+            <view class="my_order_box top_line bgwh" wx:for="{{orders}}" wx:for-index="__i0__" wx:key="OrderID">
+                <view class="my_order_tit _div">
+                    <navigator class="f15 b g3 my_order_tit_name" url="/pages/index/scenic">圆明园遗址公园<image class="arrow_icon ml5 _img" height="12" src="{{$root.m0}}" width="12"></image>
+                    </navigator>
+                    <view class="f14 g9 my_order_tit_state" wx:if="{{item.Status==0}}">{{item.StatusMemo}}</view>
+                    <block wx:else>
+                        <view class="f14 fr my_order_tit_state" wx:if="{{item.Status==1}}">{{item.StatusMemo}}</view>
+                        <block wx:else>
+                            <view class="14 fr my_order_tit_state" wx:if="{{item.Status==2}}">{{item.StatusMemo}}</view>
+                            <block wx:else>
+                                <view class="14 fg my_order_tit_state" wx:if="{{item.Status==3}}">{{item.StatusMemo}}</view>
+                                <block wx:else>
+                                    <view class="14 g9 my_order_tit_state" wx:if="{{item.Status==4}}">{{item.StatusMemo}}</view>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                </view>
+                <navigator class="db" url="{{'/pages/order/detail?orderId='+item.OrderID}}">
+                    <view class="order_ticket g3 _div" wx:for="{{item.Items}}" wx:for-index="__i1__" wx:for-item="item1" wx:key="ID">
+                        <image class="db order_ticket_pic mr10 _img" src="{{item1.Photo+'!/both/120x120'}}"></image>
+                        <view class="order_ticket_name _div">
+                            <view class="db n f15 _div">{{item1.ProductName}}</view>
+                        </view>
+                        <view class="tr order_ticket_price ml5 _div">
+                            <view class="db _div">{{'￥'+item1.SalePrice}}</view>
+                            <view class="g9 db f12 _div">{{'x '+item1.Number}}</view>
+                        </view>
+                    </view>
+                    <view class="order_price g3 f12 _div">
+                        <view class="g9 _div">
+                            <label class="dib _span">{{'总计 ￥'+item.TotalPrice}}</label>
+                            <label class="dib ml10 _span" wx:if="{{item.TotalCouponPrice>0}}">{{'优惠 ￥ '+item.TotalCouponPrice}}</label>
+                        </view>
+                        <view class="f13 order_price_reality _div">{{'应付 ￥'+(item.TotalPrice-item.TotalCouponPrice<0?0:item.TotalPrice-item.TotalCouponPrice)}}</view>
+                    </view>
+                    <view class="my_order_action fa_wh _div" wx:if="{{item.Status==2}}">
+                        <view class="s_btn bgr fw _div">支付</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="more f13 tc">
+            <view class="dib mr10">—</view>{{loadingText+''}}<view class="dib ml10">—</view>
+        </view>
+    </view>
+    <view wx:else>
+        <null-data bind:__l="__l" vueId="3bc35b9e-1"></null-data>
+    </view>
+</view>
+<view wx:else>
+    <view class="more f13 tc">
+        <view class="dib mr10">—</view>请先登录<view class="dib ml10">—</view>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="tool-bar-menus">
+    <block wx:for="{{menus}}" wx:key="index">
+        <view bindtap="tapTabBar" class="tab-bar-click" data-current="{{index}}" style="left: {{index*33.3+'%'}}"></view>
+        <view class="item">
+            <icon class="~iconfont ~icon-zengjia-01 icon-add" size="16" wx:if="{{item.name==='关注'}}"></icon>
+            <icon class="~iconfont ~icon-bianji icon-edit" size="16" wx:if="{{item.name==='讨论'}}"></icon>
+            <icon class="~iconfont ~icon-quxiaofenxiang icon-share" size="16" wx:elif="{{item.name==='分享'}}"></icon>
+            <icon class="~iconfont ~icon-caidan icon-more" size="16" wx:elif="{{item.name==='更多'}}"></icon>
+            <text class="name">{{item.name}}</text>
+        </view>
+    </block>
+</view>

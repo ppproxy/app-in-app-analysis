@@ -1,0 +1,20 @@
+.app-auto-logo.data-v-33d2977e {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+}
+
+.app-auto-logo>text.data-v-33d2977e {
+    background-color: #e79177;
+    color: #fff;
+    display: inline-block;
+    height: 88rpx;
+    text-align: center;
+    width: 88rpx;
+}
+
+.app-auto-logo>image.data-v-33d2977e {
+    border: .5px solid #f1f1f1;
+    object-fit: contain;
+}

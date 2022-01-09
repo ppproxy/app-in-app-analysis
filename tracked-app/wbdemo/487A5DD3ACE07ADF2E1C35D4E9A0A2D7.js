@@ -1,0 +1,770 @@
+var e = [ {
+    value: "[微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e3/2018new_weixioa02_org.png"
+}, {
+    value: "[可爱]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/09/2018new_keai_org.png"
+}, {
+    value: "[太开心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1e/2018new_taikaixin_org.png"
+}, {
+    value: "[鼓掌]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6e/2018new_guzhang_org.png"
+}, {
+    value: "[嘻嘻]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/33/2018new_xixi_org.png"
+}, {
+    value: "[哈哈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8f/2018new_haha_org.png"
+}, {
+    value: "[笑cry]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/4a/2018new_xiaoku_thumb.png"
+}, {
+    value: "[挤眼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/43/2018new_jiyan_org.png"
+}, {
+    value: "[馋嘴]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/fa/2018new_chanzui_org.png"
+}, {
+    value: "[黑线]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a3/2018new_heixian_org.png"
+}, {
+    value: "[汗]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/28/2018new_han_org.png"
+}, {
+    value: "[挖鼻]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9a/2018new_wabi_thumb.png"
+}, {
+    value: "[哼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/7c/2018new_heng_org.png"
+}, {
+    value: "[怒]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f6/2018new_nu_org.png"
+}, {
+    value: "[委屈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a5/2018new_weiqu_org.png"
+}, {
+    value: "[可怜]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/96/2018new_kelian_org.png"
+}, {
+    value: "[失望]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/aa/2018new_shiwang_org.png"
+}, {
+    value: "[悲伤]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ee/2018new_beishang_org.png"
+}, {
+    value: "[泪]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6e/2018new_leimu_org.png"
+}, {
+    value: "[允悲]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/83/2018new_kuxiao_org.png"
+}, {
+    value: "[害羞]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c1/2018new_haixiu_org.png"
+}, {
+    value: "[污]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/10/2018new_wu_org.png"
+}, {
+    value: "[爱你]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f6/2018new_aini_org.png"
+}, {
+    value: "[亲亲]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/2c/2018new_qinqin_org.png"
+}, {
+    value: "[色]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9d/2018new_huaxin_org.png"
+}, {
+    value: "[憧憬]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c9/2018new_chongjing_org.png"
+}, {
+    value: "[舔屏]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3e/2018new_tianping_org.png"
+}, {
+    value: "[坏笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/4d/2018new_huaixiao_org.png"
+}, {
+    value: "[阴险]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9e/2018new_yinxian_org.png"
+}, {
+    value: "[笑而不语]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/2d/2018new_xiaoerbuyu_org.png"
+}, {
+    value: "[偷笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/71/2018new_touxiao_org.png"
+}, {
+    value: "[酷]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c4/2018new_ku_org.png"
+}, {
+    value: "[并不简单]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/aa/2018new_bingbujiandan_org.png"
+}, {
+    value: "[思考]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/30/2018new_sikao_org.png"
+}, {
+    value: "[疑问]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b8/2018new_ningwen_org.png"
+}, {
+    value: "[费解]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/2a/2018new_wenhao_org.png"
+}, {
+    value: "[晕]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/07/2018new_yun_org.png"
+}, {
+    value: "[衰]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a2/2018new_shuai_org.png"
+}, {
+    value: "[骷髅]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a1/2018new_kulou_org.png"
+}, {
+    value: "[嘘]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b0/2018new_xu_org.png"
+}, {
+    value: "[闭嘴]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/62/2018new_bizui_org.png"
+}, {
+    value: "[傻眼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/dd/2018new_shayan_org.png"
+}, {
+    value: "[吃惊]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/49/2018new_chijing_org.png"
+}, {
+    value: "[吐]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/08/2018new_tu_org.png"
+}, {
+    value: "[感冒]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/2018new_kouzhao_org.png"
+}, {
+    value: "[生病]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3b/2018new_shengbing_org.png"
+}, {
+    value: "[拜拜]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/fd/2018new_baibai_org.png"
+}, {
+    value: "[鄙视]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/da/2018new_bishi_org.png"
+}, {
+    value: "[白眼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ef/2018new_landelini_org.png"
+}, {
+    value: "[左哼哼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/43/2018new_zuohengheng_org.png"
+}, {
+    value: "[右哼哼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c1/2018new_youhengheng_org.png"
+}, {
+    value: "[抓狂]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/17/2018new_zhuakuang_org.png"
+}, {
+    value: "[怒骂]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/87/2018new_zhouma_org.png"
+}, {
+    value: "[打脸]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/cb/2018new_dalian_org.png"
+}, {
+    value: "[顶]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ae/2018new_ding_org.png"
+}, {
+    value: "[互粉]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/86/2018new_hufen02_org.png"
+}, {
+    value: "[钱]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a2/2018new_qian_org.png"
+}, {
+    value: "[哈欠]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/55/2018new_dahaqian_org.png"
+}, {
+    value: "[困]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3c/2018new_kun_org.png"
+}, {
+    value: "[睡]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e2/2018new_shuijiao_thumb.png"
+}, {
+    value: "[求饶]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/aa/moren_qiurao02_org.png"
+}, {
+    value: "[吃瓜]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/01/2018new_chigua_org.png"
+}, {
+    value: "[打call]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/39/moren_dacall02_org.png"
+}, {
+    value: "[awsl]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/14/moren_awsl02_org.png"
+}, {
+    value: "[裂开]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1b/202011_liekai_org.png"
+}, {
+    value: "[doge]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a1/2018new_doge02_org.png"
+}, {
+    value: "[二哈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/22/2018new_erha_org.png"
+}, {
+    value: "[喵喵]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/7b/2018new_miaomiao_org.png"
+}, {
+    value: "[酸]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b3/hot_wosuanle_org.png"
+}, {
+    value: "[中国赞]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6d/2018new_zhongguozan_org.png"
+}, {
+    value: "[抱抱]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/42/2018new_baobao_org.png"
+}, {
+    value: "[摊手]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/62/2018new_tanshou_org.png"
+}, {
+    value: "[跪了]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/75/2018new_gui_org.png"
+}, {
+    value: "[鲜花]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d4/2018new_xianhua_org.png"
+}, {
+    value: "[裂开]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1b/202011_liekai_org.png"
+}, {
+    value: "[抱一抱]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/af/2020_hug_org.png"
+}, {
+    value: "[牛哞哞]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/30/2021_cattle_org.png"
+}, {
+    value: "[2021]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a8/2021_newyear_org.png"
+}, {
+    value: "[红灯笼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e8/2021_lantern_org.png"
+}, {
+    value: "[烟花]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/96/2021_fireworks_org.png"
+}, {
+    value: "[雪花]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/13/yunying2020_snowflakes_org.png"
+}, {
+    value: "[给你小心心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ca/qixi2018_xiaoxinxin_org.png"
+}, {
+    value: "[小红花]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/fe/2020_redflower_org.png"
+}, {
+    value: "[心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8a/2018new_xin_org.png"
+}, {
+    value: "[伤心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6c/2018new_xinsui_org.png"
+}, {
+    value: "[男孩儿]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0a/2018new_nanhai_org.png"
+}, {
+    value: "[女孩儿]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/39/2018new_nvhai_org.png"
+}, {
+    value: "[握手]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e9/2018new_woshou_org.png"
+}, {
+    value: "[赞]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e6/2018new_zan_org.png"
+}, {
+    value: "[good]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8a/2018new_good_org.png"
+}, {
+    value: "[弱]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3d/2018new_ruo_org.png"
+}, {
+    value: "[NO]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1e/2018new_no_org.png"
+}, {
+    value: "[耶]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/29/2018new_ye_org.png"
+}, {
+    value: "[拳头]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/86/2018new_quantou_org.png"
+}, {
+    value: "[ok]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/45/2018new_ok_org.png"
+}, {
+    value: "[加油]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9f/2018new_jiayou_org.png"
+}, {
+    value: "[来]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/42/2018new_guolai_org.png"
+}, {
+    value: "[作揖]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e7/2018new_zuoyi_org.png"
+}, {
+    value: "[haha]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1d/2018new_hahashoushi_org.png"
+}, {
+    value: "[熊猫]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/aa/2018new_xiongmao_org.png"
+}, {
+    value: "[兔子]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c6/2018new_tuzi_org.png"
+}, {
+    value: "[猪头]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1c/2018new_zhutou_thumb.png"
+}, {
+    value: "[草泥马]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3b/2018new_caonima_org.png"
+}, {
+    value: "[奥特曼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c6/2018new_aoteman_org.png"
+}, {
+    value: "[太阳]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/cd/2018new_taiyang_org.png"
+}, {
+    value: "[月亮]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d5/2018new_yueliang_org.png"
+}, {
+    value: "[浮云]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/61/2018new_yunduo_org.png"
+}, {
+    value: "[下雨]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/7e/2018new_yu_org.png"
+}, {
+    value: "[沙尘暴]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b7/2018new_shachenbao_org.png"
+}, {
+    value: "[微风]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c7/2018new_weifeng_thumb.png"
+}, {
+    value: "[围观]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6c/2018new_weiguan_org.png"
+}, {
+    value: "[飞机]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/4a/2018new_feiji_org.png"
+}, {
+    value: "[照相机]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/78/2018new_xiangji_org.png"
+}, {
+    value: "[话筒]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/48/2018new_huatong_org.png"
+}, {
+    value: "[蜡烛]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/16/2018new_lazhu_org.png"
+}, {
+    value: "[音乐]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1f/2018new_yinyue_org.png"
+}, {
+    value: "[喜]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e0/2018new_xizi_org.png"
+}, {
+    value: "[给力]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/36/2018new_geili_org.png"
+}, {
+    value: "[威武]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/14/2018new_weiwu_org.png"
+}, {
+    value: "[可乐]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/5f/moren_kele_org.png"
+}, {
+    value: "[干杯]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/2018new_ganbei_org.png"
+}, {
+    value: "[蛋糕]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f9/2018new_dangao_org.png"
+}, {
+    value: "[礼物]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0e/2018new_liwu_org.png"
+}, {
+    value: "[钟]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8e/2018new_zhong_org.png"
+}, {
+    value: "[肥皂]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d6/2018new_feizao_thumb.png"
+}, {
+    value: "[绿丝带]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/cb/2018new_lvsidai_org.png"
+}, {
+    value: "[围脖]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/64/2018new_weibo_org.png"
+}, {
+    value: "[浪]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/46/2018new_xinlang_org.png"
+}, {
+    value: "[羞嗒嗒]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/df/lxhxiudada_org.gif"
+}, {
+    value: "[好爱哦]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/74/lxhainio_org.gif"
+}, {
+    value: "[偷乐]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/fa/lxhtouxiao_thumb.gif"
+}, {
+    value: "[赞啊]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/00/lxhzan_thumb.gif"
+}, {
+    value: "[笑哈哈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/32/lxhwahaha_org.gif"
+}, {
+    value: "[好喜欢]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d6/lxhlike_thumb.gif"
+}, {
+    value: "[求关注]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ac/lxhqiuguanzhu_org.gif"
+}, {
+    value: "[胖丁微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/68/film_pangdingsmile_org.png"
+}, {
+    value: "[佩奇]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c6/hot_pigpeiqi_org.png"
+}, {
+    value: "[大侦探皮卡丘微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b3/pikaqiu_weixiao_org.png"
+}, {
+    value: "[圣诞老人111]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/93/xmax_oldman01_org.png"
+}, {
+    value: "[紫金草]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e5/gongjiri_zijinhua_org.png"
+}, {
+    value: "[文明遛狗]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/93/gongyi_wenminglgnew_org.png"
+}, {
+    value: "[神马]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/60/horse2_org.gif"
+}, {
+    value: "[马到成功]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b0/mdcg_org.gif"
+}, {
+    value: "[炸鸡啤酒]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e2/zhajibeer_org.gif"
+}, {
+    value: "[最右]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/be/remen_zuiyou180605_org.png"
+}, {
+    value: "[织]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/41/zz2_org.gif"
+}, {
+    value: "[五仁月饼_旧]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/10/2018zhongqiu_yuebing_org.png"
+}, {
+    value: "[给你小心心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ca/qixi2018_xiaoxinxin_org.png"
+}, {
+    value: "[吃狗粮]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/qixi2018_chigouliang_org.png"
+}, {
+    value: "[弗莱见钱眼开]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/83/2018newyear_richdog_org.gif"
+}, {
+    value: "[星星]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/76/hot_star171109_org.png"
+}, {
+    value: "[半星]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f9/hot_halfstar_org.png"
+}, {
+    value: "[空星]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ff/hot_blankstar_org.png"
+}, {
+    value: "[圣诞袜]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a6/2020_santastockings_org.png"
+}, {
+    value: "[圣诞帽]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/74/2020_santahat_org.png"
+}, {
+    value: "[圣诞老人]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1e/2020_santaclaus_org.png"
+}, {
+    value: "[平安果]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ea/2020_apple_org.png"
+}, {
+    value: "[姜饼人]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/23/2020_gingerbread_org.png"
+}, {
+    value: "[欢度国庆]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3b/guoqing20_huandugq_org.png"
+}, {
+    value: "[七夕布谷鸟]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/43/2020qixi_bugubird_org.png"
+}, {
+    value: "[撒狗粮]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ec/qixi2020_sagouliang_org.png"
+}, {
+    value: "[求脱单]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/84/qixi2020_qiutuodan_org.png"
+}, {
+    value: "[酷炫街舞给手]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9a/yunying_jiewu03_org.png"
+}, {
+    value: "[这就是街舞3]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3d/yunying_jiewu02_org.png"
+}, {
+    value: "[毛巾助力]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c0/yunying_jiewu01_org.png"
+}, {
+    value: "[超新星运动会]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d0/yunying_starquanyunhui_org.png"
+}, {
+    value: "[超人爸爸]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6c/2020fuqinjie_chaorenbaba_org.png"
+}, {
+    value: "[我爱爸爸]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a0/2020fuqinjie_woaibaba_org.png"
+}, {
+    value: "[父与子]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1e/2020fuqinjie_fuyuzi_org.png"
+}, {
+    value: "[棒棒糖]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f4/2020liuyi_bangbangtang_org.png"
+}, {
+    value: "[纸飞机]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9d/2020liuyi_zhifeiji_org.png"
+}, {
+    value: "[炸鸡腿]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8c/yunying_zhaji_org.png"
+}, {
+    value: "[点亮平安灯]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6d/feiyan_dianliangpingan_org.png"
+}, {
+    value: "[武汉加油]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/02/hot_wuhanjiayou_org.png"
+}, {
+    value: "[点亮橙色]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/87/gongyi_dlchengse03_org.png"
+}, {
+    value: "[锦鲤]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/94/hbf2019_jinli_org.png"
+}, {
+    value: "[看涨]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/fe/kanzhangv2_org.gif"
+}, {
+    value: "[看跌]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c5/kandiev2_org.gif"
+}, {
+    value: "[带着微博去旅行]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ec/eventtravel_org.gif"
+}, {
+    value: "[掌宝爱心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/89/2021_LZheart_org.png"
+}, {
+    value: "[掌宝加油]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/09/2021_LZfighting_org.png"
+}, {
+    value: "[掌宝可怜]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1e/2021_LZpoor_org.png"
+}, {
+    value: "[掌宝卖萌]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/53/2021_LZkawaii_org.png"
+}, {
+    value: "[掌宝哭泣]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/27/2021_LZcry_org.png"
+}, {
+    value: "[掌宝星星眼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/70/2021_LZstareyes_org.png"
+}, {
+    value: "[掌宝荧光棒]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/98/2021_LZyingguangbang_org.png"
+}, {
+    value: "[蕾伊]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/66/starwar_leiyi_org.png"
+}, {
+    value: "[凯洛伦]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/cd/starwar_kailuolun_org.png"
+}, {
+    value: "[BB8]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e9/starwar_bb8_org.png"
+}, {
+    value: "[冲锋队员]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/39/starwar_chongfengduiyuan_org.png"
+}, {
+    value: "[达斯维达]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/86/starwar_dasiweida_org.png"
+}, {
+    value: "[C3PO]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c1/starwar_c3po_org.png"
+}, {
+    value: "[丘巴卡]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/5d/starwar_qiubaka_org.png"
+}, {
+    value: "[R2D2]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/04/starwar_r2d2_org.png"
+}, {
+    value: "[哆啦A梦花心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/08/dorahaose_org.gif"
+}, {
+    value: "[哆啦A梦害怕]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c7/dorahaipa_org.gif"
+}, {
+    value: "[哆啦A梦吃惊]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f0/dorachijing_org.gif"
+}, {
+    value: "[哆啦A梦汗]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/61/dorahan_org.gif"
+}, {
+    value: "[哆啦A梦微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9e/jqmweixiao_org.gif"
+}, {
+    value: "[伴我同行]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ef/jqmbwtxing_org.gif"
+}, {
+    value: "[静香微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/29/jiqimaojingxiang_org.gif"
+}, {
+    value: "[大雄微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8e/jiqimaodaxiong_org.gif"
+}, {
+    value: "[胖虎微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/2f/jiqimaopanghu_org.gif"
+}, {
+    value: "[小夫微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/21/jiqimaoxiaofu_org.gif"
+}, {
+    value: "[哆啦A梦笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/54/dora_xiao_org.png"
+}, {
+    value: "[哆啦A梦无奈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/96/dora_wunai_org.png"
+}, {
+    value: "[哆啦A梦美味]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/21/dora_meiwei_org.png"
+}, {
+    value: "[哆啦A梦开心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/df/dora_kaixin_org.png"
+}, {
+    value: "[哆啦A梦亲亲]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e0/dora_qinqin_org.png"
+}, {
+    value: "[小黄人微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f0/xhrnew_weixiao_org.png"
+}, {
+    value: "[小黄人剪刀手]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/63/xhrnew_jiandaoshou_org.png"
+}, {
+    value: "[小黄人不屑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/b2/xhrnew_buxie_org.png"
+}, {
+    value: "[小黄人高兴]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/41/xhrnew_gaoxing_org.png"
+}, {
+    value: "[小黄人惊讶]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/fd/xhrnew_jingya_thumb.png"
+}, {
+    value: "[小黄人委屈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/79/xhrnew_weiqu_org.png"
+}, {
+    value: "[小黄人坏笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/be/xhrnew_huaixiao_thumb.png"
+}, {
+    value: "[小黄人白眼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e2/xhrnew_baiyan_org.png"
+}, {
+    value: "[小黄人无奈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/15/xhrnew_wunai_org.png"
+}, {
+    value: "[小黄人得意]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/c8/xhrnew_deyi_org.png"
+}, {
+    value: "[钢铁侠]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/27/avengers_ironman01_org.png"
+}, {
+    value: "[美国队长]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d8/avengers_captain01_org.png"
+}, {
+    value: "[雷神]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/3c/avengers_thor01_org.png"
+}, {
+    value: "[浩克]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/44/avengers_hulk01_org.png"
+}, {
+    value: "[黑寡妇]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0e/avengers_blackwidow01_org.png"
+}, {
+    value: "[鹰眼]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/93/avengers_clint01_org.png"
+}, {
+    value: "[惊奇队长]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/44/avengers_captainmarvel01_org.png"
+}, {
+    value: "[奥克耶]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/62/avengers_aokeye01_org.png"
+}, {
+    value: "[蚁人]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/cc/avengers_antman01_org.png"
+}, {
+    value: "[灭霸]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ce/avengers_thanos01_org.png"
+}, {
+    value: "[蜘蛛侠]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/e2/avengers_spiderman01_org.png"
+}, {
+    value: "[洛基]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1f/avengers_locki01_org.png"
+}, {
+    value: "[奇异博士]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/9c/avengers_drstranger01_org.png"
+}, {
+    value: "[冬兵]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/91/avengers_wintersolider01_org.png"
+}, {
+    value: "[黑豹]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/86/avengers_panther01_org.png"
+}, {
+    value: "[猩红女巫]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/a9/avengers_witch01_org.png"
+}, {
+    value: "[幻视]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/07/avengers_vision01_org.png"
+}, {
+    value: "[星爵]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/35/avengers_starlord01_org.png"
+}, {
+    value: "[格鲁特]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/7a/avengers_gelute01_org.png"
+}, {
+    value: "[螳螂妹]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/7c/avengers_mantis01_org.png"
+}, {
+    value: "[无限手套]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/38/avengers_gauntlet01_org.png"
+}, {
+    value: "[胖红拽]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/de/angerbird_panghongzhuai_org.png"
+}, {
+    value: "[胖红生气]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/angerbird_shengqi_org.png"
+}, {
+    value: "[胖红微笑]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/f9/angerbird_panghongweixiao_org.png"
+}, {
+    value: "[飞镖黄跳舞]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d2/angerbird_feibiaohuang_org.png"
+}, {
+    value: "[炸弹黑hi]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/db/angerbird_zhandanhei_org.png"
+}, {
+    value: "[三三蹦跳]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/33/angerbird_sansna_org.png"
+}, {
+    value: "[小V开心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/80/angerbird_xiaovkaixin_org.png"
+}, {
+    value: "[小V生气]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/01/angerbird_xiaov_org.png"
+}, {
+    value: "[佐伊卖萌]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/50/angerbird_zuoyimaimeng_org.png"
+}, {
+    value: "[小猪惊讶]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/56/angerbird_xiaozhujingya_org.png"
+}, {
+    value: "[哪吒委屈]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/d4/nezha_weiqu02_org.png"
+}, {
+    value: "[哪吒得意]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/1d/nezha_deyi02_org.png"
+}, {
+    value: "[哪吒开心]",
+    url: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/35/nezha_kaixin02_org.png"
+} ];
+
+module.exports = {
+    emotions: function() {
+        for (var n = {}, s = e, t = 0; t < s.length; t++) {
+            var a = s[t];
+            null != a.value && (n[a.value] = a.url);
+        }
+        return n;
+    }()
+};

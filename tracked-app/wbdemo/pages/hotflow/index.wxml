@@ -1,0 +1,70 @@
+<view bind:loadData="refreshData" wx:if="{{netWorkError}}">
+    <network-toast></network-toast>
+</view>
+<view capture-bind:touchend="hotFlowTouchEnd" capture-bind:touchstart="hotFlowTouchStart" class="container" wx:else>
+    <view>
+        <image class="~banner" mode="aspectFill" src="/assets/icons/20201109_hotflow.png"></image>
+        <view class="~banner-mask"></view>
+    </view>
+    <view class="~header-bar {{headerBar?'~active':'~noactive'}}">
+        <view class="text" style="margin-top: {{statusBarHeight*2}}rpx">微博热点</view>
+    </view>
+    <view class="~top-transparent"></view>
+    <feed-pull-down-refresh refreshed="{{refreshed}}" startLoading="{{refresh}}" text="{{refreshText}}"></feed-pull-down-refresh>
+    <view class="sticky-bar">
+        <view bindtap="tapContent" class="hot-flow-zone" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" style="border-radius: {{index!==0?0:headerBar?0:'20rpx 20rpx 0 0'}}" wx:for="{{hotFlowData}}" wx:key="index">
+            <view class="hot-flow">
+                <view style="position:relative;min-height: 154rpx" wx:if="{{item.mblog.pic_ids&&item.mblog.pic_ids.length>=1&&item.mblog.pic_ids.length<3}}">
+                    <view class="rich-node single-pic">
+                        <block wx:for="{{item.parseMblogText}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                            <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(_item.icon)}}" wx:if="{{_item.showIcon}}"></image>
+                            <text class="parse-text" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag==='normal'}}">{{_item.content}}</text>
+                            <a class="parse-text topic" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag==='article'&&_item.toShowArticle||_item.tag==='wenda'&&_item.toShowWenda}}">{{_item.content}}</a>
+                            <a class="parse-text topic" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag!=='article'&&_item.tag!=='wenda'}}">{{_item.content}}</a>
+                        </block>
+                    </view>
+                    <li class="li single" data-id="{{item.mblog.pic_ids[0]}}" data-ids="{{item.mblog.pic_ids}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" style="width: 228rpx;height: 154rpx">
+                        <image class="image_box" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://ww3.sinaimg.cn/orj360/{{item.mblog.pic_ids[0]}}.jpg"></image>
+                    </li>
+                </view>
+                <view wx:else>
+                    <view class="rich-node">
+                        <block wx:for="{{item.parseMblogText}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                            <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(_item.icon)}}" wx:if="{{_item.showIcon}}"></image>
+                            <text class="parse-text" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag==='normal'}}">{{_item.content}}</text>
+                            <a class="parse-text topic" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag==='article'&&_item.toShowArticle||_item.tag==='wenda'&&_item.toShowWenda}}">{{_item.content}}</a>
+                            <a class="parse-text topic" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag!=='article'&&_item.tag!=='wenda'}}">{{_item.content}}</a>
+                        </block>
+                    </view>
+                    <view class="media">
+                        <ul class="ul media-padding" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:if="{{item.mblog.pic_ids&&item.mblog.pic_ids.length>=3}}">
+                            <li class="li" data-id="{{_item}}" data-ids="{{item.mblog.pic_ids}}" style="width: {{100/3}}%;height: 154rpx" wx:if="{{idx<3}}" wx:for="{{item.mblog.pic_ids}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                                <image class="image_box" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://ww3.sinaimg.cn/thumb150/{{_item}}.jpg"></image>
+                            </li>
+                        </ul>
+                        <view wx:else>
+                            <view catchtap="videoopt" class="media-padding" wx:if="{{_item.object.object_type==='video'&&_item.object.object.stream&&_item.object.object.stream.url}}" wx:for="{{item.mblog.url_objects}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                                <view wx:if="{{currentIndex===index}}">
+                                    <video autoplay="{{true}}" bindfullscreenchange="fullScreenChange" bindplay="videoPlay" class="video" id="video_{{item.mblog.mid}}" poster="{{_item.object.object.image.url}}" showCenterPlayBtn="{{true}}" showMuteBtn="{{true}}" showPlayBtn="{{true}}" src="{{utils.replaceHttps(_item.object.object.stream.url)}}"></video>
+                                </view>
+                                <view catchtap="showvideo" class="videofeed" data-index="{{index}}" wx:else>
+                                    <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps( utils.imageSize(_item.object.object.image.url,'bmiddle') )}}"></image>
+                                    <image class="pause" lazyLoad="{{true}}" lazyLoadMargin="0" src="../../assets/icons/common_icon_play.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}">
+                    <text class="user-name">@{{item.mblog.user&&item.mblog.user.name}}</text>
+                    <view style="position:relative;display:inline-block;width: 10px;height: 10px;margin-right:20rpx">
+                        <view class="~sprite-img ~sign ~{{utils.getUserType(item.mblog)}} ~small" style="top: 3rpx;"></view>
+                    </view>
+                    <text class="created-at">{{item.mblog.created_at}}</text>
+                    <text class="created-at">{{item.mblog.reposts_count}}转发</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../../utils/utils.wxs" />

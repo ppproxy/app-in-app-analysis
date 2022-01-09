@@ -1,0 +1,7 @@
+<view class="app-monitor-pop data-v-5c0dbede">
+    <view class="data-v-5c0dbede" id="tip" style="{{(text1.length>12?'width:450rpx;margin-left: -225rpx;':'width:320rpx;margin-left: -160rpx;')+'border-radius:8rpx;position: fixed;top:50%;margin-top:-90rpx;left:50%;background-color: rgba(0,0,0,.8);color:#fff;line-height:32rpx;font-size: 26rpx;z-index:1002;text-align: center;padding: 26rpx;'}}">
+        <view class="data-v-5c0dbede">成功加入监控</view>
+        <view class="data-v-5c0dbede" style="margin-top:20rpx;font-size:24rpx;">{{text1}}</view>
+        <view class="data-v-5c0dbede" style="margin-top:4rpx;font-size:24rpx;">{{text2}}</view>
+    </view>
+</view>

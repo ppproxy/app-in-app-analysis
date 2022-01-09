@@ -1,0 +1,12 @@
+<view class="auth-overlay data-v-07464404" wx:if="{{tipPop}}">
+    <view class="auth-button-wrap data-v-07464404">
+        <view class="auth-modal-title data-v-07464404">绑定失败提示</view>
+        <view class="template-input-tip-wrap data-v-07464404">
+            <image class="template-tip-img data-v-07464404" lazyLoad="{{true}}" mode="widthFix" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/template-tip.png"></image>
+            <view class="template-tip-content data-v-07464404">{{'如手机号已在平台绑定过'+platformTip+'账号，将不能绑定成功，请用新手机号绑定；或请拨打企查查官方客服'}}<text bindtap="__e" class="blue data-v-07464404" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}" data-phone="4009282212">400-928-2212</text>解决。</view>
+        </view>
+        <view class="template-bottom-wrap data-v-07464404">
+            <button bindtap="__e" class="template-button-know data-v-07464404" data-event-opts="{{[ [ 'tap',[ [ 'bindFailKnow',['$event'] ] ] ] ]}}">知道了</button>
+        </view>
+    </view>
+</view>

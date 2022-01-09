@@ -1,0 +1,43 @@
+function getErrorType(data) {
+    if (data && data.errno) {
+        if (data.errno == "20003" || data.errno == "4047" || data.errno == "5024" || data.errno == "-1014" || data.errno == "-4047" || data.errno == "-4010" || data.errno == "-1005") {
+            return ("contact")
+        };
+        if (data.errno == "1006") {
+            return ("wxlog")
+        };
+        if (data.errno == "-4098") {
+            return ("smslog")
+        };
+        if (data.errno == "5") {
+            return ("noRegister")
+        };
+        if (data.errno == "-2094") {
+            return ("notAllowUniquePhone")
+        };
+        if (data.errno == "20034") {
+            return ("onlyReadAccount")
+        }
+    }
+};
+
+function getErrmsg(data) {
+    switch (getErrorType(data)) {
+        case 'notAllowUniquePhone':
+            return ('手机号格式存在问题，你可以尝试国际手机登录');
+        case 'smslog':
+            return ('你注册时未设置密码，请直接使用短信登录');
+        case 'wxlog':
+            return ('你尚未注册微博，请下载微博APP进行注册');
+        case 'noRegister':
+            return ('该账号尚未注册，请下载微博APP进行注册');
+        case 'contact':
+            return ('你的账号存在异常，请下载微博APP或联系微博客服');
+        default:
+            return ('系统出了点问题，请稍后尝试或致电微博客服400 096 0960');
+    }
+};
+module.exports = ({
+    getErrorType: getErrorType,
+    getErrmsg: getErrmsg,
+});

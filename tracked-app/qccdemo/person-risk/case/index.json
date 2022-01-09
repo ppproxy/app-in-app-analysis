@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "立案信息",
+    "usingComponents": {
+        "app-vip-pop": "/components/app-vip-pop/index",
+        "app-simple-footer": "/components/app-simple-footer/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "filter-list": "/components/filter-list/index",
+        "app-opened-footer": "/components/app-opened-footer/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

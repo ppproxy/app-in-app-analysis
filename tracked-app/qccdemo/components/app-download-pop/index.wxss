@@ -1,0 +1,110 @@
+.ios-vip-overlay.data-v-cd4740f0 {
+    background-color: rgba(0,0,0,.4);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.popup.data-v-cd4740f0 {
+    background: #fff;
+    border-radius: 8rpx;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 660rpx;
+}
+
+.ios-pop.data-v-cd4740f0 {
+    background-color: initial;
+    background-image: url(https://share.qichacha.com/lite-app-resources/html/images/new-image/download.png);
+    background-size: 100% 100%;
+    height: 768rpx;
+    overflow: hidden;
+    width: 640rpx;
+}
+
+.button-wrap.data-v-cd4740f0 {
+    margin-top: 622rpx;
+}
+
+.ios-vip-button.data-v-cd4740f0 {
+    background-color: #128bed;
+    border: none;
+    color: #fff;
+    font-size: 36rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    text-align: center;
+    width: 540rpx;
+}
+
+.ios-vip-button .know.data-v-cd4740f0:after {
+    border: none;
+}
+
+.blue.data-v-cd4740f0 {
+    color: #128bed;
+}
+
+.close-img.data-v-cd4740f0 {
+    height: 84rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 84rpx;
+}
+
+.close-img .image.data-v-cd4740f0 {
+    height: 24rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+    width: 24rpx;
+}
+
+.pop-center.data-v-cd4740f0 {
+    bottom: 0;
+    height: 420rpx;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 540rpx;
+}
+
+.pop-center .pop-main.data-v-cd4740f0 {
+    background-image: url(https://eciapp-img.qichacha.com/community/e38a320d-82b3-49ce-99e9-022e0f3837c81608085646588.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 240rpx;
+    width: 540rpx;
+}
+
+.pop-center .arrow.data-v-cd4740f0 {
+    background-image: url(https://eciapp-img.qichacha.com/community/b110679c-7e57-4c8f-b6c7-b319e6fe421d1608085884776.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 104rpx;
+    left: 440rpx;
+    position: absolute;
+    top: 250rpx;
+    width: 104rpx;
+}
+
+.pop-center .pop-btn.data-v-cd4740f0 {
+    background-color: #128bed;
+    border-radius: 8rpx;
+    color: #fff;
+    font-size: 32rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin: 80rpx auto 0;
+    text-align: center;
+    width: 330rpx;
+}

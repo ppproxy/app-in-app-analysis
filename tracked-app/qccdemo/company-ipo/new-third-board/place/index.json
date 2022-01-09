@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "行业地位",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

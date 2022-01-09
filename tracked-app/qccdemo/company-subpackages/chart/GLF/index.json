@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "关联方认定图",
+    "pageOrientation": "landscape",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

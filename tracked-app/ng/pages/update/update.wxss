@@ -1,0 +1,101 @@
+.container {
+    padding: 0;
+}
+
+form {
+    width: 100%;
+}
+
+input {
+    width: 85%;
+    border: 2rpx solid #af1616;
+    margin: 3% auto;
+    font-size: 26rpx;
+    padding: 1%;
+}
+
+.select-wrap {
+    font-size: 26rpx;
+    width: 89%;
+    padding-left: 1%;
+    margin: 0 auto;
+    color: #666;
+    display: flex;
+}
+
+.bumen {
+    width: 10%;
+    text-align: center;
+    padding: 2.5% 1% 1%;
+    border-left: 2rpx solid #af1616;
+    border-top: 2rpx solid #af1616;
+    border-bottom: 2rpx solid #af1616;
+}
+
+button {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: 24rpx;
+}
+
+.button-sp-area {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.reg {
+    color: #ad1616;
+}
+
+.title {
+    margin-left: 20rpx;
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
+    text-align: center;
+    font-size: large;
+}
+
+.ui-radio checkbox,.ui-radio radio {
+    display: none;
+}
+
+.label {
+    margin-left: 10rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ui-radio {
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.ui-radio,.ui-radio.active {
+    width: 30%;
+    height: 70rpx;
+    text-align: center;
+    margin: 10rpx;
+    white-space: nowrap;
+}
+
+.ui-radio.active {
+    background-color: #1aad19;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #1aad19;
+}
+
+.text {
+    color: #000;
+}
+
+.text,.ui-radio.active .text {
+    line-height: 70rpx;
+    font-size: 14px;
+}
+
+.ui-radio.active .text {
+    color: #fff;
+}

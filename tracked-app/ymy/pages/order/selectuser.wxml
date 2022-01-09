@@ -1,0 +1,35 @@
+<view class="app_index popup_user">
+    <view class="my_contacts" wx:if="{{contactsList&&contactsList.length>0}}">
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'contactClick',['$0'],[ [ ['contactsList','',i,'ID'] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:for-index="i" wx:for-item="contacts" wx:key="i">
+            <view class="my_contacts_box">
+                <view class="my_contacts_icon">{{contacts.g0}}</view>
+                <view class="my_contacts_text">
+                    <view class="my_contacts_name b f16 g3">{{contacts[$orig].Name+''}}<view class="dib n f12 my_contacts_name_tags ml10" wx:if="{{contacts[$orig].IsSelf}}">账户本人</view>
+                    </view>
+                    <view class="my_contacts_phone g6 f12 mt5">{{'手机号：'+contacts[$orig].Mobile}}</view>
+                    <view class="my_contacts_phone g6 f12 mt5">{{'身份证：'+contacts[$orig].IDCard}}</view>
+                </view>
+                <view class="my_contacts_rt">
+                    <image class="w22 rt select_icon _img" src="/static/images/select_1.png" wx:if="{{contacts[$orig].IsSelected}}"></image>
+                    <image class="w22 rt select_icon _img" src="/static/images/select_2.png" wx:else></image>
+                </view>
+            </view>
+        </view>
+        <view class="more f13 tc" wx:if="{{contactsList&&contactsList.length>=7}}">
+            <view class="dib mr10">—</view>没有更多了<view class="dib ml10">—</view>
+        </view>
+    </view>
+    <view class="more f13 tc" wx:else>
+        <view class="dib mr10">—</view>暂无联系人，请先添加<view class="dib ml10">—</view>
+    </view>
+    <view class="my_contacts_action bgwh my_contacts_end">
+        <view class="my_contacts_action_main">
+            <view>
+                <button bindtap="__e" class="my_contacts_action_btn my_contacts_action_btn_del db br0 f14" data-event-opts="{{[ [ 'tap',[ [ 'createUser',['$event'] ] ] ] ]}}" type="warn">新增联系人</button>
+            </view>
+            <view>
+                <button bindtap="__e" class="my_contacts_action_btn db br0 f14" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}">确认选择</button>
+            </view>
+        </view>
+    </view>
+</view>

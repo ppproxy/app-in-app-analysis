@@ -1,0 +1,82 @@
+.action-sheet-mask {
+    top: 0;
+    background: #000;
+    opacity: .6;
+    z-index: 888;
+}
+
+.action-sheet-dialog,.action-sheet-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.action-sheet-dialog {
+    background: #f7f7f7;
+    z-index: 999;
+    border-radius: 30rpx 30rpx 0 0;
+    font-size: 32rpx;
+    transform: translate(0,100%);
+}
+
+.action-sheet-dialog.active {
+    animation: move .3s linear;
+    transform: translate(0,0);
+}
+
+@-webkit-keyframes move {
+    0% {
+        transform: translate(0,100%);
+    }
+
+    50% {
+        transform: translate(0,50%);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0,100%);
+    }
+
+    50% {
+        transform: translate(0,50%);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+.action-cancel {
+    padding: 35rpx 0;
+    margin-top: 10rpx;
+}
+
+.action-cancel,.button-item {
+    text-align: center;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.button-item {
+    font-family: PingFangSC-Regular;
+    width: 100%;
+    font-size: 32rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    margin: 0!important;
+    border-bottom: 0.5rpx solid #f6f6f6;
+}
+
+.button-item:first-child {
+    border-radius: 20rpx 20rpx 0 0;
+}

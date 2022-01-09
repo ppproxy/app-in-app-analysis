@@ -1,0 +1,22 @@
+.container {
+    min-height: 500px;
+    padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+}
+
+.no-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.no-data-pic {
+    width: 100px;
+    height: 100px;
+}
+
+.no-data-text {
+    font-size: 14px;
+    color: #c1c1c1;
+    margin-top: 10px;
+}

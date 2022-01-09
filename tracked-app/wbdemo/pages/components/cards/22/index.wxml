@@ -1,0 +1,9 @@
+<view class="card-22" style="{{cardData.left_right_padding?'padding: 0 20rpx':''}}">
+    <block wx:for="{{cardData.pic_items}}" wx:key="index">
+        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(item.pic)}}" style="height: {{cardData.width&&cardData.height?750*cardData.height/cardData.width:200}}rpx;"></image>
+        <view class="content-title" wx:if="{{item.content_title}}">{{item.content_title}}</view>
+        <view class="content1" wx:if="{{item.content1}}">{{item.content1}}</view>
+    </block>
+    <image class="pic" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(cardData.pic)}}" style="height: {{cardData.width&&cardData.height?750*cardData.height/cardData.width:'160'}}rpx;" wx:if="{{cardData.pic}}"></image>
+</view>
+<wxs module="utils" src="../../../../utils/utils.wxs" />

@@ -1,0 +1,136 @@
+<view class="comment" wx:if="{{type==='all'&&comment.id}}">
+    <view style="text-align:center;color: #4B73A0" wx:if="{{comment.status.comment_manage_info&&comment.status.comment_manage_info.approval_comment_type===1}}">以下为博主精选评论</view>
+    <view class="wb-header" wx:for="{{comment.root_comments}}" wx:key="index">
+        <avator isComment="comment" wb="{{item}}"></avator>
+        <view class="text">
+            <view class="name {{item.user.mbrank===0?'gray':''}}">
+                <text>{{item.user&&item.user.name||''}}</text>
+            </view>
+            <view class="comment-content ~border-bottom">
+                <view class="rich-node">
+                    <block wx:for="{{item.parseMblogText}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                        <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(_item.icon)}}" wx:if="{{_item.showIcon}}"></image>
+                        <text class="parse-text" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag==='normal'}}">{{_item.content}}</text>
+                        <a catchtap="tapContent" class="parse-text topic" data-item="{{_item}}" wx:elif="{{_item.tag==='article'&&_item.toShowArticle||_item.tag==='wenda'&&_item.toShowWenda}}">{{_item.content}}</a>
+                        <a catchtap="tapContent" class="parse-text topic" data-item="{{_item}}" wx:elif="{{_item.tag!=='article'&&_item.tag!=='wenda'}}">{{_item.content}}</a>
+                    </block>
+                </view>
+                <view wx:if="{{item.url_objects&&item.url_objects.length}}">
+                    <ul wx:for="{{item.url_objects[0].object.object.pic_ids}}" wx:for-item="_item" wx:key="index">
+                        <li class="comment-image">
+                            <image catchtap="preview" class="image_box" data-id="{{_item}}" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/orj180/{{_item}}.jpg" wx:if="{{item.url_objects[0].object.object.pic_ids.length==1}}"></image>
+                        </li>
+                    </ul>
+                </view>
+                <view class="more" style="display: {{item.more_info_type===2?'block':'none'}}">
+                    <view style="display: flex;align-items: center">
+                        <text catchtap="viewrReplay" class="link-user" data-id="{{item.id}}" data-item="{{item}}" data-mid="{{comment.id}}" wx:if="{{item.total_number}}">共{{utils.countNum(item.total_number)}}条回复</text>
+                        <icon class="~iconfont ~icon-youjiantou-01 icon-right" size="14"></icon>
+                    </view>
+                </view>
+                <view style="position:relative">
+                    <view class="msg">{{utils.formatTime(item.created_at)}}</view>
+                    <view catchtap="goToMiniProgram" class="like" data-id="{{comment.id}}">
+                        <i class="m-icon"></i>
+                        <text class="like-number" wx:if="{{item.like_counts>0}}">{{utils.countNum(item.like_counts)}}</text>
+                    </view>
+                </view>
+                <view class="more" style="display: {{item.more_info_type===1&&item.comments.length?'block':'none'}}">
+                    <view style="margin-bottom: 10rpx;" wx:for="{{item.comments}}" wx:for-item="_item" wx:key="id">
+                        <view hidden="{{item.more_info_type!==1}}" style="overflow: hidden;">
+                            <text class="link-user-replay" data-name="{{_item.user.name}}" style="float:left;margin-right:5rpx;">{{_item.user.name}}: </text>
+                            <view class="rich-node">
+                                <block wx:for="{{_item.replyParseMblogText}}" wx:for-index="_idx" wx:for-item="_it" wx:key="_idx">
+                                    <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(_it.icon)}}" wx:if="{{_it.showIcon}}"></image>
+                                    <text class="parse-text" data-item="{{_it}}" data-mid="{{_item.id}}" wx:elif="{{_it.tag==='normal'}}">{{_it.content}}</text>
+                                    <a catchtap="tapContent" class="parse-text topic" data-item="{{_it}}" wx:elif="{{_it.tag==='article'&&_it.toShowArticle||_it.tag==='wenda'&&_it.toShowWenda}}">{{_it.content}}</a>
+                                    <a catchtap="tapContent" class="parse-text topic" data-item="{{_it}}" wx:elif="{{_it.tag!=='article'&&_it.tag!=='wenda'}}">{{_it.content}}</a>
+                                </block>
+                            </view>
+                            <view wx:if="{{_item.url_objects&&_item.url_objects.length}}">
+                                <ul wx:for="{{_item.url_objects[0].object.object.pic_ids}}" wx:for-index="_idx" wx:for-item="_it" wx:key="_idx">
+                                    <li class="comment-image">
+                                        <image catchtap="preview" class="image_box" data-id="{{_it}}" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/orj180/{{_it}}.jpg" wx:if="{{_item.url_objects[0].object.object.pic_ids.length==1}}"></image>
+                                    </li>
+                                </ul>
+                            </view>
+                        </view>
+                        <view class="msg">{{utils.formatTime(_item.created_at)}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<block wx:if="{{type==='replay'}}">
+    <view class="comment" wx:if="{{currentReplyData.id}}">
+        <view class="wb-header">
+            <avator isComment="comment" wb="{{currentReplyData}}"></avator>
+            <view class="text">
+                <view class="name {{currentReplyData.user.mbrank===0?'gray':''}}">
+                    <text>{{currentReplyData.user&&currentReplyData.user.name||''}}</text>
+                </view>
+                <view class="comment-content">
+                    <view class="rich-node">
+                        <block wx:for="{{currentReplyData.parseMblogText}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                            <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(_item.icon)}}" wx:if="{{_item.showIcon}}"></image>
+                            <text class="parse-text" data-item="{{_item}}" wx:elif="{{_item.tag==='normal'}}">{{_item.content}}</text>
+                            <a catchtap="tapContent" class="parse-text topic" data-item="{{_item}}" wx:elif="{{_item.tag==='article'&&_item.toShowArticle||_item.tag==='wenda'&&_item.toShowWenda}}">{{_item.content}}</a>
+                            <a catchtap="tapContent" class="parse-text topic" data-item="{{_item}}" wx:elif="{{_item.tag!=='article'&&_item.tag!=='wenda'}}">{{_item.content}}</a>
+                        </block>
+                    </view>
+                    <view wx:if="{{currentReplyData.url_objects&&currentReplyData.url_objects.length}}">
+                        <ul wx:for="{{currentReplyData.url_objects[0].object.object.pic_ids}}" wx:for-item="_item" wx:key="index">
+                            <li class="comment-image">
+                                <image catchtap="preview" class="image_box" data-id="{{_item}}" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/orj180/{{_item}}.jpg" wx:if="{{currentReplyData.url_objects[0].object.object.pic_ids.length==1}}"></image>
+                            </li>
+                        </ul>
+                    </view>
+                    <view style="position:relative">
+                        <view class="msg">{{utils.formatTime(currentReplyData.created_at)}}</view>
+                        <view catchtap="goToMiniProgram" class="like" data-id="{{mid}}">
+                            <i class="m-icon"></i>
+                            <text class="like-number" wx:if="{{currentReplyData.like_counts>0}}">{{utils.countNum(currentReplyData.like_counts)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <text catchtap="gobackDetail" class="view-blog">查看原微博</text>
+            </view>
+        </view>
+    </view>
+    <view class="comment-reply" wx:if="{{hotFlowChild.length}}">
+        <view class="wb-header ~border-bottom" wx:for="{{hotFlowChild}}" wx:key="index">
+            <avator isComment="comment" wb="{{item}}"></avator>
+            <view class="text">
+                <view class="name {{item.user.mbrank===0?'gray':''}}">
+                    <text>{{item.user&&item.user.name||''}}</text>
+                </view>
+                <view class="comment-content">
+                    <view class="rich-node">
+                        <block wx:for="{{item.parseMblogText}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                            <image class="parse-text emotion" lazyLoad="{{true}}" lazyLoadMargin="0" src="{{utils.replaceHttps(_item.icon)}}" wx:if="{{_item.showIcon}}"></image>
+                            <text class="parse-text" data-item="{{_item}}" data-itemid="{{item.itemid}}" data-mid="{{item.mblog.id}}" wx:elif="{{_item.tag==='normal'}}">{{_item.content}}</text>
+                            <a catchtap="tapContent" class="parse-text topic" data-item="{{_item}}" wx:elif="{{_item.tag==='article'&&_item.toShowArticle||_item.tag==='wenda'&&_item.toShowWenda}}">{{_item.content}}</a>
+                            <a catchtap="tapContent" class="parse-text topic" data-item="{{_item}}" wx:elif="{{_item.tag!=='article'&&_item.tag!=='wenda'}}">{{_item.content}}</a>
+                        </block>
+                    </view>
+                    <view wx:if="{{item.url_objects&&item.url_objects.length}}">
+                        <ul wx:for="{{item.url_objects[0].object.object.pic_ids}}" wx:for-item="_item" wx:key="index">
+                            <li class="comment-image">
+                                <image catchtap="preview" class="image_box" data-id="{{_item}}" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="https://wx1.sinaimg.cn/orj180/{{_item}}.jpg" wx:if="{{item.url_objects[0].object.object.pic_ids.length==1}}"></image>
+                            </li>
+                        </ul>
+                    </view>
+                    <view style="position:relative">
+                        <view class="msg">{{utils.formatTime(item.created_at)}}</view>
+                        <view catchtap="goToMiniProgram" class="like" data-id="{{mid}}">
+                            <i class="m-icon"></i>
+                            <text class="like-number" wx:if="{{item.like_counts>0}}">{{utils.countNum(item.like_counts)}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<wxs module="utils" src="../../../utils/utils.wxs" />

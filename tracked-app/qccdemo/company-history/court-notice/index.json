@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "历史开庭公告",
+    "usingComponents": {
+        "app-bottom-loading": "/components/app-bottom-loading/index",
+        "app-opened-footer": "/components/app-opened-footer/index",
+        "filter-list": "/components/filter-list/index",
+        "app-no-data": "/components/app-no-data/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

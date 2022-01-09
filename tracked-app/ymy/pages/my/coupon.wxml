@@ -1,0 +1,44 @@
+<view class="app mb70" data-title="我的优惠券">
+    <view class="my_invoice_nav">
+        <view class="my_invoice_nav_list f18 tc fix">
+            <view class="my_invoice_nav_box my_invoice_nav_clo dib">
+                <navigator class="db _a" href="javascript:void(0)">我的优惠券</navigator>
+            </view>
+            <view class="my_invoice_nav_box dib">
+                <navigator class="db" url="couponuse">已使用</navigator>
+            </view>
+        </view>
+    </view>
+    <view class="my_coupon tickets_item" wx:if="{{coupons&&coupons.length>0}}">
+        <view class="bgwh br6 tickets_item_box" wx:for="{{coupons}}" wx:for-index="__i0__" wx:key="ID">
+            <view class="tickets_item_pirce tc">
+                <view class="db fr f28 b _strong">{{'￥'+item.Amount}}</view>
+                <view class="dib fr f12">{{'满'+item.MinConsumeAmount+'减'+item.Amount}}</view>
+            </view>
+            <view class="tickets_item_tit">
+                <view class="f16 _h3">{{item.Name}}</view>
+                <view class="db g9 f12 n">{{item.EndTime+'截止'}}</view>
+            </view>
+            <view class="tickets_item_action">
+                <view class="dib fw bgr f12 br6 tc" wx:if="{{item.CanUse==0}}">
+                    <navigator bindtap="__e" class="db f_wh _a" data-event-opts="{{[ [ 'tap',[ [ 'useCoupon',['$event'] ] ] ] ]}}" href="javascript:void(0)">立即使用</navigator>
+                </view>
+                <view class="db g9 f12 n" wx:if="{{item.CanUse==1}}">
+                    <navigator class="db f_wh _a" href="javascript:void(0)">未开始</navigator>
+                </view>
+                <view class="db g9 f12 n" wx:if="{{item.CanUse==2}}">
+                    <navigator class="db f_wh _a" href="javascript:void(0)">已过期</navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="more f13 tc" wx:if="{{coupons&&coupons.length>=7}}">
+        <view class="dib mr10">—</view>我是有底线的<view class="dib ml10">—</view>
+    </view>
+    <view class="null_box nothing tc" wx:if="{{coupons.length==0}}">
+        <view class="nothing_pic">
+            <image class="w100 _img" height="100" src="/static/images/nothing.png" width="100"></image>
+        </view>
+        <view class="nothing_text mt20">暂时没有可用的优惠券</view>
+    </view>
+</view>

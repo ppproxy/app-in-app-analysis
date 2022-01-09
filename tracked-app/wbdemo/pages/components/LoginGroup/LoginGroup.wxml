@@ -1,0 +1,6 @@
+<view bind:tap="showLoading" class="login-group" wx:if="{{showLogin}}">
+    <button catch:tap="weiboLogin" class="item weibo">
+        <image class="image" lazyLoad="{{true}}" lazyLoadMargin="0" src="https://h5.sinaimg.cn/upload/1035/467/2020/04/01/login_icon_weibo.png"></image>
+        <text class="text">微博账号登录</text>
+    </button>
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "最终受益人变更",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

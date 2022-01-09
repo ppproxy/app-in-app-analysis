@@ -1,0 +1,8 @@
+<view class="card-30">
+    <avator wb="{{cardData}}"></avator>
+    <view class="content">
+        <text class="name">{{cardData.user.name}}</text>
+        <text class="~sprite-img ~vipl{{cardData.user.mbrank}} ~vip-icon" wx:if="{{cardData.user.mbrank!==0}}"></text>
+    </view>
+    <view class="desc1">{{cardData.desc1}}</view>
+</view>

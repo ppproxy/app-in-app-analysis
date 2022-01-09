@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "app-download-pop": "/components/app-download-pop/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

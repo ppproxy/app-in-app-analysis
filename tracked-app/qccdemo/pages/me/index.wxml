@@ -1,0 +1,149 @@
+<view class="uni-container me data-v-7cf34318" wx:if="{{pageShow}}">
+    <view class="page data-v-7cf34318" style="{{tipPop||downloadPop?'height: 100%;overflow: hidden;':''}}">
+        <view class="scroll-page data-v-7cf34318" wx:if="{{isLogin!==''&&token}}">
+            <view class="login-wrap data-v-7cf34318" wx:if="{{isLogin===false||!userInfo.guid}}">
+                <image class="login-icon data-v-7cf34318" src="https://eciapp-img.qichacha.com/newsclue/default/ebae4fb8a6a34b25b9121d13aecdb48d.jpeg"></image>
+                <view class="login-tip data-v-7cf34318">
+                    <text bindtap="__e" class="login-tip-text data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'logOut',['$event'] ] ] ] ]}}">登录使用全部功能</text>
+                </view>
+                <view bindtap="__e" class="login-btn data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toIndexLogin',['$event'] ] ] ] ]}}">{{''+(platform==='mp-feishu'?'登录':'登录/注册')+''}}</view>
+            </view>
+            <view catchtap="__e" class="{{['data-v-7cf34318',true?'top-item':'',!bannerShow?'pd':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'logOut',['$event'] ] ] ] ]}}" wx:if="{{isLogin||userInfo.guid}}">
+                <view class="avatar-wrap data-v-7cf34318">
+                    <view class="avatar data-v-7cf34318">
+                        <image class="avatar data-v-7cf34318" src="{{userAvator}}"></image>
+                    </view>
+                </view>
+                <view class="name-wrap data-v-7cf34318">
+                    <view class="user-name data-v-7cf34318">{{''+userName+''}}</view>
+                    <view class="user-vip-wrap data-v-7cf34318">
+                        <image class="user-vip-img data-v-7cf34318" src="https://eciapp-img.qichacha.com/community/9453b371-6488-4175-8096-efd4109f01d41619429782945.png" wx:if="{{isVIP&&!isSVIP}}"></image>
+                        <image class="user-vip-img data-v-7cf34318" src="https://eciapp-img.qichacha.com/community/57971f9a-870f-4d30-8f8e-71c3c1620ea41619429776220.png" wx:if="{{isSVIP}}"></image>
+                        <image class="user-vip-img data-v-7cf34318" src="https://eciapp-img.qichacha.com/community/ca7f3d2e-1e66-47c0-a7da-251d78c1c2ba1619429788006.png" wx:if="{{!isVIP&&!isSVIP}}"></image>
+                        <view class="user-time data-v-7cf34318" wx:if="{{isVIP}}">{{''+(endDate?endDate+'到期':'')+''}}</view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="vip-banner data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'buyVip',['$event'] ] ] ] ]}}" wx:if="{{bannerShow}}">
+                <view class="{{['data-v-7cf34318',true?'vip-banner-center':'',true?'pasted-moving':'',!isSVIP?'vip':'',isSVIP?'sVip':'']}}">
+                    <view class="{{['data-v-7cf34318',true?'buy':'',!isSVIP&&isVIP?'vip':'',isSVIP?'sVip':'',!isSVIP&&!isVIP?'notVip':'']}}"></view>
+                </view>
+            </view>
+            <view class="data-v-7cf34318" wx:if="{{isLogin}}">
+                <view class="v-item-wrap data-v-7cf34318">
+                    <view bindtap="__e" class="v-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toMyConcern',['$event'] ] ] ] ]}}">
+                        <image class="v-item-img data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/ic_my_concern.png"></image>
+                        <text class="v-item-text data-v-7cf34318">我的关注</text>
+                    </view>
+                    <view bindtap="__e" class="v-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toRadar',['$event'] ] ] ] ]}}" id="to-radar">
+                        <image class="v-item-img data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/ic_my_radar.png"></image>
+                        <text class="v-item-text data-v-7cf34318">风险监控</text>
+                    </view>
+                    <view bindtap="__e" class="v-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toMyCompany',['$event'] ] ] ] ]}}" id="to-mycompany">
+                        <image class="v-item-img data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/ic_my_company.png"></image>
+                        <text class="v-item-text data-v-7cf34318">我的公司</text>
+                    </view>
+                    <view bindtap="__e" class="v-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toVipRight',['$event'] ] ] ] ]}}" wx:if="{{bannerShow&&platform!=='mp-toutiao'}}">
+                        <image class="v-item-img data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/ic_my_vip.png"></image>
+                        <text class="v-item-text data-v-7cf34318">会员特权</text>
+                    </view>
+                </view>
+            </view>
+            <view class="block data-v-7cf34318">
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toCollect',['$event'] ] ] ] ]}}" data-index="1" hoverClass="hover" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">名片收藏</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </view>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toCollect',['$event'] ] ] ] ]}}" data-index="0" hoverClass="hover" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">我的收藏</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </view>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toReport',['$event'] ] ] ] ]}}" data-index="1" hoverClass="hover" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">报告订单</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </view>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toCommonQuestion',['$event'] ] ] ] ]}}" hoverClass="hover" wx:if="{{isLogin}}">
+                    <view class="item-text item-text-position data-v-7cf34318">常见问题</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </view>
+                <button bindgetphonenumber="__e" class="content-item-button data-v-7cf34318" data-event-opts="{{[ [ 'getphonenumber',[ [ 'xcxBind',['$event'] ] ] ] ]}}" hoverClass="{{phone?'':'hover'}}" id="bind-phone" openType="{{openType}}" plain="true" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">绑定手机号</view>
+                    <view class="item-right data-v-7cf34318">
+                        <view class="item-phone data-v-7cf34318">{{showPhone}}</view>
+                        <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png" wx:if="{{!phone}}"></image>
+                    </view>
+                    <view class="item-border data-v-7cf34318"></view>
+                </button>
+                <button catchtap="__e" class="content-item-button share-app data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'showShareMenu',['$event'] ] ] ] ]}}" hoverClass="hover" openType="share" plain="true" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">分享小程序</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </button>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'addToDesktop',['$event'] ] ] ] ]}}" hoverClass="hover" id="add-desktop">
+                    <view class="item-text data-v-7cf34318" wx:if="{{isIPhone}}">添加小程序</view>
+                    <view class="item-text data-v-7cf34318" wx:else>添加到桌面</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </view>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toQrcode',['$event'] ] ] ] ]}}" hoverClass="hover" id="qrcode" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">小程序二维码</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </view>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'myInvoice',['$event'] ] ] ] ]}}" hoverClass="hover" id="my-invoice" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">我的发票抬头</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                </view>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'aboutUs',['$event'] ] ] ] ]}}" hoverClass="hover" wx:if="{{!isLogin||platform==='mp-feishulaw'}}">
+                    <view class="item-text data-v-7cf34318">关于我们</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                </view>
+            </view>
+            <view class="block data-v-7cf34318">
+                <button bindtap="__e" class="content-item-button data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toggleFeedBack',['$event'] ] ] ] ]}}" hoverClass="hover" plain="true" wx:if="{{isLogin}}">
+                    <view class="item-text data-v-7cf34318">联系我们</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                    <view class="item-border data-v-7cf34318"></view>
+                </button>
+                <view bindtap="__e" class="content-item data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'aboutUs',['$event'] ] ] ] ]}}" hoverClass="hover" wx:if="{{isLogin&&platform!=='mp-feishulaw'}}">
+                    <view class="item-text data-v-7cf34318">关于我们</view>
+                    <image class="right-arrow data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/right-arrow.png"></image>
+                </view>
+            </view>
+            <view class="space data-v-7cf34318"></view>
+        </view>
+        <view class="overlay data-v-7cf34318" wx:if="{{overlayTip}}">
+            <image class="hand-img data-v-7cf34318" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/hand.png"></image>
+            <view class="add-img-wrap data-v-7cf34318">
+                <image class="add-img data-v-7cf34318" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/add-app.png" wx:if="{{isIPhone}}"></image>
+                <image class="add-img data-v-7cf34318" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/add-desktop.png" wx:else></image>
+            </view>
+            <view class="know-img-wrap data-v-7cf34318">
+                <image bindtap="__e" class="know-img data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'know',['$event'] ] ] ] ]}}" mode="aspectFit" src="https://share.qichacha.com/lite-app-resources/qcc-lite-app-2.0/know.png"></image>
+            </view>
+        </view>
+    </view>
+    <bind-fail-pop bind:__l="__l" bind:hide="__e" class="data-v-7cf34318" data-event-opts="{{[ [ '^hide',[ ['hidePop'] ] ] ]}}" tipPop="{{tipPop}}" vueId="9f91bc1c-1"></bind-fail-pop>
+    <download-pop bind:__l="__l" bind:hideDownloadPop="__e" class="data-v-7cf34318" data-event-opts="{{[ [ '^hideDownloadPop',[ ['hideDownloadPop'] ] ] ]}}" isCopy="{{true}}" vueId="9f91bc1c-2" wx:if="{{downloadPop}}"></download-pop>
+    <view bindtap="__e" class="feedback-pop data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toggleFeedBack',['$event'] ] ] ] ]}}" wx:if="{{feedBackShow}}">
+        <view catchtap="__e" class="feedback-center data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+            <view class="feedback-header data-v-7cf34318">联系我们</view>
+            <view class="feedback-content data-v-7cf34318">
+                <view class="tips data-v-7cf34318">我们将会全心全意为您提供满意周到的咨询服务，也希望您能支持和监督我们的服务！</view>
+                <view bindtap="__e" class="contact data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'feedBackTrack',['$event'] ] ] ] ]}}">
+                    <view class="contact-title data-v-7cf34318">在线客服</view>
+                    <view class="contact-content data-v-7cf34318">服务时间：工作日09:00-18:00</view>
+                </view>
+                <view catchtap="__e" class="contact data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'callKeFu',['$event'] ] ] ] ]}}" data-value="400-928-2212">
+                    <view class="contact-title data-v-7cf34318">电话客服</view>
+                    <view class="contact-content data-v-7cf34318">拨打400-928-2212 服务时间：工作日09:00-20:00</view>
+                </view>
+                <view catchtap="__e" class="feedback-button data-v-7cf34318" data-event-opts="{{[ [ 'tap',[ [ 'toggleFeedBack',['$event'] ] ] ] ]}}">取消</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "求职背调",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

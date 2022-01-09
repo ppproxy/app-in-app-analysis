@@ -1,0 +1,205 @@
+<view class="app mb70">
+    <view class="my_order_view">
+        <view class="mov_top bgwh">
+            <view class="flx mt15 ml15 mr15">
+                <view class="lt f18">
+                    <image class="mov_top_icon _img" src="/static/images/right.png" wx:if="{{order.Status==4}}"></image>
+                    <view class="{{['ml10 dib',order.Status==3||order.Status==4?'fg':'']}}">{{order.StatusMemo}}</view>
+                    <view class="f13 g6 ml10" wx:if="{{order.Status>=3}}">可以直接刷身份证入园</view>
+                </view>
+                <view class="rt fa_wh" wx:if="{{order.Status==2}}">
+                    <view bindtap="__e" class="s_btn fw" data-event-opts="{{[ [ 'tap',[ [ 'payOrder',['$event'] ] ] ] ]}}">支付</view>
+                </view>
+            </view>
+            <view class="mov_step fix">
+                <view class="mov_step_list fix">
+                    <view class="mov_step_box mov_step_first tc lt mov_step_box_clo">
+                        <view class="mov_step_box_bg">
+                            <view class="mov_step_line"></view>
+                            <view class="mov_step_icon db"></view>
+                        </view>
+                        <view class="f12 db">买家下单</view>
+                    </view>
+                    <view class="{{['mov_step_box tc lt',order.Status>2?'mov_step_box_clo':'']}}">
+                        <view class="mov_step_box_bg">
+                            <view class="mov_step_line"></view>
+                            <view class="mov_step_icon db"></view>
+                        </view>
+                        <view class="f12 db">付款</view>
+                    </view>
+                    <view class="{{['mov_step_box mov_step_end tc lt',order.Status==4?'mov_step_box_clo':'']}}">
+                        <view class="mov_step_box_bg">
+                            <view class="mov_step_line"></view>
+                            <view class="mov_step_icon db"></view>
+                        </view>
+                        <view class="f12 db">完成交易</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="mov_qrcode top_line" wx:if="{{order.Status>=3}}">
+            <view class="df align_center qrcode-box justify_center">
+                <view class="f16 b">订单二维码</view>
+                <view>{{order.OrderID}}</view>
+                <view bindtap="__e" class="qrcode-box-btn" data-event-opts="{{[ [ 'tap',[ [ 'OrdedrCode',['$event'] ] ] ] ]}}">查看二维码</view>
+            </view>
+        </view>
+        <view class="mov_about top_line">
+            <view class="mov_tit f12 n g9">订单明细</view>
+            <view class="mov_about_box bgwh" wx:for="{{order.Items}}" wx:for-index="__i0__" wx:key="ID">
+                <navigator class="mov_about_tit db w_line" url="{{'/pages/main/scenicView?scenicId='+item.Scenic.ID}}">
+                    <view class="mov_name df align_center justify_between g3">
+                        <view class="mov_name_text">
+                            <view class="db">{{item.Scenic.Name}}</view>
+                            <view class="f12 g9 db mt5">{{item.Scenic.Address}}</view>
+                        </view>
+                        <view>
+                            <image class="w12 _img" height="12" src="/static/images/lefticon_mini.png"></image>
+                        </view>
+                    </view>
+                </navigator>
+                <navigator class="db _a" href="javascript:void(0)">
+                    <view class="order_ticket g3">
+                        <view class="flx">
+                            <image class="db lt w60 br5" height="60" src="{{item.Photo+'!/both/120x120'}}" width="60"></image>
+                            <view class="db lt ml10" style="line-height:60px;">{{item.ProductName}}</view>
+                        </view>
+                        <view class="tr">
+                            <view class="db">{{'￥'+item.SalePrice}}</view>
+                            <view class="g9 db">{{'x '+item.Number}}</view>
+                        </view>
+                    </view>
+                </navigator>
+                <view class="order_price flx f12">
+                    <view class="lt g9">{{'总计 ￥'+order.TotalPrice+''}}</view>
+                    <view class="lt g9 ml5" wx:if="{{order.TotalCouponPrice>0}}">{{'优惠 ￥'+order.TotalCouponPrice+''}}</view>
+                    <view class="rt">实付：<view class="fr dib">{{'￥'+(order.TotalPrice-order.TotalCouponPrice<0?0:order.TotalPrice-order.TotalCouponPrice)}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="mov_info bgwh f13 top_line pd15">
+            <view class="mov_tit f12 n g9">订单信息</view>
+            <view class="data_list rel">
+                <view class="abs">
+                    <view>订单号</view>
+                </view>
+                <view class="wp100 flx">
+                    <view class="db rt">
+                        <view>{{order.OrderID}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="data_list rel" wx:if="{{order.Items[0].SessionName}}">
+                <view class="abs">
+                    <view>场次</view>
+                </view>
+                <view class="wp100 flx">
+                    <view class="db rt">
+                        <view>{{order.Items[0].SessionName}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="data_list rel">
+                <view class="abs">
+                    <view>联系人</view>
+                </view>
+                <view class="wp100 flx">
+                    <view class="db rt">
+                        <view>{{order.Customer}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="data_list rel">
+                <view class="abs">
+                    <view>手机号</view>
+                </view>
+                <view class="wp100 flx">
+                    <view class="db rt">
+                        <view>{{order.CustomerMobile}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="data_list rel" wx:if="{{order.CustomerCardID}}">
+                <view class="abs">
+                    <view>身份证</view>
+                </view>
+                <view class="wp100 flx">
+                    <view class="db rt">
+                        <view>{{$root.m0}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="data_list rel">
+                <view class="abs">
+                    <view>下单时间</view>
+                </view>
+                <view class="wp100 flx">
+                    <view class="db rt">
+                        <view>{{order.CreateTime}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="data_list rel" wx:if="{{order.PayTime}}">
+                <view class="abs">
+                    <view>付款时间</view>
+                </view>
+                <view class="wp100 flx">
+                    <view class="db rt">
+                        <view>{{order.PayTime}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="my_play_user mt10" wx:if="{{order&&order.Items&&order.Items[0].Users&&order.Items[0].Users.length>0}}">
+                <view class="f13 g9 mb10">游玩人员</view>
+                <view class="play_user fix">
+                    <view class="play_user_box" wx:for="{{$root.l0}}" wx:for-item="player" wx:key="index">
+                        <view class="play_user_dl">
+                            <view class="play_user_name" wx:if="{{player[$orig].Status==0}}">
+                                <view class="dib f16 b">{{player[$orig].Name+'(已取消)'}}</view>
+                                <view class="dib f12 ml5 dn"></view>
+                            </view>
+                            <view class="play_user_name" wx:if="{{player[$orig].Status==1}}">
+                                <view class="dib f16 b">{{player[$orig].Name}}</view>
+                                <view class="dib f12 ml5 dn"></view>
+                            </view>
+                            <view class="play_user_name" wx:if="{{player[$orig].Status==2}}">
+                                <view class="dib f16 b">{{player[$orig].Name+'(审核中)'}}</view>
+                                <view class="dib f12 ml5 dn"></view>
+                            </view>
+                            <view class="play_user_name" wx:if="{{player[$orig].Status==3}}">
+                                <view class="dib f16 b">{{player[$orig].Name+'(已核销)'}}</view>
+                                <view class="dib f12 ml5 dn"></view>
+                            </view>
+                            <view class="play_user_idcard f12">{{'身份证：'+player.m1}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="mov_about mov_intro top_line">
+            <view class="mov_tit f12 n g9">订单说明</view>
+            <view class="mov_intro_box">
+                <view class="db b">有效期</view>
+                <view class="f12 g6">{{order.Items[0].ValidityTime}}</view>
+            </view>
+            <view class="mov_intro_box">
+                <view class="db b">使用方法</view>
+                <view class="f12 g6" wx:if="{{order.Items[0].UseIntro}}">{{order.Items[0].UseIntro}}</view>
+            </view>
+            <view class="mov_intro_box">
+                <view class="db b">客服信息</view>
+                <view class="f12 g6" wx:if="{{order.Items[0].Scenic.Tel}}">{{'客服电话：'+order.Items[0].Scenic.Tel}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="mov_cancel fa_wh" wx:if="{{order.Status==2||order.Status==3}}">
+        <button bindtap="__e" class="btn fw f16" data-event-opts="{{[ [ 'tap',[ [ 'cancelOrder',['$0'],['order.OrderID'] ] ] ] ]}}" type="default" wx:if="{{order.StatusMemo!='退改中'}}">{{refundTip}}</button>
+        <button class="btn fw f16" type="default" wx:else>{{refundTip}}</button>
+    </view>
+    <uni-popup bind:__l="__l" class="vue-ref" data-ref="popupCode" type="center" vueId="a2b0478a-1" vueSlots="{{['default']}}">
+        <view class="qrcode-main-item">
+            <image class="db w130 _img" src="{{order.QrUrl}}"></image>
+        </view>
+    </uni-popup>
+</view>

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "navbar": "../navBar/index",
+        "wbui-login-fail": "../login-fail/index"
+    }
+}

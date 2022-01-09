@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "发送名片",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

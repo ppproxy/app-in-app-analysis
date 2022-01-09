@@ -1,0 +1,7 @@
+<view catchtap="onClickTap" class="card-42" data-scheme="{{cardData.scheme}}" wx:if="{{cardData.desc!=='热门问答'&&cardData.desc!=='热门文章'&&cardData.desc!=='话题贡献者排行'}}">
+    <text class="title">{{cardData.desc}}</text>
+    <view class="desc">
+        <text class="text">{{cardData.title_extra_text}}</text>
+        <icon class="~iconfont ~icon-youjiantou-01 icon-right" size="14" wx:if="{{cardData.display_arrow===1}}"></icon>
+    </view>
+</view>

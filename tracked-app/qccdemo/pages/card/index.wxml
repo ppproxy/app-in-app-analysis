@@ -1,0 +1,102 @@
+<view class="uni-container data-v-7dae98a3">
+    <view class="wrap data-v-7dae98a3" wx:if="{{isInit}}">
+        <view class="page data-v-7dae98a3">
+            <view class="top data-v-7dae98a3">
+                <canvas canvasId="save-canvas" class="save-canvas data-v-7dae98a3" id="save-canvas" style="top:-1000px;position:absolute;height:306px;width:347px;"></canvas>
+                <view class="{{[ 'data-v-7dae98a3','card-top-bg '+(cardStyle!=0?'card-top-bg-none':'') ]}}"></view>
+                <view class="card-wrap data-v-7dae98a3">
+                    <view bindtap="__e" class="{{[ 'data-v-7dae98a3','card '+(cardStyle==0?'card-default':'')+' '+(cardStyle==1?'card-gray':'')+' '+(cardStyle==2?'card-black':'')+' '+(cardStyle==3?'card-gold':'')+' '+(cardStyle==4?'card-red':'')+' '+(cardStyle==5?'card-blue':'') ]}}" data-code="{{cardCode}}" data-event-opts="{{[ [ 'tap',[ [ 'toCardDetail',['$event'] ] ] ] ]}}">
+                        <image class="card-tip-img data-v-7dae98a3" mode="scaleToFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/card-simple.png" wx:if="{{cardCode==='00000000000000000000000000000001'}}"></image>
+                        <view class="card-left data-v-7dae98a3">
+                            <view class="card-left-top data-v-7dae98a3">
+                                <image binderror="__e" catchtap="__e" class="card-avator data-v-7dae98a3" data-event-opts="{{[ [ 'error',[ [ 'avatorError',['$event'] ] ] ],[ 'tap',[ [ 'previewAvator',['$event'] ] ] ] ]}}" mode="aspectFill" src="{{avator}}" wx:if="{{avator}}"></image>
+                                <open-data class="card-avator data-v-7dae98a3" defaultAvatar="https://share.qichacha.com/lite-app-resources/html/images/smart-card/default-avator.png" type="userAvatarUrl" wx:if="{{!avator}}"></open-data>
+                                <view class="card-info-wrap data-v-7dae98a3">
+                                    <view class="card-name-wrap data-v-7dae98a3">
+                                        <text class="card-name data-v-7dae98a3" wx:if="{{name}}">{{name}}</text>
+                                        <open-data class="card-name data-v-7dae98a3" defaultText="姓名暂未填写" type="userNickName" wx:if="{{!name}}"></open-data>
+                                        <image class="card-gender data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/male.png" wx:if="{{gender==1}}"></image>
+                                        <image class="card-gender data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/female.png" wx:if="{{gender==2}}"></image>
+                                        <text class="card-job data-v-7dae98a3" style="{{job?'':'color:#999;'}}">{{''+(job||'职位暂未填写')+''}}</text>
+                                    </view>
+                                    <view class="card-company data-v-7dae98a3" style="{{company?'':'color:#999;'}}">{{''+(company||'公司暂未填写')+''}}</view>
+                                </view>
+                            </view>
+                            <view class="card-left-bottom data-v-7dae98a3">
+                                <view class="card-left-bottom-info data-v-7dae98a3">
+                                    <image class="card-bottom-info-img data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/tel.png" wx:if="{{cardStyle==0}}"></image>
+                                    <image class="card-bottom-info-img data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/tel-plain.png" wx:else></image>
+                                    <text class="card-bottom-info-text data-v-7dae98a3" style="{{tel?'':'color:#999;'}}">{{''+(tel||'暂未填写')+''}}</text>
+                                </view>
+                                <view class="card-left-bottom-info data-v-7dae98a3">
+                                    <image class="card-bottom-info-img data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/address.png" wx:if="{{cardStyle==0}}"></image>
+                                    <image class="card-bottom-info-img data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/address-plain.png" wx:else></image>
+                                    <text class="card-bottom-info-text card-address data-v-7dae98a3" style="{{address?'':'color:#999;'}}">{{''+(address||'暂未填写')+''}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="card-right data-v-7dae98a3">
+                            <image class="card-right-arrow data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/right-arrow.png" wx:if="{{cardStyle==0}}"></image>
+                            <image class="card-right-arrow data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/right-arrow-plain.png" wx:else></image>
+                        </view>
+                        <image catchtap="__e" class="qr-img data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'toLiteAppCode',['$event'] ] ] ] ]}}" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/qr.png" wx:if="{{cardStyle==0}}"></image>
+                        <image catchtap="__e" class="qr-img data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'toLiteAppCode',['$event'] ] ] ] ]}}" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/qr-plain.png" wx:else></image>
+                    </view>
+                </view>
+            </view>
+            <view class="mid-tip data-v-7dae98a3" wx:if="{{!userId}}">
+                <view class="mid-tip-text data-v-7dae98a3">你还没有创建专属名片，快去制作吧！</view>
+            </view>
+            <view class="hits-wrap data-v-7dae98a3" wx:if="{{userId}}">
+                <view class="hits-container data-v-7dae98a3">
+                    <form class="hits-item data-v-7dae98a3">
+                        <button bindtap="__e" class="form-btn-plain data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'toVisitorList',['$event'] ] ] ] ]}}" hoverClass="{{hits==0?'none':''}}">
+                            <image class="hits-img data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/hits.png"></image>
+                            <view class="hits-num-wrap data-v-7dae98a3">
+                                <text class="data-v-7dae98a3">人气</text>
+                                <text class="hist-num data-v-7dae98a3">{{hits}}</text>
+                            </view>
+                        </button>
+                    </form>
+                    <form class="hits-item data-v-7dae98a3">
+                        <button bindtap="__e" class="form-btn-plain data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'toFollowList',['$event'] ] ] ] ]}}" hoverClass="{{collect==0?'none':''}}">
+                            <image class="hits-img data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/collect.png"></image>
+                            <view class="hits-num-wrap data-v-7dae98a3">
+                                <text class="data-v-7dae98a3">收藏</text>
+                                <text class="hist-num data-v-7dae98a3">{{collect}}</text>
+                            </view>
+                        </button>
+                    </form>
+                    <form class="hits-item data-v-7dae98a3">
+                        <button bindtap="__e" class="form-btn-plain data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'toShareList',['$event'] ] ] ] ]}}" hoverClass="{{recommend==0?'none':''}}">
+                            <image class="hits-img data-v-7dae98a3" mode="aspectFill" src="https://share.qichacha.com/lite-app-resources/html/images/smart-card/recommend.png"></image>
+                            <view class="hits-num-wrap data-v-7dae98a3">
+                                <text class="data-v-7dae98a3">分享</text>
+                                <text class="hist-num data-v-7dae98a3">{{recommend}}</text>
+                            </view>
+                        </button>
+                    </form>
+                </view>
+            </view>
+            <view class="button-wrap data-v-7dae98a3">
+                <form class="data-v-7dae98a3">
+                    <button bindtap="__e" class="btn top-btn data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'createCard',['$event'] ] ] ] ]}}" hoverClass="btn-hover" wx:if="{{!userId}}">创建名片</button>
+                </form>
+                <form class="data-v-7dae98a3">
+                    <button bindtap="__e" class="btn-plain bottom-btn data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'takePhoto',['$event'] ] ] ] ]}}" wx:if="{{!userId}}">拍照识别</button>
+                </form>
+                <form class="data-v-7dae98a3">
+                    <button class="btn top-btn data-v-7dae98a3" hoverClass="btn-hover" openType="share" wx:if="{{userId}}">发名片</button>
+                </form>
+                <form class="data-v-7dae98a3">
+                    <button bindtap="__e" class="btn-plain bottom-btn data-v-7dae98a3" data-event-opts="{{[ [ 'tap',[ [ 'toCardImg',['$event'] ] ] ] ]}}" wx:if="{{userId}}">生成图片分享</button>
+                </form>
+            </view>
+            <view bindtap="__e" catchtouchmove="__e" class="mov-button data-v-7dae98a3" data-event-opts="{{[ [ 'touchmove',[ [ 'movButtonMove',['$event'] ] ] ],[ 'tap',[ [ 'finishCard',['$event'] ] ] ] ]}}" style="{{'top:calc(100vh - 270rpx);'}}" wx:if="{{userId}}">
+                <view class="data-v-7dae98a3">{{'完成度：'+percent+'%'}}</view>
+                <view class="data-v-7dae98a3">{{editText}}</view>
+            </view>
+        </view>
+    </view>
+    <app-page-loading bind:__l="__l" class="data-v-7dae98a3" isInit="{{isInit}}" vueId="4fd4c5ba-1"></app-page-loading>
+</view>

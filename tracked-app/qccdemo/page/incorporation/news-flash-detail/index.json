@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#128BED",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

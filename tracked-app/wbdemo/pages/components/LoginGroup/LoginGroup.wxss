@@ -1,0 +1,44 @@
+.login-group {
+    position: fixed;
+    left: 0;
+    bottom: 156rpx;
+    width: 100%;
+    z-index: 10000;
+}
+
+.login-group,.login-group .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-group .item {
+    margin: 0 17rpx;
+    width: 280rpx;
+    height: 70rpx;
+    border-radius: 35rpx;
+    box-shadow: 0 2rpx 10rpx 0 rgba(0,0,0,.16),0 10rpx 20rpx 0 rgba(0,0,0,.1);
+    font-weight: 400;
+    padding: 0;
+    font-size: 0;
+}
+
+.login-group .item.wechat {
+    background-color: #00b000;
+    color: #fff;
+}
+
+.login-group .item.weibo {
+    background-color: #fff;
+    color: #242424;
+}
+
+.login-group .item .image {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.login-group .item .text {
+    font-size: 32rpx;
+    margin-left: 7rpx;
+}

@@ -1,0 +1,15 @@
+<view style="position: relative;display:flex;margin-top:-20rpx;">
+    <view class="head-content">
+        <image class="img" lazyLoad="{{true}}" lazyLoadMargin="0" mode="aspectFill" src="{{utils.replaceHttps(headData.portrait_url)}}"></image>
+        <view class="content">
+            <text class="title">{{headData.title}}</text>
+            <view class="icon-tag" style="background: {{headData.tag_color}};color: {{headData.tag_text_color}}" wx:if="{{headData.tag_text}}">
+        {{headData.tag_text}}
+      </view>
+        </view>
+        <view class="midtext" wx:if="{{headData.midtext}}">{{headData.midtext}}</view>
+        <view class="downtext" wx:if="{{headData.downtext}}">{{headData.downtext}}</view>
+    </view>
+</view>
+<card-7 cardData="{{cardDesc}}"></card-7>
+<wxs module="utils" src="../../../utils/utils.wxs" />

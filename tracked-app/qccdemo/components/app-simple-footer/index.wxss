@@ -1,0 +1,19 @@
+.app-simple-footer.data-v-65ffe483 {
+    background: #f1f1f1;
+    bottom: 0;
+    display: table-cell;
+    height: 52rpx;
+    left: 0;
+    padding-bottom: 10rpx;
+    padding-top: 10rpx;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 999;
+}
+
+.app-simple-footer>.logo.data-v-65ffe483 {
+    height: 30rpx;
+    width: 330rpx;
+}

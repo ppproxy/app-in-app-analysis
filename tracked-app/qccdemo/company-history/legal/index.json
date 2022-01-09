@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "历史法定代表人",
+    "usingComponents": {
+        "app-no-data": "/components/app-no-data/index",
+        "app-opened-footer": "/components/app-opened-footer/index",
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

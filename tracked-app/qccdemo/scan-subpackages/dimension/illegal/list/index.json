@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "违规处理",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}

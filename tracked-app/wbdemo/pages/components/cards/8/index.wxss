@@ -1,0 +1,38 @@
+.card-8 {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 20rpx;
+    border-bottom: .5px solid #dcdcdc;
+    overflow: hidden;
+}
+
+.img {
+    display: inline-block;
+    width: 140rpx;
+    height: 140rpx;
+    float: left;
+    background: #ebebeb;
+}
+
+.title-sub {
+    font-size: 32rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.desc1 {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.desc1,.desc2 {
+    font-size: 24rpx;
+    color: #8e8e8e;
+    margin-top: 10rpx;
+}

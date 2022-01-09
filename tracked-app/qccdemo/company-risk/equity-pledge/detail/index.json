@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "股权质押详情",
+    "usingComponents": {
+        "app-page-loading": "/components/app-page-loading/index"
+    }
+}
