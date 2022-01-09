@@ -1,5 +1,14 @@
 import json
 import re
+import os
+
+JUMP_FUNCTIONS = {
+    'switchTab', 'reLaunch', 'redirectTo', 'navigateTo', 'navigateBack',  # 路由
+    'openEmbeddedMiniProgram', 'navigateToMiniProgram', 'navigateBackMiniProgram', 'exitMiniProgram',  # 跳转
+    'updateShareMenu', 'showShareMenu', 'showShareImageMenu', 'shareVideoMessage', 'shareFileMessage',  # 转发
+    'onCopyUrl', 'offCopyUrl', 'hideShareMenu', 'getShareInfo', 'authPrivateMessage'
+}
+BASE_PATH = "./tracked-app/"
 
 
 def get_from_wxml(path):
@@ -8,7 +17,7 @@ def get_from_wxml(path):
 
 
 # 从提取到的AST json文件中提取wxml中的绑定函数
-def get_tap_function(tap_function_list, json_file):
+def get_tap_function(json_file):
     l = []
     for func_decl in json_file['body']:
         # 实际
@@ -37,7 +46,7 @@ def walk(tree):
     return ret
 
 
-def analysis(nodes, model_function):
+def analysis(nodes):
     literal_nodes = []
     for node in nodes:
         if node['type'] == 'Literal':
@@ -47,9 +56,8 @@ def analysis(nodes, model_function):
     for node in nodes:
         if node['type'] == 'CallExpression' and node['callee']['type'] == 'MemberExpression':
             callee = node['callee']
-            # todo 改成从微信官网建模的函数们
-            # if callee['property']['name'] in model_function:
-            if callee['property']['name'] == 'navigateTo':
+            if callee['property'].keys().__contains__('name') and callee['property']['name'] in JUMP_FUNCTIONS:
+                # if callee['property']['name'] == 'navigateTo':
                 # 找可能跳转到的地方，我发现，大部分的跳转链接虽然可能有字符串拼接的情况，但是其base url基本都是文本类型的。
                 for literal_node in literal_nodes:
                     line = literal_node['value']
@@ -58,27 +66,29 @@ def analysis(nodes, model_function):
                         # match = re.search(r'/(.*)/(.*)/(.*)(\\?q=)?', line)
                         match = re.search(r'/(.*)(\\?q=)?', line)
                         if match:
-                            res.append(match.group().split("?")[0])
+                            res.append((match.group().split("?")[0], callee['property']['name']))
     return res
 
 
-with open(".\jsonfile\ymylist-ast.json", encoding='utf-8') as f:
-    json_file = json.load(f)
+def process(app_name, page_name):
+    ast_path = BASE_PATH + app_name + "/" + page_name + "-ast.json"
+    analysis_result = {page_name: set()}
+    if os.path.isfile(ast_path):
+        with open(ast_path, encoding='utf-8') as f:
+            json_file = json.load(f)
+        funcs = get_tap_function(json_file)
+        for func in funcs:
+            ast_nodes = walk(func)
+            result = analysis(ast_nodes)
+            for res in result:
+                analysis_result[page_name].add(res)
+    print(analysis_result)
+    return analysis_result
 
 # tap_function_list = ['gotoRank', 'gotoExercise', 'gotoExam', 'gotoRank', 'goCompetitionOne', 'goCompetitionTwo']
 # tap_function_list = ["cardClick"]
-tap_function_list = ['open2', 'bookClick', 'close2', 'loadGroup', 'confirmSuccess']
-funcs = get_tap_function(tap_function_list, json_file)
-analysis_result = {"/pages/content/content": set()}
-
-for func in funcs:
-    ast_nodes = walk(func)
-    result = analysis(ast_nodes, analysis_result)
-    for res in result:
-        analysis_result["/pages/content/content"].add(res)
-
-print(analysis_result)
-
+# tap_function_list = ['open2', 'bookClick', 'close2', 'loadGroup', 'confirmSuccess']
+# print(analysis_result)
 # 有一种问题出现了，那就是在wxml中没有进行跳转函数的绑定，但是在小程序的生命周期函数中，
 # 出现了根据某些初始化条件来判断进行跳转的情况
 # 见ymy list.js
