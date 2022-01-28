@@ -1,0 +1,18 @@
+<view class="mask" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="content">
+        <view bindtap="close" class="close">
+            <view class="line lineA"></view>
+            <view class="line lineB"></view>
+        </view>
+        <view class="img">
+            <image src="{{popModelData.imgSrc}}"></image>
+        </view>
+        <button bindtap="__invoke" class="btn" data-eventconfigs="{{ tap:[ ['getBtn','去开锁'] ] }}" wx:if="{{popModelData.btnType===1}}">去开锁</button>
+        <view class="btnCont" wx:if="{{popModelData.btnType===0}}">
+            <view class="btnBox">
+                <button bindtap="handleLink" class="popBtn popBtn-white">查看车型</button>
+                <button bindtap="close" class="popBtn popBtn-blue">去骑车</button>
+            </view>
+        </view>
+    </view>
+</view>

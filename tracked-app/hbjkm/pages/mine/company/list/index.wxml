@@ -1,0 +1,20 @@
+<template name="tabNew">
+    <g-wrapper>
+        <g-cell bindtap="handleItem" data-item="{{item}}" wx:if="{{item.applyStatus==0||item.applyStatus==1}}" wx:for="{{itemList}}" wx:key="item.companyId">
+            <view slot="prepend">
+                <image class="img" src="/images/relativecode/qiye.png"></image>
+            </view>
+            <view slot="content">
+                <view class="cell-title">{{item.companyName}}</view>
+            </view>
+            <view slot="append">
+                <view class="cell-type-0" wx:if="{{item.applyStatus==0}}">待审核</view>
+                <view class="cell-type-1" wx:if="{{item.applyStatus==1}}">已关联</view>
+            </view>
+        </g-cell>
+        <view wx:if="{{!itemList.length}}">
+            <view class="no-todo">当前没有企业</view>
+        </view>
+    </g-wrapper>
+</template>
+<template is="tabNew" data="{{name:'进行中',index:'1',todoType:todoType,itemList:itemList}}"></template>

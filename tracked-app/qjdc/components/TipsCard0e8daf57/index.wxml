@@ -1,0 +1,11 @@
+<view class="tips-card" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="{{'tips-card-content '+(remindActive&&'bigSmall')}}">
+        <image class="tips-icon" src="{{icon}}" style="{{title&&'-webkit-transform:translateY(-20rpx);transform:translateY(-20rpx)'}}"></image>
+        <view class="content">
+            <view class="title">{{title}}</view>
+            <view class="desc" wx:if="{{desc}}">
+                <highlight-text color="#666" fontSize="24rpx" text="{{desc}}"></highlight-text>
+            </view>
+        </view>
+    </view>
+</view>

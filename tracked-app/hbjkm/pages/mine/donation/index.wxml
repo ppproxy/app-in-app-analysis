@@ -1,0 +1,18 @@
+<view class="list">
+    <view class="item" wx:if="{{list.length>0}}" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="extra-info">
+            <view>{{item.create_time}}提交</view>
+            <view class="signed status" wx:if="{{item.status===0}}">在登记</view>
+            <view class="handling status" wx:if="{{item.status===1}}">对接中</view>
+            <view class="finished status" wx:if="{{item.status===2}}">已完成</view>
+        </view>
+        <view class="material-item" wx:for="{{item.materials}}" wx:for-index="index2" wx:for-item="material" wx:key="{{index2}}">
+            <view>{{material.name}}</view>
+            <view>{{material.number}}</view>
+        </view>
+    </view>
+    <view class="empty-wrapper" wx:if="{{list.length===0}}">
+        <image class="empty-icon" src="{{emptyIcon}}"></image>
+        <view>暂无事项</view>
+    </view>
+</view>

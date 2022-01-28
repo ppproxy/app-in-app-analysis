@@ -1,0 +1,11 @@
+<view>
+    <g-form bind:submit="handleSubmit" model="{{formData}}" rules="{{rules}}">
+        <g-wrapper title="请选择登录方式">
+            <g-radio-group bind:change="handleChange" id="loginType" items="{{loginItems}}" value="{{formData.loginType}}"></g-radio-group>
+        </g-wrapper>
+        <g-wrapper title="请设置默认开关">
+            <g-switch bind:change="handleChange" id="isDefault" label="设置为默认认证方式" value="{{formData.isDefault}}"></g-switch>
+        </g-wrapper>
+    </g-form>
+    <g-footer></g-footer>
+</view>

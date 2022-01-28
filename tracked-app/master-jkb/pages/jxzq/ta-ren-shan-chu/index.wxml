@@ -1,0 +1,33 @@
+<view class="wrap" style="min-height:{{windowHeight}}px;">
+    <view class="header_con">
+        <view class="left"> 查询记录 </view>
+        <view class="flex_end">
+            <view bindtap="finish_management" class="flex_center"> 完成 </view>
+        </view>
+    </view>
+    <view class="onlinechoose">
+        <view bindtap="select" class="hotel_list" data-id="{{index}}" data-it="{{i.id}}" wx:for="{{items}}" wx:for-item="i" wx:key="items">
+            <view class="list_cons flex_start">
+                <view class="left">
+                    <view class="lefts">
+                        <view class="icon_none" wx:if="{{!i.checked}}"></view>
+                        <g-icon color="#1F90FB" size="40" type="success" wx:if="{{i.checked}}"></g-icon>
+                    </view>
+                </view>
+                <view class="list">
+                    <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/sx.png" wx:if="{{i.activeStatus=='2'}}"></image>
+                    <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/yx.png" wx:if="{{i.activeStatus=='1'}}"></image>
+                    <view class="name">{{i.userName}}</view>
+                    <view class="list-center">
+                        <view class="list-left">身份证号</view>
+                        <view class="list-right">{{i.hideIdCard}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="placeholder-view"></view>
+</view>
+<view class="flex_between">
+    <button bindtap="deleteitem" class="sure" disabled="{{!management_good}}" type="primary">删除记录</button>
+</view>

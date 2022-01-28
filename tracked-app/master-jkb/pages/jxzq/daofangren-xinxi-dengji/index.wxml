@@ -1,0 +1,45 @@
+<view class="box" style="min-height:{{windowHeight}}px">
+    <mp-navigation-bar back="{{false}}" color="#fff" extClass="obc" title="申请登记簿">
+        <view bind:tap="handleOpenRegion" slot="left">{{value}} <g-icon color="#fff" size="34" type="arrow-left"></g-icon>
+        </view>
+    </mp-navigation-bar>
+    <view class="back-view">
+        <view class="back-image"></view>
+    </view>
+    <view class="grzx">
+        <view class="box-gr">
+            <view class="grl">姓名</view>
+            <view class="grr">{{userInfo.name}}</view>
+        </view>
+        <view class="box-gr">
+            <view class="grl">身份证号码</view>
+            <view class="grr">{{userInfo.idCard}}</view>
+        </view>
+        <view class="box-gr">
+            <view class="grl">手机号码</view>
+            <view class="grr">
+                <view>{{phone}}</view>
+            </view>
+        </view>
+    </view>
+    <g-form bind:secondTap="handleSecondTap" bind:submit="handleFormSubmit" model="{{formData}}" primaryText="提交" rules="{{rules}}" secondText="取消">
+        <view class="grzx1">
+            <view slot="content">
+                <view class="con-bor">
+                    <g-form-cell actionText="选择" bind:tap="dilog1" id="qrcode_unitname" label="单位名称" placeholder="请填写单位名称" value="{{formData.qrcode_unitname}}"></g-form-cell>
+                    <g-form-cell actionText="选择" bind:tap="dilog" id="address" label="单位所在区及街道" placeholder="请选择地区" value="{{formData.address}}"></g-form-cell>
+                    <g-input bind:change="handleChange" id="qrcode_address" label="单位详细地址" placeholder="须填写到具体门牌号" value="{{formData.qrcode_address}}"></g-input>
+                </view>
+                <view class="con-bor" style="margin-top:40rpx;">
+                    <view class="bitian">
+                        <text class="red">*</text>扫码成功提示音 </view>
+                    <g-form-cell actionText="选择" bind:tap="handleTao" id="success" placeholder="请选择扫码提示音" value="{{formData.success}}"></g-form-cell>
+                    <view class="bitian">
+                        <text class="red">*</text>扫码失败提示音 </view>
+                    <g-form-cell actionText="选择" bind:tap="handleTao" id="fail" placeholder="请选择扫码提示音" value="{{formData.fail}}"></g-form-cell>
+                </view>
+            </view>
+        </view>
+    </g-form>
+</view>
+<g-cascader bind:change="handleChange" bind:close="handleClose" bind:columnChange="handleColumnChange" id="address" range="{{range}}" value="{{formData.address}}" visible="{{visible}}"></g-cascader>

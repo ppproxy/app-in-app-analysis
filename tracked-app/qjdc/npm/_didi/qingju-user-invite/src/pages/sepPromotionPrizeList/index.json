@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "PrizeCard": "/npm/_didi/qingju-user-invite/src/components/prizeCard2aea43dc/index",
+        "loading": "/npm/_didi/qingju-user-invite/src/components/loading3182f271/index"
+    },
+    "navigationBarTitleText": "我的奖品列表"
+}

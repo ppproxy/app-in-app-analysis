@@ -1,0 +1,163 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.tabs {
+    position: relative;
+    width: 100%;
+}
+
+.tabs__header {
+    align-items: center;
+    background: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 850;
+}
+
+.tabs__header::after {
+    background-color: #ccc;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.tabs__item__wrap {
+    color: #495060;
+    flex: 1;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    text-align: center;
+}
+
+.tabs__item {
+    display: inline-block;
+    padding-bottom: 25rpx;
+    padding-top: 25rpx;
+}
+
+.tabs__item--active {
+    color: #4293f4;
+}
+
+.tabs__slider {
+    background-color: #4293f4;
+    bottom: 0rpx;
+    height: 4rpx;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.tabs__content {
+    overflow: hidden;
+    position: relative;
+}
+
+.tabs__header--scroll {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.tabs__header--scroll .tabs__item {
+    white-space: nowrap;
+}
+
+.tabs__header--scroll .tabs__item__wrap {
+    flex: unset;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}

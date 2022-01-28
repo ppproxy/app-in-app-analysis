@@ -1,0 +1,17 @@
+<view class="more-dialog-wrapper" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <animation-container bindclicklayer="hide" class="animation ref_animation_1">
+        <view class="more-dialog-content {{selfAnimation}}">
+            <image class="bg-img" src="https://dpubstatic.udache.com/static/dpubimg/c46af41d-d47f-4aa2-85d8-34284c5d9c5c.png"></image>
+            <view class="title">更多用车服务</view>
+            <view bindtap="clickCloseIcon" class="close-wrap">
+                <image class="close-icon" src="https://dpubstatic.udache.com/static/dpubimg/7c8d29e2-efde-42e1-90cb-60e3c0fa51f2.png"></image>
+            </view>
+            <view class="list-wrap">
+                <view bindtap="__invoke" class="item-wrap {{item.iconDesc?'':'disable-btn'}}" data-eventconfigs="{{ tap:[ ['clickItem',item,index] ] }}" wx:for="{{showList}}" wx:key="index">
+                    <image class="item-img" src="{{item.iconUrl||''}}"></image>
+                    <view class="item-txt">{{item.iconDesc}}</view>
+                </view>
+            </view>
+        </view>
+    </animation-container>
+</view>

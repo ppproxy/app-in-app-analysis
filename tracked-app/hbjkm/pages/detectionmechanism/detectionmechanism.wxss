@@ -1,0 +1,170 @@
+.back-view {
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.back-view.show {
+    opacity: 1;
+}
+
+.back-image {
+    width: 100%;
+    height: 534rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.data-overview-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 12rpx 28rpx 0 rgba(135,146,164,0.08);
+    border-radius: 5px;
+    margin: 0 32rpx 32rpx;
+}
+
+.notice {
+    width: 50%;
+    padding: 5px 0 0px 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+    background: #fff;
+    color: #4293f4;
+    font-size: 20px;
+}
+
+.xgym {
+    font-size: 30px;
+    color: #2ddb92;
+    padding: 100rpx 0 80rpx 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.tongzhitext {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    width: 100%;
+    line-height: 36px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    box-shadow: 0 12rpx 28rpx 0 rgba(135,146,164,0.08);
+}
+
+.tongzhi-text {
+    font-size: 32rpx;
+    animation: remindMessage 25s linear infinite;
+    width: 100%;
+    display: block;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: white;
+}
+
+.flex-wrap {
+    background: white;
+    padding-top: 32rpx;
+    border-radius: 5px;
+}
+
+.red {
+    color: #e03333;
+}
+
+.data-overview-box .data-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rpx 17px 24rpx 17px;
+    background: #fff;
+    position: relative;
+}
+
+.box {
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inoculation-list {
+    margin: 20rpx 32rpx 0 32rpx;
+    box-shadow: 0 12rpx 28rpx 0 rgba(150,146,164,0.262);
+    padding: 0 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noIclation {
+    font-size: 40rpx;
+    width: 100%;
+    padding-bottom: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.haveIclation {
+    padding: 10rpx 20rpx;
+    box-sizing: border-box;
+    line-height: 50rpx;
+    font-size: 30rpx;
+}
+
+.haveIclation .name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.haveIclation .iclation-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    color: gray;
+    margin-right: 10rpx;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.q {
+    display: flex;
+    padding-top: 15rpx;
+    font-size: 34rpx;
+    font-weight: 800;
+    padding-bottom: 15rpx;
+}
+
+.danger {
+    color: red;
+}
+
+.safe {
+    color: #2ddb92;
+}
+
+.hint {
+    color: #2ddb92;
+    text-align: center;
+    margin-bottom: 20rpx;
+}

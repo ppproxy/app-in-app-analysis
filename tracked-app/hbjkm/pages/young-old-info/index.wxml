@@ -1,0 +1,46 @@
+<view class="young-old">
+    <view class="young-old-info">
+        <view class="young-old-info-title">{{userName?userName:name}}</view>
+        <view class="young-old-info-card">
+            <view>身份证号</view>
+            <view>{{id}}</view>
+        </view>
+    </view>
+    <view class="young-old-code">
+        <view class="young-old-code-time">
+			剩余有效时间 <text>{{time}}s</text>
+        </view>
+        <view class="young-old-code-img">
+            <canvas canvasId="myQrcode" class="myQrcode" style="width: 180px; height: 180px;"></canvas>
+        </view>
+        <view class="q" wx:if="{{hsjc=='阳性'}}">
+				核酸检测：
+				<view class="danger">{{hsjc}}（{{hsjcsj}}）</view>
+        </view>
+        <view class="q" wx:if="{{hsjc=='阴性'}}">核酸检测：
+				<view class="safe">{{hsjc}}（{{hsjcsj}}）</view>
+        </view>
+        <view class="q" wx:if="{{hsjc==''||hsjc==null}}">核酸检测：
+				<view>未检测到核酸检测信息</view>
+        </view>
+        <view class="young-old-code-result" wx:if="{{color=='00'}}">
+			未见异常
+		</view>
+        <view class="young-old-code-wran" wx:if="{{color=='01'}}">
+			{{warnTip}}
+		</view>
+        <view class="young-old-code-red" wx:if="{{color=='10'}}">
+			{{warnTip}}
+		</view>
+        <view class="young-old-code-txt">
+			按照目前掌握的防疫相关数据，暂未发现您存在与防疫相关异常健康状况。防疫相关数据会随着疫情发展及时更新，此查询并不会表示排除您的防疫相关健康风险。
+		</view>
+    </view>
+    <view class="young-old-txt">
+        <view>查询时间：{{now}}</view>
+        <view>注：数据在不断汇聚和完善中，查询结果仅供参考。</view>
+        <view class="young-old-txt-box">
+			以上健康状态为他人代查信息，页面关闭后，本地不保留任何缓存或相关数据。
+		</view>
+    </view>
+</view>

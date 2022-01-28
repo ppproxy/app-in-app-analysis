@@ -1,0 +1,139 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.switch {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.switch__header__label {
+    color: #000;
+    font-size: 36rpx;
+    line-height: 48rpx;
+}
+
+.switch__header__desc {
+    color: #909399;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    margin-top: 19rpx;
+}
+
+.switch__widget {
+    margin-left: 130rpx;
+}
+
+.switch__widget__container {
+    background: #ccc;
+    border-radius: 26rpx;
+    height: 52rpx;
+    position: relative;
+    transition: all .3s;
+    width: 90rpx;
+}
+
+.switch__widget__container::after {
+    background: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 44rpx;
+    left: 0;
+    line-height: 44rpx;
+    position: absolute;
+    top: 4rpx;
+    transform: translate(4rpx,0);
+    transition: all .3s;
+    width: 44rpx;
+    z-index: 1;
+}
+
+.switch__widget__container--checked {
+    background: #4293f4;
+}
+
+.switch__widget__container--checked::after {
+    transform: translate(42rpx,0);
+}

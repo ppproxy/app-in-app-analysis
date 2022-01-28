@@ -1,0 +1,55 @@
+page {
+    line-height: 60rpx;
+}
+
+.title {
+    padding: 40rpx 45rpx;
+    background-color: #eee;
+    font-size: 38rpx;
+}
+
+.content {
+    text-indent: 2em;
+    font-size: 32rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    padding: 0 20rpx;
+}
+
+.tel {
+    padding: 0 20rpx;
+    font-size: 32rpx;
+}
+
+.one {
+    text-indent: 2em;
+}
+
+.three {
+    margin-top: 20rpx;
+}
+
+.P {
+    padding-top: 20rpx;
+    padding-bottom: 60rpx;
+}
+
+.tel text {
+    width: 5em;
+}
+
+.tw {
+    letter-spacing: .33em;
+}
+
+.thr {
+    margin-right: .33em;
+}
+
+.fou {
+    padding-bottom: 40rpx;
+}
+
+.fiv {
+    margin-bottom: 40rpx;
+}

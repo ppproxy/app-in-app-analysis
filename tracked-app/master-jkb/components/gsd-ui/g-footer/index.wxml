@@ -1,0 +1,7 @@
+<view class="g-footer component-class {{fixed?'g-footer--fixed':''}}">
+    <view class="g-footer__content">
+        <view class="g-footer__content__text">
+            <text bindtap="goMessage">北京市大数据中心</text>
+        </view>
+    </view>
+</view>

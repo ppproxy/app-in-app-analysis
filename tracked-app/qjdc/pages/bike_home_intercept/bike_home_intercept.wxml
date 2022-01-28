@@ -1,0 +1,46 @@
+<view class="wx-scan-home">
+    <view class="wx-scan-noCard" wx:if="{{isAuthAndLogin}}">
+        <view class="header wx-scan">
+            <swiper autoplay="{{true}}" class="noCard-home-swiper" interval="{{5000}}">
+                <swiper-item wx:for="{{bannerList}}" wx:key="index">
+                    <ad-tag wx:if="{{item.enableAd?true:false}}"></ad-tag>
+                    <image class="noCard-home-banner" mode="widthFix" src="{{item.img?item.img:item}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="no-card-text">
+            <view class="noCard-title" wx:if="{{cardInfo.title}}">{{cardInfo.title}}</view>
+            <view class="noCard-desc" wx:if="{{cardInfo.desc}}">{{cardInfo.desc}}</view>
+        </view>
+        <view class="no-card-btn">
+            <button-com bindtap="callback" text="{{cardInfo.btnText}}"></button-com>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="header wx-scan">
+            <swiper autoplay="{{true}}" class="home-banner" interval="{{5000}}">
+                <swiper-item wx:for="{{bannerList}}" wx:key="index">
+                    <ad-tag wx:if="{{item.enableAd?true:false}}"></ad-tag>
+                    <image class="home-banner" src="{{item.img?item.img:item}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="border-h1"></view>
+        <action-card bindinitActionCard="initActionCard" bindtap="callback" btn_text="{{[cardInfo.btnText]}}" desc="{{cardInfo.desc}}" icon="{{cardInfo.icon}}" title="{{cardInfo.title}}" wx:if="{{cardInfo.title}}"></action-card>
+        <action-card bindtap="callback" btn_text="{{[cmsCardInfo.btnText]}}" desc="{{cmsCardInfo.desc}}" icon="{{cmsCardInfo.icon}}" title="{{cmsCardInfo.title}}" wx:if="{{cmsCardInfo.title}}"></action-card>
+        <view class="empty-list" wx:if="{{isShowEmptyList}}">
+            <image src="{{imgs.banner}}"></image>
+            <view>以美好骑行 赞美生活</view>
+        </view>
+        <view class="footer-wx-scan">
+            <view class="num-rules-wrapper">
+                <view class="bike-num">No. {{interceptInfo.bikeNum}}</view>
+                <view bindtap="toRules" class="ride-rules">
+                    <view>计价规则</view>
+                    <image class="img" src="{{imgs.rules}}"></image>
+                </view>
+            </view>
+            <button-com bindtap="scan" class="button-com" text="立即开锁"></button-com>
+        </view>
+    </view>
+</view>

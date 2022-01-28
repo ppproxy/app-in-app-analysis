@@ -1,0 +1,158 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.g-upload {
+    margin-top: 7rpx;
+}
+
+.g-upload__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.g-upload__file {
+    margin-right: 21rpx;
+    margin-top: 14rpx;
+    position: relative;
+}
+
+.g-upload__file:nth-of-type(4n) {
+    margin-right: 0;
+}
+
+.g-upload__close {
+    color: #7e7f86;
+    height: 40rpx;
+    line-height: 40rpx;
+    position: absolute;
+    right: -14rpx;
+    top: -14rpx;
+    width: 40rpx;
+    z-index: 2;
+}
+
+.g-upload__file__mask {
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    border: 1px solid #ebebeb;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    font-size: 30rpx;
+    justify-content: center;
+    left: 0;
+    line-height: 150rpx;
+    line-height: 40rpx;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.g-upload__file__mask,.g-upload__img {
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    height: 150rpx;
+    width: 150rpx;
+}
+
+.g-upload__img {
+    border: 1px solid transparent;
+    line-height: 150rpx;
+}
+
+.g-upload__input-box {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    color: #4293f4;
+    display: flex;
+    flex-direction: row;
+    height: 150rpx;
+    justify-content: center;
+    line-height: 150rpx;
+    margin-top: 14rpx;
+    width: 150rpx;
+}

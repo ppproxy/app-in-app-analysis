@@ -1,0 +1,84 @@
+<view class="box" style="min-height:{{windowHeight}}px">
+    <view class="back-view {{!isShowBg?'show':''}}">
+        <view style="width:100%;height:{{systemInfo.statusBarHeight}}px;"></view>
+        <view class="view-title">
+            <view bind:tap="handleOpenRegion" style="margin-right:16rpx;">
+                <g-icon color="#fff" size="34" type="arrow-left"></g-icon>
+            </view>{{str}}</view>
+    </view>
+    <view class="back-view">
+        <view class="back-image"></view>
+    </view>
+    <view class="grzx">
+        <view class="box-gr">
+            <view bind:tap="toArray" class="grl">姓名</view>
+            <view class="grr">{{userInfo.name}}</view>
+        </view>
+        <view class="box-gr">
+            <view class="grl">身份证号码</view>
+            <view class="grr">{{userInfo.idCard}}</view>
+        </view>
+        <view class="box-gr" style="border-bottom:1rpx solid #F0F0F0;" wx:if="{{phone.length>0}}">
+            <view class="grl">手机号码 <image bindtap="xinxi" class="imga" src="{{geren_wenhao}}"></image>
+            </view>
+            <view class="grr">
+                <view wx:for="{{phone}}">
+                    <button bindgetphonenumber="getPhoneNumber" class="phoneBun phonetext" openType="getPhoneNumber" wx:if="{{item.source=='weixin-phone'}}">
+                        <image src="../../../images/grzxBj.png"></image>{{item.phone}}</button>
+                    <view class="phonePos phonetext" style="margin-top:24rpx;" wx:else>
+                        <image bindtap="bindZfb" src="../../../images/grzxWh.svg"></image>{{item.phone}}</view>
+                </view>
+                <view class="SyTime" style="margin-top:24rpx;" wx:for="{{greyPhones}}">{{item.phone}}<text>（剩余<text>{{item.expire}}</text>天）</text>
+                </view>
+            </view>
+        </view>
+        <view class="txts">
+            <text>在您展示健康状态或扫码登记时，以上个人信息将以脱敏形式呈现。</text>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="container">
+            <button bindtap="onTapLogout" class="btn-a">退出登录</button>
+        </view>
+    </view>
+</view>
+<view catchtouchmove class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{zhifubao}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" stsyle="max-height: 588rpx;">
+            <view class="tt">在支付宝APP中点击【我的】-【设置】-【账号与安全】-【手机号】-【修改手机号】。</view>
+            <view class="tt">更换支付宝平台手机号后，重新进入(点击支付宝健康宝小程序右上角【更多(...)】-【重新进入】)支付宝健康宝小程序，该手机号码将同步至支付宝端的北京健康宝小程序。 </view>
+        </scroll-view>
+        <view class="agree">
+            <view bindtap="btnKON">我知道了</view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{phoneNote}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <text class="font"></text>
+        <scroll-view scrollY="true" stsyle="max-height: 588rpx;">
+            <view class="tt">您在“个人中心”中展示的注册手机号码<text class="font">均需</text>在您使用“行程信息查询”服务时进行行程申报。误导性使用手机号码故意掩盖真实行程将承担防疫相关法律责任。</view>
+            <view class="tt">若您需要对手机号换绑，换绑前的手机号将在14天后失效，期间若存在进（返）京行为，<text class="font">仍需</text>对换绑前的手机号进行行程核验。为了不影响您正常使用北京“健康宝”，请<text class="font">及时换绑</text>拟弃用的手机号码。</view>
+            <view class="tt">如有疑问，请拨打12345或在北京“健康宝”留言簿留言。</view>
+        </scroll-view>
+        <view class="agree">
+            <view bindtap="btnPhone">我知道了</view>
+        </view>
+    </view>
+</view>
+<view class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{isHesuan}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>北京健康宝将向国家核酸检测证明查询系统及部分核酸检测部门推送您的姓名和身份证号。您的个人信息仅用于核酸检测结果查询及防疫工作。是否同意继续查询？</text>
+            </view>
+        </scroll-view>
+        <view class="btna1">
+            <view bindtap="showHeSuan" class="tuichu">不同意</view>
+            <view bindtap="showHeSuan1" class="showHeSuan">同意</view>
+        </view>
+    </view>
+</view>

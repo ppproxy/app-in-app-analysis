@@ -1,0 +1,151 @@
+<view class="mine" style="min-height:{{windowHeight}}px;">
+    <mp-navigation-bar back="{{false}}" color="#fff" extClass="obc" title="到访人信息登记簿">
+        <view bind:tap="handleOpenRegion" slot="left">{{value}} <g-icon color="#fff" size="34" type="arrow-left"></g-icon>
+        </view>
+    </mp-navigation-bar>
+    <view class="back-view">
+        <view class="back-image"></view>
+    </view>
+    <view class="wrap1">
+        <view style="box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,0.05);border-radius: 16rpx;overflow: hidden;">
+            <view bindtap="fresh" class="fresh" style="opacity:{{canFresh?1:0.5}}">
+                <image src="./../../../images/fresh.png"></image>
+                <text>刷新</text>
+            </view>
+            <view class="box">
+                <view class="box-gr" wx:if="{{daofang.qrcode_unitname}}"> {{daofang.qrcode_unitname}} </view>
+                <image class="erweima" src="{{qrCodeData}}"></image>
+                <image bindtap="xinxi" class="imga" src="{{daofang_imgUrl.daofang_wenhao}}" style="top:{{daofang.qrcode_unitname?'399rpx':'360rpx'}}"></image>
+            </view>
+            <view class="dcdy">
+                <view bindtap="downloadexl" class="daochu" style="opacity:{{showDownloadexl?0.8:0.5}}" wx:if="{{isOpenBDCheck==1}}">导出登记记录</view>
+                <view bindtap="downloadImg" class="daochu">打印登记簿</view>
+                <view bindtap="delete" class="daochu" style="margin-right:0!important;">删除登记簿</view>
+            </view>
+            <view class="box1">
+                <view class="grzx">
+                    <view class="box-gr">
+                        <view class="grl">登记员姓名</view>
+                        <view class="grr">{{userInfo.name}}</view>
+                    </view>
+                    <view class="box-gr">
+                        <view class="grl">身份证号码</view>
+                        <view class="grr">{{userInfo.idCard}}</view>
+                    </view>
+                    <view class="box-gr" wx:if="{{daofang.qrcode_address}}">
+                        <view class="grl">单位详细地址</view>
+                        <view class="grr">{{daofang.address}}{{daofang.qrcode_address}}</view>
+                    </view>
+                </view>
+                <view class="line"></view>
+                <view class="saomaNum">
+                    <view>
+                        <text class="num">{{renshu_today}}</text>
+                        <text class="text">今日扫码用户数</text>
+                    </view>
+                    <view>
+                        <text class="num">{{renci_today}}</text>
+                        <text class="text">今日次数</text>
+                    </view>
+                </view>
+                <view class="allNum">
+                    <view class="left clearfix">
+                        <text class="text fl">累计扫码用户数</text>
+                        <text class="smallnum fr" style="border-right: 1rpx solid #DEDEDE;padding-right:12rpx;">{{renshu_all}}</text>
+                    </view>
+                    <view class="right clearfix">
+                        <text class="text fl" style="margin-left:24rpx">累计次数</text>
+                        <text class="smallnum fr">{{renci_all}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="saomadate" wx:if="{{showSaoma}}">
+                <text>扫码日期</text>
+                <picker bindchange="bindDateChange" class="picker" end="{{jiesushijian}}" mode="date" start="{{startTime}}" value="{{date}}">
+                    <view class="view" style="display:flex;align-items: center;">
+                        <text style="margin-right:16rpx;">{{rq}}</text>
+                        <g-icon color="#86939C;" size="20" type="arrow-down"></g-icon>
+                    </view>
+                </picker>
+            </view>
+            <view class="title">
+                <text style="display:inline-block;width:95rpx;">姓名</text>
+                <text style="display:inline-block;width:154rpx;">身份证号码</text>
+                <text style="display:inline-block;width:112rpx;">手机号码</text>
+                <text style="display:inline-block;width:111rpx;">健康状态 </text>
+                <view bindtap="changeIcon" style="display:flex;align-items: center;width:197rpx;justify-content:space-around;">
+                    <text style="margin-right:-22rpx;">登记时间</text>
+                    <g-icon color="#86939C;" size="20" type="arrow-down" wx:if="{{!showSaoma}}"></g-icon>
+                    <g-icon color="#86939C;" size="20" type="arrow-up" wx:if="{{showSaoma}}"></g-icon>
+                </view>
+            </view>
+            <view wx:if="{{showSaoma}}">
+                <view class="listItem" wx:for="{{list}}" wx:key="index">
+                    <text style="display:inline-block;width:95rpx;">{{item.scan_name}}</text>
+                    <text style="display:inline-block;width:154rpx;">{{item.scan_card}}</text>
+                    <text style="display:inline-block;width:112rpx;">{{item.scan_phone}}</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: #13C700;" wx:if="{{item.scan_color==0}}">未见异常</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: #FFA349;" wx:if="{{item.scan_color==1}}">居家观察</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: #F52736;" wx:if="{{item.scan_color==2}}">集中观察</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{item.scan_color==-7}}">弹窗</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{item.scan_color==51}}">弹窗</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{item.scan_color==4}}">弹窗</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{item.scan_color==-3}}">弹窗</text>
+                    <text style="display:inline-block;width:197rpx;">
+                        <text>{{item.date}}</text>
+                        <text>{{item.time}}</text>
+                    </text>
+                </view>
+            </view>
+            <view wx:if="{{!showSaoma}}">
+                <view class="listItem">
+                    <text style="display:inline-block;width:95rpx;">{{list[0].scan_name}}</text>
+                    <text style="display:inline-block;width:154rpx;">{{list[0].scan_card}}</text>
+                    <text style="display:inline-block;width:112rpx;">{{list[0].scan_phone}}</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: #13C700;" wx:if="{{list[0].scan_color==0}}">未见异常</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: #FFA349;" wx:if="{{list[0].scan_color==1}}">居家观察</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: #F52736;" wx:if="{{list[0].scan_color==2}}">集中观察</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{list[0].scan_color==-7}}">弹窗</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{list[0].scan_color==51}}">弹窗</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{list[0].scan_color==4}}">弹窗</text>
+                    <text style="display:inline-block;width:111rpx;font-size: 24rpx;color: rgb(153,153,153);" wx:if="{{list[0].scan_color==-3}}">弹窗</text>
+                    <text style="display:inline-block;width:197rpx;">
+                        <text>{{list[0].date}}</text>
+                        <text>{{list[0].time}}</text>
+                    </text>
+                </view>
+            </view>
+            <view class="noData" wx:if="{{list.length==0}}">
+                <image mode="widthFix" src="{{daofang_imgUrl.daofang_noList}} "></image>
+                <text>暂无数据</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove class="poster" wx:if="{{showCanvas}}">
+    <view>
+        <view class="canvas-box">
+            <canvas bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" canvasId="myCanvas" disableScroll="true" style="width:670rpx;height:870rpx;margin:90px auto;border-radius:16rpx;overflow:hidden;"></canvas>
+        </view>
+    </view>
+    <cover-view class="bottomsave">
+        <button bindtap="saveImage" class="saveposter">保存到相册</button>
+        <button class="lines"></button>
+        <button bindtap="cancel" class="cancel">取消</button>
+    </cover-view>
+</view>
+<view catchtouchmove class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{erweimaModal}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" stsyle="max-height: 588rpx;">
+            <view class="tt"> 鼓励以电子登记簿形式使用健康宝登记服务，电子登记簿附带有统计功能，可在页面中显示7天内扫码人员脱敏信息，也可通过“导出登记记录”功能，导出下载7天内登记人员脱敏信息。 </view>
+            <view class="tt">您也可以通过“打印登记簿”功能，将二维码打印张贴使用。 </view>
+            <view class="tt">当您不再使用健康宝登记簿时，您可以点击“删除登记簿”，您的电子登记簿及打印登记簿将失效，历史登记记录将不能再查看。</view>
+        </scroll-view>
+        <view class="agree">
+            <view bindtap="btnKonw">我知道了</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "animation-container": "/components/animation-container0ed911ac/index",
+        "mpx-icon": "/components/iconfd6cf8cc/index"
+    }
+}

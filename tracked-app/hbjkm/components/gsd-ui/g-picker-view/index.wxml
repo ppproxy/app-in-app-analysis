@@ -1,0 +1,7 @@
+<picker-view bindchange="bindChange" class="picker-view" indicatorClass="picker-select" maskClass="picker-mask" style="{{showLineNum?'height: '+showLineNum*80+'rpx':'height: '+80*4+'rpx'}}" value="{{[value]}}">
+    <picker-view-column>
+        <view class="picker-line" wx:for="{{dataList}}" wx:for-index="idx" wx:key="*this">
+      {{item.name?item.name:item}}
+    </view>
+    </picker-view-column>
+</picker-view>

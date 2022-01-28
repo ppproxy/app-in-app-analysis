@@ -1,0 +1,142 @@
+.top-info {
+    margin-bottom: 68rpx;
+}
+
+.top-logo {
+    margin: 42rpx auto 20rpx auto;
+    width: 100rpx;
+    height: 100rpx;
+    background-color: #eaecf6;
+    border-radius: 28rpx;
+}
+
+.top-logo image {
+    width: 100%;
+    height: 100%;
+    border-radius: 28rpx;
+}
+
+.top-name {
+    font-size: 48rpx;
+    line-height: 67rpx;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+}
+
+.top-code {
+    margin: 17.5rpx auto 7.6rpx auto;
+    width: 173rpx;
+    height: 175rpx;
+}
+
+.top-code image {
+    width: 100%;
+    height: 100%;
+}
+
+.top-code-desc {
+    text-align: center;
+    line-height: 33rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.top-btn {
+    margin: 22rpx auto 0 auto;
+    text-align: center;
+}
+
+.top-btn button {
+    border-radius: 28rpx;
+    font-size: 24rpx;
+    color: #000;
+    font-weight: normal;
+    border: 1rpx solid #000;
+    line-height: 45rpx;
+    height: 51rpx;
+    width: 170rpx;
+}
+
+.desc-box {
+    display: flex;
+    background: #fff;
+    box-shadow: 0 8rpx 28rpx 0 rgba(10,55,82,0.10);
+    border-radius: 20rpx;
+    margin: 0 22rpx 32rpx;
+    padding: 24rpx;
+}
+
+.desc-box-list {
+    margin-bottom: 200rpx;
+}
+
+.desc-box--hover {
+    background: #deedff;
+    box-shadow: 0 12rpx 18rpx 0 rgba(66,147,244,0.30);
+}
+
+.desc-box--disabled {
+    background: rgba(0,0,0,0.05);
+}
+
+.desc-box .desc-content {
+    flex: 1;
+    text-align: left;
+    padding: 0;
+}
+
+.desc-box .desc-content .title {
+    font-size: 32rpx;
+    color: #000;
+    line-height: 45rpx;
+    font-weight: bold;
+    border-left: 7rpx solid #2872ff;
+    padding-left: 16rpx;
+}
+
+.desc-box .desc-content .desc {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+    margin-top: 24rpx;
+}
+
+.cc-recombox .cc-goods-item {
+    width: 287rpx!important;
+}
+
+.cc-recombox {
+    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cc-recombox {
+    white-space: nowrap;
+    overflow-x: auto;
+    background: #fff;
+    padding: 20rpx;
+}
+
+.cc-recombox .cc-termbox {
+    width: 420rpx;
+    display: inline-block;
+    white-space: normal;
+}
+
+.cc-recombox .cc-termbox:not(:last-child) {
+    margin-right: 20rpx;
+}
+
+.cc-scale-rule {
+    top: 0;
+    left: 0;
+    width: 247rpx;
+    height: 379rpx;
+}
+
+.cc-goods-imgbox {
+    width: 100%;
+    position: relative;
+}

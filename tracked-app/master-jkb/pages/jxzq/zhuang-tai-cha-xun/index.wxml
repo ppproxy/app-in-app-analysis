@@ -1,0 +1,84 @@
+<view class="mine" style="min-height:{{windowHeight}}px;">
+    <view class="title" wx:if="{{data.othersList.length>0}}">
+        <view>查询记录</view>
+        <view bindtap="guanli" class="guanli">删除</view>
+    </view>
+    <view class="box box1" wx:if="{{data.othersList.length>0}}" wx:for="{{othersList}}">
+        <view class="sf">
+            <image src="https://xcx-static.yqgz.beijing.gov.cn/images/yx.png" wx:if="{{item.activeStatus=='1'}}"></image>
+            <image src="https://xcx-static.yqgz.beijing.gov.cn/images/sx.png" wx:elif="{{item.activeStatus=='2'}}"></image>
+        </view>
+        <g-cell bind:tap="handleTap1" data-id="{{item}}" myClassContent="myClassContent">
+            <view slot="content">
+                <view class="box-tit">{{item.userName}}</view>
+                <view class="box-txt">
+                    <view class="left">身份证号</view>
+                    <view class="right">{{item.hideIdCard}}</view>
+                </view>
+            </view>
+        </g-cell>
+    </view>
+    <view bind:tap="tianjia" class="po">
+        <view class="sf1">
+            <image class="img" src="../../../images/icon.png"></image>
+        </view>
+        <button class="sure" type="primary">
+            <view class="bits">添加他人健康状态 </view>
+        </button>
+    </view>
+    <view class="bot">注：最多代查4人健康状态</view>
+</view>
+<view class="top123 " style="min-height:{{windowHeight}}px;" wx:if="{{isNo}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt123" style="padding-bottom:40rpx;">
+                <view>疫情无小事，大家共防守！由于您近期可能有到访或途经疫情风险地区情况，北京“健康宝”暂不能确认您的防疫相关健康状态。按照北京市防疫政策要求，若您在京，请立即联系居住社区；若在京外，请暂缓来京。如有疑问或异议，请致电12345市民服务热线或点击“我有疑问”留言。 </view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="showZd" class="tuichu123">我知道了</view>
+            <view bindtap="showYw" class="showHeSuan123">我有疑问</view>
+        </view>
+    </view>
+</view>
+<view class="top123 cj" style="min-height:{{windowHeight}}px;" wx:if="{{wisNo}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="wenhao" style="padding-bottom:40rpx;">
+                <view class="shouhang">您的居住社区将根据北京市防疫政策，判定您是否需要进行隔离并解除您的“弹窗状态”。您可能遇到以下3类情况：</view>
+                <view>1.如需要隔离，您将转为“居家观察”状态。</view>
+                <view>2.如不需要隔离，您将转为“未见异常”状态。</view>
+                <view>3.如您未主动到社区报到，且未发生涉疫健康问题，系统默认弹窗14天后自动解除。</view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="wHao" class="wozhidaole">我知道了</view>
+        </view>
+    </view>
+</view>
+<view class="top123 " style="min-height:{{windowHeight}}px;" wx:if="{{lulukouan}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt123" style="padding-bottom:40rpx;">
+                <view>按照北京市防疫政策，请您暂缓来京。如有疑问，请与12345市民服务热线联系咨询，感谢您的理解与配合。</view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="luluqueding" class="showHeSuan123 lulu">确定</view>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{scanWrong}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt">
+                <text>按照北京市入境防疫隔离政策，您目前正处于入境隔离期间（未满21天），请您严格履行个人防疫义务并做好个人防护。如有疑问，请致电（010）12345市民服务热线咨询。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btnScanWrong" class="btn">我知道了</view>
+    </view>
+</view>

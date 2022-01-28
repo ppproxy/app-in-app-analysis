@@ -1,0 +1,16 @@
+<checkbox-group bind:change="handleChange">
+    <label class="agree">
+        <view class="agree__checkbox__container">
+            <checkbox checked="{{value}}" class="agree__checkbox" id="agree" value="agree"></checkbox>
+            <view class="checkbox__icon">
+                <view hidden="{{!value}}">
+                    <g-icon class="checkbox__icon--checked" size="32" type="check"></g-icon>
+                </view>
+                <view class="checkbox__icon--unchecked" hidden="{{value}}"></view>
+            </view>
+        </view>
+        <view class="agree__desc">
+            <slot></slot>
+        </view>
+    </label>
+</checkbox-group>

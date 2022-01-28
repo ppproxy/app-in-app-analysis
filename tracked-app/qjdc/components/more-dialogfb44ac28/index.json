@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "animation-container": "/components/animation-container0ed911ac/index"
+    }
+}

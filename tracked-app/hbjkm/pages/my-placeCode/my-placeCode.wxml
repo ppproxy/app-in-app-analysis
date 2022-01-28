@@ -1,0 +1,55 @@
+<poster config="{{posterConfig}}" hideLoading="{{true}}" id="poster" preload="{{false}}"></poster>
+<view class="box">
+    <view class="title">
+		{{gateName}}
+	</view>
+    <view class="code">
+        <view class="c">
+            <image src="{{url}}"></image>
+        </view>
+    </view>
+    <view class="msg">
+        <view class="line">
+            <view class="one">类型</view>
+            <view class="two" wx:if="{{gateType==1}}">其他</view>
+            <view class="two" wx:if="{{gateType==107}}">车站机场码头</view>
+            <view class="two" wx:if="{{gateType==2}}">公共交通工具</view>
+            <view class="two" wx:if="{{gateType==106}}">交通卡口</view>
+            <view class="two" wx:if="{{gateType==105}}">公共管理和服务场所</view>
+            <view class="two" wx:if="{{gateType==104}}">居民小区</view>
+            <view class="two" wx:if="{{gateType==103}}">企业</view>
+            <view class="two" wx:if="{{gateType==102}}">医疗卫生机构</view>
+            <view class="two" wx:if="{{gateType==101}}">教育机构</view>
+            <view class="two" wx:if="{{gateType==100}}">商超餐饮</view>
+        </view>
+        <view class="line" wx:if="{{gateType!=2}}">
+            <view class="one">地址</view>
+            <view class="two">{{address}}</view>
+        </view>
+        <view class="line" wx:if="{{gateType==2}}">
+            <view class="one">车牌号码</view>
+            <view class="two">{{carNo}}</view>
+        </view>
+        <view class="line">
+            <view class="one">联系人</view>
+            <view class="two">{{name}}</view>
+        </view>
+        <view class="line">
+            <view class="one">联系电话</view>
+            <view class="two">{{phone}}</view>
+        </view>
+    </view>
+    <view>
+        <view class="ps-title">说明</view>
+        <view class="ps-line">1.每个实名用户能够生成1个场所码</view>
+        <view class="ps-line">2.可将场所码保存至手机相册，打印后张贴在入口</view>
+    </view>
+    <view class="btn-box">
+        <view class="left">
+            <button bind:tap="del">删除场所码</button>
+        </view>
+        <view class="right">
+            <button bind:tap="save" hoverClass="right-content-two">保存至手机相册</button>
+        </view>
+    </view>
+</view>

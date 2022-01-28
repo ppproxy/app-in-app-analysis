@@ -1,0 +1,11 @@
+<view class="g-table">
+    <block wx:if="{{!scroll}}">
+        <view class="g-table__header">
+            <g-table-header columns="{{columns}}"></g-table-header>
+        </view>
+        <view class="g-table__body">
+            <g-table-body columns="{{columns}}" data="{{data}}"></g-table-body>
+        </view>
+    </block>
+    <g-table-scroll columns="{{columns}}" data="{{data}}" wx:else></g-table-scroll>
+</view>

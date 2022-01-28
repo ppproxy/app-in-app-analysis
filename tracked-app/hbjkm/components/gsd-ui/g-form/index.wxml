@@ -1,0 +1,14 @@
+<view>
+    <g-tips closeable catch:close="handleTipsClose" isShow="{{_tipsShow}}" position="fixed" status="warn" wx:if="{{showTips}}">
+    {{_tipsMessage}}
+  </g-tips>
+    <form class="form">
+        <slot></slot>
+        <slot name="content"></slot>
+        <g-button-group agree="{{showAgree}}" autoAgree="{{autoAgree}}" catch:primaryTap="handleSubmit" catch:secondTap="handleSecondTap" direction="{{buttonDirection}}" disabled="{{disabled}}" primaryText="{{primaryText}}" secondText="{{secondText}}">
+            <view slot="agree" wx:if="{{showAgree}}">
+                <slot name="agree"></slot>
+            </view>
+        </g-button-group>
+    </form>
+</view>

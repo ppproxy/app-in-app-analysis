@@ -1,0 +1,4 @@
+.ad-container {
+    border-radius: 14rpx;
+    padding: 0 20rpx;
+}

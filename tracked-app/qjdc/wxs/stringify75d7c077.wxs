@@ -1,0 +1,246 @@
+module.exports = ((function(modules) {
+    var installedModules = ({});
+
+    function __webpack_require__(moduleId) {
+        if (installedModules[((nt_0 = (moduleId), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))]) {
+            return (installedModules[((nt_1 = (moduleId), null == nt_1 ? undefined : 'number' === typeof nt_1 ? nt_1 : "" + nt_1))].exports)
+        };
+        var module = installedModules[((nt_2 = (moduleId), null == nt_2 ? undefined : 'number' === typeof nt_2 ? nt_2 : "" + nt_2))] = ({
+            i: moduleId,
+            l: false,
+            exports: ({}),
+        });
+        modules[((nt_3 = (moduleId), null == nt_3 ? undefined : 'number' === typeof nt_3 ? nt_3 : "" + nt_3))](module, module.exports, __webpack_require__);
+        module.l = true;
+        return (module.exports)
+    };
+    __webpack_require__.d = (function(exports, name, getter) {
+        exports[((nt_4 = (name), null == nt_4 ? undefined : 'number' === typeof nt_4 ? nt_4 : "" + nt_4))] = getter()
+    });
+    __webpack_require__.r = (function(exports) {
+        exports.__esModule = true
+    });
+    __webpack_require__.n = (function(module) {
+        var getter = module && module.__esModule ? function getDefault() {
+            return (module[("" + "default")])
+        } : function getModuleExports() {
+            return (module)
+        };
+        getter.a = getter();
+        return (getter)
+    });
+    var entryExports = __webpack_require__(__webpack_require__.s = 0);
+    return (entryExports && entryExports.__esModule ? entryExports[("" + "default")] : entryExports)
+}))([((function(module, exports, __webpack_require__) {
+    function objectKeys(obj) {
+        if (false)({});
+        else {
+            var keys = [];
+            var stackMap = ({
+                '{': '}',
+                '[': ']',
+                '(': ')',
+            });
+            var shiftMap = ({
+                'n': '\n',
+                'b': '\x5cb',
+                'f': '\x5cf',
+                'r': '\r',
+                't': '\t',
+            });
+            if (typeof obj === 'object') {
+                var objStr = JSON.stringify(obj);
+                if (objStr[(0)] === '{' && objStr[((nt_8 = (objStr.length - 1), null == nt_8 ? undefined : 'number' === typeof nt_8 ? nt_8 : "" + nt_8))] === '}') {
+                    var key = '';
+                    var inKey = true;
+                    var stack = [];
+                    var shift = false;
+                    for (var i = 1; i < objStr.length - 1; i++) {
+                        var item = objStr[((nt_9 = (i), null == nt_9 ? undefined : 'number' === typeof nt_9 ? nt_9 : "" + nt_9))];
+                        if (inKey) {
+                            if (item === ':') {
+                                keys.push(key.slice(1, -1));
+                                key = '';
+                                inKey = false
+                            } else {
+                                if (shift === false && item === '\\x5c') {
+                                    shift = true;
+                                    continue
+                                };
+                                if (shift) {
+                                    item = shiftMap[((nt_10 = (item), null == nt_10 ? undefined : 'number' === typeof nt_10 ? nt_10 : "" + nt_10))] || item;
+                                    shift = false
+                                };
+                                key += item
+                            }
+                        } else {
+                            if (stackMap[((nt_11 = (item), null == nt_11 ? undefined : 'number' === typeof nt_11 ? nt_11 : "" + nt_11))]) {
+                                stack.push(item)
+                            } else if (stackMap[((nt_12 = (stack[((nt_13 = (stack.length - 1), null == nt_13 ? undefined : 'number' === typeof nt_13 ? nt_13 : "" + nt_13))]), null == nt_12 ? undefined : 'number' === typeof nt_12 ? nt_12 : "" + nt_12))] === item) {
+                                stack.pop()
+                            } else if (stack.length === 0 && item === ',') {
+                                inKey = true
+                            }
+                        }
+                    }
+                }
+            };
+            return (keys)
+        }
+    };
+
+    function genRegExp(str, flags) {
+        if (false)({});
+        else {
+            return (getRegExp(str, flags))
+        }
+    };
+
+    function extend(target, from) {
+        var fromKeys = objectKeys(from);
+        for (var i = 0; i < fromKeys.length; i++) {
+            var key = fromKeys[((nt_14 = (i), null == nt_14 ? undefined : 'number' === typeof nt_14 ? nt_14 : "" + nt_14))];
+            target[((nt_15 = (key), null == nt_15 ? undefined : 'number' === typeof nt_15 ? nt_15 : "" + nt_15))] = from[((nt_16 = (key), null == nt_16 ? undefined : 'number' === typeof nt_16 ? nt_16 : "" + nt_16))]
+        };
+        return (target)
+    };
+
+    function concat(a, b) {
+        return (a ? b ? (a + ' ' + b) : a : (b || ''))
+    };
+
+    function isObject(obj) {
+        return (obj !== null && typeof obj === 'object')
+    };
+
+    function likeArray(arr) {
+        if (false)({});
+        else {
+            return (arr && arr.constructor === 'Array')
+        }
+    };
+
+    function isDef(v) {
+        return (v !== undefined && v !== null)
+    };
+
+    function stringifyDynamicClass(value) {
+        if (!value) return ('');;
+        if (likeArray(value)) {
+            return (stringifyArray(value))
+        };
+        if (isObject(value)) {
+            return (stringifyObject(value))
+        };
+        if (typeof value === 'string') {
+            return (value)
+        };
+        return ('')
+    };
+
+    function stringifyArray(value) {
+        var res = '';
+        var stringified;
+        for (var i = 0; i < value.length; i++) {
+            if (isDef(stringified = stringifyDynamicClass(value[((nt_17 = (i), null == nt_17 ? undefined : 'number' === typeof nt_17 ? nt_17 : "" + nt_17))])) && stringified !== '') {
+                if (res) res += ' ';;
+                res += stringified
+            }
+        };
+        return (res)
+    };
+    var mpxDashReg = genRegExp('(.+)MpxDash$');
+
+    function stringifyObject(value) {
+        var res = '';
+        var objKeys = objectKeys(value);
+        for (var i = 0; i < objKeys.length; i++) {
+            var key = objKeys[((nt_18 = (i), null == nt_18 ? undefined : 'number' === typeof nt_18 ? nt_18 : "" + nt_18))];
+            if (value[((nt_19 = (key), null == nt_19 ? undefined : 'number' === typeof nt_19 ? nt_19 : "" + nt_19))]) {
+                if (res) res += ' ';;
+                if (mpxDashReg.test(key)) {
+                    key = hump2dash(mpxDashReg.exec(key)[(1)])
+                };
+                res += key
+            }
+        };
+        return (res)
+    };
+
+    function hump2dash(value) {
+        var reg = genRegExp('[A-Z]', 'g');
+        return (value.replace(reg, (function(match) {
+            return ('-' + match.toLowerCase())
+        })))
+    };
+
+    function dash2hump(value) {
+        var reg = genRegExp('-([a-z])', 'g');
+        return (value.replace(reg, (function(match, p1) {
+            return (p1.toUpperCase())
+        })))
+    };
+
+    function parseStyleText(cssText) {
+        var res = ({});
+        var listDelimiter = genRegExp(';(?![^(]*[)])', 'g');
+        var propertyDelimiter = genRegExp(':(.+)');
+        var arr = cssText.split(listDelimiter);
+        for (var i = 0; i < arr.length; i++) {
+            var item = arr[((nt_21 = (i), null == nt_21 ? undefined : 'number' === typeof nt_21 ? nt_21 : "" + nt_21))];
+            if (item) {
+                var tmp = item.split(propertyDelimiter);
+                if (tmp.length > 1) {
+                    var k = dash2hump(tmp[(0)].trim());
+                    res[((nt_23 = (k), null == nt_23 ? undefined : 'number' === typeof nt_23 ? nt_23 : "" + nt_23))] = tmp[(1)].trim()
+                }
+            }
+        };
+        return (res)
+    };
+
+    function genStyleText(styleObj) {
+        var res = '';
+        var objKeys = objectKeys(styleObj);
+        for (var i = 0; i < objKeys.length; i++) {
+            var key = objKeys[((nt_25 = (i), null == nt_25 ? undefined : 'number' === typeof nt_25 ? nt_25 : "" + nt_25))];
+            var item = styleObj[((nt_26 = (key), null == nt_26 ? undefined : 'number' === typeof nt_26 ? nt_26 : "" + nt_26))];
+            res += hump2dash(key) + ':' + item + ';'
+        };
+        return (res)
+    };
+
+    function mergeObjectArray(arr) {
+        var res = ({});
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[((nt_27 = (i), null == nt_27 ? undefined : 'number' === typeof nt_27 ? nt_27 : "" + nt_27))]) {
+                extend(res, arr[((nt_28 = (i), null == nt_28 ? undefined : 'number' === typeof nt_28 ? nt_28 : "" + nt_28))])
+            }
+        };
+        return (res)
+    };
+
+    function normalizeDynamicStyle(value) {
+        if (!value) return (({}));;
+        if (likeArray(value)) {
+            return (mergeObjectArray(value))
+        };
+        if (typeof value === 'string') {
+            return (parseStyleText(value))
+        };
+        return (value)
+    };
+    module.exports = ({
+        stringifyClass: (function(staticClass, dynamicClass) {
+            if (typeof staticClass !== 'string') {
+                return (console.log('Template attr class must be a string!'))
+            };
+            return (concat(staticClass, stringifyDynamicClass(dynamicClass)))
+        }),
+        stringifyStyle: (function(staticStyle, dynamicStyle) {
+            var normalizedDynamicStyle = normalizeDynamicStyle(dynamicStyle);
+            var parsedStaticStyle = typeof staticStyle === 'string' ? parseStyleText(staticStyle) : ({});
+            return (genStyleText(extend(parsedStaticStyle, normalizedDynamicStyle)))
+        }),
+    })
+}))]);

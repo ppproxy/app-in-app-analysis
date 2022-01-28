@@ -1,0 +1,19 @@
+<view class="wrap">
+    <view>
+        <view class="application-title">{{applicationType}}</view>
+        <view class="application-info">
+            <view class="name text-overflow">名称：{{name}}</view>
+            <view class="address text-overflow">地址： {{address}}</view>
+        </view>
+        <view class="btn-wrap">
+            <button bindtap="handleSubmuit" class="btn submuit" type="primary">提交申请</button>
+        </view>
+    </view>
+    <view class="desc">
+        <view class="desc-title">说明：</view>
+        <view>1.提交申请后，你将授权相关审核员读取你的实名信息、证件号码及手机号码</view>
+        <view>2.审核员将进行身份审核，并有权拒绝你的申请</view>
+        <view>3.你可以在“我的关联信息”查询申请状态</view>
+        <view>4.请不要重复提交申请</view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="unlocking-page">
+    <navigation-bar></navigation-bar>
+    <view class="map-unlocking">
+        <map-common bFixedParkAreaBestView="{{false}}" bindinitMap="initMap" bindtocloseBubble="closeMapBubble" bindtocustom="toCustom" bizType="{{bizType}}" class="map-bike" isLocation="{{false}}" isShowFixedParkingArea="{{isShowFixedParkingArea}}" isShowParking="{{false}}" isShowProbe="{{isShowProbe}}" isShowVehicle="{{false}}" linkImg="{{false}}" mapStyle="{{mapStyle}}" opRegionBestView="{{true}}" toReportVehicleId="{{toReportVehicleId}}"></map-common>
+    </view>
+    <view class="card" style="{{cardStyle}}">
+        <Webp-image class="edu-img" mode="widthFix" src="{{eduImg}}"></Webp-image>
+        <Webp-image bindtap="toCustom" class="custom" src="https://pt-starimg.didistatic.com/static/starimg/img/ewlqJcMu0G1599098582262.png" wx:if="{{unlockStatus===2}}"></Webp-image>
+        <unlocking-new-top bindapplyRepair="applyRepair" failDesc="{{unlockStatus===2?unlockConfigInfo.subTitle:''}}" status="{{unlockStatus}}" title="{{unlockTitle+(unlockStatus===0?unlockState+'%':'')}}"></unlocking-new-top>
+        <edu bindtoFind="toFind" bindtoScan="toScan" bizType="{{bizType}}" class="edu-card" unlockStatus="{{unlockStatus}}"></edu>
+        <company-link class="companyInfo" wx:if="{{isEBike&&unlockStatus!==2}}"></company-link>
+    </view>
+</view>

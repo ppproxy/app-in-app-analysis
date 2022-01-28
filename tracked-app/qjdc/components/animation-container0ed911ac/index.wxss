@@ -1,0 +1,144 @@
+.animation-container-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.animation-container-wrapper.isShow {
+    transform: translateX(0);
+}
+
+.animation-container-wrapper.isShow .animation-container-content.scale-back,.animation-container-wrapper.isShow .animation-container-content.scale-down {
+    animation: mpx-animation-container-scale .3s linear both;
+}
+
+.animation-container-wrapper.isShow .animation-container-content.up-down {
+    animation: mpx-animation-container-up .3s linear both;
+}
+
+.animation-container-wrapper.isShow .animation-container-content.right-left {
+    animation: mpx-animation-container-right .3s linear both;
+}
+
+.animation-container-wrapper.isHide {
+    animation: mpx-animation-container-hide .3s linear both;
+}
+
+.animation-container-wrapper.isHide .animation-container-content.scale-back {
+    animation: mpx-animation-container-minscale .3s linear both;
+}
+
+.animation-container-wrapper.isHide .animation-container-content.scale-down,.animation-container-wrapper.isHide .animation-container-content.up-down {
+    animation: mpx-animation-container-down .3s linear both;
+}
+
+.animation-container-wrapper.isHide .animation-container-content.right-left {
+    animation: mpx-animation-container-left .3s linear both;
+}
+
+.animation-container-wrapper .animation-container-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.animation-container-wrapper .animation-container-content.iPhoneX-wrapper {
+    padding-bottom: 34px;
+}
+
+.animation-container-wrapper .animation-container-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba(37,38,45,.4);
+    transition: all .3s linear;
+}
+
+@-webkit-keyframes mpx-animation-container-hide {
+    0% {
+        transform: translateX(0);
+    }
+
+    99% {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes mpx-animation-container-scale {
+    0% {
+        transform: scale(.9);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes mpx-animation-container-up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes mpx-animation-container-minscale {
+    0% {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+@-webkit-keyframes mpx-animation-container-down {
+    0% {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@-webkit-keyframes mpx-animation-container-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes mpx-animation-container-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

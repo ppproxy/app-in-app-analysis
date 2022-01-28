@@ -1,0 +1,78 @@
+.full-screen-pop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.full-screen-pop .f-body {
+    background-color: rgba(0,0,0,.6);
+    height: 100%;
+    position: relative;
+    animation-name: zoomIn;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+.full-screen-pop .f-mask {
+    width: 100%;
+    height: calc(100% - 361rpx);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #060719;
+    border-top-left-radius: 750rpx;
+    border-top-right-radius: 750rpx;
+}
+
+.full-screen-pop .f-mask .f-close {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+}
+
+.full-screen-pop .f-mask .f-close image {
+    height: 44rpx;
+    width: 44rpx;
+}
+
+.full-screen-pop .f-mask .f-content {
+    margin-top: 210rpx;
+    text-align: center;
+}
+
+.full-screen-pop .f-mask .f-content .f-describe {
+    font-size: 38rpx;
+    color: #14d0b4;
+}
+
+.full-screen-pop .f-mask .f-content .f-button {
+    margin-top: 30rpx;
+    background: #14d0b4;
+    border-radius: 100rpx;
+    font-size: 38rpx;
+    color: #06081a;
+    text-align: center;
+    padding: 16rpx 66rpx;
+    display: inline-block;
+}
+
+.full-screen-pop .f-mask .f-content .f-img {
+    width: 750rpx;
+    height: 420rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@-webkit-keyframes zoomIn {
+    0% {
+        transform: translate3d(0,100%,0);
+    }
+
+    to {
+        transform: none;
+    }
+}

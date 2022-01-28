@@ -1,0 +1,153 @@
+<view class="icon-box" style="height:50rpx" wx:if="{{flag==2}}"></view>
+<view class="icon-box" wx:if="{{flag==1}}">
+    <image src="../../images/yes.svg" wx:if="{{flag==1}}"></image>
+    <text class="state safe">{{hasWarm}}</text>
+</view>
+<view class="icon-box" wx:if="{{flag==0}}">
+    <view class="warnbox">
+        <view class=" warn warn-tit">通过数据库查询，您有以下出行提示：</view>
+        <view class=" warn" wx:if="{{this_province}}">1、{{warmMsgs}}</view>
+        <view class=" warn" wx:if="{{!this_province}}" wx:for="{{warmMsgs}}">{{index+1}}、{{item}}</view>
+    </view>
+</view>
+<view class="ps" style="height:100rpx" wx:if="{{flag==2}}"></view>
+<view class="ps" wx:if="{{flag==1}}">
+    <text>按照目前掌握的防疫相关数据，暂未发现您存在与防疫相关的异常健康状况。防疫相关数据会随着疫情发展及时更新，此次查询并不会表示排除您的防疫相关健康风险。</text>
+</view>
+<view class="psTwo">
+    <text>注：数据在不断汇聚和完善中，查询结果仅供参考。</text>
+</view>
+<view class="question-box">
+    <view class="title">确诊、疑似患者查询结果</view>
+    <view class="question-answer">
+        <view class="one">是否为确诊或疑似患者？</view>
+        <view class="two">{{warnType}}</view>
+    </view>
+</view>
+<view class="question-box">
+    <view class="title">核酸、抗体检测信息</view>
+    <view class="question-answer">
+        <view class="one">是否做核酸检测？</view>
+        <view class="two" wx:if="{{hsjc=='阳性'||hsjc=='阴性'}}">是</view>
+        <view class="two" wx:else>暂未查询到数据</view>
+    </view>
+    <view class="question-answer" wx:if="{{hsjc=='阳性'||hsjc=='阴性'}}">
+        <view class="one">检测结果</view>
+        <view class="two">{{hsjc}}</view>
+    </view>
+    <view class="question-answer" wx:if="{{hsjc=='阳性'||hsjc=='阴性'}}">
+        <view class="one">检测机构</view>
+        <view class="two">{{hsjcjg}}</view>
+    </view>
+    <view class="question-answer" wx:if="{{hsjc=='阳性'||hsjc=='阴性'}}">
+        <view class="one">检测时间</view>
+        <view class="two">{{hsjcsj}}</view>
+    </view>
+    <view class="question-answer" style="border-top: 1px solid #eee;">
+        <view class="one">是否做抗体检测？</view>
+        <view class="two" wx:if="{{ktjc=='阳性'||ktjc=='阴性'}}">是</view>
+        <view class="two" wx:else>暂未查询到数据</view>
+    </view>
+    <view class="question-answer" wx:if="{{ktjc=='阳性'||ktjc=='阴性'}}">
+        <view class="one">检测结果</view>
+        <view class="two">{{ktjc}}</view>
+    </view>
+    <view class="question-answer" wx:if="{{ktjc=='阳性'||ktjc=='阴性'}}">
+        <view class="one">检测机构</view>
+        <view class="two">{{ktjcjg}}</view>
+    </view>
+    <view class="question-answer" wx:if="{{ktjc=='阳性'||ktjc=='阴性'}}">
+        <view class="one">检测时间</view>
+        <view class="two">{{ktjcsj}}</view>
+    </view>
+    <view class="explanation" style="border-top: 1px solid #eee; background-color:white;">注：7天内的核酸和抗体检测数据在不断汇聚和完善中，查询结果仅供参考。</view>
+</view>
+<view class="question-box">
+    <view class="title">同行密接查询结果</view>
+    <view class="question-answer">
+        <view class="one">是否与确诊或疑似患者同行密切接触？</view>
+        <view class="two">{{people}}</view>
+    </view>
+    <view class="explanation">同行密接数据为：截止到当前日期14天内，和确诊或疑似患者同乘火车，飞机前后三排（共七排）的相关人员。</view>
+</view>
+<view class="question-box">
+    <view class="title">入境人员查询结果</view>
+    <view class="question-answer s">
+        <view class="one">是否为近14天内从境外入境人员？</view>
+        <view class="two">{{rjry}}</view>
+    </view>
+    <view class="P">数据来源：国家"互联网+监管"平台</view>
+</view>
+<view class="question-box">
+    <view class="title">近14天境内外行程申报与查询结果</view>
+    <view class="question-answer s">
+        <view class="one">申报时间</view>
+        <view class="two">{{xcgjAllListString[0].date}}</view>
+    </view>
+    <view class="boxx" wx:for="{{xcgjAllListString}}">
+        <view class="question-answe s">
+            <view class="one">{{item.name}}</view>
+            <view class="two">{{item.fxdj}}</view>
+        </view>
+    </view>
+    <view class="boxx" wx:if="{{xcgjAllListString==''}}">
+        <view class="none">
+            <text>今日未申报行程</text>
+        </view>
+    </view>
+    <view class="P">中国信通院联合电信、移动、联通提供相关技术支持</view>
+</view>
+<view class="question-box">
+    <view class="title">已关联的地方健康码信息</view>
+    <view style="border-bottom:1px solid #eee" wx:for="{{healthyReport}}">
+        <view class="question-answer-three">
+            <view class="one">数据来源</view>
+            <view class="two">{{item.dataSource}}</view>
+        </view>
+        <view class="question-answer-three">
+            <view class="one">健康状态</view>
+            <view class="two">{{item.healthyStaus}}</view>
+        </view>
+        <view class="question-answer-three">
+            <view class="one">健康报告日期</view>
+            <view class="two">{{item.date}}</view>
+        </view>
+    </view>
+    <view style="border-bottom:1px solid #eee" wx:if="{{healthyReport==''}}">
+        <view class="none">
+            <text>暂无地方健康码信息</text>
+        </view>
+    </view>
+</view>
+<view class="question-box b">
+    <view class="title">健康申报信息</view>
+    <view class="question-answer">
+        <view class="one">健康打卡时间</view>
+        <view class="two">{{time}}</view>
+    </view>
+    <view class="question-answer">
+        <view class="one">当前居住地址</view>
+        <view class="two">{{area}}</view>
+    </view>
+    <view class="question-answer">
+        <view class="one">居住地风险等级</view>
+        <view class="two">{{xzqhfxdj}}</view>
+    </view>
+    <view class="question-answer">
+        <view class="one">近14天内您是否接触新冠肺炎确诊或疑似患者？</view>
+        <view class="two">{{isContactPatient}}</view>
+    </view>
+    <view class="question-answer ">
+        <view class="one">当前健康状况</view>
+        <view class="two">{{symptom}}</view>
+    </view>
+    <view class="question-answer">
+        <view class="one">当前体温(°C)</view>
+        <view class="two">{{temperature}}</view>
+    </view>
+    <view class="question-answer">
+        <view class="one">联系电话</view>
+        <view class="two">{{phone}}</view>
+    </view>
+</view>
+<view bindtap="goto" class="report">查看被代领人打卡记录</view>

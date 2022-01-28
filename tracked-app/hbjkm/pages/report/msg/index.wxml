@@ -1,0 +1,2 @@
+<g-msg footerFixed bind:primaryTap="handleSecondTap" desc="您已经成功提交。" primaryText="返回首页" status="success" title="提交成功" wx:if="{{source=='report'}}"></g-msg>
+<g-msg footerFixed bind:primaryTap="handlePrimaryTap" bind:secondTap="handleSecondTap" desc="{{isFromBuy==1?'您已经成功提交，可进行口罩预约。':'您已经成功提交，可立即生成健康码'}}" primaryText="{{isFromBuy==1?'立即预约':'立即生成健康码'}}" secondText="{{isFromBuy==1?'返回首页':''}}" status="success" title="提交成功" wx:else></g-msg>

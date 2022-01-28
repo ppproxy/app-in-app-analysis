@@ -1,0 +1,5 @@
+<view class="wrap">
+    <view class="sheng-box">
+        <view bindtap="detail" class="sheng" data-id="{{item}}" wx:for="{{list}}" wx:key="{{index}}">{{item.name}}</view>
+    </view>
+</view>

@@ -1,0 +1,1 @@
+<view class="{{'ad-flag '+textClass}}" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">广告</view>

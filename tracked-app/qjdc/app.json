@@ -1,0 +1,155 @@
+{
+    "pages": [
+        "pages/init/init",
+        "pages/bike_home_intercept/bike_home_intercept",
+        "pages/unlocking/unlocking",
+        "pages/transfer/transfer",
+        "pages/search_result/search_result",
+        "pages/blank/blank",
+        "pages/secondLevel/my/my",
+        "pages/pay/pay",
+        "pages/secondLevel/map_find_bike/map_find_bike",
+        "pages/secondLevel/appointment_bike/appointment_bike",
+        "pages/insurance_protocol/insurance_protocol",
+        "pages/secondLevel/no_secret_pay/no_secret_pay",
+        "pages/common_pay/common_pay",
+        "pages/secondLevel/common_share/common_share",
+        "pages/account-delete"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "滴滴青桔",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#f3f4f5",
+        "renderingMode": "mixed"
+    },
+    "subPackages": [
+        {
+            "root": "subpackages/useBikePreProcess/",
+            "pages": [
+                "map_find_bike/map_find_bike",
+                "appointment_bike/appointment_bike",
+                "appointment_rule/appointment_rule",
+                "new_user_search/new_user_search",
+                "search_location/search_location",
+                "search_common/search_common",
+                "search_result/search_result",
+                "bluetooth_turn_off/bluetooth_turn_off",
+                "ebike_intercept/ebike_intercept",
+                "withdrawal_point/withdrawal_point"
+            ]
+        },
+        {
+            "root": "subpackages/useBikeNextProcess/",
+            "pages": [
+                "riding/riding",
+                "manual_unlock/manual_unlock",
+                "order_fee_free/order_fee_free",
+                "return_study/return_study",
+                "bad_experience/bad_experience"
+            ]
+        },
+        {
+            "root": "subpackages/userProcess/",
+            "pages": [
+                "auth_manage/auth_manage",
+                "my/my",
+                "my_stroke/my_stroke",
+                "reset_password/reset_password",
+                "auth_result/auth_result",
+                "commit_cardId/commit_cardId",
+                "protocol/protocol",
+                "insurance_protocol/insurance_protocol",
+                "face_recognition/face_recognition",
+                "my/accountDelete",
+                "health_data/health_data"
+            ]
+        },
+        {
+            "root": "subpackages/marketingProcess/",
+            "pages": [
+                "common_share/common_share",
+                "ad/ad"
+            ]
+        },
+        {
+            "root": "subpackages/paymentProcess/",
+            "pages": [
+                "pay/pay",
+                "common_pay/common_pay",
+                "no_secret_pay/no_secret_pay"
+            ]
+        },
+        {
+            "root": "subpackages/commonProcess/",
+            "pages": [
+                "blank/blank",
+                "config/config"
+            ]
+        },
+        {
+            "root": "qj-beatles/",
+            "pages": [
+                "pages/EndService/EndService"
+            ]
+        },
+        {
+            "root": "login/",
+            "pages": [
+                "pages/login/login-wechat",
+                "pages/login/login-phone",
+                "pages/login/reset-password",
+                "pages/login/sms-login",
+                "pages/login/captcha",
+                "pages/login/logout-reminder",
+                "pages/login/set-password",
+                "pages/login/pwd-login",
+                "pages/login/protocol",
+                "pages/login/region"
+            ]
+        },
+        {
+            "root": "npm/_didi/qingju-user-invite/src/",
+            "pages": [
+                "pages/benefit-center/index",
+                "pages/invited/index",
+                "pages/home/index",
+                "pages/homePage/index",
+                "pages/myTeam/index",
+                "pages/myAward/index",
+                "pages/team/index",
+                "pages/activity/index",
+                "pages/record/index",
+                "pages/info/index",
+                "pages/benefit-center-redirect/index",
+                "pages/sepPromotion/index",
+                "pages/sepPromotionPrizeList/index"
+            ]
+        },
+        {
+            "root": "cashier-ui/",
+            "pages": [
+                "pages/cashier-coins/index",
+                "pages/cashier-coupons/index",
+                "pages/cashier-cards/index",
+                "pages/cashier-charge/index",
+                "pages/cashier-webview/index",
+                "pages/cashier-test/index"
+            ]
+        },
+        {
+            "root": "webx-mp-next/",
+            "pages": [
+                "transfer-station/index",
+                "webview/independent/index",
+                "webview/normal-delta/index",
+                "webview/normal-echo/index",
+                "webview/normal-foxtrot/index",
+                "webview/supreme-alfa/index",
+                "webview/supreme-bravo/index",
+                "demo/index"
+            ]
+        }
+    ]
+}

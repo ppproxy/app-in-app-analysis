@@ -1,0 +1,58 @@
+<view class="search-wrap">
+    <view class="search">
+        <view bindtap="bindopen" class="picker">
+            <view style="">{{regionText}}</view>
+            <g-icon color="#C7C7CC" size="20" style="margin-right:20rpx;" type="arrow-down"></g-icon>
+        </view>
+        <view class="input">
+            <image class="searchImg" src="../../images/searchCopy.png"></image>
+            <input bindchange="searchInput" bindconfirm="config" class="searchText" placeholder="请输入采样点名称/地址" placeholderClass="search-text" value="{{value}}"></input>
+        </view>
+    </view>
+    <view class="content" wx:if="{{list.length>0}}">
+        <view bindtap="handleTap" class="item" data-id="{{item}}" wx:for="{{list}}" wx:key="{{index}}">
+            <view class="item-box">
+                <view class="item1">
+                    <view class="name">{{item.samplePointName}}</view>
+                    <view catchtap="handleCheck" data-index="{{index}}" style="padding:40rpx 0 20rpx 40rpx;">
+                        <g-icon catchtap="handleCheck" color="#C7C7CC" data-index="{{index}}" size="28" type="arrow-up" wx:if="{{item.check}}"></g-icon>
+                        <g-icon catchtap="handleCheck" color="#C7C7CC" data-index="{{index}}" size="28" type="arrow-down" wx:else></g-icon>
+                    </view>
+                </view>
+                <view class="adress" wx:if="{{item.check}}">采样地址：{{item.address}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{list.length==0}}">
+        <view wx:if="{{value.length>0||regionText!='请选择'}}">
+            <image class="nodataImg" src="../../images/images/hsjc-nodataImg.png"></image>
+            <view class="noDataText"> 无历史搜索记录 </view>
+        </view>
+        <view class="content" style="background:#f3f3f3;" wx:else>
+            <view class="tits">
+                <view class="tit1">搜索历史</view>
+                <view>
+                    <image bindtap="deteleAllLog" class="deteleImg" src="../../images/images/hsjc-detele.jpeg"></image>
+                </view>
+            </view>
+            <view class="historyLog">
+                <view bindtap="clickLog" class="log-list" data-id="{{item}}" wx:for="{{historyLogList}}" wx:key="{{index}}">{{item.value}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove="return">
+    <g-cascader1 bind:change="handleChange" bind:close="handleClose" bind:columnChange="handleColumnChange" range="{{range}}" value="{{value}}" visible="{{visible}}"></g-cascader1>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{showz}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <view class="tt">
+            <text>该检测机构预约号源名额已满，或尚未与核酸检测信息统一平台完成对接。如有疑问，请与检测机构或机构主管单位联系</text>
+        </view>
+        <view class="btn">
+            <view bindtap="btnleft" class="btnleft">取消</view>
+            <view bindtap="btnright" class="btnright">留言反馈</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,146 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.search {
+    border-bottom: 1px solid;
+    border-color: #ebebeb;
+    flex-direction: row;
+    font-size: 36rpx;
+    justify-content: flex-start;
+    line-height: 48rpx;
+    padding: 14rpx 40rpx;
+}
+
+.search,.search__container {
+    align-items: center;
+    display: flex;
+}
+
+.search__container {
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    border-radius: 8rpx;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.search__icon {
+    color: #909399;
+    margin-right: 10rpx;
+}
+
+.search__text {
+    color: #4293f4;
+    margin-left: 30rpx;
+}
+
+.search__cancel {
+    color: #4293f4;
+    font-size: 34rpx;
+    line-height: 46rpx;
+    margin-left: 22rpx;
+}
+
+.search--focus,.search--focus .search__input,.search__input {
+    background: #fafafa;
+}
+
+.search__input {
+    border-color: #ebebeb;
+    padding: 7rpx 20rpx 7rpx 10rpx;
+    width: 100%;
+}
+
+.search__input--placeholder {
+    color: #bbbec4;
+    font-size: 36rpx;
+    line-height: 48rpx;
+}
+
+.clear__icon {
+    color: #7e7f86;
+}

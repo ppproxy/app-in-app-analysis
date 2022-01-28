@@ -1,0 +1,7 @@
+<view catchtap="close" catchtouchmove="preventTouchMove" class="wrap" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{options.open}}">
+    <view class="imgContent">
+        <ad-tag wx:if="{{options.enableAd?true:false}}"></ad-tag>
+        <image bindtap="target" class="banner" src="{{options.banner}}"></image>
+    </view>
+    <image catchtap="close" class="close-btn" src="{{closeIcon}}"></image>
+</view>

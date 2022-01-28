@@ -1,0 +1,17 @@
+<view class="wrap" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{options.open}}">
+    <view bindtap="singleTap" class="confirm-panel"></view>
+    <view bindtap="singleHandler" class="confirm-single" wx:if="{{options.single}}">
+        <view class="button">{{options.singleText}}</view>
+    </view>
+    <view class="confirm" wx:else>
+        <image class="icon" src="{{options.icon}}" wx:if="{{options.icon}}"></image>
+        <view class="content">
+            <view class="title" wx:if="{{options.title}}">{{options.title}}</view>
+            <view class="text">{{options.content}}</view>
+        </view>
+        <view class="btn-box">
+            <view bindtap="cancel" class="cancel btn" wx:if="{{options.btnCancel.text}}">{{options.btnCancel.text}}</view>
+            <view bindtap="ok" class="ok btn" wx:if="{{options.btnOk.text}}">{{options.btnOk.text}}</view>
+        </view>
+    </view>
+</view>

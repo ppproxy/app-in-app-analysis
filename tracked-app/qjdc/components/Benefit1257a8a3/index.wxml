@@ -1,0 +1,6 @@
+<view style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{isShowAd}}">
+    <view class="ad-container">
+        <view class="adTag" wx:if="{{enableAd?true:false}}">广告</view>
+        <ad-custom bindclose="adClose" binderror="adError" bindload="adLoad" isWelfareShow="{{welfareAdShow}}" style="width: 100%" type="welfare" unitId="{{'qj'==='qj'?'adunit-200df58aa05ed49f':'qj'==='didi'?'adunit-c42730598873a10c':''}}"></ad-custom>
+    </view>
+</view>

@@ -1,0 +1,5 @@
+<view class="g-footer component-class {{fixed?'g-footer--fixed':''}}" style="padding-top:0">
+    <view class="g-footer__content">
+        <view class="g-footer__content__text" style="color:black;font-size:32rpx">{{supportor}}</view>
+    </view>
+</view>

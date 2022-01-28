@@ -1,0 +1,23 @@
+<view class="box" wx:if="{{data.length>0}}">
+    <view class="box-item" wx:for="{{data}}" wx:key="unique">
+        <view class="leftView" style="width:140rpx;">{{item.createTime}}</view>
+        <view class="centerView">
+            <view class="radio centerView-radio" wx:if="{{item.isCurrent==1}}"></view>
+            <view class="radio centerView-radio-344" wx:if="{{item.isCurrent==2}}"></view>
+            <view class="radio centerView-radio-ccc" wx:if="{{item.isCurrent==3}}"></view>
+            <view class="border" wx:if="{{index!=data.length-1}}"></view>
+        </view>
+        <view class="rightView">
+            <view class=" {{item.isCurrent?'status':'status1'}}">{{item.status}}</view>
+            <view class="animalHeat" wx:if="{{item.status!='未打卡'}}">体温（℃）</view>
+            <view class="animalHeat-con" wx:if="{{item.animalHeat&&item.status!='未打卡'}}">{{item.animalHeat}}</view>
+            <view class="animalHeat-con" wx:if="{{!item.animalHeat&&item.status!='未打卡'}}">--</view>
+            <view class="animalHeat" wx:if="{{item.status!='未打卡'}}">症状表现</view>
+            <view class="animalHeat-con" wx:if="{{item.bodyCondition&&item.status!='未打卡'}}">{{item.bodyCondition}}</view>
+            <view class="animalHeat-con" wx:if="{{!item.bodyCondition&&item.status!='未打卡'}}">--</view>
+            <view class="animalHeat" style="margin-bottom:8rpx;" wx:if="{{item.status!='未打卡'}}">其他状况说明</view>
+            <view class="animalHeat-con1" wx:if="{{item.elseCondition&&item.status!='未打卡'}}">{{item.elseCondition}}</view>
+            <view class="animalHeat-con1" wx:if="{{!item.elseCondition&&item.status!='未打卡'}}">--</view>
+        </view>
+    </view>
+</view>

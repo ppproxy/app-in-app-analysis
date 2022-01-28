@@ -1,0 +1,80 @@
+.init-page.need-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.init-page .header-wrap {
+    padding-top: 170rpx;
+    box-sizing: border-box;
+    height: 460rpx;
+    background: linear-gradient(270deg,#047c9b 0,#14d0bc 82%);
+    border-radius: 0 0 100rpx 100rpx;
+    transition: height 1s;
+}
+
+.ad-banner {
+    margin-bottom: 20rpx;
+}
+
+.wx-scan-loading {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wx-scan-loading .wx-scan-center {
+    color: #666;
+}
+
+.wx-scan-loading .wx-scan-center .wx-scan-icon {
+    width: 240rpx;
+    height: 240rpx;
+}
+
+.loading-panel {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 157rpx 0 220rpx;
+}
+
+.loading-panel .loading-icon {
+    width: 200rpx;
+    height: 200rpx;
+    margin: 0 auto;
+}
+
+.loading-panel .loading-info {
+    margin-top: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #666;
+    text-align: center;
+}
+
+@-webkit-keyframes interimTo {
+    0% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes interimLeave {
+    0% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

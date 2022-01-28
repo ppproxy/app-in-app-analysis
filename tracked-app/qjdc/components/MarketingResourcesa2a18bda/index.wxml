@@ -1,0 +1,19 @@
+<view style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view wx:if="{{_isUnlockedWindow}}">
+        <view class="{{'riding-layer-box '+(extraData.isSplitBike?'split-bike':'')}}" wx:if="{{spokesman}}">
+            <view class="ad-tag-wrap">
+                <ad-tag textClass="bottom" wx:if="{{currentMarketingResource.enableAd?true:false}}"></ad-tag>
+            </view>
+            <image bindload="spokesmanOnload" class="layer-box-image" mode="widthFix" src="{{spokesman}}"></image>
+            <image bindtap="spokesmanClose" class="layer-box-close-btn" src="{{closeIcon}}" style="{{smanCloseHeight}}"></image>
+        </view>
+        <dialog bindclose="closeRidingDialog" options="{{currentMarketingResource}}"></dialog>
+    </view>
+    <bubble bubbleInfo="{{currentMarketingResource}}" spotId="hm-locked-infoflow" wx:elif="{{_isLockedInfoflow}}"></bubble>
+    <bubble bubbleInfo="{{extraData}}" class="unlocking-guide-bubble" wx:elif="{{_isUnlockingInfoflow}}"></bubble>
+    <full-screen bindclose="closePop" bindtarget="popTargetAction" options="{{currentMarketingResource.variantInfo}}" wx:if="{{showInitPagePop&&initPagePopType===1}}"></full-screen>
+    <marketing-dialog bindclose="closePop" bindtarget="popTargetAction" options="{{currentMarketingResource.variantInfo}}" wx:if="{{showInitPagePop&&initPagePopType===2}}"></marketing-dialog>
+    <redpack-pop bindclose="closePop" bindhandlePopShow="handlePopShow" bindtarget="popTargetAction" options="{{currentMarketingResource.variantInfo}}" wx:if="{{showInitPagePop&&initPagePopType===3}}"></redpack-pop>
+    <coupon-pop bindclose="closePop" bindhandlePopShow="handlePopShow" bindtarget="popTargetAction" options="{{currentMarketingResource.variantInfo}}" wx:if="{{showInitPagePop&&initPagePopType===4}}"></coupon-pop>
+    <benefit wx:if="{{initPagePopType===5}}"></benefit>
+</view>

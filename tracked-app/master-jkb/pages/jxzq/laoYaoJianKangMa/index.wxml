@@ -1,0 +1,150 @@
+<view class="page" style="min-height:{{windowHeight}}px;padding-bottom:96rpx;box-sizing:border-box;">
+    <view wx:if="{{!zhuangtai}}">
+        <g-form bind:submit="handleFormSubmit" disabled="{{!formData.Idcard}}" model="{{formData}}" primaryText="查询" rules="{{rules}}" validateType="{{validateType}}">
+            <view class="chaxun-box">
+                <view slot="content">
+                    <g-wrapper title="">
+                        <g-input bind:input="onInputChange" bindchange="panduan" clearable="{{!isShow1}}" id="Idcard" label="身份证号" maxlength="18" placeholder="请输入身份证号" type="idcard" value="{{formData.Idcard}}"></g-input>
+                        <view class="tishi-tt" wx:if="{{idCardTt}}">请输入正确的身份证号</view>
+                    </g-wrapper>
+                    <view class="tishi">
+                        <text>1、本服务仅可以查询60岁以上及16岁以下人员健康状态。
+              2、为保护个人隐私，查询结果页面关闭后，本地不保留任何缓存或相关数据。
+              3、请核对以上查询号码确为被查询人本人身份证号码，瞒报、谎报信息将依法承担法律责任。</text>
+                    </view>
+                </view>
+            </view>
+        </g-form>
+    </view>
+    <view style="overflow:hidden;" wx:if="{{zhuangtai}}">
+        <view class="header" style="overflow:hidden;">
+            <view class="header-tit">身份证号</view>
+            <view class="header-content">
+                <view class="idcard">{{formData.Idcard}}</view>
+                <image bindtap="clearable" class="clear" src="../../../images/icon_clear.svg"></image>
+            </view>
+            <view class="wjtishi {{jieguo.color=='1'||jieguo.color=='11'?'getFocus':'lostFocus'}}" wx:if="{{beijingse=='1'||beijingse=='2'||beijingse=='11'}}"> 该用户“北京健康宝”防疫相关健康状态存在异常，请督促被查询人按防疫规定履行义务。</view>
+        </view>
+        <view class="success-btn">查询成功</view>
+        <view class="zhuangtai">
+            <view class="img-box">
+                <view wx:if="{{jieguo.picUrl==null||jieguo.picUrl==''}}">
+                    <image class="image" mode="aspectFill" src="https://xcx-static.yqgz.beijing.gov.cn/statics/lymorentouxiang.png" wx:if="{{jieguo.picUrl==null||jieguo.picUrl==''}}"></image>
+                </view>
+                <view wx:else>
+                    <image class="image" src="{{jieguo.picUrl}}"></image>
+                </view>
+                <view class="ri-box">
+                    <view class="daojishi">
+                        <view class="djs">剩余有效时间：</view>
+                        <view class="sj">{{time}}s</view>
+                    </view>
+                    <view class="daojishi">
+                        <view class="djs" wx:if="{{jieguo.otherName}}">姓名：</view>
+                        <view class="xm">{{jieguo.otherName}}</view>
+                    </view>
+                    <view class="ztxianshi" wx:if="{{jieguo.color=='30'||jieguo.color=='0'||jieguo.color=='1'||jieguo.color=='2'||jieguo.color=='11'}}">
+                        <image class="ztimg" src="https://xcx-static.yqgz.beijing.gov.cn/statics/lyweijianyichang.png" wx:if="{{jieguo.color=='0'||jieguo.color=='30'}}"></image>
+                        <image class="ztimg" src="https://xcx-static.yqgz.beijing.gov.cn/statics/lyjujiaguancha.png" wx:if="{{jieguo.color=='1'||jieguo.color=='11'}}"></image>
+                        <image class="ztimg" src="https://xcx-static.yqgz.beijing.gov.cn/statics/yljizhongguancha.png" wx:if="{{jieguo.color=='2'}}"></image>
+                        <view class="ztneirong" wx:if="{{jieguo.color=='0'||jieguo.color=='30'}}">未见异常</view>
+                        <view class="jujia" wx:elif="{{jieguo.color=='1'}}">居家观察</view>
+                        <view class="jujia" wx:elif="{{jieguo.color=='11'}}">居家观察</view>
+                        <view class="jizhong" wx:elif="{{jieguo.color=='2'}}">集中观察</view>
+                        <view class="wenhao" wx:if="{{jieguo.color=='0'||jieguo.color=='30'||jieguo.color=='1'||jieguo.color=='2'||jieguo.color=='11'}}">
+                            <image bindtap="flsm" class="wenhao-img" src="https://xcx-static.yqgz.beijing.gov.cn/statics/lywenhao.png"></image>
+                        </view>
+                    </view>
+                    <view class="ztxianshi" wx:if="{{jieguo.color=='-7'}}"> 不掌握健康状态 </view>
+                    <view class="ztxianshi" wx:if="{{jieguo.color=='51'}}"> 不掌握健康状态 </view>
+                    <view class="ztxianshi" wx:if="{{jieguo.color=='4'}}"> 不掌握健康状态 </view>
+                    <view class="ztxianshi" wx:if="{{jieguo.color=='41'}}"> 不掌握健康状态 </view>
+                    <view class="ztxianshi" style="color:#0D8CE6;" wx:if="{{jieguo.color=='-3'}}"> 不掌握健康状态 <image bindtap="wHtap" class="Yqimg" src="https://xcx-static.yqgz.beijing.gov.cn/images/yuanzhu.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="bzwjkzt" wx:if="{{jieguo.color=='-3'}}"> 疫情无小事，大家共防守！由于您近期可能有到访或途经疫情风险地区情况，北京“健康宝”暂不能确认您的防疫相关健康状态。按照北京市防疫政策要求，若您在京，请立即联系居住社区；若在京外，请暂缓来京。</view>
+            <view class="bzwjkzt" wx:if="{{jieguo.color=='-7'}}"> 北京“健康宝”暂不能确认该用户的防疫相关健康状态，可能由于该用户过去14天内有进（返）京或进出疫情风险地区的行为。为正常获取北京“健康宝”防疫健康状态，需该用户登录北京“健康宝”小程序，完成行程申报。</view>
+            <view class="bzwjkzt" wx:if="{{jieguo.color=='51'}}"> 北京“健康宝”暂不能确认该用户的防疫相关健康状态，可能由于该用户过去14天内有进（返）京或进出疫情风险地区的行为。为正常获取北京“健康宝”防疫健康状态，需该用户登录北京“健康宝”小程序，完成行程申报。</view>
+            <view class="bzwjkzt" wx:if="{{jieguo.color=='4'}}"> 按照北京市防疫政策，请您暂缓来京。如有疑问，请与12345市民服务热线联系咨询，感谢您的理解与配合。</view>
+            <view class="bzwjkzt" wx:if="{{jieguo.color=='41'}}">按照北京市入境防疫隔离政策，您目前正处于入境隔离期间（未满21天），请您严格履行个人防疫义务并做好个人防护。如有疑问，请致电（010）12345市民服务热线咨询。</view>
+            <view class="xinxi-box">
+                <view class="xinxineirong">
+                    <view class="xinxinr-let">查询时间：</view>
+                    <view class="xinxinr-rig">{{jieguo.queryTime}}</view>
+                </view>
+                <view class="xinxineirong">
+                    <view class="xinxinr-let">助查人姓名：</view>
+                    <view class="xinxinr-rig">{{jieguo.name}}</view>
+                </view>
+                <view class="xinxineirong">
+                    <view class="xinxinr-let">助查人证件号：</view>
+                    <view class="xinxinr-rig">{{jieguo.idCard}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="tishiwenan">以上健康状态为他人助查信息，页面关闭后，本地不保留任何缓存或相关数据。</view>
+    </view>
+    <view class="dibu" wx:if="{{zhuangtai}}">
+        <view class="g-footer component-class {{fixed?'g-footer--fixed':''}}">
+            <view class="g-footer__content">
+                <view class="g-footer__content__text footer">
+                    <text bindtap="goMessage">北京市大数据中心</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{tishi}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt-idcard">{{formData.Idcard}}</view>
+            <view class="tt">
+                <text>暂不掌握被查人防疫相关健康状态情况，请您按照防疫政策要求，协助被查人做好体温测量及信息登记工作。</text>
+            </view>
+        </scroll-view>
+        <view class="btn-box">
+            <view bindtap="btnQcx" class="btn">我知道了</view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove class="top" style="min-height:{{windowHeight}}px" wx:if="{{isShowFlsm}}">
+    <view class="center1">
+        <view class="tit-flsm" wx:if="{{jieguo.color=='2'}}">集中观察</view>
+        <view class="tit-flsm" wx:if="{{jieguo.color=='0'||jieguo.color=='30'}}">未见异常</view>
+        <view class="tit-flsm" wx:if="{{jieguo.color=='1'}}">居家观察</view>
+        <view class="tit-flsm" wx:if="{{jieguo.color=='11'}}">居家观察</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tit-wenan" wx:if="{{jieguo.color=='2'}}"> 按照目前掌握的防疫相关数据，您已符合集中医学观察条件。如尚未集中医学观察，请您履行防疫义务，立即与北京市疾病预防控制中心取得联系。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='2'}}"> 集中医学观察期间，请严格落实集中医学观察要求，自觉接受北京市疾病预防控制中心管理，直至符合解除条件。拒绝接受集中医学观察等防控措施的，将依法追究责任。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='2'}}"> 如有疑问，可与北京市疾病预防控制中心联系。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='0'||jieguo.color=='30'}}"> 按照目前掌握的防疫相关数据，暂未发现您存在与防疫相关异常健康状况。防疫相关数据会随着疫情发展及时更新，此次查询结果并不表示排除您的防疫相关健康风险。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='0'||jieguo.color=='30'}}"> 请您履行防疫义务，遵守防疫管理部门的有关防疫措施要求，承诺根据防疫规定目前不需要采取医学观察措施或已按要求完成14天医学观察措施，且当前无发热、咳嗽、乏力等与疫情相关症状。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='0'||jieguo.color=='30'}}"> 如有疑问，可与12345热线联系。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='1'}}"> 按照目前掌握的防疫相关数据，您已符合居家医学观察条件。如尚未居家医学观察，请您履行防疫义务，立即与所属的社区居委会取得联系。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='1'}}"> 居家医学观察期间，请严格落实居家医学观察要求，自觉接受社区管理，直至符合解除条件。拒绝接受居家医学观察等防控措施的，将依法追究责任。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='1'}}"> 如有疑问，可与所属社区联系。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='11'}}"> 根据目前掌握的防疫相关数据，您目前可能正处于中高风险地区所在县（市、区、旗）。按照北京市防疫政策，您已符合居家医学观察条件。 如您在京外，请您暂缓来京，并严格遵守所在地防疫政策。如您已进京，请您履行防疫义务，立即与所属的社区居委会取得联系。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='11'}}"> 居家医学观察期间，请严格落实居家医学观察要求，自觉接受社区管理，直至符合解除条件。拒绝接受居家医学观察等防控措施的，将依法追究责任。 </view>
+            <view class="tit-wenan" wx:if="{{jieguo.color=='11'}}"> 如有疑问，请与所在社区或12345市民服务热线联系咨询。 </view>
+        </scroll-view>
+        <view bindtap="btns" class="flsm_btn">关闭</view>
+    </view>
+</view>
+<view class="top123 cj" style="min-height:{{windowHeight}}px;" wx:if="{{wisNo}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="wenhao123" style="padding-bottom:40rpx;">
+                <view class="shouhang">居住社区将根据北京市防疫政策，判定是否需要进行隔离并解除“弹窗状态”。该用户可能遇到以下3类情况：</view>
+                <view>1.如需要隔离，将转为“居家观察”状态。</view>
+                <view>2.如不需要隔离，将转为“未见异常”状态。</view>
+                <view>3.如该用户未主动到社区报到，且未发生涉疫健康问题，系统默认弹窗14天后自动解除。</view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="wHao" class="wozhidaole">我知道了</view>
+        </view>
+    </view>
+</view>

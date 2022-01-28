@@ -1,0 +1,136 @@
+.benefit-center-hasimg {
+    height: 140rpx;
+    width: calc(100% - 40rpx);
+    margin: -18rpx auto 24rpx;
+    position: relative;
+}
+
+.benefit-center-hasimg-title {
+    width: 100%;
+    text-align: center;
+    padding-top: 85rpx;
+}
+
+.benefit-center-hasimg-title-txt {
+    max-width: 330rpx;
+    background: #ffd974;
+    border-radius: 20rpx;
+    padding: 4rpx 5rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #27257b;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.init-benefit-center {
+    background-image: linear-gradient(269deg,#20edcf 3%,#6958cd);
+    border-radius: 60rpx;
+    height: 120rpx;
+    width: calc(100% - 40rpx);
+    margin: 0 auto 24rpx;
+    position: relative;
+}
+
+.init-benefit-center-left .bottom-icon {
+    width: 160rpx;
+    height: 136rpx;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.init-benefit-center-left .left-icon {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: leftIconMove 1.5s linear infinite;
+}
+
+.init-benefit-center-left .right-icon {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 22rpx;
+    left: 88rpx;
+    animation: rightIconMove 1.5s linear infinite;
+}
+
+@-webkit-keyframes leftIconMove {
+    25% {
+        transform: translate(-6rpx,-6rpx);
+    }
+
+    50%,to {
+        transform: translate(0);
+    }
+
+    75% {
+        transform: translate(-6rpx,-6rpx);
+    }
+}
+
+@-webkit-keyframes rightIconMove {
+    25% {
+        transform: translate(6rpx,-6rpx);
+    }
+
+    50%,to {
+        transform: translate(0);
+    }
+
+    75% {
+        transform: translate(6rpx,-6rpx);
+    }
+}
+
+.init-benefit-center-title {
+    width: 100%;
+    text-align: center;
+}
+
+.init-benefit-center-title-img {
+    width: 135rpx;
+    height: 40rpx;
+    margin: 10rpx auto 5rpx;
+}
+
+.init-benefit-center-title-txt {
+    max-width: 330rpx;
+    background: #ffd974;
+    border-radius: 20rpx;
+    padding: 4rpx 5rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #27257b;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.init-benefit-center-right {
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+}
+
+.init-benefit-center-right-icon {
+    height: 80rpx;
+    width: 80rpx;
+    animation: rightMove 1.5s linear infinite;
+}
+
+@-webkit-keyframes rightMove {
+    25% {
+        transform: scale(1.3);
+    }
+
+    50%,to {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.3);
+    }
+}

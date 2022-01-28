@@ -1,0 +1,23 @@
+<view class="carousel_div" style="min-height:{{windowHeight}}px">
+    <swiper bindchange="bindchange" class="swiper" current="{{current}}" duration="1000" interval="3000" style="height:{{boxHeight}}px;">
+        <block wx:for="{{list}}" wx:key="index">
+            <import src="../../../wxParse/wxParse.wxml"></import>
+            <swiper-item>
+                <view class="class-list-block{{index}}" style="padding:40rpx;">
+                    <text class="title">{{item.message_title}}</text>
+                    <view class="page">
+                        <text class="pageNum">{{index+1}}/{{list.length}}</text>
+                    </view>
+                    <view class="content">
+                        <template is="wxParse" data="{{wxParseData:item.message_content}}"></template>
+                    </view>
+                    <video objectFit="fill" src="{{item.message_video}}" wx:if="{{item.message_video}}"></video>
+                    <view class="footers">北京市大数据中心</view>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="fixDot">
+        <text class="dio {{index==current?'active1':''}}" wx:for="{{list}}"></text>
+    </view>
+</view>

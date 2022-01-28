@@ -1,0 +1,32 @@
+<view style="min-height:{{windowHeight}}px;">
+    <view class="wrap">
+        <view class="tit">法律声明</view>
+        <view class="tit-box">
+            <view class="title">
+                <text class="dian"></text> 首页法律声明 </view>
+            <view class="font"> “健康宝”是北京市大数据中心针对当前新冠肺炎疫情防控需要，方便广大市民及进(返)京人员查询自身防疫相关健康状态，帮助城市恢复生产生活秩序，推出的一项数字化信息服务工具。由于疫情发展变化等原因，查询的信息可能会出现与实际状况不一致的情况，如有疑问，可与北京市疾病预防控制中心、社区、12345热线等联系。任何盗用伪造、欺骗、误导性使用此项工具而逃避履行防疫义务的，将依法追究法律责任。 </view>
+        </view>
+        <view class="tit-box">
+            <view class="title">
+                <text class="dian1"></text> 二、红码(“集中观察”)法律声明 </view>
+            <view class="font">按照目前掌握的防疫相关数据，您已符合集中医学观察条件。如尚未集中医学观察，请您履行防疫义务，立即与北京市疾病预防控制中心取得联系。</view>
+            <view class="font">集中医学观察期间，请严格落实集中医学观察要求，自觉接受北京市疾病预防控制中心管理，直至符合解除条件。拒绝接受集中医学观察等防控措施的，将依法追究责任。</view>
+            <view class="font">如有疑问，可与北京市疾病预防控制中心联系。</view>
+        </view>
+        <view class="tit-box">
+            <view class="title">
+                <text class="dian2"></text> 黄码(“居家观察”)法律声明 </view>
+            <view class="font">按照目前掌握的防疫相关数据，根据北京市防疫政策，您已符合居家医学观察条件。如尚未居家医学观察，请您履行防疫义务，立即与所属的社区居委会取得联系。</view>
+            <view class="font"> 居家医学观察期间，请严格落实居家医学观察要求，自觉接受社区管理，直至符合解除条件。拒绝接受居家医学观察等防控措施的，将依法追究责任。 </view>
+            <view class="font"> 如您在京外，请您暂缓来京，并严格遵守所在地防疫政策。 </view>
+            <view class="font"> 如有疑问，可与所属社区联系。 </view>
+        </view>
+        <view class="tit-box">
+            <view class="title">
+                <text class="dian3"></text> 绿码(“未见异常”)法律声明 </view>
+            <view class="font">按照目前掌握的防疫相关数据，暂未发现您存在与防疫相关异常健康状况。防疫相关数据会随着疫情发展及时更新，此次查询结果并不表示排除您的防疫相关健康风险。 </view>
+            <view class="font">请您履行防疫义务，遵守防疫管理部门的有关防疫措施要求。</view>
+            <view class="font">如有疑问，可与12345热线联系。</view>
+        </view>
+    </view>
+</view>

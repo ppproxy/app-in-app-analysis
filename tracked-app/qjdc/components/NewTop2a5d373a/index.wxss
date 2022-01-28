@@ -1,0 +1,64 @@
+@-webkit-keyframes rotateInfinite {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.repair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 136rpx;
+    height: 60rpx;
+    right: 0;
+    top: 0;
+    border: 2rpx solid #999;
+    border-radius: 16rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #fff;
+    letter-spacing: 0;
+}
+
+.new-unlocking-top {
+    position: relative;
+    font-size: 40rpx;
+    color: #fff;
+}
+
+.new-unlocking-top .unlocking-top-desc .unlocking-top-icon {
+    width: 60rpx;
+    height: 60rpx;
+    display: inline-block;
+    margin-right: 10rpx;
+    vertical-align: middle;
+}
+
+.new-unlocking-top .unlocking-top-desc .unlocking-top-icon-loading {
+    animation: rotateInfinite 2s linear 0s infinite;
+}
+
+.new-unlocking-top .unlocking-top-desc .unlocking-tip-title-wrap {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.new-unlocking-top .unlocking-top-desc .unlocking-tip-title-wrap .unlocking-tip-title {
+    width: 100%;
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+    color: #fff;
+    vertical-align: bottom;
+    margin-right: 10rpx;
+}
+
+.new-unlocking-top .unlocking-top-desc .unlocking-tip-title-wrap .unlocking-tip-subtitle {
+    vertical-align: bottom;
+    color: #14d0b4;
+    font-size: 28rpx;
+}

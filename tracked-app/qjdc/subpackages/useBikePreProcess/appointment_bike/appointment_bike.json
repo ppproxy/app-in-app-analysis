@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "map-common": "/components/Map9ccbc7ea/index",
+        "button-san": "/subpackages/useBikePreProcess/components/Button057cff91/index",
+        "iphone": "/components/IphoneX48a8f956/index",
+        "Mileage": "/subpackages/useBikePreProcess/components/Mileage9a624566/index",
+        "Appointment-top": "/subpackages/useBikePreProcess/components/Top4288e975/index",
+        "Float-layer": "/subpackages/useBikePreProcess/components/float_layer_bottom75bbb250/index",
+        "toast": "/components/Toast6bcbf1a1/index"
+    },
+    "navigationBarTitleText": "预约中",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#E2E2E2"
+}

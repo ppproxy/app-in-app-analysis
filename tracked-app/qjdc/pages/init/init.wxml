@@ -1,0 +1,54 @@
+<view>
+    <view wx:if="{{loading}}">
+        <view wx:if="{{isPrivacy}}">
+            <view wx:if="{{interceptSwitch}}">
+                <diversion-intercept></diversion-intercept>
+            </view>
+            <view wx:else>
+                <view wx:if="{{!isScan}}">
+                    <view class="init-page {{showPopupWindow?'need-fixed':''}} _cml_ref_lmc_" id="main-panel" style="{{grayScale?'filter: grayscale(100%)':''}}">
+                        <navigation-bar bindgoPersonCenter="goPersonCenter" class="nav-bar _cml_ref_lmc_" color="{{bgColor}}" id="navBar" type="{{'qj'==='qj'?'my':'indexback'}}"></navigation-bar>
+                        <view class="header-wrap" style="{{activityStyle}}">
+                            <box-area class="_cml_ref_lmc_" frames="{{boxList}}" id="boxArea" tracker="{{tracker}}"></box-area>
+                            <view bindtap="goActivity" class="activity-click" style="height: {{clickHeight}}rpx;" wx:if="{{isActivity}}"></view>
+                        </view>
+                        <view style="{{useBikeStyle}}">
+                            <use-bike bindscan="scan" isLogin="{{isLogin}}" msgFlowOption="{{msgFlowOption}}" tracker="{{tracker}}" useBikeOption="{{useBikeOption}}"></use-bike>
+                        </view>
+                        <benefit-center benefitBizContent="{{benefitBizContent}}" benefitTxt="{{benefitTxt}}" bindtoLogin="toLogin" isLogin="{{isLogin}}" isScan="{{isScan}}" tracker="{{tracker}}" wx:if="{{showBenefit}}"></benefit-center>
+                        <recom-card bindtoLogin="toLogin" source="{{tracker.source}}" sourcetype="{{tracker.sourcetype}}" wx:if="{{loadMoudle}}"></recom-card>
+                        <view class="ad-banner" wx:if="{{topAd}}">
+                            <ad type="{{layoutId}}" unitId="{{'qj'==='qj'?'adunit-0760ad8c296220e4':'qj'==='didi'?'adunit-183666b41db409ab':''}}" wx:if="{{adReload}}"></ad>
+                        </view>
+                        <activity-center activeInfo="{{activeInfo}}" adReload="{{adReload}}" bottomAd="{{bottomAd}}" class="_cml_ref_lmc_" id="activity-center" tracker="{{tracker}}"></activity-center>
+                        <view class="loading-panel" wx:if="{{loading==='loading'||loading==='error'}}">
+                            <image class="loading-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/XudwAfts4p1608103382189.png"></image>
+                            <view class="loading-info">以美好骑行 赞美生活</view>
+                        </view>
+                        <marketing-resources bindshowInitPagePop="showInitPagePop" extraData="{{popupNeedInfo}}" spotId="hm-popup-window" wx:if="{{renderMarketing}}"></marketing-resources>
+                        <insurance-protocol bindreloadData="loadUserInfo" insuranceProtocolNote="{{insuranceProtocolNote}}" wx:if="{{!user.agreeInsuranceProtocol}}"></insurance-protocol>
+                        <config bindtoConfig="toConfig" buildEnv="{{buildEnv}}" wx:if="{{envVersion}}"></config>
+                        <toast options="{{toast}}"></toast>
+                        <message-box options="{{messageBoxOptions}}"></message-box>
+                        <iphone></iphone>
+                        <ddCardDlg bindgoOnScan="goOnScan" class="ref_ddCardDlgRef_1" dlgData="{{ddCardDlgData}}"></ddCardDlg>
+                        <popup-confirm bindclose="closePopupConfirm" bindunlock="toUnLock" popModelData="{{popModelData}}" wx:if="{{isShowPopupConfirm}}"></popup-confirm>
+                    </view>
+                </view>
+                <view class="wx-scan-loading" wx:else>
+                    <view class="wx-scan-center">
+                        <image class="wx-scan-icon" mode="widthFix" src="{{iconImages.bikeLoading}}"></image>
+                        <view>车辆识别中...</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{'qj'==='qj'&&!isPrivacy}}">
+            <isPrivacy bindgetPrivacy="agree"></isPrivacy>
+        </view>
+    </view>
+    <view class="loading-panel" wx:else>
+        <image class="loading-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/XudwAfts4p1608103382189.png"></image>
+        <view class="loading-info">以美好骑行 赞美生活</view>
+    </view>
+</view>

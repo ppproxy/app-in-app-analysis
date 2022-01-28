@@ -1,0 +1,21 @@
+g-nav-box-item {
+    display: inline-block;
+    width: 50%;
+}
+
+g-nav-box-item:nth-child(2n) {
+    border-left: 1rpx solid #ebebeb;
+    padding-left: 38rpx;
+}
+
+.g-nav-box__content-item {
+    box-sizing: border-box;
+    color: #000;
+    font-size: 28rpx;
+    line-height: 38rpx;
+    margin-top: 38rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+}

@@ -1,0 +1,138 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.select {
+    padding: 40rpx 30rpx;
+}
+
+.select__main {
+    margin-left: -20rpx;
+    margin-top: -40rpx;
+}
+
+.select__main::after {
+    clear: both;
+    content: " ";
+    display: block;
+}
+
+.select__btn {
+    color: #1c2438;
+    font-size: 34rpx;
+    height: 80rpx;
+    line-height: 46rpx;
+    line-height: 80rpx;
+    position: relative;
+    text-align: center;
+}
+
+.select__btn::after {
+    border-radius: 16rpx;
+    box-shadow: inset 0 0 0 1px #ebebeb;
+    content: " ";
+    display: block;
+    height: 200%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(.5);
+    transform-origin: left top;
+    width: 200%;
+}
+
+.select__btn__wrap {
+    box-sizing: border-box;
+    float: left;
+    margin-top: 40rpx;
+    padding-left: 20rpx;
+    position: relative;
+}
+
+.select__btn--selected {
+    color: #4293f4;
+}
+
+.select__btn--selected::after {
+    box-shadow: inset 0 0 0 1px #4293f4;
+}

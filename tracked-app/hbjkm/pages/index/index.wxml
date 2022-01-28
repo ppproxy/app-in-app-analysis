@@ -1,0 +1,243 @@
+<view>
+    <view style="postion:relative">
+        <mp-navigation-bar back="{{false}}" background="{{isShowBg?'':'white'}}" color="{{isShowBg?'white':'black'}}" title="河北健康码"></mp-navigation-bar>
+    </view>
+    <view class="back-view {{isShowBg?'show':''}}">
+        <image alt="" class="back-image" src="https://wyy-1253323744.file.myqcloud.com/hbjkm/banner_72187081.png"></image>
+    </view>
+    <view class=" data-overview-box" data-url="https://news.qq.com/zt2020/page/feiyan.htm?from=groupmessage" style="margin-top:{{statusBarHeight===44?132:180}}rpx">
+        <view bindtap="goLink" class="notice">
+            <view class="tongzhitext">
+                <text class="tongzhi-text">{{notice}}</text>
+            </view>
+        </view>
+        <view class="flex-wrap">
+            <view class="flex-container justify-item" style="margin:0 32rpx;align-items:center;padding-bottom:15rpx;border-bottom:1px solid #eee;">
+                <view class="header">个人信息码</view>
+                <view class="red">{{reportflag}}</view>
+            </view>
+            <view class="data-detail">
+                <view class="box">
+                    <view>姓名</view>
+                    <view class="text" style="color:rgb(170, 170, 170)">{{name}}</view>
+                </view>
+                <view class="box">
+                    <view>身份证号</view>
+                    <view class="text" style="color:rgb(170, 170, 170)">{{identity}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="code">
+        <view style="font-size:40rpx;margin-bottom:0rpx;width: 225px,text-align:center;font-family:Arial;" wx:if="{{fxdjflag!=20}}">{{now}}</view>
+        <image src="{{biankuangUrl}}/huangguan.png" style="width: 35px; height: 25px;margin-bottom:-7px" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num>=severalvaccine.maxNum}}"></image>
+        <view class="canvasbox" wx:if="{{fxdjflag!=20}}">
+            <image src="{{biankuangUrl}}/biankuang1.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num==1}}"></image>
+            <image src="{{biankuangUrl}}/biankuang2.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num==2}}"></image>
+            <image src="{{biankuangUrl}}/biankuang3.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num==3}}"></image>
+            <image src="{{biankuangUrl}}/biankuang4.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num>=4}}"></image>
+            <canvas canvasId="myQrcode" class="{{hiddenmodalput?'myQrcode':'myQrcodes'}}" id="canvasid" style="width: 225px; height: 225px;margin:3px 5px 3px 5px" wx:if="{{fxdjflag!=20&&!newflag}}"></canvas>
+        </view>
+        <view bind:tap="re" style="width: 225px; height: 225px; background-color:#eee; display:flex;justify-content: center;align-items: center;flex-direction: column;" wx:if="{{fxdjflag==20}}">
+            <image src="../../images/new.png" style="width: 80px; height: 80px;"></image>
+            <view style="margin-top:60rpx;font-size:30rpx">健康码信息获取超时</view>
+            <view style="margin-top:20rpx;font-size:30rpx">请耐心等待，不要频繁刷新</view>
+        </view>
+        <view style="padding-left:10px; padding-right:10px; box-sizing:border-box;">
+            <view>
+                <view class="icon-box" style="margin-top: 0px; margin-bottom: 10px; border: 1px solid #000;" wx:if="{{flag==0}}">
+                    <view class="warnbox" wx:if="{{this_province}}">
+                        <view class=" warn warn-tit" style="font-weight:normal;text-align:left;color:#d8242b" wx:if="{{fxdjflag=='10'}}">通过数据库查询，您有以下出行提示：</view>
+                        <view class=" warn warn-tit" style="font-weight:normal;text-align:left;color:#f5d000;" wx:if="{{fxdjflag=='01'}}">通过数据库查询，您有以下出行提示：</view>
+                        <view class=" warn" style="font-weight:normal;color:#d8242b;font-size:32rpx;" wx:if="{{fxdjflag=='10'}}">1、{{warmMsgs}}</view>
+                        <view class=" warn" style="font-weight:normal;color:#d8242b;font-size:32rpx;" wx:if="{{fxdjflag=='10'}}">温馨提醒：
+                 <view style="text-indent:2em;">{{warmprompt}}</view>
+                        </view>
+                        <view class=" warn" style="font-weight:normal;color:#f5d000;font-size:32rpx;" wx:if="{{fxdjflag=='01'}}">1、{{warmMsgs}}</view>
+                        <view class=" warn" style="font-weight:normal;color:#f5d000;font-size:32rpx;" wx:if="{{fxdjflag=='01'}}">温馨提醒：
+                 <view style="text-indent:2em;">{{warmprompt}}</view>
+                        </view>
+                    </view>
+                    <view class="warnbox" wx:if="{{!this_province}}">
+                        <view class=" warn warn-tit" style="font-weight:normal;text-align:left;color:#d8242b" wx:if="{{fxdjflag=='10'}}">通过数据库查询，您有以下出行提示：</view>
+                        <view class=" warn warn-tit" style="font-weight:normal;text-align:left;color:#f5d000;" wx:if="{{fxdjflag=='01'}}">通过数据库查询，您有以下出行提示：</view>
+                        <block wx:for="{{warmMsgs}}">
+                            <view class=" warn" style="font-weight:normal;color:#d8242b;font-size:32rpx;" wx:if="{{fxdjflag=='10'}}">{{index+1}}、{{item}}</view>
+                            <view class=" warn" style="font-weight:normal;color:#f5d000;font-size:32rpx;" wx:if="{{fxdjflag=='01'}}">{{index+1}}、{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="flex">
+            <view class="q" wx:if="{{hsjc=='阳性'}}">核酸检测：
+				<view class="danger">{{hsjc}}（{{hsjcsj}}）</view>
+            </view>
+            <view class="q" wx:if="{{hsjc=='阴性'}}">核酸检测：
+				<view class="safe">{{hsjc}}（{{hsjcsj}}）</view>
+            </view>
+            <view class="q" wx:if="{{hsjc==''||hsjc==null}}">核酸检测：
+				<view>未检测到近一个月内核酸检测信息</view>
+            </view>
+            <view class="q" wx:if="{{hsjc=='阳性'}}">检测机构：
+				<view class="danger">{{hsjcjgmc}}</view>
+            </view>
+            <view class="q" wx:if="{{hsjc=='阴性'}}">检测机构：
+				<view class="safe">{{hsjcjgmc}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="health-query" style="margin-top:5px;">
+        <button bind:tap="inoculationDetail" class="query-bnt" data-real="{{true}}">新冠疫苗接种信息</button>
+        <button bind:tap="detectionmechanism" class="query-bnt" data-real="{{true}}" style="margin-top: 20rpx;">查看核酸检测信息</button>
+        <button bind:tap="onTapAccess" class="inoculation-bnt" data-real="{{true}}" data-url="/pages/self/self" style="margin-top: 20rpx;">查看本人健康信息</button>
+    </view>
+    <view class="card">
+        <view class="card-title">通信大数据行程卡
+			<image bind:tap="newmini" src="/images/xing.png"></image>
+        </view>
+        <view class="card-content1" wx:if="{{cacheFlag=='99'}}">今日未核验 <text bindtap="hyClick">点击核验</text>
+        </view>
+        <block wx:else>
+            <view class="card-content" style="color: red;" wx:if="{{cacheFlag=='2'}}">您14天内到访过中高风险地区所在的城市</view>
+            <view class="card-content" wx:else>您14天内未到访过中高风险地区所在的城市</view>
+        </block>
+        <view catchtouchmove="ture" class="card-wrap" wx:if="{{!hiddenmodalput}}">
+            <view class="card-cover">
+                <view class="card-notice">本服务由通信大数据行程卡核验，核验结果可作为您的出行凭证。</view>
+                <view class="card-phone">联系方式 <text>{{phone}}</text>
+                </view>
+                <view class="card-code">
+                    <view>验证码 <input autoFocus bindinput="handleInputChange" placeholder="请输入验证码" type="number" value="{{code}}"></input>
+                    </view>
+                    <button bindtap="getVerificationCode" disabled="{{disabled}}">{{time}}</button>
+                </view>
+                <view class="card-check">
+                    <view bindtap="checkFn">
+                        <checkbox-group>
+                            <label class="checkbox">
+                                <checkbox checked="check" class="young-old-introduce-check" value="check"></checkbox>
+                                <view class="young-old-introduce-txt" style="display:inline">
+									同意并授权运营商查询本人在疫情期间过去14天内曾到访地信息</view>
+                            </label>
+                        </checkbox-group>
+                    </view>
+                </view>
+                <view class="cover-footer">
+                    <view bindtap="cancel">取消</view>
+                    <view style="color: #ccc;" wx:if="{{!activeHy}}">开始核验</view>
+                    <view bindtap="confirm" wx:else>开始核验</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="display:flex">
+        <view bind:tap="onTapAccess" class="access-box" data-real="{{true}}" data-url="/pages/report/index/index" hoverClass="right-content-two">
+            <view class="img">
+                <image src="https://imgcache.gzonline.gov.cn/cos//home-zizhushenbao_01fa9ae3.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">去打卡</view>
+            </view>
+        </view>
+        <view bind:tap="newmini" class="access-box" hoverClass="right-content-two">
+            <view class="img">
+                <image src="/images/xing.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">行程卡</view>
+            </view>
+        </view>
+    </view>
+    <view style="display:flex">
+        <view bind:tap="goAnswer" class="access-box" hoverClass="right-content-two" style="flex:1">
+            <view class="img">
+                <image src="https://wyy-1253323744.file.myqcloud.com/hbjkm/cjwt/cjwt.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">
+                    <view>常见</view>
+                    <view>问题</view>
+                </view>
+            </view>
+        </view>
+        <view bind:tap="gogo" class="access-box" hoverClass="right-content-two" style="flex:1">
+            <view class="img">
+                <image src="/images/place.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">场所码</view>
+            </view>
+        </view>
+    </view>
+    <view style="display:flex">
+        <view bind:tap="gotoYoungOld" class="access-box" hoverClass="right-content-two" style="flex:1">
+            <view class="img">
+                <image src="https://wyy-1253323744.file.myqcloud.com/hbjkm/lyzc2x.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">
+                    <view>老幼</view>
+                    <view>助查</view>
+                </view>
+            </view>
+        </view>
+        <view bind:tap="gogogo" class="access-box" hoverClass="right-content-two" style="flex:1">
+            <view class="img">
+                <image src="/images/familyy.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">代领</view>
+            </view>
+        </view>
+    </view>
+    <view style="display:flex">
+        <view bind:tap="gogogogogo" class="access-box" hoverClass="right-content-two" style="flex:1">
+            <view class="img">
+                <image src="/images/h.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="tittle">Health Code Traveler Version</view>
+                <view class="tittle">防疫健康码</view>
+                <view class="tittle">（入境人员版）</view>
+            </view>
+        </view>
+    </view>
+    <view style="padding:0 40rpx;font-size:23px;font-weight:600;margin:40rpx 0">便民服务</view>
+    <view style="display:flex">
+        <view bind:tap="gogogogo" class="access-box" hoverClass="right-content-two" style="flex:2">
+            <view class="img">
+                <image src="/images/jian.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">电子健康码</view>
+                <view class="desc"></view>
+            </view>
+        </view>
+        <view bind:tap="go" class="access-box" data-real="{{true}}" data-url="/pages/scancode/scancode" hoverClass="right-content-two" style="flex:2">
+            <view class="img">
+                <image src="../../images/home/saoma.png"></image>
+            </view>
+            <view class="right-content">
+                <view class="title">扫码</view>
+            </view>
+        </view>
+    </view>
+    <view class="tel" style="margin-top:10rpx">依托全国一体化政务服务平台</view>
+    <view class="tel">实现跨省数据共享和互通互认</view>
+    <view class="tel" style="margin-top:20rpx;margin-bottom:20rpx;">主办单位：河北省政务服务管理办公室</view>
+</view>
+<g-footer></g-footer>
+<view catchtouchmove="true" class="dark" wx:if="{{newflag}}">
+    <view class="dark-content">
+        <view class="icon">
+            <image bindtap="closedark" class="canicon" src="../../images/can.png"></image>
+        </view>
+        <view class="bb">
+			{{c}}
+		</view>
+        <healthCardLogin authLogin="{{false}}" bind:authFail="authFail" bind:authSucess="authSucess" hidden="{{!showLogin}}">
+            <button class="healthbtn" type="primary">确认升级</button>
+        </healthCardLogin>
+    </view>
+</view>

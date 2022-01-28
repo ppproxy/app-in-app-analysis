@@ -1,0 +1,299 @@
+<view class="box" style="z-index:10;position:absolute;">
+    <view class="back-view {{!isShowBg?'show':''}}">
+        <view style="width:100%;height:{{systemInfo.statusBarHeight}}px;"></view>
+        <view class="view-title">北京健康宝</view>
+    </view>
+    <view class="back-view">
+        <image alt="" class="back-image" mode="widthFix" src="{{imgUrl.home_bg}}" webp="webp"></image>
+        <image class="titleImg" src="{{imgUrl.home_title}}" webp="webp" wx:if="{{showtitleImg}}"></image>
+        <image bindtap="changeImg" class="tanhao" src="./../../images/tanhao.png" style="right:{{showtitleImg?'55rpx':'54rpx'}};"></image>
+        <view class="texts" wx:if="{{!showtitleImg}}">
+            <image class="laba" src="./../../images/laba.svg"></image>
+            <swiper autoplay="true" circular="true" class="swiper_container" interval="5000" vertical="true">
+                <swiper-item wx:for="{{list}}" wx:key="index">
+                    <view catchtap="goDetail" class="swiper_item{{index}}" data-index="{{index}}" style="display:flex;align-items:center;font-size:36rpx;">
+                        <text class="message_title{{index}}" style="height:100rpx;line-height:100rpx;font-weight: bold;">{{item.message_title}}</text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <view catchtap="tapLogin" class="grzx">
+        <view class="mine-profile-avatar" wx:if="{{!userInfo.isAuth}}">
+            <open-data style="position: relative; z-index: 999" type="userAvatarUrl"></open-data>
+        </view>
+        <image class="mine-profile-avatar" src="../../images/bjjkb.png" wx:if="{{userInfo.isAuth}}"></image>
+        <open-data class="mine-profile-nickname" style="position: relative; z-index: 999" type="userNickName" wx:if="{{!userInfo.isAuth}}"></open-data>
+        <view class="mine-profile-nickname" wx:if="{{userInfo.isAuth}}">{{userInfo.realName}}</view>
+        <view class="grzx-right" wx:if="{{!userInfo.isAuth}}">请登录</view>
+        <image alt="" class="syjt" mode="widthFix" src="{{imgUrl.home_jian}}" wx:if="{{userInfo.isAuth}}"></image>
+    </view>
+    <view class="con">
+        <view catchtap="scanCode" class="access-box">
+            <view class="img">
+                <image src="../../images/geren.png"></image>
+            </view>
+            <view class="right-content1">
+                <view class="title">本人信息扫码登记</view>
+            </view>
+            <view catchtap="goBenren" class="imgs">
+                <image alt="" class="syjt1" src="{{imgUrl.home_syjt}}" wx:if="{{userInfo.isAuth}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="con">
+        <view catchtap="onTapAccess" class="access-box" data-url="/pages/jxzq/cha-xun-jie-guo/index" hoverClass="access-box--hover">
+            <view class="img">
+                <image src="{{imgUrl.home_ztcx}}"></image>
+            </view>
+            <view class="right-content1">
+                <view class="title">本人健康码自查询</view>
+            </view>
+        </view>
+    </view>
+    <view class="con">
+        <view catchtap="laoyou" class="access-box" hoverClass="access-box--hover">
+            <view class="img">
+                <image src="https://xcx-static.yqgz.beijing.gov.cn/statics/laoyoujiankang.png"></image>
+            </view>
+            <view class="right-content1">
+                <view class="title">老幼健康码助查询</view>
+            </view>
+        </view>
+    </view>
+    <view class="con">
+        <view catchtap="tarenTapAccess" class="access-box" data-url="/pages/jxzq/zhuang-tai-cha-xun/index" hoverClass="access-box--hover">
+            <view class="img">
+                <image src="{{imgUrl.home_trjkzt}}"></image>
+            </view>
+            <view class="right-content1">
+                <view class="title">他人健康码代查询</view>
+            </view>
+        </view>
+    </view>
+    <view class="con" wx:if="{{reshsjc}}">
+        <view catchtap="HesuanTo" class="access-box">
+            <view class="img">
+                <image src="../../images/hesuanicon.png"></image>
+            </view>
+            <view class="right-content1">
+                <view class="title" style="">核酸疫苗服务查询</view>
+            </view>
+        </view>
+    </view>
+    <view class="con">
+        <view catchtap="panduan" class="access-box" hoverClass="access-box--hover">
+            <view class="img">
+                <image src="../../images/daofangren.svg"></image>
+            </view>
+            <view class="right-content1">
+                <view class="title">到访人信息登记簿</view>
+            </view>
+        </view>
+    </view>
+    <view class="con">
+        <view catchtap="isJingxinManage" class="access-box">
+            <view class="img">
+                <image src="https://xcx-static.yqgz.beijing.gov.cn/statics/jxxz_0820_icon.png"></image>
+            </view>
+            <view class="right-content1">
+                <view class="title" style="letter-spacing:56rpx">京心相助</view>
+            </view>
+        </view>
+    </view>
+    <view class="g-footer component-class {{fixed?'g-footer--fixed':''}}">
+        <view class="g-footer__content">
+            <view class="g-footer__content__text footer">
+                <text bindtap="goMessage">北京市大数据中心</text>
+                <image class="input" src="./../../images/input.svg"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi&&zhanshi}}">
+    <view class="center">
+        <view class="tit">声明</view>
+        <scroll-view scrollY="true" style="max-height:588rpx;">
+            <view class="tt">
+                <text>“健康宝”是北京市大数据中心依托北京市防疫相关数据和国家政务服务平台相关功能，针对当前新冠肺炎疫情防控需要，方便广大市民及进(返)京人员查询自身防疫相关健康状态，帮助城市恢复生产生活秩序，推出的一项数字化信息服务工具。由于疫情发展变化等原因，查询的信息可能会出现与实际状况不一致的情况，如有疑问，可与北京市疾病预防控制中心、社区、12345热线等联系。任何盗用、伪造、欺骗、误导性使用此项工具而逃避履行防疫义务的，将依法追究法律责任。</text>
+            </view>
+        </scroll-view>
+        <view style="margin-left:30rpx;">
+            <checkbox-group bindchange="checkboxChange">
+                <label wx:for="{{items}}">
+                    <view style="font-size:30rpx;margin-top:20rpx">
+                        <checkbox checked="{{item.checked}}" class="chagesize" color="#333" style="transform: scale(0.65,0.65);" value="{{item.name}}"></checkbox>{{item.value}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+        <view bindtap="btns" class="btn">确定</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{showModal}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" stsyle="max-height: 588rpx;">
+            <view class="tt tts">
+                <text>健康宝到访人信息登记簿提供电子化登记服务，可代替纸质登记，避免接触传染及个人隐私泄露，您只能拥有唯一的登记簿二维码。</text>
+                <text>该登记簿可用于复工复产以及商务楼宇、商超、餐馆、各类门店等公共场所到访人员进出信息登记，相关登记信息将以脱敏的形式显示于登记簿页面中，完整登记信息存储于北京市政务云，仅用于防疫追溯工作。</text>
+                <text>请按照国家信息保护相关法律法规及健康宝服务规则使用。如有任何违规使用行为，该登记簿将被立即停用，并依法、依规进行处理。</text>
+                <text>是否同意继续申请？</text>
+            </view>
+        </scroll-view>
+        <view class="agree">
+            <view bindtap="btn2" style="border-right:1rpx solid #e5e5e5;color: #999999;">不同意</view>
+            <view bindtap="btn1">同意</view>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi1sa}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt">
+                <text>北京“健康宝”需要申请使用您的常用手机号码，用于行程查询和其他防疫相关工作，手机号码一旦授权成功，在防疫期间将不能修改。建议您使用与微信绑定的手机号码。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btnScanWrong1" class="btn">我知道了</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi1}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt">
+                <text>北京“健康宝”需要申请使用您的常用手机号码，用于行程查询和其他防疫相关工作。在防疫期间，若您需要更换手机号码，弃用手机号码将在14天后失效，期间若存在进（返）京行为，仍需对弃用号码进行行程核验，建议您使用与微信绑定的常用手机号码。</text>
+            </view>
+        </scroll-view>
+        <button bindgetphonenumber="getPhoneNumber" class="btn iNow" openType="getPhoneNumber">我知道了</button>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{isxianshi1}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>北京“健康宝”暂不能确认您的防疫相关健康状态。为了您能够使用北京“健康宝”展示您的防疫相关健康状态，将通过“通信大数据行程卡”对您14天内行程信息进行核验。感谢您的理解与配合。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btns1" class="btna">
+            <view bindtap="chaichutui" class="tuichu">退出</view>
+            <button bindtap="handchuchai" class="tuichu1">继续</button>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{scancodeTrue}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text wx:if="{{phone}}">您可以通过扫描到访地健康宝登记簿二维码进行信息登记，您的个人信息将保存于北京市政务云，且仅用于政府防疫追溯及相关工作。扫码登记场所仅显示您脱敏处理后的个人信息(如:{{userInfo.name}}、{{userInfo.idCard}}、{{phone}})。</text>
+                <text wx:else>您可以通过扫描到访地健康宝登记簿二维码进行信息登记，您的个人信息将保存于北京市政务云，且仅用于政府防疫追溯及相关工作。扫码登记场所仅显示您脱敏处理后的个人信息(如:{{userInfo.name}}、{{userInfo.idCard}})。</text>
+            </view>
+            <view bindtap="noteClick" class="tit-note">
+                <view class="border-note" wx:if="{{iSnote==false}}"></view>
+                <g-icon color="#0D8CE6" size="30" type="check" wx:if="{{iSnote==true}}"></g-icon>
+                <view class="border-tit">不再提示</view>
+            </view>
+        </scroll-view>
+        <view bindtap="btnsScan" class="btn">我知道了</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{isPhoneSan}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>本次操作需要您进行手机号授权。</text>
+            </view>
+        </scroll-view>
+        <view class="btna">
+            <view bindtap="tuichu1" class="tuichu">退出</view>
+            <button bindgetphonenumber="getPhoneNumber" class="tuichu1" openType="getPhoneNumber">继续</button>
+        </view>
+    </view>
+</view>
+<canvas canvasId="myCanvas" style="width:{{windowWidth}}px;height:{{windowHeight}}px;opacity:1;position:absolute;top:0;left:0;z-index:1;visibility:hidden;"></canvas>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{isHesuan}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>北京健康宝将向国家核酸检测证明查询系统及部分核酸检测部门推送您的姓名和身份证号。您的个人信息仅用于核酸检测结果查询及防疫工作。是否同意继续查询？</text>
+            </view>
+        </scroll-view>
+        <view class="btna1">
+            <view bindtap="showHeSuan" class="tuichu">不同意</view>
+            <view bindtap="showHeSuan1" class="showHeSuan">同意</view>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{scanWrong}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt">
+                <text>按照北京市入境防疫隔离政策，您目前正处于入境隔离期间（未满21天），请您严格履行个人防疫义务并做好个人防护。如有疑问，请致电（010）12345市民服务热线咨询。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btnScanWrong" class="btn">我知道了</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{daofangWrong}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt">
+                <text>北京“健康宝”暂不能确认您的防疫相关健康状态，可能由于您过去14天内有进（返）京行为引起。若需要继续生成本人二维码，请先进行“本人健康状态查询”。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btnDaofangWrong" class="btn">我知道了</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{Grzx}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt">
+                <text>您在“个人中心”中展示的注册手机号码均需在您使用“行程信息查询”服务时进行行程申报。已解绑手机号将在14天后失效（14天内仍需进行行程核验），为了不影响您使用北京“健康宝”，请尽快换绑已弃用的手机号码。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="GrzxTap" class="btn">我知道了</view>
+    </view>
+</view>
+<view catchtouchmove class="six_num_topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{checkIDcard}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 399rpx;">
+            <view class="six_num_content">
+                <View class="six_num_tip">请输入您的身份证号后6位</View>
+                <input bindinput="bindinput" class="idcard_six_num" maxlength="6" type="idcard" value="{{IdcardSixNum}}"></input>
+            </view>
+        </scroll-view>
+        <view class="oprate_btn">
+            <view bindtap="btnCheckCancel" class="cancel">取消</view>
+            <view bindtap="btnCheckIDcard" class="two_btn_agree">提交</view>
+        </view>
+    </view>
+    <View class="six_num_bottom"> 为了确保您的隐私安全，请输入您的身份证号验证个人身份。您填报的所有信息将储存于北京市政务云且仅用于防疫工作，由于个人将隐私信息告知他人等原因导致的资料泄露，由本人承担相应责任。瞒报、谎报信息将依法承担法律责任，敬请配合。 </View>
+</view>
+<view class="top123 " style="min-height:{{windowHeight}}px;" wx:if="{{tanchu}}">
+    <view class="center123">
+        <view class="tit123">提示 <view bindtap="bindClode" class="bindClode">关闭</view>
+        </view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt123" style="padding-bottom:40rpx;">
+                <text> 您近期可能有到访或途经疫情中高风险地区的情况，请严格遵守北京市和当地的防疫政策，正确履行个人防疫义务。
+        </text>
+                <view style="text-indent: 2em;">1.如近14天内您曾到访有一例及以上本土新冠病毒感染者的县(市、区、旗)，原则上请暂缓来京。 </view>
+                <view style="text-indent: 2em;">2.如近14天您曾到访有一例及以上本土新冠病毒感染者所在地级市(直辖市、副省级城市的县、市、区)其他低风险区（县），非必要不进(返)京。确需进（返）京，需持进京前48小时内核酸检测证明，并在进京后立即前往所在社区登记报到。 </view>
+                <view style="text-indent: 2em;">3.如您已经在京，请完成信息登记并立即与所在社区、街道或相关单位联系报到，按要求及时完成核酸检测，履行个人防疫义务。 </view>
+                <view style="text-indent: 2em;">4.如有疑问请拨打12345或在健康宝“留言簿”留言。 </view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="showZd" class="tuichu123">重新申报</view>
+            <view bindtap="showYw" class="showHeSuan123">查看登记信息</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,295 @@
+.mine,page {
+    background: #f1f4f6;
+}
+
+.mine {
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 0 40rpx 100rpx;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    padding: 56rpx 0 40rpx;
+}
+
+.title,.title1 {
+    color: #000;
+    display: flex;
+    font-family: PingFangSC-Medium;
+    font-size: 48rpx;
+    justify-content: space-between;
+    line-height: 67rpx;
+}
+
+.title1 {
+    padding: 16rpx 0 40rpx;
+}
+
+.box {
+    background: #fff;
+    border-radius: 16rpx;
+}
+
+.box-tit {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    letter-spacing: 0;
+    line-height: 50rpx;
+    padding-bottom: 32rpx;
+}
+
+.box-txt {
+    padding-bottom: 24rpx;
+}
+
+.box-txt,.box-txt1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    color: #999;
+}
+
+.left,.right {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    letter-spacing: 0;
+    line-height: 38rpx;
+}
+
+.right {
+    color: #333;
+}
+
+.guanli {
+    color: #1f90fb;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    line-height: 67rpx;
+}
+
+.box1 {
+    margin-bottom: 40rpx;
+}
+
+.box:last-child {
+    margin-bottom: 0;
+}
+
+.box2 {
+    background: #ececec;
+    margin-bottom: 40rpx;
+}
+
+.sf {
+    position: absolute;
+    right: -8rpx;
+    top: 16rpx;
+}
+
+.sf>image {
+    height: 44rpx;
+    width: 100rpx;
+}
+
+.sure {
+    background: #1f90fb;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: 700;
+    height: 96rpx;
+    letter-spacing: 0;
+    line-height: 96rpx;
+    text-align: center;
+}
+
+.sf1>image {
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.sf1 {
+    left: 140rpx;
+    line-height: 0;
+    position: absolute;
+    top: 23rpx;
+    z-index: 999;
+}
+
+.po {
+    height: 96rpx;
+    margin-top: 40rpx;
+    position: relative;
+}
+
+.bits {
+    padding-left: 32rpx;
+}
+
+.bot {
+    color: #ccc;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    padding-top: 40rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.top123 {
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.center123 {
+    background: #fff;
+    border-radius: 16rpx;
+    width: 560rpx;
+}
+
+.tit123 {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 40rpx 0 32rpx;
+    text-align: center;
+}
+
+.tt123 {
+    color: #585858;
+    display: flex;
+    font-size: 30rpx;
+    justify-content: flex-start;
+    line-height: 44rpx;
+    padding: 0 40rpx;
+    text-align: justify;
+    text-indent: 2em;
+    word-break: break-all;
+}
+
+.btna123 {
+    align-items: center;
+    border-top: 1rpx solid #e5e5e5;
+    display: flex;
+    height: 98rpx;
+    line-height: 98rpx;
+}
+
+.btna123,.tuichu123 {
+    color: #0d8ce6;
+    font-size: 36rpx;
+    text-align: center;
+}
+
+.tuichu123 {
+    border-right: 1rpx solid #e5e5e5;
+    font-family: PingFangSC-Regular;
+    width: 50%;
+}
+
+.showHeSuan123 {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.Yqimg {
+    display: inline-block;
+    height: 44rpx;
+    text-align: center;
+    vertical-align: middle;
+    width: 44rpx;
+}
+
+.wozhidaole {
+    color: #0d8ce6;
+    font-family: PingFangSC-Regular;
+    font-size: 36rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.wenhao {
+    color: #585858;
+    font-size: 30rpx;
+    line-height: 44rpx;
+    padding: 0 40rpx;
+    text-align: justify;
+    word-break: break-all;
+}
+
+.shouhang {
+    text-indent: 2em;
+}
+
+.cj {
+    z-index: 9999;
+}
+
+.lulu,.top {
+    width: 100%;
+}
+
+.top {
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.center {
+    background: #fff;
+    border-radius: 16rpx;
+    width: 560rpx;
+}
+
+.box {
+    position: relative;
+}
+
+.tit {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 40rpx 0 32rpx;
+    text-align: center;
+}
+
+.tt {
+    color: #585858;
+    font-size: 30rpx;
+    line-height: 44rpx;
+    padding: 0 40rpx;
+    text-align: justify;
+    text-indent: 40rpx;
+    word-break: break-all;
+}
+
+.tt1 {
+    text-indent: 2em;
+}
+
+.btn {
+    border-top: 1rpx solid #e5e5e5;
+    color: #0d8ce6;
+    font-size: 36rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    margin-top: 32rpx;
+    padding: 0 40rpx;
+    text-align: center;
+}

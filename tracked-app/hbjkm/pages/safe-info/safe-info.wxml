@@ -1,0 +1,96 @@
+<block wx:if="{{flag}}">
+    <view class="info-box  danger-info" wx:if="{{issafe==0}}">
+        <image class="bg-icon" src="../../images/bgg.svg" wx:if="{{issafe==0}}"></image>
+        <view style="margin-bottom:15rpx;color:red;width:90%">通过数据库查询，您有以下出行提示：</view>
+        <view style="font-weight:600;width: 80%;margin-bottom:10rpx;color:red;width:90%" wx:for="{{warmMsgs}}">{{index+1}}.{{item}}</view>
+        <view style="margin-top:40rpx;color:rgb(170, 170, 170);padding-bottom:20rpx;border-bottom:1px solid #eee">注：数据在不断汇聚和完善中，查询结果仅供参考。</view>
+        <view class="per-info">
+            <view class="line">
+                <view style="display:flex">
+                    <view class="left a">姓名</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{name}}</view>
+            </view>
+            <view class="line">
+                <view style="display:flex">
+                    <view class="left a">时间</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{now}}</view>
+            </view>
+            <view class="line">
+                <view style="display:flex">
+                    <view class="left b">场所名称</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{gateName}}</view>
+            </view>
+            <view class="line" wx:if="{{gateType==1}}">
+                <view style="display:flex">
+                    <view class="left b">详细地址</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{address}}</view>
+            </view>
+            <view class="line" wx:if="{{gateType==2}}">
+                <view style="display:flex">
+                    <view class="left b">车牌号码</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{carNo}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="info-box  safe-info" wx:if="{{issafe==1}}">
+        <image class="bg-icon" src="../../images/bgg.svg" wx:if="{{issafe==1}}"></image>
+        <view style="font-size:18px;font-weight:600;margin-bottom:50rpx;color:#2ddb92">未见异常</view>
+        <view style="padding: 0 60rpx">
+            <view style="border-bottom:1px solid #eee;padding-bottom:20rpx;color:rgb(170, 170, 170)">按照目前掌握的防疫相关数据，暂未发现您存在与防疫相关的异常健康状况。防疫相关数据会随着疫情发展及时更新，此次查询并不会表示排除您的防疫相关健康风险。</view>
+            <view style="margin-top:40rpx;color:rgb(170, 170, 170);padding-bottom:20rpx;border-bottom:1px solid #eee">注：数据在不断汇聚和完善中，查询结果仅供参考。</view>
+        </view>
+        <view class="per-info">
+            <view class="line">
+                <view style="display:flex">
+                    <view class="left a">姓名</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{name}}</view>
+            </view>
+            <view class="line">
+                <view style="display:flex">
+                    <view class="left a">时间</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{now}}</view>
+            </view>
+            <view class="line">
+                <view style="display:flex">
+                    <view class="left b">场所名称</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{gateName}}</view>
+            </view>
+            <view class="line" wx:if="{{gateType==1}}">
+                <view style="display:flex">
+                    <view class="left b">详细地址</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{address}}</view>
+            </view>
+            <view class="line" wx:if="{{gateType==2}}">
+                <view style="display:flex">
+                    <view class="left b">车牌号码</view>
+                    <view>:</view>
+                </view>
+                <view class="right">{{carNo}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="btn-box" wx:if="{{issafe!=2}}">
+        <view style="width:85%;margin:0 auto;">
+            <button bind:tap="go" class="btn">我的健康码</button>
+            <button bind:tap="goo" class="btns">我的健康信息</button>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,28 @@
+.company {
+    display: block;
+    font-size: 22rpx;
+    color: #ccc;
+    line-height: 24rpx;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company:after {
+    content: "";
+    display: inline-block;
+    background: url("https://pt-starimg.didistatic.com/static/starimg/img/SMVrtoULyD1569383863071.png") no-repeat;
+    background-size: 100% auto;
+    height: 18rpx;
+    width: 10rpx;
+    margin-left: 10rpx;
+}
+
+.company .name {
+    max-width: 60%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

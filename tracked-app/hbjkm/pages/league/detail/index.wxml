@@ -1,0 +1,38 @@
+<block wx:if="{{model}}">
+    <view class="top-info">
+        <view class="top-logo">
+            <image src="{{model.iconUrl}}"></image>
+        </view>
+        <view class="top-name">{{model.label}}</view>
+        <block wx:if="{{model.needApply===0}}">
+            <view class="top-code">
+                <image showMenuByLongpress src="{{model.qrUrl}}"></image>
+            </view>
+            <view class="top-code-desc">长按扫描小程序码试用</view>
+        </block>
+        <view class="top-btn" wx:if="{{model.needApply===1}}">
+            <button bindtap="handleTrialTap" size="mini">{{status===0?'申请试用':'已提交'}}</button>
+        </view>
+    </view>
+    <view scrollX class="cc-recombox">
+        <view class="cc-goods-item cc-termbox" style="position:relative;" wx:for="{{model.imgList}}" wx:key="index">
+            <view class="cc-goods-imgbox">
+                <image bindtap="previewImg" class="cc-scale-rule" data-ind="{{index}}" mode="aspectFit" src="{{item}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="{{model.needApply===1?'desc-box-list':''}}">
+        <view class="desc-box" wx:for="{{model.descList}}" wx:key="index">
+            <view class="desc-content">
+                <view class="title">{{item.title}}</view>
+                <view class="desc">
+                    <text>{{item.desc}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{model.needApply===1}}">
+        <view style="margin-top:132rpx"></view>
+        <g-button-group fixed bind:primaryTap="handleTrialTap" primaryText="{{status===0?'试用':'已提交'}}"></g-button-group>
+    </block>
+</block>

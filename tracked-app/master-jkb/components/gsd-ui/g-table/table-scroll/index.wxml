@@ -1,0 +1,43 @@
+<view class="table--scroll">
+    <view class="fixed__block">
+        <view class="table table--fixed">
+            <view class="colgroup">
+                <view class="col" style="width: 100px;"></view>
+                <view class="col" style="width: 100px;" wx:for="{{data}}" wx:key="{{index}}"></view>
+            </view>
+            <view class="tbody g-table__tbody">
+                <view class="tr g-table__tr" wx:for="{{columns}}" wx:for-item="rowItem" wx:key="{{index}}">
+                    <view class="th g-table__th">
+                        <view class="g-table__cell">{{rowItem.title}}</view>
+                    </view>
+                    <view class="td g-table__td" wx:for="{{data}}" wx:for-item="colItem" wx:key="{{colItem.key}}">
+                        <view class="g-table__cell">{{colItem[rowItem.key]}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <scroll-view>
+        <view class="table table__main">
+            <view class="colgroup">
+                <view class="col" style="width: 100px;"></view>
+                <view class="col" style="width: 100px;" wx:for="{{data}}" wx:key="{{index}}"></view>
+            </view>
+            <view class="tbody g-table__tbody">
+                <view class="tr g-table__tr" wx:for="{{columns}}" wx:for-item="rowItem" wx:key="{{index}}">
+                    <view class="th g-table__th">
+                        <view class="g-table__cell">{{rowItem.title}}</view>
+                    </view>
+                    <block wx:if="{{data.length>0}}">
+                        <view class="td g-table__td" wx:for="{{data}}" wx:for-item="colItem" wx:key="{{colItem.key}}">
+                            <view class="g-table__cell">{{colItem[rowItem.key]}}</view>
+                        </view>
+                    </block>
+                    <view class="td g-table__td" wx:else>
+                        <view class="g-table__cell">暂无数据</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

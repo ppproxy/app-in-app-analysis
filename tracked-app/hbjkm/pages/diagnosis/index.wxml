@@ -1,0 +1,12 @@
+<view class="banner">
+    <image src="{{bannerPath}}"></image>
+</view>
+<g-wrapper>
+    <g-cell access bind:tap="onTapAccess" data-item="{{item}}" desc="{{item.desc}}" label="{{item.label}}" wx:for="{{list}}" wx:key="appId">
+        <view slot="prepend">
+            <view class="cube">
+                <image src="{{item.img}}"></image>
+            </view>
+        </view>
+    </g-cell>
+</g-wrapper>

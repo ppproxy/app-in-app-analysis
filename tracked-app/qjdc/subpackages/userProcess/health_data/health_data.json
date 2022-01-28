@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "my-item": "/subpackages/userProcess/components/myItem6d31e91d/index",
+        "toast": "/components/Toast6bcbf1a1/index"
+    },
+    "navigationBarTitleText": "骑行健康",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#14D0B4",
+    "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "TeamListItem": "/npm/_didi/qingju-user-invite/src/components/team-list-item49f62104/index"
+    },
+    "navigationBarTitleText": "组队助力"
+}

@@ -1,0 +1,42 @@
+<template name="tab-template-two"></template>
+<template name="tab-template-one">
+    <g-wrapper title="基本信息" wx:if="{{message.clueType!=1}}">
+        <g-preview textAlign="right">
+            <g-preview-item label="{{item.label}}" textAlign="right" wx:if="{{message[item.key]}}" wx:for="{{keyMap}}" wx:key="item.key">{{message[item.key]}}</g-preview-item>
+        </g-preview>
+    </g-wrapper>
+    <g-wrapper labelWidth="200" title="其它信息" wx:if="{{message.clueType!=1}}">
+        <g-preview textAlign="right">
+            <g-preview-item label="{{item.label}}" textAlign="right" wx:if="{{message[item.key]}}" wx:for="{{keyMapOther}}" wx:key="item.key">{{message[item.key]}}</g-preview-item>
+        </g-preview>
+    </g-wrapper>
+    <g-wrapper title="反映人信息" wx:if="{{message.clueType==1}}">
+        <g-preview textAlign="right">
+            <g-preview-item label="{{item.label}}" textAlign="right" wx:if="{{message[item.key]}}" wx:for="{{reporterKeyMap}}" wx:key="item.key">{{message[item.key]}}</g-preview-item>
+        </g-preview>
+    </g-wrapper>
+    <g-wrapper title="涉事人信息" wx:if="{{message.clueType==1}}">
+        <g-preview textAlign="right">
+            <g-preview-item label="{{item.label}}" textAlign="right" wx:if="{{message[item.key]}}" wx:for="{{reportedKeyMap}}" wx:key="item.key">{{message[item.key]}}</g-preview-item>
+        </g-preview>
+    </g-wrapper>
+    <g-wrapper title="反映内容" wx:if="{{message.clueType==1}}">
+        <g-preview textAlign="right">
+            <g-preview-item label="{{item.label}}" textAlign="right" wx:if="{{message[item.key]}}" wx:for="{{reportContentKeyMap}}" wx:key="item.key">{{message[item.key]}}</g-preview-item>
+        </g-preview>
+    </g-wrapper>
+    <g-wrapper>
+        <view bind:tap="onTapAccess" class="btn-wrap">
+            <button type="primary">重新上报</button>
+        </view>
+    </g-wrapper>
+</template>
+<template is="tab-template-one" data="{{message:message,keyMap:keyMap,keyMapOther:keyMapOther,reporterKeyMap:reporterKeyMap,reportedKeyMap:reportedKeyMap,reportContentKeyMap:reportContentKeyMap}}"></template>
+<template is="tab-template-two" data="{{scheduleList:message.itemList,message:message,keyMap:keyMap,query:query}}"></template>
+<g-form bind:second="onTapDone" bind:submit="onTapReply" model="{{formData}}" primaryText="添加回复" rules="{{rules}}" secondText="办结" wx:if="{{userInfo.isVolunteer&&(message.status===0||message.status===1)&&query.todoType==='affair'}}">
+    <view slot="content">
+        <g-wrapper title="处理">
+            <g-textarea bind:change="onChangeForm" id="content" label="回复内容" value="{{formData.content}}"></g-textarea>
+        </g-wrapper>
+    </view>
+</g-form>

@@ -1,0 +1,101 @@
+page {
+    background: #ebebeb;
+    padding-bottom: 88rpx;
+}
+
+.carousel_div {
+    height: auto!important;
+    position: relative;
+    width: 100%;
+}
+
+.swiper {
+    background: #fff;
+    border-radius: 16rpx;
+    margin: 40rpx auto 100rpx;
+    width: 670rpx;
+}
+
+.title {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    letter-spacing: 0;
+    line-height: 44rpx;
+}
+
+.page {
+    margin-top: 24rpx;
+}
+
+.pageNum {
+    background: #ebebeb;
+    border-radius: 4rpx;
+    color: #999;
+    font-size: 28rpx;
+    padding: 2rpx 12rpx;
+}
+
+.content {
+    color: #666;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    line-height: 44rpx;
+    margin-top: 42rpx;
+}
+
+.content image {
+    margin-top: 20rpx;
+}
+
+video {
+    height: 310rpx;
+    width: 590rpx;
+}
+
+.footers {
+    color: #bbb;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    letter-spacing: 0;
+    margin-top: 20rpx;
+}
+
+.fixDot,.footers {
+    text-align: center;
+}
+
+.fixDot {
+    background: #fff;
+    bottom: 0;
+    height: 88rpx;
+    line-height: 88rpx;
+    position: fixed;
+    width: 100%;
+}
+
+.dio {
+    border: 1rpx solid rgba(0,0,0,.22);
+    border-radius: 50%;
+}
+
+.active1,.dio {
+    display: inline-block;
+    height: 14rpx;
+    width: 14rpx;
+}
+
+.active1 {
+    background: rgba(0,0,0,.22);
+    border: 1rpx solid rgba(255,255,255,.32);
+    border-radius: 50%;
+}
+
+.fixDot text {
+    margin-right: 14rpx;
+}
+
+.fixDot text:last-of-type {
+    margin-right: 0;
+}

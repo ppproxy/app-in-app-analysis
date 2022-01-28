@@ -1,0 +1,61 @@
+<view>
+    <view class="wrap-box">
+        <image class="icon" src="../images/auth-face.png"></image>
+        <view class="txt">{{tips}}</view>
+        <view class="desc">
+            <text>人脸识别将采集您的照片，并应用于
+查询结果页的头像展示</text>
+        </view>
+    </view>
+    <view>
+        <g-form bind:submit="onStartVerify" disabled="{{!(formData.idCardNumber&&formData.name)}}" model="{{formData}}" primaryText="{{primaryText}}" rules="{{rules}}" validateType="{{validateType}}">
+            <view slot="content">
+                <g-input bind:blur="blur" bind:focus="focus" bind:input="onInputChange" clearable="{{dd!=1}}" disabled="{{dd==1}}" id="name" label="姓名" placeholder="请输入姓名" value="{{formData.name}}"></g-input>
+                <View class="box">
+                    <g-input bind:blur="blur" bind:focus="focus" bind:input="onInputChange" class="idCardNumber" clearable="{{dd!=1}}" disabled="{{dd==1}}" id="idCardNumber" label="身份证号" maxlength="18" placeholder="请输入身份证号" type="idcard" value="{{formData.idCardNumber}}"></g-input>
+                    <View bindtap="showTypeBox" class="showTypeIcon">
+                        <g-icon color="#ABABAB" size="26" type="{{sfxzStatus?'arrow-up':'arrow-right'}}"></g-icon>
+                    </View>
+                </View>
+                <View class="choose_type_box" wx:if="{{sfxzStatus}}">
+                    <view class="title">身份认证方式</view>
+                    <g-wrapper>
+                        <g-radio-group bind:change="handleChange" id="typeValue" items="{{typeRange}}" value="{{typeValue}}"></g-radio-group>
+                    </g-wrapper>
+                </View>
+                <view class="agree">
+                    <view>
+                        <view> 本次操作遵守国家相关法律法规，采集的信息仅用于防疫相关健康状态查询。 </view>
+                    </view>
+                </view>
+            </view>
+        </g-form>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi1}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>北京“健康宝”需要申请使用您的常用手机号码，用于行程查询和其他防疫相关工作。在防疫期间，若您需要更换手机号码，弃用手机号码将在14天后失效，期间若存在进（返）京行为，仍需对弃用号码进行行程核验，建议您使用与微信绑定的常用手机号码。</text>
+            </view>
+        </scroll-view>
+        <view class="btna">
+            <button bindgetphonenumber="getPhoneNumber" class="tuichu1" openType="getPhoneNumber">我知道了</button>
+        </view>
+    </view>
+</view>
+<view class="top123 " style="min-height:{{windowHeight}}px;" wx:if="{{isNo}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt123" style="padding-bottom:40rpx;">
+                <view>16岁以下儿童及60岁以上老人通过身份认证后可跳过人脸识别，是否现在开启摄像头拍摄您的照片，并应用于查询结果页展示头像。</view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="showZd" class="tuichu123">取消</view>
+            <view bindtap="showYw" class="showHeSuan123">确定</view>
+        </view>
+    </view>
+</view>

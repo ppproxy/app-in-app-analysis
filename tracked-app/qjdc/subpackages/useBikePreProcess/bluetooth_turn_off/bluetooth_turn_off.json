@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "button-com": "/subpackages/useBikePreProcess/components/Button057cff91/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "HighlightText": "/components/HighlightText78cd31c3/index"
+    },
+    "navigationBarTitleText": "滴滴青桔",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#E2E2E2"
+}

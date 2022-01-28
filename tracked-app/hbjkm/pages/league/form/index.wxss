@@ -1,0 +1,19 @@
+.desc {
+    margin: 32rpx 37rpx;
+    font-size: 28rpx;
+    color: #999999;
+    word-break: break-all;
+    white-space: pre-line;
+}
+
+.xrequired:before {
+    content: '* ';
+    color: red;
+    float: left;
+    padding-top: 36rpx;
+    padding-left: 22rpx;
+}
+
+input {
+    text-overflow: ellipsis;
+}

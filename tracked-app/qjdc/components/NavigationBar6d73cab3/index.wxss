@@ -1,0 +1,77 @@
+.back-icon {
+    top: 48rpx;
+    left: 20rpx;
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.back-icon,.personal-center {
+    position: fixed;
+    z-index: 99999;
+}
+
+.personal-center {
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 160rpx;
+}
+
+.personal-center image {
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.personal-center .title-bar {
+    position: relative;
+    width: 150rpx;
+    padding-left: 20rpx;
+}
+
+.personal-center .title-bar .my-btn {
+    width: 42rpx;
+    height: 57rpx;
+    margin: 0 auto;
+    background: url("https://pt-starimg.didistatic.com/static/starimg/img/RLgVWHQfoh1607589371885.png") no-repeat top/100% auto;
+}
+
+.personal-center .title-bar .my-btn:after {
+    border: none;
+}
+
+.personal-center .title-bar .level {
+    position: absolute;
+    left: 20rpx;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.personal-center .index-back-wrap {
+    font-family: PingFangSC-Medium;
+    text-align: center;
+    line-height: 64rpx;
+    color: #fff;
+    font-size: 36rpx;
+}
+
+.personal-center .index-back-wrap .index-back-img {
+    position: absolute;
+    left: 20rpx;
+}
+
+.search-bar {
+    left: 114rpx;
+    z-index: 99999;
+    padding: 16rpx 0 15rpx 30rpx;
+    width: 417rpx;
+    height: 64rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #666;
+    background: hsla(0,0%,100%,.6);
+    border: 1rpx solid rgba(0,0,0,.08);
+    border-radius: 32rpx;
+    box-sizing: border-box;
+}

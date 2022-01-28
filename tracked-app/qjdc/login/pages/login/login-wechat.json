@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "mpx-icon": "/components/iconfd6cf8cc/index",
+        "protocol-check": "/login/components/protocol-check47ed5339/index"
+    }
+}

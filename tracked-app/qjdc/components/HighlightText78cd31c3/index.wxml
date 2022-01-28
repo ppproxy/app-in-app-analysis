@@ -1,0 +1,5 @@
+<view class="{{lineStyle}}" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <slot name="before"></slot>
+    <text style="{{item.highlight?highlightStyle:textStyle}}" wx:for="{{descList}}" wx:for-index="idx" wx:key="idx">{{item.text}}</text>
+    <slot name="after"></slot>
+</view>

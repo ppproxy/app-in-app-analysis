@@ -1,0 +1,98 @@
+.box {
+    width: 100%;
+}
+
+.box-item {
+    display: flex;
+}
+
+.leftView {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    letter-spacing: 0;
+}
+
+.centerView {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    margin-left: 20rpx;
+    width: 32rpx;
+}
+
+.radio {
+    border-radius: 50%;
+    height: 32rpx;
+    margin-top: 4rpx;
+    width: 32rpx;
+}
+
+.centerView-radio {
+    background: #03b615;
+}
+
+.centerView-radio-344 {
+    background: #ef4344;
+}
+
+.centerView-radio-ccc {
+    background: #ccc;
+}
+
+.border {
+    border: 3rpx dashed #ccc;
+    height: calc(100% - 32rpx);
+}
+
+.rightView {
+    margin-left: 20rpx;
+}
+
+.status {
+    margin-bottom: 16rpx;
+}
+
+.status,.status1 {
+    color: #000;
+    font-family: PingFangSC-Semibold;
+    font-size: 32rpx;
+    letter-spacing: 0;
+}
+
+.status1 {
+    margin-bottom: 26rpx;
+}
+
+.animalHeat {
+    color: #9c9c9c;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    line-height: 1;
+    margin-bottom: 12rpx;
+}
+
+.animalHeat-con {
+    margin-bottom: 18rpx;
+}
+
+.animalHeat-con,.animalHeat-con1 {
+    color: #333;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    letter-spacing: 0;
+}
+
+.animalHeat-con1 {
+    line-height: 36rpx;
+    margin-bottom: 30rpx;
+    width: 100%;
+    word-break: break-all;
+}
+
+.hang {
+    height: 24rpx;
+    width: 100%;
+}

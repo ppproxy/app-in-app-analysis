@@ -1,0 +1,24 @@
+{
+    "usingComponents": {
+        "iphone": "/components/IphoneX48a8f956/index",
+        "navigation-bar": "/components/NavigationBar6d73cab3/index",
+        "config": "/components/config0e396084/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "use-bike": "/components/use-bikeb861e72e/index",
+        "message-box": "/components/message-box207cd166/index",
+        "box-area": "/components/box-area4941d751/index",
+        "marketing-resources": "/components/MarketingResourcesa2a18bda/index",
+        "recom-card": "/components/recom-carda2166f5e/index",
+        "benefit-center": "/components/benefit-centerca3cffe6/index",
+        "ad": "/components/ad9db5b8da/index",
+        "insurance-protocol": "/components/insurance-protocolafe0bf26/index",
+        "activity-center": "/components/activity-center68b18002/index",
+        "ddCardDlg": "/components/DidiCardDialog0ab990b3/index",
+        "isPrivacy": "/components/isPrivacye63cef2c/index",
+        "diversion-intercept": "/components/diversion-interceptd2ada358/index",
+        "popup-confirm": "/components/PopupConfirm495a8160/index"
+    },
+    "navigationBarTitleText": "滴滴青桔",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom"
+}

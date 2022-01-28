@@ -1,0 +1,146 @@
+page {
+    width: 100%;
+}
+
+.wrap {
+    background: #f1f1f1;
+    height: 100%;
+    padding: 0 40rpx;
+}
+
+.header_con,.wrap {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header_con {
+    display: flex;
+    justify-content: space-between;
+    line-height: 90rpx;
+    padding: 20rpx 0;
+}
+
+.header image {
+    height: 44rpx;
+    width: 44rpx;
+}
+
+.onlinechoose {
+    font-size: 32rpx;
+    width: 100%;
+}
+
+.hotel_list {
+    border-radius: 16rpx;
+    height: 302rpx;
+    width: 100%;
+}
+
+.icon_none {
+    border: 1rpx solid #cacaca;
+    border-radius: 50%;
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.list_cons {
+    width: 100%;
+}
+
+.lefts {
+    width: 80rpx;
+}
+
+.name {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    letter-spacing: 0;
+    line-height: 50rpx;
+}
+
+.list-left {
+    color: #999;
+}
+
+.list-left,.list-right {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    letter-spacing: 0;
+    line-height: 38rpx;
+}
+
+.list-right {
+    color: #333;
+    text-align: right;
+}
+
+.flex_center {
+    color: #1f90fb;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+}
+
+.left {
+    color: #000;
+    font-family: PingFangSC-Medium;
+    font-size: 48rpx;
+}
+
+.flex_start {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.list {
+    background: #fff;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 40rpx;
+    position: relative;
+    width: 100%;
+}
+
+.list-center {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32rpx;
+}
+
+.flex_between {
+    background: #fff;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 160rpx;
+    left: 0;
+    padding: 30rpx;
+    position: fixed;
+    width: 100%;
+}
+
+.sure {
+    background: #1f90fb;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: 400;
+    height: 96rpx;
+    letter-spacing: 0;
+    line-height: 96rpx;
+    text-align: center;
+}
+
+.img {
+    height: 44rpx;
+    position: absolute;
+    right: -8rpx;
+    top: 16rpx;
+    width: 100rpx;
+}
+
+.placeholder-view {
+    height: 150rpx;
+    width: 100%;
+}

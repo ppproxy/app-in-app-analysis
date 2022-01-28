@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "button-com": "/subpackages/paymentProcess/components/Button057cff91/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "pay": "/subpackages/paymentProcess/components/index7a2d99fc/index",
+        "highlight-text": "/components/HighlightText78cd31c3/index"
+    },
+    "navigationBarTitleText": "行程结束",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

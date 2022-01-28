@@ -1,0 +1,11 @@
+<g-input bind:change="inp" class="xrequired" data-form="selfForm" id="identity" label="场所名称" maxlength="12" placeholder="请输入场所名称，不超过12字" type="{{identityInputType}}" value="{{selfForm.identity}}"></g-input>
+<g-picker bind:change="handleFormChange" data-form="selfForm" id="identityType" label="场所类型" placeholder="请选择场所类型" range="{{cardTypeRange}}" value="{{gate_type}}"></g-picker>
+<g-form-cell actionText="选择" bind:tap="handleOpenRegion" class="xrequired" data-form="selfForm" id="street" label="所在区域" placeholder="请选择所在区域" value="{{selfForm.street}}" wx:if="{{flag!=2}}"></g-form-cell>
+<g-input bind:change="addre" class="xrequired" data-form="selfForm" id="addres" label="详细地址" maxlength="16" placeholder="请输入详细地址，不超过16字" type="{{identityInputType}}" value="{{address}}" wx:if="{{flag!=2}}"></g-input>
+<g-input bind:change="car" class="xrequired" data-form="selfForm" id="identity" label="车牌号码" maxlength="10" placeholder="请输入车牌号码" type="{{identityInputType}}" value="{{car_no}}" wx:if="{{flag==2}}"></g-input>
+<g-input disabled bind:change="inp" class="xrequired" data-form="selfForm" label="联系人" type="{{identityInputType}}" value="{{name}}"></g-input>
+<g-input disabled bind:change="inp" class="xrequired" data-form="selfForm" label="联系电话" type="{{identityInputType}}" value="{{phone}}"></g-input>
+<view class="btn-box">
+    <button bind:tap="go" class="btn" disabled="{{bool}}">确认添加</button>
+</view>
+<g-cascader bind:change="handleRegionChange" bind:close="handleRegionClose" bind:columnChange="handleRegionColumnChange" range="{{regionRange}}" visible="{{showRegionPicker}}"></g-cascader>

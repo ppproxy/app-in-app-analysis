@@ -1,0 +1,8 @@
+<view class="search">
+    <view class="search__container {{_focus?'search--focus':''}} ">
+        <g-icon class="search__icon" size="32" type="search"></g-icon>
+        <input bindblur="handleBlur" bindconfirm="handleConfirm" bindfocus="handleInputFocus" bindinput="handleInput" class="search__input" confirmType="search" disabled="{{disabled}}" focus="{{_focus}}" placeholder="{{placeholder}}" placeholderClass="search__input--placeholder" type="text" value="{{value}}"></input>
+        <g-icon catch:tap="handleClear" class="clear__icon" size="36" type="close-circle" wx:if="{{_isSearch&&value}}"></g-icon>
+    </view>
+    <view catch:tap="handleCancel" class="search__cancel" wx:if="{{_isSearch}}">取消</view>
+</view>

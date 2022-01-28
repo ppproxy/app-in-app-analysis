@@ -1,0 +1,11 @@
+<view class="wrap" style="min-height:{{windowHeight}}px;">
+    <view class="center">
+        <view class="tit">我承诺</view>
+        <view class="title">1、按照规定不需要采取隔离措施，或已按要求进行隔离并满14天隔离期；</view>
+        <view class="title">2、本人目前无发热、咳嗽、乏力等症状。</view>
+    </view>
+    <view class="btn-box">
+        <button bindtap="cancle" class="cancle">取消</button>
+        <button bindtap="arge" class="cancle1">同意</button>
+    </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="coupon-pop-wrap" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{benefitList.length>0}}">
+    <view class="coupon-pop">
+        <image class="coupon-pop-header" src="{{options.bannerImg}}" wx:if="{{options.bannerImg}}"></image>
+        <image class="coupon-pop-header" src="https://pt-starimg.didistatic.com/static/starimg/img/hsEfrV2j8j1622188684373.png" wx:else></image>
+        <view class="coupon-pop-body" style="{{bgColor}}">
+            <view class="content-wrap">
+                <view class="coupon-pop-body-content" wx:for="{{benefitList}}" wx:for-index="idx" wx:key="idx">
+                    <view class="coupon-left">
+                        <view class="coupon-left-benefit">
+                            <text class="coupon-left-benefit-num">
+                  {{item.number}}
+                </text>
+                            <text class="coupon-left-benefit-unit">
+                  {{item.unit}}
+                </text>
+                        </view>
+                    </view>
+                    <view class="coupon-right">
+                        <view class="benefit-wrap">
+                            <view class="coupon-right-title">
+                                <text>{{item.benefitTitle}}</text>
+                            </view>
+                            <view class="coupon-right-time">
+                                <text>{{item.benefitNotice}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="__invoke" class="coupon-btn" data-eventconfigs="{{ tap:[ ['target',item,idx] ] }}">
+                        <text>{{item.btnTitle}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <image catchtap="close" class="coupon-pop-close" src="https://pt-starimg.didistatic.com/static/starimg/img/7FWJbVTeaT1607146548161.png"></image>
+    </view>
+</view>

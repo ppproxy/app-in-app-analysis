@@ -1,0 +1,32 @@
+<view class="list component-class">
+    <view class="list__header">
+        <slot name="header"></slot>
+    </view>
+    <view class="list__container" style="height: {{_scrollViewHeight}}px" wx:if="{{list&&list.length>0}}">
+        <scroll-view scrollY class="list__scrollview" scrollTop="{{_scrollTop}}">
+            <view class="list__slot__content">
+                <slot name="content"></slot>
+            </view>
+            <view class="list__item" wx:for="{{_list}}" wx:key="{{item.key}}">
+                <view class="list__title">{{item.key}}</view>
+                <view class="list__wrapper">
+                    <view catch:tap="handleChoose" class="list__block" data-item="{{subItem}}" hoverClass="view--hover" hoverStayTime="250" wx:for="{{item.list}}" wx:for-index="subIndex" wx:for-item="subItem" wx:key="{{subIndex}}">
+                        <view class="list__block__content">{{subItem.name}}</view>
+                        <view class="list__block__desc" wx:if="{{subItem.desc}}">{{subItem.desc}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="index__list">
+            <view catch:tap="handleTouch" catch:touchend="handleTouchEnd" catch:touchmove="handleTouch" catch:touchstart="handleTouch" class="index__list__key" wx:for="{{_keys}}" wx:key="{{index}}">
+        {{item||''}}
+      </view>
+        </view>
+        <view class="key__mask" wx:if="{{_currentKey&&_isTouch}}">
+      {{_currentKey}}
+    </view>
+    </view>
+    <view class="list__container--empty" style="height: {{_scrollViewHeight}}px" wx:else>
+        <view>暂无结果</view>
+    </view>
+</view>

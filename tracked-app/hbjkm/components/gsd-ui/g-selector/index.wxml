@@ -1,0 +1,15 @@
+<g-poplayer bind:close="handleClose" visible="{{visible}}">
+    <view class="selector__header" style="{{selectorHeaderStyle}}">
+        <button bindtap="handleClose" class="selector__button" style="{{cancelStyle}}">
+      {{cancelText}}
+    </button>
+        <button bindtap="confirm" class="selector__button" style="color: #4293f4; {{confirmStyle}}">
+      {{confirmText}}
+    </button>
+    </view>
+    <picker-view bindchange="bindChange" class="picker-view" indicatorStyle="height: 50px; {{indicatorStyle}}" maskStyle="{{maskStyle}}" value="{{defaultValue}}">
+        <picker-view-column wx:for="{{dataList}}" wx:key="index">
+            <view class="selector__item" style="{{itemStyle}}" wx:for="{{item}}">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</g-poplayer>

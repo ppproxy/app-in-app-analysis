@@ -1,0 +1,4 @@
+<view class="hesuan">
+    <view class="hesuantitle">核酸检测结果：</view>
+    <view class="day">距离本次检测结果已过天</view>
+</view>

@@ -1,0 +1,11 @@
+<view class="action-card" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="{{'content '+(remindActive&&'bigSmall')}}">
+        <view class="action-card-l">
+            <view class="title">{{title}}</view>
+            <view class="desc" wx:if="{{desc}}">
+                <highlight-text color="#666" fontSize="24rpx" text="{{desc}}"></highlight-text>
+            </view>
+        </view>
+        <view bindtap="callback" class="action-btn" wx:if="{{btn_text[0]}}">{{btn_text[0]}}</view>
+    </view>
+</view>

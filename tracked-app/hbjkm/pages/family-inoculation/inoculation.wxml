@@ -1,0 +1,42 @@
+<view class="inoculation-page">
+    <view class="back-view show">
+        <image alt="" class="back-image" src="https://wyy-1253323744.file.myqcloud.com/hbjkm/banner_72187081.png"></image>
+    </view>
+    <view class="data-overview-box" data-url="https://news.qq.com/zt2020/page/feiyan.htm?from=groupmessage" style="margin-top:{{statusBarHeight===44?132:180}}rpx">
+        <view bindtap="goLink" class="notice">
+      --新冠疫苗--
+    </view>
+        <view class="flex-wrap">
+            <view class="flex-container justify-item" style="margin:0 32rpx;align-items:center;padding-bottom:15rpx;border-bottom:1px solid #eee;">
+                <view class="header"></view>
+                <view class="red">{{reportflag}}</view>
+            </view>
+            <view class="data-detail">
+                <view class="box">
+                    <view>姓名</view>
+                    <view class="text" style="color:rgb(170, 170, 170)">{{name}}</view>
+                </view>
+                <view class="box">
+                    <view>身份证号</view>
+                    <view class="text" style="color:rgb(170, 170, 170)">{{identity}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="inoculation-list">
+        <view class="xgym">新冠疫苗接种信息</view>
+        <class class="noIclation" wx:if="{{!inoculationList}}">无接种记录</class>
+        <view style="padding-bottom:80rpx;" wx:else>
+            <view class="haveIclation" wx:for="{{inoculationList}}">
+                <view class="name">
+                    <text class="title">疫苗厂商</text>
+                    <text class="content">{{item.vaccinationproduce}}</text>
+                </view>
+                <view class="iclation-info">
+                    <text class="title">第{{item.vaccinateorders}}剂次接种日期</text>
+                    <text class="content">{{item.vaccinatedate}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

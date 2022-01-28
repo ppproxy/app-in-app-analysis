@@ -1,0 +1,16 @@
+<view style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <swiper bindchange="change" class="box-area" current="{{current}}" displayMultipleItems="{{4}}" indicatorActiveColor="#28FFD3" indicatorDots="{{indicatorDots}}">
+        <swiper-item class="list-wrap" wx:for="{{boxList}}" wx:key="index">
+            <view class="list">
+                <view bindtap="__invoke" class="icon-wrap" data-eventconfigs="{{ tap:[ ['jump',item] ] }}">
+                    <image class="icon" src="{{item.creativity.ballIcon}}"></image>
+                    <text class="tag" wx:if="{{item.creativity.titleScript}}">{{item.creativity.titleScript}}</text>
+                </view>
+                <view class="text">{{item.creativity.subScript}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="indicator" wx:if="{{boxList.length>4}}">
+        <progress active activeMode="forwards" activeColor="#28FFD3" duration="10" percent="{{progressPercent}}" strokeWidth="3"></progress>
+    </view>
+</view>

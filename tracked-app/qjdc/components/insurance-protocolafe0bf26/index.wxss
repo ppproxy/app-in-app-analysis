@@ -1,0 +1,57 @@
+.insurance-protocol {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37,38,45,.8);
+    z-index: 9;
+}
+
+.insurance-protocol .insurance-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500rpx;
+    background: #fff;
+    text-align: center;
+    border-radius: 8rpx;
+    z-index: 9;
+}
+
+.insurance-protocol .insurance-wrapper .top-img {
+    text-align: center;
+}
+
+.insurance-protocol .insurance-wrapper image {
+    height: 290rpx;
+    width: 100%;
+}
+
+.insurance-protocol .insurance-wrapper .insurance-title {
+    font-size: 30rpx;
+    padding: 0 40rpx;
+    padding-bottom: 10rpx;
+    text-align: left;
+}
+
+.insurance-protocol .insurance-wrapper .insurance-subhead {
+    padding: 30rpx;
+    font-size: 22rpx;
+    color: #666;
+    text-align: left;
+}
+
+.insurance-protocol .insurance-wrapper .insurance-subhead text {
+    color: #ff7d41;
+}
+
+.insurance-protocol .insurance-wrapper .agree-insurance {
+    border-top: 1rpx solid rgba(0,0,0,.1);
+    font-size: 30rpx;
+    color: #ff7d41;
+    padding: 25rpx 0;
+}

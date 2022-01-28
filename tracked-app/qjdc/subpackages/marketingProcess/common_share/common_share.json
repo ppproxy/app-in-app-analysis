@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "toast": "/components/Toast6bcbf1a1/index"
+    }
+}

@@ -1,0 +1,12 @@
+page {
+    background: #efefef;
+}
+
+.box {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,.05);
+    margin: 40rpx;
+    padding: 0 0 40rpx;
+    z-index: 999;
+}

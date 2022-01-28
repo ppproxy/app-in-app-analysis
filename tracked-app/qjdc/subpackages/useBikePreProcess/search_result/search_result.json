@@ -1,0 +1,20 @@
+{
+    "usingComponents": {
+        "nopark": "/subpackages/useBikePreProcess/components/NoPark05f96a46/index",
+        "infocard": "/subpackages/useBikePreProcess/components/InfoCard7823f230/index",
+        "SearchXpanel": "/subpackages/useBikePreProcess/components/searchXpanel3e8ac106/index",
+        "mileage": "/subpackages/useBikePreProcess/components/Mileageb6d2cab4/index",
+        "map-common": "/components/Map9ccbc7ea/index",
+        "Mileage-appoint": "/subpackages/useBikePreProcess/components/Mileage9a624566/index",
+        "inputaddr": "/subpackages/useBikePreProcess/components/InputAddrca002a12/index",
+        "loading": "/subpackages/useBikePreProcess/components/Loading944edbd0/index",
+        "iphone": "/components/IphoneX48a8f956/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "ride-rule": "/subpackages/useBikePreProcess/components/RideRule4fab5266/index",
+        "intercept-btn": "/subpackages/useBikePreProcess/components/InterceptBtn92b29fe8/index",
+        "privilege": "/subpackages/useBikePreProcess/components/privilege3ef463ed/index",
+        "task": "/subpackages/useBikePreProcess/components/Task5d0006f1/index",
+        "popup-confirm": "/components/PopupConfirm495a8160/index"
+    }
+}

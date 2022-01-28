@@ -1,0 +1,26 @@
+<radio-group bindchange="handleChange">
+    <view ariaLabel="{{item.name+(items[index].desc?items[index].desc:'')+(item.checked?' 选中':' 未选中')+(item.disabled?' 已禁用':'')}}" ariaRole="button" class="check__container" wx:for="{{_items}}" wx:key="{{index}}">
+        <label class="check__container__label">
+            <g-form-item componentClass="form-item" disabled="{{item.disabled}}">
+                <view class="radio__item">
+                    <radio checked="{{item.checked}}" class="radio" disabled="{{item.disabled}}" value="{{item.value}}"></radio>
+                    <view class="radio__icon">
+                        <view hidden="{{!item.checked}}">
+                            <g-icon class="radio__icon--checked" size="48" type="circle"></g-icon>
+                        </view>
+                        <view class="radio__icon--unchecked" hidden="{{item.checked}}"></view>
+                    </view>
+                    <view class="radio__label">
+                        <view ariaLabel="{{item.name}}" class="radio__label__text">{{item.name}}</view>
+                        <view class="radio__label__desc">
+                            <view ariaLabel="{{subItem}}" wx:for="{{item.desc}}" wx:for-item="subItem" wx:key="{{subItem}}">{{subItem}}</view>
+                        </view>
+                    </view>
+                </view>
+            </g-form-item>
+        </label>
+        <view catch:tap="handleIconTap" class="check__container__icon check__type" data-item="{{item}}">
+            <g-icon class="check__type--info" size="48" type="info-o" wx:if="{{item.icon==='info'}}"></g-icon>
+        </view>
+    </view>
+</radio-group>

@@ -1,0 +1,12 @@
+<view>
+    <mp-lazy-load images="{{images}}"></mp-lazy-load>
+    <view class="browse {{active?'active':''}}">
+        <view wx:if="{{!active}}"></view>
+        <view bindtap="prevIcon" class="arrow-position arrow-left">
+            <g-icon color="#ffffff" size="50" type="arrow-left" wx:if="{{active}}"></g-icon>
+        </view>
+        <view bindtap="nextIcon" class="arrow-position arrow-right">
+            <g-icon color="#ffffff" size="50" type="arrow-right" wx:if="{{active}}"></g-icon>
+        </view>
+    </view>
+</view>

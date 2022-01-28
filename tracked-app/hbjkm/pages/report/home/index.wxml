@@ -1,0 +1,16 @@
+<view wx:if="{{visible}}">
+    <g-banner src="{{imgUrls}}"></g-banner>
+    <g-wrapper>
+        <g-cell bind:tap="onTapAccess" data-url="/pages/report/index/index?type=1" desc="上报个人健康自查表" label="上报我的健康信息">
+            <view class="img" slot="prepend">
+                <image src="https://imgcache.gzonline.gov.cn/cos/images/zc%402x.png"></image>
+            </view>
+        </g-cell>
+        <g-cell bind:tap="onTapAccess" data-url="/pages/report/index/index?type=2" desc="为他人上报健康状态信息" label="为他人上报健康状况">
+            <view class="img" slot="prepend">
+                <image src="https://imgcache.gzonline.gov.cn/cos/images/tr%402x.png"></image>
+            </view>
+        </g-cell>
+    </g-wrapper>
+    <g-footer></g-footer>
+</view>

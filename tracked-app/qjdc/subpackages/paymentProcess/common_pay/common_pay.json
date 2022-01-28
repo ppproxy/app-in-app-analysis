@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "toast": "/components/Toast6bcbf1a1/index",
+        "subscribePrompt": "/subpackages/paymentProcess/components/SubscribePromptbbc961de/index"
+    },
+    "navigationBarTitleText": "滴滴青桔",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

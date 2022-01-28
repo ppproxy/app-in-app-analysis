@@ -1,0 +1,98 @@
+.wrap {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    background: rgba(0,0,0,.5);
+}
+
+.confirm-panel,.wrap {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.confirm-panel {
+    position: absolute;
+    z-index: 100;
+}
+
+.icon {
+    width: 100rpx;
+    height: 100rpx;
+    margin-bottom: 37rpx;
+}
+
+.content {
+    width: 470rpx;
+    font-size: 28rpx;
+    color: #666;
+    line-height: 42rpx;
+    text-align: center;
+}
+
+.content .title {
+    color: #000;
+    font-size: 32rpx;
+    margin-bottom: 21rpx;
+}
+
+.content .text {
+    color: #888;
+}
+
+.confirm {
+    padding-top: 40rpx;
+}
+
+.confirm,.confirm-single {
+    width: 534rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    transform-origin: center;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-single {
+    padding: 40rpx 0;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+    width: 100%;
+    margin-top: 30rpx;
+    border-top: 1rpx solid rgba(0,0,0,.1);
+    font-size: 32rpx;
+}
+
+.btn-box .ok {
+    color: #14d0b4;
+}
+
+.btn-box .cancel {
+    color: #999;
+}
+
+.btn-box .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+.btn-box .btn:first-child {
+    border-right: 1rpx solid rgba(0,0,0,.1);
+}

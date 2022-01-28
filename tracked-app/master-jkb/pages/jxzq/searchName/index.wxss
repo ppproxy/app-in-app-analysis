@@ -1,0 +1,58 @@
+.header,.page {
+    box-sizing: border-box;
+}
+
+.header {
+    height: 200rpx;
+    left: 0;
+    padding: 0 40rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.a {
+    color: #bbbec4;
+    font-size: 36rpx;
+}
+
+.search-content-body {
+    margin-top: 160rpx;
+}
+
+.search {
+    background: #0d8ce6;
+    border-radius: 10rpx;
+    color: #fff;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    width: 103rpx;
+    z-index: 999;
+}
+
+.tit {
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+    height: 85rpx;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left {
+    word-wrap: break-word;
+    font-size: 36rpx;
+    width: 85%;
+    word-break: normal;
+}
+
+.bitian {
+    box-sizing: border-box;
+    color: #000;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    letter-spacing: 0;
+    line-height: 44rpx;
+    padding: 20rpx 0 0;
+}

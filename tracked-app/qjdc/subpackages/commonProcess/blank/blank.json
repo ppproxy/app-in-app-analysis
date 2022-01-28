@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "toast": "/components/Toast6bcbf1a1/index"
+    },
+    "navigationBarTitleText": "",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

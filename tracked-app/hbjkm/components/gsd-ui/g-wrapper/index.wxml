@@ -1,0 +1,14 @@
+<view class="wrap component-class  {{disabled?'wrap--disabled':''}}">
+    <view class="wrap__title__container title-class" wx:if="{{title}}">
+        <text style="color: red;font-size: 100%;" wx:if="{{xrequired}}">{{xrequired}}</text>
+        <view ariaLabel="{{title}}" class="wrap__title">{{title}}</view>
+        <view class="wrap__action">
+            <slot name="action"></slot>
+        </view>
+    </view>
+    <view class="wrap--content">
+        <slot name="content"></slot>
+        <slot></slot>
+    </view>
+    <view class="wrap--disabled__mask" wx:if="{{disabled}}"></view>
+</view>

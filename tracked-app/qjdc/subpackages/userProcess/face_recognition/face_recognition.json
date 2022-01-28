@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "button-com": "/components/newButtonc816977e/index",
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "img": "/subpackages/userProcess/components/Img33ea7a45/index",
+        "popup": "/subpackages/userProcess/components/Popup6388827c/index"
+    },
+    "navigationBarTitleText": "青桔",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#ffffff"
+}

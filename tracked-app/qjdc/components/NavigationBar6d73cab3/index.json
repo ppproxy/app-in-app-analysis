@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "level": "/components/Level4fb69a74/index"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "AwardListItem": "/npm/_didi/qingju-user-invite/src/components/award-list-item00a003e0/index"
+    },
+    "navigationBarTitleText": "组队助力"
+}

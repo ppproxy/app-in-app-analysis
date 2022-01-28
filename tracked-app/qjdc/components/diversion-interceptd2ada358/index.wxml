@@ -1,0 +1,6 @@
+<view class="intercept-content" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <image class="intercept-img" mode="widthFix" src="https://pt-starimg.didistatic.com/static/starimg/img/5UaLvj5Rwf1630468071290.png"></image>
+    <view class="goBtn">
+        <button-com bindtap="jumpApplet" text="{{bthText}}"></button-com>
+    </view>
+</view>

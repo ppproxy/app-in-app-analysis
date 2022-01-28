@@ -1,0 +1,13 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ad-tag": "/components/adTag0a09bece/index",
+        "dialog": "/components/Dialog880b0a5e/index",
+        "full-screen": "/components/full-screen92bfa076/index",
+        "redpack-pop": "/components/redpack-pop6d1bc089/index",
+        "marketing-dialog": "/components/marketing-dialog259bd902/index",
+        "bubble": "/components/Bubble2c7a5538/index",
+        "coupon-pop": "/components/coupon-pop3e28a9dd/index",
+        "benefit": "/components/Benefit1257a8a3/index"
+    }
+}

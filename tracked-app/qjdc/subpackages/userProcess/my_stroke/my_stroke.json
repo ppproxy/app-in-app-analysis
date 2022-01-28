@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "toast": "/components/Toast6bcbf1a1/index",
+        "confirm": "/components/confirm3dc76573/index"
+    },
+    "navigationBarTitleText": "历史行程",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2",
+    "navigationBarBackgroundColor": "#14D0B4",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 10
+}

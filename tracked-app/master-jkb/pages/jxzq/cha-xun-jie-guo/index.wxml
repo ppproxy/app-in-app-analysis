@@ -1,0 +1,178 @@
+<view class="mine" style="min-height:{{windowHeight}}px;">
+    <image class="ditu1" src="{{br_beijing}}"></image>
+    <view class="wrap1">
+        <view class="box" style="height:{{windowHeight}}-100rpx;">
+            <view class="tit-box">
+                <view class="xcx-img">
+                    <image class="img-flsm" src="{{br_logo}}"></image>
+                </view>
+                <view class="tit1">
+                    <view class="timt">{{date}}</view>
+                    <view class="timt1">{{time}}</view>
+                </view>
+                <view class="erweima">
+                    <image bindtap="mark" class="img-flsm" src="{{br_erweima}}"></image>
+                </view>
+            </view>
+            <view class="touxiang">
+                <image class="tongqin" src="https://xcx-static.yqgz.beijing.gov.cn/statics/tongqinbiaozhi.png" wx:if="{{code=='30'}}"></image>
+                <image class="img-git" src="{{data.gifUrl}}"></image>
+                <view class="img-touxiang">
+                    <image bindlongtap="handleTap" class="img-tou" mode="aspectFill" src="{{imgSrc}}" wx:if="{{!IsSixTeen}}"></image>
+                    <image bindlongtap="longPress" class="img-tou" mode="scaleToFill" src="{{imgSrc}}" wx:else></image>
+                    <text class="text" wx:if="{{data.faceUser===false}}">照片未经人脸识别</text>
+                </view>
+            </view>
+            <view class="status-box">
+                <image class="img-status1" src="{{br_xgwjyc}}" wx:if="{{code=='0'||code=='30'}}"></image>
+                <image class="img-status1" src="{{br_xgjjgc}}" wx:if="{{code=='1'||code=='11'}}"></image>
+                <image class="img-status1" src="{{br_xgjzgc}}" wx:if="{{code=='2'}}"></image>
+                <view class="fslv">
+                    <image bindtap="flsm" class="img-flsm" src="{{br_yuanzhu}}"></image>
+                </view>
+            </view>
+            <view class="box1">
+                <view class="cen">
+                    <view class="tit-lx">
+                        <view class="lx">姓名</view>
+                        <text class="mao">:</text>
+                    </view>
+                    <view class="mc">{{data.name}}</view>
+                </view>
+                <view class="cen">
+                    <view class="tit-lx">
+                        <view class="lx">身份证号</view>
+                        <text class="mao">:</text>
+                    </view>
+                    <view class="mc">{{data.idCard}}</view>
+                </view>
+                <view class="cen">
+                    <view class="tit-lx">
+                        <view class="lx">查询时间</view>
+                        <text class="mao">:</text>
+                    </view>
+                    <view class="mc">{{data.createTime}}</view>
+                </view>
+                <view class="cen" wx:if="{{data.validDateStr!=null}}">
+                    <view class="tit-lx">
+                        <view class="lx">失效时间</view>
+                        <text class="mao">:</text>
+                    </view>
+                    <view class="mc1">{{data.validDateStr}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <button bind:tap="btn1">返回首页</button>
+    </view>
+    <view class="foot">北京市大数据中心</view>
+</view>
+<view catchtouchmove="true" class="top" style="min-height:{{windowHeight}}px" wx:if="{{xianshi}}">
+    <view class="center">
+        <view class="card" wx:if="{{xianshi}}">
+            <canvas canvasId="canvas" class="card1" style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;margin-left:-{{qrcode_w/2}}px;margin-top:-{{qrcode_w/2}}px;" wx:if="{{xianshi}}"></canvas>
+        </view>
+        <view bindtap="btns" class="btn">关闭</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px" wx:if="{{isShowFlsm}}">
+    <view class="center1">
+        <view class="tit-flsm" wx:if="{{code=='2'}}">集中观察</view>
+        <view class="tit-flsm" wx:if="{{code=='0'||code=='30'}}">未见异常</view>
+        <view class="tit-flsm" wx:if="{{code=='1'}}">居家观察</view>
+        <view class="tit-flsm" wx:if="{{code=='11'}}">居家观察</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tit-wenan" wx:if="{{code=='2'}}"> 按照目前掌握的防疫相关数据，您已符合集中医学观察条件。如尚未集中医学观察，请您履行防疫义务，立即与北京市疾病预防控制中心取得联系。 </view>
+            <view class="tit-wenan" wx:if="{{code=='2'}}"> 集中医学观察期间，请严格落实集中医学观察要求，自觉接受北京市疾病预防控制中心管理，直至符合解除条件。拒绝接受集中医学观察等防控措施的，将依法追究责任。 </view>
+            <view class="tit-wenan" wx:if="{{code=='2'}}"> 如有疑问，可与北京市疾病预防控制中心联系。 </view>
+            <view class="tit-wenan" wx:if="{{code=='0'||code=='30'}}"> 按照目前掌握的防疫相关数据，暂未发现您存在与防疫相关异常健康状况。防疫相关数据会随着疫情发展及时更新，此次查询结果并不表示排除您的防疫相关健康风险。 </view>
+            <view class="tit-wenan" wx:if="{{code=='0'||code=='30'}}"> 请您履行防疫义务，遵守防疫管理部门的有关防疫措施要求，承诺根据防疫规定目前不需要采取医学观察措施或已按要求完成14天医学观察措施，且当前无发热、咳嗽、乏力等与疫情相关症状。 </view>
+            <view class="tit-wenan" wx:if="{{code=='0'||code=='30'}}"> 如有疑问，可与12345热线联系。 </view>
+            <view class="tit-wenan" wx:if="{{code=='1'}}"> 按照目前掌握的防疫相关数据，您已符合居家医学观察条件。如尚未居家医学观察，请您履行防疫义务，立即与所属的社区居委会取得联系。 </view>
+            <view class="tit-wenan" wx:if="{{code=='1'}}"> 居家医学观察期间，请严格落实居家医学观察要求，自觉接受社区管理，直至符合解除条件。拒绝接受居家医学观察等防控措施的，将依法追究责任。 </view>
+            <view class="tit-wenan" wx:if="{{code=='1'}}"> 如有疑问，可与所属社区联系。 </view>
+            <view class="tit-wenan" wx:if="{{code=='11'}}"> 根据目前掌握的防疫相关数据，您目前可能正处于中高风险地区所在县（市、区、旗）。按照北京市防疫政策，您已符合居家医学观察条件。 如您在京外，请您暂缓来京，并严格遵守所在地防疫政策。如您已进京，请您履行防疫义务，立即与所属的社区居委会取得联系。 </view>
+            <view class="tit-wenan" wx:if="{{code=='11'}}"> 居家医学观察期间，请严格落实居家医学观察要求，自觉接受社区管理，直至符合解除条件。拒绝接受居家医学观察等防控措施的，将依法追究责任。 </view>
+            <view class="tit-wenan" wx:if="{{code=='11'}}"> 如有疑问，请与所在社区或12345市民服务热线联系咨询。 </view>
+        </scroll-view>
+        <view bindtap="btns" class="btn1">关闭</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi1}}">
+    <view class="center12">
+        <view class="tit12"> 提示 <view bindtap="bindClode" class="bindClode">关闭</view>
+        </view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt12" style="padding-bottom:40rpx;">
+                <text>北京“健康宝”暂不能确认您的防疫相关健康状态，可能由于您近期有进出疫情风险地区的行为。按照我市防疫政策，请您立即与所在社区或相关单位联系报告，以便于您正确履行防疫相关义务。如有疑问，请拨打12345或在北京“健康宝”留言簿留言。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btns1" class="btna1">
+            <button bindgetphonenumber="getPhoneNumber" class="tuichu11" openType="getPhoneNumber" wx:if="{{isOpenBDCheck!=0}}">重新申报</button>
+            <view bindtap="tuichu" class="tuichu1">信息登记</view>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{isxianshi1}}">
+    <view class="center12">
+        <view class="tit12"> 提示 <view bindtap="bindClode" class="bindClode">关闭</view>
+        </view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt12" style="padding-bottom:40rpx;">
+                <view>您近期可能有到访或途经疫情中高风险地区的情况，请严格遵守北京市和当地的防疫政策，正确履行个人防疫义务。 <view style="text-indent: 2em;"> 1.如近14天内您曾到访有一例及以上本土新冠病毒感染者的县(市、区、旗)，原则上请暂缓来京。 </view>
+                    <view style="text-indent: 2em;"> 2.如近14天您曾到访有一例及以上本土新冠病毒感染者所在地级市(直辖市、副省级城市的县、市、区)其他低风险区（县），非必要不进(返)京。确需进（返）京，需持进京前48小时内核酸检测证明，并在进京后立即前往所在社区登记报到。 </view>
+                    <view style="text-indent: 2em;"> 3.如您已经在京，请完成信息登记并立即与所在社区、街道或相关单位联系报到，按要求及时完成核酸检测，履行个人防疫义务。 </view>
+                    <view style="text-indent: 2em;"> 4.如有疑问请拨打12345或在健康宝“留言簿”留言。 </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view bindtap="btns1" class="btna1">
+            <button bindtap="getPhoneNumber1" class="tuichu11" wx:if="{{isOpenBDCheck!=0}}">重新申报</button>
+            <view bindtap="tuichu0" class="tuichu1">查看登记信息</view>
+        </view>
+    </view>
+</view>
+<view class="top123 " style="min-height:{{windowHeight}}px;" wx:if="{{isNo}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt123" style="padding-bottom:40rpx;">
+                <view>疫情无小事，大家共防守！由于您近期可能有到访或途经疫情风险地区情况，北京“健康宝”暂不能确认您的防疫相关健康状态。按照北京市防疫政策要求，若您在京，请立即联系居住社区；若在京外，请暂缓来京。如有疑问或异议，请致电12345市民服务热线或点击“我有疑问”留言。 </view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="showZd" class="tuichu123">我知道了</view>
+            <view bindtap="showYw" class="showHeSuan123">我有疑问</view>
+        </view>
+    </view>
+</view>
+<view class="top123 cj" style="min-height:{{windowHeight}}px;" wx:if="{{wisNo}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="wenhao" style="padding-bottom:40rpx;">
+                <view class="shouhang">您的居住社区将根据北京市防疫政策，判定您是否需要进行隔离并解除您的“弹窗状态”。您可能遇到以下3类情况：</view>
+                <view>1.如需要隔离，您将转为“居家观察”状态。</view>
+                <view>2.如不需要隔离，您将转为“未见异常”状态。</view>
+                <view>3.如您未主动到社区报到，且未发生涉疫健康问题，系统默认弹窗14天后自动解除。</view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="wHao" class="wozhidaole">我知道了</view>
+        </view>
+    </view>
+</view>
+<view class="top123 " style="min-height:{{windowHeight}}px;" wx:if="{{lulukouan}}">
+    <view class="center123">
+        <view class="tit123">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt123" style="padding-bottom:40rpx;">
+                <view>按照北京市防疫政策，请您暂缓来京。如有疑问，请与12345市民服务热线联系咨询，感谢您的理解与配合。</view>
+            </view>
+        </scroll-view>
+        <view class="btna123">
+            <view bindtap="luluqueding" class="showHeSuan123 lulu">确定</view>
+        </view>
+    </view>
+</view>

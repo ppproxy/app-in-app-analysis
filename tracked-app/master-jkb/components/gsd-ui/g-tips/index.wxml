@@ -1,0 +1,11 @@
+<view catch:tap="handleTap" class="tips {{position?'tips--'+position:''}} tips--{{status}}  {{loop?'tips--loop':''}} " hoverClass="{{to||access?'tips--'+status+'--hover':''}}" hoverStayTime="250" wx:if="{{_isShow}}">
+    <view class="tips__container  {{to||access?'dgdui_tips__access':''}}">
+        <view class="tips__content">
+            <view class="tips__content-text">
+                <slot></slot>
+            </view>
+        </view>
+        <g-icon catch:tap="handleClose" class="tips__close tips__icon" color="key" size="23" type="close" wx:if="{{closeable}}"></g-icon>
+        <g-icon class="tips__icon" color="key" size="26" type="ft" wx:if="{{!closeable&&(to||access)}}"></g-icon>
+    </view>
+</view>

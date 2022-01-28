@@ -1,0 +1,9 @@
+<view bindtap="__invoke" class="banner-item" data-eventconfigs="{{ tap:[ ['openBannerUrl',bannerItem.itemLink,idx,bannerItem.appId,bannerItem.path] ] }}" style="{{bgStyle}};{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <ad-tag class="ad-tag-msg" wx:if="{{bannerItem.enableAd?true:false}}"></ad-tag>
+    <view class="item-left">
+        <view class="title">{{bannerItem.title}}</view>
+        <view class="desc">{{bannerItem.desc}}</view>
+        <view class="btn">{{bannerItem.btnTitle}} ></view>
+    </view>
+    <image class="img" mode="aspectFit" src="{{bannerItem.img}}"></image>
+</view>

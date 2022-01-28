@@ -1,0 +1,6 @@
+<view catch:touchmove="stopDefault" catchtap="clickLayer" class="animation-container-wrapper {{classname}}" id="animation-container-wrapper" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="animation-container-content {{iphoneXClass}} {{noMask?'':animationType}}" id="animation-container-content">
+        <slot id="animation-container-slot"></slot>
+    </view>
+    <view class="animation-container-mask" style="{{maskStyle}}"></view>
+</view>

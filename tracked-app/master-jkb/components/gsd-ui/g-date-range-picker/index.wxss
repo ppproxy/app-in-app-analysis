@@ -1,0 +1,40 @@
+.row {
+    align-content: space-between;
+    display: flex;
+    padding: 14rpx 43rpx;
+}
+
+.split-container {
+    color: #353535;
+    flex: 1;
+    font-size: 30rpx;
+}
+
+.picker-container,.split-container {
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.picker-container {
+    background: #fff;
+    border: 1rpx solid #d9d9d9;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    flex: 3;
+    height: 80rpx;
+    width: 300rpx;
+}
+
+.picker-text {
+    color: #333;
+    display: inline-block;
+    font-size: 28rpx;
+    height: 80rpx;
+    padding: 0rpx 30rpx;
+    position: relative;
+    width: 240rpx;
+}
+
+.picker-container.placeholder {
+    color: #b2b2b2;
+}

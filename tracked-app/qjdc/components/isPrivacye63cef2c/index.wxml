@@ -1,0 +1,28 @@
+<view class="privacy" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="title">服务协议及个人信息处理规则</view>
+    <view class="desc">您在使用青桔产品/服务前，请仔细阅读相关服务协议、平台规则及个人信息处理规则，当您点击同意，即表示您已经理解并同意该条款，该条款将构成对您具有法律约束力的文件。<text>
+</text>
+        <text>
+</text>个人信息处理规则主要包含以下内容：个人信息（包括手机号码、位置信息等）的收集使用规则及设备权限的调用情况。<text>
+</text>
+        <text>
+</text>青桔希望获取您的：<text>
+</text>
+        <text>
+</text>蓝牙权限，用于单车开关锁、辅助电单车开关锁、辅助定位 ；<text>
+</text>摄像头权限，用于扫码用车，照片/视频拍摄和人脸识别，人脸识别功能用于确定账户使用人是您本人或其他当地政府要求目的；<text>
+</text>骑行期间的载重情况，用于防止违法载人<text>
+</text>位置信息权限，用于判定您的当前位置是否位于停车点（P点）、运营区、禁停区、断电圈；用于查找周边单车、电单车；<text>
+</text>电话权限，用于确定用户身份；<text>
+</text>
+        <text>
+</text>您确认本弹窗并不会直接开启相关权限，我们会就具体权限开启另行征得您的同意。<text>
+</text>
+        <text>
+</text>请您认真法阅读服务协议、平台规则与个人信息处理规则后确认是否同意。 如果您是未满14周岁的未成年人，请确保您的监护人仔细阅读、理解变更或新增协议，如您的监护人不同意或无法完全理解其中任何条款，请您停止后续操作，并可以与我们进行联系，您将无法继续使用服务，如您或您的监护人点击“同意”即视为您的监护人完全同意并理解所有条款。</view>
+    <view bindtap="toPrivacy" class="link">服务协议及个人信息处理规则</view>
+    <view class="btn-wrap">
+        <navigator class="btn unagree" openType="exit" target="miniProgram">不同意</navigator>
+        <view bindtap="get" class="btn unagree">同意</view>
+    </view>
+</view>

@@ -1,0 +1,53 @@
+.swiper-tab {
+    line-height: 62rpx;
+    min-height: 62rpx;
+    padding: 0 40rpx;
+}
+
+.swiper-tab-list {
+    color: #777;
+    color: #666;
+    display: inline-block;
+    font-size: 30rpx;
+    font-size: 28rpx;
+    margin-right: 48rpx;
+}
+
+.on {
+    border-bottom: 3rpx solid #1f90fb;
+    color: blue;
+}
+
+.swiper-box {
+    display: block;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.swiper-box .list-item {
+    padding: 0 40rpx;
+}
+
+.list-line {
+    align-items: center;
+    border-bottom: 1rpx solid #f0f0f0;
+    color: #666;
+    display: flex;
+    font-size: 34rpx;
+    height: 42px;
+    letter-spacing: 0.58rpx;
+    line-height: 42px;
+}
+
+.sf1>image {
+    display: block;
+}
+
+.sf1,.sf1>image {
+    height: 32rpx;
+    width: 32rpx;
+}
+
+.sf1 {
+    margin-right: 12rpx;
+}

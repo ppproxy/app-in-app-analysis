@@ -1,0 +1,11 @@
+<g-input bind:change="name" class="xrequired" data-form="selfForm" id="name" label="被代领人姓名" placeholder="请输入被代领人姓名" value="{{name}}"></g-input>
+<g-input bind:change="id" class="xrequired" data-form="selfForm" id="identity" label="被代领人身份证号" maxlength="18" placeholder="请输入被代领人身份证号" type="{{identityInputType}}" value="{{id}}"></g-input>
+<g-picker bind:change="relation" data-form="selfForm" id="identityType" label="所属关系" placeholder="请选择所属关系" range="{{cardTypeRange}}" value="{{relation}}"></g-picker>
+<view class="upimg">
+    <view class="img-title">上传被代领人身份证正面照或户口本照</view>
+    <image bind:tap="img" src="/images/idcard.svg" wx:if="{{imgflag!=1}}"></image>
+    <image bind:tap="img" src="{{urll}}" wx:if="{{imgflag==1}}"></image>
+</view>
+<view class="btn-box">
+    <button bind:tap="add" class="btn">确认添加</button>
+</view>

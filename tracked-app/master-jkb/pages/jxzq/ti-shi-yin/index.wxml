@@ -1,0 +1,7 @@
+<g-form bind:submit="handleFormSubmit" model="{{formData}}" primaryText="确定" rules="{{rules}}">
+    <view slot="content">
+        <view class="box">
+            <g-radio-group bind:change="handleChange" id="radioA" items="{{checkItems}}" value="{{formData.radioA}}"></g-radio-group>
+        </view>
+    </view>
+</g-form>

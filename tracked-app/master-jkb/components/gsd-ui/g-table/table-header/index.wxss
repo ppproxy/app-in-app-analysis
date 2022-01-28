@@ -1,0 +1,154 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.g-table {
+    border: 1px solid #ebebeb;
+    border-radius: 8rpx;
+    color: #666;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+}
+
+.g-table__th {
+    background: #fafafa;
+    border-bottom: 1px solid #ebebeb;
+    color: #000;
+    vertical-align: middle;
+}
+
+.g-table__thead--title {
+    margin: 34rpx 0;
+    padding: 0 17rpx;
+}
+
+.g-table__thead .g-table__th:not(:last-of-type) .g-table__thead--title {
+    border-right: 1px solid #ebebeb;
+}
+
+.g-table__cell {
+    padding: 34rpx 17rpx;
+}
+
+.table--scroll {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.fixed__block {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.table--fixed .g-table__th {
+    background: #fafafa;
+    border-right: 1px solid #ebebeb;
+}
+
+.table--fixed .g-table__td {
+    background: transparent;
+    visibility: hidden;
+}
+
+.table--scroll .table__main .g-table__th {
+    background: transparent;
+    color: transparent;
+}
+
+.table--scroll .g-table__th {
+    border-bottom: none;
+}
+
+.g-table__tr:not(:first-of-type) .g-table__td,.g-table__tr:not(:first-of-type) .g-table__th {
+    border-top: 1px solid #ebebeb;
+}
+
+.g-table__empty {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 200rpx;
+}

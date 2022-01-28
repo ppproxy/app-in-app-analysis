@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "my-item": "/subpackages/userProcess/components/myItem6d31e91d/index",
+        "message-box": "/components/message-box207cd166/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "level": "/components/Level4fb69a74/index",
+        "confirm": "/components/confirm3dc76573/index"
+    },
+    "navigationBarTitleText": "个人中心",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#14D0B4",
+    "navigationBarTextStyle": "white"
+}

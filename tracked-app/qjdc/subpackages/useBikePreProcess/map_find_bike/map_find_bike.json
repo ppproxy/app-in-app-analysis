@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "map-common": "/components/Map9ccbc7ea/index",
+        "button-san": "/subpackages/useBikePreProcess/components/Button057cff91/index",
+        "msg-marketing": "/subpackages/useBikePreProcess/components/MsgMarketing9e129c5e/index",
+        "iphone": "/components/IphoneX48a8f956/index",
+        "appointment": "/subpackages/useBikePreProcess/components/appointment0657bfbb/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "message-box": "/components/message-box207cd166/index"
+    },
+    "navigationBarTitleText": "",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#E2E2E2"
+}

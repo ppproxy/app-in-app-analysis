@@ -1,0 +1,11 @@
+<g-form-item componentClass="form-item" disabled="{{disabled}}" required="{{required}}">
+    <view class="switch">
+        <view class="switch__header">
+            <view class="switch__header__label">{{label}}</view>
+            <view class="switch__header__desc" wx:if="{{desc}}">{{desc}}</view>
+        </view>
+        <view ariaLabel="{{label+(value?' 开':' 关')+(disabled?' 已禁用':'')}}" ariaRole="button" catch:tap="handleChange" class="switch__widget">
+            <view class="switch__widget__container {{value?'switch__widget__container--checked':''}}"></view>
+        </view>
+    </view>
+</g-form-item>

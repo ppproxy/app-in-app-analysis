@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="title1">绑定手机号码</view>
+    <view class="title2">信息将与当前微信绑定（用于身份验证）</view>
+    <button bindgetphonenumber="getPhoneNumber" hoverClass="button-hover" openType="getPhoneNumber">从微信获取，完成绑定</button>
+</view>

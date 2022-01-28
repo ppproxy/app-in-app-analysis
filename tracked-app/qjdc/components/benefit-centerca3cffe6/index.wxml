@@ -1,0 +1,21 @@
+<view style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{showEntrance}}">
+    <view bindtap="goBenefitCenter" class="benefit-center-hasimg" style="{{benefitStyle}}" wx:if="{{benefitStyle}}">
+        <view class="benefit-center-hasimg-title">
+            <view class="benefit-center-hasimg-title-txt">{{benefitTxt||'天天签到领现金'}}</view>
+        </view>
+    </view>
+    <view bindtap="goBenefitCenter" class="init-benefit-center" wx:else>
+        <view class="init-benefit-center-left">
+            <image class="bottom-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/rfNhHT69mj1608553994081.png"></image>
+            <image class="left-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/j0cyfdQvJw1608554307885.png"></image>
+            <image class="right-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/5xOb7EcEZJ1608554308096.png"></image>
+        </view>
+        <view class="init-benefit-center-title">
+            <image class="init-benefit-center-title-img" src="https://pt-starimg.didistatic.com/static/starimg/img/wB9yF3Z6dW1608553655789.png"></image>
+            <view class="init-benefit-center-title-txt">{{benefitTxt||'天天签到领现金'}}</view>
+        </view>
+        <view class="init-benefit-center-right">
+            <image class="init-benefit-center-right-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/QfCYvUoMTs1608554307987.png"></image>
+        </view>
+    </view>
+</view>

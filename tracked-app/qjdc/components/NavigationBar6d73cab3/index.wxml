@@ -1,0 +1,12 @@
+<view class="navigation-bar" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <image bindtap="goBackPage" class="back-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/srH9Sc9Bbf1599483457301.png" style="{{topStyle}}" wx:if="{{type==='back'}}"></image>
+    <view class="personal-center" style="{{titleBarColor}}" wx:if="{{type==='my'||type==='indexback'}}">
+        <view class="title-bar" wx:if="{{type==='my'}}">
+            <button bindgetuserinfo="goPersonCenter" class="my-btn" form="submit" openType="getUserInfo" style="{{isLogin?'height: 47rpx;':'height: 57rpx;'}}"></button>
+            <level bindtap="__invoke" class="level" data-eventconfigs="{{ tap:[ ['goPersonCenter','level'] ] }}" wx:if="{{isLogin}}"></level>
+        </view>
+        <view bindtap="goBackPage" class="index-back-wrap" wx:if="{{type==='indexback'}}">
+            <image class="index-back-img" src="https://pt-starimg.didistatic.com/static/starimg/img/srH9Sc9Bbf1599483457301.png"></image>青桔骑行</view>
+    </view>
+    <view bindtap="toSearch" class="search-bar" style="{{searchBarHei}}" wx:if="{{prePage==='riding'}}">搜索目的地停车点</view>
+</view>

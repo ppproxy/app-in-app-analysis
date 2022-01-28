@@ -1,0 +1,10 @@
+<g-wrapper title="认证Demo">
+    <view class="container"> 用户登录信息： <text>{{userInfoStr}}</text>
+        <button bind:tap="onGoToLogin" style="margin-top: 20rpx" type="primary">开始认证</button>
+        <button bind:tap="onGetUserInfo" style="margin-top: 20rpx">获取用户信息</button>
+        <button bind:tap="onLogout" style="margin-top: 20rpx">退出登录</button>
+    </view>
+</g-wrapper>
+<g-wrapper title="选择认证方式">
+    <g-cell label="choose" to="/pages/gsd-ui/g-auth/choose/choose"></g-cell>
+</g-wrapper>

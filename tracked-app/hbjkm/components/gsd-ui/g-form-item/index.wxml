@@ -1,0 +1,12 @@
+<view class="form-item {{_status?'form-item--'+status:''}} component-class static-item-class no-border-class">
+    <view class="form-item__wrap {{disabled?'form-item__wrap--disabled':''}}">
+        <view ariaLabel="{{label}}" class="form-item__label" wx:if="{{label}}">
+            <text class="form-item__label--required" wx:if="{{required}}">*</text> 
+      {{label}}
+    </view>
+        <slot></slot>
+    </view>
+</view>
+<view class="form-item__status-message {{_status?'form-item__status-message--'+status:''}}" wx:if="{{_status}}">
+  {{_statusMessage}}
+</view>

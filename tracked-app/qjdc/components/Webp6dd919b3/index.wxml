@@ -1,0 +1,1 @@
+<image binderror="handleError" bindload="handleLoad" class="webp-img" lazyLoad="{{lazyLoad}}" mode="{{mode}}" showMenuByLongpress="{{showMenuByLongpress}}" src="{{imageUrl}}" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" webp="{{webp}}"></image>

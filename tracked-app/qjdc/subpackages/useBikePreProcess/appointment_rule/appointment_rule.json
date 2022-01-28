@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "iphone": "/components/IphoneX48a8f956/index"
+    },
+    "navigationBarTitleText": "预约用车规则"
+}

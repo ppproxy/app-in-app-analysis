@@ -1,0 +1,7 @@
+<view class="select">
+    <view class="select__main">
+        <view class="select__btn__wrap" style="width: {{width}}" wx:for="{{dataList}}">
+            <view catch:tap="handleTap" class="select__btn my-class-btn {{_current===index?'select__btn--selected':''}}" data-index="{{index}}"> {{item.name}} </view>
+        </view>
+    </view>
+</view>

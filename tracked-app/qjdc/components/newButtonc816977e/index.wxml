@@ -1,0 +1,3 @@
+<view class="btn-wrapper" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="{{styleName||'button'}}" style="{{style}}">{{text}}</view>
+</view>

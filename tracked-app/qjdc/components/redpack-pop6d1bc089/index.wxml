@@ -1,0 +1,41 @@
+<view class="redpack-pop-wrap" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{benefitList.length>0}}">
+    <view class="redpack-pop">
+        <view class="redpack-pop-header">
+            <image class="redpack-pop-header-img" src="{{options.bannerImg}}" wx:if="{{options.bannerImg}}"></image>
+            <image class="redpack-pop-header-img" src="https://pt-starimg.didistatic.com/static/starimg/img/LejRfOgocM1608113883991.png" wx:else></image>
+        </view>
+        <view class="redpack-pop-body">
+            <view class="redpack-pop-body-title">
+                <text>{{options.title}}</text>
+            </view>
+            <view class="content-wrap">
+                <view class="redpack-pop-body-content" wx:for="{{benefitList}}" wx:for-index="idx" wx:key="idx">
+                    <view class="coupon-left">
+                        <view class="coupon-left-title">
+                            <text>{{item.benefitTitle}}</text>
+                        </view>
+                        <view class="coupon-left-time">
+                            <text>{{item.benefitNotice}}</text>
+                        </view>
+                    </view>
+                    <view class="coupon-right">
+                        <view class="benefit-wrap">
+                            <view class="coupon-right-benefit">
+                                <text class="coupon-right-benefit-num">
+                    {{item.number}}
+                  </text>
+                                <text class="coupon-right-benefit-unit">
+                    {{item.unit}}
+                  </text>
+                            </view>
+                            <view bindtap="__invoke" class="coupon-right-btn" data-eventconfigs="{{ tap:[ ['target',item,idx] ] }}">
+                                <text>{{item.btnTitle}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <image catchtap="close" class="redpack-pop-close" src="https://pt-starimg.didistatic.com/static/starimg/img/7FWJbVTeaT1607146548161.png"></image>
+    </view>
+</view>

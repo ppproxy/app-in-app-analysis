@@ -1,0 +1,56 @@
+.edu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 42rpx;
+}
+
+.edu .edu-img {
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+
+.edu .edu-img image {
+    height: 230rpx;
+}
+
+.edu .bike-btn,.edu .ebike-btn {
+    width: 678rpx;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 36rpx;
+    margin: 0 auto;
+}
+
+.edu .ebike-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edu .ebike-btn .btn {
+    width: 329rpx;
+}
+
+.edu .success-img {
+    position: absolute;
+    top: 50rpx;
+    width: 580rpx;
+    right: 0;
+}
+
+.edu .success-img .bg,.edu .success-img .eyes {
+    position: absolute;
+    width: 580rpx;
+    top: 0;
+    right: 0;
+}
+
+.edu .success-img .eyes {
+    z-index: 2;
+}
+
+.edu .text {
+    margin-bottom: 75rpx;
+}

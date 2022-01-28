@@ -1,0 +1,3 @@
+<view class="auth-footer {{fixed?'auth-footer--fixed':''}}">
+    <view>本服务由公安系统提供数据支持</view>
+</view>

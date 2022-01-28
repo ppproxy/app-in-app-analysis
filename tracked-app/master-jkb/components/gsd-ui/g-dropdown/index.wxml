@@ -1,0 +1,6 @@
+<view class="dropdown">
+    <view>
+        <slot></slot>
+    </view>
+    <view class="dropdown__icon" style="border-top-color: {{color}}"></view>
+</view>

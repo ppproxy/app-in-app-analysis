@@ -1,0 +1,119 @@
+.container {
+    display: inline-block;
+    position: relative;
+}
+
+.popBox {
+    word-wrap: break-word;
+    background-color: #666;
+    border: 1px solid #666;
+    border-radius: 8rpx;
+    max-width: 240rpx;
+    padding: 0 20rpx;
+    position: absolute;
+    text-align: center;
+    transition: opacity .3s;
+    word-break: keep-all;
+    z-index: 800;
+}
+
+.popBox.show {
+    opacity: 1;
+}
+
+.popBox.hide {
+    opacity: 0;
+}
+
+.contentStyle {
+    color: #fff;
+    font-size: 24rpx;
+    width: 100%;
+}
+
+.popBox::before,.popoverItem {
+    display: inline-block;
+}
+
+.popBox::before {
+    border: 8rpx solid #666;
+    border-radius: 2rpx;
+    content: "";
+    margin-left: -4rpx;
+    margin-top: -8rpx;
+    position: absolute;
+    width: 0;
+    z-index: 750;
+}
+
+.popBox.top::before,.popBox.topLeft::before {
+    bottom: -8rpx;
+    transform: rotate(135deg);
+}
+
+.popBox.topLeft::before {
+    left: 12rpx;
+}
+
+.popBox.topRight::before {
+    bottom: -8rpx;
+    right: 12rpx;
+    transform: rotate(135deg);
+}
+
+.popBox.topRight {
+    right: 0rpx;
+}
+
+.popBox.bottom::before,.popBox.bottomLeft::before {
+    top: 0rpx;
+    transform: rotate(-45deg);
+}
+
+.popBox.bottomLeft::before {
+    left: 12rpx;
+}
+
+.popBox.bottomRight::before {
+    right: 12rpx;
+    top: 0rpx;
+    transform: rotate(-45deg);
+}
+
+.popBox.left::before {
+    top: 50%;
+}
+
+.popBox.left::before,.popBox.leftTop::before {
+    right: -8rpx;
+    transform: rotate(45deg);
+}
+
+.popBox.leftTop::before {
+    top: 14rpx;
+}
+
+.popBox.leftBottom::before {
+    bottom: 12rpx;
+    right: -8rpx;
+    transform: rotate(45deg);
+}
+
+.popBox.right::before {
+    top: 50%;
+}
+
+.popBox.right::before,.popBox.rightTop::before {
+    left: -4rpx;
+    transform: rotate(-135deg);
+}
+
+.popBox.rightTop::before {
+    top: 16rpx;
+}
+
+.popBox.rightBottom::before {
+    bottom: 8rpx;
+    left: -4rpx;
+    transform: rotate(-135deg);
+}

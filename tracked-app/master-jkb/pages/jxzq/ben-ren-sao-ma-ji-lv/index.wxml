@@ -1,0 +1,43 @@
+<view class="page" style="min-height:{{windowHeight}}px">
+    <view class="saoma-top">
+        <view class="saomarqi">扫码日期</view>
+        <picker bindchange="bindDateChange" end="{{jiesushijian}}" mode="date" start="{{startTime}}" value="{{date}}">
+            <view bindtap="show" class="riqi">
+                <view class="yueri">{{rq}}</view>
+                <view class="saojiao">
+                    <g-icon color="#86939C;" size="20" type="arrow-down" wx:if="{{!show}}"></g-icon>
+                    <g-icon color="#86939C;" size="20" type="arrow-up" wx:if="{{show}}"></g-icon>
+                </view>
+            </view>
+        </picker>
+    </view>
+    <view wx:if="{{list.length!='0'}}" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="li-box">
+            <view class="fl fl-fr">
+                <view class="fl-tit">{{item.qrcode_name}}</view>
+                <view class="wjyc" wx:if="{{item.qrcode_color=='0'}}">未见异常</view>
+                <view class="jjgc" wx:if="{{item.qrcode_color=='1'}}">居家观察</view>
+                <view class="jzgc" wx:if="{{item.qrcode_color=='2'}}">集中观察</view>
+                <view class="tc" wx:if="{{item.qrcode_color=='-7'}}">弹窗</view>
+                <view class="tc" wx:if="{{item.qrcode_color=='51'}}">弹窗</view>
+                <view class="tc" wx:if="{{item.qrcode_color=='-3'}}">弹窗</view>
+                <view class="tc" wx:if="{{item.qrcode_color=='4'}}">弹窗</view>
+            </view>
+            <view class="fl na">
+                <view class="le">身份证号码</view>
+                <view class="ri">{{item.qrcode_card}}</view>
+            </view>
+            <view class="fl na  bor">
+                <view class="le">手机号码</view>
+                <view class="ri">{{item.qrcode_phone}}</view>
+            </view>
+            <view class="bit">{{item.scan_time}}</view>
+        </view>
+    </view>
+    <view class="wujieguo" wx:if="{{list.length=='0'}}">
+        <view class="bg">
+            <image src="https://xcx-static.yqgz.beijing.gov.cn/statics/listnoData.png"></image>
+        </view>
+        <view class="bg-txt">暂无数据</view>
+    </view>
+</view>

@@ -1,0 +1,181 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.modal {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    max-height: 526rpx;
+    min-height: 256rpx;
+    padding-top: 36rpx;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 560rpx;
+    z-index: 1001;
+}
+
+.modal__title {
+    color: #000;
+    font-size: 36rpx;
+    line-height: 48rpx;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+    text-align: center;
+}
+
+.modal__content {
+    box-sizing: border-box;
+    color: #888;
+    flex: 1;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin-top: 10rpx;
+    max-width: 560rpx;
+    overflow: scroll;
+    padding: 0 40rpx;
+}
+
+.modal__footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.modal__footer::before {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.modal__cancel__button {
+    position: relative;
+}
+
+.modal__cancel__button::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.modal__cancel__button,.modal__confirm__button {
+    flex: 1;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.modal__mask {
+    background: rgba(0,0,0,.6);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.confirm-button-info {
+    color: #f0422c!important;
+}

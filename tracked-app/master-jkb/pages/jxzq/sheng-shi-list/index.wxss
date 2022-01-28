@@ -1,0 +1,47 @@
+.wrap {
+    height: 100%;
+    width: 100%;
+}
+
+.tit {
+    color: #000;
+    font-family: PingFangSC-Medium;
+    font-size: 48rpx;
+    padding: 40rpx;
+}
+
+.list,.tit {
+    box-sizing: border-box;
+}
+
+.list {
+    color: #666;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    letter-spacing: 0.58rpx;
+    line-height: 42rpx;
+    margin-bottom: 20rpx;
+    padding: 0 40rpx;
+}
+
+.border {
+    background: #f3f3f3;
+    height: 16rpx;
+    width: 100%;
+}
+
+.sheng-box {
+    box-sizing: border-box;
+    padding: 0 30rpx;
+}
+
+.sheng {
+    border-bottom: 1px solid #f3f3f3;
+    color: #666;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    height: 106rpx;
+    letter-spacing: 0.58rpx;
+    line-height: 106rpx;
+    width: 100%;
+}

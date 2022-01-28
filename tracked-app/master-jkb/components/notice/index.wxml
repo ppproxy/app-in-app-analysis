@@ -1,0 +1,14 @@
+<view class="box" style="background:{{background}}">
+    <view class="c_main" wx:if="{{img=='0'}}">
+        <image src="../../images/tongzhihuang.png"></image>
+    </view>
+    <view class="c_main" wx:else>
+        <image src="../../images/tongzhilan.png"></image>
+    </view>
+    <swiper autoplay="true" circular="true" class="swiper_container" interval="5000" vertical="true">
+        <swiper-item wx:for="{{imgList}}">
+            <view bindtap="libiao" class="swiper_item" data-index="{{index}}" wx:if="{{img=='0'}}">{{item.message_title}}</view>
+            <view bindtap="libiao" class="swiper_item1" data-index="{{index}}" wx:else>{{item.message_title}}</view>
+        </swiper-item>
+    </swiper>
+</view>

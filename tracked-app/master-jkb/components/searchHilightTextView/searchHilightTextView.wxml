@@ -1,0 +1,3 @@
+<view class="page">
+    <text class="{{item==keyName?'highlight':'normal'}}" wx:for="{{searchArray}}" wx:key="*this">{{item}}</text>
+</view>

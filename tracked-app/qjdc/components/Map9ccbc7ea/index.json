@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ad-tag": "/components/adTag0a09bece/index",
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "hightlight-map": "/components/HighlightTextForMap1fe74194/index",
+        "confirm": "/components/confirm3dc76573/index",
+        "Webp-image": "/components/Webp6dd919b3/index"
+    }
+}

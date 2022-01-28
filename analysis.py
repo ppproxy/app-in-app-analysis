@@ -70,18 +70,24 @@ def analysis(nodes):
     return res
 
 
-def process(app_name, page_name):
-    ast_path = BASE_PATH + app_name + "/" + page_name + "-ast.json"
+def process(app_name, page_name,page_component_map):
+    ast_paths = [BASE_PATH + app_name + "/" + page_name + "-ast.json"]
+    if page_name in page_component_map:
+        for component in page_component_map[page_name]:
+            ast_paths.append(component + "-ast.json")
+    print(ast_paths)
     analysis_result = {page_name: set()}
-    if os.path.isfile(ast_path):
-        with open(ast_path, encoding='utf-8') as f:
-            json_file = json.load(f)
-        funcs = get_tap_function(json_file)
-        for func in funcs:
-            ast_nodes = walk(func)
-            result = analysis(ast_nodes)
-            for res in result:
-                analysis_result[page_name].add(res)
+    for ast_path in ast_paths:
+        if os.path.isfile(ast_path):
+            print(ast_path + " 是有效的路径")
+            with open(ast_path, encoding='utf-8') as f:
+                json_file = json.load(f)
+            funcs = get_tap_function(json_file)
+            for func in funcs:
+                ast_nodes = walk(func)
+                result = analysis(ast_nodes)
+                for res in result:
+                    analysis_result[page_name].add(res)
     print(analysis_result)
     return analysis_result
 

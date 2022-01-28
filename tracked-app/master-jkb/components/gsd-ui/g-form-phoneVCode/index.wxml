@@ -1,0 +1,5 @@
+<g-input append bind:change="handleChange" disabled="{{disabled}}" id="{{__id}}" label="{{label}}" maxlength="{{maxLength}}" placeholder="{{placeholder}}" status="{{_status}}" statusMessage="{{_statusMessage}}" type="{{type}}" value="{{value}}">
+    <view slot="append">
+        <button bindtap="bindVerifyAction" class="vcode-button" disabled="{{!mobile||__reSend}}" size="mini"> {{__reSend&&__second?__second+'s后重发':buttonText}} </button>
+    </view>
+</g-input>

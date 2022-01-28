@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "map-common": "/components/Map9ccbc7ea/index"
+    },
+    "navigationBarTitleText": "还车点取消"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "wll",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "fs": "0.0.1-security",
+        "md5-file": "^5.0.0",
+        "minimist": "^1.2.5",
+        "miniprogram-ci": "^1.0.33",
+        "path": "^0.12.7"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://git.code.oa.com/ttools/wll.git"
+    },
+    "author": "",
+    "license": "ISC"
+}

@@ -1,0 +1,179 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/link/index",
+        "pages/answers/index",
+        "pages/young-old-info/index",
+        "pages/health-young-old/index",
+        "pages/stat/index",
+        "pages/web-view/index",
+        "pages/mine/index/index",
+        "pages/mine/login/index",
+        "pages/mine/todo/list/list",
+        "pages/mine/todo/detail/detail",
+        "pages/mine/empty/index",
+        "pages/report/home/index",
+        "pages/report/index/index",
+        "pages/report/msg/index",
+        "pages/mine/donation/index",
+        "pages/report/inform/index",
+        "pages/diagnosis/index",
+        "pages/buy/notice/index",
+        "pages/health-guide/index",
+        "pages/health-guide-detail/index",
+        "pages/manage-company/index",
+        "pages/company-manage/index",
+        "pages/share-company-code/index",
+        "pages/mine/company/list/index",
+        "pages/application/index",
+        "pages/league/list/index",
+        "pages/league/detail/index",
+        "pages/league/form/index",
+        "pages/self/self",
+        "pages/scancode/scancode",
+        "pages/suggest/suggest",
+        "pages/seereport/seereport",
+        "pages/place-code/place-code",
+        "pages/add-code/add-code",
+        "pages/my-placeCode/my-placeCode",
+        "pages/safe-info/safe-info",
+        "pages/test/test",
+        "pages/family-add/family-add",
+        "pages/family-add-info/family-add-info",
+        "pages/family-page/family-page",
+        "pages/family-report/family-report",
+        "pages/familyself/familyself",
+        "pages/family-inoculation/inoculation",
+        "pages/seefamilyreport/seefamilyreport",
+        "pages/newmini/newmini",
+        "pages/Traveler/Traveler",
+        "pages/inoculation/inoculation",
+        "pages/detectionmechanism/detectionmechanism"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "河北健康码",
+        "navigationBarBackgroundColor": "#fff",
+        "backgroundColor": "#fff"
+    },
+    "tabBar": {
+        "color": "#344356",
+        "selectedColor": "#4293F4",
+        "backgroundColor": "#FFFFFF",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/home/icon_home@2x.png",
+                "selectedIconPath": "images/home/icon_home_selected@2x.png"
+            },
+            {
+                "pagePath": "pages/mine/index/index",
+                "text": "我的",
+                "iconPath": "images/home/icon_me@2x.png",
+                "selectedIconPath": "images/home/icon_me_selected@2x.png"
+            }
+        ],
+        "position": "bottom",
+        "custom": false
+    },
+    "networkTimeout": {
+        "request": 15000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "subPackages": [
+        {
+            "root": "packages/health-code/",
+            "pages": [
+                "pages/new-workbench/new-workbench",
+                "pages/realname-submit/index",
+                "pages/realname-info/index",
+                "pages/admin-grid/index",
+                "pages/traffic-record/index",
+                "pages/workbench/index",
+                "pages/report-health/index",
+                "pages/manage-code/index",
+                "pages/verification/index",
+                "pages/scan-success/index",
+                "pages/add-grid/index",
+                "pages/add-person/index",
+                "pages/collection-point/index",
+                "pages/toggle-grid/index",
+                "pages/admin/index",
+                "pages/empty/index",
+                "pages/realname-change/index",
+                "pages/inputcode/index",
+                "pages/collection-point-manage/index",
+                "pages/verification-result/index",
+                "pages/manager/list/index",
+                "pages/manager/form/index",
+                "pages/pass-card/index",
+                "pages/mutual-sweep/index",
+                "pages/reoprt-list/index",
+                "pages/surescancode/index",
+                "pages/verification-admin/index",
+                "pages/phonecode/index",
+                "pages/succeed/index",
+                "pages/report-card/index",
+                "pages/connection-scan/index"
+            ]
+        },
+        {
+            "root": "packages/car-code/",
+            "name": "car-code",
+            "pages": [
+                "pages/code-edit/index",
+                "pages/code-manage/index",
+                "pages/code-detail/index",
+                "pages/bus-code/passenger/edit/index",
+                "pages/submit-success/index",
+                "pages/pub-tran-code/index",
+                "pages/bus-code/driver/daba-edit/index",
+                "pages/traffic-police/start/index",
+                "pages/traffic-police/car-check/index",
+                "pages/traffic-police/passenger-infor2/index",
+                "pages/traffic-police/passenger-infor1/index",
+                "pages/bus-code/passenger/home/index",
+                "pages/bus-code/passenger/scan/index",
+                "pages/bus-code/passenger/commit/index",
+                "pages/bus-code/passenger/detail/index",
+                "pages/bus-code/passenger/fllow/index",
+                "pages/bus-code/car-success/index",
+                "pages/bus-code/driver/daba-code-detail/index",
+                "pages/bus-code/driver/poster/index"
+            ]
+        },
+        {
+            "root": "packages/enterprise/",
+            "pages": [
+                "pages/form/index",
+                "pages/list/index",
+                "pages/appeal/index",
+                "pages/appeal-list/index"
+            ]
+        },
+        {
+            "root": "packages/buy/",
+            "name": "buy",
+            "pages": [
+                "pages/over/index",
+                "pages/notice/index",
+                "pages/form/index",
+                "pages/reservation-list/index",
+                "pages/result-fail/index",
+                "pages/result-ok/index"
+            ]
+        }
+    ],
+    "navigateToMiniProgramAppIdList": [
+        "wxb032bc789053daf4",
+        "wxcf1f51ec21883acf",
+        "wx88736d7d39e2eda6",
+        "wx308bd2aeb83d3345",
+        "wx2eec5fb00157a603"
+    ],
+    "debug": true
+}

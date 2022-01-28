@@ -1,0 +1,17 @@
+<view class="wrap" style="min-height:{{windowHeight}}px">
+    <view class="icon-wrap">
+        <view class="icon-icon">
+            <view class="icon-img">
+                <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/icon.png"></image>
+            </view>
+            <view class="icon-tit">导出成功</view>
+            <view class="text" style="margin-top:60rpx;">
+                <text>1</text>请点击复制链接</view>
+            <view class="text" style="margin-top:22rpx;">
+                <text>2</text>打开浏览器访问即可下载文件</view>
+        </view>
+    </view>
+    <view class="footer">
+        <button bind:tap="sure" class="right">复制链接</button>
+    </view>
+</view>

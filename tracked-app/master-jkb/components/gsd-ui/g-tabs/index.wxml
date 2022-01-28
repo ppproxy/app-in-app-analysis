@@ -1,0 +1,22 @@
+<template name="tabsHeader">
+    <view catch:tap="handleTabItemTab" class="tabs__item__wrap" data-key="{{tabItem.key}}" wx:for="{{_tabs}}" wx:for-item="tabItem" wx:key="key">
+        <view ariaLabel="{{tabItem.tab}}" class="tabs__item {{activeKey===tabItem.key?'tabs__item--active':''}}"> {{tabItem.tab}} </view>
+    </view>
+</template>
+<view class="tabs">
+    <view class="tabs__header tab-header-class" id="tab-header" style="position: {{position}}">
+        <scroll-view scrollWithAnimation scrollX id="tabs-scroll" scrollLeft="{{_scrollLeft}}" wx:if="{{scroll}}">
+            <view class="tabs__header--scroll">
+                <template is="tabsHeader" data="{{_tabs:_tabs,activeKey:activeKey}}"></template>
+                <view class="tabs__slider" style="{{_sliderStyle}}"></view>
+            </view>
+        </scroll-view>
+        <block wx:else>
+            <template is="tabsHeader" data="{{_tabs:_tabs,activeKey:activeKey}}"></template>
+            <view class="tabs__slider" style="{{_sliderStyle}}"></view>
+        </block>
+    </view>
+    <view class="tabs__content" style="{{_tabContentStyle}}">
+        <slot></slot>
+    </view>
+</view>

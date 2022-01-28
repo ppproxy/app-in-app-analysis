@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "manual": "/webx-mp-next/components/manualcf513900/index",
+        "manual-landing": "/webx-mp-next/components/manual-landing3ac682ca/index",
+        "manual-cover": "/webx-mp-next/components/manual-cover5931d76a/index",
+        "automatic": "/webx-mp-next/components/automatic3cb5fd9f/index",
+        "share": "/webx-mp-next/components/sharead87005a/index"
+    }
+}

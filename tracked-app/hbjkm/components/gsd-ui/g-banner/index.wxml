@@ -1,0 +1,5 @@
+<swiper autoplay="{{_autoplay}}" class="banner" indicatorActiveColor="#666666" indicatorColor="#DDDDDD" indicatorDots="{{_showDots}}" interval="10000">
+    <swiper-item wx:for="{{src}}" wx:key="{{index}}">
+        <image class="banner__image" mode="widthFix" src="{{item}}"></image>
+    </swiper-item>
+</swiper>

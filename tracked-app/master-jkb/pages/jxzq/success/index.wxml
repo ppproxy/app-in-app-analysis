@@ -1,0 +1,13 @@
+<view class="wrap" style="min-height:{{windowHeight}}px">
+    <view class="icon-wrap">
+        <view class="icon-icon">
+            <view class="icon-img">
+                <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/icon.png"></image>
+            </view>
+            <view class="icon-tit">登记成功</view>
+        </view>
+    </view>
+    <view class="footer">
+        <button bind:tap="sure" class="right2">返回首页</button>
+    </view>
+</view>

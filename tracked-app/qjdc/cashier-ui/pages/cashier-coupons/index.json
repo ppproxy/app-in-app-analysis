@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "card": "/cashier-ui/components/card4586e739/index",
+        "coupon": "/cashier-ui/components/coupon3c7158cf/index"
+    },
+    "navigationBarTitleText": "我的优惠券",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

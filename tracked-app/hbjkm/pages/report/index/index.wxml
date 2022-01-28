@@ -1,0 +1,25 @@
+<view>
+    <g-form bind:submit="handleSelfSubmits" disabled="{{tapflag||!agree}}" model="{{selfForm}}" primaryText="{{maxReportSubmitTime?'已超过填写次数':'提交'}}">
+        <g-wrapper title="基本信息" titleClass="a">
+            <g-input disabled bind:change="handleFormChange" class="xrequired" data-form="selfForm" id="username" label="姓名" placeholder="请输入姓名" value="{{selfForm.username}}"></g-input>
+            <view class="wrapPhone">
+                <g-input disabled bind:blur="handleIdentityChange" class="xrequired" data-form="selfForm" id="identity" label="证件号码" placeholder="请输入证件号码" type="{{identityInputType}}" value="{{selfForm.identity}}"></g-input>
+                <g-input disabled bind:change="handleFormChange" class="xrequired" data-form="selfForm" id="phone" label="联系电话" placeholder="请输入联系电话" type="number" value="{{userInfo.phone}}"></g-input>
+            </view>
+            <g-form-cell actionText="选择" bind:tap="handleOpenRegion" class="xrequired" data-form="selfForm" id="street" label="当前所在地址" placeholder="请选择当前所在地址" value="{{selfForm.street}}"></g-form-cell>
+        </g-wrapper>
+        <g-wrapper title="近期情况" titleClass="a">
+            <g-wrapper title="近14天内您是否接触新冠肺炎确诊或疑似患者？" titleClass="title_container" xrequired="">
+                <g-radio-group bind:change="handleFormChange" data-form="selfForm" id="questionThree" items="{{questionThreeItems}}" value="{{selfForm.questionThree}}"></g-radio-group>
+            </g-wrapper>
+            <g-wrapper title="当前健康状况（可多选）" xrequired="">
+                <g-checkbox-group bind:change="handleFormChanges" data-form="selfForm" id="questionFour" items="{{questionFourItems}}" label="是否有如下症状" value="{{selfForm.questionFour}}"></g-checkbox-group>
+                <g-input bind:change="handleFormChange" class="xrequired" data-form="selfForm" id="questionFive" label="当前体温(°C)" placeholder="请输入当前体温" type="digit" value="{{selfForm.questionFive}}"></g-input>
+            </g-wrapper>
+        </g-wrapper>
+        <g-wrapper title="">
+            <g-checkbox-group bind:change="handleAgreeChange" id="agreementItems" items="{{agreementItems}}" value="{{agreement}}"></g-checkbox-group>
+        </g-wrapper>
+    </g-form>
+</view>
+<g-cascader bind:change="handleRegionChange" bind:close="handleRegionClose" bind:columnChange="handleRegionColumnChange" range="{{regionRange}}" visible="{{showRegionPicker}}"></g-cascader>

@@ -1,0 +1,60 @@
+<template name="tabNew">
+    <g-wrapper>
+        <g-cell bindtap="bindChange" data-item="{{item}}" wx:if="{{itemList.length}}" wx:for="{{itemList}}">
+            <view slot="content">
+                <view class="cell-title">{{item.applyUserName}}({{item.applyUserPhone}})</view>
+                <view class="cell-desc">身份证号: {{item.applyUserIdentity}}</view>
+                <view class="cell-desc" wx:if="{{item.applyStatus!=0}}">操作时间: {{timeOfString.dateFormatStr(item.updateTime)}}
+        </view>
+            </view>
+            <view slot="append">
+                <view class="cell-type-0" wx:if="{{item.applyStatus==0}}">
+                    <button bindtap="handleItem" data-item="{{item}}" size="mini" type="primary">审核</button>
+                </view>
+            </view>
+        </g-cell>
+        <view wx:if="{{!itemList.length}}">
+            <view class="no-todo-image">
+                <image src="https://imgcache.gzonline.gov.cn/cos/empty_0283358d.svg"></image>
+            </view>
+            <view class="no-todo">没有更多了</view>
+        </view>
+    </g-wrapper>
+</template>
+<view wx:if="{{!errorpage}}">
+    <g-search bind:change="handleChange" bind:confirm="handleConfirm" placeholder="请输入姓名" value="{{searchValue}}"></g-search>
+    <g-tabs activeKey="{{activeKey}}" animated="true" bind:change="tabChange" data-key="activeKey" position="relative">
+        <g-tab-pane key="0" tab="待处理({{tab[0]?tab[0]:0}})">
+            <template is="tabNew" data="{{name:'进行中',index:'1',todoType:todoType,itemList:applies}}"></template>
+        </g-tab-pane>
+        <g-tab-pane key="1" tab="已关联({{tab[1]?tab[1]:0}})">
+            <template is="tabNew" data="{{name:'进行中',index:'1',todoType:todoType,itemList:applies}}"></template>
+        </g-tab-pane>
+        <g-tab-pane key="2" tab="不关联({{tab[2]?tab[2]:0}})">
+            <template is="tabNew" data="{{name:'进行中',index:'1',todoType:todoType,itemList:applies}}"></template>
+        </g-tab-pane>
+    </g-tabs>
+</view>
+<view wx:if="{{errorpage}}">
+    <view class="wrap">
+        <view class="img-wrap2">
+            <image class="img-size2" src="/images/error/errorpage.png"></image>
+            <view class="title2">错误提示</view>
+            <view class="tips2">请先切换公司或者社区对应采集点，再查看关联申请审核。</view>
+            <button bindtap="backtonew" class="rebtn">返回</button>
+        </view>
+    </view>
+    <g-footer></g-footer>
+</view>
+<wxs module="timeOfString">
+var dateFormatStr = (function(dateStr) {
+    return (dateStr.replace('T', ' ').split('.')[(0)])
+});
+var moneyFormat = (function(money) {
+    return (money.toFixed(2))
+});
+module.exports = ({
+    dateFormatStr: dateFormatStr,
+    moneyFormat: moneyFormat,
+});
+</wxs>

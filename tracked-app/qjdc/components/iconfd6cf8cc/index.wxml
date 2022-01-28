@@ -1,0 +1,1 @@
+<view class="{{iconClass}}" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}"></view>

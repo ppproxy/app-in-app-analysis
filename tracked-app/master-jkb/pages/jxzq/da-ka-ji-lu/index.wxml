@@ -1,0 +1,39 @@
+<view class="box" style="min-height:100vh">
+    <view class="health_box">
+        <g-form bind:submit="handleFormSubmit" disabled="{{show}}" model="{{formData}}" primaryText="{{xian}}" rules="{{rules}}" tip="{{tip}}" validateType="{{validateType}}">
+            <g-input clearable bind:change="handleChange" bind:input="this.value=this.value.replace(/[^0-9.]+/,'');" id="temperature" label="上午体温(℃)" placeholder="请输入上午体温" type="digit" value="{{formData.temperature}}"></g-input>
+            <g-input clearable bind:change="handleChange" bind:input="this.value=this.value.replace(/[^0-9.]+/,'');" id="animalHeat" label="下午体温(℃)" placeholder="请输入下午体温" type="digit" value="{{formData.animalHeat}}"></g-input>
+            <view class="jkgl_zzbx_title">症状表现（选填）</view>
+            <g-checkbox-group bind:change="handleChange" bind:iconTap="handleTapIcon" id="checkboxA" items="{{checkItems}}" value="{{formData.checkboxA}}"></g-checkbox-group>
+            <g-textarea bind:change="handleChange" id="textarea" label="其他状况说明（选填）" placeholder="如有其它不适症状请填写在内" value="{{formData.textarea}}"></g-textarea>
+        </g-form>
+    </view>
+    <view class="record_content">
+        <view class="record_title">
+            <view class="xiao"></view>
+            <view class="da"></view>
+            <view class="daka">打卡记录</view>
+            <view class="da"></view>
+            <view class="xiao xi"></view>
+        </view>
+        <View class="table_box">
+            <View class="table_title">
+                <View class="table_title_item" style="width: 25%"> 日期 </View>
+                <View class="table_title_item" style="width: 15%"> 打卡状态 </View>
+                <View class="table_title_item" style="width: 20%"> 上午体温(℃) </View>
+                <View class="table_title_item" style="width: 20%"> 下午体温(℃) </View>
+                <View class="table_title_item" style="width: 20%"> 症状表现 </View>
+            </View>
+            <View class="table_content" wx:if="{{recordList.length>0}}" wx:for="{{recordList}}">
+                <View class="table_content_item" style="width: 25%"> {{item.creatTime||'----'}} </View>
+                <View class="table_content_item" style="width: 15%">
+                    <text class="{{item.type=='未打卡'?'item_weidaka':item.type=='正常'?'item_normal':'item_yichang'}}">{{item.type||'----'}}</text>
+                </View>
+                <View class="table_content_item" style="width: 20%"> {{item.animalHeat||'----'}} </View>
+                <View class="table_content_item" style="width: 20%"> {{item.temperature||'----'}} </View>
+                <View class="table_content_item" style="width: 20%"> {{item.bodyCondition||'----'}} </View>
+            </View>
+            <view class="no_data" wx:if="{{recordList.length==0}}">暂无打卡记录</view>
+        </View>
+    </view>
+</view>

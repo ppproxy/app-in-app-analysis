@@ -1,0 +1,1 @@
+<view class="{{isIphonex}}" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}"></view>

@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "highlight-text": "/components/HighlightText78cd31c3/index"
+    }
+}

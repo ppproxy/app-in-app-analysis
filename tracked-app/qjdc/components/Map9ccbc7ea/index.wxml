@@ -1,0 +1,61 @@
+<view class="map-container" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <map bindmarkertap="bindMarkerTap" bindregionchange="bindRegionChange" bindrendererror="rendererror" bindtap="tapMapOtherArea" class="map" id="{{mapId}}" includePoints="{{includePoints}}" latitude="{{centerLat||'39.9088600000'}}" longitude="{{centerLng||'116.3973900000'}}" markers="{{markers}}" minScale="{{minScale}}" polygons="{{polygons}}" polyline="{{polylineList}}" scale="{{scale}}" showLocation="{{showLocation}}" style="{{mapStyle}}">
+        <view class="map-probe">
+            <image class="img" src="{{probeSrc}}" wx:if="{{isShowProbe.show&&showCenter&&probeSrc}}"></image>
+        </view>
+        <image class="map-bottom-img" src="//pt-starimg.didistatic.com/static/starimg/img/NgJ7JOuYkh1544038854819.png" wx:if="{{linkImg}}"></image>
+        <view class="map-tips" wx:if="{{tipConfig.show}}">
+            <view class="bg"></view>
+            <view class="map-tips-cont">
+                <view class="text">{{tipConfig.content}}</view>
+            </view>
+        </view>
+        <view class="map-riding-popup" wx:if="{{homeBubbleConfigs.title}}">
+            <view bindtap="__invoke" class="riding-popup" data-eventconfigs="{{ tap:[ ['bubbleJump',homeBubbleConfigs] ] }}">
+                <view class="riding-popup-icon" wx:if="{{homeBubbleConfigs.bubbleIconURL}}">
+                    <Webp-image src="{{homeBubbleConfigs.bubbleIconURL}}"></Webp-image>
+                </view>
+                <view class="riding-popup-main">
+                    <view class="riding-popup-title">
+                        <hightlight color="#FFFFFF" fontSize="28rpx" text="{{homeBubbleConfigs.title}}"></hightlight>
+                    </view>
+                    <view class="riding-popup-content" wx:if="{{homeBubbleConfigs.content}}">
+                        <hightlight color="#CCCCCC" text="{{homeBubbleConfigs.content}}"></hightlight>
+                    </view>
+                </view>
+                <view class="riding-popup-jump-icon" wx:if="{{homeBubbleConfigs.jumpURL}}">
+                    <Webp-image src="https://pt-starimg.didistatic.com/static/starimg/img/OUSnhM14921636978709656.png" style="width:100%"></Webp-image>
+                </view>
+            </view>
+        </view>
+        <view bindtap="resetLocation" class="map-reset" style="{{isBuyCard||appointmentBubble?'bottom: 170rpx':bubbleInfo&&bubbleInfo.isShow?'bottom: 170rpx':'bottom: 60rpx'}}" wx:if="{{isLocation}}">
+            <image class="img" src="//pt-starimg.didistatic.com/static/starimg/img/usfz1ib1Mz1567491381643.png"></image>
+        </view>
+        <view class="bubble-tip" wx:if="{{bubbleInfo&&bubbleInfo.isShow&&!layerLink}}">
+            <hightlight bindtap="bubbleAction" color="#fff" ellipsis="{{true}}" style="flex:1;width:90%" text="{{flowText}}"></hightlight>
+            <image bindtap="closeBubble" class="close-btn" src="{{closeIcon}}" wx:if="{{closeIcon}}"></image>
+        </view>
+        <view class="bubble-tip appoint-bubble" wx:if="{{appointmentBubble&&!layerLink}}">
+            <hightlight bindtap="toBuyCard" color="#fff" ellipsis="{{true}}" text="{{appointBubble}}"></hightlight>
+            <image bindtap="close" class="close-btn" src="{{closeIcon}}" wx:if="{{closeIcon}}"></image>
+        </view>
+        <view class="card-bubble" wx:if="{{isBuyCard}}">
+            <view bindtap="toBuyCard">
+                <view class="title">{{buyCardContent.title}}</view>
+                <hightlight color="#fff" text="{{buyCardContent.subtitle}}"></hightlight>
+            </view>
+            <image bindtap="close" class="close-btn" src="{{closeIcon}}" wx:if="{{closeIcon}}"></image>
+        </view>
+        <view class="icon-list" style="{{isBuyCard||appointmentBubble?'bottom: 170rpx':bubbleInfo&&bubbleInfo.isShow?'bottom: 170rpx':'bottom: 60rpx'}}">
+            <image bindtap="tocustom" class="icon" src="https://pt-starimg.didistatic.com/static/starimg/img/vzQrPIQazF1571314339014.png" wx:if="{{isCustom}}"></image>
+            <image bindtap="torepair" class="icon icon-repair" src="https://pt-starimg.didistatic.com/static/starimg/img/BXmgWGAWIR1573713375658.png" wx:if="{{isRepair&&bizType==1}}"></image>
+            <image bindtap="torepair" class="icon icon-custom" src="https://pt-starimg.didistatic.com/static/starimg/img/6iPPhlwK8V1571314259668.png" wx:if="{{isRepair&&bizType==2}}"></image>
+        </view>
+        <view class="layer-box" wx:if="{{layerLink}}">
+            <ad-tag wx:if="{{enableAd?true:false}}"></ad-tag>
+            <image bindload="onloadLayer" class="layer-box-image" mode="widthFix" src="{{layerLink}}"></image>
+            <image bindtap="closeLayer" class="layer-box-close-btn" src="{{closeIcon}}"></image>
+        </view>
+    </map>
+    <confirm bindok="closeCustomerConfirm" options="{{customerOptions}}"></confirm>
+</view>

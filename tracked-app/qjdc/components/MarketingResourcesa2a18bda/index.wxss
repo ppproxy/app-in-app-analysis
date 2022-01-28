@@ -1,0 +1,52 @@
+.riding-layer-box {
+    position: absolute;
+    height: 62vh;
+    width: 100vw;
+    top: 0;
+    z-index: 0;
+}
+
+.riding-layer-box:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.riding-layer-box .ad-tag-wrap,.riding-layer-box .layer-box-image {
+    position: absolute;
+    bottom: 40rpx;
+    width: 100%;
+}
+
+.riding-layer-box .layer-box-image {
+    z-index: 1;
+    transform: translateX(-50%);
+    left: 50%;
+    height: auto;
+}
+
+.riding-layer-box.split-bike .ad-tag-wrap,.riding-layer-box.split-bike .layer-box-image {
+    bottom: 60rpx;
+}
+
+.riding-layer-box .layer-box-close-btn {
+    z-index: 1;
+    position: absolute;
+    right: 30rpx;
+    width: 20rpx;
+    height: 20rpx;
+    padding: 10rpx;
+    top: 108rpx;
+}
+
+.unlocking-guide-bubble {
+    position: absolute;
+    margin-top: -124rpx;
+    left: 0;
+    right: 0;
+}

@@ -1,0 +1,333 @@
+.back-image {
+    background-image: linear-gradient(0deg,#f3f3f3,#1f90fb 68%,#1f90fb);
+    height: 357rpx;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.con {
+    background-image: url("https://xcx-static.yqgz.beijing.gov.cn/statics/hesuanjiancejieguoye.png");
+    background-size: 100% 100%;
+    margin: 50rpx 28rpx 0 30rpx;
+    padding-bottom: 74rpx;
+}
+
+.brimg {
+    height: 378rpx;
+    padding: 160rpx 156rpx 0;
+    width: 378rpx;
+}
+
+.brimg>image {
+    border-radius: 16rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.br-box {
+    border-bottom: 1rpx solid #f0f0f0;
+    margin: 10rpx 50rpx 0 49rpx;
+    padding-bottom: 40rpx;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30rpx;
+}
+
+.biaoti {
+    color: #9c9c9c;
+}
+
+.biaoti,.xingming {
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    letter-spacing: 0;
+    line-height: 36rpx;
+}
+
+.xingming {
+    color: #333;
+    text-align: right;
+}
+
+.view-title {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-family: PingFangSC-Medium;
+    font-size: 37rpx;
+    letter-spacing: 0;
+    line-height: 90rpx;
+    text-indent: 40rpx;
+}
+
+.type {
+    font-family: PingFangSC-Semibold;
+    font-size: 80rpx;
+    line-height: 112rpx;
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: blink 1s linear infinite;
+}
+
+.type-yang {
+    color: #fd6e63;
+}
+
+.type-yin {
+    color: #00ac60;
+}
+
+.juli {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    line-height: 40rpx;
+    position: relative;
+    text-align: center;
+}
+
+.imgas {
+    bottom: 4rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 150rpx;
+    width: 30rpx;
+}
+
+.juli-yang {
+    color: #fd6e63;
+}
+
+.juli-yin {
+    color: #00ac60;
+}
+
+.didian {
+    border-bottom: 1rpx solid #f0f0f0;
+    margin: 4rpx 50rpx 0;
+    padding-bottom: 32rpx;
+}
+
+.dd-bt {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 26rpx;
+}
+
+.jiancejigou {
+    color: #999;
+}
+
+.jiancejigou,.mingcheng {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    line-height: 38rpx;
+}
+
+.mingcheng {
+    color: #333;
+    max-width: 300rpx;
+    word-break: break-all;
+}
+
+.wujieguo {
+    border-bottom: 1rpx solid #f0f0f0;
+    margin: 60rpx 50rpx 0 49rpx;
+    padding-bottom: 87rpx;
+}
+
+.wujieguo-img {
+    height: 100rpx;
+    margin: 0 245rpx 32rpx;
+    width: 100rpx;
+}
+
+.wujieguo-img>image {
+    height: 100%;
+    width: 100%;
+}
+
+.txt {
+    color: #999;
+    display: table-cell;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    letter-spacing: 0;
+    line-height: 38rpx;
+    padding: 0 53rpx;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 542rpx;
+}
+
+.imga {
+    bottom: 4rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 48rpx;
+    width: 30rpx;
+}
+
+.ttf {
+    width: 542rpx;
+}
+
+.con-footer {
+    color: #0d8ce6;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    padding-top: 32rpx;
+}
+
+.con-footer,.footer {
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.footer {
+    color: #999;
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    line-height: 30rpx;
+    margin-top: 10rpx;
+    padding-bottom: 84rpx;
+}
+
+.back-view {
+    opacity: 1;
+    position: relative;
+    transition: all .3s;
+}
+
+.show {
+    opacity: 0;
+}
+
+.new-footer {
+    box-sizing: border-box;
+    margin-top: 32rpx;
+    padding-top: 32rpx;
+}
+
+.new-footer-text {
+    color: #999;
+    line-height: 38rpx;
+    padding: 0 100rpx;
+}
+
+.new-footer-btn,.new-footer-text {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.new-footer-btn {
+    border: 1rpx solid #1f90fb;
+    border-radius: 34rpx;
+    color: #1f90fb;
+    height: 52rpx;
+    line-height: 52rpx;
+    margin-top: 26rpx;
+    width: 232rpx;
+}
+
+.btn-foo,.top {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.top {
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.center {
+    background: #fff;
+    border-radius: 16rpx;
+    width: 560rpx;
+}
+
+.box {
+    position: relative;
+}
+
+.tit {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 40rpx 0 32rpx;
+    text-align: center;
+}
+
+.tt {
+    color: #585858;
+    font-size: 30rpx;
+    line-height: 44rpx;
+    padding: 0 40rpx;
+    text-align: justify;
+    text-indent: 40rpx;
+    word-break: break-all;
+}
+
+.tt1 {
+    text-indent: 2em;
+}
+
+.btn,.btn1 {
+    border-top: 1rpx solid #e5e5e5;
+    color: #0d8ce6;
+    font-size: 36rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    margin-top: 32rpx;
+    padding: 0 40rpx;
+    text-align: center;
+}
+
+.btn1 {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,4 @@
+<view class="level-bubble {{activeClassName}}" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{bubbleInfo.isShow}}">
+    <image class="level-icon" src="{{levelIcon}}" wx:if="{{levelIcon}}"></image>
+    <hightlight bindtap="bubbleAction" color="#000" ellipsis="{{true}}" fontSize="28rpx" style="flex:1;width:90%" text="{{flowText}}"></hightlight>
+</view>

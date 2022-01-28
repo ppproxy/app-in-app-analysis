@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "nopark": "/subpackages/useBikePreProcess/components/NoPark05f96a46/index",
+        "infocard": "/subpackages/useBikePreProcess/components/InfoCard7823f230/index",
+        "mileage": "/subpackages/useBikePreProcess/components/Mileageb6d2cab4/index",
+        "map-common": "/components/Map9ccbc7ea/index",
+        "inputaddr": "/subpackages/useBikePreProcess/components/InputAddrca002a12/index",
+        "iphone": "/components/IphoneX48a8f956/index",
+        "loading": "/subpackages/useBikePreProcess/components/Loading944edbd0/index",
+        "buttoncom": "/subpackages/useBikePreProcess/components/Button057cff91/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "hightlight": "/components/HighlightText78cd31c3/index"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "map-common": "/components/Map9ccbc7ea/index",
+        "iphone": "/components/IphoneX48a8f956/index",
+        "edu": "/components/Edu168c9756/index",
+        "unlocking-new-top": "/components/NewTop2a5d373a/index",
+        "company-link": "/components/CompanyLink7b786837/index",
+        "navigation-bar": "/components/NavigationBar6d73cab3/index",
+        "Webp-image": "/components/Webp6dd919b3/index"
+    },
+    "navigationBarTitleText": "开锁中",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom"
+}

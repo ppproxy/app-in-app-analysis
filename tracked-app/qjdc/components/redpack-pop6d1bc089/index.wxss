@@ -1,0 +1,113 @@
+.redpack-pop-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+}
+
+.redpack-pop-wrap .redpack-pop {
+    width: 553rpx;
+    text-align: center;
+}
+
+.redpack-pop-wrap .redpack-pop-header-img {
+    width: 100%;
+    height: 420rpx;
+    vertical-align: bottom;
+    margin-bottom: -1rpx;
+}
+
+.redpack-pop-wrap .redpack-pop-body {
+    background-color: #fd5f33;
+    border-radius: 0 0 30rpx 30rpx;
+    padding: 5rpx 35rpx 28rpx 34rpx;
+}
+
+.redpack-pop-wrap .redpack-pop-body-title {
+    text-align: center;
+    color: #fff;
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium;
+    margin: 0 0 20rpx;
+}
+
+.redpack-pop-wrap .redpack-pop-body .content-wrap {
+    overflow: scroll;
+    max-height: 426rpx;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 20rpx 30rpx;
+    margin-bottom: 12rpx;
+    min-height: 102rpx;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-left {
+    max-width: 320rpx;
+    margin-top: 10rpx;
+    text-align: left;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-left-title {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 28rpx;
+    font-family: PingFangSC-Medium;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-left-time {
+    color: #999;
+    font-size: 20rpx;
+    margin-top: 10rpx;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-right {
+    position: absolute;
+    right: 30rpx;
+    top: 0;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-right-benefit {
+    font-size: 24rpx;
+    color: #ff4219;
+    margin: 0 auto;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-right-benefit-num {
+    display: inline-block;
+    font-size: 52rpx;
+    line-height: 24rpx;
+    font-family: DINAlternate-Bold;
+    margin-right: 5rpx;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-right-benefit-unit {
+    display: inline-block;
+}
+
+.redpack-pop-wrap .redpack-pop-body-content .coupon-right-btn {
+    padding: 3rpx 17rpx;
+    margin-top: 15rpx;
+    background-image: linear-gradient(45deg,#ff9258,#ff5b1d);
+    border-radius: 27rpx;
+    font-size: 22rpx;
+    color: #fff;
+}
+
+.redpack-pop-wrap .redpack-pop-close {
+    width: 44rpx;
+    height: 44rpx;
+    margin-top: 60rpx;
+}

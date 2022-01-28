@@ -1,0 +1,29 @@
+.cell-type-0 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 1.4;
+    color: #A7A7A7;
+}
+
+.cell-type-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 1.4;
+    color: #62A44C;
+}
+
+.cell-title {
+    font-size: 40rpx;
+}
+
+.img {
+    width: 70rpx;
+    height: 70rpx;
+    margin-right: 30rpx;
+}

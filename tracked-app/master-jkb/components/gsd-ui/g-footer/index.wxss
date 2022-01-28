@@ -1,0 +1,21 @@
+.g-footer {
+    padding: 60rpx 40rpx;
+    width: 670rpx;
+}
+
+.g-footer--fixed {
+    bottom: 0;
+    position: absolute;
+}
+
+.g-footer__content {
+    width: 670rpx;
+}
+
+.g-footer__content__text {
+    color: #bbbec4;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    text-align: center;
+}

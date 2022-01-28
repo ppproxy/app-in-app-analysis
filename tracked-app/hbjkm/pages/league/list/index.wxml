@@ -1,0 +1,22 @@
+<template name="tab">
+    <g-tab-pane key="{{index}}" tab="{{name}}">
+        <g-wrapper>
+            <g-cell access bind:tap="onTapAccess" data-id="{{item.id}}" data-url="/pages/league/detail/index" desc="{{item.desc}}" label="{{item.label}}" wx:for="{{itemList}}" wx:key="index">
+                <view slot="prepend">
+                    <view class="cube">
+                        <image src="{{item.iconUrl}}"></image>
+                    </view>
+                </view>
+            </g-cell>
+        </g-wrapper>
+        <view wx:if="{{!itemList.length}}">
+            <view class="no-data-image">
+                <image src="https://imgcache.gzonline.gov.cn/cos/empty_0283358d.svg"></image>
+            </view>
+            <view class="no-data">当前没有服务</view>
+        </view>
+    </g-tab-pane>
+</template>
+<g-tabs activeKey="{{tabIndex}}" bind:change="handleTabTap">
+    <template is="tab" data="{{name:item,index:index,itemList:list}}" wx:for="{{tabs}}" wx:key="index"></template>
+</g-tabs>

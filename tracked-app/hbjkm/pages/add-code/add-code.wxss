@@ -1,0 +1,8 @@
+.btn-box {
+    padding: 80rpx 80rpx 60rpx;
+}
+
+.btn {
+    background-color: #4293F4;
+    color: #fff;
+}

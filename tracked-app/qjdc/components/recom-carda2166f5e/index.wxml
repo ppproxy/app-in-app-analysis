@@ -1,0 +1,37 @@
+<view class="recom_cards-panel" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{cardList.length}}">
+    <view class="recom_cards-bg">
+        <view class="recom_cards-header">
+            <view bindtap="jumpBuyCards" class="recom_cards-title ellipsis">{{title}}</view>
+            <view bindtap="jumpToMyCards" class="recom_cards-info">
+                <highlight-text color="#333" fontSize="24rpx" text="{{info}}"></highlight-text>
+                <image class="recom_cards-info-icon" mode="aspectFit" src="https://pt-starimg.didistatic.com/static/starimg/img/Ots8bWclwQ1606715312496.png"></image>
+            </view>
+        </view>
+        <scroll-view bindscroll="scroll" class="recom_cards-main _cml_ref_lmc_" enableFlex="true" id="card-panel" scrollX="true" scrollY="false">
+            <view bindtap="__invoke" class="{{__stringify__.stringifyClass('recom_cards-card _cml_ref_lmc_',cardInfo.ext&&cardInfo.ext.consumeChannels&&cardInfo.ext.consumeChannels[0]&&cardInfo.ext.consumeChannels[0]==='didi_app'?'recom_cards-card-App':'recom_cards-card-no-app')}}" data-eventconfigs="{{ tap:[ ['buyCard',cardInfo,index] ] }}" id="card" wx:for="{{cardList}}" wx:for-item="cardInfo" wx:key="index">
+                <view class="recom_cards-card-info">
+                    <view class="recom_cards-card-header">
+                        <view class="recom_cards-card-discount" wx:if="{{cardInfo.tags[0]&&cardInfo.tags[0].title}}">{{cardInfo.tags[0].title}}</view>
+                        <view class="recom_cards-card-title" wx:if="{{cardInfo.name}}">
+                            <highlight-text ellipsis color="#000000" fontSize="28rpx" text="{{cardInfo.name}}"></highlight-text>
+                        </view>
+                    </view>
+                    <view class="recom_cards-card-price">
+                        <view class="recom_cards-card-old-price" wx:if="{{cardInfo.price&&cardInfo.discount&&cardInfo.price!=cardInfo.discount}}">{{cardInfo.price/100}}元</view>
+                        <view class="recom_cards-card-prefix" wx:if="{{cardInfo.pricePrefix}}">{{cardInfo.pricePrefix}}</view>
+                        <view class="recom_cards-card-new-price">{{cardInfo.discount?cardInfo.discount/100:cardInfo.price/100}}<span style="font-family:PingFangSC-Regular;font-size:24rpx;color:#000000;line-height:42rpx;">元</span>
+                        </view>
+                    </view>
+                </view>
+                <view class="recom_cards-card-icon">
+                    <image class="recom_cards-card-icon-img" mode="aspectFit" src="{{cardInfo.imageNew||defaultIcon[cardInfo.brand]}}">></image>
+                </view>
+            </view>
+            <view class="recom_cards-other _cml_ref_lmc_" id="card-other">
+                <view bindtap="jumpToBuyCards" class="recom_cards-other-info">{{otherTitle}}<image class="recom_cards-other-icon" src="https://pt-starimg.didistatic.com/static/starimg/img/otFAAmJyoT1606736176170.png"></image>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<wxs module="__stringify__" src="../../wxs/stringify75d7c077.wxs" />

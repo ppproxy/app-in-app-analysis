@@ -1,0 +1,10 @@
+<view class="msg">
+    <g-title status="{{status}}" title="{{title}}"></g-title>
+    <view ariaLabel="{{desc}}" class="msg__desc">{{desc}}</view>
+    <slot></slot>
+    <view class="msg__btn">
+        <button catch:tap="handlePrimaryTap" type="primary" wx:if="{{primaryText}}">{{primaryText}}</button>
+        <button catch:tap="handleSecondTap" type="default" wx:if="{{secondText}}">{{secondText}}</button>
+    </view>
+    <g-footer fixed="{{footerFixed}}"></g-footer>
+</view>

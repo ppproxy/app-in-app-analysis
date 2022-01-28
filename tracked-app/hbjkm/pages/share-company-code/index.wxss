@@ -1,0 +1,100 @@
+page {
+    background: #f0f0f0;
+    padding: 0;
+}
+
+.titile-wrap {
+    background: #fff;
+    padding: 20rpx 40rpx;
+}
+
+.btn-bottom {
+    margin-bottom: 20rpx;
+}
+
+.desc {
+    font-family: "PingFangSC-Regular";
+    font-size: 26rpx;
+    line-height: 40rpx;
+    color: #999;
+    text-align: left;
+    margin-bottom: 40rpx;
+}
+
+.desc-title {
+    font-family: "PingFangSC-Semibold";
+    color: #666;
+    font-size: 28rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-bottom: 10rpx;
+}
+
+.text-color {
+    color: #666;
+}
+
+.content {
+    margin-top: 20rpx;
+    background: #fff;
+    padding: 20rpx 40rpx;
+}
+
+.img-wrap {
+    padding: 30rpx 0;
+    text-align: center;
+}
+
+.img-size {
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    padding: 25rpx 0;
+}
+
+.headTitle {
+    padding: 35rpx 0;
+    color: #000;
+    font-size: 40rpx;
+}
+
+.img-icon {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 8rpx;
+}
+
+.img-wrap2 {
+    padding: 100rpx 0;
+    text-align: center;
+}
+
+.tips {
+    margin: 40rpx;
+    color: #999;
+}
+
+.title {
+    margin: 20rpx;
+    color: black;
+    font-size: 36rpx;
+}
+
+.img-size {
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.img-size2 {
+    margin-top: 20rpx;
+    width: 186rpx;
+    height: 186rpx;
+}
+
+.rebtn {
+    margin: 0 20rpx;
+}

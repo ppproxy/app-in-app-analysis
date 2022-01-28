@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "common-page": "/qj-beatles/components/CommonPage4f33b364/index",
+        "highlight-text": "/qj-beatles/components/HighlightText2eb56800/index",
+        "Dialog": "/qj-beatles/components/Dialog71e2b10e/index",
+        "task": "/qj-beatles/components/task68f7a3cc/index",
+        "order": "/qj-beatles/components/orderd2fcafd6/index",
+        "msg": "/qj-beatles/components/msgd3775270/index",
+        "comment": "/qj-beatles/components/comment585e3ea6/index",
+        "banner-msg": "/qj-beatles/components/banner-msg826063b2/index",
+        "confirm": "/qj-beatles/components/Confirm7de4a850/index",
+        "subscribePrompt": "/qj-beatles/components/subscribePrompt83a792a8/index",
+        "benefit": "/qj-beatles/components/Benefit72dc75fe/index",
+        "showModel": "/qj-beatles/components/ShowModelf59af030/index"
+    }
+}

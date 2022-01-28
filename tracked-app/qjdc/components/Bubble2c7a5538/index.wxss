@@ -1,0 +1,27 @@
+.level-bubble {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: calc(100% - 40rpx);
+    padding: 26rpx 0 35rpx 30rpx;
+    background-image: linear-gradient(-90deg,#faf2ef,#ffd5c5);
+    border-radius: 34rpx 34rpx 0 0;
+    box-sizing: border-box;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    z-index: 8;
+}
+
+.level-bubble .level-icon {
+    width: 100rpx;
+    height: 39rpx;
+    z-index: 100;
+}
+
+.level-bubble.hm-locked-infoflow {
+    background-image: linear-gradient(90deg,#ebe9ff,#ffeeed);
+    border-radius: 24px 24px 0 0;
+    padding: 20rpx 30rpx 50rpx;
+    width: 100%;
+    margin-bottom: -30rpx;
+}

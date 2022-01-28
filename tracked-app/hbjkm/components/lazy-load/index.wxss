@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+    height: auto;
+}
+
+.pic {
+    width: 750rpx;
+}
+
+image {
+    width: 750rpx;
+    height: 5000rpx;
+}

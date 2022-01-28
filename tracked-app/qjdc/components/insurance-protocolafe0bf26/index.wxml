@@ -1,0 +1,10 @@
+<view class="insurance-protocol" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{!user.agreeInsuranceProtocol}}">
+    <view class="insurance-wrapper">
+        <view class="top-img">
+            <image src="{{imageUrl}}"></image>
+        </view>
+        <view class="insurance-title">{{title}}</view>
+        <view class="insurance-subhead">*{{insuranceProtocolNoteShow[0]}}<text bindtap="toNotePage">《保险投保须知》</text>{{insuranceProtocolNoteShow[1]}}</view>
+        <view bindtap="agreeInsurance" class="agree-insurance">我知道了</view>
+    </view>
+</view>

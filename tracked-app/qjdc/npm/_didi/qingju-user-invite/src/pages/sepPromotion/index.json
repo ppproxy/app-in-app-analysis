@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "Header": "/npm/_didi/qingju-user-invite/src/components/headera97d3a3e/index",
+        "PrizePop": "/npm/_didi/qingju-user-invite/src/components/prizePop762eccf3/index",
+        "Marquee": "/npm/_didi/qingju-user-invite/src/components/marquee2e566a7c/index",
+        "PrizeSwiper": "/npm/_didi/qingju-user-invite/src/components/prizeSwiper4dc47004/index",
+        "AssistProgress": "/npm/_didi/qingju-user-invite/src/components/assistProgress47e2168a/index",
+        "AssistPage": "/npm/_didi/qingju-user-invite/src/components/assistPageaae91e28/index",
+        "BoxOpenGift": "/npm/_didi/qingju-user-invite/src/components/boxOpenGifte595e642/index",
+        "loading": "/npm/_didi/qingju-user-invite/src/components/loading3182f271/index"
+    },
+    "navigationBarTitleText": "10.18-22 骑青桔有钱赚"
+}

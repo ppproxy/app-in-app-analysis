@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "ad-tag": "/components/adTag0a09bece/index",
+        "button-com": "/components/newButtonc816977e/index",
+        "action-card": "/components/ActionCard48ab1b56/index",
+        "parkingsport-card": "/components/ParkingSportCardd4c4b28a/index",
+        "tips-card": "/components/TipsCard0e8daf57/index"
+    },
+    "navigationBarTitleText": "滴滴青桔",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#E2E2E2"
+}

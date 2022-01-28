@@ -1,0 +1,19 @@
+<view class="mine-profile">
+    <view class="mine-profile-avatar">
+        <open-data style="position: absolute; z-index: 999" type="userAvatarUrl"></open-data>
+    </view>
+    <view>
+        <open-data class="mine-profile-nickname name" type="userNickName"></open-data>
+        <view class="phone">{{userInfo.phone}}</view>
+    </view>
+</view>
+<view class="mine__not-log-auth" wx:if="{{!userInfo.isAuth}}">
+    <image class="mine__not-log-auth-icon" mode="scaleToFill" src="https://imgcache.gzonline.gov.cn/cos/smrz_6a057627.svg"></image>
+    <view class="mine__not-log-auth-title">{{authTitle}}</view>
+    <view class="mine__not-log-auth-info">
+        <view>
+            <text>{{authDesc}}</text>
+        </view>
+    </view>
+    <button bindgetphonenumber="onTapLogin" class="mine__btn" loading="{{needCheckSession}}" openType="getPhoneNumber" type="primary">{{authBtnText}}</button>
+</view>

@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "confirm": "/components/confirm3dc76573/index",
+        "moredialog": "/components/more-dialogfb44ac28/index"
+    }
+}

@@ -1,0 +1,36 @@
+<view class="wrap" wx:if="{{!errorpage}}">
+    <view class="titile-wrap">
+        <view class="headTitle text-overflow">{{companyName}}</view>
+        <view class="location">
+            <image class="img-icon" src="../../images/relativecode/iconlocation.png"></image>
+            <text class="text-color text-overflow">{{companyAddress}}</text>
+        </view>
+    </view>
+    <view class="content">
+        <view>
+            <view class="img-wrap">
+                <image class="img-size" src="{{imgUrl}}"></image>
+            </view>
+            <view class="desc">
+                <view class="desc-title">说明：</view>
+                <view>1.关联码在7日内有效，超时需申请更新。</view>
+                <view>2.可将关联码分享至微信工作群，或打印并粘贴在企业入口，供复工员工扫码申请关联。</view>
+            </view>
+            <button bindtap="saveImag" class="btn btn-bottom" type="primary">保存到相册</button>
+            <view class="btn-wrap">
+                <button openType="share">分享</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{errorpage}}">
+    <view class="wrap2">
+        <view class="img-wrap2">
+            <image class="img-size2" src="/images/error/errorpage.png"></image>
+            <view class="title">错误提示</view>
+            <view class="tips">请先切换公司或者社区对应采集点，再生成关联码</view>
+            <button bindtap="backtonew" class="rebtn">返回</button>
+        </view>
+    </view>
+    <g-footer></g-footer>
+</view>

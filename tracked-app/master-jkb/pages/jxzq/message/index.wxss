@@ -1,0 +1,65 @@
+page {
+    background: #f3f3f3;
+}
+
+.topSection {
+    background: #fff;
+    height: 809rpx;
+    padding: 40rpx;
+    position: relative;
+    width: 590rpx;
+}
+
+.btn,.topSection {
+    border-radius: 16rpx;
+    margin: 40rpx auto;
+}
+
+.btn {
+    background: #0d8ce6;
+    color: #fff;
+    font-size: 34rpx;
+    height: 90rpx;
+    letter-spacing: 0;
+    line-height: 90rpx;
+    text-align: center;
+    width: 650rpx;
+}
+
+.textarea {
+    background: #fafafa;
+    border: 1px solid #f2f2f2;
+    border-radius: 6px;
+    color: #333;
+    font-size: 28rpx;
+    height: 696rpx;
+    padding: 88rpx 24rpx 24rpx;
+    width: 542rpx;
+}
+
+.xin {
+    height: 40rpx;
+    left: 71rpx;
+    top: 67rpx;
+    width: 40rpx;
+}
+
+.bjjkb,.xin {
+    position: absolute;
+    z-index: 100;
+}
+
+.bjjkb {
+    bottom: 67rpx;
+    height: 80rpx;
+    right: 71rpx;
+    width: 80rpx;
+}
+
+.wordNum {
+    bottom: 72rpx;
+    color: #c9c9c9;
+    font-size: 24rpx;
+    left: 71rpx;
+    position: absolute;
+}

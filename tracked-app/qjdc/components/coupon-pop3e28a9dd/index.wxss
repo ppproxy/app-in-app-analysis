@@ -1,0 +1,111 @@
+.coupon-pop-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+}
+
+.coupon-pop-wrap .coupon-pop {
+    width: 540rpx;
+    text-align: center;
+}
+
+.coupon-pop-wrap .coupon-pop-header {
+    width: 654rpx;
+    height: 527rpx;
+    margin-left: -47rpx;
+    margin-bottom: -12rpx;
+}
+
+.coupon-pop-wrap .coupon-pop-body {
+    border-radius: 0 0 30rpx 30rpx;
+    padding: 5rpx 24rpx 28rpx;
+}
+
+.coupon-pop-wrap .coupon-pop-body .content-wrap {
+    overflow: scroll;
+    max-height: 426rpx;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content {
+    position: relative;
+    height: 128rpx;
+    width: 489rpx;
+    background: url("https://pt-starimg.didistatic.com/static/starimg/img/KGffdFeP4h1622187588161.png") no-repeat;
+    background-size: 100%;
+    margin-bottom: 17rpx;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-left {
+    max-width: 143rpx;
+    margin-top: 10rpx;
+    text-align: center;
+    color: #ff4949;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-left-benefit {
+    margin: 0 auto;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-left-benefit-num {
+    display: inline-block;
+    font-size: 46rpx;
+    line-height: 24rpx;
+    font-family: PingFangSC-Semibold;
+    font-weight: 700;
+    margin-right: 5rpx;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-left-benefit-unit {
+    display: inline-block;
+    font-size: 28rpx;
+    font-family: PingFangSC-Semibold;
+    font-weight: 700;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-right {
+    position: absolute;
+    left: 172rpx;
+    top: 35rpx;
+    text-align: left;
+    color: #ff4949;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-right-title {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    font-family: PingFangSC-Regular;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-right-time {
+    font-size: 16rpx;
+    margin-top: 10rpx;
+}
+
+.coupon-pop-wrap .coupon-pop-body-content .coupon-btn {
+    position: absolute;
+    right: 12rpx;
+    bottom: 8rpx;
+    padding: 3rpx 19rpx;
+    font-family: PingFangSC-Thin;
+    color: #fefefe;
+    background-image: linear-gradient(45deg,#ff4c4d,#fe795a);
+    border-radius: 16rpx;
+    font-size: 20rpx;
+    line-height: 32rpx;
+}
+
+.coupon-pop-wrap .coupon-pop-close {
+    width: 44rpx;
+    height: 44rpx;
+    margin-top: 60rpx;
+}

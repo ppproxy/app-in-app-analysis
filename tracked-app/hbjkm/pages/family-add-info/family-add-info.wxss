@@ -1,0 +1,20 @@
+.btn-box {
+    padding: 80rpx;
+}
+
+.btn {
+    background-color: #4293F4;
+    color: #fff;
+}
+
+.upimg {
+    padding: 40rpx 40rpx;
+    font-size: 16px;
+    text-align: center;
+}
+
+.upimg image {
+    width: 600rpx;
+    height: 500rpx;
+    margin-top: 30rpx;
+}

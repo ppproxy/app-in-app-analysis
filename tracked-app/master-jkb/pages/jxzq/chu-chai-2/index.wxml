@@ -1,0 +1,100 @@
+<g-tips class="tips" isShow="{{isShow}}" status="warn">请将到访地区精确到社区</g-tips>
+<view class="page" style="min-height:{{windowHeight}}px">
+    <g-form bind:submit="handleFormSubmit" disabled="{{isTijiao}}" model="{{formData}}" primaryText="{{primarytext}}" rules="{{rules}}" validateType="{{validateType}}">
+        <view class="wrap">
+            <view class="header-tit"> 欢迎到北京。您在“个人中心”中注册的手机号码都需要进行行程查询。 </view>
+            <view class="header-con {{index!='0'?'header-con-mar':''}}" wx:for="{{Array1}}">
+                <view class="border-top"></view>
+                <view class="header-content">
+                    <view class="header-content-phone">手机号码：{{item}}</view>
+                    <view class="header-content-success">
+                        <image src="https://xcx-static.yqgz.beijing.gov.cn/statics/heyan-success.png"></image>
+                        <view>核验成功</view>
+                    </view>
+                </view>
+            </view>
+            <view class="content1">
+                <view slot="content">
+                    <view class="header-phone">
+                        <view class="phone-text">手机号码</view>
+                        <view class="fslv">
+                            <image bindtap="flsm" class="img-flsm" src="https://xcx-static.yqgz.beijing.gov.cn/images/yuanzhu.png"></image>
+                        </view>
+                        <view class="phone-num">{{formData.phone}}</view>
+                    </view>
+                    <g-input1 vcode bind:change="handleChange" bind:getVerifyCode="getVerifyCode" id="yzm" label="验证码" placeholder="请输入验证码" value="{{formData.yzm}}" vcodeTime="180"></g-input1>
+                </view>
+            </view>
+            <view class="content1">
+                <view slot="content">
+                    <g-form-cell actionText="选择" bind:tap="handleTap" id="dfdq" label="14天到访地(包含当前所在城市)" placeholder="北京市" value="{{formData.dfdq}}"></g-form-cell>
+                    <view class="blue" wx:for="{{array}}">
+                        <view class="residencePlace" id="tianjia">
+                            <view bind:tap="dilog1" class="picker__value--placeholder" data-idx="{{index}}" wx:if="{{!inputVal[index]}}">请选择到访过的地区</view>
+                            <view bind:tap="dilog1" class="residencePlaceContent" data-idx="{{index}}" wx:if="{{inputVal[index]}}">{{inputVal[index]}}</view>
+                        </view>
+                        <view class="span-box">
+                            <view bind:tap="dilog1" class="span" data-idx="{{index}}">选择</view>
+                            <image bindtap="del" class="shanchu" data-idx="{{index}}" src="https://xcx-static.yqgz.beijing.gov.cn/images/shanchucc.svg"></image>
+                        </view>
+                    </view>
+                    <view bindtap="add" class="tianjia-box">
+                        <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/tianjiacc.svg"></image>
+                        <view class="left">继续添加到访地</view>
+                    </view>
+                    <view class="footer-tit"> 如您忘记近期行程信息，可以通过“通信行程卡”服务进行查询。 <text bindtap="dianji" class="tit-font">点击查询</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="agree" wx:if="{{isShowAgree}}">
+            <g-agree bindtap="agree" value="{{agree}}">
+                <view>本人承诺到访地信息真实有效，如有任何瞒报、谎报防疫信息行为，愿意依法承担法律责任。</view>
+            </g-agree>
+        </view>
+    </g-form>
+</view>
+<g-cascader bind:change="handleChange" bind:close="handleClose" bind:columnChange="handleColumnChange" id="dfdq" range="{{range}}" value="{{formData.dfdq}}" visible="{{visible}}"></g-cascader>
+<view class="top" style="min-height:{{windowHeight}}px" wx:if="{{isShowFlsm}}">
+    <view class="center1">
+        <view class="tit-flsm">防疫健康信息码服务说明</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tit-wenan"> 国家政务服务平台防疫健康信息码依托国家政务服务平台统一身份认证系统、统一电子证照系统，利用汇聚的卫生健康、移民管理、民航、铁路等方面数据，为公众提供本人防疫健康信息相关查询服务。用户登录国家政务服务平台(小程序、APP)，经实名认证后可查看本人的防疫健康相关信息提示。如有疑问，请与国家政务服务平台联系。 </view>
+        </scroll-view>
+        <view bindtap="btns" class="btn1">我知道了</view>
+    </view>
+</view>
+<view catchtouchmove="return" class="top" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi}}">
+    <view class="center1">
+        <view class="tit">提示</view>
+        <view class="tt">
+            <text>正在查询您的相关信息，请您耐心等待。</text>
+        </view>
+        <view class="btn123">{{last_time}}s</view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi1}}">
+    <view class="center12">
+        <view class="tit12">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt12" style="padding-bottom:40rpx;">
+                <text>北京“健康宝”暂不能确认您的防疫相关健康状态，可能由于您近期有进出疫情风险地区的行为。按照我市防疫政策，请您立即与所在社区或相关单位联系报告，以便于您正确履行防疫相关义务。如有疑问，请拨打12345或在北京“健康宝”留言簿留言。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btns1" class="btna">
+            <view bindtap="tuichu" class="tuichu">返回首页</view>
+            <button bindtap="getPhoneNumber" class="tuichu1">重新查询</button>
+        </view>
+    </view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{phoneKoneWrap}}">
+    <view class="center12">
+        <view class="tit12">行程信息查询服务说明</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt12" style="padding-bottom:40rpx;">
+                <text>“行程信息查询”服务将使用您在“个人中心”中展示的注册手机号码。误导性使用手机号码故意掩盖真实行程将承担防疫相关法律责任。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="phoneKone" class="btn123">我知道了</view>
+    </view>
+</view>

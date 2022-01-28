@@ -1,0 +1,16 @@
+<view class="page">
+    <view class="header">
+        <view class="bitian">工作单位</view>
+        <view class="tit">
+            <input bindinput="handleChange" class="left" label="工作单位" placeholder="请输入工作单位全称" placeholderClass="a" value="{{keyName}}"></input>
+            <view bindtap="search" class="search">确定</view>
+        </view>
+    </view>
+    <scroll-view class="search-content-body" scrollY="true" style="height:{{windowHeight-80}}px;position:fixed;top:0;left:0;">
+        <view wx:if="{{searchData.length>0}}">
+            <view class="search-result-item" wx:for="{{searchData}}" wx:key="{{index}}">
+                <searchHilightTextView bindtap="chooseSearchResultAction" class="result-item" data-id="{{item}}" datas="{{searchData[index]}}"></searchHilightTextView>
+            </view>
+        </view>
+    </scroll-view>
+</view>

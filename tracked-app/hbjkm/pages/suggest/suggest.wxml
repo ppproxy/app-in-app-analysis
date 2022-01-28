@@ -1,0 +1,52 @@
+<view class="title">服务提示</view>
+<view class="content">
+    本服务相关数据在不断汇聚和完善中，同时考虑到疫情传播的复杂性，不排除还有尚未掌握的其他方面数据和因素，请您密切关注自己身体状况，如有相关症状请及时咨询专业医疗机构，根据相关规定及时报告。
+</view>
+<view class="content">
+    本服务由全省一体化政务服务平台会同有关方面提供，将严格按规定保护您的个人信息安全。 
+</view>
+<view class="content">
+    请严格遵守《中华人民共和国网络安全法》等相关法律法规规定，不得利用本服务提供的查询结果从事侵害他人名誉、隐私等活动。
+</view>
+<view class="tel three">
+    各市咨询电话：
+</view>
+<view class="tel one">
+    <text class="thr">石家庄市：</text>0311-12345
+</view>
+<view class="tel one">
+    <text class="tw"> 承德市：</text>0314-12345
+</view>
+<view class="tel one">
+    <text class="thr"> 张家口市：</text>0313-12345
+</view>
+<view class="tel one">
+    <text class="thr"> 秦皇岛市：</text>0335-12345
+</view>
+<view class="tel one">
+    <text class="tw"> 唐山市：</text>0315-12345
+</view>
+<view class="tel one">
+    <text class="tw">廊坊市：</text>0316-12345
+</view>
+<view class="tel one">
+    <text class="tw">保定市：</text>0312-12345
+</view>
+<view class="tel one">
+    <text class="tw">沧州市：</text>0317-12345/4006868560
+</view>
+<view class="tel one">
+    <text class="tw">衡水市：</text>0318-12345
+</view>
+<view class="tel one">
+    <text class="tw">邢台市：</text>0319-12345
+</view>
+<view class="tel one">
+    <text class="tw">邯郸市：</text>0310-12345
+</view>
+<view class="tel one">
+    <text class="tw">定州市：</text>0312-2328260
+</view>
+<view class="tel one fiv">
+    <text class="tw">辛集市：</text>0311-83283507
+</view>

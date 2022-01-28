@@ -1,0 +1,247 @@
+page {
+    background: #f0f0f0;
+}
+
+.jxxz_content {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,.05);
+    height: auto;
+    margin: 40rpx;
+    padding: 0 40rpx;
+    z-index: 999;
+}
+
+.jxxz_item_content {
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    padding: 40rpx 0;
+}
+
+.last_jxxz_item_content {
+    border-bottom: 0 solid #e5e5e5;
+}
+
+.jxxz_item_content_title {
+    color: #000;
+    font-size: 36rpx;
+    font-weight: 700;
+}
+
+.center {
+    background: #fff;
+    border-radius: 16rpx;
+    width: 560rpx;
+}
+
+.tit {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 40rpx 0 32rpx;
+    text-align: center;
+}
+
+.tt {
+    color: #585858;
+    font-size: 30rpx;
+    line-height: 44rpx;
+    padding: 0 40rpx;
+    text-align: justify;
+    text-indent: 40rpx;
+    word-break: break-all;
+}
+
+.btna {
+    align-items: center;
+    border-top: 1rpx solid #e5e5e5;
+    display: flex;
+    height: 98rpx;
+    justify-content: center;
+    line-height: 98rpx;
+}
+
+.btna,.tuichu1 {
+    color: #0d8ce6;
+    font-size: 36rpx;
+    text-align: center;
+}
+
+.tuichu1 {
+    background-color: initial;
+    border: none;
+    font-family: PingFangSC-Medium;
+    font-weight: 400;
+    outline: none;
+    width: 100%;
+}
+
+.service_icon {
+    height: 48rpx;
+    margin-right: 20rpx;
+    width: 48rpx;
+}
+
+.service_title {
+    align-items: center;
+    display: flex;
+}
+
+.child_service_point {
+    background: #e5e5e5;
+    border-radius: 6rpx;
+    display: inline-block;
+    height: 12rpx;
+    margin-left: 18rpx;
+    margin-right: 38rpx;
+    width: 12rpx;
+}
+
+.jxxz_child_content_title {
+    color: #333;
+    font-size: 30rpx;
+}
+
+.jxxz_chlid_content {
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+}
+
+.choose_admin_type {
+    background: #fff;
+    border-radius: 16rpx;
+    width: 670rpx;
+}
+
+.choose_tip {
+    letter-spacing: 0;
+    margin-bottom: 40rpx;
+    width: 100%;
+}
+
+.choose_content,.choose_tip {
+    color: #585858;
+    font-size: 30rpx;
+}
+
+.choose_content {
+    line-height: 44rpx;
+    padding: 0 40rpx;
+    text-align: justify;
+    word-break: break-all;
+}
+
+.radio_box {
+    display: inline-block;
+    height: 44rpx;
+    width: 44rpx;
+}
+
+.radio_box image {
+    height: 100%;
+    width: 100%;
+}
+
+.choose_item {
+    align-items: center;
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,.05);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40rpx;
+    padding: 26rpx 30rpx;
+}
+
+.checked_item {
+    border: 1px solid rgba(31,144,251,.5);
+}
+
+.choose_item_title {
+    align-items: center;
+    display: inline-block;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.choose_item_title image {
+    height: 68rpx;
+    width: 68rpx;
+}
+
+.choose_item_title text {
+    color: #666;
+    font-size: 36rpx;
+    line-height: 44rpx;
+}
+
+.topwrap {
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.oprate_btn,.topwrap {
+    display: flex;
+}
+
+.oprate_btn {
+    border-top: 1rpx solid #e5e5e5;
+    justify-content: space-around;
+    margin-top: 20rpx;
+}
+
+.cancel {
+    color: #aeaeae;
+}
+
+.cancel,.two_btn_agree {
+    font-size: 36rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    padding: 0 40rpx;
+    text-align: center;
+    width: 50%;
+}
+
+.two_btn_agree {
+    border-left: 1px solid #e5e5e5;
+    color: #0d8ce6;
+}
+
+.btna1 {
+    align-items: center;
+    border-top: 1rpx solid #e5e5e5;
+    color: #0d8ce6;
+    font-size: 36rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+}
+
+.btna1,.showHeSuan {
+    display: flex;
+}
+
+.showHeSuan {
+    justify-content: center;
+    width: 50%;
+}
+
+.tuichu {
+    border-right: 1rpx solid #e5e5e5;
+    color: #999;
+    font-family: PingFangSC-Regular;
+    font-size: 36rpx;
+    text-align: center;
+    width: 50%;
+}

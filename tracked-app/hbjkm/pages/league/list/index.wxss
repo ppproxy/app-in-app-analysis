@@ -1,0 +1,26 @@
+.no-data {
+    text-align: center;
+    font-size: 32rpx;
+    color: #000;
+    opacity: 0.3;
+}
+
+.no-data-image {
+    margin: 200rpx auto 30rpx auto;
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.no-data-image image {
+    width: 100%;
+    height: 100%;
+}
+
+.cube {
+    margin-right: 20rpx;
+}
+
+.cube image {
+    width: 96rpx;
+    height: 96rpx;
+}

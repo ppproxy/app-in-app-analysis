@@ -1,0 +1,4 @@
+<map showLocation bindmarkertap="handleMarkerTap" bindregionchange="handleRegionChange" class="g-map" id="map" latitude="{{position.latitude}}" longitude="{{position.longitude}}" markers="{{_markers}}" scale="{{scale}}">
+    <cover-view catch:tap="handleLoadTap" class="g-map__load" wx:if="{{_showLoad}}"> 搜索此区域 </cover-view>
+    <cover-image catch:tap="handleLocationTap" class="g-map__location" src="../static/image/map-icon/map-location.png"></cover-image>
+</map>

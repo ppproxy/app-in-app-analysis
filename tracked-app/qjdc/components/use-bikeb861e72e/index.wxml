@@ -1,0 +1,32 @@
+<view class="init-use-bike" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="msg-flow-module">
+        <swiper autoplay="{{true}}" circular="{{true}}" class="msg-swiper" current="{{current}}" interval="{{5000}}" vertical="{{true}}">
+            <swiper-item bindtap="__invoke" catchtouchmove="stopTouchMove" data-eventconfigs="{{ tap:[ ['msgFlowTap',idx] ] }}" wx:for="{{msgFlowList}}" wx:for-index="idx" wx:key="idx">
+                <view class="flow-item">
+                    <view class="taskTag" wx:if="{{getNewTaskStyle&&(item.sceneType==2||item.sceneType==11||item.sceneType==12)}}">赚福利</view>
+                    <view class="{{isStimulate?item.jumpUrl&&!getNewTaskStyle?'flow-content-stimulate':'flow-content-stimulate-no':'flow-content'}}">
+                        <hightlight lineTwo fontSize="24rpx" text="{{item.desc||'骑滴滴青桔去兜风，天天快乐出行'}}"></hightlight>
+                    </view>
+                    <view class="{{getNewTaskStyle?'btn-text-new':'btn-text'}}" wx:if="{{item.btnText}}">{{item.btnText}}</view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="use-bike-module">
+        <view bindtap="findBikeTap" class="find-bike">
+            <image class="position-img" src="{{findBikeImg}}"></image>
+            <view class="find-bike-text">{{findBikeDesc}}<image class="arrow-img" src="{{moreRightImg}}"></image>
+            </view>
+        </view>
+        <view bindtap="scanBikeTap" class="scan-bike">扫码骑车</view>
+        <view class="functional" wx:if="{{useBikeOption.isShowFunctional}}">
+            <view bindtap="__invoke" class="functional-list" data-eventconfigs="{{ tap:[ ['functionalTap',item,idx] ] }}" wx:for="{{functionalList}}" wx:for-index="idx" wx:key="idx">
+                <image class="functional-img" src="{{item.iconUrl}}" wx:if="{{item.iconUrl}}"></image>{{item.iconDesc}}</view>
+            <view bindtap="clickMore" class="more-icon-wrap" wx:if="{{isMoreMoudle}}">
+                <image class="more-icon" src="https://dpubstatic.udache.com/static/dpubimg/d124f9b7-20fc-4a23-afdc-cc4a7d15d5ea.png"></image>
+            </view>
+        </view>
+    </view>
+    <confirm bindok="closeCustomerConfirm" options="{{customerOptions}}"></confirm>
+    <moredialog bindclickMoreFunc="clickMoreFunc" class="ref_moreDlgRef_1" optionAll="{{optionAll}}"></moredialog>
+</view>

@@ -1,0 +1,31 @@
+<view class="activity_center-panel" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <benefit></benefit>
+    <view class="activity_center-bot-banner-f">
+        <view class="activity_center-bot-banner _cml_ref_lmc_" id="bot-banner" style="flex-direction:row" wx:if="{{activeInfo&&activeInfo.botBanner&&activeInfo.botBanner.length===2}}">
+            <view bindtap="__invoke" class="activity_center-bot-item" data-eventconfigs="{{ tap:[ ['goToActivity',botBannerInfo,idx,activeInfo.botInfo] ] }}" style="flex-direction:row" wx:for="{{activeInfo.botBanner}}" wx:for-index="idx" wx:for-item="botBannerInfo" wx:key="idx">
+                <view class="activity_center-bot-item-panel">
+                    <view class="activity_center-bot-text">
+                        <view class="activity_center-bot-title">{{botBannerInfo&&botBannerInfo.title}}</view>
+                        <view class="activity_center-bot-title">{{botBannerInfo&&botBannerInfo.subTitle}}</view>
+                    </view>
+                    <view class="activity_center-bot-icon">
+                        <image class="activity_center-bot-img" src="{{botBannerInfo.img}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="activity_center-msg-banner" wx:if="{{activeInfo&&activeInfo.msgBanner&&activeInfo.msgBanner.length}}">
+        <view class="activity-item {{'activity-item'+idx}}" wx:for="{{activeInfo.msgBanner}}" wx:for-index="idx" wx:key="idx">
+            <view class="wx-ad" style="{{item.adEnable&&!adConfig.adError?'display: block':'display: none'}}" wx:if="{{item.adEnable}}">
+                <ad type="{{bottomAd}}" unitId="{{'qj'==='qj'?'adunit-91dcab7a276b15f1':'qj'==='didi'?'adunit-609aab9bdc1354d0':''}}" wx:if="{{adReload}}"></ad>
+            </view>
+            <msg-banner bannerItem="{{item}}" bgStyle="background-color:#fff" bindhandleOpenBanner="__invoke" class="_cml_ref_lmc_" data-eventconfigs="{{ handleOpenBanner:[ ['goToActivity',item,idx,activeInfo.msgInfo] ] }}" id="msg-banner" wx:else></msg-banner>
+        </view>
+    </view>
+    <view class="activity_center-bottom-line">
+        <view class="activity_center-bottom-border"></view>
+        <view bindtap="legalprovision" class="activity_center-bottom-text">法律条款及证照资质信息</view>
+        <view class="activity_center-bottom-border"></view>
+    </view>
+</view>

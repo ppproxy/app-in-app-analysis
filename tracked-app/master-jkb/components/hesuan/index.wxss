@@ -1,0 +1,26 @@
+.hesuan {
+    background: rgba(19,199,0,.1);
+    border-radius: 16rpx;
+    box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,.05);
+    height: 154rpx;
+    margin: 40rpx 40rpx 0;
+    width: 670rpx;
+}
+
+.hesuantitle {
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    font-weight: 700;
+    padding: 32rpx 0 8rpx;
+}
+
+.day,.hesuantitle {
+    color: #00b578;
+    text-align: center;
+}
+
+.day {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    font-weight: 400;
+}

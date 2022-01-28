@@ -1,0 +1,79 @@
+.page {
+    background: #f3f3f3;
+    overflow: hidden;
+}
+
+.image {
+    height: 454rpx;
+    left: 0;
+    margin-left: 200rpx;
+    margin-top: 227rpx;
+    position: absolute;
+    top: 0;
+    width: 400rpx;
+}
+
+.con {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,.05);
+    margin: 40rpx 40rpx 0;
+    padding: 40rpx;
+}
+
+.con-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24rpx;
+}
+
+.con>.con-top:last-child {
+    margin-bottom: 0;
+}
+
+.con-top-left {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.con-top-right {
+    border-radius: 4rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    width: 84rpx;
+}
+
+.yin {
+    background: rgba(19,199,0,.1);
+    border: 2px solid rgba(19,199,0,.6);
+    color: #13c700;
+}
+
+.yang {
+    background: rgba(245,39,54,.1);
+    border: 2px solid rgba(245,39,54,.6);
+    color: #f52736;
+}
+
+.con-left {
+    color: #999;
+}
+
+.con-left,.con-right {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    letter-spacing: 0;
+    line-height: 38rpx;
+}
+
+.con-right {
+    color: #333;
+    max-width: 360rpx;
+    text-align: right;
+}

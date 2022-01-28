@@ -1,0 +1,16 @@
+<view class="item item--{{status}}">
+    <view class="item__tail {{_isLast&&'item__tail--last'}} {{status&&'item__tail--'+status}} "></view>
+    <view class="item__head">
+        <view wx:if="{{status==='normal'||status==='pending'}}">
+            <view class="item__head--{{status}}"></view>
+        </view>
+        <view wx:else>
+            <view class="item__head--icon item__head--{{status}}">
+                <g-icon size="48" type="{{status}}"></g-icon>
+            </view>
+        </view>
+    </view>
+    <view class="item__content">
+        <slot></slot>
+    </view>
+</view>

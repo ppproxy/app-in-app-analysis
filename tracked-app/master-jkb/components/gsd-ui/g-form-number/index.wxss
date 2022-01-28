@@ -1,0 +1,63 @@
+.inline-sytle {
+    display: inline-block;
+}
+
+.number-container {
+    align-items: center;
+    display: flex;
+}
+
+.number-container__label {
+    color: #000;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    margin-bottom: 6rpx;
+    width: 50%;
+    word-break: break-all;
+}
+
+.form-item__label--required {
+    color: #f13939;
+}
+
+.number-container__numb-box {
+    color: #000;
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+.number-descBox {
+    color: #ccc;
+    font-size: 30rpx;
+    margin-top: 6rpx;
+    word-break: break-all;
+}
+
+.count-sytle {
+    background: rgba(0,0,0,.05);
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 8rpx;
+    text-overflow: ellipsis;
+    width: 110rpx;
+}
+
+.count-sytle,.sign-sytle {
+    font-size: 34rpx;
+    overflow-x: hidden;
+    padding: 4rpx 0;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sign-sytle {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8rpx;
+    margin: 0 8rpx;
+    width: 60rpx;
+}
+
+.exrange-sytle {
+    color: rgba(0,0,0,.2);
+}

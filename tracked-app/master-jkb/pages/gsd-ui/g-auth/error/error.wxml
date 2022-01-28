@@ -1,0 +1,12 @@
+<view class="auth-container">
+    <view class="auth-name-content">
+        <view class="auth-name-image">
+            <icon color="#CBCBCB" size="93" type="warn"></icon>
+        </view>
+        <view class="auth-name-title">人脸识别认证未成功</view>
+    </view>
+    <view class="button-content">
+        <button bindtap="handleFace" data-type="otherAuth" type="primary">继续人脸识别登录</button>
+    </view>
+    <g-footer></g-footer>
+</view>

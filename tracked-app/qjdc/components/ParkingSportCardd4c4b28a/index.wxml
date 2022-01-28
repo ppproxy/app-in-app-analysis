@@ -1,0 +1,11 @@
+<view class="action-card" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="{{'content '+(remindActive&&'bigSmall')}}">
+        <view class="action-card-l">
+            <image class="tips-icon" src="{{icon}}" style="{{'-webkit-transform:translateY(-20rpx);transform:translateY(-20rpx)'}}"></image>
+            <view class="desc" wx:if="{{desc}}">{{desc}}</view>
+        </view>
+        <form bindsubmit="callback" onSubmit="callback" reportSubmit="true">
+            <button class="action-btn" formType="submit">{{btn_text[0]}}</button>
+        </form>
+    </view>
+</view>

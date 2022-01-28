@@ -1,0 +1,11 @@
+<view class="new-unlocking-top" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="unlocking-top-desc">
+        <Webp-image class="unlocking-top-icon unlocking-top-icon-loading" src="{{imgs.unlockLoading}}" wx:if="{{status===0}}"></Webp-image>
+        <Webp-image class="unlocking-top-icon" src="{{imgs.unlockFail}}" wx:if="{{status===2}}"></Webp-image>
+        <Webp-image class="unlocking-top-icon" src="{{imgs.unlockSuccess}}" wx:if="{{status===1}}"></Webp-image>
+        <view class="fontweight unlocking-tip-title-wrap">
+            <text class="unlocking-tip-title">{{title}}</text>
+        </view>
+        <view bindtap="applyRepair" class="repair" wx:if="{{showRepair&&status!==1}}">车辆报修</view>
+    </view>
+</view>

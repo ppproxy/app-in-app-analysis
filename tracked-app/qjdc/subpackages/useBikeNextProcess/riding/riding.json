@@ -1,0 +1,31 @@
+{
+    "usingComponents": {
+        "map-common": "/components/Map9ccbc7ea/index",
+        "xpanel": "/subpackages/useBikeNextProcess/components/XpanelCard3dbf0ff3/index",
+        "riding-repairs": "/subpackages/useBikeNextProcess/components/RidingRepairs6ea93df6/index",
+        "riding-mileage": "/subpackages/useBikeNextProcess/components/RidingMileage29e3eb8c/index",
+        "icon-list": "/subpackages/useBikeNextProcess/components/IconList5d670aa3/index",
+        "return-bike": "/subpackages/useBikeNextProcess/components/ReturnBike538f909a/index",
+        "study-dialog": "/subpackages/useBikeNextProcess/components/StudyFeeDialogee41d5e4/index",
+        "toast": "/components/Toast6bcbf1a1/index",
+        "message-box": "/components/message-box207cd166/index",
+        "temp-lock": "/subpackages/useBikeNextProcess/components/TempLockcbafbff0/index",
+        "dialog": "/components/Dialog880b0a5e/index",
+        "common-lock": "/subpackages/useBikeNextProcess/components/CommonLock249f02c2/index",
+        "ebike-return": "/subpackages/useBikeNextProcess/components/EbikeReturnBike485ca1fc/index",
+        "park-spotpop": "/subpackages/useBikeNextProcess/components/ParkSpotPopbdbd6dec/index",
+        "acoount-loading": "/subpackages/useBikeNextProcess/components/CloseAccountLoading47ab097e/index",
+        "navigation-bar": "/components/NavigationBar6d73cab3/index",
+        "iphone": "/components/IphoneX48a8f956/index",
+        "marketing-resources": "/components/MarketingResourcesa2a18bda/index",
+        "confirm": "/components/confirm3dc76573/index",
+        "new-returnbike": "/subpackages/useBikeNextProcess/components/NewReturnBike00faebd6/index",
+        "bike-card": "/subpackages/useBikeNextProcess/components/BikeCardad24430c/index",
+        "riding-tips": "/subpackages/useBikeNextProcess/components/RidingTips0fe6d1f6/index",
+        "task": "/subpackages/useBikeNextProcess/components/Task5d0006f1/index",
+        "bubble": "/components/Bubble2c7a5538/index"
+    },
+    "navigationBarTitleText": "骑行中",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom"
+}

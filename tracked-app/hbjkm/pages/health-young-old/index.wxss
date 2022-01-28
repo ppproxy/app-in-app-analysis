@@ -1,0 +1,52 @@
+.young-old-info {
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.young-old-info image {
+    width: 130px;
+}
+
+.young-old-info-title {
+    font-size: 18px;
+    margin: 5px 0 20px 0;
+}
+
+.young-old-main {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.young-old-main input {
+    border-bottom: 1px #f2f2f2 solid;
+    height: 50px;
+    margin-top: -5px;
+}
+
+.young-old-main-input {
+    margin-bottom: 10px;
+}
+
+.young-old-introduce {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.young-old-introduce-btn {
+    background: #007AFF;
+    border-color: #007AFF;
+    color: white;
+    margin-top: 30px;
+}
+
+.young-old-introduce-txt {
+    color: #8D8D8D;
+    margin-bottom: 5px;
+}
+
+.young-old-introduce-check {
+    transform: scale(0.6,0.6);
+    width: 18px;
+    height: 15px;
+}

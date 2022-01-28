@@ -1,0 +1,9 @@
+<view class="row">
+    <picker bind:change="handleStartChange" class="picker-container {{!startDateStr?'placeholder':''}}" end="{{value[1]||end}}" fields="{{fields}}" mode="date" start="{{start}}" value="{{startValue}}">
+        <view class="picker-text">{{startDateStr||startPlaceholder}}</view>
+    </picker>
+    <view class="split-container">-</view>
+    <picker bind:change="handleEndChange" class="picker-container {{!endDateStr?'placeholder':''}}" end="{{end}}" fields="{{fields}}" mode="date" start="{{value[0]||start}}" value="{{endValue}}">
+        <view class="picker-text">{{endDateStr||endPlaceholder}}</view>
+    </picker>
+</view>

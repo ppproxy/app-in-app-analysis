@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "button-com": "/subpackages/commonProcess/components/Button057cff91/index",
+        "toast": "/components/Toast6bcbf1a1/index"
+    },
+    "navigationBarTitleText": "滴滴青桔",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

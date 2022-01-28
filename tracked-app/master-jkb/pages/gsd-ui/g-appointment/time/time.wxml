@@ -1,0 +1,26 @@
+<template name="time-block">
+    <view bind:tap="handleTimeTap" class="time-block" data-item="{{item}}" hoverClass="{{item.disabled?'':'time-block--hover'}}" hoverStayTime="200" wx:for="{{data}}" wx:key="{{index}}">
+        <view class="time-block__wrapper {{item.disabled?'time-block--disabled':''}}">
+            <view class="time-block__time">{{item.time}}</view>
+            <view class="time-block__desc {{item.status?'time-block__desc--'+item.status:''}}" wx:if="{{item.desc}}"> {{item.desc}} </view>
+        </view>
+    </view>
+</template>
+<view class="appointment-time">
+    <g-calendar bind:change="handleDateChange" bind:modeChange="handleModeChange" class="calendar" end="{{end}}" mode="{{mode}}" start="{{start}}" value="{{date}}"></g-calendar>
+    <view class="time--empty" wx:if="{{morning.length===0&&afternoon.length===0&&night.length===0}}">
+        <view wx:if="{{value}}">当前没有可预约时段</view>
+        <view wx:else>请选择预约日期</view>
+    </view>
+    <view>
+        <g-wrapper title="上午" wx:if="{{morning.length>0}}">
+            <template is="time-block" data="{{data:morning}}"></template>
+        </g-wrapper>
+        <g-wrapper title="下午" wx:if="{{afternoon.length>0}}">
+            <template is="time-block" data="{{data:afternoon}}"></template>
+        </g-wrapper>
+        <g-wrapper title="晚上" wx:if="{{night.length>0}}">
+            <template is="time-block" data="{{data:night}}"></template>
+        </g-wrapper>
+    </view>
+</view>

@@ -1,0 +1,70 @@
+<view class="box" style="min-height:{{windowHeight}}px">
+    <view class="back-view {{!isShowBg?'show':''}}">
+        <view style="width:100%;height:{{systemInfo.statusBarHeight}}px;"></view>
+        <view class="view-title">
+            <view bind:tap="handleOpenRegion" style="margin-right:16rpx;">
+                <g-icon color="#fff" size="34" type="arrow-left"></g-icon>
+            </view>本人核酸查询</view>
+    </view>
+    <view class="back-view">
+        <view class="back-image"></view>
+    </view>
+    <view class="con">
+        <view class="brimg">
+            <image mode="aspectFill" src="{{imgUrl}}"></image>
+        </view>
+        <view class="br-box">
+            <view class="name">
+                <view class="biaoti">
+                    <text style="letter-spacing: 2em;">姓</text>名 <text style="letter-spacing: 0;">：</text>
+                </view>
+                <view class="xingming">{{userInfo.name}}</view>
+            </view>
+            <view class="name">
+                <view class="biaoti">身份证号：</view>
+                <view class="xingming">{{userInfo.idCard}}</view>
+            </view>
+        </view>
+        <view class="panduan" wx:if="{{json[0].orgName}}">
+            <view class="type {{json[0].ddDnatest=='阳性'?'type-yang':'type-yin'}} blink ">{{json[0].ddDnatest}}</view>
+            <view class="juli {{json[0].ddDnatest=='阳性'?'juli-yang':'juli-yin'}}">距离本次检测已过 {{riqi}} 天 </view>
+            <view class="didian">
+                <view class="dd-bt">
+                    <view class="jiancejigou">核酸检测机构</view>
+                    <view class="mingcheng">{{json[0].orgName}}</view>
+                </view>
+                <view class="dd-bt">
+                    <view class="jiancejigou">核酸检测时间</view>
+                    <view class="mingcheng">{{json[0].dtCheck}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="wujieguo" wx:else>
+            <view class="wujieguo-img">
+                <image src="https://xcx-static.yqgz.beijing.gov.cn/statics/hesuan_wujieguo.svg"></image>
+            </view>
+            <view class="txt">没有查询到您的核酸检测记录，您可以稍后查询或与您做核酸检测的机构联系。 </view>
+        </view>
+        <view bindtap="handleTap" class="con-footer">历史检测结果查询</view>
+        <view class="new-footer">
+            <view class="new-footer-text">
+                <text>若您需要进行核酸采样，您可通过北京核酸检测小程序完成信息录入。</text>
+            </view>
+            <view class="btn-foo">
+                <view bindtap="ontao" class="new-footer-btn">点此录入</view>
+            </view>
+        </view>
+    </view>
+    <view class="footer">本电子报告与医院或其他检测机构提供的纸质报告具有同等效力。</view>
+</view>
+<view class="top" style="min-height:{{windowHeight}}px;" wx:if="{{daofangWrong}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt">
+                <text>即将打开“北京核酸检测”小程序，该小程序由北京市卫生健康委员会负责系统建设、数据管理并提供相关服务。</text>
+            </view>
+        </scroll-view>
+        <view bindtap="btnDaofangWrong" class="btn">我知道了</view>
+    </view>
+</view>

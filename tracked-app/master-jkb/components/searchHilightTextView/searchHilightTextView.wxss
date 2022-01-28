@@ -1,0 +1,23 @@
+.page {
+    word-wrap: break-word;
+    box-sizing: border-box;
+    font-family: PingFangSC;
+    font-size: 46rpx;
+    height: 100rpx;
+    padding: 20rpx 40rpx 0;
+    width: 100%;
+    word-break: normal;
+}
+
+.normal {
+    color: #000;
+}
+
+.highlight,.normal {
+    font-family: PingFangSC;
+    font-size: 36rpx;
+}
+
+.highlight {
+    color: #0d8ce6;
+}

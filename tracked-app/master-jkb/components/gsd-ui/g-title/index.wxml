@@ -1,0 +1,7 @@
+<view class="title">
+    <view class="title__circle" wx:if="{{total||status}}">
+        <g-circle current="{{current}}" status="{{status}}" total="{{total}}"></g-circle>
+    </view>
+    <view ariaLabel="{{title}}" class="title__text"> {{title}} <slot></slot>
+    </view>
+</view>

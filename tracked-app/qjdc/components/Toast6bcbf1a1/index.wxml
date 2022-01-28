@@ -1,0 +1,6 @@
+<view class="wrap" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{options.open}}">
+    <view class="toast">
+        <image class="image" src="{{options.icon}}"></image>
+        <view class="msg">{{options.msg}}</view>
+    </view>
+</view>

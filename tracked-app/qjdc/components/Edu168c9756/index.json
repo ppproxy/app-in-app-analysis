@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "button-com": "/components/newButtonc816977e/index",
+        "Webp-image": "/components/Webp6dd919b3/index"
+    }
+}

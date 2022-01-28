@@ -1,0 +1,134 @@
+.young-old {
+    padding: 10px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.young-old-info-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.young-old-info-card {
+    display: flex;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.young-old-info-card view:nth-child(2) {
+    flex: 1;
+    text-align: right;
+    color: #999;
+}
+
+.young-old-info {
+    padding-bottom: 10px;
+    border-bottom: 0.5px #f2f2f2 solid;
+    box-sizing: border-box;
+}
+
+.young-old-code {
+    padding: 20px 0 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    border-bottom: 0.5px #f2f2f2 solid;
+}
+
+.young-old-code-time {
+    margin-bottom: 20px;
+}
+
+.young-old-code-time text {
+    color: darkred;
+    font-size: 18px;
+}
+
+.young-old-code-img {
+    width: 200px;
+    height: 200px;
+    border: 0.5px #f2f2f2 solid;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px 15px 0;
+    box-sizing: border-box;
+}
+
+.young-old-code-result {
+    padding: 25px 0;
+    box-sizing: border-box;
+    color: rgb(101,198,123);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.young-old-code-txt {
+    color: #666;
+    text-align: left;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.young-old-txt {
+    padding-top: 10px;
+    box-sizing: border-box;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.young-old-txt view {
+    margin-bottom: 10px;
+}
+
+.young-old-txt view:nth-last-child(1) {
+    margin-bottom: 0;
+}
+
+.young-old-txt view:nth-child(2) {
+    margin-bottom: 15px;
+}
+
+.young-old-txt view:nth-child(1) {
+    margin-top: 5px;
+}
+
+.young-old-txt-box {
+    background: rgb(248,248,248);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #999;
+}
+
+.young-old-code-red {
+    color: red;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+
+.young-old-code-wran {
+    color: rgb(245,208,0);
+    font-size: 16px;
+    line-height: 20px;
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+
+.danger {
+    color: red;
+}
+
+.safe {
+    color: #2ddb92;
+}
+
+.q {
+    display: flex;
+    margin-top: 30rpx;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 15rpx;
+    justify-content: center;
+}

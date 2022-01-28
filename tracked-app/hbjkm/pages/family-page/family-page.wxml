@@ -1,0 +1,84 @@
+<view>
+    <view style="postion:relative"></view>
+    <view class="back-view {{isShowBg?'show':''}}">
+        <image alt="" class="back-image" src="{{url}}"></image>
+    </view>
+    <view class=" data-overview-box" data-url="https://news.qq.com/zt2020/page/feiyan.htm?from=groupmessage" style="margin-top:{{statusBarHeight===44?520:580}}rpx">
+        <view class="flex-container justify-item" style="margin:0 32rpx;align-items:center;padding-bottom:15rpx;border-bottom:1px solid #eee">
+            <view class="header">被代领人信息码</view>
+            <view class="red">{{reportflag}}</view>
+        </view>
+        <view class="data-detail">
+            <view class="box">
+                <view>被代领人姓名</view>
+                <view class="text" style="color:rgb(170, 170, 170)">{{familyname}}</view>
+            </view>
+            <view class="box">
+                <view>被代领人身份证号</view>
+                <view class="text" style="color:rgb(170, 170, 170)">{{familyidentity}}</view>
+            </view>
+            <view class="box">
+                <view>所属关系</view>
+                <view class="text" style="color:rgb(170, 170, 170)">{{familyrelation}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="code">
+        <view style="font-size:40rpx;margin-bottom:0rpx;width: 225px,text-align:center;font-family:Arial;" wx:if="{{fxdjflag!=20}}">{{now}}</view>
+        <image src="{{biankuangUrl}}/huangguan.png" style="width: 35px; height: 25px;margin-bottom:-7px" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num>=severalvaccine.maxNum}}"></image>
+        <view class="canvasbox" wx:if="{{fxdjflag!=20}}">
+            <image src="{{biankuangUrl}}/biankuang1.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num==1}}"></image>
+            <image src="{{biankuangUrl}}/biankuang2.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num==2}}"></image>
+            <image src="{{biankuangUrl}}/biankuang3.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num==3}}"></image>
+            <image src="{{biankuangUrl}}/biankuang4.png" style="  width: 235px; height: 231px;" wx:if="{{fxdjflag!=20&&!newflag&&severalvaccine&&severalvaccine.num>=4}}"></image>
+            <canvas canvasId="myQrcode" class="{{hiddenmodalput?'myQrcode':'myQrcodes'}}" id="canvasid" style="width: 225px; height: 225px;margin:3px 5px 3px 5px" wx:if="{{fxdjflag!=20&&!newflag}}"></canvas>
+        </view>
+        <view bind:tap="re" style="width: 225px; height: 225px; background-color:#eee; display:flex;justify-content: center;align-items: center;flex-direction: column;" wx:if="{{fxdjflag==20}}">
+            <image src="../../images/new.png" style="width: 80px; height: 80px;"></image>
+            <view style="margin-top:60rpx;font-size:30rpx">健康码信息获取超时</view>
+            <view style="margin-top:20rpx;font-size:30rpx">请耐心等待，不要频繁刷新</view>
+        </view>
+        <view style="padding-left:10px; padding-right:10px; box-sizing:border-box;">
+            <view>
+                <view class="icon-box" style="margin-top: 0px; margin-bottom: 10px; border: 1px solid #000;" wx:if="{{flag==0}}">
+                    <view class="warnbox">
+                        <view class=" warn warn-tit" style="font-weight:normal;text-align:left;color:#d8242b" wx:if="{{fxdjflag=='10'}}">通过数据库查询，您有以下出行提示：</view>
+                        <view class=" warn warn-tit" style="font-weight:normal;text-align:left;color:#f5d000;" wx:if="{{fxdjflag=='01'}}">通过数据库查询，您有以下出行提示：</view>
+                        <view class=" warn" style="font-weight:normal;color:#d8242b;font-size:32rpx;" wx:if="{{fxdjflag=='10'&&this_province}}">1、{{warmMsgs}}</view>
+                        <view class=" warn" style="font-weight:normal;color:#f5d000;font-size:32rpx;" wx:if="{{fxdjflag=='01'&&this_province}}">1、{{warmMsgs}}</view>
+                        <block wx:for="{{warmMsgs}}">
+                            <view class=" warn" style="font-weight:normal;color:#d8242b;font-size:32rpx;" wx:if="{{fxdjflag=='10'&&!this_province}}">{{index+1}}、{{item}}</view>
+                            <view class=" warn" style="font-weight:normal;color:#f5d000;font-size:32rpx;" wx:if="{{fxdjflag=='01'&&!this_province}}">{{index+1}}、{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="q" wx:if="{{hsjc=='阳性'}}">核酸检测：
+				<view class="danger">{{hsjc}}（{{hsjcsj}}）</view>
+        </view>
+        <view class="q" wx:if="{{hsjc=='阴性'}}">核酸检测：
+				<view class="safe">{{hsjc}}（{{hsjcsj}}）</view>
+        </view>
+        <view class="q" wx:if="{{hsjc==''||hsjc==null}}">核酸检测：
+				<view>未检测到近一个月内核酸检测信息</view>
+        </view>
+    </view>
+    <view class="health-query" style="margin-top:5px;">
+        <button bind:tap="inoculationDetail" class="query-bnt" data-real="{{true}}">查看被代领人接种信息</button>
+    </view>
+    <view class="health-query" style="margin-top:5px;">
+        <button bind:tap="onTapAccess" class="inoculation-bnt" data-real="{{true}}" data-url="/pages/familyself/familyself">查看被代领人健康信息</button>
+    </view>
+    <view style="display:flex;">
+        <view bind:tap="onTapAccess" class="access-box c" data-real="{{true}}" data-url="/pages/family-report/family-report" hoverClass="right-content-two" style="border:1.5px solid #4293F4">
+            <view class="img" style="display:flex;align-items:center">
+                <image src="/images/for.svg" style="width:40rpx;height:40rpx"></image>
+            </view>
+            <view class="right-content">
+                <view class="title" style="color:#4293F4">为被代领人打卡</view>
+            </view>
+        </view>
+    </view>
+</view>
+<g-footer></g-footer>

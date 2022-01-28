@@ -1,0 +1,43 @@
+.banner-item {
+    background-color: #fafafa;
+    margin-bottom: 20rpx;
+    width: 100%;
+    position: relative;
+    height: 238rpx;
+    display: flex;
+    border-radius: 14rpx;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.banner-item .ad-tag-msg {
+    position: absolute;
+    right: 0;
+}
+
+.banner-item .item-left {
+    padding: 36rpx 0 36rpx 30rpx;
+}
+
+.banner-item .item-left .desc,.banner-item .item-left .title {
+    width: 359rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    color: #333;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.banner-item .item-left .btn {
+    margin-top: 37rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.banner-item .img {
+    width: 280rpx;
+    height: 236rpx;
+}

@@ -1,0 +1,13 @@
+<view wx:if="{{show}}">
+    <view class="container">
+        <view class="content">
+            <textarea class="textarea" placeholder="等待输入"></textarea>
+            <view bindtouchend="handleStop" bindtouchstart="handleStart" class="record" hoverClass="view--hover">按住输入</view>
+        </view>
+        <view catch:tap="handleClose" class="close-btn">点击关闭</view>
+    </view>
+    <view class="mask"></view>
+</view>
+<view catch:tap="handleOpen">
+    <slot></slot>
+</view>

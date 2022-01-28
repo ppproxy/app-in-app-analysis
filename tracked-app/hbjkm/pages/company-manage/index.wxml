@@ -1,0 +1,87 @@
+<g-search bind:change="handleChange" bind:confirm="handleConfirm" placeholder="请输入姓名" value="{{searchValue}}"></g-search>
+<view class="swiper-tab">
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">
+    待审核
+     ({{getarray.tab[0]}})
+  </view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1">
+    已通过
+    <text>(</text>
+    {{getarray.tab[1]}}
+    <text>）</text>
+    </view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">
+    已拒绝
+    <text>(</text>
+    {{getarray.tab[2]}}
+    <text>)</text>
+    </view>
+</view>
+<swiper bindchange="bindChange" class="swiper-box" current="{{currentTab}}" duration="300" style="height:{{winHeight-31}}px">
+    <swiper-item>
+        <view class="listitem" wx:for="{{getarray.applies}}">
+            <view class="listitemcont" wx:if="{{getarray.applies.length}}">
+                <view class="listleft">
+                    <view class="namecont">
+                        <text class="name">{{item.applyUserName}}</text>
+                        <text class="phone">{{item.applyUserPhone}}</text>
+                    </view>
+                    <view>
+                        <text class="idname">身份证号：</text>
+                        <text class="identity">{{item.applyUserIdentity}}</text>
+                    </view>
+                </view>
+                <view class="listrig">
+                    <text class="mycheck" data-name="{{item}}" ontap="checkitem">审核</text>
+                </view>
+            </view>
+        </view>
+        <view class="more" wx:if="{{!getarray.applies.length}}">
+            <text>没有更多了</text>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        <view class="listitem contedall" ontap="bindconted" wx:for="{{getarray.applies}}">
+            <view class="listitemcont" wx:if="{{getarray.applies.length}}">
+                <view class="listleft">
+                    <view class="namecont">
+                        <text class="name">{{item.applyUserName}}</text>
+                        <text class="phone">{{item.applyUserPhone}}</text>
+                    </view>
+                    <view>
+                        <text class="idname">身份证号：</text>
+                        <text class="identity">{{item.applyUserIdentity}}</text>
+                    </view>
+                </view>
+                <view class="listrig">
+                    <text class="">{{item.createTime}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="more" wx:if="{{!getarray.applies.length}}">
+            <text>没有更多了</text>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        <view class="listitem contedall" ontap="unbindcont" wx:for="{{getarray.applies}}">
+            <view class="listitemcont" wx:if="{{getarray.applies.length}}">
+                <view class="listleft">
+                    <view class="namecont">
+                        <text class="name">{{item.applyUserName}}</text>
+                        <text class="phone">{{item.applyUserPhone}}</text>
+                    </view>
+                    <view>
+                        <text class="idname">身份证号：</text>
+                        <text class="identity">{{item.applyUserIdentity}}</text>
+                    </view>
+                </view>
+                <view class="listrig">
+                    <text class="identity">{{item.createTime}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="more" wx:if="{{!getarray.applies.length}}">
+            <text>没有更多了</text>
+        </view>
+    </swiper-item>
+</swiper>

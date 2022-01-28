@@ -1,0 +1,32 @@
+<view ariaLabel="{{label+(desc?' '+desc:'')+(disabled?'已禁用':'')}}" ariaRole="{{access||to?'button':''}}" catch:tap="handleTap" class="cell component-class" hoverClass="{{!disabled&&(to||access)?'cell--active':'none'}}">
+    <view class="cell__wrap">
+        <view class="cell__content {{disabled?'cell--disabled':''}}">
+            <view class="cell__content__header">
+                <view class="cell__content__prepend prepend-class">
+                    <slot name="prepend"></slot>
+                </view>
+                <view class="cell__content__icon" wx:if="{{iconType}}">
+                    <g-icon color="{{iconColor}}" size="{{iconSize}}" type="{{iconType}}"></g-icon>
+                </view>
+                <view class="cell__content__wrap">
+                    <view ariaLabel="{{label}}" class="cell__content__label">
+            {{label}}
+          </view>
+                    <view ariaLabel="{{desc}}" class="cell__desc {{label?'':'cell__desc--nolabel'}}" wx:if="{{desc}}">
+                        <text>{{desc}}</text>
+                    </view>
+                    <view>
+                        <slot></slot>
+                        <slot name="content"></slot>
+                    </view>
+                </view>
+            </view>
+            <view class="cell__content__footer {{access||to?'':'cell--no-access'}}">
+                <view class="cell__content__append {{access||to?'':'cell--no-access'}}">
+                    <slot name="append"></slot>
+                </view>
+            </view>
+        </view>
+        <view class="cell__access" wx:if="{{access||to}}"></view>
+    </view>
+</view>

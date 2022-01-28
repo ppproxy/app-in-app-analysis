@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "button-com": "/subpackages/useBikeNextProcess/components/Button057cff91/index",
+        "riding-map": "/components/Map9ccbc7ea/index"
+    },
+    "navigationBarTitleText": "行程结束",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#E2E2E2"
+}

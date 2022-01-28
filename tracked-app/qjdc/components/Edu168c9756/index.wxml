@@ -1,0 +1,17 @@
+<view class="edu" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="success-img" wx:if="{{unlockStatus==1}}">
+        <Webp-image class="bg" mode="widthFix" src="https://pt-starimg.didistatic.com/static/starimg/img/z6CLrWaUNO1637055189253.png"></Webp-image>
+        <Webp-image class="eyes" mode="widthFix" src="https://pt-starimg.didistatic.com/static/starimg/img/fLeAd69oiE1637055190688.gif"></Webp-image>
+    </view>
+    <Webp-image class="edu-img" src="{{imgsrc}}" style="{{imgStyle}}" wx:else></Webp-image>
+    <hightlight class="text" color="#fff" fontSize="32rpx" text="{{content}}"></hightlight>
+    <view wx:if="{{unlockStatus==2}}">
+        <view class="bike-btn" wx:if="{{bizType==1}}">
+            <button-com bindtap="toScan" text="扫码更换其他车辆"></button-com>
+        </view>
+        <view class="ebike-btn" wx:else>
+            <button-com bindtap="toFind" class="btn" css="{{findCss}}" text="查看附近车辆"></button-com>
+            <button-com bindtap="toScan" class="btn" text="扫码用车"></button-com>
+        </view>
+    </view>
+</view>

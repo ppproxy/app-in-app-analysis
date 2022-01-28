@@ -1,0 +1,8 @@
+<form catchsubmit="formSubmit" style="min-height:{{windowHeight}}px;">
+    <view class="topSection">
+        <image class="xin" mode="widthFix" src="./../../../images/xin.png"></image>
+        <textarea bindfocus="clearText" bindinput="handleChange" class="textarea" maxlength="400" name="textarea" placeholder="{{placehoder}}" placeholderStyle="font-family: PingFangSC-Regular;font-size: 28rpx;color: #C9C9C9;" value="{{textarea}}"></textarea>
+        <image class="bjjkb" mode="widthFix" src="./../../../images/bjjkb.png"></image>
+    </view>
+    <button class="btn" formType="submit" type="primary">提交</button>
+</form>

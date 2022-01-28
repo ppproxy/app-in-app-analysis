@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "highlight-text": "/components/HighlightText78cd31c3/index",
+        "iphone": "/components/IphoneX48a8f956/index"
+    }
+}

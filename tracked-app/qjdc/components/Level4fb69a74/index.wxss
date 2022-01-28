@@ -1,0 +1,116 @@
+.member-level {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 34rpx;
+    border-radius: 20rpx;
+    font-size: 20rpx;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-level .icon {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: -15rpx;
+    position: relative;
+    z-index: 3;
+}
+
+.member-level .none {
+    display: none!important;
+}
+
+.member-level .level-right {
+    font-family: PingFangSC-Medium;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(69deg,#171722,#39394c 92%);
+    height: 34rpx;
+    padding-right: 8rpx;
+    padding-left: 22rpx;
+}
+
+.member-level .lv {
+    line-height: 22rpx;
+}
+
+.member-level .scroll-data {
+    height: 22rpx;
+    margin-left: 4rpx;
+    line-height: 22rpx;
+    font-size: 20rpx;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+}
+
+.member-level .scroll-data .scroll-num {
+    width: 15rpx;
+    display: inline-block;
+    position: relative;
+    top: 0rpx;
+}
+
+.member-level .scroll-data .scroll-num .unit-num {
+    height: 22rpx;
+    overflow: hidden;
+    display: block;
+}
+
+.member-level .level {
+    margin-left: 2rpx;
+    height: 22rpx;
+}
+
+.member-level .level .text {
+    display: inline-block;
+    text-align: center;
+    width: 14rpx;
+    height: 22rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.member-level .level .text .num {
+    display: block;
+    word-break: break-all;
+    line-height: 22rpx;
+    position: absolute;
+    transition: transform .6s ease-in;
+}
+
+.member-level .level .text .num-text {
+    height: 22rpx;
+}
+
+.member-level .light {
+    width: 12rpx;
+    transform: rotate(30deg);
+    background-image: linear-gradient(-90deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.2) 53%,hsla(0,0%,100%,0));
+    border-radius: 2.5px;
+    height: 120%;
+    position: absolute;
+    left: -12rpx;
+    animation-name: lightRight;
+    animation-duration: 2.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes lightRight {
+    0% {
+        left: -12rpx;
+    }
+
+    50% {
+        left: 110%;
+    }
+
+    to {
+        left: 110%;
+    }
+}

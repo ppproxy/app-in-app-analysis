@@ -1,0 +1,1 @@
+<g-address-map bind:choose="handleChoose" bind:mapUpdate="handleMapUpdate" emptyText="{{emptyText}}" list="{{list}}" loadUnit="{{loadUnit}}" mode="selector" position="{{position}}" regionExcludes="{{regionExcludes}}" regionIncludes="{{regionIncludes}}" regionLevel="{{regionLevel}}" showMap="{{showMap}}"></g-address-map>

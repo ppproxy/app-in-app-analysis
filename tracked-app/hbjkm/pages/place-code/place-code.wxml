@@ -1,0 +1,10 @@
+<view class="box">
+    <view class="img-box">
+        <image class="icon" src="../../images/city.svg"></image>
+    </view>
+    <text class="text-one">暂未添加场所码</text>
+    <text class="text-two">可定义添加场所码</text>
+</view>
+<view class="btn-box">
+    <button bindtap="add" class="btn">添加</button>
+</view>

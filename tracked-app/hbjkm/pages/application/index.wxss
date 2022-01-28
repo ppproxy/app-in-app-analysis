@@ -1,0 +1,43 @@
+page {
+    background: #f0f0f0;
+    padding: 0;
+}
+
+.application-info {
+    padding: 0 40rpx;
+    background-color: #fff;
+}
+
+.application-title {
+    height: 140rpx;
+    line-height: 140rpx;
+    padding: 0 40rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 48rpx;
+    color: #000;
+}
+
+.address,.name {
+    height: 120rpx;
+    line-height: 120rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.name {
+    border-bottom: 1rpx solid #ebebeb;
+}
+
+.btn-wrap {
+    padding: 40rpx;
+}
+
+.desc {
+    padding: 0 40rpx;
+    font-family: "PingFangSC-Regular";
+    font-size: 30rpx;
+    line-height: 50rpx;
+    color: #999;
+    text-align: left;
+}

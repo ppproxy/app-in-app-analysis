@@ -1,0 +1,3 @@
+<cover-view class="{{lineWrap?'line-one highlight-text':'highlight-text'}}" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <cover-view class="highlight-item" style="{{item.highlight?highlightStyle:textStyle}}" wx:for="{{descList}}" wx:for-index="idx" wx:key="idx">{{item.text}}</cover-view>
+</cover-view>

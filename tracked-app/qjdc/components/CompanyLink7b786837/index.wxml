@@ -1,0 +1,6 @@
+<view bindtap="jumpCompany" c:if="{{showCompany}}" class="company" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <text>由</text>
+    <text class="name" wx:if="{{companyInfo.companyName&&companyInfo.companyType==11}}">{{companyInfo.companyName}}</text>
+    <text class="name" wx:else>杭州青奇科技有限公司</text>
+    <text>提供服务</text>
+</view>

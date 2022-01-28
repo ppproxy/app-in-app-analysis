@@ -1,0 +1,43 @@
+.box {
+    display: flex;
+    height: 76rpx;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.swiper_container {
+    height: 40rpx;
+    padding: 18rpx 0;
+    width: 80%;
+}
+
+.swiper_item {
+    color: #151515;
+}
+
+.swiper_item,.swiper_item1 {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.swiper_item1 {
+    color: #fff;
+}
+
+.c_main {
+    padding: 16rpx 12rpx 18rpx 40rpx;
+}
+
+image {
+    height: 42rpx;
+    width: 44rpx;
+}
+
+.tongzhi {
+    padding: 18rpx 0;
+}

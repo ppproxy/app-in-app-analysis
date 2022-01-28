@@ -1,0 +1,6 @@
+<view class="list">
+    <view class="empty-wrapper">
+        <image class="empty-icon" src="{{emptyIcon}}"></image>
+        <view>暂无内容</view>
+    </view>
+</view>

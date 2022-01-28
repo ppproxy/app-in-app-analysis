@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "cbutton": "/login/components/color-buttonb6b34c7c/index",
+        "mpx-icon": "/components/iconfd6cf8cc/index"
+    }
+}

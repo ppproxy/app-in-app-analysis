@@ -1,0 +1,127 @@
+<view class="box" style="min-height:100vh">
+    <View class="jxxz_content">
+        <View bind:tap="showBenren" class="jxxz_item_content first_jxxz_item_content">
+            <View class="service_title">
+                <image class="service_icon" src="https://xcx-static.yqgz.beijing.gov.cn/images/jxxz_brdj_icon.png"></image>
+                <text class="jxxz_item_content_title">本人信息登记</text>
+            </View>
+            <g-icon color="#C7C7CC" size="26" type="{{brdjAdvanced?'arrow-up':'arrow-down'}}"></g-icon>
+        </View>
+        <View class="beren_child_box" wx:if="{{brdjAdvanced}}">
+            <View bindtap="handleTap1" class="jxxz_chlid_content" data-success="/pages/registration/success/index" data-url="/pages/registration/home/index">
+                <View class="service_title">
+                    <view class="child_service_point"></view>
+                    <text class="jxxz_child_content_title">社区登记报到</text>
+                </View>
+                <g-icon color="#C7C7CC" size="26" type="arrow-right"></g-icon>
+            </View>
+            <View bindtap="handleTap" class="jxxz_chlid_content" data-success="/pages/fusion/jiaowei-success/index" data-url="/pages/fusion/jiaowei-dengji/index">
+                <View class="service_title">
+                    <view class="child_service_point"></view>
+                    <text class="jxxz_child_content_title">学生及教职工登记报到</text>
+                </View>
+                <g-icon color="#C7C7CC" size="26" type="arrow-right"></g-icon>
+            </View>
+        </View>
+        <View bind:tap="toOther" class="jxxz_item_content">
+            <View class="service_title">
+                <image class="service_icon" src="https://xcx-static.yqgz.beijing.gov.cn/images/jxxz_trdj_icon.png"></image>
+                <text class="jxxz_item_content_title">他人信息登记</text>
+            </View>
+            <g-icon color="#C7C7CC" size="26" type="arrow-right"></g-icon>
+        </View>
+        <View bind:tap="isHealthManage" class="jxxz_item_content" data-appid="wx5169485eac421230" data-url="/pages/index/index?from=wx1eb0859198b4e19b">
+            <View class="service_title">
+                <image class="service_icon" src="https://xcx-static.yqgz.beijing.gov.cn/images/jxxz_jkgl_icon.png"></image>
+                <text class="jxxz_item_content_title">京心健康管理</text>
+            </View>
+            <g-icon color="#C7C7CC" size="26" type="arrow-right"></g-icon>
+        </View>
+        <View bind:tap="toScanCode" class="jxxz_item_content" wx:if="{{adminType!==0}}">
+            <View class="service_title">
+                <image class="service_icon" src="https://xcx-static.yqgz.beijing.gov.cn/images/jxxz_smbd_icon.png"></image>
+                <text class="jxxz_item_content_title">管理员扫一扫</text>
+            </View>
+            <g-icon color="#C7C7CC" size="26" type="arrow-right"></g-icon>
+        </View>
+        <View bind:tap="showJianchatongxing" class="jxxz_item_content">
+            <View class="service_title">
+                <image class="service_icon" src="https://xcx-static.yqgz.beijing.gov.cn/images/jxxz_jcztx_icon.png"></image>
+                <text class="jxxz_item_content_title" style="letter-spacing:10rpx">检查站通行</text>
+            </View>
+            <g-icon color="#C7C7CC" size="26" type="arrow-right"></g-icon>
+        </View>
+    </View>
+</view>
+<view catchtouchmove class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{xianshi1}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>北京健康宝需要申请使用您的常用手机号码，用于防疫相关工作，手机号码一旦授权成功，在防疫期间将不能修改。建议您使用与微信绑定的手机号码。</text>
+            </view>
+        </scroll-view>
+        <view class="btna">
+            <button bindgetphonenumber="getPhoneNumber" class="tuichu1" openType="getPhoneNumber">我知道了</button>
+        </view>
+    </view>
+</view>
+<view catchtouchmove class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{showAdminType}}">
+    <view class="choose_admin_type">
+        <view class="tit">提示</view>
+        <view class="choose_content">
+            <View class="choose_tip">您同时具有教委管理员以及社区管理员扫码双重权限，请选择您本次要进行的操作：</View>
+            <View bind:tap="changeShequRadio" class="choose_item {{shequRadioStatus?'checked_item':''}}">
+                <View class="choose_item_title">
+                    <image class="service_icon" src="https://xcx-static.yqgz.beijing.gov.cn/statics/shequ_icon.png"></image>
+                    <text>社区扫码报到</text>
+                </View>
+                <View class="radio_box">
+                    <image class="service_icon" src="../../../images/checked.png" wx:if="{{shequRadioStatus}}"></image>
+                    <image class="service_icon" src="../../../images/unchecked.png" wx:if="{{!shequRadioStatus}}"></image>
+                </View>
+            </View>
+            <View bind:tap="changeJiaogongRadio" class="choose_item {{jiaogongRadioStatus?'checked_item':''}}">
+                <View class="choose_item_title">
+                    <image class="service_icon" src="https://xcx-static.yqgz.beijing.gov.cn/statics/jiaogong_icon.png"></image>
+                    <text>学生及教职工扫码报到</text>
+                </View>
+                <View class="radio_box">
+                    <image class="service_icon" src="../../../images/checked.png" wx:if="{{jiaogongRadioStatus}}"></image>
+                    <image class="service_icon" src="../../../images/unchecked.png" wx:if="{{!jiaogongRadioStatus}}"></image>
+                </View>
+            </View>
+        </view>
+        <view class="oprate_btn">
+            <view bindtap="btnChooseCancel" class="cancel">取消</view>
+            <view bindtap="btnChooseSubmit" class="two_btn_agree">确定</view>
+        </view>
+    </view>
+</view>
+<view class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{isHesuan}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>北京健康宝将向国家核酸检测证明查询系统及部分核酸检测部门推送您的姓名和身份证号。您的个人信息仅用于核酸检测结果查询及防疫工作。是否同意继续查询？</text>
+            </view>
+        </scroll-view>
+        <view class="btna1">
+            <view bindtap="showHeSuan" class="tuichu">不同意</view>
+            <view bindtap="showHeSuan1" class="showHeSuan">同意</view>
+        </view>
+    </view>
+</view>
+<view catchtouchmove class="topwrap" style="min-height:{{windowHeight}}px;" wx:if="{{tongXingStatus}}">
+    <view class="center">
+        <view class="tit">提示</view>
+        <scroll-view scrollY="true" style="max-height: 588rpx;">
+            <view class="tt" style="padding-bottom:40rpx;">
+                <text>即将打开“检查站通行（京心相护）”小程序，该小程序由北京市公安局负责系统建设、数据管理并提供相关服务。</text>
+            </view>
+        </scroll-view>
+        <view class="btna">
+            <button bindtap="toJianchatongxing" class="tuichu1" data-appid="wx5169485eac421230" data-url="/pages/index/index?from=wx1eb0859198b4e19b">我知道了</button>
+        </view>
+    </view>
+</view>

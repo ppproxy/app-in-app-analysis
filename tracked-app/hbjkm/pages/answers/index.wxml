@@ -1,0 +1,14 @@
+<view class="answer">
+    <view class="line" wx:for="{{data}}">
+        <view bindtap="answerFn" class="top" data-id="{{item.id}}">
+            <view class="question">{{item.name}}</view>
+            <view class="img">
+                <image src="https://wyy-1253323744.file.myqcloud.com/hbjkm/cjwt/down.png" wx:if="{{!item.val}}"></image>
+                <image src="https://wyy-1253323744.file.myqcloud.com/hbjkm/cjwt/up.png" wx:if="{{item.val}}"></image>
+            </view>
+        </view>
+        <view class="bottom" wx:if="{{item.val}}">
+            <image mode="widthFix" src="https://wyy-1253323744.file.myqcloud.com/hbjkm/cjwt/{{item.icon}}"></image>
+        </view>
+    </view>
+</view>

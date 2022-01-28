@@ -1,0 +1,187 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.recom_cards-panel {
+    padding: 0 20rpx;
+    margin-bottom: 24rpx;
+}
+
+.recom_cards-panel .recom_cards-bg {
+    background: #e1f1ee;
+    border-radius: 34rpx;
+    padding: 23rpx 0rpx 30rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-header {
+    margin: 0rpx 40rpx;
+    position: relative;
+    line-height: 40rpx;
+    height: 40rpx;
+    margin-bottom: 18rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-header .recom_cards-title {
+    padding-right: 200rpx;
+    position: absolute;
+    left: 0rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #000;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-header .recom_cards-info {
+    position: absolute;
+    right: 0rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #333;
+    line-height: 33rpx;
+    display: flex;
+    align-items: center;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-header .recom_cards-info .recom_cards-info-icon {
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main {
+    display: flex;
+    white-space: nowrap;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card:first-child {
+    margin-left: 40rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card-App {
+    background-image: url("https://dpubstatic.udache.com/static/dpubimg/ea562dee-4927-4bd2-9ec1-94fce0ea64b8.png")!important;
+    background-size: 100% 100%;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card-no-app {
+    background: #fff;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card {
+    width: 550rpx;
+    padding: 15rpx 20rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+    height: 131rpx;
+    flex-shrink: 0;
+    display: inline-block;
+    white-space: normal;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card.first-card {
+    margin-left: 40rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info {
+    float: left;
+    width: 390rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info .recom_cards-card-header {
+    display: flex;
+    align-items: center;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info .recom_cards-card-header .recom_cards-card-discount {
+    display: inline-block;
+    background-image: linear-gradient(45deg,#ff9258,#ff5b1d);
+    border-radius: 15rpx;
+    white-space: nowrap;
+    font-family: PingFangSC-Medium;
+    font-size: 20rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: justify;
+    margin-right: 10rpx;
+    padding: 5rpx 8rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info .recom_cards-card-header .recom_cards-card-title {
+    display: inline-block;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #000;
+    letter-spacing: 0;
+    line-height: 40rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info .recom_cards-card-price {
+    margin-top: 15rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info .recom_cards-card-price .recom_cards-card-new-price {
+    display: inline-block;
+    font-family: DINAlternate-Bold;
+    font-size: 36rpx;
+    color: #000;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info .recom_cards-card-price .recom_cards-card-old-price {
+    margin-right: 10rpx;
+    display: inline-block;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-info .recom_cards-card-price .recom_cards-card-prefix {
+    margin-right: 4rpx;
+    display: inline-block;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #000;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-icon {
+    float: right;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-card .recom_cards-card-icon .recom_cards-card-icon-img {
+    margin-left: 16rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-other {
+    width: 210rpx;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-other .recom_cards-other-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f4f5;
+    border-radius: 20rpx;
+    flex-direction: column;
+    width: 170rpx;
+    height: 131rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #000;
+    letter-spacing: 0;
+    flex-shrink: 0;
+}
+
+.recom_cards-panel .recom_cards-bg .recom_cards-main .recom_cards-other .recom_cards-other-info .recom_cards-other-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-top: 10rpx;
+}

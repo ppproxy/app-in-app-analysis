@@ -1,0 +1,15 @@
+<view class="didi-card-dialog-wrapper" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <animation-container animationType="scale-down" bindclicklayer="close" class="ref_animation_1">
+        <view class="didi-card-dialog-content {{selfAnimation}}">
+            <view class="main">
+                <image class="top-img" src="{{topImgUrl}}"></image>
+                <view class="content">{{dlgData.text||''}}</view>
+                <view bindtap="jump" class="btn btn-go">{{dlgData.button2||'立即前往'}}</view>
+                <view bindtap="backToScan" class="btn btn-scan">{{dlgData.button1||'继续扫码'}}</view>
+            </view>
+            <view bindtap="close" class="close">
+                <mpx-icon type="narrow-cancel"></mpx-icon>
+            </view>
+        </view>
+    </animation-container>
+</view>

@@ -1,0 +1,20 @@
+<view bindtap="goToMember" class="member-level" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <image animation="{{badegAnimation}}" class="icon" src="{{levelIcon}}"></image>
+    <image class="icon none" src="{{user.memberInfo.badgeUrl}}"></image>
+    <view class="level-right">
+        <text class="lv">Lv</text>
+        <view class="level">
+            <view class="text two" wx:if="{{level&&level[1]}}">
+                <view class="num" style="transform:translateY(-{{numCss.two}}px)">
+                    <view class="num-text" wx:for="{{numberList}}" wx:for-index="id" wx:key="id">{{id}}</view>
+                </view>
+            </view>
+            <view class="text one" wx:if="{{level&&level[0]}}">
+                <view class="num" style="transform:translateY(-{{numCss.one}}px)">
+                    <view class="num-text" wx:for="{{numberList}}" wx:for-index="id" wx:key="id">{{id}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="light"></view>
+</view>

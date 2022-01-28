@@ -1,0 +1,34 @@
+<view style="min-height:{{windowHeight}}px">
+    <view class="wrap">
+        <view class="icon-wrap">
+            <view class="icon-icon">
+                <view class="icon-img">
+                    <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/bdsb.png"></image>
+                </view>
+                <view class="icon-tit">报到失败</view>
+            </view>
+        </view>
+        <view class="cuo" wx:if="{{!data}}">填报信息有误，请核对后重新报到</view>
+        <view wx:if="{{data}}">
+            <view class="red">在以下社区已报到</view>
+            <view class="text" wx:for="{{data.lists}}">
+                <view class="yuan"></view>{{item.registrationArea}}</view>
+        </view>
+        <View class="userInfo">
+            <View class="userInfo_title">报到人信息</View>
+            <View class="userInfo_content">
+                <View class="userInfo_item_name">姓名</View>
+                <View class="userInfo_item_value">{{name}}</View>
+            </View>
+            <View class="userInfo_content">
+                <View class="userInfo_item_name">身份证号</View>
+                <View class="userInfo_item_value">{{idCard}}</View>
+            </View>
+        </View>
+        <view class="btn-wrap">
+            <view class="btn-cont">
+                <button bind:tap="startScan" class="right">再次扫码</button>
+            </view>
+        </view>
+    </view>
+</view>

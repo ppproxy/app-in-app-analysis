@@ -1,0 +1,22 @@
+<view class="page" style="min-height:{{windowHeight}}px;">
+    <view class="con" wx:if="{{index!=0}}" wx:for="{{arr}}" wx:key="aa">
+        <view class="con-top">
+            <view class="con-top-left">{{userInfo.name}}</view>
+            <view class="con-top-right yin" wx:if="{{item.ddDnatest=='阴性'}}">{{item.ddDnatest}}</view>
+            <view class="con-top-right yang" wx:if="{{item.ddDnatest=='阳性'}}">{{item.ddDnatest}}</view>
+        </view>
+        <view class="con-top">
+            <view class="con-left">身份证号码</view>
+            <view class="con-right">{{userInfo.idCard}}</view>
+        </view>
+        <view class="con-top">
+            <view class="con-left">检测机构</view>
+            <view class="con-right">{{item.orgName}}</view>
+        </view>
+        <view class="con-top">
+            <view class="con-left">检测时间</view>
+            <view class="con-right">{{item.dtCheck}}</view>
+        </view>
+    </view>
+    <image class="image" src="https://xcx-static.yqgz.beijing.gov.cn/statics/hesuan-lishi.png" wx:if="{{isShows}}"></image>
+</view>

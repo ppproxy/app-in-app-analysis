@@ -1,0 +1,4 @@
+<view class="ad-container" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{isAd}}">
+    <ad-custom adIntervals="31" bindclose="adClose" binderror="adError" bindload="adLoad" style="width:100%" unitId="adunit-f09c94f2dbb4b386" wx:if="{{isCustom}}"></ad-custom>
+    <ad adIntervals="31" bindclose="adClose" binderror="adError" bindload="adLoad" style="width:100%" unitId="{{unitId}}" wx:else></ad>
+</view>

@@ -1,0 +1,25 @@
+<view catchtap="_closeKeyboard" class="plate-number-keyboard-box" wx:if="{{visible}}">
+    <view catchtap="_preventDefault" catchtouchmove="ture" class="pnk-main  {{showProvince?'province':''}}" style="height:{{showProvince?provinceHeight+statusBarHeight+'rpx':numberHieght+statusBarHeight+'rpx'}}">
+        <view class="pnk-main-title">
+            <view class="tip">{{plateNumber}}</view>
+            <view catchtap="_closeKeyboard" class="txt">确定</view>
+        </view>
+        <view class="pnk-content">
+            <view class="province-plane" wx:if="{{showProvince}}">
+                <view class="line" wx:for="{{provinceList}}" wx:key="{{index}}">
+                    <view catchtap="_clickChangePlane" class="number-item handle-btn" wx:if="{{index==='line5'}}">ABC</view>
+                    <view catchtap="_handleClick" class="number-item" data-text="{{it}}" wx:if="{{index!='line5'}}" wx:for="{{item}}" wx:for-index="ind" wx:for-item="it" wx:key="{{ind}}">{{it}}</view>
+                    <view catchtap="_handleClick" class="number-item-big number-item" data-text="{{it}}" wx:if="{{index==='line5'}}" wx:for="{{item}}" wx:for-index="ind" wx:for-item="it" wx:key="{{ind}}">{{it}}</view>
+                    <view catchtap="_handleDelete" class="number-item handle-btn iconfont icon-huitui" wx:if="{{index==='line5'}}"></view>
+                </view>
+            </view>
+            <view class="letter-number-plane" wx:if="{{!showProvince}}">
+                <view class="line" wx:for="{{letterNumberList}}" wx:key="{{index}}">
+                    <view catchtap="_clickChangePlane" class="number-item handle-btn handle-btn-big" wx:if="{{index==='line4'}}">省份汉字</view>
+                    <view catchtap="_handleClick" class="number-item" data-text="{{it}}" wx:for="{{item}}" wx:for-index="ind" wx:for-item="it" wx:key="{{ind}}">{{it}}</view>
+                    <view catchtap="_handleDelete" class="number-item handle-btn handle-btn-big iconfont icon-huitui" wx:if="{{index==='line4'}}"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

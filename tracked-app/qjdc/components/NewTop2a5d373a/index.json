@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "text-light": "/components/HighlightText78cd31c3/index",
+        "Webp-image": "/components/Webp6dd919b3/index"
+    }
+}

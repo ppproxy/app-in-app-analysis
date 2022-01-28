@@ -1,0 +1,108 @@
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 100000;
+    justify-content: center;
+}
+
+.mask,.mask .content {
+    display: flex;
+    align-items: center;
+}
+
+.mask .content {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 30%;
+}
+
+.mask .content .close {
+    width: 46rpx;
+    height: 46rpx;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform: rotate(45deg);
+    margin: auto;
+    margin-right: 95rpx;
+}
+
+.mask .content .close .line {
+    position: absolute;
+    background: #fff;
+}
+
+.mask .content .close .lineA {
+    width: 100%;
+    height: 4rpx;
+    top: 21rpx;
+    left: 0;
+}
+
+.mask .content .close .lineB {
+    height: 100%;
+    width: 4rpx;
+    left: 21rpx;
+    top: 0;
+}
+
+.mask .content .img {
+    width: 520rpx;
+    height: 647rpx;
+    margin-top: 52rpx;
+    margin-bottom: 20rpx;
+}
+
+.mask .content .img image {
+    width: 100%;
+    height: 100%;
+}
+
+.mask .content .btn {
+    width: 520rpx;
+    height: 96rpx;
+    background: #14d0b4;
+    border-radius: 20rpx;
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 96rpx;
+    font-weight: 400;
+}
+
+.mask .content .btnCont {
+    margin-top: 20rpx;
+}
+
+.mask .content .btnBox {
+    width: 520rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mask .content .btnBox .popBtn {
+    width: 250rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    text-align: center;
+    font-family: FZLTTHJW--GB1-0;
+    font-size: 32rpx;
+    font-weight: 400;
+    border-radius: 20rpx;
+}
+
+.mask .content .btnBox .popBtn-white {
+    background: #fff;
+    color: #333;
+}
+
+.mask .content .btnBox .popBtn-blue {
+    background: #14d0b4;
+    color: #fff;
+}

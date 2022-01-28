@@ -1,0 +1,35 @@
+.highlight-text {
+    display: inline-block;
+    line-height: 1.3;
+    font-size: 0;
+    text-align: left;
+}
+
+.ellipsis {
+    -webkit-line-clamp: 1;
+}
+
+.ellipsis,.line-two {
+    text-overflow: ellipsis;
+    z-index: -1;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 20rpx;
+}
+
+.line-two {
+    -webkit-line-clamp: 2;
+}
+
+.line-three {
+    text-overflow: ellipsis;
+    z-index: -1;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 20rpx;
+}

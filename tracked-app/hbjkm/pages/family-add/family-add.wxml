@@ -1,0 +1,30 @@
+<view class="list-box">
+    <view class="bg" wx:if="{{list.length<=0}}">
+        <image src="../../images/no.png" style="margin-top:100rpx;width:350rpx;height:250rpx"></image>
+    </view>
+    <view class="list" wx:if="{{list.length>0}}">
+        <view bind:tap="familypage" class="line" data-id="{{item.id}}" data-ind="{{index}}" hoverClass="line-two" wx:for="{{list}}">
+            <view class="line-left" data-id="{{item.id}}" data-ind="{{index}}">
+                <image data-id="{{item.id}}" data-ind="{{index}}" src="/images/child.svg" style="width:80rpx;height:80rpx" wx:if="{{item.familyRelationType==2}}"></image>
+                <image data-id="{{item.id}}" data-ind="{{index}}" src="/images/spouse.svg" style="width:80rpx;height:80rpx" wx:if="{{item.familyRelationType==1}}"></image>
+                <image data-id="{{item.id}}" data-ind="{{index}}" src="/images/parents.svg" style="width:80rpx;height:80rpx" wx:if="{{item.familyRelationType==3}}"></image>
+                <view class="one" data-id="{{item.id}}" data-ind="{{index}}">{{item.familyName}}</view>
+            </view>
+            <view class="line-right" data-id="{{item.id}}" data-ind="{{index}}">
+                <view class="four" data-id="{{item.id}}" data-ind="{{index}}" hoverClass="five">
+                    <image data-id="{{item.id}}" data-ind="{{index}}" src="/images/see.svg" style="width:40rpx;height:40rpx"></image>
+                </view>
+                <view class="four" hoverClass="five">
+                    <image catch:tap="del" data-id="{{item.id}}" data-ind="{{index}}" src="/images/del.svg" style="width:40rpx;height:40rpx"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="btn-box">
+    <button bind:tap="add" class="btn" disabled="{{list.length>7}}">添加</button>
+</view>
+<view class="ps-box">
+    <text>温馨提示：</text>
+    <text class="pstwo">最多为8位被代领人代领健康码</text>
+</view>

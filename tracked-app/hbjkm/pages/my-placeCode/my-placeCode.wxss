@@ -1,0 +1,88 @@
+page {
+    background: rgb(247,247,247);
+}
+
+.box {
+    padding: 0 60rpx;
+}
+
+.title {
+    padding: 20rpx 0;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.code,.msg {
+    background: #fff;
+    text-align: center;
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+    border-radius: 10px;
+}
+
+.msg {
+    padding-bottom: 30rpx;
+    height: 400rpx;
+}
+
+.code image {
+    width: 350rpx;
+    height: 350rpx;
+}
+
+.c {
+    border-bottom: 1px dashed rgb(114,164,211);
+    padding-bottom: 30rpx;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.one {
+    color: rgb(185,185,185);
+}
+
+.two {
+    max-width: 450rpx;
+}
+
+.line {
+    margin-top: 30rpx;
+}
+
+.ps-title {
+    margin-top: 10rpx;
+    font-size: 13px;
+}
+
+.ps-line {
+    margin-top: 10rpx;
+    color: rgb(185,185,185);
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40rpx;
+    padding-bottom: 60rpx;
+}
+
+button {
+    width: 300rpx;
+}
+
+.right button {
+    background: #4293f4;
+    color: #fff;
+}
+
+.right-content-two {
+    background: #eee!important;
+    box-shadow: 0 8rpx 20rpx 0 rgba(135,146,164,0.08);
+}

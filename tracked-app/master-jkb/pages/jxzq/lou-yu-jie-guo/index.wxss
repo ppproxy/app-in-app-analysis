@@ -1,0 +1,279 @@
+.mine {
+    background: #f1f1f1;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.box {
+    background: #fff;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    margin: 40rpx 40rpx 0;
+    position: relative;
+    text-align: center;
+    width: calc(100% - 80rpx);
+    z-index: 100;
+}
+
+.box-top {
+    border-radius: 16px 16px 0 0;
+    height: 12rpx;
+    opacity: .15;
+    width: 100%;
+}
+
+.img {
+    border-radius: 16rpx;
+    font-size: 0;
+    height: 378rpx;
+    overflow: hidden;
+    width: 378rpx;
+}
+
+.img,.lv-text {
+    margin-top: 40rpx;
+}
+
+.lv-text {
+    background: #fff;
+    color: #13c700;
+    font-family: PingFangSC-Medium;
+    font-size: 58rpx;
+    letter-spacing: 0;
+    line-height: 47.45rpx;
+    margin-bottom: 40rpx;
+    padding-bottom: 30rpx;
+    position: relative;
+    text-align: center;
+    z-index: 100;
+}
+
+.ditu {
+    bottom: -120rpx;
+    height: 150rpx;
+    position: absolute;
+    z-index: 1;
+}
+
+.dd,.ditu {
+    width: 100%;
+}
+
+.dd {
+    height: 100%;
+}
+
+.dd-icon {
+    height: 66rpx;
+    left: 30rpx;
+    margin-top: -20rpx;
+    position: absolute;
+    top: 50%;
+    width: 52rpx;
+    z-index: 60;
+}
+
+.dd-text {
+    box-sizing: border-box;
+    color: #1c1a1a;
+    font-family: PingFangSC-Medium;
+    font-size: 38rpx;
+    left: 100rpx;
+    letter-spacing: 0;
+    margin-top: 34rpx;
+    padding-right: 20rpx;
+    position: absolute;
+    text-align: left;
+    top: 30rpx;
+    width: calc(100% - 100rpx);
+}
+
+.con {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+.img-status1 {
+    height: 76rpx;
+    margin-bottom: 16rpx;
+    margin-top: 10rpx;
+    width: 330rpx;
+}
+
+.img-flsm {
+    height: 38rpx;
+    position: absolute;
+    right: 110rpx;
+    top: 33rpx;
+    width: 38rpx;
+}
+
+.con-text {
+    background: #ffeddb;
+    border-radius: 27.5rpx;
+    color: #ffa349;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    height: 56rpx;
+    letter-spacing: 0;
+    line-height: 56rpx;
+    margin-bottom: 40rpx;
+    text-align: center;
+    width: 496rpx;
+}
+
+.con-text1 {
+    background: #fdece9;
+    color: #f52736;
+}
+
+.oca {
+    margin-top: 160rpx;
+}
+
+.box-as {
+    background: #fff;
+    border-radius: 16rpx;
+    margin: 0 40rpx;
+}
+
+.top {
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.center {
+    height: 450rpx;
+    width: 460rpx;
+}
+
+.center,.center1 {
+    background: #fff;
+    border-radius: 16rpx;
+    position: relative;
+}
+
+.center1 {
+    width: 560rpx;
+}
+
+.btn1 {
+    margin-top: 32rpx;
+    padding: 0 40rpx;
+}
+
+.btn,.btn1 {
+    color: #0d8ce6;
+    font-size: 36rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+}
+
+.btn {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.btn,.info {
+    position: absolute;
+}
+
+.info {
+    left: 50%;
+    margin-left: -293rpx;
+    top: 57%;
+    width: 560rpx;
+}
+
+.info,.tt1 {
+    text-align: center;
+}
+
+.tt1 {
+    color: #000;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+}
+
+.title1 {
+    color: #585858;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    line-height: 75rpx;
+    text-align: center;
+}
+
+.fslv {
+    height: 38rpx;
+    margin: 0 20rpx;
+    position: absolute;
+    right: -23rpx;
+    top: -2%;
+    width: 38rpx;
+}
+
+.img-tou3 {
+    height: 100%;
+    width: 100%;
+}
+
+.box1 {
+    margin-top: 40rpx;
+}
+
+.img-flsm {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+}
+
+.erweima {
+    height: 74rpx;
+    margin-right: -40rpx;
+    width: 95rpx;
+}
+
+.tit-flsm {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 40rpx 0 32rpx;
+    text-align: center;
+}
+
+.tit-wenan,.tt {
+    color: #585858;
+    font-size: 30rpx;
+    line-height: 44rpx;
+    padding: 0 40rpx;
+    text-indent: 2em;
+}
+
+.footer {
+    box-sizing: border-box;
+    margin-top: 255rpx;
+    padding: 0 40rpx;
+}
+
+.returnS {
+    background: #0d8ce6;
+    border: none;
+    border-radius: 16rpx;
+    color: #fff;
+    font-weight: 400;
+}

@@ -1,0 +1,16 @@
+<view class="wrap" style="min-height:{{windowHeight}}px">
+    <view class="icon-wrap">
+        <view class="icon-icon">
+            <view class="icon-img">
+                <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/icon.png"></image>
+            </view>
+            <view class="icon-tit">提交成功</view>
+            <view class="txt">健康宝，保健康！</view>
+            <view class="txt" style="margin-top:30rpx">欢迎使用健康宝，感谢您宝贵的意见建议。</view>
+        </view>
+    </view>
+    <view class="footer">
+        <button bind:tap="sure" class="right">返回首页</button>
+        <button bind:tap="back" class="left">继续留言</button>
+    </view>
+</view>

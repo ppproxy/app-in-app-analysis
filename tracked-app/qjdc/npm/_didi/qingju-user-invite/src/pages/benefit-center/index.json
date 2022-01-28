@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "Header": "/npm/_didi/qingju-user-invite/src/components/header5fae7546/index",
+        "Subscribe": "/npm/_didi/qingju-user-invite/src/components/subscribe23d5aa5f/index",
+        "Sign": "/npm/_didi/qingju-user-invite/src/components/index0691a239/index",
+        "GrowthSection": "/npm/_didi/qingju-user-invite/src/components/growthSection41582333/index",
+        "Seckill": "/npm/_didi/qingju-user-invite/src/components/indexf36c5032/index",
+        "SwiperBanner": "/npm/_didi/qingju-user-invite/src/components/swiper-banner35838694/index",
+        "ColumnBanner": "/npm/_didi/qingju-user-invite/src/components/column-bannercb6b89d0/index",
+        "TaskSystem": "/npm/_didi/qingju-user-invite/src/components/task-system00430a8c/index",
+        "MarketingResources": "/npm/_didi/qingju-user-invite/src/components/MarketingResources19a5e5a4/index",
+        "VehicleDialog": "/npm/_didi/qingju-user-invite/src/components/vehicle-dialoga088dc7c/index"
+    },
+    "navigationBarTitleText": "福利中心",
+    "navigationStyle": "custom"
+}

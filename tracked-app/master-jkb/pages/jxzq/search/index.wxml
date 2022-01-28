@@ -1,0 +1,27 @@
+<view class="page">
+    <view class="header">
+        <view class="tit">
+            <view class="sousuo">
+                <g-icon color="#B2B2B2" size="34" type="search"></g-icon>
+            </view>
+            <input bindinput="handleChange" class="left" placeholder="请输入国家（地区）名称查询" placeholderClass="a" value="{{keyName}}"></input>
+            <view class="search1" wx:if="{{!keyName}}"></view>
+            <view bindtap="search" class="search" wx:if="{{keyName}}">清除</view>
+        </view>
+    </view>
+    <scroll-view class="search-content-body" scrollY="true" style="height:{{windowHeight-80}}px;position:fixed;top:0;left:0;">
+        <view class="icon-wrap" wx:if="{{flag}}">
+            <view class="icon-icon">
+                <view class="icon-img">
+                    <image class="img" src="https://xcx-static.yqgz.beijing.gov.cn/images/wujieguo.svg"></image>
+                </view>
+                <view class="icon-tit">搜索无结果</view>
+            </view>
+        </view>
+        <view class="bag" wx:if="{{searchData.length>0}}">
+            <view class="search-result-item" wx:for="{{searchData}}" wx:key="{{index}}">
+                <searchHilightTextView bindtap="chooseSearchResultAction" class="result-item" data-id="{{item}}" datas="{{searchData[index]}}"></searchHilightTextView>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,124 @@
+.wx-scan-home {
+    padding: 0 0 180rpx;
+}
+
+.wx-scan-home .header {
+    position: relative;
+    box-shadow: 0 2rpx 20rpx 0 rgba(65,65,76,.1);
+    border-radius: 8rpx;
+    overflow: hidden;
+}
+
+.wx-scan-home .header .home-banner {
+    width: 750rpx;
+    height: 489rpx;
+    background: #def;
+}
+
+.wx-scan-home .wx-scan {
+    height: 489rpx;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.wx-scan-home .border-h1 {
+    width: 678rpx;
+    height: 2rpx;
+    margin: 30rpx auto;
+    background: rgba(0,0,0,.1);
+}
+
+.wx-scan-home .empty-list {
+    text-align: center;
+    margin-top: 140rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.wx-scan-home .empty-list image {
+    width: 214rpx;
+    height: 130rpx;
+    margin-bottom: 20rpx;
+}
+
+.wx-scan-home .footer-wx-scan {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 30rpx 30rpx 40rpx;
+    background: #fff;
+    box-shadow: 2rpx 0 20rpx 0 rgba(65,65,76,.1);
+}
+
+.wx-scan-home .footer-wx-scan,.wx-scan-home .footer-wx-scan .num-rules-wrapper {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.wx-scan-home .footer-wx-scan .num-rules-wrapper .bike-num {
+    display: inline-block;
+    margin-bottom: 17rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.wx-scan-home .footer-wx-scan .num-rules-wrapper .ride-rules {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin-bottom: 17rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.wx-scan-home .footer-wx-scan .num-rules-wrapper .ride-rules .img {
+    display: block;
+    transform: translateY(7rpx);
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.wx-scan-home .wx-scan-noCard {
+    margin: 0 auto;
+}
+
+.wx-scan-home .wx-scan-noCard .no-card-text {
+    padding: 60rpx 36rpx;
+    text-align: center;
+}
+
+.wx-scan-home .wx-scan-noCard .no-card-text .noCard-title {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.wx-scan-home .wx-scan-noCard .no-card-text .noCard-desc {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.wx-scan-home .wx-scan-noCard .no-card-btn {
+    margin: 0 auto;
+    width: 678rpx;
+}
+
+.wx-scan-home .wx-scan-noCard .noCard-home-swiper {
+    height: 100%;
+    width: 750rpx;
+    background: #def;
+}
+
+.wx-scan-home .wx-scan-noCard .noCard-home-banner {
+    height: auto;
+    width: 750rpx;
+    background: #def;
+}
+
+.button-com {
+    width: 100%;
+}

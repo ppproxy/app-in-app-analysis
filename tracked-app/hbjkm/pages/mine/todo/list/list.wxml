@@ -1,0 +1,19 @@
+<template name="tabNew">
+    <g-wrapper>
+        <g-cell access bindtap="handleItem" data-item="{{item}}" wx:if="{{itemList.length}}" wx:for="{{itemList}}" wx:key="item.id">
+            <view slot="content">
+                <view class="cell-title" wx:if="{{item.clueType==0}}">为自己上报</view>
+                <view class="cell-title" wx:if="{{item.clueType==2}}">为他人上报</view>
+                <view class="cell-title" wx:if="{{item.clueType==1}}">{{item.createTime}}</view>
+                <view class="cell-desc" wx:else>{{item.createTime}}</view>
+            </view>
+        </g-cell>
+        <view wx:if="{{!itemList.length}}">
+            <view class="no-todo-image">
+                <image src="https://imgcache.gzonline.gov.cn/cos/empty_0283358d.svg"></image>
+            </view>
+            <view class="no-todo">当前没有事项</view>
+        </view>
+    </g-wrapper>
+</template>
+<template is="tabNew" data="{{name:'进行中',index:'1',todoType:todoType,itemList:todoType==='affair'?doingAffairList:todoType==='check'?doingCheckList:doingReportList}}"></template>

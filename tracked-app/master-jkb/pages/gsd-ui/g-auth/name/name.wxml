@@ -1,0 +1,15 @@
+<view>
+    <view class="wrap-box">
+        <image class="icon" mode="aspectFit" src="../images/auth-name.png"></image>
+        <text class="txt">{{texts}}</text>
+    </view>
+    <view>
+        <g-form bind:submit="handleFormSubmit" disabled="{{!(formData.idCardNumber&&formData.name)}}" model="{{formData}}" primaryText="确定" rules="{{rules}}" validateType="{{validateType}}">
+            <view slot="content">
+                <g-input clearable bind:input="handleChange" id="name" label="姓名" placeholder="请输入姓名" value="{{formData.name}}"></g-input>
+                <g-input clearable bind:input="handleChange" id="idCardNumber" label="身份证号码" placeholder="请输入身份证号码" value="{{formData.idCardNumber}}"></g-input>
+            </view>
+        </g-form>
+    </view>
+    <g-footer></g-footer>
+</view>

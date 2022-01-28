@@ -1,0 +1,12 @@
+<view catchtouchmove="preventTouchMove" class="message-box-bg" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}" wx:if="{{options.bShow}}">
+    <view class="message-box">
+        <view class="title">{{options.title}}</view>
+        <view class="content">
+            <highlight-text fontSize="28rpx" text="{{options.content}}"></highlight-text>
+        </view>
+        <view class="action-box">
+            <view bindtap="cancel" class="cancel" wx:if="{{options.showCancel}}">{{options.cancelText}}</view>
+            <view bindtap="confirm" class="confirm">{{options.confirmText}}</view>
+        </view>
+    </view>
+</view>

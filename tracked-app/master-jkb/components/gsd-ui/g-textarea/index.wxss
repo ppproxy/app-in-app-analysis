@@ -1,0 +1,133 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.textarea__element,.textarea__text {
+    display: block;
+    flex: 1;
+    font-size: 36rpx;
+    line-height: 48rpx;
+}
+
+.textarea__text {
+    overflow: hidden;
+    padding-top: 4rpx;
+    word-break: break-all;
+}
+
+.textarea__placeholder {
+    color: #bbbec4;
+    font-size: 36rpx;
+    line-height: 48rpx;
+}
+
+.textarea__element--disabled,.textarea__text--disabled {
+    color: rgba(0,0,0,.3);
+}
+
+.textarea__action {
+    align-self: flex-end;
+    color: #4293f4;
+    font-size: 36rpx;
+    line-height: 48rpx;
+}
+
+.textarea__wrapper {
+    display: flex;
+    height: 144rpx;
+    justify-content: space-between;
+    position: relative;
+}
+
+.textarea--ios {
+    margin-left: -10rpx;
+    margin-top: -10rpx;
+    position: absolute;
+    width: 100%;
+}
+
+.textarea__text--ios {
+    box-sizing: border-box;
+    padding-right: 10rpx;
+    position: absolute;
+}

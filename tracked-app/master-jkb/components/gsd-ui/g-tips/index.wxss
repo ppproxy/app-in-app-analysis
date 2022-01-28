@@ -1,0 +1,166 @@
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.colgroup {
+    display: table-column-group;
+}
+
+.col {
+    display: table-column;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td,.th {
+    display: table-cell;
+    text-align: center;
+    word-break: break-all;
+}
+
+.border--top {
+    position: relative;
+}
+
+.border--top::after {
+    background-color: #ebebeb;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--bottom {
+    position: relative;
+}
+
+.border--bottom::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.border--left::after {
+    left: 0;
+}
+
+.border--left {
+    position: relative;
+}
+
+.border--left::after {
+    background-color: #ebebeb;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleX(.5);
+    width: 100%;
+    width: 1px;
+}
+
+.tips {
+    box-sizing: border-box;
+    color: #fff;
+    padding: 30rpx 40rpx;
+    top: 0rpx;
+    width: 100%;
+    z-index: 900;
+}
+
+.tips__container {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.tips__close {
+    margin-right: -20rpx;
+    margin-top: 2rpx;
+    padding: 0 20rpx;
+}
+
+.tips--fixed {
+    position: fixed;
+}
+
+.tips--default {
+    background: #aebac9;
+}
+
+.tips--warn {
+    background: #f0422c;
+}
+
+.tips__content {
+    font-size: 30rpx;
+    line-height: 40rpx;
+    margin-right: 20rpx;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.tips--default--hover {
+    background: #a5b2c3;
+}
+
+.tips--warn--hover {
+    background: #ef351e;
+}
+
+.tips--loop .tips__content {
+    height: 40rpx;
+}
+
+.tips--loop .tips__content-text {
+    animation: loop 15s linear infinite;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+}
+
+@-webkit-keyframes loop {
+    0% {
+        transform: translateX(750rpx);
+    }
+
+    100% {
+        transform: translateX(-105%);
+    }
+}
+
+@keyframes loop {
+    0% {
+        transform: translateX(750rpx);
+    }
+
+    100% {
+        transform: translateX(-105%);
+    }
+}

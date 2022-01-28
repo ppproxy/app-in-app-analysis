@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "navigation-bar": "/components/NavigationBar6d73cab3/index"
+    }
+}

@@ -1,0 +1,19 @@
+<view catchtouchmove="parentMove" class="full-screen-pop" style="{{mpxShow||mpxShow===undefined?'':'display:none;'}}">
+    <view class="f-body">
+        <view class="f-mask">
+            <view class="f-content">
+                <view bindtap="close" class="f-close">
+                    <image src="//pt-starimg.didistatic.com/static/starimg/img/J46sGtbyLf1574403132429.png"></image>
+                </view>
+                <view class="f-title">
+                    <highlight-text color="#fff" fontSize="100rpx" highlightColor="#14D0B4" text="{{options.title}}"></highlight-text>
+                </view>
+                <view class="f-describe">
+                    <highlight-text color="#fff" fontSize="38rpx" highlightColor="#14D0B4" text="{{options.desc}}"></highlight-text>
+                </view>
+                <view bindtap="toPage" class="f-button">{{options.btnTitle}}</view>
+                <image class="f-img" src="//pt-starimg.didistatic.com/static/starimg/img/Yk4FhVJwKk1574399828304.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

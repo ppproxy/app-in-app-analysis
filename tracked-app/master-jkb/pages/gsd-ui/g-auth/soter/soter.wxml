@@ -1,0 +1,8 @@
+<view class="auth-container">
+    <view class="auth-content">
+        <image class="auth-name-image" src="../images/auth-name.png"></image>
+        <view class="auth-name-title">请进行生物认证</view>
+    </view>
+    <button bind:tap="handleTap" type="primary"> 认证登录 </button>
+    <g-auth-footer></g-auth-footer>
+</view>

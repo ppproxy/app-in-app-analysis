@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "teamCard": "/npm/_didi/qingju-user-invite/src/components/teamCarda2a90018/index",
+        "alertDialog": "/npm/_didi/qingju-user-invite/src/components/alertDialogb43d5f38/index",
+        "customDialog": "/npm/_didi/qingju-user-invite/src/components/customDialog3a467ea7/index",
+        "ruleDialog": "/npm/_didi/qingju-user-invite/src/components/ruleDialog4e21de32/index",
+        "loading": "/npm/_didi/qingju-user-invite/src/components/loadingff59c702/index",
+        "voucherPopup": "/npm/_didi/qingju-user-invite/src/components/voucherPopup37b572a8/index"
+    },
+    "navigationBarTitleText": "组队助力"
+}

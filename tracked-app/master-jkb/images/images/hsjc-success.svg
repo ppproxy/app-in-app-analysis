@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180px" height="180px" viewBox="0 0 180 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63 (92445) - https://sketch.com -->
+    <title>报到成功icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="14.1010709%" y1="17.4723716%" x2="83.9641807%" y2="88.3628143%" id="linearGradient-1">
+            <stop stop-color="#68E1A0" offset="0%"></stop>
+            <stop stop-color="#50CF8B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="23.3191146%" x2="100%" y2="76.6808854%" id="linearGradient-2">
+            <stop stop-color="#DCFFF2" offset="0%"></stop>
+            <stop stop-color="#FDFFFE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="11.24核酸检测" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="导出-核酸检测报告" transform="translate(-285.000000, -228.000000)">
+            <g id="报到成功icon" transform="translate(285.000000, 228.000000)">
+                <circle id="椭圆形" fill="url(#linearGradient-1)" cx="90" cy="90" r="90"></circle>
+                <path d="M80.4558441,100.355339 L118.63961,62.1715729 C120.201707,60.6094757 122.734367,60.6094757 124.296465,62.1715729 L128.539105,66.4142136 C130.101202,67.9763107 130.101202,70.5089706 128.539105,72.0710678 L83.2842712,117.325902 C82.5032227,118.10695 81.4795334,118.497475 80.4558441,118.497475 C79.4321549,118.497475 78.4084656,118.10695 77.627417,117.325902 L52.1715729,91.8700577 C50.6094757,90.3079605 50.6094757,87.7753006 52.1715729,86.2132034 L56.4142136,81.9705627 C57.9763107,80.4084656 60.5089706,80.4084656 62.0710678,81.9705627 L80.4558441,100.355339 Z" id="路径" fill="url(#linearGradient-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

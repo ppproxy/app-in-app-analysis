@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "toast": "/components/Toast6bcbf1a1/index",
+        "button-com": "/subpackages/useBikePreProcess/components/Button057cff91/index",
+        "message-box": "/components/message-box207cd166/index",
+        "hightlight": "/components/HighlightText78cd31c3/index",
+        "recommend-card": "/subpackages/useBikePreProcess/components/recommend-card08fbf176/index"
+    },
+    "navigationBarTitleText": "青桔",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#ffffff"
+}

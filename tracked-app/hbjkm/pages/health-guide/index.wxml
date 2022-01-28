@@ -1,0 +1,8 @@
+<view class="banner">
+    <image src="{{bannerPath}}"></image>
+</view>
+<g-wrapper title="个人防护指引">
+    <g-cell access bind:tap="onTapAccess" data-item="{{item}}" desc="{{item.desc}}" label="{{item.label}}" wx:for="{{list}}" wx:key="appId">
+        <view slot="prepend"></view>
+    </g-cell>
+</g-wrapper>

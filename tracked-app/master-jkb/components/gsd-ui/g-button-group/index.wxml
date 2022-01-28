@@ -1,0 +1,18 @@
+<view class="button-group {{fixed?'button-group--fixed':''}}" wx:if="{{buttonList.length===0}}">
+    <view class="button-group__agree" wx:if="{{agree}}">
+        <g-agree catch:change="handleAgreeChange" value="{{_agreeChecked}}">
+            <slot name="agree"></slot>
+        </g-agree>
+    </view>
+    <view class="button-area button-area--{{direction}}">
+        <button catch:tap="handleSecondTap" disabled="{{secondDisabled}}" wx:if="{{secondText}}">{{secondText}}</button>
+        <button catch:tap="handlePrimaryTap" disabled="{{agree&&!_agreeChecked||disabled}}" type="primary" wx:if="{{primaryText}}">
+            <view ariaLabel="{{label}}">{{primaryText}}</view>
+        </button>
+    </view>
+</view>
+<view class="button-list" wx:if="{{buttonList.length>0}}">
+    <view catch:tap="handelButtonListTap" class="button-list__item" data-item="{{item}}" hoverClass="button-list__item--hover" id="{{index}}" wx:for="{{buttonList}}" wx:key="{{index}}">
+        <view class="button-list__text">{{item.text}}</view>
+    </view>
+</view>

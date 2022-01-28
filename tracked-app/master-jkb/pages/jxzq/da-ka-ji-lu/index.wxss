@@ -1,0 +1,120 @@
+page {
+    background: #f0f0f0;
+}
+
+.record_content {
+    background: #fff;
+    border-radius: 16rpx;
+    margin: 40rpx;
+}
+
+.record_title {
+    align-items: center;
+    border-bottom: 1rpx solid #e4e4e4;
+    color: #0682ff;
+    display: flex;
+    font-family: PingFangSC-Semibold;
+    font-size: 36rpx;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 50rpx;
+    margin: 0 8rpx;
+    padding-bottom: 21rpx;
+    padding-top: 40rpx;
+}
+
+.xiao {
+    background: #7ebeff;
+    height: 17rpx;
+    width: 17rpx;
+}
+
+.da,.xiao {
+    transform: rotate(-315deg);
+}
+
+.da {
+    background: #63b1ff;
+    height: 28.3rpx;
+    width: 28rpx;
+}
+
+.da,.daka,.xi {
+    margin-left: 16rpx;
+}
+
+.table_title {
+    border-bottom: 1px solid #e4e4e4;
+    display: flex;
+    margin: 0 8rpx;
+    padding: 34rpx 0;
+}
+
+.table_title_item {
+    color: #9c9c9c;
+    display: inline-block;
+    font-size: 22rpx;
+    text-align: center;
+    width: 20%;
+}
+
+.table_content {
+    display: flex;
+}
+
+.table_content_item {
+    display: inline-block;
+    font-size: 24rpx;
+    padding: 34rpx 0;
+    text-align: center;
+    width: 20%;
+}
+
+.item_weidaka {
+    color: #fda759;
+}
+
+.item_normal {
+    color: #26c522;
+}
+
+.item_yichang {
+    color: #f32b3d;
+}
+
+.no_data {
+    color: #aaa;
+    font-size: 26rpx;
+    padding: 40rpx 0;
+    text-align: center;
+}
+
+.health_box {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,.05);
+    height: auto;
+    margin: 40rpx;
+    padding-bottom: 40rpx;
+    width: 670rpx;
+    z-index: 999;
+}
+
+.jkgl_zzbx_title {
+    font-size: 30rpx;
+    line-height: 40rpx;
+    margin-bottom: 6rpx;
+    margin-top: 40rpx;
+    padding-left: 40rpx;
+}
+
+.btn-search {
+    color: #999;
+    display: inline-block;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    line-height: 36rpx;
+    margin: 40rpx 0;
+    text-align: center;
+    width: 100%;
+}

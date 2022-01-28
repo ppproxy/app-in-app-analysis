@@ -1,0 +1,64 @@
+.wrap,page {
+    background: #f1f1f1;
+}
+
+.wrap {
+    height: 100%;
+    overflow-x: hidden;
+    padding: 60rpx 40rpx;
+    position: relative;
+    width: 100%;
+}
+
+.center,.wrap {
+    box-sizing: border-box;
+}
+
+.center {
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 230rpx 20rpx;
+}
+
+.tit {
+    font-family: PingFangSC-Semibold;
+    font-size: 54rpx;
+    text-align: center;
+}
+
+.tit,.title {
+    color: #000;
+    letter-spacing: 0;
+}
+
+.title {
+    font-family: PingFangSC-Regular;
+    font-size: 36rpx;
+    line-height: 64rpx;
+    margin: 40rpx;
+    text-align: justify;
+}
+
+.btn-box {
+    bottom: 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: 40rpx 20rpx;
+    position: absolute;
+}
+
+.cancle,.cancle1 {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 16rpx;
+    height: 96rpx;
+    margin: 40rpx 20rpx 0;
+    width: 330rpx;
+}
+
+.cancle1 {
+    background: #0d8ce6;
+    color: #fff;
+}

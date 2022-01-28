@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "ad": "/components/ad9db5b8da/index",
+        "msg-banner": "/components/MsgBanner8aa90ce2/index",
+        "benefit": "/components/Benefit1257a8a3/index"
+    }
+}

@@ -1,0 +1,19 @@
+<g-form bind:submit="handleFormSubmit" disabled="{{disabled}}" model="{{formData}}" primaryText="提交" rules="{{rules}}" validateType="{{validateType}}">
+    <view slot="content">
+        <view class="desc">
+    请填写以下信息，我们将会安排专人与您取得联系
+    带有*的为必填项
+    </view>
+        <g-wrapper>
+            <g-input clearable bind:change="handleChange" class="xrequired" id="org" label="公司/单位名称" placeholder="请输入公司/单位名称" value="{{formData.org}}"></g-input>
+            <g-input clearable bind:change="handleChange" class="xrequired" id="name" label="联系人" placeholder="请输入联系人" value="{{formData.name}}"></g-input>
+            <g-input clearable bind:change="handleChange" class="xrequired" id="email" label="邮箱" placeholder="请输入邮箱" value="{{formData.email}}"></g-input>
+            <g-input clearable prepend bind:change="handleChange" class="xrequired" id="phone" label="电话" placeholder="请输入手机号" value="{{formData.phone}}">
+                <view slot="prepend">
+                    <text>86+</text>
+                </view>
+            </g-input>
+            <g-textarea bind:change="handleChange" id="otherQuestion" label="其他问题" placeholder="点击输入其他问题" value="{{formData.otherQuestion}}"></g-textarea>
+        </g-wrapper>
+    </view>
+</g-form>

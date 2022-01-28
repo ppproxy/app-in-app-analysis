@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "loading": "/npm/_didi/qingju-user-invite/src/components/loadingff59c702/index",
+        "alertDialog": "/npm/_didi/qingju-user-invite/src/components/alertDialogb43d5f38/index"
+    },
+    "navigationBarTitleText": "组队助力"
+}

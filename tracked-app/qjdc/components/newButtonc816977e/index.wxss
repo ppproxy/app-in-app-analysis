@@ -1,0 +1,24 @@
+.btn-wrapper,.button {
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(225deg,#20eecf,#14d0b4);
+    border-radius: 8rpx;
+    font-size: 32rpx;
+    color: #fff;
+    height: 92rpx;
+    margin: 0 auto;
+    border: none;
+}
+
+.btn-gray {
+    background: #ccc;
+}
+
+.button:after {
+    border: none;
+}

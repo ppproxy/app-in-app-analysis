@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "Btn": "/components/newButtonc816977e/index"
+    }
+}

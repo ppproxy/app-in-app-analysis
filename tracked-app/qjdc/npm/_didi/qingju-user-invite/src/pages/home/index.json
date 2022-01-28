@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "homeRedPop": "/npm/_didi/qingju-user-invite/src/components/homeRedpop78be41f8/index",
+        "loading": "/npm/_didi/qingju-user-invite/src/components/loading3182f271/index",
+        "textPopup": "/npm/_didi/qingju-user-invite/src/components/textPopup294cb898/index",
+        "normalPopup": "/npm/_didi/qingju-user-invite/src/components/normalPopup5cde592e/index",
+        "homeContainer": "/npm/_didi/qingju-user-invite/src/components/homeContainer9dd7b3d2/index",
+        "picMask": "/npm/_didi/qingju-user-invite/src/components/picMask2b9fc53f/index",
+        "homeNormalPop": "/npm/_didi/qingju-user-invite/src/components/homeNormalPopb235a118/index",
+        "doubleCheckPop": "/npm/_didi/qingju-user-invite/src/components/doubleCheckPop20ad5fbf/index",
+        "logoutHomeRedPop": "/npm/_didi/qingju-user-invite/src/components/logoutHomeRedPop72b9a08e/index",
+        "logoutDoubleCheckPop": "/npm/_didi/qingju-user-invite/src/components/logoutDoubleCheckPop70a6b72e/index",
+        "qxjRecord": "/npm/_didi/qingju-user-invite/src/components/qxjRecord1663b77d/index"
+    },
+    "navigationBarTitleText": "好友助力领红包"
+}

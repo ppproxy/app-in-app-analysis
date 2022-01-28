@@ -1,0 +1,15 @@
+<picker bindcancel="triggerCancel" bindchange="handleChange" bindcolumnchange="triggerColumnchange" customItem="{{customItem}}" disabled="{{disabled||_readonly}}" end="{{end}}" fields="{{fields}}" mode="{{mode}}" range="{{range}}" rangeKey="{{_rangeKey}}" start="{{start}}" value="{{_valueIndex}}">
+    <view wx:if="{{type==='formItem'}}">
+        <g-form-item disabled="{{disabled}}" label="{{label}}" required="{{required}}" status="{{_status}}" statusMessage="{{_statusMessage}}">
+            <view class="picker">
+                <view class="picker__value {{_isEmpty?'picker__value--placeholder':''}} {{disabled?'picker__value--disabled':''}}">{{_displayName}}</view>
+                <view bind:tap="handleActionTap" class="picker__action">{{actionText}}</view>
+            </view>
+        </g-form-item>
+    </view>
+    <view wx:elif="{{type==='dropdown'}}">
+        <g-dropdown>
+            <view class="dropdown dropdown-class {{_isEmpty?'picker__value--placeholder':''}} {{disabled?'picker__value--disabled':''}}"> {{_displayName}} </view>
+        </g-dropdown>
+    </view>
+</picker>

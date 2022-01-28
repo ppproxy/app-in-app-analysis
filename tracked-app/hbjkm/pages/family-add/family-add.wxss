@@ -1,0 +1,95 @@
+.bg image {
+    width: 300rpx;
+}
+
+.bg {
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+}
+
+.line {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-around;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30rpx;
+    padding-top: 40rpx;
+    align-items: center;
+}
+
+.line-two {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-around;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30rpx;
+    padding-top: 40rpx;
+    align-items: center;
+    background-color: #eee;
+}
+
+.list-box {
+    padding: 40rpx 60rpx 40rpx 60rpx;
+}
+
+.line-left,.line-right {
+    display: flex;
+    flex: 2;
+}
+
+.line-left {
+    flex: 5;
+}
+
+.line-right {
+    color: #4293F4;
+    justify-content: space-around;
+}
+
+.one {
+    margin-right: 120rpx;
+    min-width: 100rpx;
+    margin-left: 40rpx;
+    display: flex;
+    align-items: center;
+}
+
+.two {
+}
+
+.four {
+    margin-left: 0rpx;
+    width: 80rpx;
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.five {
+    background-color: #eee;
+}
+
+.btn-box {
+    padding: 0 100rpx;
+    margin-top: 100rpx;
+}
+
+.btn {
+    background-color: #4293F4;
+    color: #fff;
+}
+
+.ps-box {
+    display: flex;
+    padding: 40rpx 100rpx 40rpx 100rpx;
+    font-size: 16px;
+    color: #ccc;
+    justify-content: center;
+}
+
+.pstwo {
+}

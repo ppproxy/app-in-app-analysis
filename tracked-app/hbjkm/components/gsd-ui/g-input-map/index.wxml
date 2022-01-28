@@ -1,0 +1,24 @@
+<g-form-item disabled="{{disabled}}" label="{{label}}" required="{{required}}" staticItemClass="{{icon==='info'?'static-item':''}}" status="{{_status}}" statusMessage="{{_statusMessage}}">
+    <view class="{{icon==='info'?'input__containerIcon':'input__container'}}">
+        <view class="input__prepend" wx:if="{{prepend}}">
+            <slot class="slot" name="prepend"></slot>
+        </view>
+        <view class="{{icon==='info'?'input__wrapperIcon':'input__wrapper'}}">
+            <input adjustPosition="{{adjustPosition}}" bindblur="handleBlur" bindconfirm="handleConfirm" bindfocus="handleFocus" bindinput="handleInput" class="input__element {{icon==='info'?'input__elementIcon':''}}" confirmHold="{{confirmHold}}" confirmType="{{confirmType}}" cursor="{{cursor}}" cursorSpacing="{{cursorSpacing}}" disabled="{{disabled}}" focus="{{_focus}}" maxlength="{{maxlength}}" name="{{id}}" password="{{password}}" placeholder="{{placeholder}}" placeholderClass="input__placeholder" selectionEnd="{{selectionEnd}}" selectionStart="{{selectionStart}}" type="{{type}}" value="{{_value}}"></input>
+            <view bind:tap="bindSelect" class="picker_action">选择</view>
+            <view class="{{icon==='info'?'input__iconInfo__container':'input__icon__container'}}">
+                <view catch:tap="handleTapClear" class="input__icon input__icon--clear" hidden="{{!clearable||!value}}">
+                    <g-icon size="36" type="close-circle"></g-icon>
+                </view>
+                <view catch:tap="handleTapIcon" class="input__icon input__icon--{{icon}}" wx:if="{{icon}}">
+                    <g-popover content="{{iconDesc}}" placement="topRight" wx:if="{{icon==='info'}}">
+                        <g-icon size="36" type="info-o"></g-icon>
+                    </g-popover>
+                </view>
+            </view>
+        </view>
+        <view class="input__append" wx:if="{{append}}">
+            <slot class="slot" name="append"></slot>
+        </view>
+    </view>
+</g-form-item>

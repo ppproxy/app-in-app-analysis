@@ -1,0 +1,13 @@
+<view class="question-box">
+    <view class="title">被代领人健康打卡记录</view>
+    <view class="answer-box">
+        <view class="question-answer" wx:for="{{report}}">
+            <view class="one">{{item.time}}</view>
+            <view class="two">{{item.statu}}</view>
+        </view>
+    </view>
+    <view class="ps-box">注：仅显示最近14天的打卡记录</view>
+    <view class="btn-box">
+        <view style="text-align:center;color:#ccc;margin-bottom:20rpx">坚持每日健康打卡，助力疫情防控工作</view>
+    </view>
+</view>

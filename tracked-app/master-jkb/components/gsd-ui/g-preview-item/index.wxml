@@ -1,0 +1,9 @@
+<view class="preview-item--{{type}}">
+    <view ariaLabel="{{label}}" class="preview-item--{{type}}__label" style="width: {{_labelWidth?_labelWidth+'rpx':''}}" wx:if="{{label}}">{{label}}</view>
+    <view class="preview-item__icon" wx:if="{{iconType}}">
+        <g-icon color="{{iconColor}}" size="48" type="{{iconType}}"></g-icon>
+    </view>
+    <view class="preview-item__content" style="text-align: {{textAlign||_textAlign}}">
+        <slot></slot>
+    </view>
+</view>

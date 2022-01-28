@@ -1,0 +1,39 @@
+.wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    z-index: 99999;
+}
+
+.toast,.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast {
+    background: rgba(37,38,45,.9);
+    border-radius: 12rpx;
+    padding: 26rpx 35rpx;
+    max-width: 90%;
+    font-size: 28rpx;
+    color: #ccc;
+}
+
+.toast .image {
+    flex-shrink: 0;
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 20rpx;
+}
+
+.toast .msg {
+    display: block;
+    word-wrap: break-word;
+    word-break: break-all;
+}

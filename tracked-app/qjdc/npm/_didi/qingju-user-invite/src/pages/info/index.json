@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "avatarBanner": "/npm/_didi/qingju-user-invite/src/components/avatarBanner7fa98f3a/index",
+        "container": "/npm/_didi/qingju-user-invite/src/components/container9994c90c/index",
+        "countdown": "/npm/_didi/qingju-user-invite/src/components/countdown58d14d2a/index",
+        "messageBox": "/npm/_didi/qingju-user-invite/src/components/messageBox8af1fcce/index",
+        "toast": "/npm/_didi/qingju-user-invite/src/components/toastf7ede9c0/index",
+        "emptyHolder": "/npm/_didi/qingju-user-invite/src/components/emptyHolder33e1205c/index"
+    },
+    "navigationBarTitleText": "青桔拼团活动"
+}

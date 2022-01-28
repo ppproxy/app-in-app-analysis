@@ -1,0 +1,52 @@
+.unlocking-page {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(134deg,#1a252d,#39394c);
+}
+
+.unlocking-page .map-unlocking {
+    width: 100%;
+    height: calc(100vh - 540rpx);
+}
+
+.unlocking-page .map-unlocking .map-bike {
+    background: #fff;
+}
+
+.unlocking-page .card {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    min-height: 600rpx;
+    background-image: linear-gradient(134deg,#1a252d,#39394c);
+    border-radius: 34rpx 34rpx 0 0;
+    padding: 60rpx 50rpx 0;
+    box-sizing: border-box;
+}
+
+.unlocking-page .card .edu-img {
+    position: absolute;
+    width: 636rpx;
+    height: 170rpx;
+    left: 30rpx;
+    top: -270rpx;
+}
+
+.unlocking-page .card .custom {
+    position: absolute;
+    top: -90rpx;
+    right: 20rpx;
+    width: 70rpx;
+    height: 70rpx;
+    z-index: 9999;
+}
+
+.unlocking-page .card .companyInfo {
+    position: absolute;
+    bottom: 40rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

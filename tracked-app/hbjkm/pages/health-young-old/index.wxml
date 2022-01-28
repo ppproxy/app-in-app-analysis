@@ -1,0 +1,31 @@
+<view class="young-old">
+    <view class="young-old-info">
+        <image mode="widthFix" src="{{imgSrc}}"></image>
+        <view class="young-old-info-title">当前业务需要身份信息核验</view>
+    </view>
+    <view class="young-old-main">
+        <view class="young-old-main-input">
+            <view class="young-old-main-input-title">姓名</view>
+            <input bindinput="bindName" placeholder="请输入姓名" value="{{name}}"></input>
+        </view>
+        <view class="young-old-main-input">
+            <view class="young-old-main-input-title">身份证号</view>
+            <input bindinput="bindIdcard" placeholder="请输入身份证号" value="{{idCard}}"></input>
+        </view>
+    </view>
+    <view class="young-old-introduce">
+        <view class="young-old-introduce-txt">1、本服务仅可以查询60岁以上及16岁以下人员健康状态。</view>
+        <view class="young-old-introduce-txt">2、为保护个人隐私，查询结果页面关闭后，本地不保存任何缓存或相关数据。</view>
+        <view class="young-old-introduce-txt">3、请核对以上查询号码确为查询人本人身份证信息，瞒报、谎报信息将依法承担法律责任。</view>
+        <view bindtap="checkFn" style="margin-top:20px;">
+            <checkbox-group>
+                <label class="checkbox">
+                    <checkbox class="young-old-introduce-check" value="{{check}}"></checkbox>
+                    <view class="young-old-introduce-txt" style="display:inline">
+						我同意国家政务服务平台使用我所提交的信息用于防疫相关健康状态查询。</view>
+                </label>
+            </checkbox-group>
+        </view>
+        <button bindtap="validation" class="young-old-introduce-btn" data-real="{{true}}">开始验证</button>
+    </view>
+</view>
