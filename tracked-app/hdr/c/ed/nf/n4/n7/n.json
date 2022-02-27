@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n",
+        "point-goods": "/c/cu/cx/n"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "component": true,
+    "usingComponents": {
+        "custom-modal": "/c/e9/n",
+        "order-detail-process": "./n4/nv/n",
+        "order-detail-queue": "./n4/nt/n",
+        "order-refund-info": "./n4/nd/n",
+        "order-detail-code": "./n4/nu/n",
+        "call-code": "./n4/na/n",
+        "code": "./n4/nh/n",
+        "code-verification": "./n4/n9/n"
+    }
+}

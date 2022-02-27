@@ -1,0 +1,31 @@
+<view class="nq7" wx:if="{{!emptyData}}">
+    <component-title textAlign="{{titleType==='text'?'left':'center'}}" title="{{name}}" titleUrl="{{titleImage}}" type="{{titleType}}" wx:if="{{showTitle}}"></component-title>
+    <view class="{{layout===2?'nqk':'nqp'}}">
+        <point-goods bind:handleGoodsPointTap="chooseGoods" goodsList="{{goodsList}}" wx:if="{{layout===2}}"></point-goods>
+        <view class="nqy" wx:if="{{layout===3}}">
+            <view bindtap="chooseGoods" class="nqa" data-item="{{item}}" wx:for="{{goodsList}}" wx:key="index">
+                <view>
+                    <image class="nq9" src="{{item.logo}}"></image>
+                    <view class="nqv">{{item.itemName}}</view>
+                    <view class="nq1" wx:if="{{item.saleNum>20}}"> 热销{{item.saleNum}}份 </view>
+                </view>
+                <view>
+                    <view class="nqm" style="color: {{item.benefitType==='MEMBER_PRICE'?'#BE8B5E':'#FF301E'}}">
+                        <view class="nqq" wx:if="{{!item.benefitType}}">¥</view>
+                        <view class="nqq" wx:if="{{item.benefitType&&item.benefitType==='MEMBER_PRICE'}}"> 会员 ¥ </view>
+                        <view class="nqq" wx:if="{{item.benefitType&&item.benefitType==='GROUP_PRICE'}}"> 拼团 ¥ </view>
+                        <view class="nql">{{item.curPrice}}</view>
+                    </view>
+                    <view class="nqb">
+                        <view class="nq0">¥{{item.orgPrice}}</view>
+                        <view class="nqr" style="background-color: {{themeColor}}"> {{item.actionName}} </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="switchTabbar" class="nqx {{layout===2?'nq8':''}}" wx:if="{{showSwitch}}">
+            <view>查看全部商品</view>
+            <image class="nqj" src="https://img.alicdn.com/tfs/TB1aX4FTxz1gK0jSZSgXXavwpXa-25-24.png"></image>
+        </view>
+    </view>
+</view>

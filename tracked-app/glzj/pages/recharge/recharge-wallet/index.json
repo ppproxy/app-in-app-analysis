@@ -1,0 +1,15 @@
+{
+    "defaultTitle": "我的钱包",
+    "usingComponents": {
+        "navigation-bar": "/c/np/n",
+        "member-code": "/c/ed/e0/n",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n"
+    },
+    "navigationStyle": "custom",
+    "transparentTitle": "always",
+    "allowsBounceVertical": "NO",
+    "titleBarColor": "#000000",
+    "enablePullDownRefresh": true,
+    "__warning__": "invalid page.json [\"defaultTitle\"]、page.json [\"transparentTitle\"]、page.json [\"allowsBounceVertical\"]、page.json [\"titleBarColor\"]"
+}

@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "card-item": "./n4/ni/n",
+        "badge": "/c/ew/n",
+        "auth-phone-modal": "/c/e4/en/n",
+        "custom-rich-text": "/c/eh/n",
+        "toast": "/c/z5/n"
+    }
+}

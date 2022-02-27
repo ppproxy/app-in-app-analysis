@@ -1,0 +1,34 @@
+var getAspectWidth = (function(count) {
+    return (260)
+});
+
+function handlePrice(price, maxShowPrice, maxShowLen) {
+    maxShowPrice = undefined === maxShowPrice ? 99999999 : maxShowPrice;
+    maxShowLen = undefined === maxShowLen ? 7 : maxShowLen;
+    var isLegalPrice = isNumber(price) && price >= 0;
+    var isLegalMaxPrice = isNumber(maxShowPrice) && maxShowPrice >= 0;
+    var isLegalMaxLen = isNumber(maxShowLen) && maxShowLen > 0;
+    if (!isLegalMaxLen) {
+        maxShowPrice = 99999999
+    };
+    if (!isLegalMaxPrice) {
+        maxShowLen = 7
+    };
+    if (!isLegalPrice) {
+        return ('')
+    };
+    var priceText = price / 100 + '';
+    if (price > maxShowPrice) {
+        priceText = priceText.slice(0, maxShowLen) + '...'
+    };
+    return (priceText)
+};
+
+function isNumber(value) {
+    var _val = parseFloat(value);
+    return (typeof _val === 'number' && !isNaN(_val))
+};
+module.exports = ({
+    getAspectWidth: getAspectWidth,
+    handlePrice: handlePrice,
+});

@@ -1,0 +1,40 @@
+.n85 {
+    width: 750rpx;
+}
+
+.n8w {
+    margin: 0 24rpx;
+}
+
+.n83 {
+    align-items: stretch;
+    white-space: nowrap;
+}
+
+.n83,.n86 {
+    display: flex;
+}
+
+.n86 {
+    flex: 1;
+    flex-direction: column;
+    font-weight: 500;
+    margin-bottom: 20rpx;
+    margin-right: 20rpx;
+    position: relative;
+}
+
+.n83 .n86:last-child {
+    border-right: 24rpx solid transparent;
+    margin-right: 0;
+}
+
+.n83 .n86:first-child {
+    border-left: 24rpx solid transparent;
+    margin-left: 0;
+}
+
+.n8e .n82 {
+    flex-direction: row;
+    width: 260rpx;
+}

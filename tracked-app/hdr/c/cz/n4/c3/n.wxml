@@ -1,0 +1,24 @@
+<view class="nv3" wx:if="{{itemTypeList.length}}">
+    <view class="nv2">
+        <view class="nvs">{{typeName}}</view>
+        <view class="nvf">(任选{{minNum===maxNum?maxNum:minNum+'-'+maxNum}}份{{chooseNum?'，已选'+chooseNum+'份':''}})</view>
+    </view>
+    <view class="nv6">
+        <view class="nvu" wx:for="{{itemTypeList}}" wx:key="index">
+            <view class="e83"></view>
+            <view class="nvk">
+                <cook-image class="nvp" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" smart="{{width:100,height:100}}" src="{{item.cookbookDishSkuList[0].skuImgUrl||'/assets/images/dish-default.png'}}"></cook-image>
+                <view class="nvy">
+                    <view class="nva"> {{item.dishName}}<block wx:if="{{item.skuName}}">({{item.skuName}})</block>
+                    </view>
+                    <view class="nvh" wx:if="{{item.cookbookDishSkuList[0].required==='Y'}}">必选</view>
+                    <view class="nv9" wx:if="{{item.cookbookDishSkuList[0].dishSkuPrice}}">
+                        <text>加 ¥</text>
+                        <text style="font-size: 32rpx">{{item.cookbookDishSkuList[0].dishSkuPrice/100}}</text>
+                    </view>
+                </view>
+                <orderfood-dish-add-cart isSetMeal bind:handleNumChange="handleNumChange" bind:handleRootInstance="handleRootInstance" disableAdd="{{disableSku[item.cookbookDishSkuList[0].skuId]}}" dish="{{item}}" dishDot="{{cartDishDot}}" fromDetailPage="{{true}}" openStatus="{{openStatus}}" optionalNum="{{optionalNum}}" setMealGroupId="{{comboGroup.groupId}}"></orderfood-dish-add-cart>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,2 @@
+<view class="ejo" style="{{containerStyle}}" wx:if="{{summaryLabelText}}"> {{summaryLabelText}}
+</view>

@@ -1,0 +1,71 @@
+<template name="style1">
+    <view class="{{services.length>0?'zs6':'zs2'}}">
+        <view class="zss" wx:if="{{count===1}}">
+            <view bindtap="onTapGoTo" class="zsf" data-indx="0" style="background-color: #f5f5f5; border-radius: 50rpx;" wx:if="{{count===1}}">
+                <view class="zs7" style="background-color: {{themeColor}}">
+                    <view class="zsk">
+                        <cook-image class="zsp" src="{{services[0].imageUrl}}"></cook-image>
+                        <view class="zsy">
+                            <view class="zso"> {{services[0].title}} </view>
+                            <view class="zsa" wx:if="{{services[0].promoType||services[0].subTitle}}"> {{services[0].promoType||services[0].subTitle}} </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="zss" wx:if="{{count===2}}">
+            <view class="zsh" data-idx="1">
+                <view class="zs9">
+                    <view bindtap="onTapGoTo" class="zsu" data-indx="{{index}}" wx:for="{{services}}" wx:key="index">
+                        <view class="zsv">{{item.title}}</view>
+                        <view class="zst" wx:if="{{item.promoType}}">{{item.promoType}}</view>
+                        <view class="zsd" wx:if="{{!item.promoType&&item.subTitle}}">{{item.subTitle}}</view>
+                        <cook-image class="zsb" mode="widthFix" src="{{item.imageUrl}}"></cook-image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="zss" wx:if="{{count===3}}">
+            <view class="zsh">
+                <view class="zs9">
+                    <view bindtap="onTapGoTo" class="zsi" data-indx="0">
+                        <view class="zsv">{{services[0].title}}</view>
+                        <view class="zst" wx:if="{{services[0].promoType}}">{{services[0].promoType}}</view>
+                        <view class="zsd" wx:if="{{!services[0].promoType&&services[0].subTitle}}">{{services[0].subTitle}}</view>
+                        <cook-image class="zs1" mode="widthFix" src="{{services[0].imageUrl}}"></cook-image>
+                    </view>
+                    <view class="zsg">
+                        <view bindtap="onTapGoTo" class="zsm" data-indx="{{index}}" wx:if="{{index>0}}" wx:for="{{services}}" wx:key="index">
+                            <view class="zsv">{{item.title}}</view>
+                            <view class="zst" wx:if="{{item.promoType}}">{{item.promoType}}</view>
+                            <view class="zsd" wx:if="{{!item.promoType&&item.subTitle}}">{{item.subTitle}}</view>
+                            <cook-image class="zs0" src="{{item.imageUrl}}"></cook-image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="zss" wx:if="{{count===4}}">
+            <view class="zsh">
+                <view class="zs9">
+                    <view class="zsl">
+                        <view bindtap="onTapGoTo" class="zsq" data-indx="{{index}}" wx:if="{{index<2}}" wx:for="{{services}}" wx:key="index">
+                            <view class="zsv">{{item.title}}</view>
+                            <view class="zst" wx:if="{{item.promoType}}">{{item.promoType}}</view>
+                            <view class="zsd" wx:if="{{!item.promoType&&item.subTitle}}">{{item.subTitle}}</view>
+                            <cook-image class="zsr" src="{{item.imageUrl}}"></cook-image>
+                        </view>
+                    </view>
+                    <view class="zsl">
+                        <view bindtap="onTapGoTo" class="zsq" data-indx="{{index}}" wx:if="{{index>1&&index<4}}" wx:for="{{services}}" wx:key="index">
+                            <view class="zsv">{{item.title}}</view>
+                            <view class="zst" wx:if="{{item.promoType}}">{{item.promoType}}</view>
+                            <view class="zsd" wx:if="{{!item.promoType&&item.subTitle}}">{{item.subTitle}}</view>
+                            <cook-image class="zsr" src="{{item.imageUrl}}"></cook-image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

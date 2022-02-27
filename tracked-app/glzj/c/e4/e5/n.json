@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "custom-show-modal": "/c/e9/n",
+        "user-agreement": "/c/e4/ez/n",
+        "toast": "/c/z5/n"
+    }
+}

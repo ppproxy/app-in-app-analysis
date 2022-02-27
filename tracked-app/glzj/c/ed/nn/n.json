@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "custom-show-modal": "/c/e9/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "benefit-free": "./n4/ne/n",
+        "member-coupon-gift-item": "./n4/nc/n",
+        "member-joined-show-alert": "./n4/nz/n"
+    }
+}

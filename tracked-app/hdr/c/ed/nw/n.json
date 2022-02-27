@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "pay-phone-modal": "./n4/n3/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n"
+    }
+}

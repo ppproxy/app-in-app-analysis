@@ -1,0 +1,11 @@
+<view class="c0n">
+    <scroll-view scrollIntoView="item_{{currentView}}" scrollX="{{true}}">
+        <view class="c0c">
+            <view bindtap="handleTabClick" class="c0z" data-index="{{index}}" id="item_{{index}}" style="background-color: {{tabBackgroundColor}}; color: {{activeTab===index?tabActiveTextColor:tabInactiveTextColor}};" wx:for="{{tabs}}" wx:key="title">
+                <view class="c05 {{activeTab===index?'c0w':''}}" style="font-weight: {{activeTab===index?'600':'400'}};">
+                    <text>{{item.title}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

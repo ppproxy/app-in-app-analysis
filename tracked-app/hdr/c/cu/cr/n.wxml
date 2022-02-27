@@ -1,0 +1,15 @@
+<view class="nrk">
+    <cook-image webp class="nrp" mode="heightFix" src="{{mainImageUrl}}"></cook-image>
+    <view class="nry">
+        <view class="nro">{{brandName}}</view>
+        <view bind:tap="handleOrderFood" class="nra">{{serviceButton.title||'开始点餐'}}</view>
+        <view class="nrh">
+            <block wx:if="{{orderfoodGuideResult.nearbyStore.storeTitle}}">
+                <text class="nr7 nrd"></text>
+                <view class="nr9 {{showChangeShop?'':'nrv'}}">{{orderfoodGuideResult.nearbyStore.storeTitle}}</view>
+                <view bind:tap="gotoShopList" class="nru" wx:if="{{showChangeShop}}"> 切换门店 <image class="nrt" src="{{IconArrow}}"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

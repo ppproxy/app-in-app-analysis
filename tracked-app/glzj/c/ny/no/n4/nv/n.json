@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "order-detail-queue": "../nt/n",
+        "order-detail-code": "../nu/n"
+    }
+}

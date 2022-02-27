@@ -1,0 +1,39 @@
+<template name="style1">
+    <view class="z6m" wx:if="{{showModal}}">
+        <view bindtap="gotoOrderDetailPage" class="z60">
+            <image class="z6l" src="{{IconSpeakers}}"></image>
+            <view class="z6q">
+                <view class="z6r"> {{orderInfo.tips}} </view>
+                <view>
+                    <view class="z6x" wx:if="{{orderInfo.bookTime&&orderInfo.orderStatus==='SUCCESS'}}"> 取餐时间 {{orderInfo.bookTime}} </view>
+                    <view class="z6x" wx:else> {{orderInfo.dishDesc}} </view>
+                </view>
+            </view>
+            <view class="z68" style="border-color:{{boderColor}}" wx:if="{{utils.showBlock(orderInfo)}}">
+                <block wx:if="{{orderInfo.takeMealType==='SELF_TAKE'&&orderInfo.mealCode}}">
+                    <view class="z6j"> 自取码 </view>
+                    <view class="z24"> {{orderInfo.mealCode}} </view>
+                </block>
+                <view class="z6j" wx:if="{{orderInfo.takeMealType==='TO_TABLE'}}"> {{orderInfo.tableArea}} </view>
+                <view class="z24" wx:if="{{orderInfo.takeMealType==='TO_TABLE'}}">
+                    <view>{{orderInfo.tableCode}}</view>
+                    <view class="z2e">桌</view>
+                </view>
+            </view>
+            <view class="z68" style="border-color:{{boderColor}}" wx:if="{{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}">
+                <view class="z6j"> 桌台号：{{orderInfo.tableCode}} </view>
+                <view class="z24">
+                    <view>{{orderInfo.diningNum}}</view>
+                    <view class="z2e">人</view>
+                </view>
+            </view>
+        </view>
+        <view class="z2n" wx:if="{{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}">
+            <view bindtap="gotoOrderPage" class="z2c" style="background-color: {{themeColor}}" wx:if="{{orderInfo.orderStatus==='EATING'&&orderInfo.tableCodeActionChange}}"> 加入点餐 </view>
+            <view bindtap="gotoOrderPage" class="z2c" style="background-color: {{themeColor}}" wx:if="{{orderInfo.orderStatus==='EATING'&&!orderInfo.tableCodeActionChange}}"> 继续点餐 </view>
+            <view bindtap="gotoOrderPage" class="z2c" style="background-color: {{themeColor}}" wx:if="{{orderInfo.orderStatus==='CLOSED'}}"> 重新点餐 </view>
+            <view bindtap="gotoOrderPage" class="z2c" style="background-color: {{themeColor}}" wx:if="{{orderInfo.orderStatus==='SUCCESS'}}"> 再下一单 </view>
+        </view>
+    </view>
+</template>
+<wxs module="utils" src="../zl.wxs" />

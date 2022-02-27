@@ -1,0 +1,17 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "member-coupon": "./_/pages/member/components/activity-coupon/index",
+        "member-activity-subscribe": "./_/pages/member/components/activity-subscribe/index",
+        "member-coupon-badge": "./_/pages/member/components/activity-badge/index",
+        "member-join-universal": "/c/ed/nw/n",
+        "navigation-bar": "/c/np/n",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n",
+        "auth-phone-modal": "/c/e4/en/n",
+        "member-send-coupon": "/c/ed/n6/n"
+    },
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f5f5f5"
+}

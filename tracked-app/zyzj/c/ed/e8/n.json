@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "member-send-coupon-activity": "/c/ed/n2/n"
+    }
+}

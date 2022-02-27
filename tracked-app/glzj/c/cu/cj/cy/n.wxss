@@ -1,0 +1,265 @@
+.n82 {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 3rpx 15rpx 0rpx rgba(0,0,0,.06);
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    height: 100%;
+}
+
+.n8s {
+    position: relative;
+    width: 100%;
+}
+
+.n8f {
+    border-radius: 16rpx 16rpx 0 0;
+    display: block;
+    height: 220rpx;
+    width: 260rpx;
+}
+
+.n87 {
+    background: rgba(0,0,0,.7);
+    bottom: 0;
+    color: #fff;
+    font-size: 20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.n8k {
+    box-sizing: border-box;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    padding: 16rpx 20rpx;
+}
+
+.n8p {
+    color: #191919;
+    font-size: 28rpx;
+    font-weight: 700;
+    height: 32rpx;
+    letter-spacing: 0;
+    line-height: 32rpx;
+    margin-bottom: 12rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.n8y {
+    align-items: center;
+    flex-wrap: wrap;
+    height: 34rpx;
+    margin-bottom: 12rpx;
+}
+
+.n8o,.n8y {
+    display: flex;
+    flex-direction: row;
+}
+
+.n8o {
+    font-size: 20rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    margin-right: 10rpx;
+    text-align: center;
+}
+
+.n8a {
+    background-image: linear-gradient(270deg,#e9b989,#ffd7b0);
+    border-radius: 6rpx 0 0 6rpx;
+    color: #3b3b3f;
+    font-weight: 700;
+    padding: 0 4rpx;
+}
+
+.n8h {
+    background-color: #3b3b3f;
+    border-radius: 0 6rpx 6rpx 0;
+    color: #fed6ae;
+    padding: 0 6rpx;
+}
+
+.n89 {
+    height: 30rpx;
+}
+
+.n8u {
+    border: 1rpx solid #ffc9c1;
+    border-radius: 8rpx;
+    color: #ff301e;
+    font-size: 22rpx;
+    height: 32rpx;
+    line-height: 30rpx;
+    margin-right: 10rpx;
+    padding: 0 10rpx;
+    text-align: center;
+}
+
+.n8v {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.n8t,.n8v {
+    display: flex;
+    flex-direction: row;
+}
+
+.n8d {
+    color: #ff4b33;
+}
+
+.n8b,.n8d {
+    font-weight: 700;
+}
+
+.n8b {
+    color: #3b3b3f;
+}
+
+.n8i {
+    font-weight: 400;
+}
+
+.n81 {
+    font-size: 24rpx;
+    line-height: 28rpx;
+    margin-right: 2rpx;
+}
+
+.n8g {
+    font-size: 32rpx;
+}
+
+.n8g,.n8m {
+    line-height: 38rpx;
+}
+
+.n8m {
+    color: #999;
+    font-size: 24rpx;
+    margin-left: 6rpx;
+    text-decoration: line-through;
+}
+
+.n80 {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.n8l {
+    align-items: flex-end;
+    color: var(--price-color);
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 20rpx;
+    font-weight: var(--font-weight-bolder);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.n8q {
+    font-size: 24rpx;
+    line-height: .9;
+}
+
+.n8r {
+    font-size: 32rpx;
+    margin-right: 2rpx;
+}
+
+.n8r,.n8x {
+    line-height: .8;
+}
+
+.n8x {
+    color: var(--text-third);
+    font-size: 24rpx;
+    font-weight: var(--font-weight-normal);
+    margin-left: 5rpx;
+    margin-top: 10rpx;
+    text-decoration: line-through;
+}
+
+.ndr {
+    align-items: center;
+    display: flex;
+    height: 46rpx;
+    justify-content: space-between;
+}
+
+.n88 {
+    height: 34rpx;
+    width: 67rpx;
+}
+
+.n8j.n82 {
+    align-items: end;
+    background: #fff;
+    border-radius: 16rpx;
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    height: 100%;
+}
+
+.n8j .n8s {
+    position: relative;
+    width: auto;
+}
+
+.n8j .n8v {
+    margin-top: 10rpx;
+}
+
+.n8j .n83 .n86:last-child {
+    margin-bottom: 0;
+}
+
+.n8j .n8f {
+    border-radius: 16rpx 0 0 16rpx;
+}
+
+.n8j .n8k {
+    height: 100%;
+    padding: 20rpx;
+}
+
+.nj4 {
+    border-radius: 50%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    height: 40rpx;
+    position: relative;
+    width: 40rpx;
+}
+
+.nje {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding-right: 20rpx;
+}
+
+.njn {
+    background-color: var(--primary);
+    border-radius: 50rpx;
+    color: #fff;
+    font-size: 24rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    min-width: 122rpx;
+    padding: 0 16rpx;
+    text-align: center;
+}

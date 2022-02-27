@@ -1,0 +1,29 @@
+.nup {
+    background: #fff;
+    font-weight: var(--font-weight-bolder);
+    line-height: 1.1;
+    padding: 3rpx;
+    position: absolute;
+    right: -8rpx;
+    top: -8rpx;
+    z-index: 2;
+}
+
+.nup,.nuy {
+    border-radius: 30rpx;
+}
+
+.nuy {
+    background-color: #999;
+    padding: 4rpx;
+    width: auto;
+}
+
+.nuo {
+    border: 1px solid #ddd;
+    border-radius: 30rpx;
+    color: #fff;
+    font-size: 20rpx;
+    padding: 6rpx;
+    text-align: center;
+}

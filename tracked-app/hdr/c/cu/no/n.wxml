@@ -1,0 +1,6 @@
+<import src="./5g/wf.wxml"></import>
+<import src="./5g/w7.wxml"></import>
+<import src="./5g/wk.wxml"></import>
+<template is="style1" data="{{orderInfo:orderInfo,showModal:showModal,themeColor:themeColor,boderColor:boderColor,IconSpeakers:IconSpeakers}}" wx:if="{{selectedTemplate==='1'}}"></template>
+<template is="style2" data="{{orderInfo:orderInfo,showModal:showModal,themeColor:themeColor,boderColor:boderColor,IconSpeakers:IconSpeakers,IconJianTou:IconJianTou,takeTime:takeTime,orderPasswordFontSize:orderPasswordFontSize}}" wx:if="{{selectedTemplate==='2'}}"></template>
+<template is="style3" data="{{orderInfo:orderInfo,showModal:showModal,themeColor:themeColor,boderColor:boderColor,IconSpeakers:IconSpeakers,IconJianTou:IconJianTou,takeTime:takeTime,orderPasswordFontSize:orderPasswordFontSize,marketingColor:marketingColor,orderStatusIcon:orderStatusIcon}}" wx:if="{{selectedTemplate==='3'}}"></template>

@@ -1,0 +1,28 @@
+<template name="style2">
+    <view class="z38" wx:if="{{showModal&&locationAuth.isGPSOpenAndGeoAuth}}">
+        <view class="z3j">
+            <view class="z64"> {{shopInfoTitle||'附近门店'}} </view>
+            <view class="z6e" wx:if="{{shopInfo.shopName}}"> {{shopInfo.shopName}} </view>
+            <view class="z6n">
+                <image class="z6c" mode="aspectFill" src="https://gw.alicdn.com/imgextra/i4/O1CN01xK08Xn25ljgD3ld5k_!!6000000007567-2-tps-30-30.png"></image>
+                <text class="z6z">{{shopInfo.distanceDesc}}<text wx:if="{{shopInfo.openTime&&shopInfo.openTime.label}}"> ｜ 点单营业时间 {{shopInfo.openTime.label}}</text>
+                </text>
+            </view>
+        </view>
+        <view class="z65">
+            <view bindtap="gotoShopList" class="z6w"></view>
+            <text wx:if="{{shopCount&&shopCount>0}}">全部{{shopCount}}家门店</text>
+            <text wx:else>更多门店</text>
+            <image alt="切换" class="z63" src="https://gw.alicdn.com/imgextra/i4/O1CN0182xjxa1Fe540pyOUI_!!6000000000511-55-tps-26-26.svg"></image>
+        </view>
+        <view class="z66">
+            <image bindtap="showShopMap" class="z62" data-item="{{shopInfo}}" mode="widthFix" src="https://img.alicdn.com/imgextra/i3/O1CN01PA2pe41sCqVn9wEjs_!!6000000005731-55-tps-31-30.svg"></image>
+            <image bindtap="onCallPhone" class="z62" data-phone="{{shopInfo.phone||shopInfo.contactMobile}}" mode="widthFix" src="https://img.alicdn.com/imgextra/i2/O1CN01U8YnVL1pDM6aEoHGL_!!6000000005326-55-tps-31-30.svg" wx:if="{{shopInfo.phone||shopInfo.contactMobile}}"></image>
+        </view>
+    </view>
+    <view class="z38 z6s" wx:elif="{{showModal&&!locationAuth.isGPSOpenAndGeoAuth}}">
+        <view class="z6f"> {{!locationAuth.isMiniGeoAuth?'授权':'打开'}}地理位置 </view>
+        <view class="z67">带您发现更多线下门店</view>
+        <view bindtap="handleGEOAuth" class="z6k" style="background: {{themeColor}}"> {{!locationAuth.isMiniGeoAuth?'去授权':'去打开'}} </view>
+    </view>
+</template>

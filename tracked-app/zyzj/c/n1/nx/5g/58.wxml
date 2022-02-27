@@ -1,0 +1,15 @@
+<template name="dinner-tmpl">
+    <view class="zwi">
+        <view class="zw1" wx:for="{{dishList}}">
+            <view class="zwg">
+                <view class="zwm">
+                    <view class="zw0">{{item.dishName}}</view>
+                    <view class="zwl" wx:if="{{item.addDishFee}}">(+{{item.addDishFee/100}}元)</view>
+                    <view class="zwq" wx:if="{{showRequireTag&&item.required==='Y'}}"> 必选 </view>
+                </view>
+                <view class="zwr" wx:if="{{item.dishAddItemListFormat}}"> {{item.dishAddItemListFormat}} </view>
+            </view>
+            <view class="zwx"> x{{(item.weighDishFlag?item.secondSkuQuantity:item.dishQuantity)||0}} </view>
+        </view>
+    </view>
+</template>

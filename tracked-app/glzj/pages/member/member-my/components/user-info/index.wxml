@@ -1,0 +1,13 @@
+<view catchtap="{{memberAuthCopy?'goToPersonalInfo':undefined}}" class="cye">
+    <view bindtap="bindGetUserUnfoProfile" class="cy3" wx:if="{{!memberAuthCopy&&supportGetUserProfile}}"></view>
+    <view class="cy3" wx:if="{{!memberAuthCopy&&!supportGetUserProfile}}">
+        <button bindgetuserinfo="bindGetUserUnfoProfile" class="cy3" openType="getUserInfo" style="background-color: transparent"></button>
+    </view>
+    <view class="cyn">
+        <image class="cyc" mode="" src="{{userImageUrl||'https://img.alicdn.com/imgextra/i3/O1CN01q9WZvj1onhwNjOJvA_!!6000000005270-2-tps-96-96.png'}}"></image>
+    </view>
+    <view class="cyz">
+        <view class="cy5"> {{userInfo.greetings||'Hey，欢迎光临！'}}{{userNickName||''}} </view>
+        <view class="cyw" wx:if="{{userInfo.mobile&&userNickName&&userImageUrl}}"> {{userInfo.mobile}} </view>
+    </view>
+</view>

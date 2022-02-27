@@ -1,0 +1,17 @@
+{
+    "disableScroll": false,
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "订单详情",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "loading": "/c/ev/n",
+        "custom-show-modal": "/c/e9/n",
+        "toast": "/c/z5/n",
+        "order-detail-entry": "./components/orderdetail-entry/index",
+        "zc-order-detail-entry": "./components/zcorderdetail-entry/index",
+        "cashier": "./_/component_modules/cashier/index"
+    }
+}

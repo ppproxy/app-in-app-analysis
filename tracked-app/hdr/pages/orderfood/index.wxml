@@ -1,0 +1,30 @@
+<view class="ee6 {{!isShowTabbar?'ee5':''}}" disableScroll="{{isLoading}}" style="--marketingColor: {{marketingColor}};{{themeColor?'--primary: '+themeColor:''}}">
+    <loading-animation wx:if="{{isLoading}}"></loading-animation>
+    <navigation-bar back="{{false}}" background="#fff" bind:handleFeintSearch="goToSearchPage" bind:handleHomeTap="goToHomePage" bind:handleSearchWarp="goToSearchPage" dishPage="{{dishPage}}" feintSearch="{{true}}" hidden="{{isLoading}}" home="{{!isShowTabbar}}" id="navigationBar" isShowMask="{{isCustomHeader}}" isheaderBackgroundWhite="{{headerBackgroundType==='DEFAULT_COLOR'}}" scrollOpacity="{{true}}"></navigation-bar>
+    <orderfood-dishlist bind:handleFirstImageRender="handleFirstImageRender" bind:handleFirstRender="handleFirstRender" bind:handleRootInstance="handleRootInstance" bind:handleScroll="handleScroll" bind:handleShopHeaderClickMore="handleShopHeaderClickMore" bind:handleShowMemberJoinModel="handleShowMemberGuideJoinModel" couponCount="{{couponCount}}" dishListOrderedMap="{{dishListOrderedMap}}" distanceDesc="{{distanceDesc}}" id="orderfoodDishlist" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}" shopActivityList="{{shopActivityList}}" shopBaseInfo="{{shopBaseInfo}}" shopCouponList="{{shopCouponList}}" showLeftMenuIcon="{{showLeftMenuIcon}}" showMemberGuid="{{showMemberGuid}}" tableInfo="{{tableInfo}}"></orderfood-dishlist>
+    <exitconfirm-theme id="exitconfirmTheme"></exitconfirm-theme>
+    <bottom-tip bind:handleRootInstance="handleRootInstance" openStatus="{{openStatus}}" tipInfo="{{tipInfo}}" wx:if="{{isShowTip}}"></bottom-tip>
+    <orderfood-cart bind:handleRootInstance="handleRootInstance" bind:handleScrollToMustAddDishCate="scrollToMustAddDishCate" bind:handleShowMemberGuideJoinModel="handleShowMemberGuideJoinModel" bind:handleShowMemberJoinModel="handleShowMemberGuideJoinModel" cartDecorationInfo="{{cartDecorationInfo}}" hideCart="{{isShowTip}}" id="orderfoodCart" isDinner="{{isDinner}}" isScan="{{isScan}}" loading="{{cartLoading}}" logType="点餐列表去结算" memberFlag="{{memberFlag}}" needShow="{{needShow}}" orderNo="{{orderNo}}" orderedTips="{{orderedTips}}" rejectMemberFlag="{{rejectMemberFlag}}" showOrderedIconOrderNo="{{showOrderedIconOrderNo}}" showText="{{showText}}"></orderfood-cart>
+    <shop-confirm-modal bind:handleOK="refresh" bind:handleRootInstance="handleRootInstance" id="shopConfirmModal"></shop-confirm-modal>
+    <member-join-order bind:handleCancelJoinMember="handleCancelJoinMember" bind:handleLoadDataFail="handleLoadDataFail" bind:handleMemberJoinOrderFail="handleMemberJoinOrderFail" bind:handleMemberJoinOrderSuccess="handleMemberJoinOrderSuccess" bind:handleRootInstance="handleRootInstance" id="memberJoinOrderShowFooterSlotModal" mealType="{{isDinner?'DINNER':'FAST_FOOD'}}" type="guide"></member-join-order>
+    <cart-bubble bind:handleRootInstance="handleRootInstance" bind:handleUpdateCart="handleUpdateCart" cartId="{{cartBatchNo}}" id="cartBubble"></cart-bubble>
+    <cart-ordered-tip-new message="{{orderPreDishGreetingSubTip}}" title="{{orderPreDishGreetingTip}}" wx:if="{{orderPreDishGreetingTip}}"></cart-ordered-tip-new>
+    <view class="ee3" wx:if="{{isResult}}">
+        <custom-page-result bind:handleOk="handleResultBtn" bind:handleRootInstance="handleRootInstance" buttonLeftText="{{resultButtonLeftText}}" buttonRightText="{{resultButtonRightText}}" buttonText="{{resultButtonText}}" dishPage="{{dishPage}}" icon="{{resultImg}}" isShow="{{dishPage&&!isShowTabbar}}" msgInfo="{{resultMsgInfo}}" scene="{{resultScene}}" showButton="{{true}}" subTitle="{{resultSubTitle}}" title="{{resultTitle}}" visible="{{true}}"></custom-page-result>
+    </view>
+    <orderfood-specs bind:handleRootInstance="handleRootInstance" bind:handleShowMemberJoinModel="handleShowMemberGuideJoinModel" id="orderfoodSpecs" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}"></orderfood-specs>
+    <orderfood-dishdetail bind:handleRootInstance="handleRootInstance" bind:handleShowMemberJoinModel="handleShowMemberGuideJoinModel" dishDot="{{dishDot}}" id="orderfoodDishdetail" logType="菜品列表" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}" showMemberGuid="{{showMemberGuid}}"></orderfood-dishdetail>
+    <cart-parabola id="cartParabola" isDinner="{{isDinner}}"></cart-parabola>
+    <orderfood-order-repeat-modal id="orderfoodOrderRepeatModal"></orderfood-order-repeat-modal>
+    <choose-default-dish-modal bind:handleRootInstance="handleRootInstance" id="chooseDefaultDishModal"></choose-default-dish-modal>
+    <orderfood-shopinfo-picker bind:handleCancel="handleShopInfoCancel" bind:handleOneKeyGetCoupon="handleOneKeyGetCoupon" bind:handleRootInstance="handleRootInstance" shopActivityDetail="{{shopActivityDetail}}" shopBaseInfo="{{shopBaseInfo}}" shopCouponCanApply="{{shopCouponCanApply}}" shopCouponList="{{shopCouponList}}" shopNoticeInfo="{{shopNoticeInfo}}" wx:if="{{shopInfoPickerVisible}}"></orderfood-shopinfo-picker>
+    <orderfood-shopinfo-picker-rules bind:handleRootInstance="handleRootInstance" wx:if="{{shopInfoPickerRulesVisible}}"></orderfood-shopinfo-picker-rules>
+    <auth-user-modal id="authUserModal"></auth-user-modal>
+    <loading id="loading"></loading>
+    <toast id="toast"></toast>
+    <custom-show-modal id="customShowModal"></custom-show-modal>
+    <add-price-buy-confirm-modal id="addPriceBuyConfirmModal"></add-price-buy-confirm-modal>
+    <orderfood-coupon-popup bind:handleGetCouponSuccess="handlePopupGetCouponSuccess" bind:handleRootInstance="handleRootInstance" id="orderfoodCouponPopup"></orderfood-coupon-popup>
+    <special-effect-component></special-effect-component>
+</view>
+<preview-mode-tag></preview-mode-tag>

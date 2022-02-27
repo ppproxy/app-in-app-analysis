@@ -1,0 +1,9 @@
+.ej7 {
+    -webkit-box-orient: vertical;
+    color: #999;
+    display: -webkit-box;
+    font-size: 22rpx;
+    line-height: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

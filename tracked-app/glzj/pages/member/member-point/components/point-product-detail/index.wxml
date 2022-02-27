@@ -1,0 +1,103 @@
+<view class="co3" onAppear="onDetailAppear" wx:if="{{showView}}">
+    <view bindtap="onClickClose" catch:touchmove="onPreventTouch" class="co6">
+        <view class="cos"></view>
+    </view>
+    <view class="cad {{bottomTabEnable?'cof':'co7'}}" wx:if="{{usePointGoodsComponent}}">
+        <view catch:touchmove="onPreventTouch" class="cok">
+            <text class="cop">兑换详情</text>
+            <view bindtap="onClickClose" class="coy">
+                <image class="coo" src="https://img.alicdn.com/tfs/TB1j9u7DQP2gK0jSZPxXXacQpXa-48-48.png"></image>
+            </view>
+        </view>
+        <view class="coa">
+            <view class="coh {{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangedNumber&&itemDetail.customerExchangedDTO.exchangedNumber>0?'cab':''}}">
+                <view class="cou">
+                    <point-goods goodsList="{{[couponFace]}}" hideButton="{{true}}"></point-goods>
+                </view>
+                <view class="caz">
+                    <view class="ca5">兑换须知</view>
+                    <view class="caw">{{itemDetail.exchangeNotice}}</view>
+                    <view class="ca3">使用规则</view>
+                    <view class="cai" wx:if="{{validDateText}}">
+                        <view class="ca6">券有效期</view>
+                        <view class="ca2">{{validDateText}}</view>
+                    </view>
+                    <view class="cai" wx:if="{{availableScopeText}}">
+                        <view class="ca6">适用场景</view>
+                        <view class="ca2">{{availableScopeText}}</view>
+                    </view>
+                    <view class="cai" wx:if="{{availableTimeText}}">
+                        <view class="ca6">可用时段</view>
+                        <view class="ca2">{{availableTimeText}}</view>
+                    </view>
+                    <view class="cai" wx:if="{{itemDetail.crmVoucherInfo&&itemDetail.crmVoucherInfo.minCharge}}">
+                        <view class="ca6"> 最低消费 </view>
+                        <view class="ca2">{{minConsumeText}}</view>
+                    </view>
+                    <view class="cai" wx:if="{{itemDetail.instruction}}">
+                        <view class="ca6">使用说明</view>
+                        <view class="ca2">{{itemDetail.instruction}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view catch:touchmove="onPreventTouch" class="cas">
+            <view class="caf" wx:if="{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangedNumber&&itemDetail.customerExchangedDTO.exchangedNumber>0}}">
+                <text class="ca7">已兑换</text>
+                <text class="cak">{{itemDetail.customerExchangedDTO.exchangedNumber}}</text>
+                <text class="cap">张券</text>
+                <view class="cay"></view>
+                <text bindtap="gotoTicketList" class="cao">查看兑换凭证</text>
+                <image class="caa" src="https://img.alicdn.com/tfs/TB1JcGYrhv1gK0jSZFFXXb0sXXa-40-40.png"></image>
+            </view>
+            <button bindtap="onExchangeBtnClick" class="co9 {{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?'cah':'ca9'}}" hoverClass="{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?'cau':''}}" style="background:{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?themeColor:''}}">
+                <text class="{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?'cav':'cat'}}">{{exchangeableText}}</text>
+            </button>
+        </view>
+    </view>
+    <view class="{{bottomTabEnable?'cof':'co7'}}" wx:else>
+        <view class="cok">
+            <text class="cop">兑换详情</text>
+            <view bindtap="onClickClose" class="coy">
+                <image class="coo" src="https://img.alicdn.com/tfs/TB1j9u7DQP2gK0jSZPxXXacQpXa-48-48.png"></image>
+            </view>
+        </view>
+        <view class="coa">
+            <view class="coh">
+                <view class="cou">
+                    <benefit-item scene="pointPop" sourceData="{{couponFace}}" type="{{couponFace.bizType}}"></benefit-item>
+                </view>
+                <view class="caz">
+                    <view class="ca5">兑换须知</view>
+                    <view class="caw">{{itemDetail.exchangeNotice}}</view>
+                    <view class="ca3">使用规则</view>
+                    <view class="ca6" wx:if="{{validDateText}}">券有效期</view>
+                    <view class="ca2" wx:if="{{validDateText}}">{{validDateText}}</view>
+                    <view class="ca6" wx:if="{{availableScopeText}}">适用场景</view>
+                    <view class="ca2" wx:if="{{availableScopeText}}">{{availableScopeText}}</view>
+                    <view class="ca6" wx:if="{{availableTimeText}}">可用时段</view>
+                    <view class="ca2" wx:if="{{availableTimeText}}">{{availableTimeText}}</view>
+                    <view class="ca6" wx:if="{{itemDetail.crmVoucherInfo&&itemDetail.crmVoucherInfo.minCharge}}"> 最低消费 </view>
+                    <view class="ca2" wx:if="{{itemDetail.crmVoucherInfo&&itemDetail.crmVoucherInfo.minCharge}}">{{minConsumeText}} </view>
+                    <view class="ca6" wx:if="{{itemDetail.instruction}}">使用说明</view>
+                    <view class="ca2" wx:if="{{itemDetail.instruction}}">{{itemDetail.instruction}}</view>
+                </view>
+            </view>
+        </view>
+        <view catch:touchmove="onPreventTouch" class="cas">
+            <view class="caf" wx:if="{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangedNumber&&itemDetail.customerExchangedDTO.exchangedNumber>0}}">
+                <text class="ca7">已兑换</text>
+                <text class="cak">{{itemDetail.customerExchangedDTO.exchangedNumber}}</text>
+                <text class="cap">张券</text>
+                <view class="cay"></view>
+                <text bindtap="gotoTicketList" class="cao">查看兑换凭证</text>
+                <image class="caa" src="https://img.alicdn.com/tfs/TB1JcGYrhv1gK0jSZFFXXb0sXXa-40-40.png"></image>
+            </view>
+            <button bindtap="onExchangeBtnClick" class="co9 {{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?'cah':'ca9'}}" hoverClass="{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?'cau':''}}" style="background:{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?themeColor:''}}">
+                <text class="{{itemDetail.customerExchangedDTO&&itemDetail.customerExchangedDTO.exchangeable?'cav':'cat'}}">{{exchangeableText}}</text>
+            </button>
+        </view>
+    </view>
+</view>
+<loading id="loading"></loading>
+<toast id="toast"></toast>

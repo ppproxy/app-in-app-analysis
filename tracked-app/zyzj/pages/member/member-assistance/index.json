@@ -1,0 +1,17 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "assistance-card": "./components/assistance-card/index",
+        "assistance-modal": "./components/assistance-modal/index",
+        "assistance-error-modal": "./components/assistance-error-modal/index",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "auth-phone-modal": "/c/e4/en/n",
+        "auth-user-modal": "/c/e4/ec/n",
+        "navigation-bar": "/c/np/n",
+        "custom-show-modal": "/c/e9/n",
+        "member-activity-subscribe": "./_/pages/member/components/activity-subscribe/index"
+    },
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true
+}

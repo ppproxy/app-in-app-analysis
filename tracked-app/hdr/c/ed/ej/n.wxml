@@ -1,0 +1,63 @@
+<template name="memberBalanceAndScore">
+    <view class="n65">
+        <view class="n6w">
+            <view class="n66">我的余额</view>
+            <view catchtap="toRecharge" class="n6p" wx:if="{{showRecharge}}">
+                <view style="color:{{themeColor}}">去充值</view>
+                <image alt="" class="n6h" src="{{IconArrow}}"></image>
+            </view>
+            <view class="n6f" style="font-size : {{balance.length>8?'48rpx':'64rpx'}}">{{balance}}</view>
+            <view class="n67">{{rechargeRules||'店内消费使用'}}</view>
+        </view>
+        <view catchtap="gotoMemberIndex" class="n63">
+            <view class="n62">我的积分</view>
+            <view class="n6s">{{score}}</view>
+            <view class="n6k">{{pointRules}}</view>
+        </view>
+    </view>
+</template>
+<template name="member">
+    <view catchtap="gotoMemberIndex" class="n3i">
+        <view class="n31">
+            <view class="n3g">
+                <button catchtap="bindGetUserInfo" class="n3m" wx:if="{{needAuth}}"></button>
+                <button class="n3l" style="background-image: url({{headIconUrl}})"></button>
+                <view class="n3q">
+                    <view class="n3r">
+                        <view class="n3x">{{name}}</view>
+                        <view class="n38" wx:if="{{currentLevelNo&&levelSize>1}}"> Lv{{currentLevelNo}} </view>
+                    </view>
+                    <view class="n3j" wx:if="{{levelSize>1&&needValue}}">
+                        <view class="n6n" wx:if="{{nextLevelConsumeAmount}}">
+                            <view class="n6c">再消费<text style="font-weight:900;color:#191919">{{nextLevelConsumeAmount}}</text>元可升级到下一级</view>
+                        </view>
+                    </view>
+                    <view class="n3j" wx:if="{{levelSize>1&&!needValue}}"> 您已升级为最高会员 </view>
+                    <view class="n3j" wx:if="{{levelSize===1}}"> 欢迎加入本店会员～ </view>
+                </view>
+            </view>
+            <view catchtap="handleQrcode" class="n69">
+                <view class="n6o n6u">
+                    <image src="https://img.alicdn.com/imgextra/i1/O1CN01hzvKrv1WW9f3HteLd_!!6000000002795-2-tps-48-48.png" style="width: 100%; height: 100%"></image>
+                </view>
+                <view class="n6a">会员码</view>
+            </view>
+        </view>
+    </view>
+</template>
+<block wx:if="{{showTitle}}">
+    <component-title textAlign="left" title="{{titleName}}" type="text" wx:if="{{titleType==='text'}}"></component-title>
+    <component-title textAlign="center" titleUrl="{{titleImage}}" type="image" wx:if="{{titleType==='image'}}"></component-title>
+</block>
+<view bindtap="gotoMemberIndex" class="nwk {{summaryList.length<=1?'n3d':''}}" wx:if="{{customerType===0}}">
+    <benefit-free memberCardTemplate="{{memberCardTemplate}}" summaryList="{{summaryList}}" themeColor="{{themeColor}}"></benefit-free>
+    <button class="n3t" style="background: {{themeColor}}"> 免费入会 </button>
+</view>
+<block wx:if="{{customerType===1}}">
+    <template is="member" data="{{needAuth:needAuth,headIconUrl:headIconUrl,name:name,currentLevelName:currentLevelName,levelSize:levelSize,currentLevelNo:currentLevelNo,needValue:needValue,growthValue:growthValue,themeColor:themeColor,isMemberOpen:isMemberOpen,schedule:schedule,newData:newData,nextLevelConsumeAmount:nextLevelConsumeAmount}}"></template>
+    <template is="memberBalanceAndScore" data="{{IconArrow:IconArrow,themeColor:themeColor,rechargeRules:rechargeRules,pointRules:pointRules,showRecharge:showRecharge,score:score,balance:balance}}"></template>
+    <member-code id="memberCode"></member-code>
+</block>
+<toast id="toast"></toast>
+<loading id="loading"></loading>
+<user-with-agreement bind:handleRootInstance="handleRootInstance" id="userWithAgreement"></user-with-agreement>

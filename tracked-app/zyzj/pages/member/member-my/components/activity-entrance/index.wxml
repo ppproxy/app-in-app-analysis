@@ -1,0 +1,39 @@
+<view class="cp7" wx:if="{{activities.length}}">
+    <view class="cpk {{'component-activity-entrance'}}">
+        <view bindtap="handleTap" data-activityId="{{item.activityId}}" data-taskId="{{item.taskId}}" data-track-activityId="{{item.activityId}}" data-track-logkey="{{item.logkey}}" data-track-spmc="{{item.spmc}}" data-track-spmd="{{item.spmd}}" data-type="{{item.type}}" onAppear="$logAppear" wx:for="{{activities}}" wx:key="*this">
+            <view class="cpp" wx:if="{{activities.length===1}}">
+                <view class="cpa">
+                    <image class="cph" mode="aspectFit" src="{{imgMap[item.type]}}"></image>
+                    <view class="cpd" wx:if="{{item.hasOpenedTask}}">进行中</view>
+                </view>
+                <view class="cp9">
+                    <view class="cpu">{{item.title}}</view>
+                    <view class="cpv">{{item.tips}}</view>
+                </view>
+                <view class="cpt">{{item.type==='COUPONBAG'?'立即去抢':'立即查看'}}</view>
+            </view>
+            <view class="cpy" wx:if="{{activities.length===2}}">
+                <view class="cp9">
+                    <view class="cpu">{{item.title}}</view>
+                    <view class="cpv">{{item.tips}}</view>
+                </view>
+                <view class="cpa">
+                    <image class="cph" mode="aspectFit" src="{{imgMap[item.type]}}"></image>
+                    <view class="cpd" wx:if="{{item.hasOpenedTask}}">进行中</view>
+                </view>
+            </view>
+            <view class="cpo" wx:if="{{activities.length===3}}">
+                <view class="cpa">
+                    <image class="cph" mode="aspectFit" src="{{imgMap[item.type]}}"></image>
+                    <view class="cpd" wx:if="{{item.hasOpenedTask}}">进行中</view>
+                </view>
+                <view class="cp9">
+                    <view class="cpu">{{item.title}}</view>
+                    <view class="cpv">{{item.tips}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<toast id="toast"></toast>
+<auth-phone-modal bind:handleRootInstance="handleRootInstance" id="authPhoneModal"></auth-phone-modal>

@@ -1,0 +1,19 @@
+.c1b {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 28rpx;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.c1b,.ebg {
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.ebg {
+    background-color: var(--primary);
+    border-radius: 40rpx;
+    color: #fff;
+    width: 224rpx;
+}

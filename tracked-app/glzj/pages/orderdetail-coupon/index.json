@@ -1,0 +1,16 @@
+{
+    "disableScroll": false,
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "订单详情",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "loading": "/c/ev/n",
+        "navigation-bar": "/c/np/n",
+        "coupon-item": "./_/component_modules/member-common/coupon-item/index",
+        "shop-info-item": "/c/cu/ci/c1/n",
+        "toast": "/c/z5/n"
+    }
+}

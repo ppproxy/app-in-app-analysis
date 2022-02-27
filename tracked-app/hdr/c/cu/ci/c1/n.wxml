@@ -1,0 +1,4 @@
+<import src="./5g/wf.wxml"></import>
+<import src="./5g/w7.wxml"></import>
+<template is="style1" data="{{shopInfo:shopInfo,shopCount:shopCount,shopInfoTitle:shopInfoTitle,locationAuth:locationAuth,showModal:showModal,themeColor:themeColor,boderColor:boderColor,IconSwitch:IconSwitch,IconLightning:IconLightning,buttonText:buttonText}}" wx:if="{{type==='service-card'}}"></template>
+<template is="style2" data="{{shopInfo:shopInfo,shopCount:shopCount,shopInfoTitle:shopInfoTitle,locationAuth:locationAuth,showModal:showModal,themeColor:themeColor,boderColor:boderColor,IconSwitch:IconSwitch,IconLightning:IconLightning,IconJianTou:IconJianTou}}" wx:if="{{type==='shop-info'}}"></template>

@@ -1,0 +1,15 @@
+{
+    "disableScroll": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "custom-page-result": "/c/ea/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "navigation-bar": "/c/np/n",
+        "member-join-pay": "./_/component_modules/member-common/member-join-pay/index",
+        "paying-topup": "./components/paying-topup/index",
+        "coupon-select": "./components/coupon-select/index",
+        "custom-keyboard": "./components/custom-keyboard/index",
+        "custom-input": "./components/custom-input/index"
+    }
+}

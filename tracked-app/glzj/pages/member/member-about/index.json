@@ -1,0 +1,8 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "navigation-bar": "/c/np/n",
+        "sign-agreement": "./_/pages/member/components/sign-agreement-modal/index"
+    },
+    "navigationStyle": "custom"
+}

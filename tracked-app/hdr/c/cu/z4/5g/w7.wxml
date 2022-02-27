@@ -1,0 +1,57 @@
+<template name="count3">
+    <view class="zfo {{isHeadCarouseNext?'zf2':''}}">
+        <view bindtap="onTapGoTo" class="zfa" data-indx="0">
+            <view class="zfz" wx:if="{{services[0].type&&services[0].type==='image'}}">
+                <cook-image class="zff" mode="aspectFit" src="{{services[0].titleImg}}"></cook-image>
+            </view>
+            <view class="zfw" wx:else>{{services[0].title}}</view>
+            <cook-image class="zfh" mode="aspectFit" src="{{services[0].imageUrl}}"></cook-image>
+            <view class="zfk" wx:if="{{services[0].promoType}}"> {{services[0].promoType}}</view>
+            <view class="zfp" wx:if="{{!services[0].promoType&&services[0].subTitle}}"> {{services[0].subTitle}}</view>
+        </view>
+        <view class="zf9">
+            <view bindtap="onTapGoTo" class="zfu" data-indx="{{index}}" wx:if="{{index>0}}" wx:for="{{services}}" wx:key="index">
+                <view class="zfz" wx:if="{{item.type&&item.type==='image'}}">
+                    <cook-image class="zff" mode="aspectFit" src="{{item.titleImg}}"></cook-image>
+                </view>
+                <view class="zfw" wx:else>{{item.title}}</view>
+                <cook-image class="zfv" mode="aspectFit" src="{{item.imageUrl}}"></cook-image>
+                <view class="zft" wx:if="{{item.promoType}}">{{item.promoType}} </view>
+                <view class="zfd" wx:if="{{!item.promoType&&item.subTitle}}"> {{item.subTitle}} </view>
+                <view class="zfd" wx:if="{{!item.promoType&&!item.subTitle&&isStation}}"></view>
+            </view>
+        </view>
+        <view class="zfb" wx:if="{{isHeadCarouseNext}}"></view>
+    </view>
+</template>
+<template name="count2">
+    <view class="zsj {{isHeadCarouseNext?'zf2':''}}">
+        <view bindtap="onTapGoTo" class="zfs" data-indx="{{index}}" wx:for="{{services}}" wx:key="index">
+            <view class="zfz" wx:if="{{item.type&&item.type==='image'}}">
+                <cook-image class="zff" mode="aspectFit" src="{{item.titleImg}}"></cook-image>
+            </view>
+            <view class="zfw" wx:else>{{item.title}}</view>
+            <cook-image class="zf7" mode="aspectFit" src="{{item.imageUrl}}"></cook-image>
+            <view class="zfk" wx:if="{{item.promoType}}">{{item.promoType}}</view>
+            <view class="zfp" wx:if="{{!item.promoType&&item.subTitle}}">{{item.subTitle}}</view>
+        </view>
+        <view class="zfy" wx:if="{{isHeadCarouseNext}}"></view>
+    </view>
+</template>
+<template name="count1">
+    <view class="zsj">
+        <view bindtap="onTapGoTo" class="zf4" data-indx="{{0}}">
+            <view class="zfe">
+                <cook-image class="zfn" mode="widthFix" src="{{services[0].imageUrl}}"></cook-image>
+            </view>
+            <view class="zfc">
+                <view class="zfz" wx:if="{{services[0].type&&services[0].type==='image'}}">
+                    <cook-image class="zf5" mode="heightFix" src="{{services[0].titleImg}}"></cook-image>
+                </view>
+                <view class="zfw" wx:else>{{services[0].title}}</view>
+                <view class="zf3" wx:if="{{services[0].promoType}}"> {{services[0].promoType}} </view>
+                <view class="zf6" wx:if="{{!services[0].promoType&&services[0].subTitle}}"> {{services[0].subTitle}} </view>
+            </view>
+        </view>
+    </view>
+</template>

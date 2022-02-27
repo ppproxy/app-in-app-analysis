@@ -1,0 +1,23 @@
+<import src="../ws/n.wxml"></import>
+<view class="nq3">
+    <view class="nq5" wx:if="{{carouselList.length>0}}">
+        <view class="nlj">
+            <swiper autoplay="true" bindchange="handleSwiperChangeEvent" circular="true" class="nq4" duration="500" interval="3000" style="width: {{swiperWrapStyle.width}}rpx;height: {{swiperWrapStyle.height}}rpx;border-radius: {{swiperWrapStyle.borderRadius}}rpx;margin-bottom: {{swiperWrapStyle.marginBottom}}rpx;margin-top: {{swiperWrapStyle.marginTop}}rpx;" wx:if="{{carouselList&&carouselList.length>1}}">
+                <swiper-item wx:for="{{carouselList}}" wx:for-item="carousel" wx:key="index">
+                    <view bindtap="handleCarsuleClickEvent" class="nqe" data-action-type="{{carousel.actionType}}" data-index="{{index}}">
+                        <cook-image class="nqe" mode="aspectFill" src="{{carousel.imageUrl}}"></cook-image>
+                    </view>
+                </swiper-item>
+            </swiper>
+            <view class="nq4" style="width: {{swiperWrapStyle.width}}rpx;height: {{swiperWrapStyle.height}}rpx;border-radius: {{swiperWrapStyle.borderRadius}}rpx;margin-bottom: {{swiperWrapStyle.marginBottom}}rpx;margin-top: {{swiperWrapStyle.marginTop}}rpx;" wx:else>
+                <view bindtap="handleCarsuleClickEvent" class="nqe" data-action-type="{{carouselList[0].actionType}}" data-index="{{0}}">
+                    <cook-image class="nqe" mode="aspectFill" src="{{carouselList[0].imageUrl}}"></cook-image>
+                </view>
+            </view>
+            <view class="nqn" style="bottom: {{swiperDotStyle.bottom}}rpx" wx:if="{{carouselList.length>1}}">
+                <view class="{{index===cur?'nqc':'nqz'}}" wx:for="{{carouselList}}" wx:key="index"></view>
+            </view>
+        </view>
+    </view>
+    <view class="nqw" style="background-color: {{themeColor}}" wx:else></view>
+</view>

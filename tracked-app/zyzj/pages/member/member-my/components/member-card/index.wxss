@@ -1,0 +1,138 @@
+.c7y {
+    align-items: center;
+    border-radius: 16rpx;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-bottom: 24rpx;
+    overflow: hidden;
+}
+
+.c7x,.c7y {
+    background: #fff;
+    width: 686rpx;
+}
+
+.c7x {
+    height: 144rpx;
+    position: relative;
+}
+
+.c78 {
+    background: #e5e5e5;
+    height: 1rpx;
+    width: 624rpx;
+}
+
+.c7j {
+    height: 168rpx;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.c7j,.ck4 {
+    display: flex;
+}
+
+.ck4 {
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 32rpx;
+    margin-top: 32rpx;
+}
+
+.cke {
+    font-size: 32rpx;
+    line-height: 45rpx;
+}
+
+.ckc,.cke {
+    font-weight: 900;
+}
+
+.ckc {
+    background: #eee;
+    border-radius: 4rpx;
+    font-size: 22rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-left: 10rpx;
+    text-align: center;
+    width: 54rpx;
+}
+
+.ckz {
+    color: #666;
+    font-weight: 300;
+    line-height: 32rpx;
+    margin-left: 32rpx;
+    margin-top: 8rpx;
+}
+
+.ck5,.ckz {
+    font-size: 24rpx;
+}
+
+.ck5 {
+    background: #fff;
+    border: 1rpx solid #979797;
+    border-radius: 32rpx;
+    color: #191919;
+    height: 64rpx;
+    line-height: 64rpx;
+    position: absolute;
+    right: 32rpx;
+    text-align: center;
+    top: 44rpx;
+    width: 144rpx;
+}
+
+.ckw {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    height: auto;
+    justify-content: center;
+    margin-top: 20rpx;
+    position: relative;
+    width: 206rpx;
+}
+
+.cy4 {
+    background: #ff4b33;
+    border-radius: 12rpx 14rpx 14rpx 0;
+    color: #fff;
+    font-size: 16rpx;
+    height: 28rpx!important;
+    line-height: 28rpx;
+    position: absolute;
+    right: -54rpx;
+    text-align: center;
+    top: -18rpx;
+    width: 64rpx!important;
+}
+
+.ck3 {
+    color: #191919;
+    font-size: 48rpx;
+    font-weight: 900;
+    line-height: 52rpx;
+    position: relative;
+}
+
+.ck6 {
+    color: #666;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    margin-top: 20rpx;
+}
+
+.ck2 {
+    height: 52rpx;
+    width: 52rpx;
+}
+
+.cks {
+    height: 100%;
+    width: 100%;
+}

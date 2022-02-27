@@ -1,0 +1,6 @@
+.nqf {
+    box-sizing: border-box;
+    margin-bottom: 24rpx;
+    padding: 0 24rpx;
+    width: 100vw;
+}

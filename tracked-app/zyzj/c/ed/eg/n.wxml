@@ -1,0 +1,58 @@
+<view class="nct {{'component-assistance-card-wrapper'}}" data-track-activity-id="{{activeInfo.activityId}}" data-track-logkey=".home.zhulilingquanbaoguang" onAppear="handleAppear">
+    <block wx:if="{{activeInfo.activityId&&showTitle}}">
+        <component-title textAlign="left" title="开团领券" type="text" wx:if="(taskInfo.initTaskState || taskInfo.initTaskStyle)"></component-title>
+        <component-title textAlign="left" title="开团领券进度" type="text" wx:else></component-title>
+    </block>
+    <view class="nnv ncd" wx:if="{{activeInfo.activityId}}">
+        <member-assistance-coupon couponInfo="{{voucherTemplate}}" opacity="1" themecolor="#fef6f2"></member-assistance-coupon>
+        <view class="nce" wx:if="{{taskInfo.taskId&&!currentMember.read}}">
+            <view bind:tap="handleGoToAssistanceDetailsPage" class="ncn">
+                <view class="ncz {{member.customerRole==='STARTER'?'nc5':''}}" wx:for="{{memberList}}" wx:for-item="member" wx:key="index">
+                    <image class="ncc" src="{{member.customerAvatar}}"></image>
+                    <view class="ncw" wx:if="{{member.customerRole==='STARTER'}}"></view>
+                </view>
+            </view>
+            <view class="nc3">
+                <view class="nc6" wx:if="{{taskInfo.state==='PROCESSING'}}"> 还差 <text class="ncf">{{taskInfo.remainingNumber}}人</text> 成功 </view>
+                <view class="nc6 nc2" wx:if="{{taskInfo.isErrorFinishState}}"> 助力失败 </view>
+                <view class="nc6 ncs" wx:if="{{taskInfo.state==='COMPLETED'}}"> 助力成功 </view>
+                <view class="nc7" wx:if="{{!taskInfo.isErrorFinishState}}">
+                    <text>距结束 {{dateInfo.content}}</text>
+                </view>
+                <view class="nc7" wx:if="{{taskInfo.isErrorFinishState}}">活动已结束</view>
+            </view>
+        </view>
+        <view class="nnm">
+            <button bind:tap="handleOpenMyCouponListPage" class="ey0" wx:if="{{!currentMember.openNewTask}}">查看我领到的券</button>
+            <block wx:else>
+                <button bind:tap="handleCreateAssistanceInit" class="ey0 nn0 {{'component-invite-some-friends'}}" data-track-activity-id="{{activeInfo.activityId}}" data-track-logkey=".home.yqhymfhwyhq" onAppear="handleAppear" wx:if="{{taskInfo.initTaskStyle}}">
+                    <text>邀请{{activeInfo.target}}位好友，免费得优惠券</text>
+                </button>
+                <view class="nng" wx:if="{{taskInfo.state==='COMPLETED'&&!currentMember.read}}">
+                    <button bind:tap="handleOpenMyCouponListPage" class="ey0">查看我领到的券</button>
+                    <button bind:tap="handleCreateAssistance" class="ey0 nn0 {{'component-get-coupon-again'}}" data-track-activity-id="{{activeInfo.activityId}}" data-track-logkey=".home.jxktqq" onAppear="handleAppear">
+                        <text>继续开团抢券</text>
+                    </button>
+                </view>
+                <button bind:tap="handleCreateAssistanceAgain" class="ey0 nn0 {{'component-has-coupon'}}" data-track-activity-id="{{activeInfo.activityId}}" data-track-logkey=".home.yhdyhqjxktqq" onAppear="handleAppear" wx:if="{{taskInfo.initTaskState}}">
+                    <text>已获得优惠券，继续开团抢券</text>
+                </button>
+                <button bind:tap="handleCreateAssistance" class="ey0 {{'component-get-coupon-again'}}" data-track-activity-id="{{activeInfo.activityId}}" data-track-logkey=".home.jxktqq" onAppear="handleAppear" wx:if="{{taskInfo.isErrorFinishState&&!currentMember.read}}"> 继续开团抢券 </button>
+            </block>
+        </view>
+        <view class="nnq" wx:if="{{taskInfo.initTaskState||taskInfo.initTaskStyle}}">
+            <view class="nnr" wx:if="{{activeInfo.couponTotalSend>50}}"> 已抢{{activeInfo.couponTotalSend}}张 </view>
+            <view class="nnr" wx:if="{{!rangeInfo.content}}">火热进行中</view>
+            <view class="ncb nca">
+                <view class="nch">
+                    <view class="ncu"></view>
+                    <view class="ncv" id="process-bar" style="width: {{rangeInfo.width}};"> {{rangeInfo.content}} </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<toast id="toast"></toast>
+<loading id="loading"></loading>
+<auth-phone-modal id="authPhoneModal"></auth-phone-modal>
+<auth-user-modal id="authUserModal"></auth-user-modal>

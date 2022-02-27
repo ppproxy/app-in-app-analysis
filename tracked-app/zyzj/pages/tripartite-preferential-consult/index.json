@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "选择三方优惠",
+    "disableScroll": false,
+    "usingComponents": {
+        "coupon-item": "./_/component_modules/privilege-consult-coupon-item/index",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n"
+    }
+}

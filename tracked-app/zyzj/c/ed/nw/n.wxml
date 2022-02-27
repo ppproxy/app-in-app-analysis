@@ -1,0 +1,32 @@
+<view class="nf3" wx:if="{{componentStatus===1}}">
+    <button bindtap="showNoAgreeToast" class="nf6" style="{{btnStyle}}" wx:if="{{!agreeChecked}}">
+        <text style="{{btnTextStyle}}">{{title}}</text>
+    </button>
+    <view bindtap="joinMember" class="nf6" style="{{btnStyle}}" wx:if="{{agreeChecked&&joinMemberScene==='mobile'}}">
+        <text style="{{btnTextStyle}}">{{title}}</text>
+    </view>
+    <block wx:if="{{agreeChecked&&joinMemberScene==='auth'}}">
+        <button bindgetphonenumber="joinMemberByAuth" class="nf6" openType="getPhoneNumber" style="{{btnStyle}}" wx:if="{{miniType==='wx'}}">
+            <text style="{{btnTextStyle}}">{{title}}</text>
+        </button>
+        <button bindtap="joinMemberByAuth" class="nf6" style="{{btnStyle}}" wx:if="{{miniType==='my'}}">
+            <text style="{{btnTextStyle}}">{{title}}</text>
+        </button>
+    </block>
+    <view bindtap="bindPhoneAuthPage" class="nf6" style="{{btnStyle}}" wx:if="{{agreeChecked&&joinMemberScene==='sms'}}">
+        <text style="{{btnTextStyle}}">{{title}}</text>
+    </view>
+</view>
+<view class="nf3" wx:elif="{{componentStatus===2}}">
+    <button bindtap="handleMemberJoinSuccess" class="nf6" style="{{btnStyle}}">
+        <text style="{{btnTextStyle}}">{{title}}</text>
+    </button>
+</view>
+<view class="nf3" wx:else>
+    <button bindtap="_init" class="nf6">
+        <text style="{{btnTextStyle}}{{errStyle}}">{{errorTitle}}</text>
+    </button>
+</view>
+<pay-phone-modal bind:handleBindSmsInput="bindSmsInput" bind:handleJoinMemberBySms="joinMemberBySms" bind:handleSendVerifyCode="sendVerifyCode" customerInfo="{{customerInfo}}" id="payPhoneModal" joinMemberScene="{{joinMemberScene}}" miniType="{{miniType}}" sms="{{sms}}"></pay-phone-modal>
+<toast id="toast"></toast>
+<loading id="loading"></loading>

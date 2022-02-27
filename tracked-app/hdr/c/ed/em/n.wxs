@@ -1,0 +1,12 @@
+var CouponName = ({
+    GIFT: '礼品券',
+    DISCOUNT: '折扣券',
+    CASH: '代金券',
+});
+
+function getCouponName(type) {
+    return (CouponName[((nt_0 = (type), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))])
+};
+module.exports = ({
+    getCouponName: getCouponName,
+});

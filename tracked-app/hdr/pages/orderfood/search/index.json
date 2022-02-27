@@ -1,0 +1,23 @@
+{
+    "navigationStyle": "custom",
+    "allowsBounceVertical": "NO",
+    "disableScroll": true,
+    "usingComponents": {
+        "cart-parabola": "../components/cart-parabola/index",
+        "bottom-tip": "../components/bottom-tip/index",
+        "navigation-bar": "/c/np/n",
+        "orderfood-cart": "/c/nb/n",
+        "orderfood-specs": "/c/ca/n",
+        "orderfood-dishdetail": "/c/cz/n",
+        "dish-item": "/c/c6/n4/c2/n",
+        "custom-show-modal": "/c/e9/n",
+        "auth-user-modal": "/c/e4/ec/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "orderfood-order-repeat-modal": "/c/n1/cc/n",
+        "cart-bubble": "/c/n1/ng/n",
+        "add-price-buy-confirm-modal": "../components/add-price-buy-confirm-modal/index",
+        "member-join-order": "/c/ed/nn/n"
+    },
+    "__warning__": "invalid page.json [\"allowsBounceVertical\"]"
+}

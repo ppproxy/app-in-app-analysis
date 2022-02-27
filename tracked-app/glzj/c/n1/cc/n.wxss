@@ -1,0 +1,89 @@
+.nua {
+    align-items: center;
+    background: var(--mask-bg-color);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: var(--shop-close-modal-z-index);
+}
+
+.nuh {
+    background-color: var(--white);
+    border-radius: 24rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 48rpx;
+    text-align: center;
+    width: 600rpx;
+}
+
+.nu9 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.nuu {
+    color: var(--text-main);
+    font-size: 36rpx;
+    font-weight: var(--font-weight-bolder);
+    height: 62rpx;
+    line-height: 54rpx;
+}
+
+.nuu,.nuv {
+    width: 100%;
+}
+
+.nuv {
+    color: #ff8000;
+    font-size: 28rpx;
+    min-height: 40rpx;
+    text-align: center;
+}
+
+.nut {
+    margin: 24rpx 0 10rpx;
+    max-height: 600rpx;
+    min-height: 174rpx;
+}
+
+.nud,.nut {
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+}
+
+.nud {
+    background-color: var(--primary);
+    border-radius: 40rpx;
+    color: var(--white);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-normal);
+    height: 80rpx;
+    line-height: 80rpx;
+    position: relative;
+    text-align: center;
+}
+
+.nub {
+    align-items: center;
+    color: #ff8000;
+    display: flex;
+    font-size: 28rpx;
+    height: 40rpx;
+    margin-bottom: 20rpx;
+    width: 100%;
+}
+
+.nui {
+    background: #ff8000;
+    border-radius: 8rpx;
+    height: 12rpx;
+    margin-right: 20rpx;
+    width: 12rpx;
+}

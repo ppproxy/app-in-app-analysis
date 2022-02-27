@@ -1,0 +1,39 @@
+<import src="./5i.wxml"></import>
+<view class="net" wx:if="{{showPopup}}">
+    <view catchtap="close" class="ned">
+        <image class="eoz" src="https://img.alicdn.com/tfs/TB1iAuIJbj1gK0jSZFuXXcrHpXa-88-88.png"></image>
+    </view>
+    <view class="neb">
+        <view class="nei">
+            <text class="ne1">{{title}}</text>
+        </view>
+        <view class="neg">
+            <text class="nem">权益将发放至手机号对应的以下账户中</text>
+        </view>
+        <view class="ne0">
+            <view class="nel"></view>
+        </view>
+        <view class="nnw">
+            <view wx:if="{{elemeSiteInfo}}">
+                <template is="siteInfoTemplate" data="{{siteInfo:elemeSiteInfo,siteBiz:'ELEME',siteDes:'饿了么'}}"></template>
+                <view class="nnz">
+                    <view class="nn5"></view>
+                </view>
+            </view>
+            <view wx:if="{{alipaySiteInfo}}">
+                <template is="siteInfoTemplate" data="{{siteInfo:alipaySiteInfo,siteBiz:'ALIPAY',siteDes:'支付宝'}}"></template>
+                <view class="nnz">
+                    <view class="nn5"></view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="bind" class="nn3" style="background:{{themeColor}}" wx:if="{{bindBtnStatus==='normal'}}"> 确认 </view>
+        <view class="nn3 ero" wx:if="{{bindBtnStatus==='disable'}}"> 确认 </view>
+        <view catchtap="close" class="nn3" style="background:{{themeColor}}" wx:if="{{bindBtnStatus==='close'}}"> 我知道了 </view>
+        <view class="nn6">
+            <text class="nn2">{{agreementText}}</text>
+        </view>
+    </view>
+</view>
+<loading id="loading"></loading>
+<toast id="toast"></toast>

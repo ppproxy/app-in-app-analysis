@@ -1,0 +1,11 @@
+var unShowOrderStatus = ['REFUND', 'PART_REFUND', 'RECEIPTED'];
+var show = (function(code, orderStatus, tableName, takeYourselfMode) {
+    return ((code || takeYourselfMode === 3 && tableName) && unShowOrderStatus.indexOf(orderStatus) < 0)
+});
+var showCode = (function(takeYourselfMode, enableTakeStatus, takeCabinetNum) {
+    return (takeYourselfMode === 2 && takeCabinetNum.length === 0 || takeYourselfMode === 0 && !enableTakeStatus)
+});
+module.exports = ({
+    show: show,
+    showCode: showCode,
+});

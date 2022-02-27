@@ -1,0 +1,27 @@
+<template name="dish-item-price">
+    <view class="n8l" style="{{containerStyle}}" wx:if="{{showSku.sellPrice>=0||showSku.memberSellPrice>=0}}">
+        <view class="z32" style="{{dishMenuColumn==='2'?'flex-direction: column':'flex-direction: row;max-width: 230rpx'}};" wx:if="{{memberFlag&&showSku.haveMemberSellPrice}}">
+            <view class="z3s">
+                <text class="n8q">¥</text>
+                <text class="n8r" style="font-size: {{dishMenuColumn==='2'?'34':'36'}}rpx;{{txtStyle}}">{{dish.storedPayMemberPriceSwitch==='Y'?showSku.sellPrice/100:showSku.memberSellPrice/100}}</text>
+                <text class="z3f">
+                    <text wx:if="{{dish.dishType!=='COMBO'&&showSku.unitName!=='份'&&showSku.unitName!=='个'&&showSku.unitName.length<4}}">/{{showSku.unitName+(dish.multiSpecFlag==='Y'?' ':'')}}</text>
+                    <text style="margin-left: 4rpx" wx:if="{{dish.priceAfterShowCopywriter}}">{{dish.priceAfterShowCopywriter}}</text>
+                </text>
+            </view>
+            <block wx:if="{{dish.storedPayMemberPriceSwitch!=='Y'}}">
+                <text class="n8x" wx:if="{{showNewComboPrice}}">¥{{dish.comboTotalPrice/100}}</text>
+                <text class="n8x" style="{{dishMenuColumn==='2'?'width: 184rpx;text-overflow: ellipsis;overflow: hidden;font-size: 24rpx':'font-size: 22rpx;margin: 10rpx 0 0 6rpx'}}" wx:else>¥{{showSku.sellPrice/100}}</text>
+            </block>
+        </view>
+        <block wx:else>
+            <text class="n8q">¥</text>
+            <text class="n8r" style="font-size: {{dishMenuColumn==='2'?'34':'36'}}rpx;">{{showSku.sellPrice/100}}</text>
+            <text style="font-weight: normal;font-size: 24rpx">
+                <block wx:if="{{dish.dishType!=='COMBO'&&showSku.unitName!=='份'&&showSku.unitName!=='个'&&showSku.unitName.length<4}}">{{'/'+showSku.unitName+(dish.multiSpecFlag==='Y'?' ':'')}}</block>
+                <block wx:if="{{dish.priceAfterShowCopywriter}}">{{dish.priceAfterShowCopywriter}}</block>
+            </text>
+            <view class="n8x" wx:if="{{showNewComboPrice}}">¥{{dish.comboTotalPrice/100}}</view>
+        </block>
+    </view>
+</template>

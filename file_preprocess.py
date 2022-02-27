@@ -15,25 +15,30 @@ def parse_app_json(app_name):
     app_json = BASE_PATH + app_name + "/app.json"
     with open(app_json, encoding='utf-8') as f:
         json_file = json.load(f)
-    parse_result = list()
+    page_list = list()
     tab_bar_list = list()
+    sub_page_list_root = list()
+    sub_page_list_pages = list()
     if json_file:
         pages = json_file['pages']
         for page in pages:
-            parse_result.append(page)
+            page_list.append(page)
         if json_file.get('subPackages') is not None:
             sub_packages = json_file['subPackages']
             for sub_package in sub_packages:
                 root_dir = sub_package['root']
+                sub_page_list_root.append(root_dir)
                 for sub_page in sub_package['pages']:
-                    parse_result.append(root_dir + sub_page)
+                    sub_page_list_pages.append(root_dir + sub_page)
+                    # page_list.append(root_dir + sub_page)
         if 'tabBar' in json_file:
             tab_bars = json_file['tabBar']['list']
             if tab_bars:
                 for tab_bar in tab_bars:
                     tab_bar_list.append(tab_bar['pagePath'])
 
-    return parse_result, tab_bar_list
+    return page_list, tab_bar_list, sub_page_list_root, sub_page_list_pages
+    # return page_list, tab_bar_list, sub_page_list_root
 
 
 def parse_js(app_name, page_list):
@@ -49,7 +54,10 @@ def parse_js(app_name, page_list):
         page_path = BASE_PATH + app_name + "/" + page + ".js"
         if not os.path.isfile(page_path):
             raise TypeError(page_path + "does not exist")
-        clean_js(page_path)
+        if not os.path.isfile(page_path):
+            print(page_path + " 不存在")
+        else:
+            clean_js(page_path)
 
 
 def clean_js(file_path):
@@ -169,18 +177,30 @@ def parse_component(app_name, page_list):
         if json_file:
             for _, component in json_file['usingComponents'].items():
                 now_path = os.path.dirname(page_one_json)
+                component_path = ""
                 if component.startswith("/"):
                     component_path = BASE_PATH + app_name + component
-                else:
+                elif component.startswith("../"):
                     while component.startswith("../"):
                         now_path = os.path.dirname(now_path)
                         component = component.replace("../", "", 1)
                     component_path = now_path + "/" + component
-                components_set.add(component_path)
-                page_component_map[page].append(component_path)
+                elif component.startswith("./"):
+                    component = component.replace("./", "", 1)
+                    component_path = now_path + "/" + component
+                if component_path != "":
+                    components_set.add(component_path)
+                    page_component_map[page].append(component_path)
+                else:
+                    print(page_one_json + " 的组件信息解析失败")
+                    print("失败的组件路径为:" + component)
 
     for component in components_set:
-        clean_js(component + ".js")
+        component_file = component + ".js"
+        if not os.path.isfile(component_file):
+            print(component_file + " 不存在")
+        else:
+            clean_js(component + ".js")
 
     return components_set, page_component_map
 

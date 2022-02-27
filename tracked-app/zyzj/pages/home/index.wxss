@@ -1,0 +1,93 @@
+.e4n {
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.e4c,.e4n {
+    display: flex;
+}
+
+.e4e {
+    height: 1496rpx;
+    width: 750rpx;
+}
+
+.e4z {
+    animation: skeleton-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton-blink {
+    50% {
+        opacity: .6;
+    }
+}
+
+.e45 {
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.e45 .e4e {
+    display: block;
+    flex: 1;
+    height: 1334rpx;
+}
+
+.e4w {
+    font-size: 36rpx;
+    font-weight: var(--font-weight-bold);
+}
+
+.e43 {
+    font-size: 24rpx;
+    margin: 0 0 50rpx;
+    text-align: left;
+}
+
+.e46 {
+    margin: 20rpx 0;
+}
+
+.e42 {
+    color: #ff5900;
+}
+
+.e4f,.e4s {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.e4f {
+    border-radius: 40rpx;
+    font-size: 28rpx;
+    height: 80rpx;
+}
+
+.e47 {
+    background-color: #fff;
+    border: 2rpx solid #ccc;
+    color: #191919;
+    margin-right: 8rpx;
+}
+
+.e47,.e4k {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.e4k {
+    border-style: solid;
+    border-width: 2rpx;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 8rpx;
+}
+
+button::after {
+    border: none;
+}

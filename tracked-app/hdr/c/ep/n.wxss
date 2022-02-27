@@ -1,0 +1,8 @@
+.ejo {
+    color: #999;
+    font-size: 22rpx;
+    height: 24rpx;
+    line-height: 24rpx;
+    margin: 4rpx 0;
+    width: 100%;
+}

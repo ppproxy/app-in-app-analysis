@@ -1,0 +1,187 @@
+.nzw {
+    background: rgba(0,0,0,.4);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+}
+
+.nz3 {
+    animation: QrCodeShow .2s;
+    background: #fff;
+    border-radius: 16rpx 16rpx 0 0;
+    bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: space-between;
+    left: 0;
+    margin: auto;
+    opacity: 1;
+    padding-bottom: calc(5vh + 98rpx + env(safe-area-inset-bottom));
+    padding-top: 134rpx;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+@keyframes QrCodeShow {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.nz6 {
+    background-color: #fff;
+    border-radius: 10rpx;
+    box-shadow: 0 8rpx 16rpx 0 rgba(0,0,0,.15);
+    height: 140rpx;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: -70rpx;
+    width: 140rpx;
+}
+
+.nz2 {
+    font-size: 42rpx;
+    height: 59rpx;
+    margin-top: 36rpx;
+}
+
+.nzs {
+    background-size: 820rpx 100%;
+}
+
+.nzf,.nzs {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 106rpx;
+    margin-top: 40rpx;
+}
+
+.nzf {
+    background-size: 71% 100%;
+}
+
+.nz7 {
+    height: 336rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rpx;
+    width: 336rpx;
+}
+
+.nzk {
+    margin-top: 16rpx;
+}
+
+.nzk,.nzp {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.nzy {
+    bottom: 0;
+    height: 910rpx;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.nzo,.nzy {
+    width: 55rpx;
+}
+
+.nzo {
+    height: 55rpx;
+    margin-top: 855rpx;
+}
+
+.nza {
+    height: 400rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 26rpx;
+    width: 400rpx;
+}
+
+.nzh {
+    color: #737373;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 21rpx;
+}
+
+.nz9,.nzh {
+    font-size: 28rpx;
+}
+
+.nz9 {
+    border-radius: 36rpx;
+    color: #fff;
+    height: 64rpx;
+    line-height: 64rpx;
+    margin: 24rpx auto 0;
+    width: 160rpx;
+}
+
+.nzu {
+    background-color: #f8f8f8;
+    border-radius: 1rpx;
+    flex-direction: row;
+    height: 136rpx;
+    justify-content: space-around;
+    margin: 30rpx auto;
+    width: 612rpx;
+}
+
+.nzu,.nzv {
+    display: flex;
+}
+
+.nzv {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nzt {
+    color: #191919;
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.nzd {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.nzb {
+    height: 62rpx;
+    padding: 10rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 62rpx;
+}
+
+.nzi {
+    height: 100%;
+    width: 100%;
+}
+
+.nzw .nz1 {
+    margin-top: 130rpx;
+}

@@ -1,0 +1,31 @@
+<template name="member-my-function-entrance-component">
+    <view class="eeq">
+        <member-my-function-entrance bind:handleRootInstance="handleRootInstance" id="{{id}}"></member-my-function-entrance>
+    </view>
+</template>
+<template name="member-my-activity-entrance-component">
+    <view class="eeq">
+        <member-my-activity-entrance bind:handleRootInstance="handleRootInstance" id="{{id}}"></member-my-activity-entrance>
+    </view>
+</template>
+<template name="member-my-member-card-component">
+    <view class="eeq">
+        <member-my-member-card bind:handleRootInstance="handleRootInstance" id="{{id}}"></member-my-member-card>
+    </view>
+</template>
+<template name="member-my-user-info-component">
+    <view class="eeq">
+        <member-my-user-info bind:handleRootInstance="handleRootInstance" id="{{id}}"></member-my-user-info>
+    </view>
+</template>
+<template name="member-my-head-image-component">
+    <view class="eeq eel">
+        <member-my-head-image bind:handleRootInstance="handleRootInstance" id="{{id}}"></member-my-head-image>
+    </view>
+</template>
+<navigation-bar back="{{false}}" background="#f5f5f5" bind:handleRootInstance="handleRootInstance" color="#000" id="navigationBar" name="个人中心" scrollOpacity="{{false}}" title="个人中心" titleStyle="font-size:33rpx" wx:if="{{selectedTemplateHead==='DEFAULT_COLOR'}}"></navigation-bar>
+<view class="ee0" style="margin-top:{{selectedTemplateHead==='DEFAULT_COLOR'?'20rpx':'0'}}">
+    <template is="{{component.componentAppCode}}" data="{{id:component.id}}" wx:for="{{decorateComponentList}}" wx:for-item="component" wx:key="id"></template>
+</view>
+<preview-mode-tag></preview-mode-tag>
+<loading-animation wx:if="{{isLoading}}"></loading-animation>

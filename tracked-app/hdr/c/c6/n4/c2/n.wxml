@@ -1,0 +1,83 @@
+<import src="./5g/w5/n.wxml"></import>
+<import src="./5g/wn/n.wxml"></import>
+<import src="./5g/wz/n.wxml"></import>
+<import src="./5g/w6/n.wxml"></import>
+<import src="./5g/w3/n.wxml"></import>
+<import src="./5g/nj/n.wxml"></import>
+<import src="./5g/ww/n.wxml"></import>
+<import src="./5g/wc/n.wxml"></import>
+<block wx:if="{{!dish.showBigImg}}">
+    <view catch:tap="handleOpenDetail" class="nd1" data-dishid="{{dish.dishId}}" style="{{extStyle?extStyle:''}};{{dish.outOfStockFlag?'opacity: 0.5;':''}};{{isSearchPage?'width: 100%':''}}" wx:if="{{dishMenuColumn==='1'}}">
+        <view class="{{dish.dishType==='COMBO'?'nb4':'ndj'}}" style="{{isSearchPage?'width: 176rpx;height:176rpx':''}}">
+            <image class="nbs" src="https://img.alicdn.com/imgextra/i4/O1CN01VyUvSY20Q8xP0vrYy_!!6000000006843-55-tps-56-32.svg" wx:if="{{groupId==='SALES_HIGH'&&dishIndex===0}}"></image>
+            <image class="nbs" src="https://img.alicdn.com/imgextra/i3/O1CN01veAj9f27cEj2wTecJ_!!6000000007817-55-tps-56-32.svg" wx:if="{{groupId==='SALES_HIGH'&&dishIndex===1}}"></image>
+            <image class="nbs" src="https://img.alicdn.com/imgextra/i1/O1CN01HY2pmA1QDTq5ShcRD_!!6000000001942-55-tps-56-32.svg" wx:if="{{groupId==='SALES_HIGH'&&dishIndex===2}}"></image>
+            <image class="nb2" src="https://img.alicdn.com/imgextra/i1/O1CN01BubhUm24pZPOSoDsB_!!6000000007440-55-tps-56-34.svg" wx:if="{{dish.dishType==='COMBO'}}"></image>
+            <cook-image bind:load="handleImageLoad" class="{{dish.dishType==='COMBO'?'nbn':'nbe'}}" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" mode="aspectFill" smart="{{width:dish.dishType==='COMBO'?210:176,height:dish.dishType==='COMBO'?210:176}}" src="{{dish.cookbookDishShowSkuInfoDTO.skuImgUrl||'/assets/images/dish-default.png'}}" style="{{dish.dishType==='COMBO'&&isSearchPage?'height: 176rpx;width: 176rpx;':''}}"></cook-image>
+            <ordered-num dishPlaceNumShowText="{{dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}" orderedDishName="{{dish.dishName}}" wx:if="{{dishListOrderedMap[dish.dishId]&&dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}"></ordered-num>
+        </view>
+        <view class="ndm">
+            <view class="nd0" style="width:{{isSearchPage?'494rpx':dish.dishType==='COMBO'?'316rpx':'350rpx'}};{{isSearchPage?'padding-bottom: 32rpx;border-bottom: 1rpx solid #E5E5E5':''}}">
+                <view style="{{dish.promotionInfoDTOList.length?'margin-bottom: 8rpx':''}}">
+                    <view>
+                        <template is="dish-item-name" data="{{dishName:dish.dishName,limitLine:2}}"></template>
+                        <template is="dish-item-ele-label" data="{{dishEleLabel:dish.elemeLableShowText,maxWidth:328}}"></template>
+                        <template is="dish-item-desc" data="{{dishDesc:dish.cookbookDishShowSkuInfoDTO.skuDesc,containerStyle:'margin: 6rpx 0',limitLine:2}}"></template>
+                        <template is="dish-item-info-label" data="{{ labelDTOList:utils.handleLabelDTOList(dish),spicyDegree:utils.handleSpicyDegree(dish) }}"></template>
+                        <template is="dish-item-sell-num" data="{{summaryLabelText:dish.summaryLabelText,dish:dish,memberFlag:memberFlag}}"></template>
+                        <template is="dish-item-promotion-label" data="{{promotionInfoDTOList:dish.promotionInfoDTOList,isWrap:true,dishMenuColumn:dishMenuColumn,isInDishList:true,marketingColor:marketingColor}}"></template>
+                    </view>
+                </view>
+                <view wx:if="{{dish.cookbookDishShowSkuInfoDTO.sellPrice!==undefined}}">
+                    <view class="ndq" style="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice?'':'display: none'}}">
+                        <template is="custom-member-price-label" data="{{memberFlag:memberFlag,number:dish.cookbookDishShowSkuInfoDTO.memberSellPrice/100,storedPayMemberPriceSwitch:dish.storedPayMemberPriceSwitch==='Y',memberDayTag:dish.memberDayTag}}" wx:if="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice}}"></template>
+                    </view>
+                    <view class="ndr">
+                        <template is="dish-item-price" data="{{dish:dish,dishMenuColumn:dishMenuColumn,showSku:dish.cookbookDishShowSkuInfoDTO,memberFlag:memberFlag}}"></template>
+                        <orderfood-dish-add-cart bind:handleRootInstance="handleRootInstance" bind:ready="dishAddReady" dish="{{dish}}" dishDot="{{dishDot}}" dishMenuColumn="{{dishMenuColumn}}" fromMustDishCate="{{fromMustDishCate}}" groupName="{{groupName}}" id="dishAddCart" isShowMinus="{{isShowMinus}}" logType="{{logType||'菜品列表'}}" openStatus="{{openStatus}}" wx:if="{{openStatus}}"></orderfood-dish-add-cart>
+                    </view>
+                </view>
+            </view>
+            <view class="ndl" wx:if="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}">
+                <cook-dish-item-surplus containerStyle="margin-right: 14rpx" surplusLabel="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}"></cook-dish-item-surplus>
+            </view>
+        </view>
+    </view>
+    <view catch:tap="handleOpenDetail" data-dishid="{{dish.dishId}}" style="{{dish.outOfStockFlag?'opacity: 0.5;':''}};width: {{isSearchPage?'335':'270'}}rpx" wx:if="{{dishMenuColumn==='2'}}">
+        <view class="nbc">
+            <view class="nb6" style="height: 203rpx;position: relative">
+                <image class="nbs" src="https://img.alicdn.com/imgextra/i4/O1CN01VyUvSY20Q8xP0vrYy_!!6000000006843-55-tps-56-32.svg" wx:if="{{groupId==='SALES_HIGH'&&dish.salesSort===1}}"></image>
+                <image class="nbs" src="https://img.alicdn.com/imgextra/i3/O1CN01veAj9f27cEj2wTecJ_!!6000000007817-55-tps-56-32.svg" wx:if="{{groupId==='SALES_HIGH'&&dish.salesSort===2}}"></image>
+                <image class="nbs" src="https://img.alicdn.com/imgextra/i1/O1CN01HY2pmA1QDTq5ShcRD_!!6000000001942-55-tps-56-32.svg" wx:if="{{groupId==='SALES_HIGH'&&dish.salesSort===3}}"></image>
+                <image class="nb2" src="https://img.alicdn.com/imgextra/i1/O1CN01BubhUm24pZPOSoDsB_!!6000000007440-55-tps-56-34.svg" wx:if="{{dish.dishType==='COMBO'}}"></image>
+                <cook-image bind:load="handleImageLoad" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" mode="aspectFill" smart="{{width:dish.dishType==='COMBO'?210:176,height:dish.dishType==='COMBO'?210:176}}" src="{{dish.cookbookDishShowSkuInfoDTO.skuImgUrl?dish.cookbookDishShowSkuInfoDTO.skuImgUrl:'/assets/images/dish-default.png'}}" style="width: 100%; height: 203rpx;border-radius: 16rpx 16rpx 0 0"></cook-image>
+                <ordered-num dishPlaceNumShowText="{{dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}" orderedDishName="{{dish.dishName}}" wx:if="{{dishListOrderedMap[dish.dishId]&&dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}"></ordered-num>
+            </view>
+            <view class="nbz" wx:if="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}">
+                <cook-dish-item-surplus clearStatus="{{dish.outOfStockFlag}}" containerStyle="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc?'padding: 0 8rpx':''}}" dish="{{dish}}" dishMenuColumn="{{dishMenuColumn}}" surplusLabel="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}"></cook-dish-item-surplus>
+            </view>
+        </view>
+        <view class="nb5" style="height: {{dish.dishViewHeight.infoHeight}}">
+            <view>
+                <template is="dish-item-name" data="{{dishName:dish.dishName,limitLine:1}}"></template>
+                <template is="dish-item-sell-num" data="{{summaryLabelText:dish.summaryLabelText,dish:dish,memberFlag:memberFlag}}"></template>
+                <template is="dish-item-info-label" data="{{spicyDegree:utils.handleSpicyDegree(dish),containerStyle:'margin: -10rpx 0 8rpx 0'}}"></template>
+                <view class="nb3" style="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice||dish.promotionInfoDTOList.length>0?'':'display: none'}};{{dish.storedPayMemberPriceSwitch==='Y'?'':'margin-bottom: 8rpx'}}">
+                    <view class="nbw" wx:if="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice}}">
+                        <template is="custom-member-price-label" data="{{memberFlag:memberFlag,number:dish.cookbookDishShowSkuInfoDTO.memberSellPrice/100,storedPayMemberPriceSwitch:dish.storedPayMemberPriceSwitch==='Y',memberDayTag:dish.memberDayTag}}"></template>
+                    </view>
+                    <view wx:else>
+                        <template is="dish-item-promotion-label" data="{{promotionInfoDTOList:dish.promotionInfoDTOList,isWrap:false,dishMenuColumn:dishMenuColumn,isInDishList:true,marketingColor:marketingColor}}"></template>
+                    </view>
+                </view>
+            </view>
+            <view class="ndx">
+                <template is="dish-item-price" data="{{dish:dish,dishMenuColumn:dishMenuColumn,showSku:dish.cookbookDishShowSkuInfoDTO,memberFlag:memberFlag}}"></template>
+                <view class="nd8">
+                    <orderfood-dish-add-cart bind:handleRootInstance="handleRootInstance" bind:ready="dishAddReady" dish="{{dish}}" dishDot="{{dishDot}}" dishMenuColumn="{{dishMenuColumn}}" fromMustDishCate="{{fromMustDishCate}}" groupName="{{groupName}}" id="dishAddCart" isInDishList="{{true}}" isShowMinus="{{isShowMinus}}" logType="{{logType||'菜品列表'}}" openStatus="{{openStatus}}" wx:if="{{openStatus}}"></orderfood-dish-add-cart>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<wxs module="utils" src="zl.wxs" />

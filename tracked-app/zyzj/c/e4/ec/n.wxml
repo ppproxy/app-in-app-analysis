@@ -1,0 +1,32 @@
+<view catchtouchmove="forbidMove" class="ert" wx:if="{{visible&&type==='auth'}}">
+    <view class="ex2">
+        <view class="exs"></view>
+        <view bindtap="handleCancel" class="exp">
+            <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+        </view>
+        <view class="exf">
+            <text>授权头像昵称，尽享点餐乐趣</text>
+        </view>
+        <view class="exk">
+            <button bindtap="bindGetUserUnfoProfile" class="enw" style="background-color: {{themeColor}};border-color: {{themeColor}}" wx:if="{{supportGetUserProfile}}">
+                <text>一键授权</text>
+            </button>
+            <button bindgetuserinfo="bindGetUserInfo" class="enw" openType="getUserInfo" style="background-color: {{themeColor}};border-color: {{themeColor}}" wx:if="{{!supportGetUserProfile}}">
+                <text>一键授权</text>
+            </button>
+        </view>
+    </view>
+</view>
+<view catchtouchmove="forbidMove" class="ert" wx:if="{{visible&&type==='re_auth'}}">
+    <view class="ex2">
+        <view class="exf">
+            <text>为避免影响点餐的正常使用
+建议允许授权</text>
+        </view>
+        <view class="exk">
+            <button bindtap="handleCancel" class="enw" style="background-color: {{themeColor}};border-color: {{themeColor}}">
+                <text>我知道了</text>
+            </button>
+        </view>
+    </view>
+</view>

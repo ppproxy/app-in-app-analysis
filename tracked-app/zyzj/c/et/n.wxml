@@ -1,0 +1,4 @@
+<view class="n40 {{isLoadingGif?'':'n4q'}}">
+    <cook-image class="n4l" mode="aspectFit" src="{{imgUrl}}" style="width:{{width}};height:{{height}}" wx:if="{{isLoadingGif}}"></cook-image>
+    <cook-image src="{{imgUrl}}" style="width:{{width}};height:{{height}}" webp="{{false}}" wx:else></cook-image>
+</view>

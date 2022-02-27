@@ -1,0 +1,7 @@
+<overlay bindhandleClose="handleClickMask" duration="{{duration}}" show="{{show}}" zIndex="{{zIndex}}"></overlay>
+<view class="nls {{styles[position]}} {{show?'nl2':''}}" style="width: {{position==='bottom'||position==='top'?'100vw':width}}; height: {{position==='left'||position==='right'?'100vh':height}}; z-index: {{zIndex}}; transition-duration:{{duration}}ms; ">
+    <view bindtap="handleClose" class="nlf" wx:if="{{showClose}}">
+        <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+    </view>
+    <slot></slot>
+</view>

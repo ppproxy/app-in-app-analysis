@@ -1,0 +1,11 @@
+.cp8 {
+    height: 300rpx;
+    margin-bottom: 24rpx;
+    width: 750rpx;
+}
+
+.cpj {
+    height: 400rpx;
+    overflow: auto;
+    width: 100%;
+}

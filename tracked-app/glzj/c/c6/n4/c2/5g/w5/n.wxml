@@ -1,0 +1,5 @@
+<template name="dish-item-name">
+    <view class="z35 {{limitLine===1?'z3w':'z33'}}" style="{{containerStyle}}">
+        <text class="z36" style="{{txtStyle}}">{{dishName}}</text>
+    </view>
+</template>

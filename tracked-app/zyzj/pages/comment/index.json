@@ -1,0 +1,15 @@
+{
+    "disableScroll": false,
+    "navigationStyle": "custom",
+    "transparentTitle": "always",
+    "titlePenetrate": "YES",
+    "usingComponents": {
+        "rate": "./_/component_modules/rate/index",
+        "image-upload": "./_/component_modules/image-upload/index",
+        "toast": "/c/z5/n",
+        "navigation-bar": "/c/np/n",
+        "custom-page-result": "/c/ea/n",
+        "custom-show-modal": "/c/e9/n"
+    },
+    "__warning__": "invalid page.json [\"transparentTitle\"]、page.json [\"titlePenetrate\"]"
+}

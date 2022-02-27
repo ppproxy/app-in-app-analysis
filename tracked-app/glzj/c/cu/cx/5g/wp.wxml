@@ -1,0 +1,37 @@
+<template name="kbGoods">
+    <view bindtap="handleKbGoodsTap" class="nri" data-item="{{item}}" wx:for="{{goodsList}}" wx:key="itemId">
+        <view class="nr1">
+            <view class="nrg" wx:if="{{item.itemType==='VOUCHER_PACKAGE'}}">
+                <view class="nx0">总价值</view>
+                <view class="nrm">
+                    <text class="nr0">{{item.orgPrice}}</text>元</view>
+            </view>
+            <view class="nrq" wx:elif="{{item.itemType==='VOUCHER_BUY'}}">
+                <view class="nrr">
+                    <text class="nrl">{{item.orgPrice}}</text>元</view>
+                <view class="nr8"></view>
+                <view class="nrx">堂食代金券</view>
+            </view>
+            <image class="nxm" mode="aspectFill" src="{{item.logo}}" wx:else></image>
+        </view>
+        <view class="nrj">
+            <view>
+                <view class="nx4">{{item.itemName}}</view>
+                <view class="nxe">月售{{item.saleNum}}份</view>
+                <view class="nxn">
+                    <view class="nxc">
+                        <image class="nxz" src="https://gw.alicdn.com/imgextra/i2/O1CN01ayT0dI1GYsCNBtojj_!!6000000000635-2-tps-26-26.png"></image>
+                        <block wx:if="{{util.showSaveMoney(item.saveMoney)}}"> 已减{{util.getSaveMoney(item.saveMoney)}}元 <view class="nx5">|</view>
+                        </block> {{util.getInventory(item.inventory)}} </view>
+                </view>
+            </view>
+            <view class="nx2">
+                <view class="nxs">
+                    <text class="eoz">¥</text>{{item.curPrice}}</view>
+                <view class="nxf">¥{{item.orgPrice}}</view>
+            </view>
+        </view>
+        <view class="nxy" style="background: {{themeColor}};">购买</view>
+    </view>
+</template>
+<wxs module="util" src="../n.wxs" />

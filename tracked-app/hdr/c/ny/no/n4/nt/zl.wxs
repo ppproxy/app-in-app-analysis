@@ -1,0 +1,7 @@
+var validOrderStatus = ['WAIT_RECEIPT', 'RECEIPTED', 'COOKING'];
+var showQueue = (function(orderStatus, dishProcessEnable, dishProcess, bookFlag) {
+    return ((validOrderStatus.indexOf(orderStatus) > -1 && !bookFlag && dishProcessEnable && dishProcess && dishProcess.orderNum))
+});
+module.exports = ({
+    showQueue: showQueue,
+});

@@ -1,0 +1,9 @@
+<template name="dish-item-info-label">
+    <view class="z3e" style="{{labelDTOList.length||spicyDegree?'':'display: none'}};{{containerStyle}};">
+        <view class="z3n z3c" wx:if="{{spicyDegree>0}}">
+            <text>{{spicyDegree===1?'微辣':spicyDegree===2?'中辣':'重辣'}}</text>
+            <image class="z3z" src="https://img.alicdn.com/imgextra/i1/O1CN01wqikBO1I7yCHrrHRC_!!6000000000847-2-tps-24-24.png" wx:for="{{spicyDegree}}"></image>
+        </view>
+        <text class="z3n" wx:for="{{labelDTOList}}" wx:key="item">{{item.labelName}}</text>
+    </view>
+</template>

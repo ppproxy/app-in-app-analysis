@@ -1,0 +1,78 @@
+.cpb {
+    border-radius: 16rpx;
+    margin-bottom: 24rpx;
+    overflow: hidden;
+    width: 686rpx;
+}
+
+.cpb,.cpi {
+    background: #fff;
+}
+
+.cpi {
+    align-items: center;
+    display: flex;
+    height: 112rpx;
+    justify-content: flex-start;
+    position: relative;
+    width: auto;
+}
+
+.cp1 {
+    height: 48rpx;
+    margin: 0 32rpx;
+    width: 48rpx;
+}
+
+.cp1 image {
+    height: 100%;
+    width: 100%;
+}
+
+.cpg {
+    color: #191919;
+    font-size: 32rpx;
+    line-height: 44rpx;
+}
+
+.cpm {
+    color: #666;
+    font-size: 24rpx;
+    right: 52rpx;
+    top: 44rpx;
+}
+
+.cp0,.cpm {
+    position: absolute;
+}
+
+.cp0 {
+    height: 20rpx;
+    right: 32rpx;
+    top: 46rpx;
+    width: 12rpx;
+}
+
+.cpl {
+    height: 100%;
+    width: 100%;
+}
+
+.cpq {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -5rpx;
+}
+
+.cpq .cpr {
+    height: 48rpx;
+    margin-right: 2rpx;
+    width: 48rpx;
+}
+
+.cpq .cpx {
+    color: #ff4b33;
+    font-size: 24rpx;
+    letter-spacing: 0;
+}

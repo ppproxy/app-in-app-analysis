@@ -1,0 +1,5 @@
+<view>
+    <component-title textAlign="{{titleType==='text'?'left':'center'}}" title="{{name}}" titleUrl="{{titleImage}}" type="{{titleType}}" wx:if="{{showTitle}}"></component-title>
+    <shop-info-item bind:handleRootInstance="handleRootInstance" bind:onButtonClick="handleGPSAuth" boderColor="{{boderColor}}" locationAuth="{{locationAuth}}" shopCount="{{shopCount}}" shopInfo="{{shopInfo}}" shopInfoTitle="{{shopInfoTitle}}" showModal="{{showModal}}" template="{{template}}" themeColor="{{themeColor}}" type="shop-info"></shop-info-item>
+    <auth-geo-modal id="authGeoModal"></auth-geo-modal>
+</view>

@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "order-list-goods": "./components/order-list-goods/index",
+        "hospital-date": "./components/hospital-date/index",
+        "order-status": "/c/ny/no/n",
+        "custom-modal": "/c/e9/n",
+        "toast": "/c/z5/n"
+    }
+}

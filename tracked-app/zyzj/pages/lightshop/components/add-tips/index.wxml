@@ -1,0 +1,10 @@
+<view class="ce0" id="add-tips" style="top:{{custom?navbarHeight:0}}px;" wx:if="{{SHOW_TOP}}">
+    <view class="cel" style="margin-right:{{arrowR}}px;"></view>
+    <view bindtap="hidden" class="ceq" style="margin-right:{{bodyR}}px;">
+        <image class="cex" src="{{logo}}"></image>
+        <view class="cer">
+            <view>添加到“我的小程序”</view>
+            <view>微信下拉即可快速点单</view>
+        </view>
+    </view>
+</view>

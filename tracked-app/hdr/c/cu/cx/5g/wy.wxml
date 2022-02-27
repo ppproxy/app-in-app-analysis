@@ -1,0 +1,30 @@
+<template name="pointMall">
+    <view bindtap="handlePointMallTap" class="nri nxr" data-item="{{item}}" wx:for="{{goodsList}}" wx:key="itemId">
+        <view class="nr1">
+            <image class="nx1" mode="aspectFill" src="{{item.selfImgUrl}}" wx:if="{{item.selfImgUrl}}"></image>
+            <view class="nrq" wx:else>
+                <view class="nrr">
+                    <text class="nrl {{item.bizType==='SAAS_GIFT'?'nxl':''}}">{{item.bizType==='SAAS_DISCOUNT'?item.voucherDiscount:item.bizType==='SAAS_GIFT'?'礼品券':item.voucherAmount}}</text> {{item.bizType==='SAAS_DISCOUNT'?'折':item.bizType==='SAAS_GIFT'?'':'元'}} </view>
+                <view class="nr8"></view>
+                <view class="nrx">满{{item.threshold}}元可用</view>
+            </view>
+        </view>
+        <view class="nrj nxx">
+            <view class="nx4">{{item.benefitName}}</view>
+            <view>
+                <view class="nxn">
+                    <view class="nxw nx6" wx:if="{{item.pointTagInfo&&item.pointTagInfo.pointTagText&&!(goodsList.length===1||goodsList.length===3)}}">{{item.pointTagInfo.pointTagText}}会员专享</view>
+                    <view class="nxc nx8" wx:if="{{!item.pointTagInfo||!item.pointTagInfo.pointTagText||item.pointTagInfo.pointTagText.length<=2}}">
+                        <image class="nxz" src="https://gw.alicdn.com/imgextra/i1/O1CN014Cmeyv25ghN2LR3te_!!6000000007556-2-tps-26-26.png"></image> {{util.getInventory(item.orgSubjectInfo.restInventory)}} </view>
+                </view>
+                <view class="nxw nx3" wx:if="{{item.pointTagInfo&&item.pointTagInfo.pointTagText&&(goodsList.length===1||goodsList.length===3)}}">{{item.pointTagInfo.pointTagText}}会员专享</view>
+                <view class="nx7">
+                    <view class="nxk">{{item.orgSubjectInfo.needPoints}}</view>
+                    <view class="nxp">积分</view>
+                </view>
+            </view>
+        </view>
+        <view class="nxy" style="background: {{themeColor}};" wx:if="{{!hideButton}}">兑换</view>
+    </view>
+</template>
+<wxs module="util" src="../n.wxs" />

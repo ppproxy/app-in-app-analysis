@@ -1,0 +1,148 @@
+.nhw {
+    display: flex;
+    padding-bottom: 37rpx;
+    position: relative;
+}
+
+.nhw:last-child {
+    padding-bottom: 50rpx;
+}
+
+.nh3 {
+    border-radius: 8rpx;
+    flex-shrink: 0;
+    height: 100rpx;
+    margin-right: 16rpx;
+    width: 100rpx;
+}
+
+.nh6 {
+    border: 2rpx solid #fff;
+    box-shadow: 0rpx 5rpx 8rpx 0rpx rgba(0,0,0,.3);
+    height: 48rpx;
+    left: 16rpx;
+    position: absolute;
+    top: 16rpx;
+    width: 48rpx;
+}
+
+.nh2,.nh6 {
+    border-radius: 100rpx;
+}
+
+.nh2 {
+    height: 100%;
+    width: 100%;
+}
+
+.nhs {
+    width: 420rpx;
+}
+
+.nhf {
+    align-items: center;
+    display: flex;
+    max-width: 400rpx;
+}
+
+.nh7 {
+    color: var(--text-main);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-bold);
+    height: 34rpx;
+    margin-bottom: 12rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nhk {
+    margin-bottom: 6rpx;
+    padding-top: 6rpx;
+}
+
+.nhp {
+    flex-shrink: 0;
+    height: 28rpx;
+    margin-left: 10rpx;
+    vertical-align: middle;
+    width: 28rpx;
+}
+
+.nhy {
+    align-items: center;
+    color: var(--text-third);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--font-size-s);
+}
+
+.nho {
+    border-right: 1rpx solid rgba(0,0,0,.4);
+    line-height: 1;
+    margin: 0 10rpx 12rpx 0;
+    padding-right: 10rpx;
+}
+
+.nho:first-child {
+    padding-left: 0;
+}
+
+.nha {
+    margin: 0 10rpx 12rpx 0;
+}
+
+.nhh {
+    display: flex;
+    height: 30rpx;
+    margin-top: 12rpx;
+}
+
+.nh9 {
+    height: 32rpx;
+}
+
+.nhu {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nhv {
+    font-size: 24rpx;
+}
+
+.nht,.nhv {
+    color: #191919;
+}
+
+.nht {
+    font-size: 32rpx;
+}
+
+.nhd {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-bold);
+}
+
+.nhb {
+    color: var(--text-third);
+    font-size: var(--font-size-s);
+    margin-left: 5rpx;
+    text-decoration: line-through;
+}
+
+.nhi {
+    background: #ffc9c1;
+    border: 1px solid #ffc9c1;
+    border-radius: 6rpx;
+    color: #ff4b33;
+    font-size: 22rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-left: 8rpx;
+    margin-top: -6rpx;
+    opacity: .6;
+    text-align: center;
+    width: 60rpx;
+}

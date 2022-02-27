@@ -1,0 +1,5 @@
+<view class="cek" hidden="{{!visible}}">
+    <view class="cep">
+        <text class="cey">{{message}}</text>
+    </view>
+</view>

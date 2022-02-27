@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "member-join-component": "/c/ed/e8/n",
+        "auth-phone-modal": "/c/e4/en/n",
+        "auth-user-with-agreement-modal": "/c/e4/e5/n"
+    }
+}

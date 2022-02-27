@@ -1,0 +1,24 @@
+<overlay bindhandleClose="handleCancel" class="cmu" maskClosable="{{true}}" position="bottom" show="{{isShow}}" showClose="{{false}}" width="20vw">
+    <view class="cmv">
+        <view class="cmt">
+            <view class="cmd"> {{title}} </view>
+            <view class="cmb"> {{subTitle}} </view>
+            <view class="cm1">
+                <map bindmarkertap="onMarker" id="map" latitude="{{selectedShop.latitude}}" longitude="{{selectedShop.longitude}}" markers="{{markers}}" scale="14" wx:if="{{isShow}}"></map>
+            </view>
+            <view class="cmi">
+                <view bindtap="handleSelectShop" class="cmm {{selectedShop&&selectedShop.shopId===item.shopId?'cm0':''}}" data-item="{{item}}" wx:for="{{list}}">
+                    <view class="cml">
+                        <view class="cmq">{{item.shopName}}</view>
+                        <view class="cmr">{{item.address}}</view>
+                    </view>
+                    <view class="cmx"> {{item.distanceValue&&item.distanceValue>100?'>100km':item.distanceDesc}} </view>
+                </view>
+            </view>
+            <view class="cm8">
+                <view bindtap="chooseOther" class="cmj c04" wx:if="{{!singleStore}}">选择其他门店</view>
+                <view bindtap="chooseThis" class="cmj c0e">{{primaryBtnText}}</view>
+            </view>
+        </view>
+    </view>
+</overlay>

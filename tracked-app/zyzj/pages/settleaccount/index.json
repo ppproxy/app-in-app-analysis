@@ -1,0 +1,29 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "custom-show-modal": "/c/e9/n",
+        "loading": "/c/ev/n",
+        "price": "./_/component_modules/privilege-consult-price/index",
+        "submit-container-left": "./_/component_modules/settleaccount-common/submit-container-left/index",
+        "custom-textarea": "./_/component_modules/settleaccount-common/custom-textarea/index",
+        "custom-radio": "./_/component_modules/privilege-consult-radio/index",
+        "promotion-section": "./_/component_modules/privilege-consult-promotion-section/index",
+        "auth-geo-modal": "/c/e4/ee/n",
+        "navigation-bar": "/c/np/n",
+        "settleaccount-take-method-selecter": "./components/settleaccount-take-method-selecter/index",
+        "self-pick-time-picker": "./components/settleaccount-self-pick-time-picker/index",
+        "dish-item": "./components/settleaccount-dish-item/index",
+        "orderfood-order-repeat-modal": "/c/n1/cc/n",
+        "tableware-picker": "./components/settleaccount-tableware-picker/index",
+        "cashier": "./_/component_modules/cashier/index",
+        "orderfood-specs": "/c/ca/n",
+        "settleaccount-add-price-buy": "./components/settleaccount-add-price-buy/index",
+        "custom-page-result": "/c/ea/n",
+        "consumption-coupon-tip": "./_/component_modules/settleaccount-common/consumption-coupon-tip/index",
+        "exitconfirm-theme": "/c/eu/n",
+        "shop-confirm-modal": "../orderfood/components/shop-confirm-modal/index",
+        "need-add-dish-modal": "./_/component_modules/orderfood-common/need-add-dish-modal/index"
+    },
+    "navigationStyle": "custom"
+}

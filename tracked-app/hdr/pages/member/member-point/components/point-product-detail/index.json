@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "point-goods": "/c/cu/cx/n",
+        "benefit-item": "/pages/member/member-point/components/point-product-detail-item/index",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n"
+    }
+}

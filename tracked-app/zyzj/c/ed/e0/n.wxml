@@ -1,0 +1,31 @@
+<toast id="toast"></toast>
+<view bindtap="hideMemberCode" catch:touchmove="onPreventTouch" class="nzw" wx:if="{{showMemberCode}}">
+    <view catchtap="forbidPop" class="nz3">
+        <view bindtap="hideMemberCode" class="nzb">
+            <image class="nzi" src="https://gw.alicdn.com/imgextra/i2/O1CN01MK6dGP1cXQTmcj3nq_!!6000000003610-2-tps-102-102.png"></image>
+        </view>
+        <image class="nz6" src="{{brandLogo}}"></image>
+        <block wx:if="{{!showCodeError}}">
+            <view class="nzk">需要会员余额支付时，请向店员出示</view>
+            <view class="{{codeType==='DYNAMIC'?'nzf':'nzs'}}" style="background-image: url({{memberBarCode}});"></view>
+            <image class="nz7" src="{{memberQrCode}}"></image>
+            <view class="nzp">每分钟自动更新，请勿截图分享</view>
+        </block>
+        <view class="nz1" wx:else>
+            <view class="nz2">会员码</view>
+            <image class="nza" src="{{errorCodeImg}}"></image>
+            <view class="nzh">二维码暂时无法显示，请刷新重试</view>
+            <view bindtap="showCode" class="nz9" style="background: {{themeColor}};">刷新重试</view>
+        </view>
+        <view class="nzu">
+            <view bindtap="JumpScorePage" class="nzv">
+                <view class="nzt">{{memberAssetsInfo.score}}</view>
+                <view class="nzd">累计积分</view>
+            </view>
+            <view bindtap="JumpMyWalletPage" class="nzv">
+                <view class="nzt">{{memberAssetsInfo.balance}}</view>
+                <view class="nzd">储值</view>
+            </view>
+        </view>
+    </view>
+</view>

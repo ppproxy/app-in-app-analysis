@@ -1,0 +1,22 @@
+<import src="../../5g/5r.wxml"></import>
+<view class="nkh" style="background-color: {{isFromOrderList?'transparent':'#fff'}}" wx:if="{{orderDetail.takeYourselfMode===TAKE_YOURSELF_MODE.TAKE_FOOD_CODE}}">
+    <view class="nk9">
+        <view class="nku">
+            <image class="nkv" mode="aspectFill" src="https://img.alicdn.com/imgextra/i4/O1CN01OKciTc1XHmqmDtKUX_!!6000000002899-55-tps-44-44.svg"></image>
+        </view> 自取号 </view>
+    <view class="nkt" style="color: {{themeColor}}">{{orderDetail.mealCode}}</view>
+    <view class="nkd">自取时间： {{orderDetail.bookFlag?time:'立即自取'}}</view>
+</view>
+<view class="nkh" style="background-color: {{isFromOrderList?'transparent':'#fff'}}" wx:if="{{orderDetail.takeYourselfMode===TAKE_YOURSELF_MODE.FLAPPER}}">
+    <view class="nk9">
+        <view class="nku">
+            <image class="nkv" mode="aspectFill" src="https://img.alicdn.com/imgextra/i4/O1CN01OKciTc1XHmqmDtKUX_!!6000000002899-55-tps-44-44.svg"></image>
+        </view> 号牌 </view>
+    <view class="nkt" style="color: {{themeColor}}">{{orderDetail.tableName}}</view>
+    <view class="nkb {{!orderDetail.orderFlowNo?'nkm':''}}">
+        <view class="nki nk1">自取时间： 立即自取</view>
+        <view class="nki nkg" wx:if="{{orderDetail.orderFlowNo}}">
+            <template is="orderFlowNo" data="{{orderFlowNo:orderDetail.orderFlowNo}}"></template>
+        </view>
+    </view>
+</view>

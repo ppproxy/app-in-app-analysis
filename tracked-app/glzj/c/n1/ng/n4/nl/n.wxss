@@ -1,0 +1,95 @@
+.naq {
+    animation: in-out-view-new 3s linear;
+    bottom: calc(116rpx + constant(safe-area-inset-bottom));
+    bottom: calc(116rpx + env(safe-area-inset-bottom));
+    position: fixed;
+    right: -440rpx;
+    z-index: 1000;
+}
+
+.nar {
+    background: #fff;
+    background-color: #fff;
+    border-radius: 20rpx;
+    box-shadow: 0 0 32rpx 0 rgba(0,0,0,.16);
+    box-sizing: border-box;
+    height: 136rpx;
+    overflow: hidden;
+    padding: 24rpx;
+    width: 440rpx;
+}
+
+.nar,.nax {
+    display: flex;
+}
+
+.nax {
+    align-items: start;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    width: 1rpx;
+}
+
+.na8 {
+    flex-shrink: 0;
+    height: 115rpx;
+    margin-right: 14rpx;
+    position: relative;
+    top: -17rpx;
+    width: 92rpx;
+}
+
+.naj,.nh4 {
+    height: 100%;
+    width: 100%;
+}
+
+.nh4 {
+    z-index: 2;
+}
+
+.nhe {
+    color: #191919;
+    font-size: 32rpx;
+    font-weight: var(--font-weight-bolder);
+    line-height: 44rpx;
+}
+
+.nhe,.nhn {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.nhn {
+    color: #666;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.nhc {
+    animation: spinning 3s linear infinite;
+    height: 100%;
+    transform-origin: center;
+    width: 100%;
+}
+
+@keyframes in-out-view-new {
+    0% {
+        right: -440rpx;
+    }
+
+    15% {
+        right: 24rpx;
+    }
+
+    95% {
+        right: 24rpx;
+    }
+
+    100% {
+        right: -440rpx;
+    }
+}

@@ -1,0 +1,135 @@
+.cmu {
+    position: fixed;
+    z-index: 801;
+}
+
+.cmv {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 600rpx;
+}
+
+.cmt {
+    background-image: linear-gradient(180deg,#fff,#f6f6f6);
+    border-radius: 24rpx;
+    padding: 1rpx 0;
+}
+
+.cmd {
+    color: #191919;
+    font-size: 36rpx;
+    font-weight: var(--font-weight-bold);
+    margin: 38rpx 0 20rpx;
+}
+
+.cmb,.cmd {
+    text-align: center;
+}
+
+.cmb {
+    color: var(--primary);
+    font-size: 28rpx;
+    margin: 20rpx 0;
+}
+
+.cmi {
+    margin-bottom: 24rpx;
+    margin-top: 32rpx;
+}
+
+.cm1 {
+    border-radius: 10rpx;
+    margin: 24rpx;
+    overflow: hidden;
+}
+
+.cm1 map {
+    height: 240rpx;
+    width: 100%;
+}
+
+.cmm {
+    align-items: center;
+    background-color: #fff;
+    border: 2rpx solid #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: row;
+    height: 122rpx;
+    justify-content: space-between;
+    margin: 24rpx;
+    position: relative;
+}
+
+.cm0 {
+    border: 2rpx solid var(--primary);
+}
+
+.cml {
+    flex: 1;
+    padding-left: 24rpx;
+    width: 1rpx;
+}
+
+.cmq {
+    color: rgba(0,0,0,.87);
+    font-size: 32rpx;
+    font-weight: 500;
+    line-height: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cmr {
+    margin-top: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cmr,.cmx {
+    color: #666;
+    font-size: 24rpx;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.cmx {
+    border-left: 2rpx solid #d8d8d8;
+    box-sizing: border-box;
+    margin-left: 24rpx;
+    margin-right: 24rpx;
+    padding: 24rpx;
+    width: 100rpx;
+}
+
+.cm8 {
+    display: flex;
+    margin: 40rpx;
+}
+
+.cmj {
+    background-color: #196234;
+    border-radius: 40rpx;
+    box-shadow: none;
+    flex: 1;
+    font-size: 32rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.c04 {
+    background: #fff;
+    border: 1rpx solid #ccc;
+    color: #191919;
+    margin-right: 16rpx;
+}
+
+.c0e {
+    background: var(--primary);
+    border: 1rpx solid var(--primary);
+    color: #fff;
+}

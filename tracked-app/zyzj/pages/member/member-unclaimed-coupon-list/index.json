@@ -1,0 +1,13 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "member-account-bind-pop": "/c/ed/ei/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "member-account-bind": "/c/ed/eb/n",
+        "navigation-bar": "/c/np/n",
+        "member-unclaimed-coupon-item": "./_/pages/member/components/unclaimed-coupon-item/index",
+        "top-bar": "./_/pages/member/components/unclaimed-coupon-bar/index"
+    },
+    "navigationStyle": "custom"
+}

@@ -1,0 +1,25 @@
+.clx {
+    height: 88rpx;
+}
+
+.cl8 {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.clj {
+    height: var(--bottom-tabbar-height);
+}
+
+.cq4 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 24rpx 24rpx;
+}
+
+.cqe {
+    border-radius: 16rpx;
+    flex: 1;
+    overflow: hidden;
+}

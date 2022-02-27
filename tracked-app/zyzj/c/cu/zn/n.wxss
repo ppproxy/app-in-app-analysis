@@ -1,0 +1,77 @@
+.nj5 {
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    position: fixed;
+    top: -110rpx;
+    z-index: 100002;
+}
+
+@keyframes special-effect-fall {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100vh;
+    }
+}
+
+@keyframes special-effect-swing-left1 {
+    0% {
+        transform: translateX(0rpx);
+    }
+
+    100% {
+        transform: translateX(-100rpx);
+    }
+}
+
+@keyframes special-effect-swing-left2 {
+    0% {
+        transform: translateX(0rpx);
+    }
+
+    100% {
+        transform: translateX(-200rpx);
+    }
+}
+
+@keyframes special-effect-swing-left3 {
+    0% {
+        transform: translateX(0rpx);
+    }
+
+    100% {
+        transform: translateX(-300rpx);
+    }
+}
+
+@keyframes special-effect-swing-right1 {
+    0% {
+        transform: translateX(0rpx);
+    }
+
+    100% {
+        transform: translateX(100rpx);
+    }
+}
+
+@keyframes special-effect-swing-right2 {
+    0% {
+        transform: translateX(0rpx);
+    }
+
+    100% {
+        transform: translateX(200rpx);
+    }
+}
+
+@keyframes special-effect-swing-right3 {
+    0% {
+        transform: translateX(0rpx);
+    }
+
+    100% {
+        transform: translateX(300rpx);
+    }
+}

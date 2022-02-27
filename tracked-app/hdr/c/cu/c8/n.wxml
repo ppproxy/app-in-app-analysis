@@ -1,0 +1,2 @@
+<view class="nxj" wx:if="{{show}}"> 仅供预览
+</view>

@@ -46,49 +46,57 @@ def walk(tree):
     return ret
 
 
-def analysis(nodes):
+def analysis(nodes_in_func, func_name):
     literal_nodes = []
-    for node in nodes:
+    for node in nodes_in_func:
         if node['type'] == 'Literal':
-            nodes.remove(node)
+            nodes_in_func.remove(node)
             literal_nodes.append(node)
     res = []
-    for node in nodes:
+    for node in nodes_in_func:
         if node['type'] == 'CallExpression' and node['callee']['type'] == 'MemberExpression':
-            callee = node['callee']
-            if callee['property'].keys().__contains__('name') and callee['property']['name'] in JUMP_FUNCTIONS:
-                # if callee['property']['name'] == 'navigateTo':
-                # 找可能跳转到的地方，我发现，大部分的跳转链接虽然可能有字符串拼接的情况，但是其base url基本都是文本类型的。
-                for literal_node in literal_nodes:
-                    line = literal_node['value']
-                    if type(line) == str:
-                        # 需要优化，不一定必须是/xx/xx/xx的格式。
-                        # match = re.search(r'/(.*)/(.*)/(.*)(\\?q=)?', line)
-                        match = re.search(r'/(.*)(\\?q=)?', line)
-                        if match:
-                            res.append((match.group().split("?")[0], callee['property']['name']))
+            # callee = node['callee']
+            #    精细化处理丢解 例如：e.$redirect
+            # if callee['property'].keys().__contains__('name') and callee['property']['name'] in JUMP_FUNCTIONS:
+            # if callee['property']['name'] == 'navigateTo':
+            # 找可能跳转到的地方，我发现，大部分的跳转链接虽然可能有字符串拼接的情况，但是其base url基本都是文本类型的。
+            for literal_node in literal_nodes:
+                line = literal_node['value']
+                if type(line) == str:
+                    # 需要优化，不一定必须是/xx/xx/xx的格式。
+                    # match = re.search(r'/(.*)/(.*)/(.*)(\\?q=)?', line)
+                    match = re.search(r'/(.*)(\\?q=)?', line)
+                    if match:
+                        # 跳转函数的方式
+                        # res.append((match.group().split("?")[0], callee['property']['name']))
+                        # 函数名的方式
+                        res.append((match.group().split("?")[0], func_name))
     return res
 
 
-def process(app_name, page_name,page_component_map):
+def process(app_name, page_name, page_component_map):
+    # 一个页面肯定对应着该页面自己的AST
     ast_paths = [BASE_PATH + app_name + "/" + page_name + "-ast.json"]
+    # 如果这个页面使用了组件，那么这个页面肯定对应着组件的AST
     if page_name in page_component_map:
         for component in page_component_map[page_name]:
             ast_paths.append(component + "-ast.json")
-    print(ast_paths)
+    # print(ast_paths)
     analysis_result = {page_name: set()}
     for ast_path in ast_paths:
-        if os.path.isfile(ast_path):
-            print(ast_path + " 是有效的路径")
+        if os.path.exists(ast_path) and os.path.isfile(ast_path):
+            # print(ast_path + " 是有效的路径")
             with open(ast_path, encoding='utf-8') as f:
                 json_file = json.load(f)
+            # print(json_file)
             funcs = get_tap_function(json_file)
             for func in funcs:
+                func_name = func['id']['name']
                 ast_nodes = walk(func)
-                result = analysis(ast_nodes)
+                result = analysis(ast_nodes, func_name)
                 for res in result:
                     analysis_result[page_name].add(res)
-    print(analysis_result)
+    # print(analysis_result)
     return analysis_result
 
 # tap_function_list = ['gotoRank', 'gotoExercise', 'gotoExam', 'gotoRank', 'goCompetitionOne', 'goCompetitionTwo']

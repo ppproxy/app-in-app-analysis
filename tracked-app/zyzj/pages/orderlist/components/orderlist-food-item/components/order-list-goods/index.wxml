@@ -1,0 +1,29 @@
+<view class="c0g" style="--primary: {{themeColor}}">
+    <view class="c0m" wx:if="{{goodsList.length===1}}">
+        <view class="c00">
+            <cook-image class="c0l" defaultSource="/assets/images/dish-default.png" lazyLoad="{{true}}" mode="aspectFill" smart="{{width:130,height:116}}" src="{{goodsList[0].dishPhotoUrl||'/assets/images/dish-default.png'}}"></cook-image>
+        </view>
+        <view class="c0q">{{goodsList[0].dishName}}</view>
+    </view>
+    <block wx:else>
+        <block wx:if="{{goodsList.length<=3}}">
+            <view class="c0r" wx:for="{{goodsList}}" wx:for-item="goodsItem" wx:key="id">
+                <view class="c00">
+                    <cook-image class="c0l" defaultSource="/assets/images/dish-default.png" lazyLoad="{{true}}" mode="aspectFill" smart="{{width:130,height:116}}" src="{{goodsItem.dishPhotoUrl||'/assets/images/dish-default.png'}}"></cook-image>
+                </view>
+                <view class="c0x">{{goodsItem.dishName}}</view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="c0r" wx:if="{{goodsIndex<=2}}" wx:for="{{goodsList}}" wx:for-index="goodsIndex" wx:for-item="goodsItem" wx:key="id">
+                <view class="c00">
+                    <cook-image class="c0l" defaultSource="/assets/images/dish-default.png" lazyLoad="{{true}}" mode="aspectFill" smart="{{width:130,height:116}}" src="{{goodsItem.dishPhotoUrl||'/assets/images/dish-default.png'}}"></cook-image>
+                </view>
+                <view class="c0x">{{goodsItem.dishName}}</view>
+            </view>
+            <view class="c08">
+                <image class="c0j" mode="aspectFill" src="https://img.alicdn.com/imgextra/i4/O1CN0188k2UB1h7qPYcUJyB_!!6000000004231-55-tps-44-44.svg"></image>
+            </view>
+        </block>
+    </block>
+</view>

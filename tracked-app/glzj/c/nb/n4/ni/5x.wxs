@@ -1,0 +1,51 @@
+var getSkuSpecs = (function(sku) {
+    var specs = [];
+    if (sku.practices.length > 0) {
+        for (var i = 0; i < sku.practices.length; i++) {
+            specs.push(({
+                additionalItemName: sku.practices[((nt_0 = (i), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))].name,
+                additionalItemFee: sku.practices[((nt_1 = (i), null == nt_1 ? undefined : 'number' === typeof nt_1 ? nt_1 : "" + nt_1))].addPrice,
+            }))
+        }
+    };
+    if (sku.sideDishes.length > 0) {
+        for (var j = 0; j < sku.sideDishes.length; j++) {
+            specs.push(({
+                additionalItemName: sku.sideDishes[((nt_2 = (j), null == nt_2 ? undefined : 'number' === typeof nt_2 ? nt_2 : "" + nt_2))].name,
+                additionalItemFee: sku.sideDishes[((nt_3 = (j), null == nt_3 ? undefined : 'number' === typeof nt_3 ? nt_3 : "" + nt_3))].addPrice,
+            }))
+        }
+    };
+    if (sku.remarks.length > 0) {
+        for (var k = 0; k < sku.remarks.length; k++) {
+            specs.push(({
+                additionalItemName: sku.remarks[((nt_4 = (k), null == nt_4 ? undefined : 'number' === typeof nt_4 ? nt_4 : "" + nt_4))].name,
+                additionalItemFee: sku.remarks[((nt_5 = (k), null == nt_5 ? undefined : 'number' === typeof nt_5 ? nt_5 : "" + nt_5))].addPrice,
+            }))
+        }
+    };
+    return (specs)
+});
+var setMealModelMapping = (function(cartItem) {
+    var packageDishGroupList = cartItem.packageDishGroupList;
+    var skuList = [];
+    for (var i = 0; i < packageDishGroupList.length; i++) {
+        var list = packageDishGroupList[((nt_6 = (i), null == nt_6 ? undefined : 'number' === typeof nt_6 ? nt_6 : "" + nt_6))].dishCartSkuList;
+        for (var j = 0; j < list.length; j++) {
+            skuList.push(({
+                dishName: list[((nt_7 = (j), null == nt_7 ? undefined : 'number' === typeof nt_7 ? nt_7 : "" + nt_7))].dishName,
+                dishPhotoUrl: list[((nt_8 = (j), null == nt_8 ? undefined : 'number' === typeof nt_8 ? nt_8 : "" + nt_8))].skuImgUrl,
+                dishQuantity: list[((nt_9 = (j), null == nt_9 ? undefined : 'number' === typeof nt_9 ? nt_9 : "" + nt_9))].num,
+                dishAddItemList: getSkuSpecs(list[((nt_10 = (j), null == nt_10 ? undefined : 'number' === typeof nt_10 ? nt_10 : "" + nt_10))]),
+                required: list[((nt_11 = (j), null == nt_11 ? undefined : 'number' === typeof nt_11 ? nt_11 : "" + nt_11))].required,
+                addDishFee: list[((nt_12 = (j), null == nt_12 ? undefined : 'number' === typeof nt_12 ? nt_12 : "" + nt_12))].dishSkuPrice,
+                multiSpecFlag: list[((nt_13 = (j), null == nt_13 ? undefined : 'number' === typeof nt_13 ? nt_13 : "" + nt_13))].dishName !== list[((nt_14 = (j), null == nt_14 ? undefined : 'number' === typeof nt_14 ? nt_14 : "" + nt_14))].skuName,
+                dishSkuName: list[((nt_15 = (j), null == nt_15 ? undefined : 'number' === typeof nt_15 ? nt_15 : "" + nt_15))].skuName,
+            }))
+        }
+    };
+    return (skuList)
+});
+module.exports = ({
+    setMealModelMapping: setMealModelMapping,
+});

@@ -1,0 +1,77 @@
+.n7o {
+    background: rgba(0,0,0,.3);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.n7a,.n7o {
+    position: fixed;
+}
+
+.n7a {
+    align-items: center;
+    background: #fff;
+    background-color: #fff;
+    border-radius: 24rpx;
+    display: flex;
+    flex-direction: column;
+    height: 430rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 666rpx;
+    z-index: 101;
+}
+
+.n7a .n3h {
+    color: #333;
+    font-size: 36rpx;
+    line-height: 3.4;
+    text-align: center;
+}
+
+.n7a .n39 {
+    background: #f4f4f4;
+    background-color: #f4f4f4;
+    border-radius: 12rpx;
+    box-sizing: border-box;
+    color: #999;
+    font-size: 28rpx;
+    height: 144rpx;
+    line-height: 1.8;
+    margin: 0 auto;
+    padding: 20rpx;
+    width: 595rpx;
+}
+
+.n7a .ey0 {
+    background: #09a9f0;
+    background-image: url(https://gw.alicdn.com/tfs/TB1DnusNhD1gK0jSZFsXXbldVXa-115-85.png);
+    background-position: 20rpx;
+    background-repeat: no-repeat;
+    background-size: 60rpx auto;
+    border-radius: 45rpx;
+    color: #fff;
+    display: inline-block;
+    font-size: 32rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-top: 40rpx;
+    padding: 0 20rpx 0 86rpx;
+}
+
+.n7a .n7h {
+    background: url(https://gw.alicdn.com/tfs/TB1Fc1rNXY7gK0jSZKzXXaikpXa-120-120.png) no-repeat 50%;
+    background-position: 50%;
+    background-size: 60rpx;
+    bottom: -120rpx;
+    height: 100rpx;
+    left: 50%;
+    margin-left: -50rpx;
+    position: absolute;
+    width: 100rpx;
+    z-index: 1;
+}

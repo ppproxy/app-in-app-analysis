@@ -1,0 +1,35 @@
+function getInventory(inventory) {
+    inventory = Number(inventory);
+    if (!inventory) {
+        return ('即将售罄')
+    };
+    if (inventory > 9999 && inventory <= 999999) {
+        if (inventory % 10000 === 0) {
+            inventory = inventory / 10000 + 'w+'
+        } else {
+            inventory = Math.floor(inventory / 10000) + '.' + Math.floor(inventory % 10000 / 1000) + 'w+'
+        }
+    } else if (inventory > 999999) {
+        inventory = '100w+'
+    };
+    return ('仅剩' + inventory + '份')
+};
+
+function showSaveMoney(saveMoney) {
+    if (!saveMoney || !Number(saveMoney)) {
+        return (false)
+    };
+    return (true)
+};
+
+function getSaveMoney(saveMoney) {
+    if (saveMoney.length > 5) {
+        return (saveMoney.substring(0, 3) + '...')
+    };
+    return (saveMoney)
+};
+module.exports = ({
+    getInventory: getInventory,
+    showSaveMoney: showSaveMoney,
+    getSaveMoney: getSaveMoney,
+});

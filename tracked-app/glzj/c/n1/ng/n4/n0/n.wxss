@@ -1,0 +1,176 @@
+.nat {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.nad {
+    animation: in-out-view 4s linear;
+    background: #fff;
+    background-color: #fff;
+    border-radius: 20rpx;
+    bottom: calc(116rpx + constant(safe-area-inset-bottom));
+    bottom: calc(116rpx + env(safe-area-inset-bottom));
+    box-shadow: 0 0 32rpx 0 rgba(0,0,0,.16);
+    box-sizing: border-box;
+    display: flex;
+    height: 136rpx;
+    overflow: hidden;
+    padding: 24rpx;
+    position: absolute;
+    right: -500rpx;
+    width: 440rpx;
+}
+
+@keyframes in-out-view {
+    0% {
+        right: -500rpx;
+    }
+
+    11% {
+        right: 20rpx;
+    }
+
+    95% {
+        right: 20rpx;
+    }
+
+    100% {
+        right: -500rpx;
+    }
+}
+
+.nab {
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 88rpx;
+    margin-right: 14rpx;
+    overflow: hidden;
+    position: relative;
+    width: 88rpx;
+}
+
+.nai {
+    animation: avatar 3s ease;
+    height: 100%;
+    opacity: 1;
+    width: 100%;
+}
+
+@keyframes avatar {
+    0% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.na1 {
+    border-radius: 50%;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform: scale(.85);
+    transform-origin: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.nag {
+    color: #191919;
+    font-size: 32rpx;
+    font-weight: var(--font-weight-bolder);
+    line-height: 44rpx;
+}
+
+.nam {
+    color: #666;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 220rpx;
+}
+
+.na0 {
+    animation: spinning 3s linear infinite;
+    height: 100%;
+    transform-origin: center;
+    width: 100%;
+}
+
+@keyframes spinning {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.nal {
+    animation: status 3s ease;
+    background-color: #e72718;
+    border-radius: 50%;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform: scale(.85);
+    transform-origin: center;
+    width: 100%;
+    z-index: 100;
+}
+
+@keyframes status {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    85% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(.85);
+    }
+}
+
+.nal image {
+    animation: finish-icon 3s ease;
+    height: 61.8%;
+    margin: 19.1%;
+    transform: scale(1);
+    width: 61.8%;
+}
+
+@keyframes finish-icon {
+    0% {
+        transform: scale(.5);
+    }
+
+    85% {
+        transform: scale(.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

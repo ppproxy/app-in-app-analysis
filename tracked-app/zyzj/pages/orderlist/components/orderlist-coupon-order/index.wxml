@@ -1,0 +1,42 @@
+<loading-animation wx:if="{{showSkeleton}}"></loading-animation>
+<scroll-view bindscroll="scroll" bindscrolltolower="scrollToLower" class="c06" scrollTop="{{scrollTop}}" scrollY="{{true}}" style="height: calc(100vh - {{navigationBarHeight}}px);" wx:if="{{pageInit&&!pageEmptyData}}">
+    <view class="c02" wx:if="{{showHeaderTabs}}"></view>
+    <view id="order-list_page{{orderListPage}}" wx:for="{{orderList}}" wx:for-index="orderListPage" wx:for-item="orderItem" wx:key="orderListPage">
+        <block wx:if="{{orderItem.length>0}}">
+            <view bindtap="goOrderDetail" class="c0f" data-id="{{item.couponBagId}}" data-orderno="{{item.couponBagOrderNo}}" wx:for="{{orderItem}}" wx:key="orderNo">
+                <view class="c0p">
+                    <view>{{item.bizTradeData}}</view>
+                    <view>{{item.couponOrderStatusTips}}</view>
+                </view>
+                <view class="c0y">
+                    <view class="c09">
+                        <view class="c07">
+                            <cook-image class="c0k" defaultSource="https://img.alicdn.com/imgextra/i2/O1CN013E4HuV1l1DBsFj31w_!!6000000004758-2-tps-168-168.png" lazyLoad="{{true}}" mode="aspectFill" src="{{item.couponBagImgUrl||'https://img.alicdn.com/imgextra/i2/O1CN013E4HuV1l1DBsFj31w_!!6000000004758-2-tps-168-168.png'}}"></cook-image>
+                        </view>
+                        <view>{{item.couponBagName}}</view>
+                    </view>
+                    <view class="c0o">{{item.couponBagTotalFee||0}}</view>
+                </view>
+                <view class="c0a">
+                    <text class="c0h">实付款</text>
+                    <text class="c0o">{{item.couponBagActualFee||0}}</text>
+                </view>
+            </view>
+        </block>
+        <view style="height: {{orderItem.height}}px" wx:else></view>
+    </view>
+    <view class="c0s" wx:if="{{!hasMoreData&&totalPage!==0}}">仅展示近半年的订单~</view>
+    <view class="c0s" wx:if="{{loadingMore}}">
+        <image class="c0u" src="https://img.alicdn.com/tfs/TB1bCs.WkT2gK0jSZFkXXcIQFXa-200-200.gif"></image>
+    </view>
+    <view class="eek {{isShowTabbar?'eep':''}}"></view>
+</scroll-view>
+<loading id="loading"></loading>
+<toast id="toast"></toast>
+<view class="eef" style="height: calc(100vh - {{navigationBarHeight}}px);" wx:if="{{pageInit&&pageEmptyData}}">
+    <view class="c02"></view>
+    <view class="ee7">
+        <custom-page-result icon="https://img.alicdn.com/tfs/TB1HvrokmslXu8jSZFuXXXg7FXa-400-347.png" title="目前你还没有购买记录哦" visible="{{true}}"></custom-page-result>
+    </view>
+</view>
+<view catchtouchmove="forbidMove" class="c0v" wx:if="{{showLoadingMask}}"></view>

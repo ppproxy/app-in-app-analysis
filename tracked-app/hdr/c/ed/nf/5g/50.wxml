@@ -1,0 +1,5 @@
+<template name="point-triple-items-row-block">
+    <view class="n7y" style="margin-left:{{couponIndex!==0?20:0}}rpx" wx:for="{{templateItem}}" wx:for-index="couponIndex" wx:for-item="couponItem" wx:key="couponItem">
+        <point-components-point-item bind:handleRootInstance="handleRootInstance" extInfos="{{couponItem.extInfos}}" itemBizType="TRIPLE" memberCenterEnable="{{false}}" scene="point-mall" sourceData="{{couponItem}}" type="{{couponItem.type}}"></point-components-point-item>
+    </view>
+</template>

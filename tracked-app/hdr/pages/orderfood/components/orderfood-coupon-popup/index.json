@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "custom-show-modal": "/c/e9/n",
+        "auth-phone-modal": "/c/e4/en/n",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n",
+        "member-join-universal": "/c/ed/nw/n",
+        "cook-image": "/c/eo/n"
+    }
+}

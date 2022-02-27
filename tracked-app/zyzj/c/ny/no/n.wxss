@@ -1,0 +1,109 @@
+.ny5 {
+    color: var(--white);
+    display: block;
+    padding: 0 9rpx;
+}
+
+.nyw {
+    display: inline-block;
+    font-size: 46rpx;
+    line-height: 46rpx;
+    margin: 11rpx 0 24rpx;
+}
+
+.ny3,.nyw {
+    font-weight: var(--font-weight-bolder);
+}
+
+.ny3 {
+    font-size: 30rpx;
+    line-height: 38rpx;
+    margin: 0 0 30rpx;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.ny6 {
+    display: inline-block;
+    margin-right: 25rpx;
+}
+
+.ny2 {
+    background-color: var(--white);
+    border-radius: var(--border-radius-l);
+    color: var(--text-main);
+    font-size: 30rpx;
+    margin-bottom: 16rpx;
+    padding: 24rpx;
+    z-index: 2;
+}
+
+.nys {
+    display: flex;
+}
+
+.nyf {
+    color: #333;
+}
+
+.ny7 {
+    background-color: var(--primary);
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 44rpx;
+    margin-right: 14rpx;
+    overflow: hidden;
+    width: 44rpx;
+}
+
+.nyk {
+    height: 100%;
+    width: 100%;
+}
+
+.npn {
+    border-top: 1px solid hsla(0,0%,80%,.4);
+    margin: 0 -46rpx;
+    padding-top: 46rpx;
+}
+
+.npc {
+    height: 100rpx;
+    width: 358rpx;
+}
+
+.npz {
+    height: 320rpx;
+    width: 320rpx;
+}
+
+.np5 {
+    color: #999;
+    font-size: 24rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+}
+
+.nyp,.nyy {
+    background-color: #fff;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    height: 382rpx;
+    margin-bottom: 14rpx;
+    padding-top: 30rpx;
+    position: relative;
+    width: 702rpx;
+}
+
+.nya,.nyo {
+    height: 422rpx;
+}
+
+.nyh {
+    color: #999;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    margin-top: 20rpx;
+    text-align: center;
+}

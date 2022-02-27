@@ -1,0 +1,13 @@
+{
+    "component": true,
+    "usingComponents": {
+        "member-shake-code": "/c/ed/nk/n",
+        "point-product-detail": "/pages/member/member-point/components/point-product-detail/index",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n",
+        "member-account-bind": "../eb/n",
+        "member-account-bind-pop": "../ei/n",
+        "point-components-point-item": "./n4/n7/n",
+        "component-title": "/c/cu/cg/n"
+    }
+}

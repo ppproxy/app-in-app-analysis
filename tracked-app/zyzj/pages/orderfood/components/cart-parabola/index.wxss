@@ -1,0 +1,11 @@
+.c11 {
+    background: var(--primary);
+    border-radius: 50%;
+    height: 18rpx;
+    left: 50%;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    width: 18rpx;
+    z-index: 8001;
+}

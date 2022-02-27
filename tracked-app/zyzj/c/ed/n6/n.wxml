@@ -1,0 +1,5 @@
+<member-send-coupon-base alipaySendCouponParams="{{alipaySendCouponParams}}" auto="{{auto}}" bind:handleRootInstance="handleRootInstance" bind:handleSendCoupon="handleSendCoupon" bind:handleSendProccess="handleSendProccess" modalId="{{modalId}}" sendCouponMerchant="{{sendCouponMerchant}}" sign="{{sign}}" whiteListAppId="{{whiteListAppId}}" wxSendCouponParams="{{wxSendCouponParams}}">
+    <slot></slot>
+</member-send-coupon-base>
+<toast id="toast"></toast>
+<loading id="loading"></loading>

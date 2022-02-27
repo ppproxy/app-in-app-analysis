@@ -1,0 +1,62 @@
+.nzl {
+    align-items: center;
+    flex-direction: column;
+    height: 120rpx;
+    justify-content: space-between;
+}
+
+.nzl,.nzq {
+    display: flex;
+    width: 72rpx;
+}
+
+.nzq {
+    align-items: flex-end;
+    height: 72rpx;
+    position: relative;
+}
+
+.nzr {
+    color: #191919;
+    font-weight: 500;
+}
+
+.nzr.nzx {
+    color: #ccc;
+}
+
+.nz8 {
+    align-items: baseline;
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-45%);
+}
+
+.nz8 .e5e {
+    font-size: 12rpx;
+}
+
+.nz8.nzj .e5e {
+    transform: scale(.9);
+}
+
+.nz8 .n54 {
+    font-size: 24rpx;
+}
+
+.nz8 .n5e {
+    font-size: 20rpx;
+}
+
+.nz8 .n5n {
+    font-size: 16rpx;
+}
+
+.nz8.nzj .n54 {
+    transform: scale(.9);
+}

@@ -1,0 +1,38 @@
+.ce0 {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: fixed;
+    right: 0;
+    width: 600rpx;
+    z-index: 999;
+}
+
+.cel {
+    border: 5px solid transparent;
+    border-bottom-color: #fff;
+    height: 0;
+    width: 0;
+}
+
+.ceq {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    padding: 10px 10px 10px 0;
+}
+
+.cer {
+    color: #000;
+    flex: 1;
+    font-size: 12px;
+}
+
+.cex {
+    height: 42px;
+    width: 42px;
+}

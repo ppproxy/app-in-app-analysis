@@ -1,0 +1,10 @@
+.n4t {
+    background-color: var(--primary);
+    border-radius: 40rpx;
+    color: #fff;
+    font-size: 32rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 73rpx;
+    width: 100%;
+}

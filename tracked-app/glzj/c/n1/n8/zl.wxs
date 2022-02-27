@@ -1,0 +1,10 @@
+function handleShowPrice(dishData, isAddPrice, originalPriceFlag) {
+    if (!dishData) {
+        return (0)
+    };
+    var price = dishData.memberPrice || dishData.memberPrice === 0 ? dishData.memberPrice / 100 : isAddPrice ? originalPriceFlag ? dishData.totalFee / 100 : dishData.actualFee / 100 : dishData.totalFee / 100;
+    return (price)
+};
+module.exports = ({
+    handleShowPrice: handleShowPrice,
+});

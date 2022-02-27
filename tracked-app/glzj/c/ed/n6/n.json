@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "member-send-coupon-base": "/c/ed/ns/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n"
+    }
+}

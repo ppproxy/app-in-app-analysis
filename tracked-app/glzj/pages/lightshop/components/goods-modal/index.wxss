@@ -1,0 +1,192 @@
+.ce8 {
+    display: flex;
+    height: 32rpx;
+    justify-content: center;
+    margin-top: 32rpx;
+    position: relative;
+    width: 750rpx;
+}
+
+.cej {
+    color: #999;
+    font-size: 28rpx;
+    line-height: 32rpx;
+    text-align: center;
+}
+
+.cn4 {
+    height: 33.1rpx;
+    position: absolute;
+    right: 32rpx;
+    width: 33.1rpx;
+}
+
+.cne {
+    align-items: center;
+    display: flex;
+    height: 240rpx;
+    margin-top: 80rpx;
+    position: relative;
+    width: 702rpx;
+}
+
+.cnn {
+    z-index: 1002;
+}
+
+.cnc,.cnn {
+    border-radius: 16rpx;
+    height: 240rpx;
+    width: 240rpx;
+}
+
+.cnc {
+    background-color: #000;
+    opacity: .5;
+    z-index: 1003;
+}
+
+.cnc,.cnz {
+    position: absolute;
+}
+
+.cnz {
+    border-radius: 16rpx;
+    height: 192rpx;
+    left: 72rpx;
+    top: 72rpx;
+    width: 192rpx;
+    z-index: 1004;
+}
+
+.cn5 {
+    align-items: center;
+    color: #fff;
+    flex-direction: column;
+    height: 240rpx;
+    justify-content: center;
+    position: absolute;
+    width: 240rpx;
+    z-index: 1005;
+}
+
+.cn5,.cnw {
+    display: flex;
+}
+
+.cnw {
+    margin-bottom: 12rpx;
+}
+
+.cn3 {
+    font-size: 30rpx;
+    margin-top: 48rpx;
+}
+
+.cn6 {
+    font-size: 78rpx;
+}
+
+.cn2 {
+    font-size: 24rpx;
+}
+
+.cns {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 240rpx;
+    justify-content: space-between;
+    margin-left: 24rpx;
+    width: 438rpx;
+    z-index: 1004;
+}
+
+.cnf {
+    color: #333;
+    font-size: 30rpx;
+    font-weight: 500;
+    height: 36rpx;
+    letter-spacing: 0.17rpx;
+    line-height: 36rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cn7,.cnf {
+    max-width: 438rpx;
+}
+
+.cn7 {
+    color: #999;
+    font-size: 24rpx;
+    height: 24rpx;
+    letter-spacing: 0.13rpx;
+    line-height: 24rpx;
+}
+
+.cnk {
+    display: flex;
+    height: 48rpx;
+    width: 438rpx;
+}
+
+.cnp {
+    color: #c2956e;
+    font-size: 28rpx;
+    height: 17rpx;
+    line-height: 16.96rpx;
+    margin-right: 6rpx;
+    margin-top: 20rpx;
+    width: 84rpx;
+}
+
+.cny {
+    color: #ff301e;
+    font-weight: 500;
+}
+
+.cno {
+    font-size: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-right: 6rpx;
+    width: 18rpx;
+}
+
+.cna,.cno {
+    letter-spacing: 0;
+}
+
+.cna {
+    font-size: 48rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.cnh {
+    color: #999;
+    font-size: 28rpx;
+    margin-left: 14rpx;
+    margin-top: 10rpx;
+    text-decoration: line-through;
+}
+
+.cn9 {
+    margin-left: 4rpx;
+}
+
+.cnu {
+    border-radius: 50rpx;
+    color: #fff;
+    height: 92rpx;
+    line-height: 92rpx;
+    margin-top: 102rpx;
+    text-align: center;
+    width: 702rpx;
+}
+
+.cnu::after {
+    border: 0;
+}

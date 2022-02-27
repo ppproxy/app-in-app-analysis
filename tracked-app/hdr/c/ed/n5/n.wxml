@@ -1,0 +1,27 @@
+<view class="n34" wx:if="{{componentStatus}}">
+    <view class="n32">
+        <view class="nwi"></view>
+        <view class="nwg">
+            <view class="n33" style="background:{{themeColor||'#eee'}}">
+                <image class="n36" src="https://img.alicdn.com/imgextra/i2/O1CN01Xrbhjm1dsKAbtsnGA_!!6000000003791-2-tps-716-259.png"></image>
+            </view>
+            <view class="nwm">
+                <view class="nw0">{{memberCardTemplate.summaryGuideTips}}</view>
+                <view class="nwl">
+                    <view class="ns0"></view>
+                    <text>尊享以下权益</text>
+                    <view class="nsl"></view>
+                </view>
+                <view class="{{summaryList.length<=4?'nwr':'nwq'}}" wx:if="{{summaryList&&summaryList.length}}">
+                    <view class="{{summaryList.length==4?'nw8':'nwx'}}" wx:for="{{summaryList}}" wx:key="idx">
+                        <image class="nwj" src="{{item.decorateImgUrl||item.bgImgUrl}}"></image>
+                        <view class="n3e">{{item.summaryDesc}}</view>
+                    </view>
+                </view>
+                <button bindtap="handleBtnClick" class="n3n" style="background:{{themeColor}}">立即领取</button>
+            </view>
+            <image bindtap="handleClose" class="n3c"></image>
+        </view>
+    </view>
+</view>
+<view class="nsb" wx:if="{{componentStatus}}"></view>

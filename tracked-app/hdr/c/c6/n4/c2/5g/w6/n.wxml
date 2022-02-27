@@ -1,0 +1,3 @@
+<template name="dish-item-sell-num">
+    <view class="ejo" style="margin-bottom: 8rpx;{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice||dish.promotionInfoDTOList.length>0?'':'margin-bottom: 12rpx'}};{{containerStyle}}" wx:if="{{summaryLabelText}}"> {{summaryLabelText}} </view>
+</template>

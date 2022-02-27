@@ -1,0 +1,52 @@
+<view bindtap="goOrderDetail" class="cl4" style="--primary: {{themeColor}}">
+    <view class="cle">
+        <view class="cln">
+            <view catchtap="goShopDishMenu" class="clc" data-shopid="{{orderDetail.orgId}}">
+                <view class="clz"> {{orderDetail.orgName}} </view>
+                <image class="cl5" lazyLoad="{{true}}" src="https://img.alicdn.com/imgextra/i4/O1CN016QWBPN1V8xzVgUldc_!!6000000002609-55-tps-29-30.svg" wx:if="{{canToShopDinnerPage}}"></image>
+            </view>
+            <view class="cl3 {{isHighLightOrderStatus?'cl2':'cl6'}}">{{orderStatusTitle}}</view>
+        </view>
+        <view class="clw"> {{orderDetail.bizDate}} </view>
+    </view>
+    <hospital-date distribution="{{orderDetail.distribution}}" enableDistribution="{{orderDetail.industryType===1}}" wx:if="{{isHospital}}"></hospital-date>
+    <view class="clb" style="background-color:{{brandPrimaryColor}}" wx:if="{{orderDetail.needDetailsStatusInOrderList&&orderDetail.enableTakeStatus===1}}">
+        <order-status bindhandleOpenCabinet="handleOpenCabinet" bindhandleRootInstance="handleRootInstance" dishProcess="{{orderDetail.dishEstimateInfo}}" dishProcessEnable="{{orderDetail.dishEstimateInfo.length&&orderDetail.dishEstimateInfo[0].enableCookingSpeed===1}}" fromPage="orderlist" orderDetail="{{orderDetail}}"></order-status>
+    </view>
+    <view class="cls {{orderDetail.needDetailsStatusInOrderList?'cl1':''}}">
+        <block wx:if="{{orderDetail.orderDishList&&orderDetail.orderDishList.length}}">
+            <view class="clf">
+                <order-list-goods goodsList="{{orderDetail.orderDishList||[]}}"></order-list-goods>
+            </view>
+            <view class="cl7">
+                <view class="clk" wx:if="{{orderDetail.payerIdentity}}">
+                    <view class="clp">￥</view>
+                    <view class="cly"> {{actualFeeShow/100}} </view>
+                </view>
+                <view class="clo">共{{orderDetail.dishCount||0}}件</view>
+            </view>
+        </block>
+        <view class="clv" wx:else> 暂无商品 </view>
+    </view>
+    <view class="cla">
+        <view class="cld" wx:if="{{orderDetail.shopInfo.shopPhone&&orderDetail.index<5}}">
+            <image catchtap="handleShopNumber" class="clt" mode="widthFix" src="{{IconOrderDetailPhone}}"></image>
+        </view>
+        <view class="cld" wx:if="{{orderDetail.shopInfo.longitude&&orderDetail.shopInfo.latitude&&orderDetail.index<5}}">
+            <image catchtap="handleShopAddress" class="clt" mode="widthFix" src="{{IconOrderDetailAddress}}"></image>
+        </view>
+        <view catch:tap="goToCommentPage" class="clg clu" wx:if="{{orderDetail.orderStatus==='RECEIPTED'||orderDetail.orderStatus==='COOKING'||orderDetail.orderStatus==='WAIT_TAKE'||orderDetail.orderStatus==='SUCCESS'}}">评价</view>
+        <view catchtap="goToInvoiceMiniapp" class="clh cl9" wx:if="{{invoiceInfo.invoiceStatus==='CAN_INVOICE'||invoiceInfo.invoiceStatus==='SUCCESS'}}">
+            <text wx:if="{{invoiceInfo.invoiceStatus==='CAN_INVOICE'}}">开发票</text>
+            <text wx:if="{{invoiceInfo.invoiceStatus==='SUCCESS'}}">查看发票</text>
+        </view>
+        <view catchtap="handleAlreadyTaken" class="clh clu {{'component-handle-already-taken-btn'}}" data-track-logkey=".keruyun_order_list.fetch_exposure" data-track-orderno="{{orderDetail.orderNo}}" onAppear="$logAppear" wx:if="{{showAlreadyTaken}}"> 我已取餐 </view>
+        <view catchtap="handleOpenCabinet" class="clh clu" wx:if="{{showOpenCabinet}}"> 一键开柜 </view>
+        <view catchtap="buyOrderAgain" class="clh cl9" wx:if="{{showOrderAgain}}"> 再来一单 </view>
+        <view catchtap="toCalcOrder" class="clh clu" wx:if="{{showCalcOrder}}"> 去结账 </view>
+        <view catchtap="toAddMoreFood" class="clh cl9" wx:if="{{showAddMoreFood}}"> 加菜 </view>
+    </view>
+    <image class="cli" src="https://img.alicdn.com/imgextra/i1/O1CN010Nd66F1bbiZwFJaIy_!!6000000003484-55-tps-190-154.svg" wx:if="{{orderDetail.orderStatus==='SUCCESS'}}"></image>
+</view>
+<custom-modal catchtap="noop" id="customShowModal"></custom-modal>
+<toast id="toast"></toast>

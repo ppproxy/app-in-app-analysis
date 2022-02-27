@@ -1,0 +1,18 @@
+{
+    "disableScroll": false,
+    "navigationBarTitleText": "已下单菜品",
+    "backgroundColor": "#efefef",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n",
+        "custom-page-result": "/c/ea/n",
+        "navigation-bar": "/c/np/n",
+        "orderfood-discount-helper": "./_/component_modules/orderfood-common/orderfood-discount-helper/index",
+        "zc-ordercheck-item": "./components/zc-order-item/index",
+        "table-info-modal": "./components/overlay-info-modal/index"
+    }
+}

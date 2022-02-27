@@ -1,0 +1,10 @@
+<view class="exh">
+    <custom-show-modal useFullSlot bind:handleRootInstance="handleRootInstance" id="customShowModal" modalType="bottom">
+        <view class="ex9" slot="full">
+            <button bindtap="bindGetUserUnfoProfile" class="exv" style="background: {{themeColor}}" wx:if="{{supportGetUserProfile}}"> 从微信自动填充个人信息 </button>
+            <button bindgetuserinfo="bindGetUserInfo" class="exv" openType="getUserInfo" style="background: {{themeColor}}" wx:elif="{{!supportGetUserProfile}}"> 从微信自动填充个人信息 </button>
+            <user-agreement bind:handleRootInstance="handleRootInstance" noAgreement="{{true}}"></user-agreement>
+        </view>
+    </custom-show-modal>
+</view>
+<toast id="toast"></toast>

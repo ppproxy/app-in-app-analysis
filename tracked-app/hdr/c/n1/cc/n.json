@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "custom-order-good": "../n8/n"
+    }
+}

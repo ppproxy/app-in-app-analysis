@@ -1,0 +1,18 @@
+<navigation-bar alipayCustomBack="{{isShowNavigationBack}}" back="{{isShowNavigationBack}}" background="#ffffff" bind:handleBack="handleBack" bind:handleRootInstance="handleRootInstance" color="black" id="navigationBar" name="订单" title="订单" titleStyle="font-size:33rpx"></navigation-bar>
+<view class="ee2" style="{{themeColor?'--primary: '+themeColor+';':''}} height: calc(100vh - {{navigationBarHeight}}px);">
+    <view class="ees" style="top: {{navigationBarHeight}}px" wx:if="{{showTabs}}">
+        <custom-tabs bind:handleTabClick="handleTabChange" tabBackgroundColor="transparent" tabUnderlineColor="{{themeColor}}" tabs="{{tabs}}"></custom-tabs>
+    </view>
+    <view class="eey">
+        <orderlist-food-order bind:handleRootInstance="handleRootInstance" bindhandlePageInit="handlePageInit" id="orderlistFoodOrder" isShowTabbar="{{isShowTabbar}}" navigationBarHeight="{{navigationBarHeight}}" showHeaderTabs="{{showTabs}}" wx:if="{{activeTab==='food-order'}}"></orderlist-food-order>
+        <orderlist-group-order bind:handleRootInstance="handleRootInstance" bindhandlePageInit="handlePageInit" isShowTabbar="{{isShowTabbar}}" navigationBarHeight="{{navigationBarHeight}}" wx:if="{{activeTab==='group-order'}}"></orderlist-group-order>
+        <orderlist-takeout-order bind:handleRootInstance="handleRootInstance" bindhandlePageInit="handlePageInit" isShowTabbar="{{isShowTabbar}}" navigationBarHeight="{{navigationBarHeight}}" wx:if="{{activeTab==='takeout-order'}}"></orderlist-takeout-order>
+        <orderlist-coupon-order bind:handleRootInstance="handleRootInstance" bindhandlePageInit="handlePageInit" isShowTabbar="{{isShowTabbar}}" navigationBarHeight="{{navigationBarHeight}}" wx:if="{{activeTab==='coupon-dish'}}"></orderlist-coupon-order>
+    </view>
+    <view class="eef" wx:if="{{pageInit&&tabs.length===0}}">
+        <view class="ee7">
+            <custom-page-result bindhandleOk="handleEmptyButton" buttonText="去点单" icon="https://img.alicdn.com/tfs/TB1HvrokmslXu8jSZFuXXXg7FXa-400-347.png" showButton="{{true}}" subTitle="快去犒劳下自己吧" title="你还没有订单~" visible="{{true}}"></custom-page-result>
+        </view>
+        <view class="eek {{isShowTabbar?'eep':''}}"></view>
+    </view>
+</view>

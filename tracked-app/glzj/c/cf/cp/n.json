@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "recommend-dish-item": "/c/cf/cp/cy/n",
+        "component-title": "/c/cu/cg/n"
+    }
+}

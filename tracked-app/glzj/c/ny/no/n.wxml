@@ -1,0 +1,59 @@
+<import src="./5g/5q.wxml"></import>
+<import src="./5g/5r.wxml"></import>
+<view class="ny9">
+    <view class="ny5" wx:if="{{isShowOrderDetailStatus&&(orderInfo.title||orderInfo.desc)}}">
+        <text class="nyw">{{orderInfo.title}}</text>
+        <view class="ny3" wx:if="{{orderInfo.desc}}">{{orderInfo.desc}}<text class="ny6" wx:if="{{timeFormatted}}">{{timeFormatted}}</text>
+        </view>
+    </view>
+    <block wx:if="{{isSelfTake}}">
+        <order-detail-process bindhandleFinishOrder="handleFinishOrder" bindhandleOpenCabinet="handleOpenCabinet" bindhandleShowVerificationCodeModal="showVerificationCodeModal" bookFlag="{{orderDetail.bookFlag}}" code="{{orderDetail.mealCode}}" dishProcess="{{dishProcessObj}}" dishProcessEnable="{{dishProcessEnable}}" isFromOrderList="{{isFromOrderList}}" orderDetail="{{orderDetail}}" orderFlowNo="{{orderDetail.orderFlowNo}}" orderStatus="{{orderDetail.orderStatus}}" tableName="{{orderDetail.tableName}}" takeCabinetNum="{{takeCabinetNum}}" takeYourselfMode="{{orderDetail.takeYourselfMode}}" time="{{bookTimeFormat}}" wx:if="{{isShowProcess}}"></order-detail-process>
+        <order-detail-queue bookFlag="{{orderDetail.bookFlag}}" dishProcess="{{dishProcessObj}}" dishProcessEnable="{{dishProcessEnable}}" enableTakeStatus="{{!!orderDetail.enableTakeStatus}}" orderStatus="{{orderDetail.orderStatus}}" wx:elif="{{!(orderDetail.orderStatus==='WAIT_RECEIPT'||orderDetail.takeYourselfMode===2||isShowWaitReceiptFlapper&&isFromOrderList)}}"></order-detail-queue>
+        <block wx:if="{{isShowNotSupportTakeSuatus}}">
+            <block wx:if="{{orderDetail.orderStatus==='WAIT_TAKE'}}">
+                <block wx:if="{{orderDetail.takeYourselfMode===0||orderDetail.takeYourselfMode===3}}">
+                    <view class="nyp {{orderDetail.takeYourselfMode===3?'nyo':''}}" wx:if="{{orderDetail.enableVerificationMealCode===1}}">
+                        <code isFromOrderList="{{isFromOrderList}}" orderDetail="{{orderDetail}}"></code>
+                        <code-verification bind:handleRootInstance="handleRootInstance" isFromOrderList="{{isFromOrderList}}" orderDetail="{{orderDetail}}"></code-verification>
+                        <view class="nyh" wx:if="{{orderDetail.takeYourselfMode===3}}">
+                            <template is="orderFlowNo" data="{{orderFlowNo:orderDetail.orderFlowNo}}"></template>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <block wx:if="{{orderDetail.orderStatus==='SUCCESS'}}">
+                <block wx:if="{{orderDetail.takeYourselfMode===0||orderDetail.takeYourselfMode===3}}">
+                    <view class="nyy {{orderDetail.takeYourselfMode===3?'nya':''}}" wx:if="{{orderDetail.enableVerificationMealCode===1}}">
+                        <code isFromOrderList="{{isFromOrderList}}" orderDetail="{{orderDetail}}"></code>
+                        <code-verification bind:handleRootInstance="handleRootInstance" isFromOrderList="{{isFromOrderList}}" orderDetail="{{orderDetail}}"></code-verification>
+                        <view class="nyh" wx:if="{{orderDetail.takeYourselfMode===3}}">
+                            <template is="orderFlowNo" data="{{orderFlowNo:orderDetail.orderFlowNo}}"></template>
+                        </view>
+                        <template is="finishedIcon" data></template>
+                    </view>
+                    <call-code isFromOrderList="{{isFromOrderList}}" orderDetail="{{orderDetail}}" wx:else></call-code>
+                </block>
+            </block>
+        </block>
+        <view class="ny2" wx:if="{{isShowWaitReceiptFlapper}}">
+            <view class="nys">
+                <view class="ny7">
+                    <image class="nyk" mode="aspectFill" src="https://img.alicdn.com/imgextra/i4/O1CN01OKciTc1XHmqmDtKUX_!!6000000002899-55-tps-44-44.svg"></image>
+                </view>
+                <view class="nyf">号牌 {{orderDetail.tableName}}</view>
+            </view>
+        </view>
+    </block>
+    <order-refund-info bindhandleGotoRefundDetail="gotoRefundDetail" orderStatus="{{orderDetail.orderStatus}}" payMethod="{{orderDetail.payMethod}}" refundInfo="{{orderDetail.refundInfo}}" showRefundInfoStatus="{{showRefundInfoStatus}}"></order-refund-info>
+</view>
+<custom-modal catchtap="noop" id="customShowModal" useBodySlot="{{true}}" useFooterSlot="{{true}}">
+    <view class="npn" slot="body">
+        <view class="npw">
+            <image class="npc" src="{{orderDetail.verificationMealBarCode}}"></image>
+        </view>
+        <view class="np3">
+            <image class="npz" src="{{orderDetail.verificationMealQrCode}}"></image>
+        </view>
+        <view class="np5">请向店员出示此核销码</view>
+    </view>
+</custom-modal>

@@ -1,0 +1,32 @@
+.ej3 {
+    border-radius: 4rpx;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+}
+
+.ej3,.ej6 {
+    height: 32rpx;
+}
+
+.ej6 {
+    width: 88rpx;
+}
+
+.ej2 {
+    box-sizing: border-box;
+    font-size: 20rpx;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -1rpx;
+    line-height: 32rpx;
+    overflow: hidden;
+    padding: 0 8rpx 0 0rpx;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ejs {
+    font-size: 18rpx;
+    font-weight: 400;
+}

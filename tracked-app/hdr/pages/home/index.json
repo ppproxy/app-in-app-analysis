@@ -1,0 +1,9 @@
+{
+    "disableScroll": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "loading": "/c/ev/n",
+        "loading-animation": "/c/et/n",
+        "custom-show-modal": "/c/e9/n"
+    }
+}

@@ -1,0 +1,90 @@
+.eo7 {
+    background-color: #fff;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+    padding: 32rpx 24rpx;
+    width: 702rpx;
+}
+
+.nzg {
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.nzg,.nzm {
+    display: flex;
+}
+
+.nzm {
+    align-items: center;
+}
+
+.nz0 {
+    color: #191919;
+    font-size: 32rpx;
+    font-weight: 500;
+}
+
+.eou {
+    color: #666;
+    font-size: 24rpx;
+    margin-left: 12rpx;
+}
+
+.eot {
+    border: 1rpx solid;
+    border-radius: 28rpx;
+    font-size: 22rpx;
+    font-weight: 500;
+    height: 56rpx;
+    justify-content: center;
+    width: 144rpx;
+}
+
+.eop,.eot {
+    align-items: center;
+    display: flex;
+}
+
+.eop {
+    padding-top: 38rpx;
+    width: 100%;
+}
+
+.eoo {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+}
+
+.eoo::after {
+    background-image: linear-gradient(90deg,#979797 0,#979797 50%,transparent 0);
+    background-repeat: repeat-x;
+    background-size: 12rpx 1rpx;
+    content: "";
+    height: 2rpx;
+    position: absolute;
+    top: 35rpx;
+}
+
+.eoo.eo3::after {
+    right: -64rpx;
+    width: 128rpx;
+}
+
+.eoo.eo6::after {
+    right: -36rpx;
+    width: 72rpx;
+}
+
+.eoo.eo2::after,.eoo.eos::after {
+    right: -20rpx;
+    width: 40rpx;
+}
+
+.eoo.eoh::after {
+    width: 0;
+}

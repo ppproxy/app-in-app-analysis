@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "auth-phone-modal": "/c/e4/en/n",
+        "auth-user-modal": "/c/e4/ec/n",
+        "toast": "/c/z5/n",
+        "component-title": "/c/cu/cg/n",
+        "loading": "/c/ev/n",
+        "member-assistance-coupon": "../em/n"
+    }
+}

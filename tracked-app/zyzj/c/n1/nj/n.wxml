@@ -1,0 +1,7 @@
+<view class="ej3" style="background:{{storedPayMemberPriceSwitch?'#FFEDEA':'#FFE6CA'}}">
+    <image class="ej6" mode="aspectFill" src="{{storedPayMemberPriceSwitch?'https://img.alicdn.com/imgextra/i2/O1CN01zLgekI1T2tXI1IpR1_!!6000000002325-55-tps-88-32.svg':memberDayTag?'https://img.alicdn.com/imgextra/i1/O1CN01qauPXB1l32khwr1oZ_!!6000000004762-55-tps-168-32.svg':'https://img.alicdn.com/imgextra/i2/O1CN01LfA5Z81nE9ae2yaxN_!!6000000005057-55-tps-88-32.svg'}}" style="width: {{memberDayTag&&!storedPayMemberPriceSwitch?'168':'88'}}rpx"></image>
+    <view class="ej2" style="color: {{storedPayMemberPriceSwitch?'#FF4B33':'#782504'}};font-size: 20rpx;max-width: {{memberDayTag?maxMemberDayWidth:maxMemberWidth}}rpx;">
+        <text class="ejs">￥</text>
+        <text>{{number}}</text>
+    </view>
+</view>

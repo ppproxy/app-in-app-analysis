@@ -1,0 +1,16 @@
+<view class="nu1" style="background:{{dishIdSelect===cartDishSku.dishId?'#FFFAF2':''}};" wx:if="{{cartDishSku.num>0}}">
+    <view class="nv4">
+        <image class="nug" src="{{cartDishSku.skuImgUrl?cartDishSku.skuImgUrl:'/assets/images/dish-default.png'}}"></image>
+    </view>
+    <view class="num">
+        <view class="nu0">
+            <view class="nul">{{cartDishSku.dishName}}{{cartDishSku.dishType!=='SINGLE'&&cartDishSku.skuName!==cartDishSku.dishName?cartDishSku.skuName:''}}</view>
+            <view class="nuj" wx:if="{{cartDishSku.required==='Y'}}">必选</view>
+            <view class="nuq">{{cartDishSku.selectedName}}</view>
+        </view>
+        <view class="nu8">
+            <text class="nur">{{cartDishSku.num}}</text>
+            <image bindtap="handleMinusSubmenu" class="nux" src="{{IconNumControlMinus}}"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cart-bubble-item": "./n4/nm/n",
+        "cart-ordered-tip": "./n4/n0/n"
+    }
+}

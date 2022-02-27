@@ -1,0 +1,45 @@
+.nve {
+    position: relative;
+}
+
+.nvn {
+    border-radius: 16rpx 16rpx 0 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.nvc {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.nvz {
+    background: linear-gradient(180deg,rgba(0,0,0,.1),transparent 60%);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.nv5 {
+    height: 187rpx;
+    width: 187rpx;
+}
+
+.nvw {
+    background: rgba(0,0,0,.4);
+    border-radius: 34rpx;
+    bottom: 24rpx;
+    color: var(--white);
+    font-size: var(--font-size-s);
+    height: 40rpx;
+    line-height: 40rpx;
+    padding: 0 16rpx;
+    position: absolute;
+    right: 24rpx;
+}

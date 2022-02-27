@@ -1,0 +1,6 @@
+<view class="nhz">
+    <view class="nh5" style="top: {{top}}px">
+        <cart-bubble-item bubble="{{bubble}}" wx:for="{{bubbleList}}" wx:for-item="bubble" wx:key="key"></cart-bubble-item>
+    </view>
+</view>
+<cart-ordered-tip avatar="{{orderedTip.customerAvatar}}" bind:handleRootInstance="handleRootInstance" key="{{cartId}}" name="{{orderedTip.customerName}}" wx:if="{{orderedTip!=undefined}}"></cart-ordered-tip>

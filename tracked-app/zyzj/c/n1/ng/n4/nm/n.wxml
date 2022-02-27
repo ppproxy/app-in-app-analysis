@@ -1,0 +1,18 @@
+<view class="nap {{inner?'nao':''}} {{outer?'naa':''}}">
+    <view class="nay">
+        <image class="nah" src="{{bubble.operatorAvatar}}"></image>
+        <view class="na9">
+            <text class="nau">{{bubble.operatorName}}</text>
+            <text wx:if="{{bubble.operation==='CLEAR_CART'}}">清空了购物车</text>
+            <text wx:elif="{{bubble.operation==='ORDERED'}}">已下单</text>
+            <text wx:elif="{{bubble.operation==='ADD_OPERATOR'}}">加入点餐</text>
+            <block wx:else>
+                <text wx:if="{{bubble.operation==='ADD_DISH'}}">点了</text>
+                <text wx:if="{{bubble.operation==='REDUCE_DISH'}}">删除</text>
+                <text class="nav">{{bubble.dish.dishSkuName}}</text>
+                <text> x {{bubble.dish.operateDishQuantity>0?bubble.dish.operateDishQuantity:-bubble.dish.operateDishQuantity}}</text>
+                <text>{{bubble.dish.unitName}}</text>
+            </block>
+        </view>
+    </view>
+</view>

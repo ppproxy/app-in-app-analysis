@@ -1,0 +1,33 @@
+.n9q {
+    color: #ccc;
+    font-size: 24rpx;
+}
+
+.n9r {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.n9r,.n9x {
+    position: relative;
+}
+
+.n9x {
+    background-color: var(--primary);
+    border-radius: var(--border-radius-btn);
+    box-sizing: border-box;
+    color: var(--white);
+    font-size: 24rpx;
+    font-weight: 700;
+    height: 44rpx;
+    line-height: 44rpx;
+    margin: 0;
+    min-width: 104rpx;
+    padding: 0 16rpx;
+    text-align: center;
+}
+
+.n9x.n98 {
+    background-color: #191919;
+    opacity: .16;
+}

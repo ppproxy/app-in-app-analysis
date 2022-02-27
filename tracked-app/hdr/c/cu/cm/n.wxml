@@ -1,0 +1,4 @@
+<view class="nqf" wx:if="{{!emptyData}}">
+    <component-title textAlign="{{titleType==='text'?'left':'center'}}" title="{{name}}" titleUrl="{{titleImage}}" type="{{titleType}}" wx:if="{{showTitle}}"></component-title>
+    <point-goods bind:handleGoodsPointTap="chooseGoods" goodsList="{{goodsList}}"></point-goods>
+</view>

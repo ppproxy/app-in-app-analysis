@@ -1,0 +1,37 @@
+.ee2 {
+    background-color: var(--bg-color);
+    height: 100vh;
+    position: relative;
+}
+
+.ees {
+    background-color: var(--white);
+    left: 0;
+    padding: 16rpx 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.eef {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 24rpx 24rpx;
+}
+
+.ee7 {
+    border-radius: 16rpx;
+    flex: 1;
+    overflow: hidden;
+}
+
+.eek {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.eep {
+    height: var(--bottom-tabbar-height);
+}

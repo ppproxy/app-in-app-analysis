@@ -1,0 +1,39 @@
+<view bindtap="handleItemClick" class="n27 n6b {{couponItemCopy.couponChannel==='SAAS'?'n23':''}}">
+    <view class="n6i">
+        <image class="n61" src="{{couponItemCopy.bgImg}}"></image>
+        <view class="n6g">
+            <view class="n6m" wx:if="{{couponItemCopy.discount}}">
+                <view class="e5n" style="font-size: {{couponItemCopy.discount.length>=5?280/couponItemCopy.discount.length:62}}rpx">{{couponItemCopy.discount}}</view>
+                <view class="e5e">折</view>
+            </view>
+            <view class="n6m" wx:if="{{couponItemCopy.couponAmount}}">
+                <view class="e5e">¥</view>
+                <view class="e5n" style="font-size: {{couponItemCopy.couponAmount.length>=5?280/couponItemCopy.couponAmount.length:62}}rpx">{{couponItemCopy.couponAmount}}</view>
+            </view>
+            <view class="n6m" wx:if="{{couponItemCopy.couponType==='SAAS_GIFT'}}">
+                <view class="e5n n2w">礼品券</view>
+            </view>
+            <view class="n60" wx:if="{{couponItemCopy.conditionToUse}}">满{{couponItemCopy.conditionToUse}}元可用</view>
+        </view>
+        <image class="n6l" src="https://gw.alicdn.com/tfs/TB1VGUMM7L0gK0jSZFAXXcA9pXa-10-20.png"></image>
+        <image class="n6q" src="https://gw.alicdn.com/tfs/TB1unFcdWNj0u4jSZFyXXXgMVXa-10-20.png"></image>
+    </view>
+    <view class="n6r">
+        <view class="n6x">{{couponItemCopy.couponName}}</view>
+        <view class="n68" wx:if="{{couponItemCopy.availableDish||couponItemCopy.availableShop}}">{{couponItemCopy.availableDish||couponItemCopy.availableShop}}</view>
+        <view class="n6j">
+            <view class="n24" wx:if="{{couponItemCopy.giftPoint}}">剩余{{couponItemCopy.giftPoint}}份可用</view>
+            <view class="n2e" wx:if="{{couponItemCopy.reduceToAmount||couponItemCopy.originAmount}}">
+                <view class="n2n" wx:if="{{couponItemCopy.reduceToAmount}}">
+                    <view class="n2c">¥</view>
+                    <view>{{couponItemCopy.reduceToAmount}}</view>
+                </view>
+                <view class="n2z" wx:if="{{couponItemCopy.originAmount}}">¥{{couponItemCopy.originAmount}}</view>
+            </view>
+            <view class="n25" wx:if="{{couponItemCopy.availableTimeType==='RELATIVE'}}"> 领取后{{couponItemCopy.availableDays}}天内有效 </view>
+            <view class="n25" wx:elif="{{couponItemCopy.availableTimeType==='FIXED'}}"> 有效期至 {{couponItemCopy.availableEndTime}} </view>
+        </view>
+        <view class="n2f" wx:if="{{couponItemCopy.num>1}}">
+            <text>x{{couponItemCopy.num}}</text>张 </view>
+    </view>
+</view>

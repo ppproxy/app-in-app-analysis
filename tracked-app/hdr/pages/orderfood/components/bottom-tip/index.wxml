@@ -1,0 +1,2 @@
+<view class="c1i" style="bottom: {{!openStatus&&isUpdate?0:'var(--bottom-tabbar-height)'}}"> {{tipInfo}}
+</view>

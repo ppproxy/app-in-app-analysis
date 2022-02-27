@@ -1,0 +1,12 @@
+{
+    "component": true,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "member-join-pop": "/c/ed/n5/n",
+        "custom-picture-modal": "/c/e9/n",
+        "custom-full-picture-modal": "/c/e9/n",
+        "custom-show-full-slot-modal": "/c/e9/n",
+        "consumption-send-popup": "/c/e6/n",
+        "cook-image": "/c/eo/n"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "num-control": "/c/n1/ce/n",
+        "custom-member-price-label": "/c/n1/nj/n",
+        "custom-group-dish-item": "/c/n1/nx/n",
+        "cook-image": "/c/eo/n"
+    }
+}

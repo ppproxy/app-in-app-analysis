@@ -1,0 +1,25 @@
+<view class="nci">
+    <view style="background-color: {{bgColor||themecolor}}; opacity: {{opacity||0.08}}; position: absolute; top: 0; left: 0; width: 100%; height: 144rpx; border-radius: 12rpx;"></view>
+    <view class="nc1" style="color: {{fontColor||themecolor}};">
+        <view class="ncg">
+            <image class="nc0 {{couponInfo.giftGoodsUrl?'':'ncl'}}" src="{{couponInfo.giftGoodsUrl||'https://gw.alicdn.com/imgextra/i3/O1CN01Q9U57a1kplEipgcup_!!6000000004733-2-tps-117-84.png'}}" wx:if="{{couponInfo.type==='GIFT'}}"></image>
+            <block wx:else>
+                <view class="ncq" wx:if="{{couponInfo.type==='CASH'}}"> ¥ </view>
+                <view class="ncr">{{couponInfo.value}}</view>
+                <view class="ncm" wx:if="{{couponInfo.type==='DISCOUNT'}}"> 折 </view>
+            </block>
+        </view>
+    </view>
+    <view class="ncx" style="color: {{fontColor||themecolor}};">
+        <view class="nc8">
+            <view class="ncj" style="color: {{fontColor||themecolor}};"> {{couponInfo.voucherTemplateName}} </view>
+            <view class="nz4" style="color: {{fontColor||themecolor}};" wx:if="{{couponInfo.content}}"> 满{{couponInfo.content}}可用 </view>
+        </view>
+        <view class="e83"></view>
+    </view>
+    <view class="nze" style="border: 1px dashed {{fontColor||themecolor}}; transform: scaleX(.5);"></view>
+    <view class="nzn" style="color: {{fontColor||themecolor}};">
+        <view class="nzc"> {{util.getCouponName(couponInfo.type)}} </view>
+    </view>
+</view>
+<wxs module="util" src="n.wxs" />

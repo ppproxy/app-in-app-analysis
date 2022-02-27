@@ -1,0 +1,6 @@
+<view class="exy">
+    <view bindtap="handleChange" wx:if="{{!noAgreement}}">
+        <radio checked="{{agreeChecked}}" style="transform: scale(0.6);margin-right: -6rpx;vertical-align: middle;"></radio>请查阅</view>
+    <view wx:else>请查阅</view>
+    <view bindtap="toAgreementPage" class="exa" data-url="https://render.koubei.com/p/kbmodmng/UDYLNn0bK_prod/2O1QHGTUP.html" style="color: {{themeColor}}"> 《用户授权协议》 </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="n82 {{flexDirection==='row'?'n8j':''}}">
+    <view class="n8s">
+        <cook-image class="n8f" mode="aspectFill" src="{{imageUrl||'/assets/images/dish-default.png'}}" style="width: {{aspectWidth}}rpx; height: {{aspectWidth}}rpx;"></cook-image>
+    </view>
+    <view class="n8k">
+        <view class="n8p" style="width: {{aspectWidth-40}}rpx;"> {{dish.dishName}} </view>
+        <view class="n8y" wx:if="{{dish.haveMemberSellPrice}}">
+            <custom-member-price-label maxMemberDayWidth="50" maxMemberWidth="130" memberDayTag="{{dish.memberDayTag}}" number="{{utils.handlePrice(dish.memberSellPrice)}}" storedPayMemberPriceSwitch="{{dish.storedPayMemberPriceSwitch==='Y'}}" wx:if="{{!memberFlag||dish.storedPayMemberPriceSwitch==='Y'}}"></custom-member-price-label>
+            <cook-image class="n88" src="{{dish.memberDayTag?'https://img.alicdn.com/imgextra/i4/O1CN01OweEQU1Kf40N8C15O_!!6000000001190-55-tps-108-32.svg':'https://img.alicdn.com/imgextra/i4/O1CN01ztyWrz20VBK0UdVpo_!!6000000006854-55-tps-72-32.svg'}}" style="width: {{dish.memberDayTag?'116':'76'}}rpx" wx:else></cook-image>
+        </view>
+        <view class="n8y" wx:elif="{{showContentGap||flexDirection==='row'}}"></view>
+        <view class="n8v" style="width: {{aspectWidth-40}}rpx; height: 55rpx;">
+            <view class="n8l" wx:if="{{dish.sellPrice}}">
+                <text class="n8q">￥</text>
+                <block wx:if="{{dish.haveMemberSellPrice&&memberFlag}}">
+                    <view class="n8r">{{dish.storedPayMemberPriceSwitch==='Y'?utils.handlePrice(dish.sellPrice):utils.handlePrice(dish.memberSellPrice)}}</view>
+                    <view>
+                        <block wx:if="{{dish.dishType!=='COMBO'&&dish.unitName!=='份'&&dish.unitName!=='个'&&dish.unitName.length<4}}">{{'/'+dish.unitName+(dish.multiSpecFlag==='Y'?' ':'')}}</block> {{dish.priceAfterShowCopywriter||''}} </view>
+                    <view class="n8x" wx:if="{{dish.storedPayMemberPriceSwitch!=='Y'}}">￥{{utils.handlePrice(dish.sellPrice)}}</view>
+                </block>
+                <block wx:else>
+                    <view class="n8r">{{utils.handlePrice(dish.sellPrice)}}</view>
+                    <view>
+                        <block wx:if="{{dish.dishType!=='COMBO'&&dish.unitName!=='份'&&dish.unitName!=='个'&&dish.unitName.length<4}}">{{'/'+dish.unitName+(dish.multiSpecFlag==='Y'?' ':'')}}</block>{{dish.priceAfterShowCopywriter||''}} </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="../zl.wxs" />

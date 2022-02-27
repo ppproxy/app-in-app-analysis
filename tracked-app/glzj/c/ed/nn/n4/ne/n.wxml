@@ -1,0 +1,14 @@
+<view class="n6v" wx:if="{{summaryList&&summaryList.length>0}}">
+    <view class="n3y {{summaryList.length===2?'n6t':''}}">
+        <view class="ey1" wx:for="{{summaryList}}" wx:key="index">
+            <view class="n3o">
+                <image class="eoz" src="{{item.decorateImgUrl||item.bgImgUrl}}"></image>
+                <image class="eqs" src="https://gw.alicdn.com/tfs/TB1PJySNoH1gK0jSZSyXXXtlpXa-332-138.png" wx:if="{{item.tipStatus}}"></image>
+            </view>
+            <view class="n6d">
+                <view class="n3h">{{item.summaryDesc}}</view>
+                <view class="n39">{{item.summaryTips}}</view>
+            </view>
+        </view>
+    </view>
+</view>

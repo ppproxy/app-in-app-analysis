@@ -1,0 +1,67 @@
+<template name="style2">
+    <view class="z2z" wx:if="{{showModal}}">
+        <view bindtap="gotoOrderDetailPage" class="z25" style="border-color: {{themeColor}}">
+            <view class="z2w" wx:if="{{orderInfo.orgName}}">
+                <view class="z23 z26">{{orderInfo.orgName}}</view>
+                <view class="z22" wx:if="{{!orderInfo.dishDesc&&!utils.isHospitalMiniapp(orderInfo)}}">
+                    <block wx:if="{{utils.showBlock(orderInfo)}}">
+                        <view class="z2s" wx:if="{{utils.isShowTakeText(orderInfo)}}"> {{utils.getTakeText(orderInfo)}} </view>
+                        <view class="z2s" wx:if="{{orderInfo.tableArea}}"> {{orderInfo.tableArea}} </view>
+                    </block>
+                    <block wx:if="{{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}">
+                        <view class="z2s" wx:if="{{orderInfo.tableArea}}"> 桌号 </view>
+                    </block>
+                </view>
+            </view>
+            <view class="z2f">
+                <view class="z27">
+                    <view class="z2k">
+                        <view class="z2p z2y" style="color: {{themeColor}}" wx:if="{{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}"> {{orderInfo.tips}} </view>
+                        <block wx:else>
+                            <view class="z2p {{utils.showTime(orderInfo,takeTime)?'z26':'z2y'}}" style="color: {{themeColor}}"> {{utils.isVerificationCode(orderInfo)?orderInfo.tips:orderInfo.orderStatusValue}} </view>
+                            <view class="z2o z26" style="font-size: {{takeTime.length>6?'24rpx':'4orpx'}}" wx:if="{{utils.showTime(orderInfo,takeTime)}}"> 预计{{takeTime}}可取 </view>
+                        </block>
+                    </view>
+                    <view class="z2a">
+                        <view class="z2h" style="max-width: {{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'?'306rpx':'100%'}}" wx:if="{{orderInfo.dishDesc}}"> {{orderInfo.dishDesc}} </view>
+                        <view class="z29" wx:if="{{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}">
+                            <view bindtap="gotoOrderPage" class="z2u" style="color: {{themeColor}}" wx:if="{{orderInfo.orderStatus==='EATING'&&!orderInfo.tableCodeActionChange}}"> 继续点餐 <image class="z2v" src="{{IconJianTou}}"></image>
+                            </view>
+                            <view bindtap="gotoOrderPage" class="z2u" style="color: {{themeColor}}" wx:if="{{orderInfo.orderStatus==='CLOSED'}}"> 重新点餐 <image class="z2v" src="{{IconJianTou}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <block wx:if="{{utils.showRightButton(orderInfo)}}">
+                    <view class="z2t" style="color: #fff; border: none; background-color: {{themeColor}};" wx:if="{{orderInfo.orderStatus==='WAIT_PAY'}}">去付款</view>
+                    <view class="z2t" style="color: #fff; border: none; background-color: {{themeColor}};" wx:if="{{utils.isVerificationCode(orderInfo)}}">取餐码</view>
+                </block>
+                <block wx:else>
+                    <view style="opacity: 0.3; background-color: {{themeColor}}; width: 2rpx; height: {{orderInfo.dishDesc?'69':'29'}}rpx;" wx:if="{{utils.showBlock(orderInfo)||orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}"></view>
+                    <view class="z22" wx:if="{{utils.showBlock(orderInfo)}}">
+                        <block wx:if="{{utils.isShowTakeText(orderInfo)}}">
+                            <view class="z2d" style="color: {{themeColor}};">
+                                <view class="z26" style="width: 100%;font-size: {{orderInfo.takeYourselfMode===3?orderPasswordFontSize.tableCode:orderPasswordFontSize.mealCode}}rpx;"> {{orderInfo.takeYourselfMode===3?orderInfo.tableCode:orderInfo.mealCode}} </view>
+                            </view>
+                            <view class="z2s" wx:if="{{orderInfo.dishDesc}}"> {{utils.getTakeText(orderInfo)}} </view>
+                        </block>
+                        <block wx:if="{{orderInfo.takeMealType==='TO_TABLE'}}">
+                            <view class="z2d {{utils.isHospitalMiniapp(orderInfo)?'z2b':''}}" style="color: {{themeColor}}">
+                                <view class="{{utils.isHospitalMiniapp(orderInfo)?'':'z26'}}" style="font-size: {{orderPasswordFontSize.tableCode}}rpx;"> {{utils.isHospitalMiniapp(orderInfo)?orderInfo.deliveryAddress:orderInfo.tableCode}} </view>
+                                <view class="z2i" wx:if="{{!utils.isHospitalMiniapp(orderInfo)}}">桌</view>
+                            </view>
+                            <view class="z2s" wx:if="{{orderInfo.dishDesc&&!utils.isHospitalMiniapp(orderInfo)}}"> {{orderInfo.tableArea}} </view>
+                        </block>
+                    </view>
+                    <view class="z22" wx:if="{{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}">
+                        <view class="z2d" style="color: {{themeColor}} ">
+                            <view class="z26" style="width: 100%;font-size: {{orderPasswordFontSize.tableCode}}rpx;">{{orderInfo.tableCode}}</view>
+                        </view>
+                        <view class="z2s" wx:if="{{orderInfo.dishDesc}}"> 桌号 </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="utils" src="../zl.wxs" />

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "custom-group-dish-item": "../nx/n",
+        "cook-image": "../../eo/n"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "disableScroll": false,
+    "navigationBarTitleText": "买单",
+    "backgroundColor": "#efefef",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "custom-show-modal": "/c/e9/n",
+        "extra-fee-modal": "./_/component_modules/zcsettleaccount/extra-fee-modal/index",
+        "custom-page-result": "/c/ea/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "promotion-section": "./_/component_modules/privilege-consult-promotion-section/index",
+        "zc-order-good": "./components/custom-zc-order-good/index",
+        "consumption-coupon-tip": "./_/component_modules/settleaccount-common/consumption-coupon-tip/index",
+        "cashier": "./_/component_modules/cashier/index",
+        "submit-container-left": "./_/component_modules/settleaccount-common/submit-container-left/index",
+        "navigation-bar": "/c/np/n"
+    }
+}

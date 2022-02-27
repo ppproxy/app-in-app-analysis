@@ -1,0 +1,29 @@
+<view class="n4r" onAppear="onAppear" wx:if="{{isInit&&isShow}}">
+    <view bindtap="onPopupClose" class="nen">
+        <image class="nec" src="https://img.alicdn.com/tfs/TB1un4bdipE_u4jSZKbXXbCUVXa-32-32.png"></image>
+    </view>
+    <text class="nez neu">{{channelInfo.title}}</text>
+    <view class="ne5">
+        <image class="new" src="{{channelInfo.currentChannelIconUrl}}"></image>
+        <image class="ne3" src="https://img.alicdn.com/tfs/TB1t3tLcCslXu8jSZFuXXXg7FXa-48-48.png"></image>
+        <image class="new" src="{{channelInfo.bindChannelIconUrl}}"></image>
+    </view>
+    <view class="nes">
+        <text class="nef">绑定后，部分权益将发放至{{channelInfo.bindChannelName}}账号</text>
+        <view class="ne7">
+            <text>若未绑定，可能导致</text>
+            <text class="nek" style="color: {{brandColor}}">部分权益无法享受</text>
+        </view>
+    </view>
+    <view bindtap="bind" class="nep" style="background:{{brandColor}}">
+        <text class="ney neu" style="color: {{foregroundColor}}">立即绑定</text>
+    </view>
+    <view bindtap="noBind" class="neo">
+        <text class="nea nev">暂不绑定</text>
+    </view>
+</view>
+<view bindtap="onPopupClose" class="n48" wx:if="{{isInit&&isShow}}">
+    <view class="n4j"></view>
+</view>
+<loading id="loading"></loading>
+<toast id="toast"></toast>

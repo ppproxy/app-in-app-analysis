@@ -1,0 +1,3 @@
+<view bindtap="gotoMemberPersonalInfo" class="nnh {{'complete-personal-info-activity-component'}} {{origin==='CSHOP_ORDER_FOOD_INDEX'?'nn9':''}}" data-track-logkey=".wszlshl.component" data-track-origin="{{origin}}" onAppear="$logAppear" wx:if="{{isShow&&imgUrl}}">
+    <cook-image class="nnu" mode="widthFix" src="{{imgUrl}}" wx:if="{{imgUrl}}"></cook-image>
+</view>

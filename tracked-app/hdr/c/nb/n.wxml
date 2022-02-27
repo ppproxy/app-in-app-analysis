@@ -1,0 +1,97 @@
+<block wx:if="{{isDinner}}">
+    <view bind:tap="handleToggleOrder" class="na3" wx:if="{{showOrderedIconOrderNo}}">
+        <view class="na5 {{!showOrderTips?'naw':''}}"> {{orderedTips}} </view>
+        <view class="na6">
+            <view class="nan">
+                <image class="na2" mode="aspectFit" src="{{orderedIconUrl||OrderedIcon}}"></image>
+            </view>
+            <view class="nas">已下单</view>
+        </view>
+    </view>
+    <view class="na4">
+        <view bindtap="clickTips" class="na5 {{!showDinnerTips?'naw':''}}"> {{dinnerTips}} </view>
+        <view catchtap="dinnerToSubmit" class="nae">
+            <view class="nak">
+                <badge extStyle="position: absolute; top: -2rpx; right: -2rpx; min-width: 40rpx; height: 40rpx; font-size: 24rpx;" num="{{cartSum}}" size="small"></badge>
+            </view>
+            <view class="nan">
+                <image class="nac" mode="aspectFit" src="{{iconUrl||DinnerCartDefaultIcon}}"></image>
+            </view>
+            <view class="naz">购物车</view>
+        </view>
+    </view>
+</block>
+<view class="no3 {{show&&!hideCart?'nok':''}}" style="{{isUpdate?'bottom: 0':''}}" wx:else>
+    <view class="nof" wx:if="{{!isDinner&&txtNode&&!modalDisplay&&enableShowOrderPrice}}">
+        <custom-rich-text ellipsis maxWidth="608" nodes="{{txtNode}}" textStyleFirst="color: #FF5900;"></custom-rich-text>
+    </view>
+    <view bind:tap="handleToggleCart" class="no7" wx:if="{{show&&!hideCart}}">
+        <view class="nop">
+            <image class="noy" mode="aspectFit" src="{{iconUrl?iconUrl:IconDinnerCart}}"></image>
+        </view>
+        <badge extStyle="position: absolute; top: 12rpx; left: 20rpx;" num="{{cartSum}}" size="small"></badge>
+        <view class="noq">
+            <view class="nor">
+                <view class="noo">
+                    <text class="noa" wx:if="{{loading&&enableShowOrderPrice}}">价格计算中...</text>
+                    <block wx:if="{{!loading}}">
+                        <view wx:if="{{enableShowOrderPrice}}">
+                            <text class="noh">￥</text>
+                            <text>{{loadingNum/100}}</text>
+                        </view>
+                        <view wx:if="{{cartInfo.totalDiscountAmount>0}}">
+                            <view class="no9" wx:if="{{!memberFlag&&cartInfo.onlyHasMemberPricePromotion}}"> 加入会员可减￥{{cartInfo.totalDiscountAmount/100}} </view>
+                            <view class="nou" wx:elif="{{enableShowOrderPrice}}"> ￥{{cartInfo.totalAmount/100}} </view>
+                        </view>
+                    </block>
+                </view>
+                <view class="nox" wx:if="{{couponTipArr.length&&enableShowOrderPrice&&!loading}}">
+                    <swiper autoplay="true" circular="true" class="ewd" interval="2000" vertical="true">
+                        <swiper-item class="ewi" wx:for="{{couponTipArr}}" wx:key="index">
+                            <custom-rich-text nodes="{{item}}" textStyleFirst="color: #FF5900;" textStyleNormal="color: #FFFFFF; opacity: 0.6;"></custom-rich-text>
+                        </swiper-item>
+                    </swiper>
+                </view>
+            </view>
+            <view catch:tap="handleToSubmit" class="nov {{'component-scan-code'}}" data-track-custom-scene="{{customScene}}" data-track-logkey=".keruyun_menu.scan_code_exposure" onAppear="$logAppear" style="padding: {{mustAddDishCheckResult?'':'unset'}}">
+                <view class="noj {{'component-must-add-dish-tips'}}" data-track-custom-scene="{{customScene}}" data-track-custom-type="{{logType}}" data-track-logkey=".orderfood_card.required_dishes_not_ordered_exposure" onAppear="$logAppear" wx:if="{{!mustAddDishCheckResult}}">未点必点品</view>
+                <block wx:elif="{{!isDinner}}">
+                    <block wx:if="{{memberFlag||!canJoinMember}}">去结算</block>
+                    <block wx:else>
+                        <block wx:if="{{showMemberGuid}}">
+                            <block wx:if="{{rejectMemberFlag}}">去结算</block>
+                            <block wx:else>入会点单</block>
+                        </block>
+                        <block wx:elif="{{showMemberEnforce}}">入会点单</block>
+                        <block wx:else>去结算</block>
+                    </block>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>
+<view bind:tap="handleCloseCart" catch:touchmove="handleForbidMove" class="not" style="{{modalDisplay&&!hideCart?'':'display: none;'}}">
+    <view catch:tap="handleForbidMove" class="nod {{modalShow?'nok':''}}">
+        <view class="nob" wx:if="{{txtNode&&enableShowOrderPrice}}">
+            <custom-rich-text nodes="{{txtNode}}" textStyleFirst="color: #FF5900;"></custom-rich-text>
+        </view>
+        <view class="noi" wx:if="{{!isDinner}}">
+            <view>已点 {{cartSum}}份</view>
+            <view catch:tap="handleClearCart" class="no1">
+                <image class="nog" src="https://img.alicdn.com/imgextra/i2/O1CN01C2NARM1kxXy15phpU_!!6000000004750-55-tps-32-32.svg"></image>
+                <text class="nom">清空</text>
+            </view>
+        </view>
+        <view class="naf" wx:else>
+            <text>请选择去掉的菜品</text>
+            <image bindtap="handleCloseCart" class="na7" src="https://img.alicdn.com/imgextra/i1/O1CN01qVI3UW1wxLEIbFGED_!!6000000006374-55-tps-40-40.svg"></image>
+        </view>
+        <scroll-view scrollY class="no0">
+            <card-item bind:handleRootInstance="handleRootInstance" dishIdSelect="{{isDinner?'':dishIdSelect}}" isDinner="{{isDinner}}" item="{{item}}" memberDayTagSwitch="{{cartInfo.memberDayTag}}" memberFlag="{{memberFlag}}" storedPayMemberPriceSwitch="{{cartInfo.specialItemWithRecharge}}" wx:for="{{cartList}}" wx:key="dishMd5"></card-item>
+            <view class="no8" wx:if="{{!!cartGifts&&!!cartGifts.length}}"> 搭配推荐 </view>
+            <card-item bind:handleRootInstance="handleRootInstance" class="{{'component-orderfood-cart-redeem_product_of_cart'}}" data-track-custom-id="{{item.dishId+'-'+item.skuId}}" data-track-logkey=".orderfood_card.redeem_product_of_cart" dishIdSelect="{{dishIdSelect}}" isDinner="{{isDinner}}" item="{{item}}" memberDayTagSwitch="{{cartInfo.memberDayTag}}" memberFlag="{{memberFlag}}" showAddPriceBuy="{{true}}" storedPayMemberPriceSwitch="{{cartInfo.specialItemWithRecharge}}" wx:for="{{cartGifts}}" wx:key="dishMd5"></card-item>
+        </scroll-view>
+    </view>
+</view>
+<auth-phone-modal id="authPhoneModal"></auth-phone-modal>
+<toast id="toast"></toast>

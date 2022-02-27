@@ -1,0 +1,8 @@
+.exb .exi .ex1 {
+    background: #fff;
+    border: 6rpx solid #fff;
+    border-radius: 100%;
+    box-shadow: 0 0 8rpx 0 rgba(0,0,0,.1);
+    height: 68rpx;
+    width: 68rpx;
+}

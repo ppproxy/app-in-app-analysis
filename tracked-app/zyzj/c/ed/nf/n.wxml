@@ -1,0 +1,25 @@
+<import src="./5g/5m.wxml"></import>
+<import src="./5g/50.wxml"></import>
+<view class="n7c" wx:if="{{pointCouponListToShow&&pointCouponListToShow.length!==0}}">
+    <component-title textAlign="{{titleType==='text'?'left':'center'}}" title="{{name}}" titleUrl="{{titleImage}}" type="{{titleType}}" wx:if="{{showTitle}}"></component-title>
+    <view class="{{displayType==='DOUBLE'?'n7z':'n75'}}">
+        <point-components-point-item bind:handleRootInstance="handleRootInstance" extInfos="{{couponItem.extInfos}}" goodsList="{{pointCouponListToShow}}" itemBizType="DOUBLE" memberCenterEnable="{{false}}" scene="point-mall" sourceData="{{couponItem}}" type="{{couponItem.type}}" wx:if="{{displayType==='DOUBLE'}}"></point-components-point-item>
+        <block wx:if="{{displayType==='TRIPLE'}}">
+            <view class="n7f" wx:for="{{pointCouponListToShow}}" wx:for-index="templateIndex" wx:for-item="templateItem" wx:key="templateItem">
+                <view class="n7y" style="margin-left:{{couponIndex!==0?20:0}}rpx" wx:for="{{templateItem}}" wx:for-index="couponIndex" wx:for-item="couponItem" wx:key="couponItem">
+                    <point-components-point-item bind:handleRootInstance="handleRootInstance" extInfos="{{couponItem.extInfos}}" itemBizType="TRIPLE" memberCenterEnable="{{false}}" scene="point-mall" sourceData="{{couponItem}}" type="{{couponItem.type}}"></point-components-point-item>
+                </view>
+            </view>
+        </block>
+        <view catchtap="handleRequest" class="n73" style="padding-top: 32rpx" wx:if="{{hasMoreCouponData}}">
+            <view class="n76">{{hasMoreCouponData?'查看更多商品':'没有更多了...'}}</view>
+            <image class="n72" src="https://img.alicdn.com/tfs/TB1zyml0FY7gK0jSZKzXXaikpXa-42-42.png" wx:if="{{hasMoreCouponData}}"></image>
+        </view>
+    </view>
+</view>
+<member-shake-code id="pointComponentsShakeCode"></member-shake-code>
+<member-account-bind bind:handleRootInstance="handleRootInstance" bindRelationship="{{bindAcount}}" bizType="{{bizType}}" currentSite="{{currentSite}}" id="pointComponentsAccountBind"></member-account-bind>
+<member-account-bind-pop bind:handleRootInstance="handleRootInstance" id="pointComponentsAccountBindPop"></member-account-bind-pop>
+<point-product-detail bind:handleClosed="onPopupClose" bind:handleRootInstance="handleRootInstance" bottomTabEnable="{{true}}" id="pointComponentsPointProductDetail" showDetail="{{showDetail}}" usePointGoodsComponent="{{displayType==='DOUBLE'}}"></point-product-detail>
+<loading id="loading"></loading>
+<toast id="toast"></toast>

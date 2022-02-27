@@ -1,0 +1,21 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "navigation-bar": "/c/np/n",
+        "member-join-pay": "./../_/component_modules/member-common/member-join-pay/index",
+        "recharge-success-pop": "./components/recharge-success-pop/index",
+        "recharge-coupon-pop": "./components/recharge-coupon-pop/index",
+        "recharge-gift-rule-item": "./components/recharge-gift-rule-item/index",
+        "recharge-gift": "./components/recharge-gift/index",
+        "recharge-shop": "./components/recharge-shop/index",
+        "recharge-head-text": "./../_/component_modules/recharge/recharge-head-text/index",
+        "recharge-instructions": "./../_/component_modules/recharge/recharge-instructions/index",
+        "cook-icon": "./../_/component_modules/cook-icon/index"
+    },
+    "navigationStyle": "custom",
+    "transparentTitle": "always",
+    "allowsBounceVertical": "NO",
+    "__warning__": "invalid page.json [\"transparentTitle\"]、page.json [\"allowsBounceVertical\"]"
+}

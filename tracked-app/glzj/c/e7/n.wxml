@@ -1,0 +1,3 @@
+<view class="ejk" style="{{containerStyle}}">
+    <text class="ejp" style="-webkit-line-clamp: {{limitLine}};font-size: {{dishNameFontSize}}rpx;{{txtStyle}};">{{dishName}}</text>
+</view>

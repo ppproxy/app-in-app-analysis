@@ -1,0 +1,47 @@
+<view class="ngi" style="--primary: {{themeColor}}">
+    <view class="ng1" style="margin-top: calc({{statusBarHeight}}px + 88rpx)">
+        <view class="ngg">
+            <view catch:tap="jumpToShopList" class="ngm">{{shopBaseInfo.storeName}}</view>
+            <image catch:tap="jumpToShopList" class="ng0" src="https://img.alicdn.com/imgextra/i4/O1CN010Q4Q0A1dmpPPK25k5_!!6000000003779-2-tps-12-20.png"></image>
+        </view>
+        <view class="ngl" wx:if="{{showTags&&showTags.length>0||distanceDesc||tableInfo}}">
+            <view class="ngq">
+                <text class="ngr" wx:for="{{showTags||[]}}" wx:key="index">{{item}}</text>
+            </view>
+            <text class="nmo {{'component-shop-header-container__table-text'}}" data-track-custom-type="点餐页弹窗入会" data-track-logkey=".orderfood_page_header_tableInfo_expose" onAppear="$logAppear" wx:if="{{tableInfo.tableAreaName||tableInfo.tableName}}">{{tableInfo.tableAreaName}} {{tableInfo.tableName}}</text>
+            <text class="ngx" wx:elif="{{distanceDesc}}">距离您{{distanceDesc}}</text>
+        </view>
+        <view bind:tap="handleClickMore" class="nm4" wx:if="{{!(shopActivityFormatList.length==0&&shopCouponList.length==0)}}">
+            <view class="nme">
+                <view class="nmw nm3" style="background-color: {{marketingColor+'16'}}; border: 1rpx solid {{marketingColor+'88'}}" wx:for="{{shopCouponList}}" wx:key="index">
+                    <view class="nm2">
+                        <view class="nms" wx:if="{{item.type==='CASH'&&item.activityChannel=='SAAS'}}">
+                            <view class="nmf">¥</view>
+                            <view> {{item.content/100}} </view>
+                        </view>
+                        <view class="nms" wx:if="{{item.type==='DISCOUNT'&&item.activityChannel==='SAAS'}}">
+                            <view> {{item.content}} </view>
+                            <view class="nm7">折</view>
+                        </view>
+                        <view class="nms" wx:if="{{item.type==='GIFT'&&item.activityChannel==='SAAS'&&item.giftFlag}}"> 礼品券 </view>
+                        <view class="nms" wx:if="{{item.type==='GIFT'&&item.activityChannel==='SAAS'&&!item.giftFlag}}"> 商品券 </view>
+                        <view class="nms" wx:if="{{item.activityChannel==='KB'}}"> 口碑券 </view>
+                        <view class="nms" wx:if="{{item.activityChannel==='ELE'}}"> 饿了么券 </view>
+                        <view class="nma" style="border-color: {{marketingColor+'88'}}"></view>
+                        <view class="nmh" style="border-color: {{marketingColor+'88'}}"></view>
+                    </view>
+                    <view class="nmk" style="border-left: 1rpx solid {{marketingColor+'88'}}"> {{!item.shopCouponCanApply?'已领':'领'}} </view>
+                </view>
+                <view class="nm3 nmz" style="border: 1rpx solid {{marketingColor+'88'}}" wx:for="{{shopActivityFormatList}}" wx:key="index">
+                    <view>{{item.showText}}</view>
+                </view>
+            </view>
+        </view>
+        <view bind:tap="handleClickMore" class="ng8" wx:if="{{noticeData.show&&noticeData.content}}">
+            <image class="ngj" src="https://img.alicdn.com/imgextra/i3/O1CN01vXAPRz25n6uET9gS8_!!6000000007570-55-tps-24-24.svg"></image>
+            <text>{{noticeData.content}}</text>
+        </view>
+        <view bind:tap="handleClickMore" class="nmn"> 更多<image class="nmc" src="https://img.alicdn.com/imgextra/i1/O1CN01zXWGwI1C4rlSkAekS_!!6000000000028-2-tps-18-10.png"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,282 @@
+.nf2 {
+    align-items: flex-start;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: column;
+    min-height: 458rpx;
+    width: 317rpx;
+}
+
+.nfs {
+    height: 317rpx;
+    overflow: hidden;
+    position: relative;
+    width: 316rpx;
+}
+
+.nff {
+    color: #333;
+    font-size: 30rpx;
+    font-weight: 600;
+    height: 34rpx;
+    line-height: 34rpx;
+    margin-top: 18rpx;
+    max-width: 320rpx;
+}
+
+.nf7,.nff {
+    opacity: 1;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nf7 {
+    color: #999;
+    display: flex;
+    font-size: 22rpx;
+    font-weight: 400;
+    height: 26rpx;
+    line-height: 26rpx;
+    margin-left: 18rpx;
+    max-width: 357rpx;
+}
+
+.nfk {
+    height: 44rpx;
+    justify-content: space-between;
+    margin-top: 14rpx;
+    position: relative;
+    width: 308rpx;
+}
+
+.nfk,.nfp {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.nfp {
+    height: 41rpx;
+    margin-top: -3rpx;
+}
+
+.nfy {
+    font-size: 36rpx;
+    font-weight: 600;
+    height: 41rpx;
+    line-height: 41rpx;
+    margin-right: 3rpx;
+    max-width: 150rpx;
+}
+
+.nfo,.nfy {
+    color: #ff301e;
+    opacity: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nfo {
+    font-size: 22rpx;
+    font-weight: 400;
+    height: 26rpx;
+    line-height: 26rpx;
+    margin-top: 7rpx;
+    max-width: 61rpx;
+}
+
+.nfa {
+    background-color: #02a863;
+}
+
+.nfa,.nfh {
+    align-items: center;
+    border-radius: 22rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 44rpx;
+    padding-left: 29rpx;
+    padding-right: 30rpx;
+}
+
+.nfh {
+    background-color: #999;
+}
+
+.nf9 {
+    color: #fff;
+    font-size: 22rpx;
+    font-weight: 500;
+    line-height: 30rpx;
+    opacity: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.nfu {
+    align-items: flex-start;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: column;
+    min-height: 306rpx;
+}
+
+.nfu,.nfv {
+    width: 206rpx;
+}
+
+.nfv {
+    height: 206rpx;
+}
+
+.nft,.nfv {
+    position: relative;
+}
+
+.nft {
+    color: #111;
+    font-size: 28rpx;
+    font-weight: 400;
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-top: 16rpx;
+    max-width: 206rpx;
+    opacity: 1;
+    overflow: hidden;
+    padding-bottom: 5rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nfd {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 41rpx;
+    margin-top: 8rpx;
+    position: relative;
+}
+
+.nfb {
+    font-size: 36rpx;
+    font-weight: 500;
+    line-height: 41rpx;
+    margin-right: 4rpx;
+}
+
+.nfb,.nfi {
+    color: #ff301e;
+    opacity: 1;
+    white-space: nowrap;
+}
+
+.nfi {
+    font-size: 22rpx;
+    font-weight: 400;
+    line-height: 26rpx;
+    margin-top: 9rpx;
+}
+
+.nf1 {
+    overflow: hidden;
+    position: relative;
+}
+
+.nf1,.nfg {
+    border-radius: 12rpx;
+    height: 206rpx;
+    width: 206rpx;
+}
+
+.nf0,.nfm {
+    height: 206rpx;
+    left: 0;
+    top: 0;
+    width: 206rpx;
+}
+
+.nf0 {
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+}
+
+.nf0,.nfl {
+    display: flex;
+    justify-content: center;
+}
+
+.nfl {
+    align-items: baseline;
+    flex-direction: row;
+    width: 100%;
+}
+
+.nfq {
+    font-size: 26rpx;
+    line-height: 26rpx;
+    margin-bottom: 9rpx;
+}
+
+.nfq,.nfr {
+    color: #fff;
+}
+
+.nfr {
+    line-height: 1;
+}
+
+.nfx {
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+}
+
+.nf8 {
+    left: 0;
+}
+
+.nf8,.nfj {
+    height: 20rpx;
+    position: absolute;
+    top: 71rpx;
+    width: 10rpx;
+}
+
+.nfj {
+    right: 0;
+}
+
+.n74 {
+    margin-top: 15rpx;
+}
+
+.n74,.n7e {
+    display: flex;
+}
+
+.n7e {
+    align-items: center;
+    border: 1px solid;
+    border-radius: 6rpx;
+    color: #f9d793;
+    line-height: 23rpx;
+    margin-top: 12rpx;
+    position: relative;
+}
+
+.n7e,.n7n {
+    width: auto;
+}
+
+.n7n {
+    color: #bf7e3a;
+    font-size: 18rpx;
+    line-height: 24rpx;
+    margin-left: 2rpx;
+    margin-right: 2rpx;
+}

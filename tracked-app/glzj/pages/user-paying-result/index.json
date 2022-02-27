@@ -1,0 +1,9 @@
+{
+    "disableScroll": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "consumption-send-popup": "/c/e6/n",
+        "navigation-bar": "/c/np/n",
+        "toast": "/c/z5/n"
+    }
+}

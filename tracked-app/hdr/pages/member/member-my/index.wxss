@@ -1,0 +1,11 @@
+.ee0 {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-bottom: 180rpx;
+}
+
+.ee0,.eel {
+    position: relative;
+}

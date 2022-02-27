@@ -1,0 +1,26 @@
+function handleLabelDTOList(dish) {
+    var labelDTOList = dish.labelDTOList || [];
+    if (labelDTOList.length) {
+        for (var item; item < labelDTOList; item++) {
+            let;
+            labelItemName = item.labelName;
+            if (labelItemName.length > 8) {
+                labelItemName = labelItemName.substring(0, 8) + '...'
+            };
+            item.labelName = labelItemName
+        }
+    };
+    return (labelDTOList)
+};
+
+function handleSpicyDegree(dish) {
+    var spicyDegree = 0;
+    if (dish.dishRecommended) {
+        spicyDegree = dish.dishRecommended.spicyDegree
+    };
+    return (spicyDegree)
+};
+module.exports = ({
+    handleLabelDTOList: handleLabelDTOList,
+    handleSpicyDegree: handleSpicyDegree,
+});

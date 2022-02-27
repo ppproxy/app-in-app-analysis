@@ -1,0 +1,110 @@
+.ejb {
+    z-index: 100;
+}
+
+.ejb,.eji {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.eji {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.ej1 {
+    height: 400rpx;
+    margin-bottom: 24rpx;
+    margin-top: -240rpx;
+    width: 400rpx;
+}
+
+.ejg {
+    height: 100%;
+    width: 100%;
+}
+
+.ejm {
+    color: #000;
+    font-size: 18px;
+    line-height: 44px;
+}
+
+.ej0,.ejm {
+    max-width: 90%;
+    text-align: center;
+    word-break: break-all;
+}
+
+.ej0 {
+    color: #888;
+    font-size: 14px;
+    line-height: 44rpx;
+}
+
+.ejl {
+    background-color: var(--primary);
+    border-radius: 45rpx;
+    box-sizing: border-box;
+    color: var(--white);
+    font-size: 28rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50rpx;
+    min-width: 343rpx;
+    padding: 0 30rpx;
+    position: relative;
+}
+
+.ejl,.ejq {
+    text-align: center;
+}
+
+.ejq {
+    bottom: 150rpx;
+    color: #ccc;
+    font-size: 20rpx;
+    padding-bottom: env(safe-area-inset-bottom);
+    position: fixed;
+}
+
+.ejr {
+    display: flex;
+    flex-direction: row;
+    width: 540rpx;
+}
+
+.ejx {
+    background-color: var(--primary);
+    border-radius: 45rpx;
+    box-sizing: border-box;
+    color: var(--white);
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50rpx;
+    padding: 0 30rpx;
+    position: relative;
+}
+
+.ej8,.ejx {
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.ej8 {
+    background-color: #fff;
+    border: 2rpx solid #ccc;
+    color: #191919;
+}
+
+.ej8,.ejj {
+    border-radius: 40rpx;
+    width: 244rpx;
+}

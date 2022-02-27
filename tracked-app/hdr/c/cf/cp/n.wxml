@@ -1,0 +1,10 @@
+<block wx:if="{{recommendedDishesData.recommendDishList&&recommendedDishesData.recommendDishList.length}}">
+    <view class="n1m" wx:if="{{recommendedDishesData.title}}">{{recommendedDishesData.title}}</view>
+    <view style="margin-top:{{recommendedDishesData.title?'':'20'}}rpx">
+        <scroll-view class="n1l" enhanced="{{true}}" scrollX="true" showScrollbar="{{true}}">
+            <view class="nd1" wx:for="{{recommendedDishesData.recommendDishList}}" wx:key="index">
+                <recommend-dish-item bind:handleRootInstance="handleRootInstance" dish="{{item}}" dishDot="{{dishDot}}" dishListOrderedMap="{{dishListOrderedMap}}" isInDishList="{{false}}" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}"></recommend-dish-item>
+            </view>
+        </scroll-view>
+    </view>
+</block>

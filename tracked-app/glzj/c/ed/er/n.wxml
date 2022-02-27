@@ -1,0 +1,39 @@
+<view class="n55 {{'member-coupon-bag-ele'}}" data-track-itemId="{{couponInfo.itemId}}" data-track-logkey=".quanbao" onAppear="$logAppear" wx:if="{{couponInfo.available}}">
+    <view class="n5w" wx:if="{{couponInfo.purchasedQuantity===0}}">
+        <view class="ezt n53">
+            <image class="n56" mode="aspectFit" src="https://gw.alicdn.com/imgextra/i4/O1CN01wgxjgt28NrwhTUvR2_!!6000000007921-2-tps-84-74.png"></image>
+            <view class="n52">
+                <view class="n5s">{{couponInfo.packageName}}(含{{couponInfo.couponList.length}}张)</view>
+                <view class="n5f">
+                    <text>限时特价</text>
+                    <text>¥</text>
+                    <text style="font-size: 36rpx; font-weight: 600;">{{util.formatPrice(couponInfo.price)}}</text>
+                    <text class="n57">¥{{util.formatPrice(couponInfo.originPrice)}}</text>
+                </view>
+            </view>
+            <view class="n5p">
+                <view bindtap="handleBuy" class="n5y">立即抢购</view>
+            </view>
+        </view>
+        <scroll-view scrollX class="n5a {{couponInfo.couponList.length>=5?'n5h':''}}" wx:if="{{couponInfo.couponList&&couponInfo.couponList.length}}">
+            <view class="n59 {{styles[ 'item'+(couponInfo.couponList.length>=5?5:couponInfo.couponList.length) ]}}" wx:for="{{couponInfo.couponList}}">
+                <view class="n5u" wx:if="{{item.voucherType==='CASH'}}">{{util.formatPrice(item.denomination)}}</view>
+                <view class="n5t" wx:if="{{item.voucherType==='DISCOUNT'}}">{{item.discount}}</view>
+                <view class="n5v" wx:if="{{item.voucherType==='GIFT'}}">{{item.itemValue}}</view>
+                <view class="n5d">{{item.threshold}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="n5w" wx:else>
+        <view class="ezt n5b">
+            <view class="n5i">
+                <image class="n51" mode="aspectFit" src="https://gw.alicdn.com/imgextra/i4/O1CN01CgWI5k1CE1ijcmS5p_!!6000000000048-2-tps-82-78.png"></image>
+                <view class="n5g">{{couponInfo.packageName}}(含{{couponInfo.couponList.length}}张)</view>
+                <view class="n5m">限时特价 ¥</view>
+                <view class="n50">{{util.formatPrice(couponInfo.price)}}</view>
+            </view>
+            <view bindtap="handleBuy" class="n5l">再买一份</view>
+        </view>
+    </view>
+</view>
+<wxs module="util" src="51.wxs" />

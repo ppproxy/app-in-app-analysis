@@ -1,0 +1,6 @@
+<template name="dish-item-ele-label">
+    <view class="zw8" style="{{containerStyle}};max-width:{{maxWidth}}rpx" wx:if="{{dishEleLabel}}">
+        <image class="zwj" src="https://img.alicdn.com/imgextra/i4/O1CN01e4eB9O25n6vXbpJUO_!!6000000007570-2-tps-20-20.png"></image>
+        <text class="z34">{{dishEleLabel}}</text>
+    </view>
+</template>

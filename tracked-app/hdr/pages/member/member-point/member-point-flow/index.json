@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "navigation-bar": "/c/np/n",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n"
+    },
+    "navigationStyle": "custom",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": false
+}

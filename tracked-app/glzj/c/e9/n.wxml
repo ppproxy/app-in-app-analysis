@@ -1,0 +1,123 @@
+<overlay bind:handleClose="handleClickMask" disableScroll="{{disableScroll}}" duration="{{duration}}" show="{{visible}}" zIndex="{{zIndex}}" wx:if="{{modalType==='base'}}">
+    <view class="n4n" style="--primary: {{themeColor}}; --height: {{height}}; --width: {{width}}; --background: {{background}};">
+        <view catchtap="noop" class="n4f {{visible?'n47':'n4k'}}" style="-webkit-animation-duration:{{duration}}ms; animation-duration:{{duration}}ms; {{containerStyle}}">
+            <view bindtap="handleCancel" class="n4c" wx:if="{{showClose&&closeButtonType==='normal'}}">
+                <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+            </view>
+            <block wx:if="{{!useFullSlot}}">
+                <block wx:if="{{!useHeaderSlot}}">
+                    <view class="n45" wx:if="{{titleList?title.length!==0:title!==''}}">
+                        <text wx:if="{{!titleList}}">{{title}}</text>
+                        <block wx:else>
+                            <view wx:for="{{title}}" wx:key="item"> {{item}} </view>
+                        </block>
+                    </view>
+                </block>
+                <slot name="header" wx:else></slot>
+                <block wx:if="{{!useBodySlot}}">
+                    <view class="n4w" style="text-align: {{bodyAlignLeft?'left':'center'}}; {{bodyStyle}}" wx:if="{{bodyTextList?bodyText.length!==0:bodyText!==''}}">
+                        <text wx:if="{{!bodyList}}">{{bodyText}}</text>
+                        <block wx:else>
+                            <view wx:for="{{bodyText}}" wx:key="item"> {{item}} </view>
+                        </block>
+                    </view>
+                </block>
+                <slot name="body" wx:else></slot>
+                <view class="n43" style="{{footerStyle}}" wx:if="{{!useFooterSlot}}">
+                    <view bindtap="handleCancel" class="n46" wx:if="{{showCancel}}">
+                        <view target="miniProgram">{{cancelText}}</view>
+                    </view>
+                    <view class="n4s" wx:if="{{showCancel}}"></view>
+                    <view bindtap="handleOk" class="n42">
+                        <view>{{confirmText}}</view>
+                    </view>
+                </view>
+                <slot name="footer" wx:else></slot>
+            </block>
+            <slot name="full" wx:else></slot>
+        </view>
+        <slot name="bottom" wx:if="{{useBottomSlot}}"></slot>
+        <view bindtap="close" class="n4z" wx:if="{{showClose&&closeButtonType==='bottom'}}">
+            <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01rInW5v1WbC17idwSx_!!6000000002806-55-tps-58-58.svg"></image>
+        </view>
+    </view>
+</overlay>
+<popup bindhandleClose="handleCancel" duration="{{duration}}" height="{{height}}" maskClosable="{{maskClosable}}" show="{{visible}}" showClose="{{showClose}}" zIndex="{{zIndex}}" wx:elif="{{modalType==='bottom'}}">
+    <view class="n4p" style="--primary: {{themeColor}}; --background: {{background}}; {{containerStyle}}">
+        <block wx:if="{{!useFullSlot}}">
+            <block wx:if="{{!useHeaderSlot}}">
+                <view class="n45" wx:if="{{titleList?title.length!==0:title!==''}}">
+                    <text wx:if="{{!titleList}}">{{title}}</text>
+                    <block wx:else>
+                        <view wx:for="{{title}}" wx:key="item"> {{item}} </view>
+                    </block>
+                </view>
+            </block>
+            <slot name="header" wx:else></slot>
+            <block wx:if="{{!useBodySlot}}">
+                <view class="n4w" style="text-align: {{bodyAlignLeft?'left':'center'}}; {{bodyStyle}}" wx:if="{{bodyTextList?bodyText.length!==0:bodyText!==''}}">
+                    <text wx:if="{{!bodyList}}">{{bodyText}}</text>
+                    <block wx:else>
+                        <view wx:for="{{bodyText}}" wx:key="item"> {{item}} </view>
+                    </block>
+                </view>
+            </block>
+            <slot name="body" wx:else></slot>
+            <view class="n43" style="{{footerStyle}}" wx:if="{{!useFooterSlot}}">
+                <view bindtap="handleCancel" class="n46" wx:if="{{showCancel}}">
+                    <view target="miniProgram">{{cancelText}}</view>
+                </view>
+                <view class="n4s" wx:if="{{showCancel}}"></view>
+                <view bindtap="handleOk" class="n42">
+                    <view>{{confirmText}}</view>
+                </view>
+            </view>
+            <slot name="footer" wx:else></slot>
+        </block>
+        <slot name="full" wx:else></slot>
+    </view>
+</popup>
+<overlay bind:handleClose="handleClickMask" disableScroll="{{disableScroll}}" duration="{{duration}}" show="{{visible}}" zIndex="{{zIndex}}" wx:elif="{{modalType==='picture'}}">
+    <view class="n4y" style="--primary: {{themeColor}}; --width: {{width}}; --height: {{height}}; --background: {{background}};">
+        <view catchtap="noop" class="e34" style="{{containerStyle}}">
+            <block wx:if="{{!useFullSlot}}">
+                <view bindtap="handleCancel" class="n4c" wx:if="{{showClose&&closeButtonType==='normal'}}">
+                    <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+                </view>
+                <view class="n4o" wx:if="{{!useHeaderSlot}}">
+                    <image mode="aspectFill" src="{{headerImg}}" wx:if="{{headerImg}}"></image>
+                    <view class="n4a" wx:else> 背景图片区域 传入headerImg属性变更为图片 </view>
+                </view>
+                <slot name="header" wx:else></slot>
+                <view class="n4h">
+                    <block wx:if="{{!useBodySlot}}">
+                        <view class="n49" style="text-align: {{bodyAlignLeft?'left':'center'}}; {{bodyStyle}};" wx:if="{{bodyTextList?bodyText.length!==0:bodyText!==''}}">
+                            <text wx:if="{{!bodyList}}">{{bodyText}}</text>
+                            <block wx:else>
+                                <view wx:for="{{bodyText}}" wx:key="item"> {{item}} </view>
+                            </block>
+                        </view>
+                    </block>
+                    <slot name="body" wx:else></slot>
+                    <view class="n4u" style="{{footerStyle}}" wx:if="{{!useFooterSlot}}">
+                        <view bindtap="handleCancel" class="n46" wx:if="{{showCancel}}">
+                            <view target="miniProgram">{{cancelText}}</view>
+                        </view>
+                        <view class="n4s" wx:if="{{showCancel}}"></view>
+                        <view bindtap="handleOk" class="n42">
+                            <view>{{confirmText}}</view>
+                        </view>
+                    </view>
+                    <slot name="footer" wx:else></slot>
+                </view>
+            </block>
+            <view class="n4v" wx:else>
+                <slot name="full"></slot>
+            </view>
+        </view>
+        <slot name="bottom" wx:if="{{useBottomSlot}}"></slot>
+        <view bindtap="close" class="n4z" wx:if="{{showClose&&closeButtonType==='bottom'}}">
+            <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01rInW5v1WbC17idwSx_!!6000000002806-55-tps-58-58.svg"></image>
+        </view>
+    </view>
+</overlay>

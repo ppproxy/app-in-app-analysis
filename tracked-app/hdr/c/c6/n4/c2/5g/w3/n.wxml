@@ -1,0 +1,5 @@
+<template name="dish-item-promotion-label">
+    <view style="{{containerStyle}};{{promotionInfoDTOList.length>0?'':'display: none'}};{{isWrap?'':'height: 32rpx;overflow: hidden'}}">
+        <text class="ejy" style="border: 1rpx solid {{marketingColor+'88'}};{{dishMenuColumn==='2'&&isInDishList?'max-width: 150rpx;text-overflow: ellipsis;overflow: hidden;white-space: nowrap':''}}" wx:for="{{promotionInfoDTOList}}" wx:key="promotionId">{{item.showText}}</text>
+    </view>
+</template>

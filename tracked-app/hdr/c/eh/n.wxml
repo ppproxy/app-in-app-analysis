@@ -1,0 +1,4 @@
+<view class="n4e" style="max-width: {{maxWidth}}rpx;" wx:if="{{ellipsis}}">
+    <rich-text nodes="{{textNode}}"></rich-text>
+</view>
+<rich-text nodes="{{textNode}}" wx:else></rich-text>

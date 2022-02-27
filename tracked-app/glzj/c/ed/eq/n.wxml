@@ -1,0 +1,17 @@
+<view class="nzl">
+    <view class="nzq" wx:if="{{last}}">
+        <image class="nzq" src="https://gw.alicdn.com/imgextra/i1/O1CN01lEMa211M1nGrB2e9y_!!6000000001375-2-tps-72-72.png"></image>
+        <view class="nz8 {{appType==='ALIPAY'?'nzj':''}}" wx:if="{{value}}">
+            <text class="e5e">¥</text>
+            <text class="n54 {{voucherTotalValue.length>3&&voucherTotalValue.length<=4?'n5e':''}} {{voucherTotalValue.length>4?'n5n':''}}">{{voucherTotalValue}}</text>
+        </view>
+    </view>
+    <block wx:elif="{{status==='FINISHED'}}">
+        <image class="nzq" src="{{IconMemberCollectPointTea}}" wx:if="{{icon==='https://img.alicdn.com/imgextra/i4/O1CN014cc2xQ1VBFzm6mfPN_!!6000000002614-2-tps-80-80.png'}}"></image>
+        <image class="nzq" src="{{IconMemberCollectPointBurger}}" wx:elif="{{icon==='https://img.alicdn.com/imgextra/i3/O1CN01BELznQ1nBrbYqIZVU_!!6000000005052-2-tps-80-80.png'}}"></image>
+        <image class="nzq" src="{{IconMemberCollectPointHotpot}}" wx:elif="{{icon==='https://img.alicdn.com/imgextra/i2/O1CN01YZlH4h23lcNQLVAEZ_!!6000000007296-2-tps-80-80.png'}}"></image>
+        <image class="nzq" src="{{IconMemberCollectPointCommon}}" wx:else></image>
+    </block>
+    <image class="nzq" src="{{icon}}" wx:else></image>
+    <view class="nzr {{status==='INIT'?'nzx':''}}">{{index}}点</view>
+</view>

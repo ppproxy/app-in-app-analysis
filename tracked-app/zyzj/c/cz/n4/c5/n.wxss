@@ -1,0 +1,77 @@
+.nu1 {
+    display: flex;
+    flex-direction: row;
+    height: 152rpx;
+    padding: 16rpx 32rpx;
+    width: 100%;
+}
+
+.nug {
+    border-radius: 8rpx;
+    height: 120rpx;
+    width: 120rpx;
+}
+
+.num {
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 16rpx;
+    width: 552rpx;
+}
+
+.nu0,.num {
+    display: flex;
+}
+
+.nu0 {
+    flex-direction: column;
+    width: 403rpx;
+}
+
+.nul {
+    font-size: 32rpx;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+    white-space: nowrap;
+}
+
+.nul,.nuq {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nuq {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #999;
+    display: -webkit-box;
+    font-size: 20rpx;
+}
+
+.nur {
+    color: #191919;
+    font-size: 36rpx;
+    margin-right: 16rpx;
+}
+
+.nux {
+    height: 48rpx;
+    width: 48rpx;
+}
+
+.nu8 {
+    align-self: center;
+    display: flex;
+}
+
+.nuj {
+    border: 2rpx solid hsla(8,100%,88%,.6);
+    border-radius: 6rpx;
+    color: #ff4b33;
+    font-size: 24rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    width: 60rpx;
+}

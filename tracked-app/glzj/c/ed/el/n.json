@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "auth-phone-modal": "/c/e4/en/n",
+        "member-collect-point-item": "../eq/n"
+    }
+}

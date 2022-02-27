@@ -1,0 +1,15 @@
+{
+    "disableScroll": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "member-my-user-info": "./components/user-info/index",
+        "member-my-activity-entrance": "./components/activity-entrance/index",
+        "member-my-function-entrance": "./components/function-entrance/index",
+        "member-my-head-image": "./components/head-image/index",
+        "member-my-member-card": "./components/member-card/index",
+        "navigation-bar": "/c/np/n",
+        "bottom-tabbar": "/c/e3/n",
+        "loading-animation": "/c/et/n",
+        "preview-mode-tag": "/c/cu/c8/n"
+    }
+}

@@ -1,0 +1,259 @@
+.c1g {
+    background: #000;
+    opacity: .5;
+    z-index: 900;
+}
+
+.c1g,.c1m {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.c1m {
+    align-items: center;
+    display: flex;
+    z-index: 901;
+}
+
+.c10 {
+    border-radius: 24rpx;
+    margin: 0 auto;
+    position: relative;
+    width: 640rpx;
+}
+
+.c1l {
+    height: 200rpx;
+    left: 4%;
+    position: absolute;
+    width: 600rpx;
+    z-index: 2;
+}
+
+.c1q {
+    font-size: 56rpx;
+    font-weight: 600;
+    line-height: 78rpx;
+    padding-top: 46rpx;
+}
+
+.c1q,.c1r {
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.c1r {
+    font-size: 28rpx;
+    font-weight: 400;
+    line-height: 40rpx;
+    margin: 6rpx 0 30rpx;
+}
+
+.c1x {
+    background: rgba(0,0,0,.1);
+    border-radius: 16rpx;
+    margin: 0 auto;
+    max-height: 568rpx;
+    min-height: 168rpx;
+    overflow: auto;
+    width: 592rpx;
+}
+
+.c1x>view:last-child {
+    margin-bottom: 12rpx;
+}
+
+.c1x .esc {
+    background: #fff;
+    border-radius: 12rpx;
+    display: flex;
+    flex-direction: row;
+    height: 144rpx;
+    margin: 12rpx auto 0;
+    width: 560rpx;
+}
+
+.exg {
+    display: flex;
+    flex-direction: column;
+    margin: 12rpx;
+    position: relative;
+    width: 124rpx;
+}
+
+.exg,.exm {
+    height: 120rpx;
+}
+
+.exm {
+    position: absolute;
+    width: 120rpx;
+}
+
+.ex0 {
+    z-index: 999;
+}
+
+.exl {
+    color: #fff;
+    margin-top: 26rpx;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.exq {
+    color: #fff;
+}
+
+.exq,.exr {
+    font-size: 16rpx;
+    font-weight: 400;
+    height: 30rpx;
+    line-height: 30rpx;
+    width: 11rpx;
+}
+
+.exr {
+    color: #765839;
+    margin-left: 4rpx;
+}
+
+.exx {
+    color: #fff;
+    margin-left: 4rpx;
+}
+
+.ex8,.exx {
+    font-size: 38rpx;
+    font-weight: 400;
+    height: 36rpx;
+    line-height: 36rpx;
+    width: 36rpx;
+}
+
+.ex8 {
+    color: #765839;
+}
+
+.exj {
+    font-size: 28rpx;
+    font-weight: 500;
+    line-height: 36rpx;
+    margin-left: 4rpx;
+}
+
+.e84,.exj {
+    color: #fff;
+}
+
+.e84 {
+    font-size: 20rpx;
+    font-weight: 400;
+    height: 28rpx;
+    line-height: 28rpx;
+    margin-top: 2rpx;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.e8e,.e8n {
+    color: #765839;
+}
+
+.e8c {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.e8z {
+    color: rgba(0,0,0,.87);
+    font-size: 28rpx;
+    font-weight: 500;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 14rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.e85 {
+    color: #999;
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-bottom: 10rpx;
+}
+
+.e85,.e8w {
+    font-size: 20rpx;
+    font-weight: 400;
+}
+
+.e8w {
+    color: rgba(0,0,0,.38);
+}
+
+.e83 {
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    overflow: hidden;
+}
+
+.e86 {
+    height: 136rpx;
+    width: 100%;
+}
+
+.e82 {
+    background: #fff;
+    border-radius: 50rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 34rpx auto 0;
+    width: 286rpx;
+}
+
+.e82,.e8s {
+    text-align: center;
+}
+
+.e8s {
+    position: absolute;
+    width: 100%;
+}
+
+.eq8 {
+    height: 60rpx;
+    margin-top: 20rpx;
+    width: 60rpx;
+}
+
+.e8f {
+    height: 100%;
+    position: relative;
+    width: 20%;
+}
+
+.e87 {
+    bottom: 10%;
+    font-size: 24rpx;
+    font-weight: 500;
+    position: absolute;
+    right: 30%;
+}

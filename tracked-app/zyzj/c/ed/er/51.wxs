@@ -1,0 +1,13 @@
+function toFixed(num, digits) {
+    digits = undefined === digits ? 0 : digits;
+    if (!num || typeof num !== 'number') return ('');;
+    return (+num.toFixed(digits))
+};
+
+function formatPrice(price) {
+    return (price / 100)
+};
+module.exports = ({
+    toFixed: toFixed,
+    formatPrice: formatPrice,
+});

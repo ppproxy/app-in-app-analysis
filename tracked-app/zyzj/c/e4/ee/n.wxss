@@ -1,0 +1,37 @@
+.e4f,.e4s {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.e4f {
+    border-radius: 40rpx;
+    font-size: 28rpx;
+    height: 80rpx;
+}
+
+.e47 {
+    background-color: #fff;
+    border: 2rpx solid #ccc;
+    color: #191919;
+    margin-right: 8rpx;
+}
+
+.e47,.e4k {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.e4k {
+    border-style: solid;
+    border-width: 2rpx;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 8rpx;
+}
+
+button::after {
+    border: none;
+}

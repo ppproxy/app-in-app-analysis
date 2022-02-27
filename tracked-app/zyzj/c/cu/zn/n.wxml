@@ -1,0 +1,3 @@
+<view wx:if="{{showEffect}}">
+    <image class="nj5" mode="aspectFit" src="{{item.imageUrl}}" style="{{item.styles}}" wx:for="{{items}}" wx:key="index"></image>
+</view>

@@ -1,0 +1,7 @@
+<custom-show-modal-exit useFooterSlot id="customShowModalExit">
+    <view slot="footer">
+        <view class="n4t">
+            <navigator openType="exit" target="miniProgram">{{btnText}}</navigator>
+        </view>
+    </view>
+</custom-show-modal-exit>

@@ -1,0 +1,55 @@
+<view class="cpb">
+    <view catchtap="handleMoreClick" class="cpi">
+        <view class="cp1">
+            <image src="https://img.alicdn.com/imgextra/i1/O1CN01Nx3b0C20nV9dVK7Zl_!!6000000006894-2-tps-48-48.png"></image>
+        </view>
+        <view class="cpg">我的优惠券</view>
+        <view class="cpm" wx:if="{{couponTips&&couponTips!=='0'}}">{{couponTips}}张</view>
+        <view class="cp0">
+            <image class="cpl" src="https://img.alicdn.com/imgextra/i2/O1CN01yhNz221iVUUiOlqKz_!!6000000004418-2-tps-12-20.png"></image>
+        </view>
+    </view>
+    <view catchtap="handleGoToOrder" class="cpi" wx:if="{{entranceOrder}}">
+        <view class="cp1">
+            <image src="https://img.alicdn.com/imgextra/i3/O1CN01vsaYJl1gbmhlEG6dG_!!6000000004161-2-tps-48-48.png"></image>
+        </view>
+        <view class="cpg">我的订单</view>
+        <view class="cp0">
+            <image class="cpl" src="https://img.alicdn.com/imgextra/i2/O1CN01yhNz221iVUUiOlqKz_!!6000000004418-2-tps-12-20.png"></image>
+        </view>
+    </view>
+    <view catchtap="goToPersonalInfo" class="cpi">
+        <view class="cp1">
+            <image src="https://img.alicdn.com/imgextra/i3/O1CN01YXAJBs1RNqPhxbCqo_!!6000000002100-2-tps-48-48.png"></image>
+        </view>
+        <view class="cpg">个人资料</view>
+        <view class="cpm">
+            <view wx:if="{{userInfoTips}}">{{userInfoTips}}</view>
+            <view class="cpq" wx:if="{{personalInfoShowContent}}">
+                <cook-image class="cpr" mode="widthFix" src="{{personalInfoIconImgUrl}}" wx:if="{{personalInfoIconImgUrl}}"></cook-image>
+                <view class="cpx">{{personalInfoContent}}</view>
+            </view>
+        </view>
+        <view class="cp0">
+            <image class="cpl" src="https://img.alicdn.com/imgextra/i2/O1CN01yhNz221iVUUiOlqKz_!!6000000004418-2-tps-12-20.png"></image>
+        </view>
+    </view>
+    <view class="cpi" wx:if="{{false}}">
+        <view class="cp1">
+            <image src="https://img.alicdn.com/imgextra/i4/O1CN01k317MS1qg2Xm73bsE_!!6000000005524-2-tps-48-48.png"></image>
+        </view>
+        <view class="cpg">品牌门店</view>
+        <view class="cp0">
+            <image class="cpl" src="https://img.alicdn.com/imgextra/i2/O1CN01yhNz221iVUUiOlqKz_!!6000000004418-2-tps-12-20.png"></image>
+        </view>
+    </view>
+    <view catchtap="showAboutView" class="cpi">
+        <view class="cp1">
+            <image src="https://img.alicdn.com/imgextra/i2/O1CN01c78U561GcXLYcRTNL_!!6000000000643-2-tps-48-48.png"></image>
+        </view>
+        <view class="cpg">关于</view>
+        <view class="cp0">
+            <image class="cpl" src="https://img.alicdn.com/imgextra/i2/O1CN01yhNz221iVUUiOlqKz_!!6000000004418-2-tps-12-20.png"></image>
+        </view>
+    </view>
+</view>

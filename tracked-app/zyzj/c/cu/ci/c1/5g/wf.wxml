@@ -1,0 +1,31 @@
+<template name="style1">
+    <view class="z3p" wx:if="{{showModal}}">
+        <view class="z3y"> 当前门店 </view>
+        <view class="z3o" wx:if="{{shopInfo.shopName}}"> {{shopInfo.shopName}} </view>
+        <view class="z3a" wx:if="{{false}}">
+            <view class="z3h" style="width: 60%;"></view>
+            <view class="z39">空闲</view>
+            <view class="z3u"></view>
+            <view class="z3v">9单（23杯）制作中 </view>
+        </view>
+        <view class="z3t" wx:if="{{false}}">
+            <view class="z3d" style="width: 100%;"></view>
+            <view class="z3b">
+                <image alt="闪电" class="z3i" src="{{IconLightning}}"></image>
+            </view>
+            <view class="z31"></view>
+            <view class="z3g">下单马上可制作</view>
+        </view>
+        <view class="z3m">
+            <image class="z30" mode="aspectFill" src="https://gw.alicdn.com/imgextra/i4/O1CN01xK08Xn25ljgD3ld5k_!!6000000007567-2-tps-30-30.png"></image>
+            <text>{{shopInfo.distanceDesc}}<text wx:if="{{shopInfo.openTime&&shopInfo.openTime.label}}"> ｜ 点单营业时间 {{shopInfo.openTime.label}}</text>
+            </text>
+        </view>
+        <view bindtap="gotoCustomizePage" class="z3l" style="background-color: {{themeColor}}" wx:if="{{buttonText}}">{{buttonText}}</view>
+        <view class="z3q" style="color: {{themeColor}}">
+            <view bindtap="gotoShopList" class="z3r"></view>
+            <text>切换门店</text>
+            <image alt="切换" class="z3x" src="{{IconSwitch}}"></image>
+        </view>
+    </view>
+</template>

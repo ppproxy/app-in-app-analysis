@@ -1,0 +1,422 @@
+.nbt {
+    height: 99.9vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nbd {
+    height: 0;
+    position: absolute;
+    top: 0;
+}
+
+.nbb {
+    display: flex;
+    position: relative;
+}
+
+.nbi {
+    flex: 0 0 148rpx;
+    left: 0;
+    position: sticky;
+    top: 0;
+}
+
+.nb1 {
+    background: rgba(0,3,6,0);
+    flex: 1;
+}
+
+.nbg {
+    align-items: center;
+    background: #fff;
+    border-radius: 100rpx 0 0 100rpx;
+    bottom: 310rpx;
+    box-shadow: 0 6rpx 16rpx -2rpx rgba(0,0,0,.15);
+    display: flex;
+    opacity: 1;
+    padding: 20rpx 0 20rpx 24rpx;
+    position: fixed;
+    right: 0;
+    transform: translateZ(1px);
+    transition: all .2s ease-in;
+    z-index: 10;
+}
+
+.nbm {
+    bottom: 448rpx;
+}
+
+.nb0 {
+    opacity: .5;
+    right: -96rpx;
+}
+
+.nbl {
+    height: 24rpx;
+    line-height: 24rpx;
+}
+
+.nbq {
+    flex: 1;
+    margin: 0 8rpx 0 2rpx;
+    text-align: center;
+}
+
+.nbr {
+    height: 24rpx;
+    margin-right: 6rpx;
+    width: 24rpx;
+}
+
+.nbx {
+    align-items: center;
+    background: #fff;
+    border-radius: 100%;
+    bottom: 206rpx;
+    box-shadow: 0 6rpx 16rpx -2rpx rgba(0,0,0,.15);
+    display: flex;
+    height: 64rpx;
+    justify-content: center;
+    opacity: 1;
+    position: fixed;
+    right: 5rpx;
+    transition: all .2s ease-in;
+    width: 64rpx;
+    z-index: 10;
+}
+
+.nb8 {
+    bottom: 344rpx;
+}
+
+.nbj {
+    height: 18rpx;
+    width: 28rpx;
+}
+
+.ni4 {
+    opacity: .5;
+    right: -36rpx;
+}
+
+.nie {
+    box-sizing: border-box;
+    padding-bottom: 468rpx;
+}
+
+.nbv {
+    padding-bottom: 10rpx;
+    position: relative;
+}
+
+.nin {
+    background: linear-gradient(90deg,#fff,hsla(0,0%,100%,0));
+    height: 100%;
+    top: 0;
+}
+
+.nic,.nin {
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.nic {
+    height: 104px;
+    opacity: 0;
+    top: -64px;
+    z-index: -100;
+}
+
+.niz {
+    align-items: flex-end;
+    display: flex;
+    padding: 18rpx 24rpx 18rpx 16rpx;
+    position: sticky;
+    top: 0rpx;
+    z-index: 10;
+}
+
+.ni5 {
+    height: 32rpx;
+    margin-right: 8rpx;
+    width: 32rpx;
+}
+
+.niw {
+    color: var(--text-main);
+    flex-grow: 0;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    line-height: 36rpx;
+    margin-right: 10rpx;
+}
+
+.ni3 {
+    background: #ff4b33;
+    border-radius: 100rpx 100rpx 100rpx 1rpx;
+    color: #fff;
+    display: inline-block;
+    font-size: 20rpx;
+    height: 33rpx;
+    line-height: 33rpx;
+    text-align: center;
+    width: 221rpx;
+}
+
+.ni6 {
+    color: #999;
+    flex: 1;
+    font-size: 22rpx;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100rpx;
+}
+
+.ni2 {
+    padding-left: 16rpx;
+}
+
+.nif,.nis {
+    position: relative;
+}
+
+.nif {
+    break-inside: avoid;
+    column-count: 2;
+    column-gap: 10rpx;
+    padding: 0 16rpx 16rpx;
+    width: 558rpx;
+}
+
+.ndg {
+    width: 271rpx;
+}
+
+.ni7 {
+    position: relative;
+}
+
+.nik {
+    padding: 12rpx 0 36rpx 16rpx;
+}
+
+.nik,.nip {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.nip {
+    padding: 12rpx 20rpx 36rpx 16rpx;
+}
+
+.niy {
+    align-items: center;
+    display: flex;
+}
+
+.nio.nia {
+    height: 178rpx;
+}
+
+.nio.nih {
+    height: 212rpx;
+}
+
+.ni9 {
+    background: #f5f5f5;
+    border-radius: 4rpx;
+    color: #999;
+    display: flex;
+    font-size: 24rpx;
+    height: 48rpx;
+    margin: -24rpx 0 24rpx 16rpx;
+    text-align: center;
+    transform: translateZ(1rpx);
+    width: 558rpx;
+}
+
+.niu {
+    flex: 1;
+}
+
+.niv {
+    font-size: 22rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    margin-right: 8rpx;
+}
+
+.nit,.niv {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nit {
+    height: 10rpx;
+    width: 18rpx;
+}
+
+.nid {
+    box-sizing: border-box;
+    margin-top: 16rpx;
+    padding: 0 32rpx 0 16rpx;
+}
+
+.nib {
+    white-space: nowrap;
+    width: 558rpx;
+}
+
+.nii {
+    padding: 0 16rpx;
+}
+
+.ni1 {
+    align-items: center;
+    display: flex;
+    padding: 12rpx 24rpx 24rpx 16rpx;
+}
+
+.nig {
+    height: 32rpx;
+    margin-right: 8rpx;
+    width: 32rpx;
+}
+
+.nim {
+    color: #191919;
+    font-size: 28rpx;
+    font-weight: var(--font-weight-bolder);
+}
+
+.ni0 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24rpx 24rpx 24rpx 16rpx;
+}
+
+.nil {
+    background-image: linear-gradient(90deg,#f2dbc1,#e8ba9a);
+    border-radius: 100rpx;
+    border-radius: var(--border-radius-btn);
+    box-sizing: border-box;
+    color: #421906;
+    font-size: 24rpx;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    margin-right: 20rpx;
+    padding: 20rpx 26rpx;
+}
+
+.niq {
+    color: #999;
+}
+
+.nir {
+    align-items: center;
+    margin-bottom: 8rpx;
+}
+
+.nio,.nir {
+    display: flex;
+}
+
+.nio {
+    flex-direction: row;
+}
+
+.nix {
+    height: 176rpx;
+    width: 176rpx;
+}
+
+.ni8,.nix {
+    background-color: #efefef;
+}
+
+.ni8 {
+    height: 40rpx;
+    margin-bottom: 16rpx;
+}
+
+.nij {
+    background-color: #efefef;
+    height: 30rpx;
+    margin-bottom: 40rpx;
+    width: 60%;
+}
+
+.n14 {
+    flex: 1;
+    padding-left: 16rpx;
+}
+
+.n1e {
+    display: flex;
+    justify-content: space-between;
+}
+
+.n1n {
+    background-color: #efefef;
+    height: 40rpx;
+    width: 90rpx;
+}
+
+.n1c {
+    display: flex;
+    flex-direction: column;
+    height: 326rpx;
+    overflow: auto;
+    width: 270rpx;
+}
+
+.n1z {
+    height: 203rpx;
+    width: 100%;
+}
+
+.n15,.n1z {
+    background-color: #efefef;
+}
+
+.n15 {
+    height: 36rpx;
+    margin-top: 16rpx;
+    width: 70%;
+}
+
+.n1w {
+    background-color: #efefef;
+    height: 26rpx;
+    margin-top: 12rpx;
+    width: 90%;
+}
+
+.n13 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20rpx;
+    width: 100%;
+}
+
+.n16 {
+    background-color: #efefef;
+    height: 30rpx;
+    width: 80rpx;
+}
+
+.n12 {
+    height: 100%;
+    overflow: auto;
+    padding: 8rpx 8rpx 12rpx 0;
+    transform: translate(0);
+    width: 270rpx;
+}

@@ -1,0 +1,17 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "navigation-bar": "/c/np/n",
+        "auth-phone-modal": "/c/e4/en/n",
+        "custom-show-modal": "/c/e9/n",
+        "head-image": "./components/head-image/index",
+        "personal-info-modal": "./components/personal-info-modal/index"
+    },
+    "barButtonTheme": "default",
+    "navigationStyle": "custom",
+    "transparentTitle": "always",
+    "allowsBounceVertical": "NO",
+    "__warning__": "invalid page.json [\"barButtonTheme\"]、page.json [\"transparentTitle\"]、page.json [\"allowsBounceVertical\"]"
+}

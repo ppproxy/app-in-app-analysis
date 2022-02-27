@@ -1,0 +1,471 @@
+<view wx:if="{{showContainer}}">
+    <component-title textAlign="{{titleType==='text'?'left':'center'}}" title="{{name}}" titleUrl="{{titleImage}}" type="{{titleType}}" wx:if="{{showTitle}}"></component-title>
+    <view class="nj2">
+        <view class="{{styles[ utils.getContainerClass(counponCanGetList,isFold) ]}}">
+            <view class="{{counponCanGetList.length>1?'njp':'njy'}}" style="position: relative" wx:if="{{index<=29}}" wx:for="{{counponCanGetList}}" wx:key="index">
+                <view style="background-color: {{themeColor}};opacity: 0.03;position: absolute;z-index:-1;width:100%;height:100%;border-radius: 12rpx;"></view>
+                <view bindtap="counponSingalClick" class="njs" wx:if="{{item.type==='CASH'}}">
+                    <view class="nja" style="color: {{themeColor}}">
+                        <view class="njh" style="position: relative" wx:if="{{counponCanGetList.length===1}}">
+                            <view style="background-color: {{themeColor}}; opacity: 0.08; position: absolute;z-index:200; width:100%; height:100%; border-radius: 12rpx 0 12rpx 0;"></view> 进店有礼 </view>
+                        <view class="ncg">
+                            <view class="ncq">¥</view>
+                            <view class="ncr">{{item.content}}</view>
+                        </view>
+                    </view>
+                    <view class="nj9" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nc8">
+                            <view class="ncj"> {{item.voucherTemplateName}}</view>
+                            <view class="nz4">满{{item.minCharge}}元可用</view>
+                        </view>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="nju" wx:if="{{counponCanGetList.length===1}}">
+                        <view>
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">满{{item.minCharge}}元可用</view>
+                            <view class="e83"></view>
+                        </view>
+                    </view>
+                    <view class="nze" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5)" wx:if="{{counponCanGetList.length>1}}"></view>
+                    <view class="njv" style="color: {{themeColor}}" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                        <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                        <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                        <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                    </view>
+                    <view class="njd" wx:if="{{counponCanGetList.length===1}}">
+                        <button bindtap="bindPhoneAuthPage" class="nji" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" onAppear="handleAppear" style="border: 1px solid {{themeColor}}; color: {{themeColor}}" wx:if="{{singalClickBefore}}">领取</button>
+                        <member-send-coupon bind:handleSendCoupon="singalCouponClickView" voucherIdList="{{voucherIdList}}" wx:if="{{singalClickAfter}}">
+                            <button class="nji" data-track-coupon="{{counponCanGetList[0]}}" style="border: 1px solid {{themeColor}};color: {{themeColor}}">查看</button>
+                        </member-send-coupon>
+                    </view>
+                    <view class="e83"></view>
+                </view>
+                <view bindtap="counponSingalClick" class="njs" wx:if="{{item.activityChannel==='KB'&&item.type==='GIFT'&&item.subType==='ELF_PICK'}}">
+                    <view class="nja" style="color: {{themeColor}}">
+                        <view class="njh" style="position: relative" wx:if="{{counponCanGetList.length===1}}">
+                            <view style="background-color: {{themeColor}}; opacity: 0.08; position: absolute;z-index:200; width:100%; height:100%; border-radius: 12rpx 0 12rpx 0;"></view> 进店有礼 </view>
+                        <view class="ncg">
+                            <view class="ncq">¥</view>
+                            <view class="ncr">{{item.content}}</view>
+                        </view>
+                    </view>
+                    <view class="nj9" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nc8">
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">无门槛</view>
+                        </view>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="nju" wx:if="{{counponCanGetList.length===1}}">
+                        <view>
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">无门槛</view>
+                        </view>
+                    </view>
+                    <view class="nze" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5)" wx:if="{{counponCanGetList.length>1}}"></view>
+                    <view class="njv" style="color: {{themeColor}}" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                        <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                        <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                        <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                    </view>
+                    <view class="njd" wx:if="{{counponCanGetList.length===1}}">
+                        <button bindtap="bindPhoneAuthPage" class="nji" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" onAppear="handleAppear" style="border: 1px solid {{themeColor}}; color: {{themeColor}}" wx:if="{{singalClickBefore}}">领取</button>
+                        <button bindtap="singalCouponClickView" class="nji" data-track-coupon="{{counponCanGetList[0]}}" style="border: 1px solid {{themeColor}};color: {{themeColor}}" wx:if="{{singalClickAfter}}">查看</button>
+                    </view>
+                    <view class="e83"></view>
+                </view>
+                <view bindtap="counponSingalClick" class="njs" wx:if="{{item.activityChannel==='KB'&&item.type==='GIFT'&&item.subType==='SELF_PICK'}}">
+                    <view class="nja" style="color: {{themeColor}}">
+                        <view class="njh" style="position: relative" wx:if="{{counponCanGetList.length===1}}">
+                            <view style="background-color: {{themeColor}}; opacity: 0.08; position: absolute;z-index:200; width:100%; height:100%; border-radius: 12rpx 0 12rpx 0;"></view> 进店有礼 </view>
+                        <view class="ncg">
+                            <view class="ncr">{{item.content}} <text class="njf">折</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="nj9" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nc8">
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">无门槛</view>
+                        </view>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="nju" wx:if="{{counponCanGetList.length===1}}">
+                        <view>
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">无门槛</view>
+                        </view>
+                    </view>
+                    <view class="nze" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5)" wx:if="{{counponCanGetList.length>1}}"></view>
+                    <view class="njv" style="color: {{themeColor}}" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                        <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                        <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                        <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                    </view>
+                    <view class="njd" wx:if="{{counponCanGetList.length===1}}">
+                        <button bindtap="bindPhoneAuthPage" class="nji" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" onAppear="handleAppear" style="border: 1px solid {{themeColor}}; color: {{themeColor}}" wx:if="{{singalClickBefore}}">领取</button>
+                        <button bindtap="singalCouponClickView" class="nji" data-track-coupon="{{counponCanGetList[0]}}" style="border: 1px solid {{themeColor}};color: {{themeColor}}" wx:if="{{singalClickAfter}}">查看</button>
+                    </view>
+                    <view class="e83"></view>
+                </view>
+                <view bindtap="counponSingalClick" class="njs" wx:if="{{item.activityChannel==='SAAS'&&item.type==='DISCOUNT'}}">
+                    <view class="nja" style="color: {{themeColor}}">
+                        <view class="njh" style="position: relative" wx:if="{{counponCanGetList.length===1}}">
+                            <view style="background-color: {{themeColor}}; opacity: 0.08; position: absolute;z-index:200; width:100%; height:100%; border-radius: 12rpx 0 12rpx 0;"></view> 进店有礼 </view>
+                        <view class="ncg">
+                            <view class="ncr">{{item.content}} </view>
+                            <text class="njf">折</text>
+                        </view>
+                    </view>
+                    <view class="nj9" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nc8">
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">满{{item.minCharge}}元可用</view>
+                        </view>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="nju" wx:if="{{counponCanGetList.length===1}}">
+                        <view>
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">满{{item.minCharge}}元可用</view>
+                        </view>
+                    </view>
+                    <view class="nze" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5)" wx:if="{{counponCanGetList.length>1}}"></view>
+                    <view class="njv" style="color: {{themeColor}}" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                        <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                        <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                        <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                    </view>
+                    <view class="njd" wx:if="{{counponCanGetList.length===1}}">
+                        <button bindtap="bindPhoneAuthPage" class="nji" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" onAppear="handleAppear" style="border: 1px solid {{themeColor}}; color: {{themeColor}}" wx:if="{{singalClickBefore}}">领取</button>
+                        <button bindtap="singalCouponClickView" class="nji" data-track-coupon="{{counponCanGetList[0]}}" style="border: 1px solid {{themeColor}};color: {{themeColor}}" wx:if="{{singalClickAfter}}">查看</button>
+                    </view>
+                    <view class="e83"></view>
+                </view>
+                <view bindtap="counponSingalClick" class="njs" wx:if="{{item.activityChannel==='SAAS'&&item.type==='GIFT'}}">
+                    <view class="nja" style="color: {{themeColor}}">
+                        <view class="njh" style="position: relative" wx:if="{{counponCanGetList.length===1}}">
+                            <view style="background-color: {{themeColor}}; opacity: 0.08; position: absolute;z-index:200; width:100%; height:100%; border-radius: 12rpx 0 12rpx 0;"></view> 进店有礼 </view>
+                        <view class="ncg">
+                            <view class="ncr">礼</view>
+                        </view>
+                    </view>
+                    <view class="nj9" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nc8">
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">满{{item.minCharge}}元可用</view>
+                        </view>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="nju" wx:if="{{counponCanGetList.length===1}}">
+                        <view>
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">满{{item.minCharge}}元可用</view>
+                        </view>
+                    </view>
+                    <view class="nze" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5)" wx:if="{{counponCanGetList.length>1}}"></view>
+                    <view class="njv" style="color: {{themeColor}}" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                        <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                        <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                        <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                    </view>
+                    <view class="njd" wx:if="{{counponCanGetList.length===1}}">
+                        <button bindtap="bindPhoneAuthPage" class="nji" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" onAppear="handleAppear" style="border: 1px solid {{themeColor}}; color: {{themeColor}}" wx:if="{{singalClickBefore}}">领取</button>
+                        <button bindtap="singalCouponClickView" class="nji" data-track-coupon="{{counponCanGetList[0]}}" style="border: 1px solid {{themeColor}};color: {{themeColor}};" wx:if="{{singalClickAfter}}">查看</button>
+                    </view>
+                    <view class="e83"></view>
+                </view>
+                <view bindtap="counponSingalClick" class="njs" wx:if="{{item.activityChannel==='ELE'&&item.type==='GIFT'}}">
+                    <view class="nja" style="color: {{themeColor}}">
+                        <view class="njh" style="position: relative" wx:if="{{counponCanGetList.length===1}}">
+                            <view style="background-color: {{themeColor}}; opacity: 0.08; position: absolute;z-index:200; width:100%; height:100%; border-radius: 12rpx 0 12rpx 0;"></view> 进店有礼 </view>
+                        <view class="ncg">
+                            <view class="ncr">{{item.content}}<text class="njf">元</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="nj9" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nc8">
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">{{item.activityName}}</view>
+                        </view>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="nju" wx:if="{{counponCanGetList.length===1}}">
+                        <view>
+                            <view class="ncj">{{item.voucherTemplateName}}</view>
+                            <view class="nz4">{{item.activityName}}</view>
+                        </view>
+                    </view>
+                    <view class="nze" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5)" wx:if="{{counponCanGetList.length>1}}"></view>
+                    <view class="njv" style="color: {{themeColor}}" wx:if="{{counponCanGetList.length>1}}">
+                        <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                        <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                        <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                        <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                    </view>
+                    <view class="njd" wx:if="{{counponCanGetList.length===1}}">
+                        <button bindtap="bindPhoneAuthPage" class="nji" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" onAppear="handleAppear" style="border: 1px solid {{themeColor}}; color: {{themeColor}}" wx:if="{{singalClickBefore}}">领取</button>
+                        <button bindtap="singalCouponClickView" class="nji" data-track-coupon="{{counponCanGetList[0]}}" style="border: 1px solid {{themeColor}};color: {{themeColor}}" wx:if="{{singalClickAfter}}">查看</button>
+                    </view>
+                    <view class="e83"></view>
+                </view>
+                <view class="e83" wx:if="{{counponCanGetList.length>3}}"></view>
+            </view>
+        </view>
+        <view bindtap="unfoldCoupon" class="njg" wx:if="{{showFoldTxt&&counponCanGetList.length>3}}">
+            <view class="njm">展示剩余{{counponCanGetList.length-3}}张</view>
+            <image class="nj0" src="https://img.alicdn.com/tfs/TB16OZfe8Bh1e4jSZFhXXcC9VXa-32-32.png"></image>
+        </view>
+        <block wx:if="{{hasClickGetBtn&&counponCanGetList.length>1}}">
+            <form onSubmit="bindPhoneAuthPage" reportSubmit="true" wx:if="{{miniType==='my'}}">
+                <button class="njq" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" formType="submit" onAppear="handleAppear" style="background-color: {{themeColor}}">一键领取</button>
+            </form>
+            <button bindtap="bindPhoneAuthPage" class="njq" data-track-custom-type="{{counponCanGetList[0].activityId}}" data-track-logkey=".home.coupons" onAppear="handleAppear" style="background-color: {{themeColor}}" wx:if="{{miniType==='wx'}}">一键领取</button>
+        </block>
+        <member-send-coupon bind:handleSendCoupon="goLookCouponByGetAfter" voucherIdList="{{voucherIdList}}" wx:if="{{hasClickGetBtnAfter}}">
+            <button class="njr" data-track-logkey=".home.chakanquan" onAppear="handleAppear" style="color: {{themeColor}}; border: 1px solid {{themeColor}}">查看我的优惠券</button>
+        </member-send-coupon>
+        <view class="e83"></view>
+    </view>
+</view>
+<view bindtap="hidePop" catchtouchmove="preventTouchMove" class="njx" wx:if="{{showModal}}"></view>
+<view class="nj8" style="background-color: {{themeColor}}" wx:if="{{showGetting}}">
+    <view class="njj">领取中...</view>
+    <image class="c44" src="https://img.alicdn.com/tfs/TB1vdDHQ7T2gK0jSZFkXXcIQFXa-642-235.png"></image>
+    <view>
+        <image class="c4e" src="https://img.alicdn.com/tfs/TB12NzeNUY1gK0jSZFCXXcwqXXa-360-360.svg"></image>
+    </view>
+</view>
+<view class="c4n" id="lightshop-user-popup-getcouponall" style="background-color: {{themeColor}}" wx:if="{{showHasGet}}">
+    <image class="c4c" src="https://img.alicdn.com/tfs/TB1vdDHQ7T2gK0jSZFkXXcIQFXa-642-235.png"></image>
+    <view>
+        <view class="c4z">领取成功</view>
+        <view class="c45">请到我的券包页查看</view>
+        <view class="c4w">
+            <scroll-view class="c43" scrollY="true">
+                <view class="c42" wx:if="{{index<=29}}" wx:for="{{couponGetList}}" wx:key="index">
+                    <view class="c46" wx:if="{{item.type==='CASH'}}">
+                        <view class="c4s" style="color: {{themeColor}}">
+                            <view class="c4f">
+                                <text class="c4p">¥</text>
+                                <text class="c47">{{item.content}}</text>
+                            </view>
+                        </view>
+                        <view class="c4o" style="background-image: radial-gradient(circle at right top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at right bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx)">
+                            <view class="c4a">{{item.voucherTemplateName}}</view>
+                            <view class="c4h">满{{item.minCharge}}元可用</view>
+                            <view class="c4g" style="color: {{themeColor}}">
+                                <view wx:if="{{item[0]==='NO_KB_ACCOUNT'}}">需关联口碑账号 </view>
+                                <view wx:if="{{item[0]==='NO_ELE_ACCOUNT'}}">需关联饿了么账号</view>
+                                <view wx:if="{{item[0]==='NO_TAOBAO_ACCOUNT'}}">需关联淘宝账号</view>
+                                <view wx:if="{{item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'}}"> 被领完啦，下次早点来</view>
+                                <view wx:if="{{item[0]==='APPLY_VOUCHER_ERROR'}}">发券延迟，稍后去券包查看</view>
+                            </view>
+                            <view class="e83"></view>
+                        </view>
+                        <view class="c4m">
+                            <view class="c4u" style="background: {{themeColor}}"></view>
+                            <view class="c4v" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5) "></view>
+                            <view class="c4t" style="background: {{themeColor}}"></view>
+                        </view>
+                        <view class="c4d" style="background-image: radial-gradient(circle at left top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at left bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx); color: {{themeColor}}">
+                            <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                            <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                            <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                        </view>
+                        <image class="c4b" src="https://img.alicdn.com/tfs/TB1xWHBQLb2gK0jSZK9XXaEgFXa-117-118.png" wx:if="{{item[0]==='NO_KB_ACCOUNT'||item[0]==='NO_ELE_ACCOUNT'||item[0]==='NO_TAOBAO_ACCOUNT'||item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'||item[0]==='APPLY_VOUCHER_ERROR'}}"></image>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="c46" wx:if="{{item.activityChannel==='KB'&&item.type==='GIFT'&&item.subType==='ELF_PICK'}}">
+                        <view class="c4s" style="color: {{themeColor}}">
+                            <view class="c4f">
+                                <text class="c4p">¥</text>
+                                <text class="c47">{{item.content}}</text>
+                            </view>
+                        </view>
+                        <view class="c4o" style="background-image: radial-gradient(circle at right top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at right bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx)">
+                            <view class="c4a">{{item.voucherTemplateName}}</view>
+                            <view class="c4h">无门槛</view>
+                            <view class="c4g" style="color: {{themeColor}}">
+                                <view wx:if="{{item[0]==='NO_KB_ACCOUNT'}}">需关联口碑账号 </view>
+                                <view wx:if="{{item[0]==='NO_ELE_ACCOUNT'}}">需关联饿了么账号</view>
+                                <view wx:if="{{item[0]==='NO_TAOBAO_ACCOUNT'}}">需关联淘宝账号</view>
+                                <view wx:if="{{item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'}}"> 被领完啦，下次早点来</view>
+                                <view wx:if="{{item[0]==='APPLY_VOUCHER_ERROR'}}">发券延迟，稍后去券包查看</view>
+                            </view>
+                            <view class="e83"></view>
+                        </view>
+                        <view class="c4m">
+                            <view class="c4u" style="background: {{themeColor}}"></view>
+                            <view class="c4v" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5) "></view>
+                            <view class="c4t" style="background: {{themeColor}}"></view>
+                        </view>
+                        <view class="c4d" style="background-image: radial-gradient(circle at left top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at left bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx); color: {{themeColor}} ">
+                            <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                            <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                            <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                            <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                        </view>
+                        <image class="c4b" src="https://img.alicdn.com/tfs/TB1xWHBQLb2gK0jSZK9XXaEgFXa-117-118.png" wx:if="{{item[0]==='NO_KB_ACCOUNT'||item[0]==='NO_ELE_ACCOUNT'||item[0]==='NO_TAOBAO_ACCOUNT'||item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'||item[0]==='APPLY_VOUCHER_ERROR'}}"></image>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="c46" wx:if="{{item.activityChannel==='KB'&&item.type==='GIFT'&&item.subType==='SELF_PICK'}}">
+                        <view class="c4s" style="color: {{themeColor}}">
+                            <view class="c4f">
+                                <text class="c47">{{item.content}}
+                  <text class="c4k">折</text>
+                                </text>
+                            </view>
+                        </view>
+                        <view class="c4o" style="background-image: radial-gradient(circle at right top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at right bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx)">
+                            <view class="c4a">{{item.voucherTemplateName}}</view>
+                            <view class="c4h">无门槛</view>
+                            <view class="c4g" style="color: {{themeColor}}">
+                                <view wx:if="{{item[0]==='NO_KB_ACCOUNT'}}">需关联口碑账号 </view>
+                                <view wx:if="{{item[0]==='NO_ELE_ACCOUNT'}}">需关联饿了么账号</view>
+                                <view wx:if="{{item[0]==='NO_TAOBAO_ACCOUNT'}}">需关联淘宝账号</view>
+                                <view wx:if="{{item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'}}"> 被领完啦，下次早点来</view>
+                                <view wx:if="{{item[0]==='APPLY_VOUCHER_ERROR'}}">发券延迟，稍后去券包查看</view>
+                            </view>
+                            <view class="e83"></view>
+                        </view>
+                        <view class="c4m">
+                            <view class="c4u" style="background: {{themeColor}}"></view>
+                            <view class="c4v" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5) "></view>
+                            <view class="c4t" style="background: {{themeColor}}"></view>
+                        </view>
+                        <view class="c4d" style="background-image: radial-gradient(circle at left top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at left bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx); color: {{themeColor}}">
+                            <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                            <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                            <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                            <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                        </view>
+                        <image class="c4b" src="https://img.alicdn.com/tfs/TB1xWHBQLb2gK0jSZK9XXaEgFXa-117-118.png" wx:if="{{item[0]==='NO_KB_ACCOUNT'||item[0]==='NO_ELE_ACCOUNT'||item[0]==='NO_TAOBAO_ACCOUNT'||item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'||item[0]==='APPLY_VOUCHER_ERROR'}}"></image>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="c46" wx:if="{{item.activityChannel==='SAAS'&&item.type==='DISCOUNT'}}">
+                        <view class="c4s" style="color: {{themeColor}}">
+                            <view class="c4f">
+                                <text class="c47">{{item.content}}</text>
+                                <text class="c4k">折</text>
+                            </view>
+                        </view>
+                        <view class="c4o" style="background-image: radial-gradient(circle at right top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at right bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx)">
+                            <view class="c4a">{{item.voucherTemplateName}}</view>
+                            <view class="c4h">满{{item.minCharge}}元可用</view>
+                            <view class="c4g" style="color: {{themeColor}}">
+                                <view wx:if="{{item[0]==='NO_KB_ACCOUNT'}}">需关联口碑账号 </view>
+                                <view wx:if="{{item[0]==='NO_ELE_ACCOUNT'}}">需关联饿了么账号</view>
+                                <view wx:if="{{item[0]==='NO_TAOBAO_ACCOUNT'}}">需关联淘宝账号</view>
+                                <view wx:if="{{item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'}}"> 被领完啦，下次早点来</view>
+                                <view wx:if="{{item[0]==='APPLY_VOUCHER_ERROR'}}">发券延迟，稍后去券包查看</view>
+                            </view>
+                            <view class="e83"></view>
+                        </view>
+                        <view class="c4m">
+                            <view class="c4u" style="background: {{themeColor}}"></view>
+                            <view class="c4v" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5) "></view>
+                            <view class="c4t" style="background: {{themeColor}}"></view>
+                        </view>
+                        <view class="c4d" style="background-image: radial-gradient(circle at left top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at left bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx); color: {{themeColor}}">
+                            <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                            <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                            <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                            <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                        </view>
+                        <image class="c4b" src="https://img.alicdn.com/tfs/TB1xWHBQLb2gK0jSZK9XXaEgFXa-117-118.png" wx:if="{{item[0]==='NO_KB_ACCOUNT'||item[0]==='NO_ELE_ACCOUNT'||item[0]==='NO_TAOBAO_ACCOUNT'||item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'||item[0]==='APPLY_VOUCHER_ERROR'}}"></image>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="c46" wx:if="{{item.activityChannel==='SAAS'&&item.type==='GIFT'}}">
+                        <view class="c4s" style="color: {{themeColor}}">
+                            <view class="c4f">
+                                <text class="c47">礼</text>
+                            </view>
+                        </view>
+                        <view class="c4o" style="background-image: radial-gradient(circle at right top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at right bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx)">
+                            <view class="c4a">{{item.voucherTemplateName}}</view>
+                            <view class="c4h">满{{item.minCharge}}元可用</view>
+                            <view class="c4g" style="color: {{themeColor}}">
+                                <view wx:if="{{item[0]==='NO_KB_ACCOUNT'}}">需关联口碑账号 </view>
+                                <view wx:if="{{item[0]==='NO_ELE_ACCOUNT'}}">需关联饿了么账号</view>
+                                <view wx:if="{{item[0]==='NO_TAOBAO_ACCOUNT'}}">需关联淘宝账号</view>
+                                <view wx:if="{{item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'}}"> 被领完啦，下次早点来</view>
+                                <view wx:if="{{item[0]==='APPLY_VOUCHER_ERROR'}}">发券延迟，稍后去券包查看</view>
+                            </view>
+                            <view class="e83"></view>
+                        </view>
+                        <view class="c4m">
+                            <view class="c4u" style="background: {{themeColor}}"></view>
+                            <view class="c4v" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5) "></view>
+                            <view class="c4t" style="background: {{themeColor}}"></view>
+                        </view>
+                        <view class="c4d" style="background-image: radial-gradient(circle at left top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at left bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx); color: {{themeColor}}">
+                            <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                            <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                            <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                            <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                        </view>
+                        <image class="c4b" src="https://img.alicdn.com/tfs/TB1xWHBQLb2gK0jSZK9XXaEgFXa-117-118.png" wx:if="{{item[0]==='NO_KB_ACCOUNT'||item[0]==='NO_ELE_ACCOUNT'||item[0]==='NO_TAOBAO_ACCOUNT'||item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'||item[0]==='APPLY_VOUCHER_ERROR'}}"></image>
+                        <view class="e83"></view>
+                    </view>
+                    <view class="c46" wx:if="{{item.activityChannel==='ELE'&&item.type==='GIFT'}}">
+                        <view class="c4s" style="color: {{themeColor}}">
+                            <view class="c4f">
+                                <text class="c47">{{item.content}}
+                </text>
+                                <text class="c4y">元</text>
+                            </view>
+                        </view>
+                        <view class="c4o" style="background-image: radial-gradient(circle at right top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at right bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx)">
+                            <view class="c4a">{{item.voucherTemplateName}} </view>
+                            <view class="c4h">满{{item.minCharge}}元可用</view>
+                            <view class="c4g" style="color: {{themeColor}}">
+                                <image class="c49" src="https://img.alicdn.com/tfs/TB1P4kjP8r0gK0jSZFnXXbRRXXa-20-20.png"></image>
+                                <view wx:if="{{item[0]==='NO_KB_ACCOUNT'}}">需关联口碑账号 </view>
+                                <view wx:if="{{item[0]==='NO_ELE_ACCOUNT'}}">需关联饿了么账号</view>
+                                <view wx:if="{{item[0]==='NO_TAOBAO_ACCOUNT'}}">需关联淘宝账号</view>
+                                <view wx:if="{{item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'}}"> 被领完啦，下次早点来</view>
+                                <view wx:if="{{item[0]==='APPLY_VOUCHER_ERROR'}}">发券延迟，稍后去券包查看</view>
+                            </view>
+                            <view class="e83"></view>
+                        </view>
+                        <view class="c4m">
+                            <view class="c4u" style="background: {{themeColor}}"></view>
+                            <view class="c4v" style="border: 1px dashed {{themeColor}}; transform: scaleX(0.5) "></view>
+                            <view class="c4t" style="background: {{themeColor}}"></view>
+                        </view>
+                        <view class="c4d" style="background-image: radial-gradient(circle at left top, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx), radial-gradient(circle at left bottom, {{themeColor}}, {{themeColor}} 10rpx, transparent 10rpx); color: {{themeColor}}">
+                            <view class="nzc" wx:if="{{item.type==='GIFT'}}"> 礼品券 </view>
+                            <view class="nzc" wx:if="{{item.type==='DISCOUNT'}}"> 折扣券 </view>
+                            <view class="nzc" wx:if="{{item.type==='CASH'}}"> 代金券 </view>
+                            <image class="njb" src="https://img.alicdn.com/tfs/TB1e.e_PkL0gK0jSZFAXXcA9pXa-96-96.png" wx:if="{{hasUsedInco}}">></image>
+                        </view>
+                        <image class="c4b" src="https://img.alicdn.com/tfs/TB1xWHBQLb2gK0jSZK9XXaEgFXa-117-118.png" wx:if="{{item[0]==='NO_KB_ACCOUNT'||item[0]==='NO_ELE_ACCOUNT'||item[0]==='NO_TAOBAO_ACCOUNT'||item[0]==='VOUCHER_TEMPLATE_NO_INVENTORY'||item[0]==='VOUCHER_COUNT_OVER_LIMIT'||item[0]==='VOUCHER_TEMPLATE_INVALID'||item[0]==='APPLY_VOUCHER_ERROR'}}"></image>
+                        <view class="e83"></view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="e83"></view>
+        </view>
+        <member-send-coupon bind:handleSendCoupon="goLookCoupon" modalId="lightshop-user-popup-getcouponall" voucherIdList="{{voucherIdList}}">
+            <button class="c4i" data-track-logkey=".home.chakanquan" onAppear="handleAppear" style="color: {{themeColor}}">查看我的优惠券</button>
+        </member-send-coupon>
+    </view>
+    <view class="e83"></view>
+    <view class="e8s" wx:if="{{counponCanGetList.length>1}}">
+        <image bindtap="hidePop" class="eq8" src="https://img.alicdn.com/tfs/TB1D0p0aQcx_u4jSZFlXXXnUFXa-64-64.png"></image>
+    </view>
+    <view class="e8s" wx:if="{{counponCanGetList.length===1}}">
+        <image bindtap="hidePopSingal" class="eq8" src="https://img.alicdn.com/tfs/TB1D0p0aQcx_u4jSZFlXXXnUFXa-64-64.png"></image>
+    </view>
+</view>
+<auth-phone-modal id="authPhoneModal"></auth-phone-modal>
+<custom-show-modal class="c40" id="customShowModal"></custom-show-modal>
+<wxs module="utils" src="zl.wxs" />

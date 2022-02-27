@@ -1,0 +1,59 @@
+<view class="esc">
+    <view wx:if="{{couponItem.couponType==='SAAS_CASH'||couponItem.couponChannel==='KB'||couponItem.couponChannel==='ELEME'}}">
+        <view class="exg">
+            <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1Yjzzl0Tfau8jSZFwXXX1mVXa-122-122.png" wx:if="{{couponItem.couponType==='SAAS_CASH'}}"></cook-image>
+            <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1T_gf0.H1gK0jSZSyXXXtlpXa-122-122.png" wx:if="{{couponItem.couponChannel==='KB'}}"></cook-image>
+            <cook-image class="exm" src="https://img.alicdn.com/tfs/TB15UAg0VT7gK0jSZFpXXaTkpXa-122-122.png" wx:if="{{couponItem.couponChannel==='ELEME'}}"></cook-image>
+            <view class="ex0">
+                <view class="exl">
+                    <text class="exq">¥</text>
+                    <text class="exx">{{couponItem.couponAmount}}</text>
+                </view>
+                <view class="e84">
+                    <text class="e8k" wx:if="{{(couponItem.couponType==='SAAS_CASH'||couponItem.couponChannel==='KB'||couponItem.couponChannel==='ELEME')&&couponItem.conditionToUse}}">满{{couponItem.conditionToUse}}可用</text>
+                    <text class="e8k" wx:if="{{!couponItem.conditionToUse}}">无门槛</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{couponItem.couponChannel==='SAAS'&&couponItem.couponType==='SAAS_DISCOUNT'}}">
+        <view class="exg">
+            <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1hKHs07Y2gK0jSZFgXXc5OFXa-122-122.png"></cook-image>
+            <view class="ex0">
+                <view class="exl">
+                    <text class="ex8">{{couponItem.discount}}</text>
+                    <text class="exr">折</text>
+                </view>
+                <view class="e84">
+                    <text class="e8n" wx:if="{{couponItem.conditionToUse}}">满{{couponItem.conditionToUse}}可用</text>
+                    <text class="e8n" wx:else>无门槛</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{couponItem.couponChannel==='SAAS'&&couponItem.couponType==='SAAS_GIFT'}}">
+        <view class="exg">
+            <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1G5oLmmslXu8jSZFuXXXg7FXa-122-122.png" wx:if="{{couponItem.SAAS_GIFTFlag}}"></cook-image>
+            <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1m9hBn3gP7K4jSZFqXXamhVXa-122-122.png" wx:if="{{!couponItem.SAAS_GIFTFlag}}"></cook-image>
+            <view class="ex0">
+                <view class="exl">
+                    <text class="exj" wx:if="{{couponItem.SAAS_GIFTFlag}}">礼品券</text>
+                    <text class="exj" wx:else>商品券</text>
+                </view>
+                <view class="e84">
+                    <text class="e8k" wx:if="{{couponItem.conditionToUse}}">满{{couponItem.conditionToUse}}可用</text>
+                    <text class="e8k" wx:else>无门槛</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="e8c">
+        <view class="e8z">{{couponItem.couponName}}</view>
+        <view class="e85" wx:if="{{couponItem.availableDish}}">{{couponItem.availableDish}}</view>
+        <view class="e8w" wx:if="{{couponItem.availableTimeType==='FIXED'}}">有效期至{{couponItem.endTime}}</view>
+        <view class="e8w" wx:if="{{couponItem.availableTimeType==='RELATIVE'}}">自领取后{{couponItem.availableDays}}天有效</view>
+    </view>
+    <view class="e8f" wx:if="{{couponItem.num&&couponItem.num>1}}">
+        <text class="e87" style="color: {{themeColor}}">X{{couponItem.num}}张</text>
+    </view>
+</view>

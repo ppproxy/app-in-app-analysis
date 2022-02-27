@@ -1,0 +1,128 @@
+.nph {
+    background-color: #fff;
+    margin-bottom: 16rpx;
+    padding: 50rpx 0;
+    position: relative;
+}
+
+.np9,.nph {
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    width: auto;
+}
+
+.np9 {
+    background-color: initial;
+    height: auto;
+    padding: 30rpx 0;
+}
+
+.nk0 {
+    color: #333;
+    font-size: 28rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+}
+
+.nk0,.nkl {
+    text-align: center;
+}
+
+.nkl {
+    font-size: 80rpx;
+    font-weight: 700;
+    height: 90rpx;
+    letter-spacing: 0;
+    line-height: 104rpx;
+}
+
+.npu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 44rpx;
+}
+
+.np9 .nkl {
+    font-size: 60rpx;
+    line-height: 90rpx;
+}
+
+.np9 .npu {
+    margin-top: 30rpx;
+}
+
+.npv {
+    text-align: center;
+    width: 90rpx;
+}
+
+.npt {
+    height: 54rpx;
+    width: 50.4rpx;
+}
+
+.npd {
+    color: #333;
+    font-size: 28.8rpx;
+    line-height: 43.2rpx;
+    margin-top: 4rpx;
+}
+
+.npb,.npd {
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.npb {
+    color: #666;
+    font-size: 28rpx;
+    margin-top: 30rpx;
+}
+
+.npi {
+    border-top: 2rpx dashed #333;
+    margin-top: 32rpx;
+    width: 100rpx;
+}
+
+.np1 {
+    bottom: 10rpx;
+    height: 165rpx;
+    position: absolute;
+    right: 10rpx;
+    width: 201rpx;
+    z-index: 999;
+}
+
+.npg {
+    color: #999;
+    font-size: 28rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.npn {
+    border-top: 1px solid hsla(0,0%,80%,.4);
+    margin: 0 -46rpx;
+    padding-top: 46rpx;
+}
+
+.npc {
+    height: 100rpx;
+    width: 358rpx;
+}
+
+.npz {
+    height: 320rpx;
+    width: 320rpx;
+}
+
+.np5 {
+    color: #999;
+    font-size: 24rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+}

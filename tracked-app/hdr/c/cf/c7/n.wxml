@@ -1,0 +1,27 @@
+<import src="../../c6/n4/c2/5g/ww/n.wxml"></import>
+<view bindtap="handleOpenDetail" class="n1s" data-dishid="{{dish.dishId}}">
+    <view class="n1f">
+        <cook-image class="n17" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" mode="aspectFill" smart="{{width:558,height:314}}" src="{{dish.cookbookDishShowSkuInfoDTO.skuImgUrl||'/assets/images/dish-default.png'}}"></cook-image>
+        <view class="n1k" wx:if="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}">{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}</view>
+        <ordered-num dishPlaceNumShowText="{{dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}" orderedDishName="{{dish.dishName}}" wx:if="{{dishListOrderedMap[dish.dishId]&&dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}"></ordered-num>
+    </view>
+    <view class="n1p">
+        <view class="n1o">
+            <cook-dish-item-name dishName="{{dish.dishName}}" dishNameFontSize="{{28}}"></cook-dish-item-name>
+            <cook-dish-item-sell-num containerStyle="width: 140rpx; text-align: right;" summaryLabelText="{{dish.summaryLabelText}}"></cook-dish-item-sell-num>
+        </view>
+        <view class="n1y">
+            <cook-dish-item-desc dishDesc="{{dish.cookbookDishShowSkuInfoDTO.skuDesc}}" wx:if="{{dish.cookbookDishShowSkuInfoDTO.skuDesc}}"></cook-dish-item-desc>
+        </view>
+        <view class="n1h" wx:if="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice||dish.promotionInfoDTOList&&dish.promotionInfoDTOList.length>0}}">
+            <view class="n1t" wx:if="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice}}">
+                <cook-custom-member-price-label memberDayTag="{{dish.memberDayTag}}" memberFlag="{{memberFlag}}" number="{{dish.cookbookDishShowSkuInfoDTO.memberSellPrice/100}}" storedPayMemberPriceSwitch="{{dish.storedPayMemberPriceSwitch==='Y'}}"></cook-custom-member-price-label>
+            </view>
+            <cook-dish-item-promotion-label containerStyle="display: inline-block;" dishMenuColumn="{{dishMenuColumn}}" promotionInfoDTOList="{{dish.promotionInfoDTOList}}"></cook-dish-item-promotion-label>
+        </view>
+        <view class="n1v">
+            <template is="dish-item-price" data="{{dish:dish,showSku:dish.cookbookDishShowSkuInfoDTO,memberFlag:memberFlag}}"></template>
+            <orderfood-dish-add-cart bind:handleRootInstance="handleRootInstance" bind:ready="dishAddReady" dish="{{dish}}" dishDot="{{dishDot}}" id="dishAddCart" isInBigRecommendDishList="{{true}}" isInDishList="{{true}}" isShowMinus="{{isShowMinus}}" logType="{{logType||'菜品列表'}}" openStatus="{{openStatus}}" showSku="{{dish.showSku}}" showSurplus="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}" wx:if="{{openStatus}}"></orderfood-dish-add-cart>
+        </view>
+    </view>
+</view>

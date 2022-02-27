@@ -1,0 +1,7 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "loading": "/c/ev/n"
+    },
+    "navigationBarTitleText": "使用须知"
+}

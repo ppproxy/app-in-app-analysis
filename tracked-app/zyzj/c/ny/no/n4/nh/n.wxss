@@ -1,0 +1,18 @@
+.nk0 {
+    color: #333;
+    font-size: 28rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+}
+
+.nk0,.nkl {
+    text-align: center;
+}
+
+.nkl {
+    font-size: 80rpx;
+    font-weight: 700;
+    height: 90rpx;
+    letter-spacing: 0;
+    line-height: 104rpx;
+}

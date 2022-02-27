@@ -1,0 +1,32 @@
+<view class="e10" style="{{hidden?'display: none':''}}">
+    <view class="nkz {{ios?'nky':'nee'}}" style="padding-top: {{statusBarHeight}}px;visibility: hidden;"></view>
+    <view class="n7t {{ios?'nky':'nee'}}" style="{{innerPaddingRight}};{{innerWidth}};padding-top:{{statusBarHeight}}px;color:{{scrollOpacity&&startColor&&!useOriginColor?startColor:color}};">
+        <view class="n7b {{showBorder?'n7u':''}} {{search||feintSearch&&opacity===1?'n7v':''}}" style="background:{{background}};opacity:{{scrollOpacity?opacity:1}};border-color:{{borderColor}};"></view>
+        <view class="n7i" style="{{search||feintSearch?opacity===1&&!home?'width: 0rpx':'':leftWidth}}">
+            <view class="{{isShowMask&&opacity!==1?'n7g':'n7m'}}">
+                <view bindtap="{{commentPage?'backCanStop':'back'}}" class="n7l nko {{isFromDetailPage?'n7q':''}}" wx:if="{{back}}">
+                    <image class="n78" src="{{iconBack}}"></image>
+                </view>
+                <view bindtap="handleHomeTap" class="n7l nkp" style="{{isheaderBackgroundWhite?'border: 1px solid #eaeaea':'background: rgba(0, 0, 0, .15)'}};{{search||feintSearch&&opacity===1?'border: 1px solid #eaeaea':''}}" wx:if="{{home}}">
+                    <image class="n70" src="{{iconHome}}"></image>
+                </view>
+                <view bindtap="close" class="n7j" wx:if="{{close}}">
+                    <image class="nk4" src="{{iconDown}}"></image>
+                </view>
+                <view bindtap="handleFeintSearch" class="n7l nk7" style="{{isheaderBackgroundWhite?'border: 1px solid #eaeaea':'background: rgba(0, 0, 0, .15)'}};{{home?'margin-left: 12rpx':''}}" wx:if="{{feintSearch&&opacity!==1}}">
+                    <image class="nke" src="{{iconSearch}}"></image>
+                    <text class="nkf" style="color:{{isheaderBackgroundWhite?'#191919':'#fff'}}">搜索</text>
+                </view>
+                <view bindtap="handleBackTextTap" class="nka" style="{{backTextStyle}}" wx:if="{{!!backText}}">{{backText}}</view>
+            </view>
+        </view>
+        <view class="nkn" style="{{titleStyle}};" wx:if="{{title}}">{{title}}</view>
+        <view bind:tap="handleSearchWarp" class="nk5" style="margin-left: {{home?'20':'8'}}rpx" wx:elif="{{search||feintSearch&&opacity===1}}">
+            <image class="nk3" src="https://img.alicdn.com/imgextra/i2/O1CN01rVE32n1DBZD3TBrrx_!!6000000000178-55-tps-40-40.svg"></image>
+            <input bind:confirm="handleSearch" bind:input="handleSearchInput" class="nk6" confirmType="search" disabled="{{!search}}" focus="{{searchFocus}}" placeholder="想吃什么搜一搜" value="{{searchValue}}"></input>
+            <view bind:tap="handleClearSearch" class="nk2">
+                <view class="nks" wx:if="{{isClearShow}}"></view>
+            </view>
+        </view>
+    </view>
+</view>

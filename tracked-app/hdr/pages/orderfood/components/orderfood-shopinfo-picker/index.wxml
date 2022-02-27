@@ -1,0 +1,116 @@
+<view catchtouchmove="forbidMove" class="cm4 c18">
+    <view bind:tap="handleCancel" class="cme {{visible?'cmn':''}}"></view>
+    <view class="cmc cmz {{visible?'cm5':''}}">
+        <view class="c1j">
+            <view class="n3h">{{shopBaseInfo.storeName}}</view>
+            <view bind:tap="handleCancel" class="cg4">
+                <image class="cge" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+            </view>
+        </view>
+        <scroll-view class="cgn" scrollX="{{false}}" scrollY="{{true}}">
+            <view class="cgc">
+                <view class="cgz" wx:if="{{shopCouponList.length!==0}}">
+                    <view class="cgi">
+                        <view class="cg5">免费领券</view>
+                        <member-join-universal bind:handleMemberJoinFail="handleMemberJoinFail" bind:handleMemberJoinSuccess="handleMemberJoinSuccess" bind:handleRootInstance="handleRootInstance" btnStyle="height: 46rpx;width: 126rpx;text-align: center;line-height: 46rpx;border-radius: 22rpx;overflow: hidden;background-color: var(--primary);" btnTextStyle="color: var(--white);font-size: 24rpx;font-weight: var(--font-weight-bold);" id="memberJoinUniversal" scene="orderfood-shopinfo-picker" showSuccessToast="{{false}}" title="一键领取" wx:if="{{shopCouponCanApply}}"></member-join-universal>
+                        <view bind:tap="handleToCouponCard" class="cgg" wx:else>
+                            <view class="cgm">去券包查看更多</view>
+                            <image class="cg0" mode="aspectFit" src="https://img.alicdn.com/imgextra/i3/O1CN01SEYgSm1H3Yh448UUf_!!6000000000702-55-tps-12-24.svg"></image>
+                        </view>
+                    </view>
+                    <view class="cmw">
+                        <view class="cgp" wx:for="{{shopCouponList}}" wx:key="index">
+                            <view style="background-color: {{themeColor}};opacity: 0.03;position: absolute;z-index:-1;width:100%;height:100%;border-radius: 12rpx;"></view>
+                            <view class="cgy">
+                                <view class="cgo" wx:if="{{item.type==='DISCOUNT'}}">
+                                    <view class="c47">{{item.content}}</view>
+                                    <view class="c4k">折</view>
+                                </view>
+                                <view class="cgo" wx:if="{{item.type==='CASH'}}">
+                                    <view class="c4y">￥</view>
+                                    <view class="c47 cgr"> {{item.content/100}} </view>
+                                </view>
+                                <view class="cgo" wx:if="{{item.type==='GIFT'}}"> {{item.giftFlag?'礼品券':'商品券'}} </view>
+                                <view class="cgq cgr">
+                                    <block wx:if="{{item.minCharge&&item.minCharge!==0}}"> 满{{item.minCharge/100}}可用 </block>
+                                    <block wx:else>无门槛</block>
+                                </view>
+                            </view>
+                            <view class="cga">
+                                <view class="c4a cgr"> {{item.voucherTemplateName}} </view>
+                                <view class="c4h" wx:if="{{item.itemCoverage}}"> {{couponCoverageMap[item.itemCoverage]}} </view>
+                                <view class="c4g">
+                                    <view wx:if="{{item.validDateType==='FIXED'}}"> 有效期至{{item.formatEndTime}} </view>
+                                    <view wx:if="{{item.validDateType==='RELATIVE'}}"> 自领取后{{item.validDayCount}}天有效 </view>
+                                </view>
+                                <view class="cgb"></view>
+                            </view>
+                            <view class="cm3">
+                                <view class="cgh"></view>
+                                <view class="cg9"></view>
+                                <view class="cgu"></view>
+                            </view>
+                            <view class="cgv">
+                                <view class="cgt" wx:if="{{item.activityChannel==='SAAS'}}">
+                                    <block wx:if="{{item.type==='DISCOUNT'}}">折扣券</block>
+                                    <block wx:if="{{item.type==='CASH'}}">代金券</block>
+                                    <block wx:if="{{item.type==='GIFT'}}">{{item.giftFlag?'礼品券':'商品券'}}</block>
+                                </view>
+                                <view class="cgt" wx:if="{{item.activityChannel==='ELE'}}"> 饿了么券 </view>
+                                <view class="cgt" wx:if="{{item.activityChannel==='KB'}}"> 口碑券 </view>
+                                <image class="cgl" mode="aspectFill" src="https://img.alicdn.com/tfs/TB1Td_o1FT7gK0jSZFpXXaTkpXa-104-104.svg" wx:if="{{!item.shopCouponCanApply}}"></image>
+                            </view>
+                            <view class="cgb"></view>
+                        </view>
+                    </view>
+                </view>
+                <view class="cgz" wx:if="{{activityFormatList.length!==0}}">
+                    <view class="cgi">
+                        <view class="cg5">
+                            <text>优惠信息</text>
+                            <image bind:tap="handleShowRulesModal" class="cgw" src="https://img.alicdn.com/imgextra/i1/O1CN01GBqgsH1VMhsI98dly_!!6000000002639-2-tps-48-48.png"></image>
+                        </view>
+                    </view>
+                    <view class="cg3">
+                        <view class="cg6" wx:for="{{activityFormatList}}" wx:key="index">
+                            <view class="cg2" style="background: {{item.color}}"> {{item.tip}} </view>
+                            <view class="cgs" wx:if="{{item.activityCategory[0]==='PLAY'&&(item.activityType[0]==='PAYMENT_AMOUNT'||item.activityType[0]==='COLLECTION_POINT')}}">
+                                <view>{{item.currentActivityRule[0].showText}}</view>
+                                <view bindtap="handleConsumptionDetailFold" class="cg8" wx:if="{{item.activityRuleList[0].length>1}}">
+                                    <text>*送券活动详情 </text>
+                                    <image class="cgx" src="{{!isFold?'https://img.alicdn.com/imgextra/i2/O1CN01PkgrdA29aWT58YyH2_!!6000000008084-55-tps-20-11.svg':'https://img.alicdn.com/imgextra/i1/O1CN01ETt3pY1tFQN3rxv8p_!!6000000005872-55-tps-20-11.svg'}}"></image>
+                                </view>
+                                <view class="cgj" style="{{!isFold?'display: none':''}}" wx:for="{{item.activityRuleList[0]}}" wx:for-item="subItem" wx:key="index">{{subItem.showText}}</view>
+                            </view>
+                            <view>
+                                <view class="cgs" wx:if="{{item.allNext}}"> 全品(同品) {{item.allNext}} </view>
+                                <view class="cgs" wx:if="{{item.allCoverage}}"> 全品(跨品) {{item.allCoverage}} </view>
+                                <view class="cgs" wx:if="{{item.all}}"> 全品{{item.all}} </view>
+                                <view class="cgs" wx:if="{{item.partNext}}"> 部分品(同品) {{item.partNext}} </view>
+                                <view class="cgs" wx:if="{{item.partCoverage}}"> 部分品(跨品) {{item.partCoverage}} </view>
+                                <view class="cgs" wx:if="{{item.part&&item.activityCategory[0]!=='PLAY'}}"> 部分品{{item.part}} </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="cgz">
+                    <view class="cgi">
+                        <view class="cg5">商家信息</view>
+                    </view>
+                    <view class="cgf">
+                        <view class="cg7" wx:if="{{shopBaseInfo.openTimeDTOList&&shopBaseInfo.openTimeDTOList.length!==0}}"> 营业时间： <view wx:for="{{shopBaseInfo.openTimeDTOList}}" wx:key="index"> {{item.startTime}}-{{item.endTime}}{{index!==shopBaseInfo.openTimeDTOList.length-1?'、':''}} </view>
+                        </view>
+                        <view class="cg7" wx:if="{{shopBaseInfo.address}}"> 地址：{{shopBaseInfo.address}} </view>
+                        <view class="cg7" wx:if="{{shopBaseInfo.contactMobile}}"> 电话：{{shopBaseInfo.contactMobile}} </view>
+                    </view>
+                </view>
+                <view class="cgz" wx:if="{{shopNoticeInfo.show&&shopNoticeInfo.content}}">
+                    <view class="cgi">
+                        <view class="cg5">商家公告</view>
+                    </view>
+                    <view class="cgk">公告：{{shopNoticeInfo.content}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

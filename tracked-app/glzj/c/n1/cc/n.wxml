@@ -1,0 +1,12 @@
+<view catchtouchmove="forbidMove" class="nua" style="--primary: {{themeColor}};" wx:if="{{visible}}">
+    <view class="nuh">
+        <view class="nu9">
+            <view class="nuu">{{title}}</view>
+            <view class="nuv" wx:if="{{subtitle}}">{{subtitle}}</view>
+            <scroll-view class="nut" scrollY="{{true}}">
+                <custom-order-good dishData="{{item}}" showNum="{{false}}" showPrice="{{false}}" wx:for="{{goodsList}}" wx:key="dishId"></custom-order-good>
+            </scroll-view>
+        </view>
+        <view bindtap="handleOk" class="nud">{{confirmText}}</view>
+    </view>
+</view>

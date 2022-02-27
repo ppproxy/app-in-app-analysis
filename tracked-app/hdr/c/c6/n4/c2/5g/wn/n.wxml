@@ -1,0 +1,5 @@
+<template name="dish-item-desc">
+    <view style="{{dishDesc?'':'display: none'}};{{containerStyle}}">
+        <text class="ej7" style="-webkit-line-clamp: {{limitLine}};font-size: {{dishNameFontSize}}rpx;{{txtStyle}}">{{dishDesc}}</text>
+    </view>
+</template>

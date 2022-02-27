@@ -1,0 +1,16 @@
+<template name="siteInfoTemplate">
+    <view class="neq">
+        <view class="ner">
+            <image class="nex" src="https://img.alicdn.com/tfs/TB13eKCJeT2gK0jSZFvXXXnFXXa-180-180.png" wx:if="{{siteBiz==='ELEME'}}"></image>
+            <image class="nex" src="https://img.alicdn.com/tfs/TB1olADJuH2gK0jSZJnXXaT1FXa-180-180.png" wx:if="{{siteBiz==='ALIPAY'}}"></image>
+            <view class="ne8">
+                <view class="nej">
+                    <text class="nn4">{{siteDes}}</text>
+                </view>
+                <text class="nne" wx:if="{{siteInfo.name}}">{{siteInfo.name}}</text>
+                <text class="nne" wx:if="{{!siteInfo.name}}">请注册{{siteDes}}账号后领取权益吧</text>
+            </view>
+        </view>
+        <text catchtap="onElemeSiteClick" class="nnn" wx:if="{{siteBiz==='ELEME'&&!siteInfo.name&&siteInfo.registerUrl}}">去注册</text>
+    </view>
+</template>

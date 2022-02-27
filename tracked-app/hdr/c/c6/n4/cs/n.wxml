@@ -1,0 +1,11 @@
+<scroll-view class="nb7" scrollIntoView="{{scrollIntoId}}" scrollWithAnimation="{{animation}}" scrollY="{{true}}" style="background:{{dishMenuColumn==='2'?'#fff':'#f5f5f5'}}">
+    <view bindtap="handleTap" class="nbk {{current===index?'e6z':''}} {{index===current-1?'nbu':''}} {{index===current+1?'nb9':''}} {{item.bizOutCode==='MUST_DISH'?'nbf':''}}" data-biz-out-code="{{item.bizOutCode}}" data-cateLabel="{{item.cateLabel||item.name}}" data-index="{{index}}" data-track-custom-scene="{{customScene}}" data-track-logkey=".orderfood_page.virtual_category_of_required_dishes_exposure" id="leftMenu{{index}}" onAppear="handleAppear" style="{{showLeftMenuIcon?'':'padding: 36rpx 20rpx; align-items: unset; text-align: left;'}};background:{{current===index?dishMenuColumn==='2'?'#f5f5f5':'#fff':dishMenuColumn==='2'?'#fff':'#f5f5f5'}}" wx:for="{{menus}}" wx:key="index">
+        <image class="nby" src="{{item.cateIcon}}" wx:if="{{showLeftMenuIcon&&item.cateIcon}}"></image>
+        <view class="nba" style="{{showLeftMenuIcon?'':'top: 4rpx;'}}" wx:if="{{item.cateLabel}}"> {{item.cateLabel}} </view>
+        <view class="nbh">
+            <text>{{item.name}}</text>
+        </view>
+        <badge extStyle="position: absolute; {{showLeftMenuIcon&&item.cateIcon?'top: 42rpx; right: 32rpx;':'right: 0; top: 10rpx;'}}" num="{{categoryDot[item.id]}}" size="small"></badge>
+    </view>
+    <view class="nbk nbp {{current+1===menus.length?'nb9':''}}"></view>
+</scroll-view>

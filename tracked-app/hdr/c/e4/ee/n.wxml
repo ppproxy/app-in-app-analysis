@@ -1,0 +1,12 @@
+<custom-show-modal useFooterSlot id="customShowModal" modalType="base">
+    <view slot="footer">
+        <view class="e4s">
+            <button bindtap="handleCancel" class="e4f e47">
+                <text>取消</text>
+            </button>
+            <button bindopensetting="handleOpenSettingClick" class="e4f e4k" openType="openSetting" style="background-color: {{themeColor}};border-color: {{themeColor}}">
+                <text>开启授权</text>
+            </button>
+        </view>
+    </view>
+</custom-show-modal>

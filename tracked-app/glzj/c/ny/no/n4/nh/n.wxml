@@ -1,0 +1,8 @@
+<block wx:if="{{orderDetail.takeYourselfMode===TAKE_YOURSELF_MODE.TAKE_FOOD_CODE}}">
+    <view class="nk0" wx:if="{{!isFromOrderList}}"> 自取号 </view>
+    <view class="nkl" style="color: {{orderDetail.orderStatus===ORDER_STATUS.SUCCESS?'#333':themeColor}};font-weight: 700"> {{orderDetail.mealCode}} </view>
+</block>
+<block wx:if="{{orderDetail.takeYourselfMode===TAKE_YOURSELF_MODE.FLAPPER}}">
+    <view class="nk0" wx:if="{{!isFromOrderList}}"> 号牌 </view>
+    <view class="nkl" style="color: {{orderDetail.orderStatus===ORDER_STATUS.SUCCESS?'#333':themeColor}};font-weight: 700"> {{orderDetail.tableName}} </view>
+</block>

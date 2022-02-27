@@ -1,0 +1,40 @@
+<view class="c4l">
+    <view class="n3b">
+        <member-join-component autoClose="{{false}}" bind:handleChange="handleChange" bind:handleRootInstance="handleRootInstance" guideInfo="{{guidInfo}}" id="memberJoinComponent" wx:if="{{guidInfo}}"></member-join-component>
+    </view>
+    <view class="c4q" style="margin-top:{{customerType||!isMemberOpen?'-40rpx':'0'}}">
+        <view class="c4r">
+            <button bindgetuserinfo="userInfoAuthAgreementPage" class="c4x" openType="getUserInfo" wx:if="{{needAuth&&!supportGetUserProfile}}"></button>
+            <button bindtap="userInfoAuthAgreementPage" class="c4x" wx:if="{{needAuth&&supportGetUserProfile}}"></button>
+            <button class="{{customerType?'c4j':'c48'}}" data-track-logkey=".home.userinformation" style="background-image: url({{headIconUrl}})"></button>
+            <view class="ce4">
+                <view class="cee">
+                    <view class="cen">{{name}}</view>
+                    <view class="cec" wx:if="{{currentLevelName&&levelSize!==1}}"> {{currentLevelName}} </view>
+                </view>
+                <view class="cez" wx:if="{{customerType&&levelSize!==1&&needValue}}">
+                    <view class="cew" style="width:{{schedule}}rpx"></view>
+                    <view class="ce5"></view>
+                    <view class="ce3">
+                        <view>{{growthValue}}/{{needValue}}</view>
+                        <view class="ce6">距升级还差{{needValue-growthValue}}</view>
+                    </view>
+                </view>
+                <view class="cez" wx:if="{{customerType&&levelSize!==1&&!needValue}}"> 您已升级为最高会员 </view>
+                <view class="cez" wx:if="{{customerType&&levelSize===1}}"> 欢迎加入本店会员～ </view>
+                <view class="cez" wx:if="{{!customerType}}"> {{introduction}} </view>
+            </view>
+        </view>
+        <view bindtap="gotoCoupon" class="ce2" data-track-logkey=".home.chakanquan" onAppear="handleAppear" wx:if="{{customerType}}">
+            <view class="ce7" style="color: {{themeColor}}">我的优惠券</view>
+            <view class="cef" style="background-image: url({{IconCoupon}})"> {{couponCount}} </view>
+            <image class="n6h" src="{{IconArrow}}"></image>
+        </view>
+        <view bindtap="bindPhoneAuthPage" class="ces" data-track-logkey=".home.login" onAppear="handleAppear" wx:else>
+            <view class="ce7" style="color: {{themeColor}}">我的优惠券</view>
+            <image class="n6h" src="{{IconArrow}}"></image>
+        </view>
+    </view>
+</view>
+<auth-phone-modal bind:handleRootInstance="handleRootInstance" id="authPhoneModal"></auth-phone-modal>
+<auth-user-with-agreement-modal bind:handleRootInstance="handleRootInstance" id="authUserWithAgreementModalLightshop"></auth-user-with-agreement-modal>

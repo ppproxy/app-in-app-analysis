@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "收银台",
+    "disableScroll": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "cashier": "./_/component_modules/cashier/index",
+        "custom-page-result": "/c/ea/n",
+        "custom-show-modal": "/c/e9/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "navigation-bar": "/c/np/n"
+    }
+}

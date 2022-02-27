@@ -1,0 +1,131 @@
+.n3p .n3y {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 32rpx;
+}
+
+.n3p .n3y,.n3p .n3y .ey1 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.n3p .n3y .ey1 {
+    align-content: center;
+    align-items: center;
+    background: #fff;
+    flex-direction: column;
+    padding-top: 8rpx;
+    width: 160rpx;
+}
+
+.n3p .n3y .n3o {
+    display: block;
+    height: 88rpx;
+    position: relative;
+    width: 88rpx;
+}
+
+.n3p .n3y .eoz {
+    border-radius: 100%;
+    height: 88rpx;
+    width: 88rpx;
+}
+
+.n3p .n3y .eqs {
+    color: #fff;
+    font-size: 18rpx;
+    height: 29rpx;
+    left: 44rpx;
+    position: absolute;
+    top: -20rpx;
+    width: 88rpx;
+    z-index: 2;
+}
+
+.n3p .n3y .n3a {
+    width: 100%;
+}
+
+.n3p .n3y .n3h {
+    color: #191919;
+    font-size: 24rpx;
+    line-height: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24rpx;
+}
+
+.n3p .n3y .n39,.n3p .n3y .n3h {
+    display: block;
+    font-weight: 500;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+}
+
+.n3p .n3y .n39 {
+    color: #f5483e;
+    font-size: 22rpx;
+    line-height: 2;
+    margin: 0 auto;
+}
+
+.n3p .n3y .n3u {
+    color: #999;
+    margin: 0;
+    width: 200rpx;
+}
+
+.n3p .n3y.n3s {
+    margin-bottom: 0;
+}
+
+.n3p .n3y.n3s,.n3p .n3y.n3s .ey1 {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.n3p .n3y.n3s .ey1 {
+    width: auto;
+}
+
+.n3p .n3y.n3s .n3o {
+    margin-right: 16rpx;
+}
+
+.n3p .n3y .n3v {
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 88rpx;
+    width: 88rpx;
+}
+
+.n3p .n3y.n3s .n3h {
+    margin-left: 0;
+    margin-top: 0;
+    text-align: left;
+    width: 160rpx;
+}
+
+.n3p .n3y.n3s .n39 {
+    line-height: 1;
+    margin-left: 0;
+    margin-top: 16rpx;
+    text-align: left;
+    width: 200rpx;
+}
+
+.n3p .n3y.n3f .ey1 {
+    justify-content: center;
+    width: 330rpx;
+}
+
+.n3p .n3y.n37 .ey1 {
+    width: 225rpx;
+}
+
+.n3p .n3y.n3k .ey1 {
+    width: 170rpx;
+}

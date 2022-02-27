@@ -1,0 +1,10 @@
+<toast id="toast"></toast>
+<view class="n79" wx:if="{{status}}">
+    <view class="n7o"></view>
+    <view class="n7a">
+        <view class="n3h">{{copyStatus?'吱口令已复制':'复制吱口令'}}</view>
+        <view class="n39">{{code}}</view>
+        <view bindtap="handleCopy" class="ey0">{{btnText}}</view>
+        <view bindtap="hide" class="n7h"></view>
+    </view>
+</view>

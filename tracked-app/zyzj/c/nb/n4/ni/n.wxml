@@ -1,0 +1,72 @@
+<view class="nyu" style="{{item.dishId===dishIdSelect?'background: #FFFAF2;border-bottom: 1rpx solid #f5f5f5':''}}">
+    <cook-image class="nyv" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" mode="aspectFill" smart="{{width:100,height:100,preview:false}}" src="{{item.skuImgUrl||'/assets/images/dish-default.png'}}"></cook-image>
+    <view class="nyt" wx:if="{{isDinner}}">
+        <image class="nyd" src="{{item.addDishCustomerAvatar||'https://img.alicdn.com/tfs/TB18nvNY7L0gK0jSZFtXXXQCXXa-104-104.png'}}"></image>
+    </view>
+    <view class="nyb" style="{{isDinner?'':'border-bottom: solid 1px #f5f5f5;'}}">
+        <view bind:tap="handleToggleSetMeal" class="nyi">
+            <view class="now" wx:if="{{showAddPriceBuy}}">搭配推荐</view>
+            <view class="nyg">{{item.dishName}}</view>
+            <image class="ny0" src="{{setMealToggle?'https://img.alicdn.com/imgextra/i2/O1CN019IoVCO24GIsbzdEew_!!6000000007363-55-tps-28-28.svg':'https://img.alicdn.com/imgextra/i2/O1CN01qx9fNK1uI0BwAXs6D_!!6000000006013-55-tps-28-28.svg'}}" wx:if="{{isSetMeal}}"></image>
+            <view class="no5" wx:if="{{item.mustOrderDTO&&(item.mustOrderDTO.mustOrderRule==='FIXED'||item.mustOrderDTO.mustOrderRule==='MULTI_CHOICE_ONE')}}">必选</view>
+        </view>
+        <view class="nym" wx:if="{{isSetMeal&&setMealToggle}}">
+            <custom-group-dish-item dishListData="{{setMealModule.setMealModelMapping(item)}}"></custom-group-dish-item>
+        </view>
+        <view class="nyl" wx:if="{{!isSimpleMeal}}">
+            <view class="nyq" wx:if="{{item.dishName!==item.skuName}}"> {{item.skuName}} </view>
+            <view class="nyq" wx:for="{{item.practices}}" wx:for-item="practice" wx:key="detailId"> {{practice.name}}<block wx:if="{{practice.addPrice&&practice.addPrice!==0}}">(+{{practice.addPrice/100}}元)</block>
+            </view>
+            <view class="nyq" wx:for="{{item.sideDishes}}" wx:for-item="sideDish" wx:key="detailId"> {{sideDish.name}}<block wx:if="{{sideDish.addPrice&&practice.addPrice!==0}}">(+{{sideDish.addPrice/100}}元)</block>
+            </view>
+            <view class="nyq" wx:for="{{item.remarks}}" wx:for-item="remark" wx:key="detailId"> {{remark.name}} </view>
+        </view>
+        <view class="nyr" wx:if="{{item.totalMemberPrice!==undefined}}">
+            <block wx:if="{{!isDinner}}">
+                <custom-member-price-label memberDayTag="{{memberDayTagSwitch}}" number="{{item.totalMemberPrice/100}}" storedPayMemberPriceSwitch="{{storedPayMemberPriceSwitch}}" wx:if="{{!memberFlag||storedPayMemberPriceSwitch}}"></custom-member-price-label>
+                <image class="ny8" src="{{memberDayTagSwitch?'https://img.alicdn.com/imgextra/i3/O1CN01zZCB0a1bAhD25u8uP_!!6000000003425-2-tps-116-32.png':'https://img.alicdn.com/imgextra/i4/O1CN01O1AAOu1RqhMzBPS5s_!!6000000002163-55-tps-72-32.svg'}}" style="width: {{memberDayTagSwitch?'116':'76'}}rpx" wx:else></image>
+            </block>
+            <block wx:else>
+                <block wx:if="{{!memberFlag}}">
+                    <custom-member-price-label memberDayTag="{{true}}" number="{{item.totalMemberPrice/100}}" storedPayMemberPriceSwitch="{{false}}" wx:if="{{memberDayTagSwitch}}"></custom-member-price-label>
+                    <image class="nyx" src="https://img.alicdn.com/imgextra/i4/O1CN01r59eiT1w4NhVKc5A6_!!6000000006254-55-tps-76-32.svg" wx:elif="{{storedPayMemberPriceSwitch}}"></image>
+                    <custom-member-price-label memberDayTag="{{memberDayTagSwitch}}" number="{{item.totalMemberPrice/100}}" storedPayMemberPriceSwitch="{{false}}" wx:else></custom-member-price-label>
+                </block>
+                <block wx:else>
+                    <image class="ny8" src="https://img.alicdn.com/imgextra/i3/O1CN01zZCB0a1bAhD25u8uP_!!6000000003425-2-tps-116-32.png" style="width: 116rpx" wx:if="{{memberDayTagSwitch}}"></image>
+                    <image class="nyx" src="https://img.alicdn.com/imgextra/i4/O1CN01r59eiT1w4NhVKc5A6_!!6000000006254-55-tps-76-32.svg" wx:elif="{{storedPayMemberPriceSwitch}}"></image>
+                    <image class="ny8" src="https://img.alicdn.com/imgextra/i4/O1CN01O1AAOu1RqhMzBPS5s_!!6000000002163-55-tps-72-32.svg" style="width: 76rpx" wx:else></image>
+                </block>
+            </block>
+        </view>
+        <view class="nyj" style="{{isSetMeal&&setMealToggle||!isSimpleMeal||item.totalMemberPrice!==undefined?'':'margin-top: 18rpx'}}">
+            <view class="noe">
+                <block wx:if="{{item.totalMemberPrice!==undefined&&isDinner&&storedPayMemberPriceSwitch}}">
+                    <view style="display: inline-block;">
+                        <text class="no4">￥</text>
+                        <text class="non">{{item.totalMemberPrice/100}}</text>
+                    </view>
+                    <text class="noc">￥{{item.totalSkuAmount/100}}</text>
+                </block>
+                <block wx:elif="{{item.totalMemberPrice!==undefined&&memberFlag}}">
+                    <view style="display: inline-block;">
+                        <text class="no4">￥</text>
+                        <text class="non">{{storedPayMemberPriceSwitch?item.totalSkuAmount/100:item.totalMemberPrice/100}}</text>
+                    </view>
+                    <text class="noc" wx:if="{{!storedPayMemberPriceSwitch&&!item.memberDayTag}}">￥{{item.totalSkuAmount/100}}</text>
+                </block>
+                <block wx:else>
+                    <view style="display: inline-block;" wx:if="{{!item.usedPromoFlag&&!showAddPriceBuy&&item.totalSkuAmount!==undefined}}">
+                        <text class="no4">￥</text>
+                        <text class="non">{{item.totalSkuAmount/100}}</text>
+                    </view>
+                    <text wx:if="{{(item.usedPromoFlag||showAddPriceBuy)&&item.actualAmount!==undefined}}">￥<text class="non">{{item.actualAmount/100}}</text>
+                    </text>
+                    <text class="noc" wx:if="{{(item.usedPromoFlag||showAddPriceBuy&&item.totalSkuAmount!==item.actualAmount)&&item.totalSkuAmount!==undefined}}">￥{{item.totalSkuAmount/100}}</text>
+                </block>
+            </view>
+            <num-control autoWidth bind:handleAddDish="handleChangeNum" bind:handleMinusDish="handleChangeNum" id="num-control" isJustShowNum="{{isJustShowNum}}" minusDisabled="{{item.mustOrderDTO&&item.mustOrderDTO.mustOrderRule==='FIXED'&&num<=item.mustOrderDTO.minOrderNum}}" num="{{num}}" plusDisabled="{{disableAddInner||showAddPriceBuy}}" startNumber="{{item.startNumber}}" step="{{item.startInterval}}"></num-control>
+        </view>
+    </view>
+</view>
+<wxs module="setMealModule" src="5x.wxs" />

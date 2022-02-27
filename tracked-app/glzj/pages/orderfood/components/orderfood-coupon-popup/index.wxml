@@ -1,0 +1,86 @@
+<view wx:if="{{showModal}}">
+    <view catchtouchmove="forbidMove" class="{{'component-coupon-popup-show-modal'}} c1g" data-track-custom-scene="{{customScene}}" data-track-logkey=".keruyun_menu.coupon_exposure" onAppear="$logAppear" wx:if="{{showModal}}"></view>
+    <view class="c1m" wx:if="{{showCoupon}}">
+        <view class="c10" style="background-color: {{themeColor}}">
+            <cook-image class="c1l" src="https://img.alicdn.com/tfs/TB1vdDHQ7T2gK0jSZFkXXcIQFXa-642-235.png"></cook-image>
+            <view class="c1q">{{activityName}}</view>
+            <view class="c1r">{{activityDesc}}</view>
+            <view class="c1x">
+                <view wx:if="{{index<=29}}" wx:for="{{couponList}}" wx:key="index">
+                    <view class="esc">
+                        <view wx:if="{{item.type==='CASH'||item.activityChannel==='KB'||item.activityChannel==='ELE'}}">
+                            <view class="exg">
+                                <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1Yjzzl0Tfau8jSZFwXXX1mVXa-122-122.png" wx:if="{{item.type==='CASH'}}"></cook-image>
+                                <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1T_gf0.H1gK0jSZSyXXXtlpXa-122-122.png" wx:if="{{item.activityChannel==='KB'}}"></cook-image>
+                                <cook-image class="exm" src="https://img.alicdn.com/tfs/TB15UAg0VT7gK0jSZFpXXaTkpXa-122-122.png" wx:if="{{item.activityChannel==='ELE'}}"></cook-image>
+                                <view class="ex0">
+                                    <view class="exl">
+                                        <text class="exq">¥</text>
+                                        <text class="exx">{{item.content/100}}</text>
+                                    </view>
+                                    <view class="e84">
+                                        <text class="e8k" wx:if="{{(item.type==='CASH'||item.activityChannel==='KB'||item.activityChannel==='ELE')&&item.minCharge}}">满{{item.minCharge/100}}可用</text>
+                                        <text class="e8k" wx:if="{{!item.minCharge}}">无门槛</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view wx:if="{{item.activityChannel==='SAAS'&&item.type==='DISCOUNT'}}">
+                            <view class="exg">
+                                <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1hKHs07Y2gK0jSZFgXXc5OFXa-122-122.png"></cook-image>
+                                <view class="ex0">
+                                    <view class="exl">
+                                        <text class="ex8">{{item.content}}</text>
+                                        <text class="exr">折</text>
+                                    </view>
+                                    <view class="e84">
+                                        <text class="e8n" wx:if="{{item.minCharge}}">满{{item.minCharge/100}}可用</text>
+                                        <text class="e8n" wx:else>无门槛</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view wx:if="{{item.activityChannel==='SAAS'&&item.type==='GIFT'}}">
+                            <view class="exg">
+                                <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1G5oLmmslXu8jSZFuXXXg7FXa-122-122.png" wx:if="{{item.giftFlag}}"></cook-image>
+                                <cook-image class="exm" src="https://img.alicdn.com/tfs/TB1m9hBn3gP7K4jSZFqXXamhVXa-122-122.png" wx:if="{{!item.giftFlag}}"></cook-image>
+                                <view class="ex0">
+                                    <view class="exl">
+                                        <text class="exj" wx:if="{{item.giftFlag}}">礼品券</text>
+                                        <text class="exj" wx:else>商品券</text>
+                                    </view>
+                                    <view class="e84">
+                                        <text class="e8k" wx:if="{{item.minCharge}}">满{{item.minCharge/100}}可用</text>
+                                        <text class="e8k" wx:else>无门槛</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="e8c">
+                            <view class="e8z">{{item.voucherTemplateName}}</view>
+                            <view class="e85" wx:if="{{item.itemCoverage==='ALL'}}">全部商品可用</view>
+                            <view class="e85" wx:if="{{item.itemCoverage==='PART_AVAILABLE'||item.itemCoverage==='PART_UNAVAILABLE '}}">指定商品可用</view>
+                            <view class="e8w" wx:if="{{item.validDateType==='FIXED'}}">有效期至{{item.endTime}}</view>
+                            <view class="e8w" wx:if="{{item.validDateType==='RELATIVE'}}">自领取后{{item.validDayCount}}天有效</view>
+                        </view>
+                        <view class="e8f">
+                            <text class="e87" style="color: {{themeColor}}">X{{item.voucherNum}}张</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="e83"></view>
+            </view>
+            <view class="e86">
+                <member-join-universal bind:handleMemberJoinFail="handleMemberJoinFail" bind:handleMemberJoinSuccess="handleMemberJoinSuccess" bind:handleRootInstance="handleRootInstance" btnStyle="color: {{themeColor}};width: 286rpx;height: 80rpx;line-height: 80rpx;margin: 0 auto;margin-top: 34rpx;" btnTextStyle="color: {{themeColor}}" errStyle="width: 404rpx" id="memberJoinUniversal" scene="orderfood-coupon-popup" showSuccessToast="{{false}}" title="领取并使用"></member-join-universal>
+            </view>
+            <view class="e83"></view>
+            <view class="e8s">
+                <cook-image bindtap="hidePop" class="eq8" src="https://img.alicdn.com/tfs/TB1D0p0aQcx_u4jSZFlXXXnUFXa-64-64.png"></cook-image>
+            </view>
+        </view>
+    </view>
+</view>
+<auth-phone-modal bind:handleRootInstance="handleRootInstance" id="authPhoneModal"></auth-phone-modal>
+<custom-show-modal class="c40" id="customShowModal"></custom-show-modal>
+<loading id="loading"></loading>
+<toast id="toast"></toast>

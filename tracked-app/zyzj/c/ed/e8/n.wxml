@@ -1,0 +1,51 @@
+<template name="success">
+    <view class="n32">
+        <view class="nwi"></view>
+        <view class="{{'component-member-join-success-content'}} nwg" data-track-logkey="/alsc.saas.miniapp.hyzx-ckwcdqy" onAppear="$logAppear">
+            <view class="n33" style="background:{{themeColor}}">
+                <image class="n36" src="https://img.alicdn.com/imgextra/i4/O1CN010KdXDs22YVQN09Mhn_!!6000000007132-2-tps-632-269.png"></image>
+            </view>
+            <view class="nwm">
+                <view class="nw0">{{memberCardTemplate.summaryGuideTips}}</view>
+                <view class="nwl">尊享以下权益</view>
+                <view class="{{activityList.length<=4?'nwr':'nwq'}}" wx:if="{{activityList&&activityList.length}}">
+                    <view class="{{activityList.length==4?'nw8':'nwx'}}" wx:for="{{activityList}}" wx:key="idx">
+                        <image class="nwj" src="{{item.decorateImgUrl||item.bgImgUrl}}"></image>
+                        <view class="n3e">{{item.activityDesc}}</view>
+                    </view>
+                </view>
+                <member-send-coupon-activity activityTypeId="24" bind:handleSendCoupon="handleCloseSendCoupon">
+                    <button class="n3n" style="background:{{themeColor}}">查看我的权益</button>
+                </member-send-coupon-activity>
+            </view>
+            <image bindtap="handleClose" class="n3c"></image>
+        </view>
+    </view>
+</template>
+<template name="order">
+    <view class="nwk">
+        <view class="nwp">
+            <image class="nwy" src="https://img.alicdn.com/tfs/TB1Q3FyM7Y2gK0jSZFgXXc5OFXa-37-27.png"></image>
+            <view class="nwo">你有一张会员卡待领取</view>
+        </view>
+        <view class="nwa">{{memberCardTemplate.summaryGuideTips}}</view>
+        <view bindtap="handleBtnClick" class="nwh"> {{memberCardTemplate.joinMemberTips}} </view>
+    </view>
+</template>
+<template name="home">
+    <view class="{{'component-member-join-order'}} nw9" data-track-logkey=".home.member">
+        <view class="nw1"></view>
+        <view class="nwu"></view>
+        <image class="nwv" src="https://gw.alicdn.com/tfs/TB1w9drb7cx_u4jSZFlXXXnUFXa-93-48.png"></image>
+        <view class="nwt" wx:if="{{summaryValue&&summaryValue!=='0'}}"> 加入会员，限时享 <text class="nwd">{{summaryValue}}元</text> 礼包 </view>
+        <view class="nwt" wx:else>限时享大礼包</view>
+        <view bindtap="handleBtnClick" class="nwb"> {{memberCardTemplate.joinMemberTips}} </view>
+    </view>
+</template>
+<view class="nw7">
+    <template is="home" data="{{memberCardTemplate:memberCardTemplate,summaryValue:summaryValue,summaryList:summaryList}}" wx:if="{{componentStatus&&scene==='home'}}"></template>
+    <template is="order" data="{{memberCardTemplate:memberCardTemplate,summaryValue:summaryValue,summaryList:summaryList}}" wx:if="{{componentStatus&&scene==='order'}}"></template>
+    <template is="success" data="{{memberCardTemplate:memberCardTemplate,activityList:activityList,themeColor:themeColor}}" wx:if="{{componentStatus&&scene==='success'&&showSuccessScene}}"></template>
+</view>
+<toast id="toast"></toast>
+<loading id="loading"></loading>

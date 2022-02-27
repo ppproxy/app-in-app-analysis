@@ -1,0 +1,12 @@
+<template name="image">
+    <view class="z6i" style="color: #333; {{containerStyle}}" wx:if="{{titleUrl}}">
+        <view bindtap="titleOnClick" class="z61 {{styles[textAlign]}}" style="font-size: 0rpx; color: #333; {{style}}">
+            <cook-image class="z6g" mode="{{imageMode}}" src="{{titleUrl}}" style="color: #333; {{imageStyle}}"></cook-image>
+        </view>
+    </view>
+</template>
+<template name="text">
+    <view class="z6i" style="color: #333; {{containerStyle}} " wx:if="{{title}}">
+        <view bindtap="titleOnClick" class="z61 {{styles[textAlign]}}" style="color: #333; {{style}}">{{title}}</view>
+    </view>
+</template>

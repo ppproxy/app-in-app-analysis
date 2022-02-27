@@ -1,0 +1,27 @@
+<view class="n3p" wx:if="{{summaryList&&summaryList.length>0}}">
+    <view class="n3y {{styles[level]}}">
+        <view class="ey1" wx:for="{{summaryList}}" wx:key="idx">
+            <view class="n3o">
+                <image class="eoz" src="{{item.decorateBgImUrl}}"></image>
+                <image class="eqs" src="https://img.alicdn.com/imgextra/i2/O1CN01AxklAd1gRhyDj0wn2_!!6000000004139-2-tps-176-58.png" wx:if="{{item.tipStatus}}"></image>
+            </view>
+            <view class="n3a">
+                <view class="n3h">{{item.summaryDesc}}</view>
+                <view class="n39">{{item.summaryTips}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="n3p" wx:else>
+    <view class="n3y n3s">
+        <view class="ey1">
+            <view class="n3o">
+                <image class="n3v" src="{{memberCardTemplate.brandLogo}}"></image>
+            </view>
+            <view class="n3a">
+                <view class="n3h">{{memberCardTemplate.memberCardTemplateName}}</view>
+                <view class="n39 n3u">加入会员享好礼</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,316 @@
+{
+    "pages": [
+        "pages/home/index",
+        "pages/lightshop/index",
+        "pages/orderfood/index",
+        "pages/orderlist/index",
+        "pages/shopmall/index",
+        "pages/member/member-my/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#efefef",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#bfbfbf",
+        "selectedColor": "#ef8140",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/lightshop/index",
+                "text": "首页",
+                "iconPath": "assets/tab/home.png",
+                "selectedIconPath": "assets/tab/home_select.png"
+            },
+            {
+                "pagePath": "pages/orderfood/index",
+                "text": "点餐",
+                "iconPath": "assets/tab/demo.png",
+                "selectedIconPath": "assets/tab/demo_select.png"
+            },
+            {
+                "pagePath": "pages/shopmall/index",
+                "text": "商城",
+                "iconPath": "assets/tab/demo.png",
+                "selectedIconPath": "assets/tab/demo_select.png"
+            },
+            {
+                "pagePath": "pages/orderlist/index",
+                "text": "订单",
+                "iconPath": "assets/tab/demo.png",
+                "selectedIconPath": "assets/tab/demo_select.png"
+            },
+            {
+                "pagePath": "pages/member/member-my/index",
+                "text": "我的",
+                "iconPath": "assets/tab/demo.png",
+                "selectedIconPath": "assets/tab/demo_select.png"
+            }
+        ]
+    },
+    "subPackages": [
+        {
+            "root": "pages/webview/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/baxia/webview/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/page-result/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/comment/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/user-paying-result/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/orderdetail-coupon/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-coupon-bag/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-about/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-account/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-assistance/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-coupon-detail/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-coupon-list/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-coupon-list-all/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-eleme-register/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-index/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-item-list/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-personal-info/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-point/member-point-exchange-detail/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-point/member-point-exchange-records/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-point/member-point-flow/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-point/member-point-mall/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-privilege/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-rectify/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-unclaimed-coupon-list/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-coupon-suit-shops/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-coupon-suit-goods/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-coupon-one-click/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/member/member-collect-point/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/recharge/",
+            "pages": [
+                "recharge-available-shop-list/index",
+                "recharge-balance-flow/index",
+                "recharge-instructions/index",
+                "recharge-password-setting/index",
+                "recharge-payment/index",
+                "recharge-wallet/index"
+            ]
+        },
+        {
+            "root": "pages/privilege-consult-select-coupon/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/refunddetail/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/orderdetail/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/store-list/",
+            "pages": [
+                "index",
+                "city-list/index"
+            ]
+        },
+        {
+            "root": "pages/tripartite-preferential-consult/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/payaccount/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/zccomfirmorder/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/zcordercheck/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/orderfood/search/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/settleaccount/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/zcsettleaccount/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/user-paying/",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/welcome/",
+            "pages": [
+                "index"
+            ]
+        }
+    ]
+}

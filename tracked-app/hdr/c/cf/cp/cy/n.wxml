@@ -1,0 +1,41 @@
+<view class="n1q" style="{{containerStyle}}">
+    <view class="n1r" style="{{imgStyle}}">
+        <cook-image bindtap="handleOpenDetail" class="n1x" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" mode="aspectFill" smart="{{width:isInDishList?223:310,height:isInDishList?223:232}}" src="{{dish.cookbookDishShowSkuInfoDTO.skuImgUrl?dish.cookbookDishShowSkuInfoDTO.skuImgUrl:'/assets/images/dish-default.png'}}"></cook-image>
+        <view class="n18" wx:if="{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}">{{dish.cookbookDishShowSkuInfoDTO.overPlusNumDesc}}</view>
+        <ordered-num dishPlaceNumShowText="{{dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}" orderedDishName="{{dish.dishName}}" wx:if="{{dishListOrderedMap[dish.dishId]&&dishListOrderedMap[dish.dishId].dishPlaceNumShowText||dish.dishPlaceNumShowText}}"></ordered-num>
+    </view>
+    <view class="n1j" style="{{bottomStyle}}">
+        <view bindtap="handleOpenDetail" class="ng4"> {{dish.dishName}} </view>
+        <view style="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice?'':'height: 36rpx'}}"></view>
+        <view class="nge" style="margin-bottom: {{!memberFlag?8:6}}rpx" wx:if="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice}}">
+            <custom-member-price-label maxMemberDayWidth="{{isInDishList?34:106}}" maxMemberWidth="{{isInDishList?114:186}}" memberDayTag="{{dish.memberDayTag}}" number="{{dish.cookbookDishShowSkuInfoDTO.memberSellPrice/100}}" storedPayMemberPriceSwitch="{{dish.storedPayMemberPriceSwitch==='Y'}}" wx:if="{{!memberFlag||dish.storedPayMemberPriceSwitch==='Y'}}"></custom-member-price-label>
+            <image class="ngv" src="{{dish.memberDayTag?'https://img.alicdn.com/imgextra/i4/O1CN01OweEQU1Kf40N8C15O_!!6000000001190-55-tps-108-32.svg':'https://img.alicdn.com/imgextra/i4/O1CN01ztyWrz20VBK0UdVpo_!!6000000006854-55-tps-72-32.svg'}}" style="width: {{dish.memberDayTag?'116':'76'}}rpx" wx:else></image>
+        </view>
+        <view class="ngw">
+            <view class="ngo" style="{{priceStyle}}">
+                <block wx:if="{{dish.cookbookDishShowSkuInfoDTO.haveMemberSellPrice&&memberFlag}}">
+                    <view class="ngy">
+                        <text class="nga">¥</text>
+                        <text class="ngh">{{dish.storedPayMemberPriceSwitch==='Y'?dish.cookbookDishShowSkuInfoDTO.sellPrice/100:dish.cookbookDishShowSkuInfoDTO.memberSellPrice/100}}</text>
+                        <text>
+                            <text wx:if="{{dish.dishType!=='COMBO'&&dish.cookbookDishShowSkuInfoDTO.unitName!=='份'&&dish.cookbookDishShowSkuInfoDTO.unitName!=='个'&&dish.cookbookDishShowSkuInfoDTO.unitName.length<4}}">{{'/'+dish.cookbookDishShowSkuInfoDTO.unitName+(dish.multiSpecFlag==='Y'?' ':'')}}</text>
+                            <text style="font-weight: normal;" wx:if="{{dish.priceAfterShowCopywriter}}">{{dish.priceAfterShowCopywriter}}</text>
+                        </text>
+                    </view>
+                    <text class="ng9" wx:if="{{dish.storedPayMemberPriceSwitch!=='Y'}}">¥{{dish.cookbookDishShowSkuInfoDTO.sellPrice/100}}</text>
+                </block>
+                <view class="ngy" wx:else>
+                    <text class="nga">¥</text>
+                    <text class="ngh">{{dish.cookbookDishShowSkuInfoDTO.sellPrice/100}}</text>
+                    <text>
+                        <text wx:if="{{dish.dishType!=='COMBO'&&dish.cookbookDishShowSkuInfoDTO.unitName!=='份'&&dish.cookbookDishShowSkuInfoDTO.unitName!=='个'&&dish.cookbookDishShowSkuInfoDTO.unitName.length<4}}">{{'/'+dish.cookbookDishShowSkuInfoDTO.unitName+(dish.multiSpecFlag==='Y'?' ':'')}}</text>
+                        <text style="font-weight: normal;" wx:if="{{dish.priceAfterShowCopywriter}}">{{dish.priceAfterShowCopywriter}}</text>
+                    </text>
+                </view>
+            </view>
+            <view style="margin-left: -15rpx">
+                <orderfood-dish-add-cart bind:handleRootInstance="handleRootInstance" dish="{{dish}}" dishDot="{{dishDot}}" isShowMinus="{{isShowMinus}}" logType="腰封位置-招牌菜" onlyShowAdd="{{true}}" openStatus="{{openStatus}}" showSku="{{dish.showSku}}" wx:if="{{openStatus}}"></orderfood-dish-add-cart>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<image binderror="binderror" bindload="bindload" class="ejv" lazyLoad="{{lazyLoad}}" mode="{{mode}}" showMenuByLongpress="{{showMenuByLongpress}}" src="{{actuallySrc}}" style="{{innerStyle}}{{style}}" webp="{{actuallyWebp}}" wx:if="{{!smart}}"></image>
+<view class="ejv" style="position: relative;{{innerStyle}}{{style}}" wx:else>
+    <image class="ejv ejt" lazyLoad="{{lazyLoad}}" mode="{{mode}}" showMenuByLongpress="{{showMenuByLongpress}}" src="{{defaultSource}}" wx:if="{{showDefault&&!!defaultSource}}"></image>
+    <image binderror="bindPreviewError" bindload="bindPreviewLoad" class="ejv ejd" lazyLoad="{{lazyLoad}}" mode="{{mode}}" showMenuByLongpress="{{showMenuByLongpress}}" src="{{previewSrc}}" webp="{{actuallyWebp}}" wx:if="{{showPreview}}"></image>
+    <image binderror="binderror" bindload="bindload" class="ejv" lazyLoad="{{lazyLoad}}" mode="{{mode}}" showMenuByLongpress="{{showMenuByLongpress}}" src="{{actuallySrc}}" webp="{{actuallyWebp}}"></image>
+</view>

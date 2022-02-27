@@ -1,0 +1,7 @@
+<view class="clq" style="height: calc(100vh - {{navigationBarHeight}}px)">
+    <view class="clm"></view>
+    <view class="clr">
+        <custom-page-result bindhandleOk="handleButton" buttonText="去查看" icon="https://img.alicdn.com/tfs/TB1HvrokmslXu8jSZFuXXXg7FXa-400-347.png" showButton="{{true}}" subTitle="点击下方去查看" title="团购订单需前往口碑小程序查看" visible="{{true}}"></custom-page-result>
+    </view>
+    <view class="cl0 {{isShowTabbar?'cll':''}}"></view>
+</view>

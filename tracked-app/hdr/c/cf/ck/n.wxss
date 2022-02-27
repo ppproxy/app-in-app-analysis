@@ -1,0 +1,20 @@
+.n1d {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.n1b {
+    background-color: var(--primary);
+}
+
+.n1b,.n1i {
+    height: 100%;
+    width: 100%;
+}
+
+.n11 {
+    height: 32rpx;
+}

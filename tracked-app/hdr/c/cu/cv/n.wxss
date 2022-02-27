@@ -1,0 +1,183 @@
+.nl7 {
+    border-radius: 24rpx;
+    height: auto;
+    max-height: 860rpx;
+    width: 600rpx;
+}
+
+.nlk {
+    background-color: #000;
+    border-radius: 24rpx 24rpx 0 0;
+    height: 600rpx;
+    margin-left: -300rpx;
+    margin-top: -620rpx;
+    opacity: .5;
+    width: 600rpx;
+    z-index: 1003;
+}
+
+.nlk,.nlp {
+    left: 50%;
+    position: absolute;
+}
+
+.nlp {
+    height: 240rpx;
+    margin-left: -120rpx;
+    margin-top: -456rpx;
+    width: 240rpx;
+    z-index: 1004;
+}
+
+.nly {
+    align-items: center;
+    flex-direction: column;
+    height: 150rpx;
+    margin-top: 16rpx;
+}
+
+.nlo,.nly {
+    display: flex;
+}
+
+.nlo {
+    flex-direction: row;
+}
+
+.nla {
+    font-weight: 500;
+}
+
+.nlh {
+    font-size: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-right: 6rpx;
+    width: 18rpx;
+}
+
+.nl9,.nlh {
+    letter-spacing: 0;
+}
+
+.nl9 {
+    font-size: 48rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.nlu {
+    color: #999;
+    font-size: 28rpx;
+    margin-left: 14rpx;
+    margin-top: 10rpx;
+    text-decoration: line-through;
+}
+
+.nlv {
+    margin-left: 4rpx;
+}
+
+.nlt {
+    height: 30rpx;
+    margin-top: 20rpx;
+}
+
+.nld,.nlt {
+    color: #333;
+    font-size: 30rpx;
+    letter-spacing: 0.17rpx;
+    line-height: 30rpx;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 522rpx;
+}
+
+.nld {
+    height: 60rpx;
+}
+
+.nlb {
+    color: #999;
+    font-size: 24rpx;
+    height: 24rpx;
+    letter-spacing: 0.13rpx;
+    line-height: 24rpx;
+    margin-top: 20rpx;
+}
+
+.nlb,.nli {
+    text-align: center;
+}
+
+.nli {
+    border-radius: 200rpx;
+    color: #fff;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 39rpx 16rpx;
+    width: 522rpx;
+}
+
+.nli::after {
+    border: 0;
+}
+
+.nl1 {
+    height: 650rpx;
+    position: relative;
+    width: 582rpx;
+}
+
+.nlg {
+    height: 650rpx!important;
+    width: 582rpx!important;
+}
+
+.nlm {
+    left: 50%;
+    position: absolute;
+    top: 400rpx;
+    transform: translate(-50%);
+}
+
+.nl0 {
+    height: 150rpx!important;
+    width: 438rpx!important;
+}
+
+.nll {
+    color: #a40023;
+    font-size: 42rpx;
+    font-weight: 500;
+    left: 50%;
+    position: absolute;
+    top: 30rpx;
+    transform: translate(-50%);
+}
+
+.nlq {
+    animation: rotate 1s linear infinite;
+    height: 22px!important;
+    width: 22px!important;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(1turn);
+    }
+}
+
+.nlr {
+    color: #f63c28;
+    font-size: 130rpx;
+    font-weight: 500;
+    position: absolute;
+    right: 227rpx;
+    top: 100rpx;
+}

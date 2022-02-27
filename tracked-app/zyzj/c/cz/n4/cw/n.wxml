@@ -1,0 +1,17 @@
+<view class="nve">
+    <swiper bindchange="_swiperChange" circular="{{true}}" current="{{currentIndex}}" duration="500" style="height:{{dishImgHeight}}" wx:if="{{dataList.length>1}}">
+        <swiper-item wx:for="{{dataList}}" wx:for-item="swiperItem" wx:key="swiperItem">
+            <view class="nvc" style="height:{{dishImgHeight}}">
+                <cook-image class="nvn" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" mode="aspectFill" smart="{{width:750,height:564,previewScale:4,scale:2.5}}" src="{{swiperItem}}" style="height:{{dishImgHeight}};width: 750rpx"></cook-image>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view style="height:{{dishImgHeight}}" wx:elif="{{dataList.length===1}}">
+        <cook-image class="nvn" defaultSource="/assets/images/dish-default.png" lazyLoad="{{false}}" mode="aspectFill" smart="{{width:isSpec?686:750,height:isSpec?514:564,previewScale:4,scale:2.5}}" src="{{dataList[0]||'/assets/images/dish-default.png'}}" style="height:{{dishImgHeight}};width: {{isSpec?'686':'750'}}rpx"></cook-image>
+    </view>
+    <view class="nvc" style="height:{{dishImgHeight}}" wx:else>
+        <view class="nvz"></view>
+        <cook-image class="nv5" lazyLoad="{{false}}" src="https://img.alicdn.com/imgextra/i1/O1CN01G0dhcv1qARBPWdAld_!!6000000005455-55-tps-187-187.svg"></cook-image>
+    </view>
+    <view class="nvw" wx:if="{{dataList.length!==0}}"> {{currentIndex+1}}/{{dataList.length}} </view>
+</view>

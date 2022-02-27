@@ -1,0 +1,488 @@
+<template name="loading-animation">
+    <loading-animation bindhandleRootInstance="{{a.bindhandleRootInstance}}" id="{{a.id}}"></loading-animation>
+</template>
+<template name="preview-mode-tag">
+    <preview-mode-tag bindhandleRootInstance="{{a.bindhandleRootInstance}}" id="{{a.id}}"></preview-mode-tag>
+</template>
+<template name="navigation-bar">
+    <navigation-bar alipayCustomBack="{{a.alipayCustomBack}}" back="{{a.back}}" backText="{{a.backText}}" backTextStyle="{{a.backTextStyle}}" background="{{a.background}}" bindhandleBack="{{a.bindhandleBack}}" bindhandleBackCanStop="{{a.bindhandleBackCanStop}}" bindhandleBackTextTap="{{a.bindhandleBackTextTap}}" bindhandleClearSearch="{{a.bindhandleClearSearch}}" bindhandleClose="{{a.bindhandleClose}}" bindhandleFeintSearch="{{a.bindhandleFeintSearch}}" bindhandleHomeTap="{{a.bindhandleHomeTap}}" bindhandleRootInstance="{{a.bindhandleRootInstance}}" bindhandleSearch="{{a.bindhandleSearch}}" bindhandleSearchInput="{{a.bindhandleSearchInput}}" bindhandleSearchWarp="{{a.bindhandleSearchWarp}}" borderColor="{{a.borderColor}}" close="{{a.close}}" color="{{a.color}}" commentPage="{{a.commentPage}}" delta="{{a.delta}}" dishPage="{{a.dishPage}}" feintSearch="{{a.feintSearch}}" hidden="{{a.hidden}}" home="{{a.home}}" homeScroll="{{a.homeScroll}}" id="{{a.id}}" isFromDetailPage="{{a.isFromDetailPage}}" isLoading="{{a.isLoading}}" isShowMask="{{a.isShowMask}}" isheaderBackgroundWhite="{{a.isheaderBackgroundWhite}}" scrollOpacity="{{a.scrollOpacity}}" search="{{a.search}}" showBorder="{{a.showBorder}}" startColor="{{a.startColor}}" title="{{a.title}}" titleStyle="{{a.titleStyle}}"></navigation-bar>
+</template>
+<template name="loading">
+    <loading bindhandleRootInstance="{{a.bindhandleRootInstance}}" id="{{a.id}}"></loading>
+</template>
+<template name="bottom-tabbar">
+    <bottom-tabbar bindhandleRootInstance="{{a.bindhandleRootInstance}}" bindhandleShowTabbar="{{a.bindhandleShowTabbar}}" defaultList="{{a.defaultList}}" fromPage="{{a.fromPage}}" id="{{a.id}}" isPageResult="{{a.isPageResult}}"></bottom-tabbar>
+</template>
+<template name="goods-list-component">
+    <goods-list-component bindhandleRootInstance="{{a.bindhandleRootInstance}}" id="{{a.id}}"></goods-list-component>
+</template>
+<template name="goods-window-component">
+    <goods-window-component bindhandleRootInstance="{{a.bindhandleRootInstance}}" id="{{a.id}}"></goods-window-component>
+</template>
+<template name="advertise-carousel-component">
+    <advertise-carousel-component bindhandleRootInstance="{{a.bindhandleRootInstance}}" data="{{a.data}}" dishPage="{{a.dishPage}}" dotStyle="{{a.dotStyle}}" id="{{a.id}}" logClickKey="{{a.logClickKey}}" logExposeKey="{{a.logExposeKey}}" render="{{a.render}}" wrapStyle="{{a.wrapStyle}}"></advertise-carousel-component>
+</template>
+<template name="point-mall-component">
+    <point-mall-component bindhandleRootInstance="{{a.bindhandleRootInstance}}" data="{{a.data}}" id="{{a.id}}"></point-mall-component>
+</template>
+<template name="slot_9">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_9">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_9">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_9">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_9">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_9">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_10" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_8">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_8">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_8">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_8">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_8">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_8">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_9" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_7">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_7">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_7">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_7">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_7">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_7">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_8" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_6">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_6">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_6">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_6">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_6">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_6">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_7" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_5">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_5">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_5">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_5">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_5">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_5">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_6" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_4">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_4">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_4">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_4">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_4">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_4">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_5" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_3">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_3">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_3">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_3">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_3">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_3">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_4" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_2">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_2">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_2">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_2">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_2">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_2">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_3" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_1">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_1">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_1">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_1">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_1">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_1">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_2" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="slot_0">
+    <slot name="{{attrs.slot}}"></slot>
+</template>
+<template name="scroll-view_0">
+    <scroll-view bounces="{{a.bounces}}" catchdragend="{{a.catchdragend}}" catchdragging="{{a.catchdragging}}" catchdragstart="{{a.catchdragstart}}" catchlongtap="{{a.catchlongtap}}" catchrefresherabort="{{a.catchrefresherabort}}" catchrefresherpulling="{{a.catchrefresherpulling}}" catchrefresherrefresh="{{a.catchrefresherrefresh}}" catchrefresherrestore="{{a.catchrefresherrestore}}" catchscroll="{{a.catchscroll}}" catchscrolltolower="{{a.catchscrolltolower}}" catchscrolltoupper="{{a.catchscrolltoupper}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+    <scroll-view binddragend="{{a.binddragend}}" binddragging="{{a.binddragging}}" binddragstart="{{a.binddragstart}}" bindlongtap="{{a.bindlongtap}}" bindrefresherabort="{{a.bindrefresherabort}}" bindrefresherpulling="{{a.bindrefresherpulling}}" bindrefresherrefresh="{{a.bindrefresherrefresh}}" bindrefresherrestore="{{a.bindrefresherrestore}}" bindscroll="{{a.bindscroll}}" bindscrolltolower="{{a.bindscrolltolower}}" bindscrolltoupper="{{a.bindscrolltoupper}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" bounces="{{a.bounces}}" class="{{a.class}}" disabled="{{a.disabled}}" enableBackToTop="{{a['enable-back-to-top']}}" enableFlex="{{a['enable-flex']}}" enhanced="{{a.enhanced}}" fastDeceleration="{{a['fast-deceleration']}}" hidden="{{a.hidden}}" id="{{a.id}}" lowerThreshold="{{a['lower-threshold']}}" pagingEnabled="{{a['paging-enabled']}}" refresherBackground="{{a['refresher-background']}}" refresherDefaultStyle="{{a['refresher-default-style']}}" refresherEnabled="{{a['refresher-enabled']}}" refresherThreshold="{{a['refresher-threshold']}}" refresherTriggered="{{a['refresher-triggered']}}" scrollAnchoring="{{a['scroll-anchoring']}}" scrollIntoView="{{a['scroll-into-view']}}" scrollLeft="{{a['scroll-left']}}" scrollTop="{{a['scroll-top']}}" scrollWithAnimation="{{a['scroll-with-animation']}}" scrollX="{{a['scroll-x']}}" scrollY="{{a['scroll-y']}}" showScrollbar="{{a['show-scrollbar']}}" style="{{a.style}}" upperThreshold="{{a['upper-threshold']}}" wx:else>
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </scroll-view>
+</template>
+<template name="image_0">
+    <image catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:if="{{iscatch}}"></image>
+    <image bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" lazyLoad="{{a['lazy-load']}}" mode="{{a.mode}}" showMenuByLongpress="{{a['show-menu-by-longpress']}}" src="{{a.src}}" style="{{a.style}}" webp="{{a.webp}}" wx:else></image>
+</template>
+<template name="button_0">
+    <button catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </button>
+    <button bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" formType="{{a['form-type']}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" loading="{{a.loading}}" openType="{{a['open-type']}}" plain="{{a.plain}}" size="{{a.size}}" style="{{a.style}}" type="{{a.type}}" wx:else>
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </button>
+</template>
+<template name="text_0">
+    <text catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </text>
+    <text bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" decode="{{a.decode}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" id="{{a.id}}" selectable="{{a.selectable}}" space="{{a.space}}" style="{{a.style}}" userSelect="{{a['user-select']}}" wx:else>
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </text>
+</template>
+<template name="view_0">
+    <view catchlongtap="{{a.catchlongtap}}" catchtap="{{a.catchtap}}" catchtouch="{{a.catchtouch}}" catchtouchcancel="{{a.catchtouchcancel}}" catchtouchend="{{a.catchtouchend}}" catchtouchmove="{{a.catchtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:if="{{iscatch}}">
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </view>
+    <view bindlongtap="{{a.bindlongtap}}" bindtap="{{a.bindtap}}" bindtouch="{{a.bindtouch}}" bindtouchcancel="{{a.bindtouchcancel}}" bindtouchend="{{a.bindtouchend}}" bindtouchmove="{{a.bindtouchmove}}" class="{{a.class}}" disabled="{{a.disabled}}" hidden="{{a.hidden}}" hoverClass="{{a['hover-class']}}" hoverStartTime="{{a['hover-start-time']}}" hoverStayTime="{{a['hover-stay-time']}}" hoverStopPropagation="{{a['hover-stop-propagation']}}" id="{{a.id}}" style="{{a.style}}" wx:else>
+        <template is="CONTAINER_1" data="{{nodes:nodes}}"></template>
+    </view>
+</template>
+<template name="CONTAINER_9">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_9" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_8">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_8" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_7">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_7" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_6">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_6" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_5">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_5" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_4">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_4" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_3">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_3" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_2">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_2" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_1">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_1" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template name="CONTAINER_0">
+    <block wx:for="{{nodes}}" wx:for-item="n" wx:key="key">
+        <block wx:if="{{n.name=='text-node'}}">{{n.a.text}}</block>
+        <template is="{{n.name}}" data="{{...n}}" wx:elif="{{n.iscustom}}"></template>
+        <template is="{{n.name}}_0" data="{{...n}}" wx:else></template>
+    </block>
+</template>
+<template is="CONTAINER_0" data="{{nodes:__children__}}" wx:if="{{__children__&&__children__.length>0}}"></template>

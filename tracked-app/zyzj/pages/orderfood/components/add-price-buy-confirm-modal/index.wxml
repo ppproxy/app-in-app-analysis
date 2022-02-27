@@ -1,0 +1,10 @@
+<view>
+    <custom-show-modal useFooterSlot id="customShowModal">
+        <view slot="footer">
+            <view class="c1b">
+                <button bindtap="handleOK" class="ebg">确认加购</button>
+                <button bindtap="handleCancel" class="ebg">不加购</button>
+            </view>
+        </view>
+    </custom-show-modal>
+</view>

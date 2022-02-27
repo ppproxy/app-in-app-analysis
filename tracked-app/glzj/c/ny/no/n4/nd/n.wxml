@@ -1,0 +1,21 @@
+<view class="npl" wx:if="{{show}}">
+    <view>
+        <view class="npq">
+            <view>
+                <view class="npj"> 退款金额： </view> ￥{{refundFee/100}} </view>
+            <view bindtap="gotoRefundDetail" class="nyc" wx:if="{{orderStatus===PART_REFUND||refundInfo.refundDetailList.length>1}}">
+                <view>退货详情</view>
+                <image class="nyz" src="https://img.alicdn.com/imgextra/i2/O1CN012vNOGa21MJEfGxaup_!!6000000006970-55-tps-29-30.svg"></image>
+            </view>
+        </view>
+        <block wx:if="{{orderStatus!==PART_REFUND&&refundInfo.refundDetailList.length===1}}">
+            <view class="npr">{{refundMethodsDesc}}</view>
+            <view class="nye" wx:if="{{refundReason}}">{{refundReason}}</view>
+        </block>
+    </view>
+    <view class="npx">
+        <view class="np8" wx:for="{{refundOtherInfo}}" wx:for-item="info" wx:key="unique">
+            <view class="npj"> {{info.title}} </view> {{info.num}}{{info.unitName}} </view>
+    </view>
+    <view class="ny4" wx:if="{{refundOtherInfo.length>0}}"> * 优惠券、积分等资产退回账户存在一定延迟，请稍后查看 </view>
+</view>

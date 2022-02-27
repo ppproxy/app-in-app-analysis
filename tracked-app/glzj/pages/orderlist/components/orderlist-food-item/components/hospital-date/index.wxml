@@ -1,0 +1,6 @@
+<view class="c0t" wx:if="{{isShow}}">
+    <text class="c0b c0d">预约</text>
+    <text class="c0d c0i">{{distribution&&distribution.deliveryDate}}</text>
+    <text class="c0d c01">{{distribution&&distribution.deliveryTime}}</text>
+    <text class="c0d">送餐</text>
+</view>

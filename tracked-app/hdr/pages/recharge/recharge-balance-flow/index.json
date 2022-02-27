@@ -1,0 +1,7 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "loading": "/c/ev/n"
+    },
+    "navigationBarTitleText": "余额明细"
+}

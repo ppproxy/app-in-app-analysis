@@ -1,0 +1,3 @@
+<template name="orderFlowNo">
+    <text>流水号： {{orderFlowNo}}</text>
+</template>

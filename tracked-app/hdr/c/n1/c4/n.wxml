@@ -1,0 +1,30 @@
+<block wx:if="{{!isSetMeal}}">
+    <view class="n9q" wx:if="{{dish.outOfStockFlag}}">已售罄</view>
+    <view class="n9j" wx:elif="{{dishMenuColumn==='1'&&(dish.buttonType==='COMBO'||dish.buttonType==='MULTI_SKU')&&dish.cookbookDishSkuList[0].startNumber===1}}">
+        <view catch:tap="handleShowSpecs" class="n9r" data-dishid="{{dish.dishId}}">
+            <view class="n9x" style="background: {{themeColor}}">{{dish.buttonText||'加购'}}</view>
+            <badge extStyle="position: absolute; top: -14rpx; right: -14rpx;" num="{{num}}" size="small"></badge>
+        </view>
+    </view>
+    <view catch:tap="handleChangeNum" class="n9r" data-cookbookCategoryName="{{dish.cookbookCategoryName}}" data-dishid="{{dish.dishId}}" data-start-number="{{isSetMeal?dish.cookbookDishSkuList[0].comboStartNumber:dish.cookbookDishSkuList[0].startNumber}}" wx:elif="{{dish.cookbookDishSkuList[0].startNumber>1&&num===0&&dishMenuColumn==='1'}}">
+        <view class="n9x {{disableAdd||disableAddInner?'n98':''}}">{{dish.buttonText||dish.cookbookDishSkuList[0].startNumber+'份起购'}}</view>
+    </view>
+    <num-control autoWidth bind:handleAddDish="handleChangeNum" bind:handleMinusDish="handleChangeNum" bind:handleRootInstance="handleRootInstance" clearStatus="{{clearStatus}}" data-cookbookCategoryName="{{dish.cookbookCategoryName}}" dishId="{{dish.dishId}}" dishMenuColumn="{{dishMenuColumn}}" isInDishList="{{isInDishList}}" isNumShrink="{{isNumShrink}}" minusDisabled="{{isShowMinus||num<=defaultDishMin}}" num="{{num}}" onlyShowAdd="{{onlyShowAdd}}" plusDisabled="{{disableAdd||disableAddInner}}" startNumber="{{isSetMeal?dish.cookbookDishSkuList[0].comboStartNumber:dish.cookbookDishSkuList[0].startNumber}}" step="{{isSetMeal?1:dish.cookbookDishSkuList[0].startInterval}}" wx:else></num-control>
+</block>
+<view class="n9j" hidden="{{!show}}" wx:else>
+    <view class="n9q" wx:if="{{dish.outOfStockFlag}}">已售罄</view>
+    <view class="n9r" wx:elif="{{isShowChoose}}">
+        <view catch:tap="handleShowSpecs" class="n9x {{(disableAdd||disableAddInner)&&num===0?'n98':''}}" wx:if="{{!num}}">
+            <block wx:if="{{dish.dishType==='COMBO'}}">选购</block>
+            <block wx:elif="{{dish.cookbookDishSkuList[0].weighFlag==='Y'}}">称重</block>
+            <block wx:else>选规格</block>
+        </view>
+        <block wx:else>
+            <num-control autoWidth bind:handleAddDish="handleChangeNum" bind:handleMinusCombo="handleMinusCombo" bind:handleRootInstance="handleRootInstance" fromDetailPage="{{fromDetailPage}}" minusDisabled="{{isShowMinus}}" num="{{num}}" onlyShowAdd="{{onlyShowAdd}}" plusDisabled="{{disableAdd||disableAddInner}}" startNumber="{{isSetMeal?dish.cookbookDishSkuList[0].comboStartNumber:dish.cookbookDishSkuList[0].startNumber}}" step="{{isSetMeal?1:dish.cookbookDishSkuList[0].startInterval}}" wx:if="{{fromDetailPage}}"></num-control>
+        </block>
+    </view>
+    <view catch:tap="handleChangeNum" class="n9r" data-start-number="{{isSetMeal?dish.cookbookDishSkuList[0].comboStartNumber:dish.cookbookDishSkuList[0].startNumber}}" wx:elif="{{isShowStartNumber}}">
+        <view class="n9x {{disableAdd||disableAddInner?'n98':''}}"> {{isSetMeal?dish.cookbookDishSkuList[0].comboStartNumber:dish.cookbookDishSkuList[0].startNumber}}份起购 </view>
+    </view>
+    <num-control autoWidth bind:handleAddDish="handleChangeNum" bind:handleMinusDish="handleChangeNum" bind:handleRootInstance="handleRootInstance" minusDisabled="{{isShowMinus}}" num="{{num}}" onlyShowAdd="{{onlyShowAdd}}" plusDisabled="{{disableAdd||disableAddInner}}" startNumber="{{isSetMeal?dish.cookbookDishSkuList[0].comboStartNumber:dish.cookbookDishSkuList[0].startNumber}}" step="{{isSetMeal?1:dish.cookbookDishSkuList[0].startInterval}}" wx:elif="{{show}}"></num-control>
+</view>

@@ -1,0 +1,16 @@
+{
+    "component": true,
+    "usingComponents": {
+        "left-menu": "./n4/cs/n",
+        "orderfood-shop-header": "/c/cf/co/n",
+        "orderfood-header-decorate": "/c/cf/ck/n",
+        "advertise-carousel-component": "/c/cu/ct/cd/n",
+        "recommend-dish-component": "/c/cf/cp/n",
+        "recommend-dish-item": "/c/cf/cp/cy/n",
+        "dish-item": "./n4/c2/n",
+        "cook-image": "/c/eo/n",
+        "category-main-dishes": "/c/cf/c7/n",
+        "member-coupon-bag-component": "/c/ed/er/n",
+        "complete-personal-information-activity-component": "/c/ed/e1/n"
+    }
+}

@@ -1,0 +1,13 @@
+.ejy {
+    border-radius: 8rpx;
+    box-sizing: initial;
+    color: var(--marketingColor);
+    float: left;
+    font-size: 20rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    margin: 0 6rpx 8rpx 0;
+    padding: 0rpx 8rpx;
+    position: relative;
+    width: auto;
+}

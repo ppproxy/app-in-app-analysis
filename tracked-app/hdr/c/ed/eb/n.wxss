@@ -1,0 +1,170 @@
+.n4r {
+    bottom: 0;
+}
+
+.n4r,.n4x {
+    align-items: center;
+    background: #fff;
+    border-top-left-radius: 28rpx;
+    border-top-right-radius: 28rpx;
+    display: flex;
+    flex-direction: column;
+    height: 50.42vh;
+    margin-top: 45.58vh;
+    min-height: 788rpx;
+    position: fixed;
+    width: 750rpx;
+    z-index: 999;
+}
+
+.n4x {
+    bottom: calc(98rpx + constant(safe-area-inset-bottom));
+    bottom: calc(98rpx + env(safe-area-inset-bottom));
+}
+
+.n48 {
+    background-color: rgba(0,0,0,.4);
+    height: 60vh;
+    overflow-y: scroll;
+    position: fixed;
+}
+
+.n48,.n4j {
+    bottom: 42vh;
+    flex-direction: column;
+    width: 750rpx;
+    z-index: 990;
+}
+
+.n4j {
+    background-color: initial;
+    height: 70vh;
+}
+
+.n4r.ne4 {
+    height: 66.42vh;
+    margin-top: 33.58vh;
+    min-height: 788rpx;
+}
+
+.n4r.nee {
+    height: 60.42vh;
+    margin-top: 39.58vh;
+    min-height: 788rpx;
+}
+
+.nen {
+    padding: 40rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.nec {
+    height: 24rpx;
+    width: 24rpx;
+}
+
+.nez {
+    color: #333;
+    font-size: 36rpx;
+    margin-top: 8vh;
+    text-align: center;
+}
+
+.ne5 {
+    align-items: center;
+    justify-content: center;
+    margin-top: 32rpx;
+}
+
+.new {
+    height: 96rpx;
+    width: 96rpx;
+}
+
+.ne3 {
+    height: 48rpx;
+    margin: 0 48rpx;
+    width: 48rpx;
+}
+
+.ne6 {
+    color: #333;
+    font-size: 28rpx;
+    margin-top: 80rpx;
+}
+
+.ne2 {
+    justify-content: center;
+    margin-top: 32rpx;
+}
+
+.ne2,.nes {
+    align-items: center;
+    display: flex;
+}
+
+.nes {
+    flex-direction: column;
+    margin-top: 80rpx;
+}
+
+.nef {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.ne7 {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 24rpx;
+}
+
+.nek {
+    color: #ff5900;
+}
+
+.nep {
+    align-items: center;
+    background: #ff5900;
+    border-radius: 44rpx;
+    display: flex;
+    height: 88rpx;
+    justify-content: center;
+    margin-top: 48rpx;
+    width: 670rpx;
+}
+
+.ney {
+    color: #fff;
+    font-size: 32rpx;
+}
+
+.neo {
+    align-items: center;
+    display: flex;
+    height: 88rpx;
+    justify-content: center;
+    margin-top: 16rpx;
+    width: 670rpx;
+}
+
+.nea {
+    color: #7f7f7f;
+    font-size: 24rpx;
+    text-align: center;
+}
+
+.neh {
+    left: 0;
+}
+
+.ne9,.neh {
+    position: absolute;
+}
+
+.ne9 {
+    bottom: 64rpx;
+    left: 40rpx;
+}

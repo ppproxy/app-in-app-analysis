@@ -1,0 +1,27 @@
+<point-goods bind:handleGoodsPointTap="handlePointUse" goodsList="{{goodsList}}" wx:if="{{itemBizType==='DOUBLE'}}"></point-goods>
+<view catchtap="handlePointUse" class="nfu" wx:if="{{itemBizType==='TRIPLE'}}">
+    <view class="nfv">
+        <image class="nfg" src="{{sourceData.selfImgUrl}}" wx:if="{{sourceData.selfImgUrl}}"></image>
+        <view class="nf1" wx:else>
+            <image class="nfm" src="{{sourceData.bgImgUrl}}"></image>
+            <view class="nf0" wx:if="{{sourceData.bizType!=='ELEME_DISH_VOUCHER'}}">
+                <view class="nfl">
+                    <view class="nfq" style="color: {{sourceData.mainLabelColor}};" wx:if="{{sourceData.bizType!='SAAS_DISCOUNT'&&sourceData.bizType!='SAAS_GIFT'}}"> ¥ </view>
+                    <view class="nfr" style="color: {{sourceData.mainLabelColor}};font-size: {{sourceData.bizType==='SAAS_GIFT'?30:sourceData.voucherAmount.length>=6?280/sourceData.voucherAmount.length:50}}rpx;padding-bottom: {{sourceData.bizType==='SAAS_GIFT'?30:0}}rpx;"> {{sourceData.bizType==='SAAS_DISCOUNT'?sourceData.voucherDiscount:sourceData.bizType==='SAAS_GIFT'?'礼品券':sourceData.voucherAmount}} </view>
+                    <view class="nfq" style="color: {{sourceData.mainLabelColor}};" wx:if="{{sourceData.bizType=='SAAS_DISCOUNT'}}"> 折 </view>
+                </view>
+                <view class="nfx" style="color: {{sourceData.mainLabelColor}};" wx:if="{{sourceData.mainLabel}}"> {{sourceData.mainLabel}} </view>
+            </view>
+        </view>
+    </view>
+    <view class="nft">{{sourceData.benefitName}}</view>
+    <view class="n7e" wx:if="{{sourceData.pointTagInfo&&sourceData.pointTagInfo.pointTagText}}">
+        <view class="n7n">{{sourceData.pointTagInfo.pointTagText}}专享</view>
+    </view>
+    <view class="nfd">
+        <view class="nfb">{{sourceData.orgSubjectInfo.needPoints}}</view>
+        <view class="nfi">积分</view>
+    </view>
+</view>
+<loading id="loading"></loading>
+<toast id="toast"></toast>

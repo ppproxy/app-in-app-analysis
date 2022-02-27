@@ -1,0 +1,100 @@
+<template name="complete-personal-information-activity-component">
+    <view class="e4v eez">
+        <complete-personal-information-activity-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></complete-personal-information-activity-component>
+    </view>
+</template>
+<template name="coupon-bag-activity-component">
+    <view class="e4v eec">
+        <coupon-bag-activity-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></coupon-bag-activity-component>
+    </view>
+</template>
+<template name="orderfood-guide-component">
+    <view class="e4v een">
+        <orderfood-guide-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></orderfood-guide-component>
+    </view>
+</template>
+<template name="collection-point-activity-component">
+    <view class="e4v eee">
+        <collection-point-activity-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></collection-point-activity-component>
+    </view>
+</template>
+<template name="member-join-component">
+    <view class="e4v ee4">
+        <member-join-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></member-join-component>
+    </view>
+</template>
+<template name="shop-info-component">
+    <view class="e4v e4j">
+        <shop-info-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></shop-info-component>
+    </view>
+</template>
+<template name="point-mall-component">
+    <view class="e4v e48">
+        <point-mall-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></point-mall-component>
+    </view>
+</template>
+<template name="advertise-carousel-component">
+    <view class="e4v e4x">
+        <advertise-carousel-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></advertise-carousel-component>
+    </view>
+</template>
+<template name="store-coupon-component">
+    <view class="e4v e4r">
+        <store-coupon-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></store-coupon-component>
+    </view>
+</template>
+<template name="member-assistance-coupon-component">
+    <view class="e4v e4q">
+        <member-assistance-coupon-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></member-assistance-coupon-component>
+    </view>
+</template>
+<template name="goods-window-component">
+    <view class="e4v e4l">
+        <goods-window-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></goods-window-component>
+    </view>
+</template>
+<template name="service-card-component">
+    <view class="e4v e40">
+        <service-card-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></service-card-component>
+    </view>
+</template>
+<template name="recommend-dish-list-component">
+    <view class="e4v e4m">
+        <recommend-dish-list-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></recommend-dish-list-component>
+    </view>
+</template>
+<template name="order-status-component">
+    <view class="e4v e4g">
+        <order-status-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></order-status-component>
+    </view>
+</template>
+<template name="hot-spot-component">
+    <view class="e4v e41">
+        <hot-spot-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></hot-spot-component>
+    </view>
+</template>
+<template name="user-info-component">
+    <view class="e4v e4i">
+        <user-info-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></user-info-component>
+    </view>
+</template>
+<template name="head-carousel-component">
+    <view class="e4v e4t">
+        <head-carousel-component bind:handleRootInstance="handleRootInstance" id="{{id}}"></head-carousel-component>
+    </view>
+</template>
+<view class="e4b" style="height: {{showSketon?'100%':'auto'}};{{themeColor?'--primary: '+themeColor:''}}">
+    <view catchtouchmove="forbidMove" class="e4u" wx:if="{{isLoading}}"></view>
+    <loading-animation wx:if="{{showSketon}}"></loading-animation>
+    <view class="e4o" style="padding-bottom: {{isShowTabbar?isIphoneXmore?158:98:10}}rpx; opacity: {{opacity}}">
+        <add-tips></add-tips>
+        <header-icon-component bind:handleRootInstance="handleRootInstance" id="headerIconComponent"></header-icon-component>
+        <template is="{{component.componentCode}}" data="{{id:component.id}}" wx:for="{{componentList}}" wx:for-item="component" wx:key="id"></template>
+    </view>
+    <advertise-modal-component bind:handleRootInstance="handleRootInstance" id="advertiseModalComponent"></advertise-modal-component>
+    <goods-modal-component bind:handleRootInstance="handleRootInstance" id="goodsModalComponent"></goods-modal-component>
+    <loading bind:handleRootInstance="handleRootInstance" id="loading"></loading>
+    <special-effect-component></special-effect-component>
+    <official-account-modal bind:handleRootInstance="handleRootInstance"></official-account-modal>
+    <preview-mode-tag></preview-mode-tag>
+</view>

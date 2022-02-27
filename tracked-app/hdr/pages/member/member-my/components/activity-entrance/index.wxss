@@ -1,0 +1,126 @@
+.cp7 {
+    border-radius: 16rpx;
+    margin-bottom: 24rpx;
+    width: 686rpx;
+}
+
+.cpk {
+    background: #fff;
+    height: 100%;
+    justify-content: space-between;
+    padding: 30rpx;
+    position: relative;
+}
+
+.cpk,.cpp {
+    align-items: center;
+    border-radius: 16rpx;
+    display: flex;
+}
+
+.cpp {
+    width: 626rpx;
+}
+
+.cpp,.cpy {
+    background: #fff6f2;
+    box-sizing: border-box;
+    height: 136rpx;
+    justify-content: flex-start;
+    padding: 0 16rpx;
+}
+
+.cpy {
+    border-radius: 8rpx;
+    width: 302rpx;
+}
+
+.cpo,.cpy {
+    align-items: center;
+    display: flex;
+}
+
+.cpo {
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 202rpx;
+}
+
+.cpa,.cpo {
+    position: relative;
+}
+
+.cpa {
+    flex: none;
+    height: 95rpx;
+    width: 95rpx;
+}
+
+.cph {
+    height: 100%;
+}
+
+.cp9,.cph {
+    width: 100%;
+}
+
+.cp9 {
+    flex: 1;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+    overflow: hidden;
+}
+
+.cpu {
+    color: #191919;
+    font-size: 28rpx;
+    font-weight: 700;
+    line-height: 40rpx;
+}
+
+.cpu,.cpv {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cpv {
+    color: #ff5d80;
+    font-size: 22rpx;
+    line-height: 32rpx;
+}
+
+.cpt {
+    align-items: center;
+    background-image: linear-gradient(162deg,#ff8249,#ff3e5f 97%);
+    border-radius: 126rpx;
+    color: #fff;
+    display: flex;
+    flex: none;
+    font-size: 24rpx;
+    height: 52rpx;
+    justify-content: center;
+    line-height: 34rpx;
+    width: 136rpx;
+}
+
+.cpo .cp9 {
+    margin: 0;
+    text-align: center;
+}
+
+.cpo .cpd,.cpp .cpd,.cpy .cpd {
+    background: #ff7990;
+    border-radius: 200rpx 200rpx 200rpx 0;
+    bottom: 0;
+    color: #fff;
+    display: block;
+    font-size: 16rpx;
+    height: 30rpx;
+    left: 50%;
+    line-height: 30rpx;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 68rpx;
+}

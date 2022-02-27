@@ -1,0 +1,34 @@
+.nln {
+    background-color: var(--mask-bg-color);
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition-property: opacity,visibility;
+    visibility: hidden;
+    width: 100vw;
+}
+
+.nlc {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nln input {
+    display: none;
+}
+
+.nlc input {
+    display: block;
+}
+
+.nln textarea {
+    display: none;
+}
+
+.nlc textarea {
+    display: block;
+}

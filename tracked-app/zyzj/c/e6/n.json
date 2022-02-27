@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cook-image": "/c/eo/n",
+        "toast": "/c/z5/n",
+        "coupon-item": "./e2/n",
+        "custom-rich-text": "/c/eh/n",
+        "custom-show-modal": "/c/e9/n"
+    }
+}

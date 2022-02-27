@@ -1,0 +1,12 @@
+<view catchtouchmove="forbidMove" class="nh1 {{'component-default-dish-show-modal'}}" data-track-custom-scene="{{customScene}}" data-track-logkey=".orderfood_page.default_dish_layer_exposure" onAppear="$logAppear" style="--primary: {{themeColor}};" wx:if="{{visible}}">
+    <view class="nhg">
+        <view class="nhm">
+            <view class="nh0">{{title}}</view>
+            <view class="nhl" wx:if="{{subtitle}}">{{subtitle}}</view>
+            <scroll-view class="nhq" scrollY="{{true}}">
+                <default-dish-item bind:handleRootInstance="handleRootInstance" bindhandleDishChange="dishChange" cartList="{{cartList}}" item="{{item}}" memberDayTagSwitch="{{memberDayTagSwitch}}" memberFlag="{{memberFlag}}" storedPayMemberPriceSwitch="{{storedPayMemberPriceSwitch}}" wx:for="{{goodsList}}" wx:key="dishId"></default-dish-item>
+            </scroll-view>
+        </view>
+        <view bindtap="handleOk" class="nhr">{{confirmText}}</view>
+    </view>
+</view>

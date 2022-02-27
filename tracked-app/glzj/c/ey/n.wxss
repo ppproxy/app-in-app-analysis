@@ -1,0 +1,25 @@
+.eja {
+    background: linear-gradient(129deg,#ff8262,#ff4b33);
+    border-radius: 0 12rpx 0 0;
+    height: 28rpx;
+    line-height: 28rpx;
+    max-width: 178rpx;
+    text-align: center;
+}
+
+.ejh {
+    margin-right: 14rpx;
+}
+
+.ej9 {
+    color: #fff;
+}
+
+.ej9,.eju {
+    display: block;
+    font-size: 20rpx;
+}
+
+.eju {
+    color: #ff4b33;
+}

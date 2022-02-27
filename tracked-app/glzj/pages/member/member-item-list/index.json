@@ -1,0 +1,20 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "member-account-bind-pop": "/c/ed/ei/n",
+        "navigation-bar": "/c/np/n",
+        "member-shake-code": "/c/ed/nk/n",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "member-coupon-item": "./_/component_modules/member-common/coupon-item/index",
+        "meal-ticket-item": "./_/pages/member/components/meal-ticket-item/index",
+        "special-dishes-item": "./_/pages/member/components/special-dishes-item/index",
+        "specials-shop-item": "./_/pages/member/components/special-shop-item/index"
+    },
+    "navigationStyle": "custom",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": false,
+    "transparentTitle": "always",
+    "allowsBounceVertical": "NO",
+    "__warning__": "invalid page.json [\"transparentTitle\"]、page.json [\"allowsBounceVertical\"]"
+}

@@ -1,0 +1,10 @@
+{
+    "disableScroll": true,
+    "navigationBarTitleText": "门店列表",
+    "usingComponents": {
+        "auth-geo-modal": "/c/e4/ee/n",
+        "user-location-modal": "/c/e9/n",
+        "dish-process": "./components/dish-process/dish-process",
+        "loading-animation": "/c/et/n"
+    }
+}

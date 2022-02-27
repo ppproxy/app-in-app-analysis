@@ -1,0 +1,9 @@
+<view class="n1g" style="backgroundColor: {{decorateData.styleType&&decorateData.styleType==='DEFAULT_COLOR'?decorateData.defaultColor||'transparent':''}}">
+    <block wx:if="{{decorateData.styleType&&decorateData.styleType!=='DEFAULT_COLOR'}}">
+        <view class="n1d" style="height: calc({{statusBarHeight}}px + 200rpx)">
+            <view class="n1b" wx:if="{{decorateData.styleType==='BRAND_COLOR'}}"></view>
+            <image class="n1i" lazyLoad="false" mode="aspectFill" src="{{decorateData.imageUrl}}" wx:if="{{decorateData.styleType==='CUSTOMIZE_IMAGES'}}"></image>
+        </view>
+        <view class="n11"></view>
+    </block>
+</view>

@@ -1,0 +1,39 @@
+<view class="nhw">
+    <image class="nh3" mode="aspectFill" src="{{item.skuImgUrl||'/assets/images/dish-default.png'}}"></image>
+    <view class="nhs">
+        <view bind:tap="handleToggleSetMeal" class="nhf">
+            <view class="nh7">{{item.dishName}}</view>
+        </view>
+        <view class="nhy">
+            <view class="nho" wx:if="{{item.dishName!==item.skuName}}"> {{item.skuName}} </view>
+            <view class="nho" wx:for="{{item.practices}}" wx:for-item="practice" wx:key="detailId"> {{practice.name}}<block wx:if="{{practice.addPrice&&practice.addPrice!==0}}">(+{{practice.addPrice/100}}元)</block>
+            </view>
+            <view class="nho" wx:for="{{item.sideDishes}}" wx:for-item="sideDish" wx:key="detailId"> {{sideDish.name}}<block wx:if="{{sideDish.addPrice&&practice.addPrice!==0}}">(+{{sideDish.addPrice/100}}元)</block>
+            </view>
+            <view class="nho" wx:for="{{item.remarks}}" wx:for-item="remark" wx:key="detailId"> {{remark.name}} </view>
+            <view class="nha">每{{item.mustOrderDTO.mustOrderType==='PERSON'?'人':'桌'}}{{item.mustOrderDTO.mustOrderQty}}份起</view>
+        </view>
+        <view class="nhh" wx:if="{{item.memberPrice!==undefined}}">
+            <custom-member-price-label memberDayTag="{{memberDayTagSwitch}}" number="{{item.memberPrice/100}}" storedPayMemberPriceSwitch="{{storedPayMemberPriceSwitch}}" wx:if="{{!memberFlag||storedPayMemberPriceSwitch}}"></custom-member-price-label>
+            <image class="nh9" src="{{memberDayTagSwitch?'https://img.alicdn.com/imgextra/i3/O1CN01zZCB0a1bAhD25u8uP_!!6000000003425-2-tps-116-32.png':'https://img.alicdn.com/imgextra/i4/O1CN01O1AAOu1RqhMzBPS5s_!!6000000002163-55-tps-72-32.svg'}}" style="width: {{memberDayTagSwitch?'116':'76'}}rpx" wx:else></image>
+        </view>
+        <view class="nhu">
+            <view class="nht">
+                <block wx:if="{{item.memberPrice!==undefined&&memberFlag}}">
+                    <view style="display: inline-block;">
+                        <text class="nhv">￥</text>
+                        <text class="nhd">{{storedPayMemberPriceSwitch?item.skuAmount/100:item.memberPrice/100}}</text>
+                    </view>
+                    <text class="nhb" wx:if="{{!storedPayMemberPriceSwitch&&!item.memberDayTag}}">￥{{item.skuAmount/100}}</text>
+                </block>
+                <block wx:else>
+                    <view style="display: inline-block;" wx:if="{{item.skuAmount!==undefined}}">
+                        <text class="nhv">￥</text>
+                        <text class="nhd">{{item.skuAmount/100}}</text>
+                    </view>
+                </block>
+            </view>
+            <num-control autoWidth bind:handleAddDish="handleChangeNum" bind:handleMinusDish="handleChangeNum" id="num-control" minusDisabled="{{num<=item.mustOrderDTO.minOrderNum}}" num="{{num}}" plusDisabled="{{disableAddInner||showAddPriceBuy}}" startNumber="{{item.startNumber}}" step="{{item.startInterval}}"></num-control>
+        </view>
+    </view>
+</view>

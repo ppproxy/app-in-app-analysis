@@ -1,0 +1,15 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "privilege-card": "./components/member-privilege-card/index",
+        "privilege-desc": "./components/member-privilege-desc/index",
+        "navigation-bar": "/c/np/n"
+    },
+    "navigationStyle": "custom",
+    "transparentTitle": "always",
+    "allowsBounceVertical": "NO",
+    "titleBarColor": "#000000",
+    "__warning__": "invalid page.json [\"transparentTitle\"]、page.json [\"allowsBounceVertical\"]、page.json [\"titleBarColor\"]"
+}

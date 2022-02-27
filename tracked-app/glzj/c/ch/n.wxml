@@ -1,0 +1,3 @@
+<view bindtap="handleClick" catchtouchmove="forbidMove" class="nln {{show?'nlc':''}}" disableScroll="{{disableScroll}}" style="z-index: {{zIndex}}; transition-duration:{{duration}}ms; ">
+    <slot></slot>
+</view>

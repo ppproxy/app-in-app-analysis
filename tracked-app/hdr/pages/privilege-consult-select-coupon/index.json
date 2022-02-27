@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "选择优惠券",
+    "disableScroll": false,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "custom-show-modal": "/c/e9/n",
+        "coupon-item": "./_/component_modules/privilege-consult-coupon-item/index"
+    }
+}

@@ -1,0 +1,104 @@
+<scroll-view bind:scroll="handleScroll" class="nbt" enhanced="{{true}}" scrollIntoView="{{scrollToViewId}}" scrollTop="{{scrollTop}}" scrollWithAnimation="{{false}}" scrollY="{{true}}" style="background-color: {{dishMenuColumn==='2'?'#f5f5f5':'#fff'}}">
+    <view class="nbd" id="dish-list__top-line"></view>
+    <orderfood-header-decorate bind:handleRootInstance="handleRootInstance" decorateData="{{shopDecorationData.headerBackgroundData}}" statusBarHeight="{{statusBarHeight}}" wx:if="{{shopDecorationData.headerBackgroundData}}"></orderfood-header-decorate>
+    <orderfood-shop-header bind:handleRootInstance="handleRootInstance" bindhandleClickMore="handleShopHeaderClickMore" distanceDesc="{{distanceDesc}}" noticeData="{{shopDecorationData.pageNoticeBarData}}" shopActivityList="{{shopActivityList}}" shopBaseInfo="{{shopBaseInfo}}" shopCouponList="{{shopCouponList}}" statusBarHeight="{{statusBarHeight}}" tableInfo="{{tableInfo}}" wx:if="{{shopDecorationData.pageNoticeBarData}}"></orderfood-shop-header>
+    <advertise-carousel-component bind:handleOpenDishDetail="handleOpenDishDetail" bind:handleRootInstance="handleRootInstance" data="{{shopDecorationData.advertiseCarouselData}}" dishPage="{{true}}" render="{{true}}" wx:if="{{shopDecorationData.advertiseCarouselData}}"></advertise-carousel-component>
+    <recommend-dish-component bind:handleRootInstance="handleRootInstance" dishListOrderedMap="{{dishListOrderedMap}}" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}" recommendedDishesData="{{waistRecommendDishes}}" wx:if="{{waistRecommendDishes}}"></recommend-dish-component>
+    <complete-personal-information-activity-component bind:handleRootInstance="handleRootInstance" completePersonalInformationActivityData="{{shopDecorationData.completePersonalInformationActivityData}}" origin="CSHOP_ORDER_FOOD_INDEX" wx:if="{{shopDecorationData.completePersonalInformationActivityData}}"></complete-personal-information-activity-component>
+    <member-coupon-bag-component bind:handleRootInstance="handleRootInstance" dishCouponBagActivityData="{{shopDecorationData.dishCouponBagActivityData}}" wx:if="{{shopDecorationData.dishCouponBagActivityData}}"></member-coupon-bag-component>
+    <view class="nbb">
+        <view class="nbi" style="height: calc(100vh - {{navigationBarHeight}}PX); top: {{navigationBarHeight}}PX;">
+            <left-menu bind:handleRootInstance="handleRootInstance" showLeftMenuIcon="{{showLeftMenuIcon}}"></left-menu>
+        </view>
+        <view class="nb1">
+            <view class="nid" wx:if="{{item.componentCode==='advertise-carousel-component'}}" wx:for="{{globalComponents}}" wx:key="componentCode">
+                <advertise-carousel-component bind:handleOpenDishDetail="handleOpenDishDetail" bind:handleRootInstance="handleRootInstance" data="{{item.data}}" dishPage="{{true}}" dotStyle="{{dotStyle}}" render="{{true}}" wrapStyle="{{wrapStyle}}"></advertise-carousel-component>
+            </view>
+            <view class="nie">
+                <view class="nbv" data-current="{{groupIndex}}" data-next="{{groupIndex+1}}" style="{{showMustAddBg&&group.id==='MUST_DISH'?'background: '+themeColor+'33;':''}}" wx:for="{{menuAndDish}}" wx:for-index="groupIndex" wx:for-item="group" wx:key="groupIndex">
+                    <view class="nin" wx:if="{{showMustAddBg&&group.id==='MUST_DISH'}}"></view>
+                    <view class="nic" id="group-{{groupIndex}}" style="height: calc({{navigationBarHeight}}px + 72rpx); top: -{{navigationBarHeight}}px"></view>
+                    <view class="ni0" style="{{dishMenuColumn==='2'?'padding-bottom: 16rpx':'margin-bottom: 16rpx'}}" wx:if="{{group.id==='MEMBER_AREA'}}">
+                        <view>
+                            <view class="nir">
+                                <image class="ni5" src="https://img.alicdn.com/imgextra/i2/O1CN01uoaGAg1U98XtfNJr1_!!6000000002474-55-tps-32-32.svg" wx:if="{{group.id==='MEMBER_AREA'}}"></image>
+                                <text class="niw" style="{{group.id==='MEMBER_AREA'?'color: #421906;font-weight: 700;font-size: 28rpx':'color: #191919'}}">{{group.name}}</text>
+                            </view>
+                            <view class="niq">{{group.desc}}</view>
+                        </view>
+                        <view class="{{'component-recycle-list__admission'}} niy" data-track-custom-scene="{{customScene}}" data-track-custom-type="会员专区" data-track-logkey=".keruyun_menu.registered_member_exposure" onAppear="$logAppear" wx:if="{{group.id==='MEMBER_AREA'&&!memberFlag}}">
+                            <view bind:tap="handleShowMemberJoinModel" class="nil">免费入会</view>
+                        </view>
+                    </view>
+                    <view class="niz" style="top: {{navigationBarHeight}}px;background-color: {{dishMenuColumn==='2'?'#f5f5f5':'#fff;'}};{{dishMenuColumn==='2'?'box-shadow: 0 -1px #f5f5f5;':'box-shadow: 0 -1px #fff;'}}" wx:else>
+                        <image class="ni5" src="https://img.alicdn.com/imgextra/i2/O1CN01JCxGnm1ytKyJWKQA2_!!6000000006636-55-tps-32-32.svg" wx:if="{{group.id==='OFTEN_POINT'}}"></image>
+                        <image class="ni5" src="https://img.alicdn.com/imgextra/i3/O1CN010zLfYb1hSSFzaAukD_!!6000000004276-55-tps-32-32.svg" wx:if="{{group.id==='SALES_HIGH'}}"></image>
+                        <text class="niw" style="{{group.id==='MEMBER_AREA'?'color: #421906;font-weight: 700;font-size: 28rpx':'color: #191919'}}">{{group.name}}</text>
+                        <view class="ni3" wx:if="{{showMustAddTips&&group.id==='MUST_DISH'}}">请任选一份必选品哦~</view>
+                        <text class="ni6" wx:if="{{group.id!=='MEMBER_AREA'}}">{{group.desc}}</text>
+                    </view>
+                    <view class="nid" wx:for="{{group.decorateData.innerComponents}}" wx:key="componentCode">
+                        <advertise-carousel-component bind:handleOpenDishDetail="handleOpenDishDetail" bind:handleRootInstance="handleRootInstance" data="{{item.data}}" dishPage="{{true}}" dotStyle="{{dotStyle}}" render="{{true}}" wrapStyle="{{wrapStyle}}" wx:if="{{item.data}}"></advertise-carousel-component>
+                    </view>
+                    <view class="nii" wx:if="{{subItem.showBigImg}}" wx:for="{{group.dishList}}" wx:for-item="subItem" wx:key="index">
+                        <category-main-dishes bind:handleRootInstance="handleRootInstance" dish="{{subItem}}" dishDot="{{dishDot}}" dishMenuColumn="{{dishMenuColumn}}" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}"></category-main-dishes>
+                    </view>
+                    <block wx:if="{{dishMenuColumn==='1'}}">
+                        <view class="nis {{dish.dishType==='COMBO'?'nip':'nik'}}" data-groupindex="{{groupIndex}}" hidden="{{collapseDishData[group.id]&&collapseDishData[group.id][dish.dishId]}}" wx:for="{{group.dishList}}" wx:for-index="dishIndex" wx:for-item="dish" wx:key="dishIndex">
+                            <view class="ni7" id="DISH-{{group.id}}-{{dish.dishId}}" style="top: calc(-{{navigationBarHeight}}px - 112rpx)"></view>
+                            <dish-item bind:handleImageRender="handleImageRender" bind:handleRootInstance="handleRootInstance" bind:handleSaveComponent="saveComponent" dish="{{dish}}" dishDot="{{dishDot}}" dishIndex="{{dishIndex}}" dishListOrderedMap="{{dishListOrderedMap}}" dishMenuColumn="{{dishMenuColumn}}" extStyle="{{!(group.id==='MEMBER_AREA'&&!memberFlag)&&dishIndex===0?'padding-top: 0':''}}" fromMustDishCate="{{group.id==='MUST_DISH'}}" groupId="{{group.id}}" groupIndex="{{groupIndex}}" groupName="{{group.name}}" logType="{{group.id==='MUST_DISH'?'必选品加购':''}}" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}" showMemberGuid="{{showMG}}" wx:if="{{showDetailMap[group.id+'-'+dish.dishId]}}"></dish-item>
+                            <view class="nio {{dish.dishType!=='COMBO'?'nia':'nih'}}" wx:else>
+                                <view class="nix"></view>
+                                <view class="n14" style="padding-right: {{dish.dishType!=='COMBO'?'unset':'12rpx'}}">
+                                    <view class="ni8"></view>
+                                    <view class="nij"></view>
+                                    <view class="n1e">
+                                        <view class="n1n"></view>
+                                        <view class="n1n"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="nif" wx:else>
+                        <view class="ndg" data-groupindex="{{groupIndex}}" hidden="{{false}}" style="padding-right:{{dish.dishType==='COMBO'?'20':'32'}}rpx" wx:for="{{group.dishList}}" wx:for-index="dishIndex" wx:for-item="dish" wx:key="dishIndex">
+                            <view class="ni7" id="DISH-{{group.id}}-{{dish.dishId}}" style="top: calc(-{{navigationBarHeight}}px - 112rpx)"></view>
+                            <view class="n12" wx:if="{{showDetailMap[group.id+'-'+dish.dishId]}}">
+                                <dish-item bind:handleImageRender="handleImageRender" bind:handleRootInstance="handleRootInstance" bind:handleSaveComponent="saveComponent" dish="{{dish}}" dishDot="{{dishDot}}" dishIndex="{{dishIndex}}" dishListOrderedMap="{{dishListOrderedMap}}" dishMenuColumn="{{dishMenuColumn}}" extStyle="{{!(group.id==='MEMBER_AREA'&&!memberFlag)&&dishIndex===0?'padding-top: 0':''}}" fromMustDishCate="{{group.id==='MUST_DISH'}}" groupId="{{group.id}}" groupIndex="{{groupIndex}}" logType="{{group.id==='MUST_DISH'?'必选品加购':''}}" memberFlag="{{memberFlag}}" openStatus="{{openStatus}}" showMemberGuid="{{showMG}}"></dish-item>
+                            </view>
+                            <view class="nio n1c" style="height: {{dish.dishViewHeight.contentHeight}}" wx:else>
+                                <view class="n1z"></view>
+                                <view class="n15"></view>
+                                <view class="n1w"></view>
+                                <view class="n13">
+                                    <view class="n16"></view>
+                                    <view class="n16"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="handleFold" class="ni9" data-category-id="{{group.id}}" wx:if="{{group.type==='RECOMMEND_LABEL'&&group.dishList.length>3&&!(dishMenuColumn==='2')}}">
+                        <view class="niu" wx:if="{{collapseDishData[group.id]}}">
+                            <text class="niv">展开更多商品</text>
+                            <cook-image class="nit" src="https://img.alicdn.com/imgextra/i3/O1CN01orISIn1EtMfPscm6d_!!6000000000409-2-tps-36-20.png"></cook-image>
+                        </view>
+                        <view class="niu" wx:else>
+                            <text class="niv">点击收起</text>
+                            <cook-image class="nit" src="https://img.alicdn.com/imgextra/i1/O1CN01bDcN4K26gWoj6ZnHl_!!6000000007691-2-tps-36-20.png"></cook-image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view catch:tap="jumpToCouponListPage" class="nbg {{isCartExit?'nbm':''}} {{isScroll?'nb0':''}}" wx:if="{{couponCount}}">
+        <view class="nbl">
+            <cook-image class="nbr" src="{{IconCouponPackage||'https://img.alicdn.com/imgextra/i4/O1CN01DzRFdn1KfymlAVgtB_!!6000000001192-2-tps-24-25.png'}}"></cook-image>
+        </view>
+        <view class="nbq">
+            <text style="color: {{marketingColor}}">{{couponCount>99?'99+':couponCount}}</text>张券 </view>
+    </view>
+    <view catch:tap="handleGotoTop" class="nbx {{isCartExit?'nb8':''}} {{isScroll?'ni4':''}}" wx:if="{{showGotoTop}}">
+        <cook-image class="nbj" src="https://img.alicdn.com/imgextra/i4/O1CN01FarmEl1FIYSAPFNQI_!!6000000000464-2-tps-30-20.png"></cook-image>
+    </view>
+</scroll-view>

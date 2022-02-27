@@ -1,0 +1,23 @@
+<view bindtap="gotoShopList" class="cnt" id="lightshop-head-icon" wx:if="{{showModal}}">
+    <view class="cni" style="padding-top: {{iconHeight}}rpx">
+        <image class="cng" src="{{brandLogo}}" style="transform: scale({{animateScale}}); transform-origin: right center;"></image>
+        <view class="cnl">
+            <view class="cnr" style="color: {{animationIconBrandColor}}; text-shadow: {{animateTextShadow}}"> {{brandName}} </view>
+            <view class="cn8" style="transform: scale({{animateScale}}); transform-origin: left center;">
+                <text class="ccc cnm ccz" style="color: {{animationIconfontColor}}; text-shadow: {{animateTextShadow}}"></text>
+                <view class="cc4 ccz" style="color: {{animationIconfontColor}}; text-shadow: {{animateTextShadow}}"> {{shopName}} </view>
+                <view class="cce ccz" style="color: {{animationIconfontColor}}; text-shadow: {{animateTextShadow}}"> {{distanceDesc}} </view>
+                <text class="ccc cn0 ccz" style="color: {{animationIconfontColor}}; text-shadow: {{animateTextShadow}}"></text>
+            </view>
+        </view>
+    </view>
+    <view class="cnb" style="opacity: {{animateOpacity}}"></view>
+</view>
+<view bindtap="gotoShopList" class="cnd" id="lightshop-head-icon" wx:else>
+    <view class="cn1 {{styles[minType]}}" style="padding-top: {{iconHeight}}rpx">
+        <view class="cnq">
+            <view class="cnx {{styles[minType]}}" style="color: rgba(0, 0, 0, .87); text-shadow: none; opacity: {{animateOpacity}}"> {{brandName}} </view>
+        </view>
+    </view>
+    <view class="cnb" style="opacity: {{animateOpacity}}"></view>
+</view>

@@ -1,0 +1,117 @@
+<view class="{{isFromOrderList?'np9':'nph'}}">
+    <block wx:if="{{takeYourselfMode!==2}}">
+        <view class="nk0" wx:if="{{!isFromOrderList}}"> {{takeYourselfMode===0?'自取号':'号牌'}} </view>
+        <view class="nkl" style="color: {{orderStatus==='SUCCESS'?'#333':themeColor}};font-weight: 700"> {{takeYourselfMode===0?code:tableName}} </view>
+    </block>
+    <view wx:if="{{orderStatus==='RECEIPTED'}}">
+        <view class="npu">
+            <view class="npv">
+                <image class="npt" src="{{InconOrderDetailReceiving}}"></image>
+                <view class="npd" style="color: {{themeColor}};font-weight:700">已接单</view>
+            </view>
+            <view class="npi" style="border-top: 2rpx dashed {{themeColor}}"></view>
+            <view class="npv">
+                <image class="npt" src="https://img.alicdn.com/tfs/TB10G7f4uL2gK0jSZPhXXahvXXa-56-58.svg"></image>
+                <view class="npd">制作中</view>
+            </view>
+            <view class="npi"></view>
+            <view class="npv">
+                <image class="npt" src="https://img.alicdn.com/tfs/TB1PZFLp9slXu8jSZFuXXXg7FXa-52-57.svg"></image>
+                <view class="npd">待取餐</view>
+            </view>
+        </view>
+        <order-detail-queue bookFlag="{{bookFlag}}" dishProcess="{{dishProcess}}" orderStatus="{{orderStatus}}" scene="process" style="margin-top: 30rpx;" wx:if="{{dishProcessEnable&&!bookFlag&&dishProcess&&dishProcess.orderNum}}"></order-detail-queue>
+        <view class="npb" wx:else>
+            <view wx:if="{{bookFlag}}">
+                <text>门店已接单，预约今天</text>
+                <text style="color: {{themeColor}};font-weight: 700">{{selfTakeTime}}</text>
+                <text>自取</text>
+            </view>
+            <view wx:else>
+                <text>门店已接单，美味即将呈现</text>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{orderStatus==='COOKING'}}">
+        <view class="npu">
+            <view class="npv">
+                <image class="npt" src="https://img.alicdn.com/tfs/TB1gZ3m4qL7gK0jSZFBXXXZZpXa-54-58.svg"></image>
+                <view class="npd" style="color: #999">已接单</view>
+            </view>
+            <view class="npi" style="border-top: 2rpx dashed #D6D6D6"></view>
+            <view class="npv">
+                <image class="npt" src="{{InconOrderDetailCooking}}"></image>
+                <view class="npd" style="color: {{themeColor}};font-weight:700">制作中</view>
+            </view>
+            <view class="npi" style="border-top: 2rpx dashed {{themeColor}}"></view>
+            <view class="npv">
+                <image class="npt" src="https://img.alicdn.com/tfs/TB1PZFLp9slXu8jSZFuXXXg7FXa-52-57.svg"></image>
+                <view class="npd">待取餐</view>
+            </view>
+        </view>
+        <order-detail-queue bookFlag="{{bookFlag}}" dishProcess="{{dishProcess}}" dishProcessEnable="{{dishProcessEnable}}" orderStatus="{{orderStatus}}" scene="process" style="margin-top: 30rpx;" wx:if="{{dishProcessEnable&&!bookFlag&&dishProcess&&dishProcess.orderNum}}"></order-detail-queue>
+        <view class="npb" wx:else>
+            <view wx:if="{{bookFlag}}">
+                <text>门店已接单，预约今天</text>
+                <text style="color: {{themeColor}};font-weight: 700">{{selfTakeTime}}</text>
+                <text>自取</text>
+            </view>
+            <view wx:else>
+                <text>美味制作中，请稍候</text>
+            </view>
+        </view>
+        <order-detail-code barCode="{{orderDetail.verificationMealBarCode}}" bind:handleRootInstance="handleRootInstance" bindhandleFinishOrder="handleFinishOrder" bindhandleOpenCabinet="handleOpenCabinet" bindhandleShowVerificationCodeModal="showVerificationCodeModal" bookFlag="{{orderDetail.bookFlag}}" code="{{orderDetail.mealCode}}" enableTakeStatus="{{!!orderDetail.enableTakeStatus}}" enableVerificationMealCode="{{orderDetail.enableVerificationMealCode}}" isFromOrderList="{{isFromOrderList}}" orderFlowNo="{{orderDetail.orderFlowNo}}" orderNo="{{orderDetail.orderNo}}" orderStatus="{{orderDetail.orderStatus}}" orgId="{{orderDetail.orgId}}" tableName="{{orderDetail.tableName}}" takeCabinetNum="{{takeCabinetNum}}" takeYourselfMode="{{orderDetail.takeYourselfMode}}" time="{{time}}"></order-detail-code>
+    </view>
+    <view wx:if="{{orderStatus==='WAIT_TAKE'}}">
+        <block wx:if="{{takeYourselfMode!==2}}">
+            <view class="npu">
+                <view class="npv">
+                    <image class="npt" src="https://img.alicdn.com/tfs/TB1gZ3m4qL7gK0jSZFBXXXZZpXa-54-58.svg"></image>
+                    <view class="npd" style="color: #999">已接单</view>
+                </view>
+                <view class="npi" style="border-top: 2rpx dashed #D6D6D6"></view>
+                <view class="npv">
+                    <image class="npt" src="https://img.alicdn.com/tfs/TB1GMAm4qL7gK0jSZFBXXXZZpXa-56-58.svg"></image>
+                    <view class="npd" style="color: #999">制作中</view>
+                </view>
+                <view class="npi" style="border-top: 2rpx dashed #D6D6D6"></view>
+                <view class="npv">
+                    <image class="npt" src="{{InconOrderDetailWaitTake}}"></image>
+                    <view class="npd" style="color: {{themeColor}};font-weight:700">待取餐</view>
+                </view>
+            </view>
+            <view class="npb">
+                <view>
+                    <text>美味制作完毕，请取餐</text>
+                </view>
+            </view>
+        </block>
+        <order-detail-code barCode="{{orderDetail.verificationMealBarCode}}" bind:handleRootInstance="handleRootInstance" bindhandleFinishOrder="handleFinishOrder" bindhandleOpenCabinet="handleOpenCabinet" bindhandleShowVerificationCodeModal="showVerificationCodeModal" bookFlag="{{orderDetail.bookFlag}}" code="{{orderDetail.mealCode}}" enableTakeStatus="{{!!orderDetail.enableTakeStatus}}" enableVerificationMealCode="{{orderDetail.enableVerificationMealCode}}" isFromOrderList="{{isFromOrderList}}" orderFlowNo="{{orderDetail.orderFlowNo}}" orderNo="{{orderDetail.orderNo}}" orderStatus="{{orderDetail.orderStatus}}" orgId="{{orderDetail.orgId}}" tableName="{{orderDetail.tableName}}" takeCabinetNum="{{takeCabinetNum}}" takeYourselfMode="{{orderDetail.takeYourselfMode}}" time="{{time}}"></order-detail-code>
+    </view>
+    <view wx:if="{{orderStatus==='SUCCESS'}}">
+        <view class="npu">
+            <view class="npv">
+                <image class="npt" src="https://img.alicdn.com/tfs/TB1gZ3m4qL7gK0jSZFBXXXZZpXa-54-58.svg"></image>
+                <view class="npd" style="color: #999">已接单</view>
+            </view>
+            <view class="npi" style="border-top: 2rpx dashed #D6D6D6"></view>
+            <view class="npv">
+                <image class="npt" src="https://img.alicdn.com/tfs/TB1GMAm4qL7gK0jSZFBXXXZZpXa-56-58.svg"></image>
+                <view class="npd" style="color: #999">制作中</view>
+            </view>
+            <view class="npi" style="border-top: 2rpx dashed #D6D6D6"></view>
+            <view class="npv">
+                <image class="npt" src="https://img.alicdn.com/tfs/TB1yj0mqOpE_u4jSZKbXXbCUVXa-52-57.svg"></image>
+                <view class="npd" style="color: #999">已取餐</view>
+            </view>
+        </view>
+        <view class="npb">
+            <view>
+                <text>美味带来好心情，欢迎下次光临</text>
+            </view>
+        </view>
+        <order-detail-code barCode="{{orderDetail.verificationMealBarCode}}" bind:handleRootInstance="handleRootInstance" bindhandleOpenCabinet="handleOpenCabinet" bindhandleShowVerificationCodeModal="showVerificationCodeModal" bookFlag="{{orderDetail.bookFlag}}" code="{{orderDetail.mealCode}}" enableTakeStatus="{{!!orderDetail.enableTakeStatus}}" enableVerificationMealCode="{{orderDetail.enableVerificationMealCode}}" isFromOrderList="{{isFromOrderList}}" orderFlowNo="{{orderDetail.orderFlowNo}}" orderNo="{{orderDetail.orderNo}}" orderStatus="{{orderDetail.orderStatus}}" orgId="{{orderDetail.orgId}}" tableName="{{orderDetail.tableName}}" takeCabinetNum="{{takeCabinetNum}}" takeYourselfMode="{{orderDetail.takeYourselfMode}}" time="{{time}}"></order-detail-code>
+    </view>
+    <view class="npg" wx:if="{{takeYourselfMode===3&&orderFlowNo}}">流水号：{{orderFlowNo}}</view>
+    <image class="np1" src="https://img.alicdn.com/imgextra/i1/O1CN010Nd66F1bbiZwFJaIy_!!6000000003484-55-tps-190-154.svg" wx:if="{{!isFromOrderList&&orderStatus==='SUCCESS'}}"></image>
+</view>

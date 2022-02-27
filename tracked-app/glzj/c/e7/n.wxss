@@ -1,0 +1,12 @@
+.ejk,.ejp {
+    line-height: 40rpx;
+}
+
+.ejp {
+    -webkit-box-orient: vertical;
+    color: #333;
+    display: -webkit-box;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

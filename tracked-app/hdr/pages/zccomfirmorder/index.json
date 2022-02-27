@@ -1,0 +1,25 @@
+{
+    "disableScroll": false,
+    "navigationBarTitleText": "购物车",
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "custom-textarea": "./_/component_modules/settleaccount-common/custom-textarea/index",
+        "custom-show-modal": "/c/e9/n",
+        "default-dish-invalid-modal": "/c/e9/n",
+        "member-join-order": "/c/ed/nn/n",
+        "card-item": "/c/nb/n4/ni/n",
+        "cart-bubble": "/c/n1/ng/n",
+        "orderfood-order-repeat-modal": "/c/n1/cc/n",
+        "need-add-dish-modal": "./_/component_modules/orderfood-common/need-add-dish-modal/index",
+        "navigation-bar": "/c/np/n",
+        "custom-page-result": "/c/ea/n",
+        "loading-animation": "/c/et/n",
+        "custom-rich-text": "/c/eh/n",
+        "cart-ordered-tip": "./components/cart-ordered-tip/index",
+        "auth-user-modal": "/c/e4/ec/n",
+        "orderfood-specs": "/c/ca/n",
+        "auth-geo-modal": "/c/e4/ee/n"
+    },
+    "navigationStyle": "custom"
+}

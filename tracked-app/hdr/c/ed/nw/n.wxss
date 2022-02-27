@@ -1,0 +1,28 @@
+.nf3,.nf3 .nf6 {
+    text-align: center;
+    width: 100%;
+}
+
+.nf3 .nf6 {
+    align-items: center;
+    background: #fff;
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 36rpx;
+    height: 96rpx;
+    justify-content: center;
+    letter-spacing: 0.2rpx;
+    line-height: 96rpx;
+    padding: 0;
+    position: relative;
+}
+
+.nf3 .nf6::after {
+    border: none;
+}
+
+.nf3 .nf6 text {
+    color: #666;
+}

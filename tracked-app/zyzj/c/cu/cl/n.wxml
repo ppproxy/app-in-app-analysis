@@ -1,0 +1,4 @@
+<view class="nr4 {{selectedTemplate==='2'?'n2y':'nre'}}">
+    <cook-image class="nrn" mode="widthFix" src="{{imageUrl}}"></cook-image>
+    <view bindtap="handleClick" class="nrc" data-action-type="{{item.actionType}}" data-index="{{index}}" style="top:{{item.y*100}}%;left:{{item.x*100}}%;width:{{item.width*100}}%;height:{{item.height*100}}%" wx:for="{{spots}}" wx:key="index"></view>
+</view>

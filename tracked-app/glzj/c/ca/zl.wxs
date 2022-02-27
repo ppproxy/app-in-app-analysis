@@ -1,0 +1,47 @@
+function handleShowImage(currentPrice, memberFlag, isFromDetailPage, selectSku, storedPayMemberPriceSwitch) {
+    if (storedPayMemberPriceSwitch === 'Y' || !memberFlag) {
+        return (false)
+    };
+    var price = currentPrice.memberSellPrice !== null && memberFlag ? currentPrice.memberSellPrice / 100 : currentPrice.sellPrice / 100;
+    var unitName = selectSku.unitName || '';
+    var showUnitName = unitName !== '份' && unitName !== '个' && unitName.length < 4;
+    var priceMaxLen = unitName.length > 1 ? 4 : 5;
+    var priceText = ('' + price).replace('.', '');
+    var numLength = priceText.length > priceMaxLen;
+    return (!isFromDetailPage && selectSku.haveMemberSellPrice && !(showUnitName && numLength))
+};
+
+function addBtnText(isSetMeal, clearStatus) {
+    var text = clearStatus ? '已售罄' : '添加至购物车';
+    if (isSetMeal) {
+        text = '加入套餐'
+    };
+    return (text)
+};
+
+function showStoredPayMemberPrice(storedPayMemberPriceSwitch, showSku) {
+    return (storedPayMemberPriceSwitch === 'Y' && showSku.haveMemberSellPrice && showSku.memberSellPrice >= 0)
+};
+
+function getDishName(isSetMeal, dish) {
+    var name = dish.dishName;
+    if (isSetMeal && dish.skuName && name !== dish.skuName) {
+        name += dish.skuName
+    };
+    return (name)
+};
+
+function handleSpicyDegree(dish) {
+    var spicyDegree = 0;
+    if (dish.dishRecommended) {
+        spicyDegree = dish.dishRecommended.spicyDegree
+    };
+    return (spicyDegree)
+};
+module.exports = ({
+    handleShowImage: handleShowImage,
+    addBtnText: addBtnText,
+    showStoredPayMemberPrice: showStoredPayMemberPrice,
+    getDishName: getDishName,
+    handleSpicyDegree: handleSpicyDegree,
+});

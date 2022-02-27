@@ -1,0 +1,42 @@
+<view catchtap="JumpToMemberCenter" class="{{'component-member-card-container'}} c7y" data-track-logkey="/alsc.saas.miniapp.hykklyh.grzx-hyzj" onAppear="$logAppear" wx:if="{{componentStatus!=='HIDDEN'}}">
+    <view class="c7x" wx:if="{{memberInfo.customerType!==1}}">
+        <view class="ck4">
+            <view class="cke"> {{memberCardTemplateName||'品牌会员'}} </view>
+        </view>
+        <view class="ckz" wx:if="{{summaryGuideTips}}"> {{summaryGuideTips}} </view>
+        <view class="ckz" wx:else> 入会享好礼 </view>
+        <view class="ck5" style="background:{{themeColor||'#fff'}};color:{{themeColor?'#fff':'#191919'}};border:{{themeColor&&'none'}}"> {{joinMemberTips||'免费入会'}} </view>
+    </view>
+    <block wx:if="{{memberInfo.customerType===1}}">
+        <view class="c7x">
+            <view class="ck4">
+                <view class="cke"> {{memberInfo.currentLevelName}} </view>
+                <view class="ckc" wx:if="{{memberInfo.levelSize>1}}"> Lv{{memberInfo.currentLevelNo}} </view>
+            </view>
+            <view class="ckz" wx:if="{{memberInfo.nextLevelConsumeAmount&&memberInfo.levelSize>1}}"> 再消费<text style="font-weight:900;color:#191919">{{memberInfo.nextLevelConsumeAmount}}</text>元可升级到下一级 </view>
+            <view class="ckz" wx:if="{{!memberInfo.nextLevelConsumeAmount&&memberInfo.levelSize>1}}"> 您已升级为最高会员 </view>
+            <view class="ckz" wx:if="{{memberInfo.levelSize===1}}"> 欢迎加入本店会员～ </view>
+            <view class="ck5"> 会员权益 </view>
+        </view>
+        <view class="c78"></view>
+        <view class="c7j">
+            <view catchtap="JumpMyWalletPage" class="ckw" wx:if="{{memberInfo.balance}}">
+                <view class="ck3">{{memberInfo.balance}}</view>
+                <view class="ck6">储值</view>
+            </view>
+            <view catchtap="JumpScorePage" class="ckw">
+                <view class="ck3">{{memberInfo.score||'0'}} <view class="cy4" wx:if="{{showPointTag&&memberInfo.score&&memberInfo.score!=0}}">兑好礼</view>
+                </view>
+                <view class="ck6">积分</view>
+            </view>
+            <view catchtap="getMemberCode" class="ckw">
+                <view class="ck2">
+                    <image class="cks" src="https://img.alicdn.com/tfs/TB1l2dvM4D1gK0jSZFsXXbldVXa-40-40.png"></image>
+                </view>
+                <view class="ck6">会员码</view>
+            </view>
+        </view>
+    </block>
+</view>
+<toast id="toast"></toast>
+<member-code id="memberCode"></member-code>

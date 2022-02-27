@@ -1,0 +1,113 @@
+<import src="../c6/n4/c2/5g/wc/n.wxml"></import>
+<import src="../c6/n4/c2/5g/wz/n.wxml"></import>
+<view bind:tap="handleCloseSpecs" catch:touchmove="handleForbidMove" class="{{'component-orderfood-specs'}} nm9" data-track-custom-type="{{customType}}" data-track-logkey=".keruyun_menu.spec_show" onAppear="$logAppear" style="{{display?'':'display: none;'}}">
+    <view catch:tap="handleForbidMove" class="nmu {{show?'nok':''}}">
+        <scroll-view scrollY class="nmb">
+            <view class="n0m">
+                <dish-detail-swiper dataList="{{selectSku.skuImageList}}" dishImgHeight="514rpx" id="dishDetailSwiper"></dish-detail-swiper>
+            </view>
+            <view class="nmi">
+                <view class="n00">
+                    <view class="n0r" style="width: {{summaryLabelText?'376rpx':'unset'}};margin-bottom: {{dish.elemeLableShowText?'0':''}}rpx">{{utils.getDishName(isSetMeal,dish)}}</view>
+                    <view class="n0l" wx:if="{{summaryLabelText}}">{{summaryLabelText}}</view>
+                    <template is="dish-item-ele-label" data="{{dishEleLabel:dish.elemeLableShowText,containerStyle:'margin: 8rpx 0 16rpx 0',maxWidth:686}}"></template>
+                    <view class="n0j" wx:if="{{selectSku.skuDesc}}"> {{selectSku.skuDesc}} </view>
+                    <view class="nm1" wx:if="{{dish.labelDTOList.length||selectSku.promotionInfoDTOList.length||utils.handleSpicyDegree(dish)>0}}">
+                        <template is="dish-item-info-label" data="{{ labelDTOList:dish.labelDTOList,spicyDegree:utils.handleSpicyDegree(dish) }}"></template>
+                        <text class="n08" wx:for="{{selectSku.promotionInfoDTOList}}" wx:key="item">{{item.showText}}</text>
+                    </view>
+                </view>
+                <view class="n0q">
+                    <view class="nmm" wx:for="{{dish.specGroupList}}" wx:key="groupId">
+                        <view>
+                            <text class="n0n">{{item.groupName}}</text>
+                            <text class="nm0">(必选)</text>
+                        </view>
+                        <view class="nml">
+                            <view bind:tap="handleTapSpec" class="nmq {{spec.isClear||isAddPriceBuy?'nmj':''}} {{spec.detailId===selectSpec.detailId?'n0z':''}}" data-spec="{{spec}}" style="{{spec.detailId===selectSpec.detailId?'background-color: '+themeColor+'10':''}}" wx:for="{{item.specs}}" wx:for-item="spec" wx:key="id"> {{spec.name}} </view>
+                        </view>
+                    </view>
+                    <view class="nmm" wx:for="{{selectSku.practiceGroups}}" wx:key="groupId">
+                        <view>
+                            <text class="n0n">{{item.groupName}}</text>
+                            <text class="nm0" wx:if="{{item.required}}">(必选)</text>
+                        </view>
+                        <view class="nml {{item.isAddPrice?'n04':''}}">
+                            <view bind:tap="handleTapPractise" class="nmq {{selectPratice[item.groupId].detailId===pratices.detailId?'n0z':''}}" data-pratice-group-id="{{item.groupId}}" data-pratices="{{pratices}}" style="{{selectPratice[item.groupId].detailId===pratices.detailId?'background-color: '+themeColor+'10':''}}" wx:for="{{item.dishProperties}}" wx:for-item="pratices" wx:key="detailId">
+                                <view class="nmr" style="background: {{themeColor}}" wx:if="{{pratices.kryunPropertyDefault==='Y'}}">
+                                    <image class="nm8" src="https://img.alicdn.com/imgextra/i2/O1CN01R4UPkq1O051vQpV04_!!6000000001642-55-tps-12-11.svg"></image>
+                                    <text style="margin-left: 2rpx">推荐</text>
+                                </view>
+                                <view class="n0e">{{pratices.name}}</view>
+                                <text class="n0c" wx:if="{{item.isAddPrice}}">¥{{pratices.addPrice/100}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="nmm" wx:for="{{selectSku.sideDishGroups}}" wx:key="groupId">
+                        <view>
+                            <text class="n0n">{{item.groupName}}</text>
+                        </view>
+                        <view class="nml {{item.isAddPrice?'n04':''}}">
+                            <view bind:tap="handleTapSideDish" class="nmq {{selectSideDish[item.groupId+'-'+sideDish.detailId]?'n0z':''}} {{sideDish.sideDishStockDecimal===0?'nmj':''}}" data-side-dish="{{sideDish}}" data-side-dish-group-id="{{item.groupId}}" style="{{selectSideDish[item.groupId+'-'+sideDish.detailId]?'background-color: '+themeColor+'10':''}}" wx:for="{{item.sideDishes}}" wx:for-item="sideDish" wx:key="detailId">
+                                <view class="n0e">{{sideDish.name}}</view>
+                                <text class="n0c" wx:if="{{item.isAddPrice}}">¥{{sideDish.addPrice/100}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="nmm" wx:if="{{selectSku.remarks.length>0}}">
+                        <view>
+                            <text>备注</text>
+                        </view>
+                        <view class="nml">
+                            <view bind:tap="handleTapRemark" class="nmq {{selectRemarks[item.detailId]?'n0z':''}}" data-remark="{{item}}" style="{{selectRemarks[item.detailId]?'background-color: '+themeColor+'10':''}}" wx:for="{{selectSku.remarks}}" wx:key="detailId">
+                                <text>{{item.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="n05">
+            <view class="n0w">
+                <view class="n03">
+                    <view class="n06" style="width: {{!memberFlag?'360':dish.memberDayTag&&selectSku.unitName?'274':'320'}}rpx">
+                        <view class="n0p" wx:if="{{selectedName}}">已选：{{selectedName}}</view>
+                        <view class="n0y" wx:elif="{{selectSku.weighFlag==='Y'}}">称重后显示最终价格</view>
+                        <view class="n02 n0k" wx:elif="{{utils.showStoredPayMemberPrice( dish.storedPayMemberPriceSwitch,dish.cookbookDishSkuList[0] )}}">
+                            <image class="n07" src="https://img.alicdn.com/imgextra/i4/O1CN01SkaGJS1jjWFMskAMG_!!6000000004584-55-tps-32-32.svg"></image>
+                            <text>储值即享￥{{selectedName?currentPrice.memberSellPrice/100:dish.cookbookDishSkuList[0].memberSellPrice/100}}</text>
+                        </view>
+                        <view catch:tap="handleToMemberPage" class="n02" data-track-custom-scene="{{customScene}}" data-track-custom-type="商品详情" data-track-logkey=".keruyun_menu.registered_member_exposure" onAppear="$logAppear" wx:elif="{{showMember&&!memberFlag}}">
+                            <image class="n07" src="https://img.alicdn.com/imgextra/i1/O1CN01SrZdES1r5gjDjRCSR_!!6000000005580-55-tps-32-32.svg"></image>
+                            <text>入会即享{{dish.memberDayTag?'会员日特价':''}}￥{{selectedName?currentPrice.memberSellPrice/100:dish.cookbookDishSkuList[0].memberSellPrice/100}}</text>
+                            <image class="n0f" src="https://img.alicdn.com/imgextra/i2/O1CN01WSpMjK1Vltg5DtlBx_!!6000000002694-2-tps-20-36.png"></image>
+                        </view>
+                    </view>
+                    <view class="n0o">
+                        <num-control autoWidth bind:handleAddDish="handleChangeNum" bind:handleMinusDish="handleChangeNum" id="num-control" isSoldOut="{{clearStatus}}" minusDisabled="{{isShowMinus||num<=startNumber}}" num="{{num}}" plusDisabled="{{setMealDisableAdd||disableAddInner||isAddPriceBuy||isSetMeal&&num>=setMealOptionalNum}}" startNumber="{{startNumber}}" step="{{isSetMeal?1:selectSku.startInterval}}"></num-control>
+                        <view class="n0a" wx:if="{{showStartNumTips}}">{{isSetMeal?selectSku.comboStartNumber:selectSku.startNumber}}份起售</view>
+                        <view class="n0h" wx:elif="{{isShowSurplus}}">{{surplusLabel}}</view>
+                    </view>
+                </view>
+                <view class="n09">
+                    <view class="n0u">
+                        <view class="n0v" style="{{clearStatus?'color: #ccc':''}}" wx:if="{{!isSetMeal}}">
+                            <image class="n0t" src="{{dish.memberDayTag?'https://img.alicdn.com/imgextra/i3/O1CN01zZCB0a1bAhD25u8uP_!!6000000003425-2-tps-116-32.png':'https://img.alicdn.com/imgextra/i4/O1CN01O1AAOu1RqhMzBPS5s_!!6000000002163-55-tps-72-32.svg'}}" style="width: {{dish.storedPayMemberPriceSwitch==='Y'?'96rpx':dish.memberDayTag?'116rpx':'80rpx'}}" wx:if="{{utils.handleShowImage(currentPrice,memberFlag,isFromDetailPage,selectSku,dish.storedPayMemberPriceSwitch)}}"></image>
+                            <text class="n0d">￥</text>
+                            <text>{{dish.storedPayMemberPriceSwitch!=='Y'&&currentPrice.memberSellPrice!==null&&memberFlag?currentPrice.memberSellPrice/100:currentPrice.sellPrice/100}}</text>
+                            <text class="n0b" wx:if="{{selectSku.unitName!=='份'&&selectSku.unitName!=='个'&&selectSku.unitName.length<4}}">{{'/'+selectSku.unitName}}</text>
+                            <text class="n0i" style="{{clearStatus?'color: #ccc':''}}" wx:if="{{dish.storedPayMemberPriceSwitch!=='Y'&&currentPrice.memberSellPrice!==null&&memberFlag}}">￥{{currentPrice.sellPrice/100}}</text>
+                        </view>
+                    </view>
+                    <view bind:tap="handleAddCart" class="n01 {{isSetMeal&&setMealDisableAdd||totalNumOverflow||clearStatus||!openStatus||addPriceDishHasBuy?'n0g':''}}" data-dish="{{dish}}"> {{utils.addBtnText(isSetMeal,clearStatus)}} </view>
+                </view>
+            </view>
+        </view>
+        <toast id="toast"></toast>
+        <button catchtap="handleCloseSpecs" class="nmt" data-shareInfo="{{shareInfo}}" openType="share">
+            <image class="nmd" src="https://img.alicdn.com/imgextra/i1/O1CN01w0Aq4g1IeUJb7nkqE_!!6000000000918-2-tps-144-144.png"></image>
+        </button>
+        <image alt=" x" catchtap="handleCloseSpecs" class="nmv" src="https://img.alicdn.com/imgextra/i1/O1CN01VLCXRm1puPP74NsHt_!!6000000005420-2-tps-144-144.png"></image>
+    </view>
+</view>
+<wxs module="utils" src="zl.wxs" />

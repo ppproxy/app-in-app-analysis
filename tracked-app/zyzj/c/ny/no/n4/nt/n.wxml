@@ -1,0 +1,11 @@
+<view class="npm {{scene==='process'?'nch':''}}" style="{{style}}" wx:if="{{utils.showQueue(orderStatus,dishProcessEnable,dishProcess,enableTakeStatus,bookFlag)}}">
+    <text>前面</text>
+    <text class="{{scene==='process'?'np0':''}}"> {{dishProcess.orderNum}}单 ({{dishProcess.dishNum}}杯) </text>
+    <text>制作中</text>
+    <block wx:if="{{dishProcess.showWaitingTime===1}}">
+        <text>，预计</text>
+        <text class="{{scene==='process'?'np0':''}}">{{dishProcess.takeTime}} </text>
+        <text>可自取</text>
+    </block>
+</view>
+<wxs module="utils" src="zl.wxs" />

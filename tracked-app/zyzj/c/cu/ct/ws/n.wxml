@@ -1,0 +1,12 @@
+<template name="carousel">
+    <view class="nlj">
+        <swiper autoplay="true" bindchange="handleSwiperChangeEvent" circular="true" class="nq4" duration="500" interval="3000" style="width: {{swiperWrapStyle.width}}rpx;height: {{swiperWrapStyle.height}}rpx;border-radius: {{swiperWrapStyle.borderRadius}}rpx;margin-bottom: {{swiperWrapStyle.marginBottom}}rpx;margin-top: {{swiperWrapStyle.marginTop}}rpx;">
+            <swiper-item wx:for="{{carouselList}}" wx:for-item="carousel" wx:key="index">
+                <image bindtap="handleCarsuleClickEvent" class="nqe" data-action-type="{{carousel.actionType}}" data-index="{{index}}" mode="aspectFill" src="{{carousel.imageUrl}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="nqn" style="bottom: {{swiperDotStyle.bottom}}rpx" wx:if="{{carouselList.length>1}}">
+            <view class="{{index===cur?'nqc':'nqz'}}" wx:for="{{carouselList}}" wx:key="index"></view>
+        </view>
+    </view>
+</template>

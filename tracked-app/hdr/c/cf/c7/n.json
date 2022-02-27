@@ -1,0 +1,13 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cook-image": "/c/eo/n",
+        "cook-custom-member-price-label": "/c/es/n",
+        "cook-dish-item-name": "/c/e7/n",
+        "cook-dish-item-desc": "/c/ef/n",
+        "cook-dish-item-sell-num": "/c/ep/n",
+        "cook-dish-item-promotion-label": "/c/ek/n",
+        "orderfood-dish-add-cart": "/c/n1/c4/n",
+        "ordered-num": "/c/n1/cn/n"
+    }
+}

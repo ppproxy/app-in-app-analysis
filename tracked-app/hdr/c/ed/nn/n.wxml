@@ -1,0 +1,134 @@
+<custom-show-modal useBodySlot useFooterSlot useHeaderSlot id="customShowModal" modalType="bottom">
+    <view slot="header">
+        <view class="n2o {{isEmpty?'n2h':''}}" style="margin-bottom: {{isEmpty&&!isL100Merchant?'12rpx':'0'}}">
+            <text class="n2a">{{memberCardTemplateName}}邀您{{titleTip}}</text>
+        </view>
+    </view>
+    <view slot="body">
+        <scroll-view scrollY class="n29" scrollTop="{{scrollTop}}">
+            <block wx:if="{{openCardGiftCouponList&&openCardGiftCouponList.length}}">
+                <view class="n2u n2v" wx:if="{{summaryValue&&summaryValue!=='0'}}">
+                    <text>免费享</text>
+                    <text class="elm">{{summaryValue}}元</text>
+                    <text>礼包</text>
+                </view>
+                <view class="n2u n2v" wx:else>
+                    <text>免费享大礼包</text>
+                </view>
+                <view wx:for="{{openCardGiftCouponList}}" wx:key="index">
+                    <member-coupon-gift-item bind:handleRootInstance="handleRootInstance" couponItem="{{item}}"></member-coupon-gift-item>
+                </view>
+            </block>
+            <block wx:elif="{{dish&&dish.totalDishNum>0}}">
+                <view class="n2u"> 享<text class="elm">{{dish.totalDishNum}}款</text>超值会员特价 </view>
+                <view class="n21">
+                    <image class="n2g" mode="aspectFill" src="{{dish.dishImg}}"></image>
+                    <view class="n2m">
+                        <view class="n20"> {{dish.dishName}} </view>
+                        <view class="n2l">
+                            <text class="n2q">会员价</text>
+                            <text class="n2r">¥</text>
+                            <text class="n2x">{{dish.activityPrice}}</text>
+                            <text class="n28">¥{{dish.originalPrice}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{summaryList&&summaryList.length>1}}">
+                <view class="n2u n2t">
+                    <text wx:if="{{summaryList.length>3}}">入会后查看更多权益</text>
+                    <view wx:else>享<text class="elm">{{summaryList.length}}项</text>特权</view>
+                </view>
+                <view class="{{isL100Merchant?'n2b':'n2d'}}">
+                    <benefit-free summaryList="{{currentSummaryList}}"></benefit-free>
+                </view>
+            </block>
+            <view class="nsn" wx:if="{{isL100Merchant}}"> 该账户将与您的淘宝、支付宝、饿了么账号同步绑定，您的会员信息将在三方同步更新。 </view>
+            <view class="nsc" wx:if="{{joinMemberScene==='mobile'||joinMemberScene==='sms'}}">
+                <view wx:if="{{joinMemberScene==='mobile'}}">
+                    <view class="nsz"> 手机号 <view class="ns5">{{customerInfo.mobile}}</view>
+                    </view>
+                </view>
+                <view wx:if="{{joinMemberScene==='sms'}}">
+                    <view class="nsw">
+                        <view class="e2p">手机号</view>
+                        <view class="e2y e2b">
+                            <view class="e2a">
+                                <input bindfocus="bindFocus" bindinput="bindSmsInput" class="e29" data-key="mobile" maxlength="{{11}}" placeholder="请输入手机号" placeholderStyle="color: #bbb; font-size: 28rpx;" type="number" value="{{sms.mobile}}"></input>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="nsw e2b">
+                        <view class="e2p"></view>
+                        <view class="e2y">
+                            <view class="e2a">
+                                <input bindfocus="bindFocus" bindinput="bindSmsInput" class="e29" data-key="code" placeholder="请输入验证码" placeholderStyle="color: #bbb; font-size: 28rpx;" type="text" value="{{sms.code}}"></input>
+                            </view>
+                            <view class="ns3">
+                                <button bindtap="sendVerifyCode" class="ns6 {{sms.mobile.length!==11||sms.pending?'e59':''}}" disabled="{{sms.mobile.length!==11||sms.pending}}"> {{sms.pending||sms.reset?sms.restText:'获取验证码'}} </button>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view slot="footer">
+        <view class="ns2 {{isEmpty?'nss':''}}">
+            <block wx:if="{{joinMemberScene==='mobile'}}">
+                <view class="nsf" wx:if="{{type==='guide'}}">
+                    <button bindtap="cancelMember" class="ns7">
+                        <text class="eob">{{cancelTip}}</text>
+                    </button>
+                    <button bindtap="joinMember" class="nsk" style="background: {{themeColor}}">
+                        <text class="eob">{{freeJoinTip}}</text>
+                    </button>
+                </view>
+                <block wx:elif="{{type==='force'}}">
+                    <button bindtap="joinMember" class="nwb" style="background: {{themeColor}}" wx:if="{{customerInfo.mobile}}">
+                        <text class="eob">{{freeJoinTip}}</text>
+                    </button>
+                </block>
+            </block>
+            <block wx:if="{{joinMemberScene==='auth'}}">
+                <view class="nsf" wx:if="{{type==='guide'}}">
+                    <button bindtap="cancelMember" class="ns7">
+                        <text class="eob">{{cancelTip}}</text>
+                    </button>
+                    <button bindgetphonenumber="joinMemberByAuth" class="nsk" openType="getPhoneNumber" style="background: {{themeColor}}" wx:if="{{miniType==='wx'}}">
+                        <text class="eob">{{confirmTip}}</text>
+                    </button>
+                    <button bindtap="joinMemberByAuth" class="nsk" style="background: {{themeColor}}" wx:if="{{miniType==='my'}}">
+                        <text class="eob">{{confirmTip}}</text>
+                    </button>
+                </view>
+                <block wx:elif="{{type==='force'}}">
+                    <button bindgetphonenumber="joinMemberByAuth" class="nwb" openType="getPhoneNumber" style="background: {{themeColor}}" wx:if="{{miniType==='wx'}}">
+                        <text class="eob">{{confirmTip}}</text>
+                    </button>
+                    <button bindtap="joinMemberByAuth" class="nwb" style="background: {{themeColor}}" wx:if="{{miniType==='my'}}">
+                        <text class="eob">{{confirmTip}}</text>
+                    </button>
+                </block>
+            </block>
+            <block wx:if="{{joinMemberScene==='sms'}}">
+                <view class="nsf" wx:if="{{type==='guide'}}">
+                    <button bindtap="cancelMember" class="ns7">
+                        <text class="eob">{{cancelTip}}</text>
+                    </button>
+                    <button bindtap="joinMemberBySms" class="nsk" style="background: {{themeColor}}">
+                        <text class="eob">{{freeJoinTip}}</text>
+                    </button>
+                </view>
+                <button bindtap="joinMemberBySms" class="nwb" style="background: {{themeColor}}" wx:elif="{{type==='force'}}">
+                    <text class="eob">{{freeJoinTip}}</text>
+                </button>
+            </block>
+            <view class="e6h"> 请查阅 <view bindtap="openUrl" class="nsp" data-url="https://render.koubei.com/p/kbmodmng/UDYLNn0bK_prod/2O1QHGTUP.html"> 《用户授权协议》 </view>
+            </view>
+        </view>
+    </view>
+</custom-show-modal>
+<loading id="loading"></loading>
+<toast id="toast"></toast>
+<member-joined-show-alert id="memberJoinedShowAlert"></member-joined-show-alert>

@@ -1,0 +1,21 @@
+<template name="style3">
+    <shop-info-item bind:handleRootInstance="handleRootInstance" bind:onButtonClick="onOneTapGoTo" boderColor="{{boderColor}}" buttonText="{{buttonText}}" shopCount="{{shopCount}}" shopInfo="{{shopInfo}}" showModal="{{showModal}}" template="{{template}}" themeColor="{{themeColor}}" wx:if="{{services.length>0}}"></shop-info-item>
+</template>
+<template name="style2">
+    <block wx:if="services.length > 0">
+        <view class="njc" wx:if="{{count===1}}">
+            <template is="count1" data="{{themeColor:themeColor,count:count,layout:layout,services:services,isHeadCarouseNext:isHeadCarouseNext}}"></template>
+        </view>
+        <view class="njc" wx:if="{{count===2}}">
+            <template is="count2" data="{{themeColor:themeColor,count:count,layout:layout,services:services,isHeadCarouseNext:isHeadCarouseNext}}"></template>
+        </view>
+        <view class="njc" wx:if="{{count===3}}">
+            <template is="count3" data="{{themeColor:themeColor,count:count,layout:layout,services:services,isStation:isStation,isHeadCarouseNext:isHeadCarouseNext}}"></template>
+        </view>
+    </block>
+</template>
+<import src="./5g/wf.wxml"></import>
+<import src="./5g/w7.wxml"></import>
+<template is="style1" data="{{themeColor:themeColor,count:count,layout:layout,services:services}}" wx:if="{{selectedTemplate==='1'}}"></template>
+<template is="style2" data="{{themeColor:themeColor,count:count,layout:layout,services:services,isStation:isStation,shopInfo:shopInfo,shopCount:shopCount,showModal:showModal,boderColor:boderColor,template:template,isHeadCarouseNext:isHeadCarouseNext,hasDishOrder:hasDishOrder}}" wx:if="{{selectedTemplate==='2'}}"></template>
+<template is="style3" data="{{themeColor:themeColor,count:count,layout:layout,services:services,isStation:isStation,shopInfo:shopInfo,shopCount:shopCount,showModal:showModal,boderColor:boderColor,template:template,isHeadCarouseNext:isHeadCarouseNext,hasDishOrder:hasDishOrder,buttonText:buttonText}}" wx:if="{{selectedTemplate==='3'}}"></template>

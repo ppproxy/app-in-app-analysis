@@ -1,0 +1,48 @@
+<view class="n9w">
+    <view class="n92">
+        <cook-image class="n9s" defaultSource="/assets/images/dish-default.png" mode="aspectFill" smart="{{width:100,height:100}}" src="{{dishData.dishPhotoUrl||dishData.skuImgUrl||'/assets/images/dish-default.png'}}"></cook-image>
+    </view>
+    <view class="n93">
+        <view class="n96">
+            <view class="n9f">
+                <view class="n97">
+                    <view class="n9k">{{dishData.dishName}}</view>
+                    <view bindtap="handleToggle" class="n9p" wx:if="{{dishData.dishPackageList&&dishData.dishPackageList.length!==0}}">
+                        <image class="n9y" mode="aspectFill" src="{{toggleClose?'https://img.alicdn.com/imgextra/i2/O1CN019IoVCO24GIsbzdEew_!!6000000007363-55-tps-28-28.svg':'https://img.alicdn.com/imgextra/i2/O1CN01qx9fNK1uI0BwAXs6D_!!6000000006013-55-tps-28-28.svg'}}"></image>
+                    </view>
+                </view>
+                <view class="n91">
+                    <block wx:if="{{dishData.memberPrice||dishData.memberPrice===0}}">
+                        <image class="n9l" src="https://img.alicdn.com/imgextra/i3/O1CN01zZCB0a1bAhD25u8uP_!!6000000003425-2-tps-116-32.png" wx:if="{{memberDayTagSwitch}}"></image>
+                        <image class="n9m" src="https://img.alicdn.com/imgextra/i4/O1CN01r59eiT1w4NhVKc5A6_!!6000000006254-55-tps-76-32.svg" wx:elif="{{storedPayMemberPriceSwitch}}"></image>
+                        <image class="n90" src="https://img.alicdn.com/imgextra/i4/O1CN01O1AAOu1RqhMzBPS5s_!!6000000002163-55-tps-72-32.svg" wx:else></image>
+                    </block>
+                    <view class="n9g" wx:if="{{dishData.mustOrderDTO&&(dishData.mustOrderDTO.mustOrderRule==='FIXED'||dishData.mustOrderDTO.mustOrderRule==='MULTI_CHOICE_ONE')}}"> 必选 </view>
+                    <view class="n9g" wx:if="{{isAddPrice}}">搭配推荐</view>
+                </view>
+                <view class="n9o n9a" wx:if="{{dishData.multiSpecFlag&&dishData.dishSkuName||dishData.dishAddItemList&&dishData.dishAddItemList.length!==0}}">
+                    <block wx:if="{{dishData.multiSpecFlag&&dishData.dishSkuName}}">
+                        <view class="n9h">{{dishData.dishSkuName}}</view>
+                        <view class="n99" wx:if="{{dishData.dishAddItemList.length}}"></view>
+                    </block>
+                    <block wx:for="{{dishData.dishAddItemList}}" wx:for-item="dishAddItem" wx:key="index">
+                        <view class="n9h"> {{dishAddItem.additionalItemName}} {{dishAddItem.additionalItemFee&&dishAddItem.additionalItemFee!==0?'(+'+dishAddItem.additionalItemFee/100+'元)':''}} </view>
+                        <view class="n99" wx:if="{{index!==dishData.dishAddItemList.length-1}}"></view>
+                    </block>
+                </view>
+                <view wx:if="{{showNum}}">×{{dishData.dishQuantity||0}}</view>
+            </view>
+            <view class="n9u" wx:if="{{showPrice}}">
+                <view class="n9v">
+                    <view class="n9t">￥</view>
+                    <view class="n9d"> {{utils.handleShowPrice(dishData,isAddPrice,originalPriceFlag)}} </view>
+                </view>
+                <view class="n9b" wx:if="{{dishData.memberPrice||dishData.memberPrice===0||isAddPrice&&!originalPriceFlag}}"> ￥{{dishData.totalFee/100}} </view>
+            </view>
+        </view>
+        <view class="n9i" wx:if="{{toggleClose&&dishData.dishPackageList&&dishData.dishPackageList.length!==0}}">
+            <custom-group-dish-item dishListData="{{dishData.dishPackageList}}"></custom-group-dish-item>
+        </view>
+    </view>
+</view>
+<wxs module="utils" src="zl.wxs" />

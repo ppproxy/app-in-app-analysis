@@ -1,0 +1,15 @@
+.c1i {
+    background-color: var(--black);
+    bottom: var(--bottom-tabbar-height);
+    color: var(--white);
+    font-size: var(--font-size-l);
+    height: var(--cart-height);
+    left: 0;
+    line-height: var(--cart-height);
+    opacity: .7;
+    padding-bottom: env(safe-area-inset-bottom);
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: var(--card-z-index);
+}

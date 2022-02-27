@@ -1,0 +1,9 @@
+[is="c/eo/n"] {
+    display: inline-block;
+    height: 240px;
+    width: 320px;
+}
+
+.e44 {
+    background-color: #efefef;
+}

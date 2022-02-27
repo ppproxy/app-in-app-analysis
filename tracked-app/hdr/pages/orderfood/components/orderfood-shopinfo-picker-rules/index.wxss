@@ -1,0 +1,96 @@
+.cm6 {
+    z-index: 999;
+}
+
+.cm2 {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 100rpx;
+    justify-content: center;
+    position: relative;
+}
+
+.cm6 .cg4 {
+    padding: 30rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.cm6 .cge {
+    height: 30rpx;
+    width: 30rpx;
+}
+
+.cm6 .n3h {
+    color: var(--text-main);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-bolder);
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cms {
+    max-height: 1066rpx;
+    min-height: 870rpx;
+}
+
+.cmf {
+    box-sizing: border-box;
+    color: var(--text-secondary);
+    padding: 16rpx 34rpx 200rpx;
+}
+
+.cmf .ewx {
+    color: #191919;
+    font-size: 32rpx;
+    font-weight: 900;
+}
+
+.cm7 .cmk .cmp {
+    color: #333;
+    font-size: 28rpx;
+    font-weight: 900;
+}
+
+.cm7 .cmk {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 32rpx;
+}
+
+.cm7 .cmk .cmy {
+    flex: 1;
+}
+
+.cmk .cmy .n3h {
+    line-height: 32px;
+}
+
+.cmp .cmo {
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-right: 10rpx;
+    margin-top: 17rpx;
+}
+
+.cmp .cmo,.cmp .cmo .cma {
+    height: 32rpx;
+    width: 32rpx;
+}
+
+.cm7 .cmh {
+    border-top: 1rpx solid #f2f2f2;
+    color: #666;
+    font-size: 22rpx;
+    line-height: 40rpx;
+    margin-top: 10rpx;
+    padding-top: 12rpx;
+}

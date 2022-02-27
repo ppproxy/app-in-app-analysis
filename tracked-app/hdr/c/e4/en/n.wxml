@@ -1,0 +1,56 @@
+<view catchtouchmove="forbidMove" class="erd">
+    <view bindtap="handleCancel" class="erb" wx:if="{{visible&&initChoose}}"></view>
+    <view class="eri {{visible&&initChoose?'er1':''}}">
+        <view>
+            <image class="erg" mode="aspectFill" src="{{brandLogo}}"></image>
+        </view>
+        <view>
+            <text class="erm">欢迎登录{{brandName}}</text>
+        </view>
+        <view>
+            <text class="er0">登录后下单、领券、参与活动，享受更好的服务体验</text>
+        </view>
+        <view bindtap="handleCancel" class="erl">
+            <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+        </view>
+        <view>
+            <button bindgetphonenumber="phoneAuthLogin" bindtap="handleOneAuthClick" class="erq" openType="getPhoneNumber" style="background-color: {{themeColor}}" wx:if="{{agreeChecked}}"> 一键登录 </button>
+            <button bindtap="showNoAgreeToast" class="erq" style="background-color: {{themeColor}}" wx:else> 一键登录 </button>
+        </view>
+        <user-agreement bind:handleAgreeChange="handleAgreeChange" bind:handleRootInstance="handleRootInstance" wx:if="{{hasUserAgreement}}"></user-agreement>
+    </view>
+</view>
+<view class="ert" wx:if="{{visible&&phoneCodeMode}}">
+    <view class="err">
+        <view class="erx">
+            <image class="er8" mode="aspectFill" src="{{brandLogo}}"></image>
+            <text class="erj">登录{{brandName}}服务</text>
+        </view>
+        <view class="ex4">
+            <view class="exe">
+                <view class="exz">
+                    <text>+86</text>
+                    <image class="ex5" src="https://img.alicdn.com/imgextra/i4/O1CN016QWBPN1V8xzVgUldc_!!6000000002609-55-tps-29-30.svg"></image>
+                </view>
+                <input bindblur="bindPhoneInput" class="exc" maxlength="11" name="phone" placeholder="请输入手机号" type="number"></input>
+                <view bindtap="handleGetVerifyCode" class="exn" wx:if="{{!verifyCodeLocked}}">
+                    <text>获取验证码</text>
+                </view>
+                <view bindtap="handleGetVerifyCode" class="exn" wx:else>
+                    <text>获取中({{leftTime}}s)</text>
+                </view>
+            </view>
+            <view class="exe">
+                <view class="exz">
+                    <text>验证码</text>
+                </view>
+                <input bindblur="bindVerifyCodeInput" class="exc" name="code" placeholder="请输入验证码" type="text"></input>
+            </view>
+        </view>
+        <view class="exw">
+            <button bindtap="handleSMSCancel" class="ex3" style="color: {{themeColor}}"> 不登录 </button>
+            <button bindtap="handlePhoneCodeAuth" class="ex6" style="background-color: {{themeColor}}"> 登录 </button>
+        </view>
+    </view>
+</view>
+<toast id="toast"></toast>

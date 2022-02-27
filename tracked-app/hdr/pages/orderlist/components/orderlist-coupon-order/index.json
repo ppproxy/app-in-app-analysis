@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n",
+        "custom-page-result": "/c/ea/n",
+        "order-list-item": "../orderlist-food-item/index",
+        "cook-image": "/c/eo/n",
+        "loading-animation": "/c/et/n"
+    }
+}

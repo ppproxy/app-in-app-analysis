@@ -1,0 +1,12 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "member-account-bind-pop": "/c/ed/ei/n",
+        "member-account-list": "./components/member-account-list/index",
+        "toast": "/c/z5/n",
+        "loading": "/c/ev/n",
+        "member-account-bind": "/c/ed/eb/n",
+        "navigation-bar": "/c/np/n"
+    },
+    "navigationStyle": "custom"
+}

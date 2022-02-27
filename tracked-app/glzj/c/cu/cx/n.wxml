@@ -1,0 +1,22 @@
+<import src="./5g/wy.wxml"></import>
+<import src="./5g/wp.wxml"></import>
+<view class="nrb {{goodsList.length===1||goodsList.length===3?'nxg':'nxq'}}" wx:if="{{goodsList.length}}">
+    <template is="pointMall" data="{{goodsList:goodsList,themeColor:themeColor,hideButton:hideButton}}" wx:if="{{goodsList[0].itemType==='CRM_VOUCHER'}}"></template>
+    <template is="kbGoods" data="{{goodsList:goodsList,themeColor:themeColor}}" wx:else></template>
+</view>
+<view catchtouchmove="forbidMove" class="nxo">
+    <view bindtap="handleCancel" class="nxa" wx:if="{{visible}}"></view>
+    <view class="nxh {{visible?'nx9':''}}">
+        <image class="nxu" mode="aspectFill" src="{{brandLogo}}"></image>
+        <view class="nxv">欢迎登录{{brandName}}</view>
+        <view class="nxt">入会后可购买积分商品，享受更好的服务体验</view>
+        <view bindtap="handleCancel" class="nxd">
+            <image alt="X" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+        </view>
+        <member-join-universal bind:handleMemberJoinSuccess="handleMemberJoinSuccess" bind:handleRootInstance="handleRootInstance" btnStyle="background: {{themeColor}};{{btnStyle}}" btnTextStyle="color: #fff;" title="一键入会"></member-join-universal>
+        <view class="nxb">
+            <view>授权即表示同意</view>
+            <view bindtap="openUrl" class="nxi" style="color: {{themeColor}}"> 《会员服务协议》 </view>
+        </view>
+    </view>
+</view>

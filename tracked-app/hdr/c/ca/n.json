@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "toast": "/c/z5/n",
+        "num-control": "/c/n1/ce/n",
+        "dish-detail-swiper": "/c/cz/n4/cw/n",
+        "custom-member-price-label": "/c/n1/nj/n"
+    }
+}

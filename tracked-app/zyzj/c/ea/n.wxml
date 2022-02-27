@@ -1,0 +1,22 @@
+<view class="ejb" wx:if="{{visible}}">
+    <navigation-bar alipayCustomBack="{{true}}" back="{{true}}" background="rgba(255,255,255,{{navigationOpacity}})" bind:handleBack="handleBackHome" bind:handleRootInstance="handleRootInstance" close="{{false}}" color="var(--text-main)" hidden="{{!isShow}}" isFromDetailPage="{{true}}" title="服务异常"></navigation-bar>
+    <view class="eji">
+        <view class="ej1">
+            <image class="ejg" src="{{icon}}"></image>
+        </view>
+        <view class="ejm">{{title}}</view>
+        <view class="ej0" wx:if="{{subTitle}}">{{subTitle}}</view>
+        <block wx:if="{{showButton}}">
+            <block wx:if="{{dishPage}}">
+                <view bindtap="handleFresh" class="ejl" wx:if="{{scene==='CAN_RETRY_ERROR'||scene===''}}"> {{buttonText}} </view>
+                <view class="ejr" wx:if="{{scene==='NEED_CHANGE_SHOP_ERROR'}}">
+                    <view bindtap="handleBackHome" class="ejx  ej8"> {{buttonLeftText}} </view>
+                    <view bindtap="handleSelectShop" class="ejx ejj"> {{buttonRightText}} </view>
+                </view>
+                <view bindtap="handleBackHome" class="ejl" wx:if="{{scene==='NEED_BACK_HOME_PAGE_ERROR'}}"> 返回首页 </view>
+            </block>
+            <view bindtap="handleOk" class="ejx" wx:else> {{buttonText}} </view>
+        </block>
+    </view>
+    <view class="ejq">{{msgInfo}}</view>
+</view>

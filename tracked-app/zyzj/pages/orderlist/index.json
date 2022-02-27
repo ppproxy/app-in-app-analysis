@@ -1,0 +1,19 @@
+{
+    "disableScroll": false,
+    "backgroundColor": "#efefef",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "订单",
+    "usingComponents": {
+        "bottom-tabbar": "/c/e3/n",
+        "custom-page-result": "/c/ea/n",
+        "orderlist-food-order": "./components/orderlist-food-order/index",
+        "orderlist-group-order": "./components/orderlist-group-order/index",
+        "orderlist-takeout-order": "./components/orderlist-takeout-order/index",
+        "orderlist-coupon-order": "./components/orderlist-coupon-order/index",
+        "custom-tabs": "./components/custom-tabs/index",
+        "navigation-bar": "/c/np/n"
+    },
+    "navigationStyle": "custom"
+}

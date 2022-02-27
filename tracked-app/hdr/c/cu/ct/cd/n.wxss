@@ -1,0 +1,4 @@
+.nl8 {
+    display: flex;
+    justify-content: center;
+}

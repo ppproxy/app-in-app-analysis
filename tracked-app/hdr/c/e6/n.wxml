@@ -1,0 +1,50 @@
+<view wx:if="{{isShow&&couponTemplateList.length}}">
+    <view catchtouchmove="preventTouchMove" class="e8p" wx:if="{{showModal}}"></view>
+    <view class="ej5">
+        <view class="e8y" style="height: {{couponTemplateList.length===1?672:''}}rpx;">
+            <image class="e8o" src="{{couponTemplateList.length===1?IconConsumptionSendImgOneMin:IconConsumptionSendImgOneMax}}"></image>
+            <image class="e8a" src="https://img.alicdn.com/imgextra/i4/O1CN01h6nePw1va9Wg7jtsq_!!6000000006188-55-tps-642-794.svg"></image>
+            <image class="e8h" src="{{couponTemplateList.length===1?'https://img.alicdn.com/imgextra/i3/O1CN01DbaaeL1iCiFqNBQvf_!!6000000004377-55-tps-640-710.svg':'https://img.alicdn.com/imgextra/i2/O1CN01VACrLm22z4Ns2O9Ed_!!6000000007190-55-tps-642-794.svg'}}"></image>
+            <image class="e8u" src="{{couponTemplateList.length===1?IconConsumptionSendImgFourMin:IconConsumptionSendImgFourMax}}"></image>
+            <image class="e8v" src="{{IconConsumptionSendImgFive}}"></image>
+            <image class="e8d" src="https://img.alicdn.com/imgextra/i4/O1CN01ogM9uV1sWXYZW1oIk_!!6000000005774-55-tps-750-184.svg"></image>
+            <image class="e8b" src="https://img.alicdn.com/imgextra/i3/O1CN013OsVMy1Cp7lYhecyS_!!6000000000129-55-tps-750-110.svg"></image>
+            <view class="e8i">
+                <view class="e8g" style="color: {{themeColor}}">恭喜你</view>
+                <view class="e81">
+                    <view class="e8m" wx:if="{{txtNode}}">
+                        <custom-rich-text nodes="{{txtNode}}" textStyleFirst="color: #FF4B33;" textStyleSecond="font-size: 19px;margin: 0 3px;color: {{themeColor}}"></custom-rich-text>
+                    </view>
+                    <view class="e80">券发放可能延迟，可稍后到我的-优惠券中查看</view>
+                </view>
+                <scroll-view class="e8l" scrollY="true" style="margin-top: {{couponTemplateList.length===1?36:''}}rpx">
+                    <coupon-item bind:handleRootInstance="handleRootInstance" couponItem="{{item}}" wx:for="{{couponTemplateList}}" wx:key="index"></coupon-item>
+                    <view style="height: 80rpx"></view>
+                </scroll-view>
+                <view class="e8q">
+                    <view bindtap="goToCouponPage" class="e8r" style="color: {{themeColor}}">去券包查看</view>
+                </view>
+                <view class="e8x">
+                    <view bindtap="viewActivityDetail" class="e88">
+                        <view class="e8j">活动详情</view>
+                        <image class="ej4" src="https://img.alicdn.com/imgextra/i4/O1CN01VfjFHw1wBFbo6Ux2i_!!6000000006269-55-tps-200-200.svg"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="eje">
+                <image bindtap="hidePop" class="eq8" src="https://img.alicdn.com/tfs/TB1D0p0aQcx_u4jSZFlXXXnUFXa-64-64.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<custom-show-modal id="customShowModal"></custom-show-modal>
+<view wx:if="{{isShow&&activityMode==='AMAP'&&!isHospital&&imgUrlAMAP}}">
+    <view bindtap="hidePop" catchtouchmove="preventTouchMove" class="ejn"></view>
+    <view catchtouchmove="preventTouchMove" class="ejc">
+        <cook-image webp bind:tap="handleJumpAMAP" class="ejz" mode="heightFix" src="{{imgUrlAMAP}}"></cook-image>
+        <view class="eje">
+            <image bindtap="hidePop" class="eq8" src="https://img.alicdn.com/tfs/TB1D0p0aQcx_u4jSZFlXXXnUFXa-64-64.png"></image>
+        </view>
+    </view>
+</view>
+<toast id="toast"></toast>

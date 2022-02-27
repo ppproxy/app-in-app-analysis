@@ -1,0 +1,56 @@
+.nrz {
+    background-color: #d6f1e2;
+    border-radius: 16rpx;
+    bottom: calc(98rpx + 30rpx);
+    box-shadow: 0 4rpx 16rpx 0 rgba(0,0,0,.04),0 12rpx 24rpx 0 rgba(0,0,0,.07),0 16rpx 40rpx 0 rgba(0,0,0,.04);
+    left: 25rpx;
+    opacity: 0;
+    padding: 30rpx 0;
+    position: fixed;
+    transform: translateY(calc(100% + 98rpx + 30rpx));
+    transition: all .3s linear;
+    width: 704rpx;
+    z-index: 1000;
+}
+
+.nr5 {
+    bottom: calc(158rpx + 30rpx);
+    transform: translateY(calc(100% + 158rpx + 30rpx));
+}
+
+.nrw {
+    background: url("https://gw.alicdn.com/imgextra/i2/O1CN013JjFC01S6jFoEkj9H_!!6000000002198-0-tps-782-304.jpg") #d6f1e2 no-repeat 50%/auto 100%;
+    opacity: 1;
+    transform: none;
+}
+
+.nr3 {
+    display: block;
+    height: 80rpx;
+    margin-bottom: 20rpx;
+    margin-left: 38rpx;
+}
+
+.nr6 {
+    border-radius: 4rpx;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 630rpx;
+}
+
+.nr2 {
+    margin: -3rpx;
+}
+
+.nrs {
+    padding: 24rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.nrf {
+    display: block;
+    height: 44rpx;
+    width: 44rpx;
+}

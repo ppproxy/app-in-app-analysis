@@ -1,0 +1,17 @@
+<template name="normal-tmpl">
+    <view class="nhx">
+        <view class="nh8" wx:for="{{dishList}}">
+            <view class="nhj">
+                <view class="n94">
+                    <view class="n9e">{{item.dishName}}</view>
+                    <view class="n9n" wx:if="{{showRequireTag&&item.required==='Y'}}">必选</view>
+                </view>
+                <view class="n9c" wx:if="{{item.dishAddItemListFormat}}"> {{item.dishAddItemListFormat}} </view>
+                <view class="n9z" wx:if="{{item.addDishFee}}"> +{{item.addDishFee/100}}元 </view>
+            </view>
+            <view class="n95"> x{{(item.weighDishFlag?item.secondSkuQuantity:item.dishQuantity)||0}} </view>
+        </view>
+    </view>
+</template>
+<import src="./5g/58.wxml"></import>
+<template is="{{templateType}}-tmpl" data="{{dishList:dishList,showRequireTag:showRequireTag}}"></template>

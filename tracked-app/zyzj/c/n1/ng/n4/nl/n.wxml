@@ -1,0 +1,13 @@
+<view class="naq" data-track-custom-type="排队点餐提醒曝光" data-track-logkey=".orderfood_page_cart-ordered-tip-new-new" onAppear="$logAppear" style="right: {{right}}">
+    <view class="nar">
+        <view class="na8">
+            <view class="naj">
+                <image class="nh4" mode="aspectFit" src="https://gw.alicdn.com/imgextra/i2/O1CN01bZUK6V1fYkVNwz5rw_!!6000000004019-55-tps-92-115.svg"></image>
+            </view>
+        </view>
+        <view class="nax">
+            <view class="nhe">{{title}}</view>
+            <view class="nhn" wx:if="{{message}}">{{message}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="n5q {{'member-coupon-bag-ele'}}" data-track-itemId="{{couponInfo.itemId}}" data-track-logkey=".quanbao" onAppear="$logAppear" wx:if="{{couponInfo.available}}">
+    <component-title textAlign="{{titleType==='text'?'left':'center'}}" title="{{name}}" titleUrl="{{titleImage}}" type="{{titleType}}" wx:if="{{showTitle}}"></component-title>
+    <view class="n5r">
+        <view class="ezt">
+            <image class="n5x" mode="aspectFit" src="https://gw.alicdn.com/imgextra/i4/O1CN01wgxjgt28NrwhTUvR2_!!6000000007921-2-tps-84-74.png"></image>
+            <view class="n58">{{couponInfo.packageName}}(含{{couponInfo.couponList.length}}张)</view>
+        </view>
+        <scroll-view scrollX class="nw4">
+            <view class="n59 {{styles[ 'item'+(couponInfo.couponList.length>=5?5:couponInfo.couponList.length) ]}}" wx:for="{{couponInfo.couponList}}">
+                <view class="n5u" wx:if="{{item.voucherType==='CASH'}}">{{util.formatPrice(item.denomination)}}</view>
+                <view class="n5t" wx:if="{{item.voucherType==='DISCOUNT'}}">{{item.discount}}</view>
+                <view class="n5v" wx:if="{{item.voucherType==='GIFT'}}">{{item.itemValue}}</view>
+                <view class="n5d">{{item.threshold}}</view>
+            </view>
+        </scroll-view>
+        <view bindtap="handleBuy" class="nwe">
+            <view class="nwn">¥</view>
+            <view class="nwc">{{util.formatPrice(couponInfo.price)}}</view>
+            <view class="nwz">¥{{util.formatPrice(couponInfo.originPrice)}}</view>
+            <view class="nw5"></view>
+            <view class="nww">立即抢购</view>
+        </view>
+        <view class="nw6" wx:if="{{couponInfo.purchasedQuantity>0}}">
+            <image class="nw2" mode="aspectFit" src="https://gw.alicdn.com/imgextra/i3/O1CN01CzUsmU1Ew74rQazNd_!!6000000000415-2-tps-17-17.png"></image>
+            <view class="nws">您有一份{{util.formatPrice(couponInfo.originPrice)}}元的组合优惠券待使用</view>
+            <view bindtap="handleUse" class="nwf">去使用</view>
+        </view>
+    </view>
+</view>
+<wxs module="util" src="51.wxs" />

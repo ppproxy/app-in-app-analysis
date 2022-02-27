@@ -1,0 +1,5 @@
+<custom-show-modal useFullSlot id="customShowModal" modalType="base">
+    <view class="n2y" slot="full">
+        <view class="n2p"> {{registerTips}} </view>
+    </view>
+</custom-show-modal>

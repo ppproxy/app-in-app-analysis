@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cook-image": "/c/eo/n",
+        "cook-dish-item-surplus": "/c/ey/n",
+        "orderfood-dish-add-cart": "/c/n1/c4/n",
+        "ordered-num": "/c/n1/cn/n"
+    }
+}

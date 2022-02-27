@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "选择城市",
+    "disableScroll": true,
+    "usingComponents": {
+        "index-list": "../components/index-list/index-list"
+    }
+}

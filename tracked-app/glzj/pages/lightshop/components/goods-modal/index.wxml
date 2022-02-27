@@ -1,0 +1,93 @@
+<custom-show-modal useBodySlot useFooterSlot useHeaderSlot id="customShowModal" modalType="bottom">
+    <view slot="header">
+        <view class="cej"> {{desc}} </view>
+    </view>
+    <view slot="body">
+        <view class="cne" wx:if="{{saleStatus==='ON_SALE'&&support}}">
+            <image class="cnn" src="{{logo}}"></image>
+            <view class="cns">
+                <view class="cnf">{{itemName}}</view>
+                <view class="cn7" wx:if="{{saleNum>20}}">已售{{saleNum}}</view>
+                <view class="cnk" wx:if="{{curPrice}}">
+                    <view class="cny" style="color: {{benefitType==='MEMBER_PRICE'?'#BE8B5E':'#FF301E'}}">
+                        <text class="cno" wx:if="{{benefitType&&benefitType==='MEMBER_PRICE'}}">
+                          会员价 ¥
+                      </text>
+                        <text class="cno" wx:else>¥</text>
+                        <text class="cna">{{curPrice}}</text>
+                    </view>
+                    <view class="cnh">
+                        <text>¥</text>
+                        <text class="cn9">{{orgPrice}}</text>
+                    </view>
+                </view>
+                <view class="cnk" wx:else>
+                    <view class="cny" style="color: {{benefitType==='MEMBER_PRICE'?'#BE8B5E':'#FF301E'}}">
+                        <text class="cno" wx:if="{{benefitType&&benefitType==='MEMBER_PRICE'}}">
+                          会员价 ¥
+                      </text>
+                        <text class="cno" wx:else>¥</text>
+                        <text class="cna">{{orgPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cne" wx:if="{{saleStatus!=='ON_SALE'&&support}}">
+            <image class="cnn" src="{{logo}}"></image>
+            <view class="cnc"></view>
+            <image class="cnz" src="https://img.alicdn.com/tfs/TB1jDnaTxv1gK0jSZFFXXb0sXXa-384-384.png" wx:if="{{saleStatus==='NO_QUANTITY'}}"></image>
+            <image class="cnz" src="https://img.alicdn.com/tfs/TB1RjPXTAY2gK0jSZFgXXc5OFXa-384-384.png" wx:if="{{saleStatus==='OFF_SALE'}}"></image>
+            <view class="cns">
+                <view class="cnf">{{itemName}}</view>
+                <view class="cn7" wx:if="{{saleNum>20}}">已售{{saleNum}}</view>
+                <view class="cnk" wx:if="{{curPrice}}">
+                    <view class="cny" style="color: #FF301E">
+                        <text class="cno">¥</text>
+                        <text class="cna">{{curPrice}}</text>
+                    </view>
+                    <view class="cnh">
+                        <text>¥</text>
+                        <text class="cn9">{{orgPrice}}</text>
+                    </view>
+                </view>
+                <view class="cnk" wx:else>
+                    <view class="cny" style="color: #FF301E">
+                        <text class="cno">¥</text>
+                        <text class="cna">{{orgPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cne" wx:if="{{!support}}">
+            <image class="cnn" src="{{logo}}"></image>
+            <view class="cnc"></view>
+            <image class="cnz" src="https://img.alicdn.com/tfs/TB1xlSeUAL0gK0jSZFtXXXQCXXa-192-192.png" wx:if="{{saleStatus==='ON_SALE'}}"></image>
+            <image class="cnz" src="https://img.alicdn.com/tfs/TB1jDnaTxv1gK0jSZFFXXb0sXXa-384-384.png" wx:if="{{saleStatus==='NO_QUANTITY'}}"></image>
+            <image class="cnz" src="https://img.alicdn.com/tfs/TB1RjPXTAY2gK0jSZFgXXc5OFXa-384-384.png" wx:if="{{saleStatus==='OFF_SALE'}}"></image>
+            <view class="cns">
+                <view class="cnf">{{itemName}}</view>
+                <view class="cn7" wx:if="{{saleNum>20}}">已售{{saleNum}}</view>
+                <view class="cnk" wx:if="{{curPrice}}">
+                    <view class="cny" style="color: #FF301E">
+                        <text class="cno">¥</text>
+                        <text class="cna">{{curPrice}}</text>
+                    </view>
+                    <view class="cnh">
+                        <text>¥</text>
+                        <text class="cn9">{{orgPrice}}</text>
+                    </view>
+                </view>
+                <view class="cnk" wx:else>
+                    <view class="cny" style="color: #FF301E">
+                        <text class="cno">¥</text>
+                        <text class="cna">{{orgPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view>
+            <button bindtap="jumpAway" class="cnu" style="background-color: {{themeColor}}" wx:if="{{saleStatus==='ON_SALE'&&support}}">立即抢购</button>
+            <button bindtap="hideModal" class="cnu" style="background-color: {{themeColor}}" wx:else>再逛逛</button>
+        </view>
+    </view>
+</custom-show-modal>

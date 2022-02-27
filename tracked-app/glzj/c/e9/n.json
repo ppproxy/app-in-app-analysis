@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "overlay": "/c/ch/n",
+        "popup": "/c/c9/n"
+    }
+}

@@ -1,0 +1,26 @@
+<template name="style3">
+    <view bindtap="gotoOrderDetailPage" class="z21" style="background: {{marketingColor}}" wx:if="{{showModal}}">
+        <view class="z2g">
+            <image class="z2m" src="{{orderStatusIcon}}" style="color: blue"></image>
+            <view class="z20" wx:if="{{orderInfo.orderProductConfig==='SCAN_CODE_ORDER_AFTER'}}"> {{orderInfo.tips}} </view>
+            <view class="z20 {{utils.showTime(orderInfo,takeTime)?'z26':'z2l'}}" wx:else> {{orderInfo.tips||orderInfo.orderStatusValue}} </view>
+        </view>
+        <view class="z2q" style="background: {{marketingColor}}">
+            <block wx:if="{{utils.showRightButton(orderInfo)}}">
+                <view class="z2r" wx:if="{{orderInfo.orderStatus==='WAIT_PAY'}}">
+                    <text> 去付款 </text>
+                    <image class="z2x" src="https://gw.alicdn.com/imgextra/i3/O1CN01T6rn0Q1oDWeaJNxqj_!!6000000005191-55-tps-24-24.svg"></image>
+                </view>
+                <view class="z2r" wx:if="{{utils.isVerificationCode(orderInfo)}}">
+                    <text> 取餐码 </text>
+                    <image class="z2x" src="https://gw.alicdn.com/imgextra/i3/O1CN01T6rn0Q1oDWeaJNxqj_!!6000000005191-55-tps-24-24.svg"></image>
+                </view>
+            </block>
+            <view class="z28" wx:elif="{{utils.showBlock(orderInfo)&&orderInfo.takeMealType==='SELF_TAKE'&&(orderInfo.tableCode||orderInfo.mealCode)}}">
+                <view class="z2j"> {{utils.getTakeText(orderInfo)}} </view>
+                <view class="zs4 z26"> {{orderInfo.takeYourselfMode===3?orderInfo.tableCode:orderInfo.mealCode}} </view>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="utils" src="../zl.wxs" />

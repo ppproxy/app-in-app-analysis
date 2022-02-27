@@ -1,0 +1,13 @@
+{
+    "component": true,
+    "usingComponents": {
+        "navigation-bar": "/c/np/n",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n",
+        "custom-member-price-label": "/c/n1/nj/n",
+        "dish-detail-swiper": "./n4/cw/n",
+        "set-meal-detail": "./n4/c3/n",
+        "orderfood-dish-add-cart": "/c/n1/c4/n",
+        "combo-cart-item": "./n4/c5/n"
+    }
+}

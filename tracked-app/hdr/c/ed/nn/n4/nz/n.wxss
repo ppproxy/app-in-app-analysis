@@ -1,0 +1,14 @@
+.n2k {
+    font-size: 32rpx;
+    font-weight: 500;
+}
+
+.n2k,.n2p {
+    color: rgba(0,0,0,.9);
+}
+
+.n2p {
+    font-size: 26rpx;
+    padding-top: 20rpx;
+    text-align: left;
+}

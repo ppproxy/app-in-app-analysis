@@ -1,0 +1,16 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "point-mall-component": "/c/ed/nf/n",
+        "advertise-carousel-component": "/c/cu/ct/cd/n",
+        "goods-window-component": "/c/cu/c0/n",
+        "goods-list-component": "/c/cu/cm/n",
+        "bottom-tabbar": "/c/e3/n",
+        "loading": "/c/ev/n",
+        "navigation-bar": "/c/np/n",
+        "preview-mode-tag": "/c/cu/c8/n",
+        "loading-animation": "/c/et/n",
+        "virtual-component": "/dynamic/virtual-component/index"
+    },
+    "navigationStyle": "custom"
+}

@@ -1,0 +1,14 @@
+var getContainerClass = (function(counponCanGetList, isFold) {
+    if (counponCanGetList.length > 3) {
+        if (isFold) {
+            return ('fold')
+        } else {
+            return ('unfold')
+        }
+    } else {
+        return ('other')
+    }
+});
+module.exports = ({
+    getContainerClass: getContainerClass,
+});

@@ -1,0 +1,247 @@
+.n5q {
+    margin-bottom: 20rpx;
+    width: 702rpx;
+}
+
+.n5q .ezt {
+    align-items: center;
+    display: flex;
+}
+
+.n5r {
+    background: #fff;
+    border-radius: 32rpx;
+    padding: 20rpx 16rpx;
+}
+
+.n5x {
+    flex: none;
+    height: 74rpx;
+    margin-right: 20rpx;
+    width: 84rpx;
+}
+
+.n58 {
+    color: #191919;
+    flex: 1;
+    font-size: 32rpx;
+    font-weight: 700;
+    line-height: 44rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.n5j {
+    color: #999;
+    flex: none;
+    font-size: 20rpx;
+    line-height: 28rpx;
+}
+
+.nw4 {
+    background: #fff6f2;
+    border-radius: 32rpx;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    overflow-x: auto;
+    padding: 20rpx 6rpx 20rpx 20rpx;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.n59 {
+    background-color: #fff;
+    display: inline-block;
+    margin-right: 14rpx;
+    position: relative;
+    vertical-align: middle;
+}
+
+.n59.eza {
+    background: url(https://gw.alicdn.com/imgextra/i2/O1CN01HM4PUn1YAI2flH63N_!!6000000003018-2-tps-392-96.png) no-repeat 50%/contain;
+    width: 392rpx;
+}
+
+.n59.eza,.n59.ezh {
+    height: 96rpx;
+    opacity: .8;
+}
+
+.n59.ezh {
+    background: url(https://gw.alicdn.com/imgextra/i3/O1CN01teqLTM26iMR2hGcVc_!!6000000007695-2-tps-304-96.png) no-repeat 50%/contain;
+    width: 304rpx;
+}
+
+.n59.ez9 {
+    background: url(https://gw.alicdn.com/imgextra/i2/O1CN01O3ajPC27FnLZr9J6m_!!6000000007768-2-tps-196-96.png) no-repeat 50%/contain;
+    margin-right: 14rpx;
+    width: 200rpx;
+}
+
+.n59.ez9,.n59.n5c {
+    height: 96rpx;
+    opacity: .8;
+}
+
+.n59.n5c {
+    background: url(https://gw.alicdn.com/imgextra/i3/O1CN014BLZS31x1vC40vfP6_!!6000000006384-2-tps-146-96.png) no-repeat 50%/contain;
+    width: 146rpx;
+}
+
+.n59.n5z {
+    background: url(https://gw.alicdn.com/imgextra/i4/O1CN01FTCsl61oU0wfwlbj7_!!6000000005227-2-tps-140-96.png) no-repeat 50%/contain;
+    height: 96rpx;
+    opacity: .8;
+    width: 140rpx;
+}
+
+.n5t,.n5u,.n5v {
+    color: #ff5d80;
+    font-size: 48rpx;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 10rpx;
+    text-align: center;
+}
+
+.n5u::before,.n5v::before {
+    content: "¥";
+}
+
+.n5t::after,.n5u::before,.n5v::before {
+    color: #ff5d80;
+    display: inline-block;
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.n5t::after {
+    content: "折";
+}
+
+.n5d {
+    color: #ff5d80;
+    font-size: 20rpx;
+    line-height: 28rpx;
+    overflow: hidden;
+    padding: 0 20rpx;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nwe {
+    background: linear-gradient(86deg,#ff8249,#ff3e5f);
+    border-radius: 44rpx;
+    display: flex;
+    height: 80rpx;
+    justify-content: center;
+    line-height: 80rpx;
+    margin: 20rpx auto 0;
+    position: relative;
+    width: 480rpx;
+}
+
+.nwe,.nwn {
+    color: #fff;
+}
+
+.nwn {
+    font-size: 24rpx;
+    line-height: 90rpx;
+    margin-right: 2rpx;
+    vertical-align: text-bottom;
+}
+
+.nwc {
+    color: #fff;
+    font-size: 44rpx;
+    font-weight: 700;
+}
+
+.nwz {
+    line-height: 90rpx;
+    margin-left: 10rpx;
+    text-decoration: line-through;
+}
+
+.nw5 {
+    align-self: center;
+    background-color: #fff;
+    height: 32rpx;
+    margin: 0 20rpx;
+    opacity: .6;
+    width: 2rpx;
+}
+
+.nww {
+    color: #fff;
+    font-size: 36rpx;
+    font-weight: 500;
+}
+
+.nw3 {
+    background: #fff;
+    border: 2rpx solid #ff5d80;
+    border-radius: 14rpx 14rpx 14rpx 0;
+    color: #ff5d80;
+    content: "";
+    display: block;
+    font-size: 18rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    position: absolute;
+    right: -48rpx;
+    text-align: center;
+    top: -24rpx;
+    width: 116rpx;
+}
+
+.nw6 {
+    align-items: flex-end;
+    display: flex;
+    height: 60rpx;
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.nw6::after {
+    background-color: #979797;
+    content: "";
+    display: block;
+    height: 1px;
+    opacity: .2;
+    position: absolute;
+    top: 0;
+    transform: scaleY(.5);
+    width: 100%;
+}
+
+.nw2 {
+    height: 34rpx;
+    width: 34rpx;
+}
+
+.nws {
+    color: #666;
+    margin: 0 auto 0 12rpx;
+}
+
+.nwf,.nws {
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.nwf {
+    color: #ff5d80;
+}
+
+.nwf::after {
+    background: url(https://gw.alicdn.com/imgextra/i4/O1CN01Ahm3TH1aMm44SexRU_!!6000000003316-2-tps-5-10.png) no-repeat 50%/contain;
+    content: "";
+    display: inline-block;
+    height: 20rpx;
+    margin-left: 8rpx;
+    width: 10rpx;
+}

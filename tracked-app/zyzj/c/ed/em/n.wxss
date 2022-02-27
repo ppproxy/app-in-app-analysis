@@ -1,0 +1,144 @@
+.nci {
+    display: flex;
+    height: 144rpx;
+    width: 100%;
+}
+
+.nci,.nci .nc1 {
+    position: relative;
+}
+
+.nci .nc1 {
+    height: 100%;
+    text-align: center;
+    width: 200rpx;
+}
+
+.nci .nc1 .ncg {
+    align-items: center;
+    display: flex;
+    font-size: 44rpx;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.nci .ncm {
+    font-size: 30rpx;
+    font-weight: 900;
+    margin-bottom: -18rpx;
+    margin-right: 3rpx;
+}
+
+.nci .nc0 {
+    border-radius: 8rpx;
+    height: 112rpx;
+    margin-right: 16rpx;
+    width: 150rpx;
+}
+
+.nci .ncl {
+    height: 76rpx;
+    width: 117rpx;
+}
+
+.nci .ncq {
+    font-size: 30rpx;
+    margin-bottom: -13rpx;
+    margin-right: 3rpx;
+}
+
+.nci .ncr {
+    font-size: 60rpx;
+    font-weight: 500;
+    line-height: 56rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nci .ncx {
+    display: flex;
+    flex: 1;
+    margin-left: -18rpx;
+    position: relative;
+    width: 120rpx;
+}
+
+.nci .nc8 {
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.nci .ncj {
+    font-size: 26rpx;
+    font-weight: 800;
+    letter-spacing: 0;
+    margin-bottom: 15rpx;
+}
+
+.nci .nz4 {
+    font-size: 20rpx;
+    letter-spacing: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nci .e83 {
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    overflow: hidden;
+}
+
+.nci .nze {
+    height: 123rpx;
+    margin-top: 11rpx;
+    opacity: .5;
+}
+
+.nci .nzn {
+    height: 144rpx;
+    overflow: hidden;
+    position: relative;
+    width: 144rpx;
+}
+
+.nci .nzc {
+    font-size: 30rpx;
+    font-weight: 500;
+    line-height: 144rpx;
+    text-align: center;
+}
+
+.nci .nzz {
+    color: #ff1616;
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    font-size: 20rpx;
+    justify-content: center;
+    padding-left: 47rpx;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.nci .nzz .nz5 {
+    font-size: 26rpx;
+    font-weight: 900;
+    margin-bottom: 6rpx;
+}
+
+.nci .nzz .nz4 {
+    font-size: 20rpx;
+}

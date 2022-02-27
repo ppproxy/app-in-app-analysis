@@ -1,0 +1,7 @@
+<view class="cq4" style="height: calc(100vh - {{navigationBarHeight}}px)">
+    <view class="clx"></view>
+    <view class="cqe">
+        <custom-page-result bindhandleOk="handleButton" buttonText="去查看" icon="https://img.alicdn.com/tfs/TB1HvrokmslXu8jSZFuXXXg7FXa-400-347.png" showButton="{{true}}" subTitle="点击下方去查看" title="外卖订单需前往饿了么小程序查看" visible="{{true}}"></custom-page-result>
+    </view>
+    <view class="cl8 {{isShowTabbar?'clj':''}}"></view>
+</view>

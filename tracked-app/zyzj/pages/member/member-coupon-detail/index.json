@@ -1,0 +1,10 @@
+{
+    "disableScroll": false,
+    "usingComponents": {
+        "member-shake-code": "/c/ed/nk/n",
+        "navigation-bar": "/c/np/n",
+        "loading": "/c/ev/n",
+        "toast": "/c/z5/n"
+    },
+    "navigationStyle": "custom"
+}

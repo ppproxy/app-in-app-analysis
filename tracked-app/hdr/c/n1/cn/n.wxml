@@ -1,0 +1,5 @@
+<view class="nup {{'component-dish-item-add-num-icon-wrap'}}" data-track-custom-ordered-dish-name="{{orderedDishName}}" data-track-custom-ordered-num="{{dishPlaceNumShowText}}" data-track-custom-type="点餐页正餐已加购菜品信息" data-track-logkey=".orderfood_page_ordered-dish-num" onAppear="$logAppear" wx:if="{{dishPlaceNumShowText}}">
+    <view class="nuy">
+        <view class="nuo">{{dishPlaceNumShowText}}</view>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+<view wx:if="{{utils.show(code,orderStatus,tableName,takeYourselfMode)}}">
+    <view class="nkh" style="background-color: {{isFromOrderList?'transparent':'#fff'}}" wx:if="{{utils.showCode(takeYourselfMode,enableTakeStatus,takeCabinetNum)}}">
+        <view class="nk9">
+            <view class="nku">
+                <image class="nkv" mode="aspectFill" src="https://img.alicdn.com/imgextra/i4/O1CN01OKciTc1XHmqmDtKUX_!!6000000002899-55-tps-44-44.svg"></image>
+            </view> 自取号 </view>
+        <view class="nkt" style="color: {{themeColor}}">{{code}}</view>
+        <view class="nkd">自取时间： {{bookFlag?time:'立即自取'}}</view>
+    </view>
+    <view class="nps" style="background-color: {{isFromOrderList?'transparent':'#fff'}}" wx:elif="{{takeYourselfMode===TAKE_YOURSELF_MODE.TAKE_FOOD_TANK}}">
+        <view class="npf"> {{orderStatus===ORDER_STATUS.SUCCESS?'餐品已从餐柜中取出':'餐品已存放在取餐柜中'}} </view>
+        <view class="np7" style="justify-content: {{takeCabinetNum.length>2?'space-between':'center'}}">
+            <view class="npk" style="margin: {{takeCabinetNum.length>2?'24rpx 0 0 0':'24rpx 13rpx 0'}}" wx:for="{{takeCabinetNum}}" wx:key="index">
+                <view class="npp" style="{{orderStatus===ORDER_STATUS.WAIT_TAKE?'':'background: rgba(153, 153, 153, 1)'}}"></view>
+                <view class="npy" style="{{orderStatus===ORDER_STATUS.WAIT_TAKE?'':'color: #999'}}">{{item}}</view>
+            </view>
+        </view>
+        <view bindtap="handleOpenCabinet" class="npo" wx:if="{{!isFromOrderList&&orderStatus===ORDER_STATUS.WAIT_TAKE}}">一键开柜</view>
+    </view>
+    <view class="nkh" style="background-color: {{isFromOrderList?'transparent':'#fff'}}" wx:elif="{{takeYourselfMode===TAKE_YOURSELF_MODE.FLAPPER&&!enableTakeStatus}}">
+        <view class="nk9">
+            <view class="nku">
+                <image class="nkv" mode="aspectFill" src="https://img.alicdn.com/imgextra/i4/O1CN01OKciTc1XHmqmDtKUX_!!6000000002899-55-tps-44-44.svg"></image>
+            </view> 号牌 </view>
+        <view class="nkt" style="color: {{themeColor}}">{{tableName}}</view>
+        <view class="nkb {{!orderFlowNo?'nkm':''}}">
+            <view class="nki nk1">自取时间： 立即自取</view>
+            <view class="nki nkg" wx:if="{{orderFlowNo}}">流水号： {{orderFlowNo}}</view>
+        </view>
+    </view>
+    <view class="nkq" style="background-color: {{isFromOrderList?'transparent':'#fff'}}" wx:if="{{takeYourselfMode!==2&&enableVerificationMealCode===1}}">
+        <view wx:if="{{orderStatus!==ORDER_STATUS.SUCCESS}}">
+            <view catchtap="showVerificationModal">
+                <view class="nk8">
+                    <image class="nkj" src="{{barCode}}"></image>
+                </view>
+                <view class="nkr">
+                    <text>请向店员展示此核销码</text>
+                    <image class="nkx" src="https://img.alicdn.com/imgextra/i2/O1CN01luWaDM1M501H2wTir_!!6000000001382-55-tps-35-37.svg"></image>
+                </view>
+            </view>
+        </view>
+        <view class="np4" wx:elif="!isFromOrderList">
+            <image class="npe" src="https://img.alicdn.com/imgextra/i1/O1CN01qrsjkR1qOB4mrqEUp_!!6000000005485-55-tps-267-60.svg"></image>
+        </view>
+    </view>
+    <view catchtap="handleAlreadyTaken" class="npa {{'component-handle-already-taken-btn'}}" data-track-logkey=".keruyun_order_details.fetch_exposure" data-track-orderno="{{orderNo}}" onAppear="$logAppear" wx:elif="{{!isFromOrderList&&takeYourselfMode!==2&&(orderStatus===ORDER_STATUS.COOKING||orderStatus===ORDER_STATUS.WAIT_TAKE)}}"> 我已取餐 </view>
+</view>
+<custom-modal catchtap="noop" id="customShowModal"></custom-modal>
+<toast id="toast"></toast>
+<wxs module="utils" src="zl.wxs" />

@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "shop-info-item": "/c/cu/ci/c1/n",
+        "component-title": "/c/cu/cg/n",
+        "auth-geo-modal": "/c/e4/ee/n"
+    }
+}

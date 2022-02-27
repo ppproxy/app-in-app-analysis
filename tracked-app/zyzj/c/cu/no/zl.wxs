@@ -1,0 +1,74 @@
+var showBlock = (function(orderInfo) {
+    if (orderInfo.orderProductConfig !== 'SCAN_CODE_ORDER_PRE') {
+        return (false)
+    };
+    if (orderInfo.orderStatus === 'WAIT_PAY') {
+        return (false)
+    };
+    if (orderInfo.takeMealType === 'TO_TABLE') {
+        return (true)
+    };
+    if (orderInfo.takeMealType === 'SELF_TAKE') {
+        if (orderInfo.takeYourselfMode === 3) {
+            return (true)
+        };
+        if (orderInfo.orderStatus !== 'WAIT_RECEIPT' && orderInfo.mealCode) {
+            return (true)
+        }
+    };
+    return (false)
+});
+var isShowTakeText = (function(orderInfo) {
+    return (orderInfo.takeMealType === 'SELF_TAKE' && (orderInfo.mealCode || orderInfo.tableCode))
+});
+var getTakeText = (function(orderInfo) {
+    if (orderInfo.takeYourselfMode === 3) {
+        return ('号牌')
+    };
+    return ('取餐号')
+});
+var showTime = (function(orderInfo, takeTime) {
+    return ((orderInfo.orderStatus === 'COOKING' || orderInfo.orderStatus === 'RECEIPTED') && takeTime && orderInfo.showWaitingTime === 1)
+});
+var getGrderPreTips = (function(orderInfo) {
+    if (orderInfo.mealCode) {
+        if (orderInfo.orderStatusValue) {
+            return (orderInfo.orderStatusValue)
+        }
+    };
+    return (orderInfo.tips)
+});
+var showRightButton = (function(orderInfo) {
+    var isShow = false;
+    if (orderInfo.orderStatus === 'CLOSED') {
+        isShow = false
+    } else if (orderInfo.orderStatus === 'WAIT_PAY') {
+        isShow = true
+    } else if (isVerificationCode(orderInfo)) {
+        isShow = true
+    };
+    return (isShow)
+});
+var isVerificationCode = (function(orderInfo) {
+    var isTrue = false;
+    if (orderInfo.orderProductConfig === 'SCAN_CODE_ORDER_PRE' && orderInfo.orderStatus === 'WAIT_TAKE' && !orderInfo.mealCode) {
+        isTrue = true
+    };
+    return (isTrue)
+});
+var isHospitalMiniapp = (function(orderInfo) {
+    if (orderInfo.enableDistribution && orderInfo.enableDistribution === 1) {
+        return (true)
+    };
+    return (false)
+});
+module.exports = ({
+    showBlock: showBlock,
+    isShowTakeText: isShowTakeText,
+    getTakeText: getTakeText,
+    showTime: showTime,
+    getGrderPreTips: getGrderPreTips,
+    showRightButton: showRightButton,
+    isVerificationCode: isVerificationCode,
+    isHospitalMiniapp: isHospitalMiniapp,
+});

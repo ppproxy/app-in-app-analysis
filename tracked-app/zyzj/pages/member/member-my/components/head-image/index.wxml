@@ -1,0 +1,6 @@
+<view class="cp8" wx:if="{{selectedTemplate!=='DEFAULT_COLOR'}}">
+    <view class="cpj" style="background:{{brandColor}}" wx:if="{{selectedTemplate==='BRAND_COLOR'}}">
+        <image src="https://img.alicdn.com/imgextra/i2/O1CN01ZxmD9R296IKh5Iwl8_!!6000000008018-2-tps-405-321.png" style="width:50%;height:100%;position:absolute;right:0;top:0"></image>
+    </view>
+    <view class="cpj" style="background:url({{imageUrl}}) center/cover" wx:if="{{selectedTemplate==='CUSTOMIZE_IMAGES'}}"></view>
+</view>

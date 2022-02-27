@@ -1,0 +1,12 @@
+<view class="{{'component-send-coupon-has-button'}}" data-track-logkey=".send_coupon.has_button" onAppear="$logAppear" wx:if="{{!auto||auto&&showCoupon&&(hasWXCoupon||hasAlipayCoupon)}}">
+    <view class="{{'component-send-coupon-sync'}}" data-track-logkey=".send_coupon.has_button_sync" onAppear="$logAppear" wx:if="{{showCoupon&&(hasWXCoupon||hasAlipayCoupon)}}">
+        <send-coupon bind:customevent="wxSendCoupon" send_coupon_merchant="{{sendCouponMerchant}}" send_coupon_params="{{sendCouponParamsWX}}" sign="{{sign}}">
+            <slot></slot>
+        </send-coupon>
+    </view>
+    <view bindtap="handleTap" class="{{'component-send-coupon-no-sync'}}" data-track-logkey=".send_coupon.has_button_no_async" onAppear="$logAppear" wx:else>
+        <slot></slot>
+    </view>
+</view>
+<toast id="toast"></toast>
+<loading id="loading"></loading>

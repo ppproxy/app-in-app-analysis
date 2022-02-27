@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "orderfood-dish-add-cart": "/c/n1/c4/n",
+        "cook-image": "/c/eo/n",
+        "custom-member-price-label": "/c/n1/nj/n",
+        "ordered-num": "/c/n1/cn/n"
+    }
+}

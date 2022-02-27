@@ -1,0 +1,12 @@
+<view class="eja" style="{{surplusLabel||isShowStartNumber?'padding: 0 8rpx':''}}" wx:if="{{dishMenuColumn==='2'}}">
+    <text class="ej9">
+        <text>{{surplusLabel}}</text>
+        <block wx:if="{{isShowStartNumber&&!clearStatus}}">
+            <text style="margin: 0 2rpx" wx:if="{{surplusLabel}}">|</text>
+            <text>{{isShowStartNumber?startNumber+'份起购':''}}</text>
+        </block>
+    </text>
+</view>
+<view class="ejh" wx:else>
+    <text class="eju">{{surplusLabel}}</text>
+</view>

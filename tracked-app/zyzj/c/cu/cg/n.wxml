@@ -1,0 +1,3 @@
+<import src="./5g/wf.wxml"></import>
+<template is="text" data="{{title:title,themeColor:themeColor,boderColor:boderColor,textAlign:textAlign,style:style,containerStyle:containerStyle,styles:styles}}" wx:if="{{type==='text'}}"></template>
+<template is="image" data="{{titleUrl:titleUrl,themeColor:themeColor,boderColor:boderColor,textAlign:textAlign,style:style,imageStyle:imageStyle,imageMode:imageMode,containerStyle:containerStyle,styles:styles}}" wx:if="{{type==='image'}}"></template>

@@ -1,0 +1,11 @@
+<view class="nrz {{isIphoneXmore?'nr5':''}} {{slideUp?'nrw':''}}" wx:if="{{componentShow}}">
+    <view bindtap="handleClose" class="nrs">
+        <image class="nrf" mode="aspectFit" src="https://gw.alicdn.com/imgextra/i4/O1CN01Ae4Z3p1C1CclGZpfO_!!6000000000020-55-tps-22-22.svg" wx:if="{{imageShow}}"></image>
+    </view>
+    <image class="nr3" mode="heightFix" src="https://gw.alicdn.com/imgextra/i2/O1CN01c5m3Hh1juyAVup2u1_!!6000000004609-2-tps-338-82.png" wx:if="{{imageShow}}"></image>
+    <view class="nr6">
+        <view class="nr2">
+            <official-account binderror="handleError" bindload="handleLoad"></official-account>
+        </view>
+    </view>
+</view>

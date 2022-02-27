@@ -1,0 +1,18 @@
+<view bindtap="handleGoActivityPage" class="eo7 {{'component-member-collect-point'}}" data-track-activityId="{{activityId}}" data-track-logkey=".sybg" data-track-spmc="c1622464998788" data-track-spmd="d1622464998788" onAppear="$logAppear" wx:if="{{show}}">
+    <view class="nzg">
+        <view class="nzm">
+            <view class="nz0"> {{title}} </view>
+            <view class="eou">已集{{currentPoint}}/{{chargeLimit}}</view>
+        </view>
+        <view catchtap="handleGoOrderFood" class="eot" style="border-color: {{themeColor}}; color: {{themeColor}}" wx:if="{{currentPoint<chargeLimit}}"> 去下单 </view>
+        <view catchtap="handleApplyVoucher" class="eot" style="border-color: {{themeColor}}; color: {{themeColor}}" wx:else> 立即兑换 </view>
+    </view>
+    <view class="eop">
+        <view class="eoo {{item.last?'eoh':''}} {{styles[lineItemNum]}}" wx:for="{{points}}" wx:key="*this">
+            <member-collect-point-item icon="{{collectIconUrlGray}}" index="{{item.index}}" last="{{item.last}}" status="{{item.status}}" value="{{voucherTotalValue}}"></member-collect-point-item>
+        </view>
+    </view>
+</view>
+<toast id="toast"></toast>
+<loading id="loading"></loading>
+<auth-phone-modal bind:handleRootInstance="handleRootInstance" id="authPhoneModal"></auth-phone-modal>

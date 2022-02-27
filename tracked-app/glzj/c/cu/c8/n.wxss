@@ -1,0 +1,14 @@
+.nxj {
+    background: #fff6e6;
+    border-radius: 16rpx 0 0 16rpx;
+    box-shadow: 0 0 16px 0 rgba(88,70,52,.16);
+    color: #f63c28;
+    font-size: 24rpx;
+    letter-spacing: 6rpx;
+    padding: 14rpx 8rpx;
+    position: fixed;
+    right: 0;
+    top: 40%;
+    writing-mode: vertical-lr;
+    z-index: 30000;
+}

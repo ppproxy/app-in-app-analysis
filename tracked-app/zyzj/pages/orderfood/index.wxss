@@ -1,0 +1,21 @@
+.ee5 {
+    --bottom-tabbar-height: 0px;
+}
+
+.eew {
+    pointer-events: none;
+    width: 100%;
+    z-index: 800;
+}
+
+.ee3,.eew {
+    position: fixed;
+}
+
+.ee3 {
+    background-color: #fff;
+    height: 100vh;
+    top: 0;
+    width: 100vw;
+    z-index: 999;
+}

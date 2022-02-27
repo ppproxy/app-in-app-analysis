@@ -1,0 +1,245 @@
+.n55 {
+    margin-bottom: 14rpx;
+    margin-top: 14rpx;
+    position: relative;
+}
+
+.n55 .ezt {
+    display: flex;
+}
+
+.n5w {
+    background-color: #fff;
+    border-radius: 16rpx;
+    padding: 20rpx 32rpx;
+}
+
+.n53 {
+    align-items: center;
+}
+
+.n56 {
+    height: 74rpx;
+    width: 84rpx;
+}
+
+.n52 {
+    flex: 1;
+    margin-left: 16rpx;
+}
+
+.n52,.n5s {
+    overflow: hidden;
+}
+
+.n5s {
+    color: #191919;
+    font-size: 28rpx;
+    font-weight: 700;
+    line-height: 40rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.n5f {
+    color: #ff5d80;
+}
+
+.n57,.n5f {
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.n57 {
+    color: #999;
+    margin: 0 4rpx;
+    text-decoration: line-through;
+}
+
+.n5k {
+    background: #fff6f2;
+    border-radius: 8rpx;
+    color: #ff5d80;
+    display: inline-block;
+    font-size: 16rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    width: 112rpx;
+}
+
+.n5p {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.n5y {
+    background: linear-gradient(163deg,#ff8249,#ff3e5f);
+    border-radius: 28rpx;
+    color: #fff;
+    font-size: 24rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    text-align: center;
+    width: 144rpx;
+}
+
+.n5o {
+    color: rgba(25,25,25,.4);
+    font-size: 20rpx;
+    line-height: 28rpx;
+}
+
+.n5a {
+    background: #fff6f2;
+    border-radius: 16rpx;
+    box-sizing: border-box;
+    margin-top: 18rpx;
+    overflow-x: auto;
+    padding: 18rpx 30rpx;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.n5a.n5h {
+    padding-right: 0;
+}
+
+.n59 {
+    background-color: #fff;
+    display: inline-block;
+    margin-right: 14rpx;
+    position: relative;
+    vertical-align: middle;
+}
+
+.n59.eza {
+    background: url(https://gw.alicdn.com/imgextra/i2/O1CN01HM4PUn1YAI2flH63N_!!6000000003018-2-tps-392-96.png) no-repeat 50%/contain;
+    width: 392rpx;
+}
+
+.n59.eza,.n59.ezh {
+    height: 96rpx;
+    opacity: .8;
+}
+
+.n59.ezh {
+    background: url(https://gw.alicdn.com/imgextra/i3/O1CN01teqLTM26iMR2hGcVc_!!6000000007695-2-tps-304-96.png) no-repeat 50%/contain;
+    width: 304rpx;
+}
+
+.n59.ez9 {
+    background: url(https://gw.alicdn.com/imgextra/i2/O1CN01O3ajPC27FnLZr9J6m_!!6000000007768-2-tps-196-96.png) no-repeat 50%/contain;
+    width: 200rpx;
+}
+
+.n59.ez9,.n59.n5c {
+    height: 96rpx;
+    opacity: .8;
+}
+
+.n59.n5c {
+    background: url(https://gw.alicdn.com/imgextra/i3/O1CN014BLZS31x1vC40vfP6_!!6000000006384-2-tps-146-96.png) no-repeat 50%/contain;
+    width: 146rpx;
+}
+
+.n59.n5z {
+    background: url(https://gw.alicdn.com/imgextra/i4/O1CN01FTCsl61oU0wfwlbj7_!!6000000005227-2-tps-140-96.png) no-repeat 50%/contain;
+    height: 96rpx;
+    opacity: .8;
+    width: 140rpx;
+}
+
+.n5t,.n5u,.n5v {
+    color: #ff5d80;
+    font-size: 48rpx;
+    font-weight: 700;
+    line-height: 66rpx;
+    text-align: center;
+}
+
+.n5u::before,.n5v::before {
+    content: "¥";
+}
+
+.n5t::after,.n5u::before,.n5v::before {
+    color: #ff5d80;
+    display: inline-block;
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.n5t::after {
+    content: "折";
+}
+
+.n5d {
+    color: #ff5d80;
+    font-size: 20rpx;
+    line-height: 28rpx;
+    overflow: hidden;
+    padding: 0 20rpx;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.n5b,.n5i {
+    align-items: center;
+}
+
+.n5i {
+    background-color: #fff6f2;
+    border-radius: 16rpx;
+    display: flex;
+    flex: 1;
+    padding: 0 14rpx;
+}
+
+.n51 {
+    height: 78rpx;
+    width: 82rpx;
+}
+
+.n5g {
+    color: #191919;
+    flex: 1;
+    font-size: 26rpx;
+    font-weight: 700;
+    line-height: 36rpx;
+    margin: 0 14rpx 0 8rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.n5m {
+    font-size: 20rpx;
+    line-height: 28rpx;
+}
+
+.n50,.n5m {
+    color: #ff5d80;
+}
+
+.n50 {
+    font-size: 32rpx;
+    font-weight: 700;
+    line-height: 44rpx;
+}
+
+.n5l {
+    background: linear-gradient(163deg,#ff8249,#ff3e5f);
+    border-radius: 23rpx;
+    color: #fff;
+    flex: none;
+    font-size: 24rpx;
+    font-weight: 500;
+    height: 46rpx;
+    line-height: 46rpx;
+    margin-left: 12rpx;
+    text-align: center;
+    width: 128rpx;
+}

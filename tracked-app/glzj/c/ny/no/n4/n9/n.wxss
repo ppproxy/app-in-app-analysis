@@ -1,0 +1,73 @@
+.nkq {
+    background-color: var(--white);
+    border-radius: var(--border-radius-l);
+    color: var(--text-main);
+    padding: 32rpx 24rpx 0;
+    position: relative;
+    z-index: 2;
+}
+
+.nkq,.nkr {
+    font-size: 30rpx;
+}
+
+.nkr {
+    color: #666;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.nkx {
+    height: 28rpx;
+    margin-left: 4rpx;
+    vertical-align: middle;
+    width: 28rpx;
+}
+
+.nk8 {
+    padding-bottom: 20rpx;
+    text-align: center;
+}
+
+.nk8,.nkj {
+    height: 100rpx;
+}
+
+.nkj {
+    width: 358rpx;
+}
+
+.np4 {
+    color: #666;
+    font-size: 26rpx;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+}
+
+.npe {
+    height: 100rpx;
+    width: 358rpx;
+}
+
+.npn {
+    border-top: 1px solid hsla(0,0%,80%,.4);
+    margin: 0 -46rpx;
+    padding-top: 46rpx;
+}
+
+.npc {
+    height: 100rpx;
+    width: 358rpx;
+}
+
+.npz {
+    height: 320rpx;
+    width: 320rpx;
+}
+
+.np5 {
+    color: #999;
+    font-size: 24rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+}

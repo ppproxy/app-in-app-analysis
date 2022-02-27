@@ -1,0 +1,32 @@
+<custom-show-modal useBodySlot useFooterSlot useHeaderSlot id="customShowModal">
+    <view slot="header">
+        <view class="nsq">
+            <image class="nsr" mode="aspectFill" src="{{brandLogo}}"></image>
+            <text class="nsx">{{brandName}}</text>
+        </view>
+    </view>
+    <view slot="body">
+        <view class="ns8">
+            <view class="nsj">
+                <view class="nfn">
+                    <text>+86</text>
+                    <image class="nfc" src="https://img.alicdn.com/imgextra/i4/O1CN016QWBPN1V8xzVgUldc_!!6000000002609-55-tps-29-30.svg"></image>
+                </view>
+                <input bindinput="bindSmsInput" class="nfe" data-key="mobile" maxlength="11" name="mobile" placeholder="请输入手机号" type="number" value="{{sms.mobile}}"></input>
+                <view bindtap="handleSendVerifyCode" class="nf4" disabled="{{sms.mobile.length!==11||sms.pending}}"> {{sms.pending?sms.restText:'获取验证码'}} </view>
+            </view>
+            <view class="nsj">
+                <view class="nfn">
+                    <text>验证码</text>
+                </view>
+                <input bindinput="bindSmsInput" class="nfe" data-key="code" name="code" placeholder="请输入验证码" type="text" value="{{sms.code}}"></input>
+            </view>
+        </view>
+    </view>
+    <view slot="footer">
+        <view class="nfz">
+            <button bindtap="close" class="nf5">取消</button>
+            <button bindtap="joinMemberBySms" class="nfw" style="background-color: {{themeColor}}"> 加入 </button>
+        </view>
+    </view>
+</custom-show-modal>

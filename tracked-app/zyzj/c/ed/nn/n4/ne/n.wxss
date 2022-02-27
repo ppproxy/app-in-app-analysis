@@ -1,0 +1,76 @@
+.n6v {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24rpx;
+    overflow: hidden;
+}
+
+.n6v .n3y {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.n6v .n6t {
+    padding: 0 88rpx;
+}
+
+.n6v .n3y .ey1 {
+    align-items: flex-start;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30rpx;
+    width: 220rpx;
+}
+
+.n6v .n3y .n3o {
+    display: block;
+    height: 64rpx;
+    position: relative;
+    width: 64rpx;
+}
+
+.n6v .n3y .eoz {
+    border-radius: 100%;
+    height: 64rpx;
+    width: 64rpx;
+}
+
+.n6v .n3y .eqs {
+    height: 60rpx;
+    left: 10rpx;
+    position: absolute;
+    top: -20rpx;
+    width: 150rpx;
+    z-index: 1;
+}
+
+.n6v .n3y .n6d {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    margin-left: 16rpx;
+    text-align: left;
+}
+
+.n6v .n3y .n3h {
+    color: #333;
+    font-size: 24rpx;
+    font-weight: 500;
+    line-height: 1;
+    max-width: 130rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.n6v .n3y .n39 {
+    color: #cb935a;
+    font-size: 22rpx;
+    font-weight: 500;
+    line-height: 1;
+}

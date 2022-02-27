@@ -1,0 +1,59 @@
+.nls {
+    background-color: #fff;
+    position: fixed;
+    transition-property: transform,visibility;
+    visibility: hidden;
+}
+
+.nlf {
+    padding: 28rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.nlf image {
+    display: block;
+    height: 39rpx;
+    width: 39rpx;
+}
+
+.nl5 {
+    border-radius: 24rpx 24rpx 0 0;
+    bottom: 0;
+    transform: translate3d(0,100%,0);
+}
+
+.nl5,.nlw {
+    left: 0;
+    right: 0;
+}
+
+.nlw {
+    border-radius: 0 0 24rpx 24rpx;
+    top: 0;
+    transform: translate3d(0,-100%,0);
+}
+
+.nl3 {
+    border-radius: 0 24rpx 24rpx 0;
+    left: 0;
+    transform: translate3d(-100%,0,0);
+}
+
+.nl3,.nl6 {
+    bottom: 0;
+    top: 0;
+}
+
+.nl6 {
+    border-radius: 24rpx 0 0 24rpx;
+    right: 0;
+    transform: translate3d(100%,0,0);
+}
+
+.nl2 {
+    transform: translate3d(0,0,0);
+    visibility: visible;
+}

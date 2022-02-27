@@ -1,0 +1,2 @@
+<view class="exd {{styles[size]}}" style="{{extStyle}}" wx:if="{{num!==0}}"> {{num>99?'99+':num}}
+</view>

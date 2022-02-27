@@ -1,0 +1,41 @@
+<view wx:if="{{dishMenuColumn==='2'&&isInDishList}}">
+    <view catch:tap="handleShrinkClick" class="nu6 {{num>9?'nuf':''}}" style="background: {{themeColor}}" wx:if="{{isNumShrink&&num>0&&!isSoldOut}}">
+        <image class="nu2" mode="aspectFit" src="https://gw.alicdn.com/imgextra/i4/O1CN010uV4bj1Pqa3UR7APz_!!6000000001892-55-tps-12-12.svg"></image>
+        <view class="nus">{{num}}</view>
+    </view>
+    <view class="nu4 {{autoWidth?'nue':''}}" style="background: #fff" wx:else>
+        <view catch:tap="{{fromDetailPage?'comboMinusClick':'minusClick'}}" class="nun" wx:if="{{num>0}}">
+            <image class="nu7" src="{{minusDisabled||isSoldOut?'https://img.alicdn.com/imgextra/i1/O1CN01xhp3xi1kZjPu1OcKd_!!6000000004698-55-tps-44-44.svg':IconNumControlMinus}}"></image>
+        </view>
+        <view class="nu5 {{isSoldOut?'nuw':''}}" wx:if="{{num>0}}">
+            <text>{{num}}</text>
+        </view>
+        <view catch:tap="addClick" class="nuc">
+            <image class="nu7" src="{{plusDisabled||isSoldOut?'https://img.alicdn.com/imgextra/i1/O1CN01B9bAC725JLAu6BOUT_!!6000000007505-55-tps-44-44.svg':IconNumControlAdd}}"></image>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view wx:if="{{!onlyShowAdd}}">
+        <view class="nu4 {{autoWidth?'nue':''}}" wx:if="{{!isJustShowNum}}">
+            <view catch:tap="{{fromDetailPage?'comboMinusClick':'minusClick'}}" class="nun" wx:if="{{num>0}}">
+                <image class="nuz" src="{{minusDisabled||isSoldOut?'https://img.alicdn.com/imgextra/i1/O1CN010DE8k71KVu4oteBoo_!!6000000001170-55-tps-48-48.svg':IconNumControlMinus}}"></image>
+            </view>
+            <view class="nu5 {{isSoldOut?'nuw':''}}" wx:if="{{num>0}}">
+                <text>{{num}}</text>
+            </view>
+            <view catch:tap="addClick" class="nuc">
+                <image class="nuz" src="{{plusDisabled||isSoldOut?'https://img.alicdn.com/imgextra/i4/O1CN01PFSpx71WUmUl8Jhg1_!!6000000002792-55-tps-48-48.svg':IconNumControlAdd}}"></image>
+            </view>
+        </view>
+        <view class="nu4 {{autoWidth?'nue':''}}" wx:else>
+            <view class="nu5 {{isSoldOut?'nuw':''}}" wx:if="{{num>0}}">
+                <text>x{{num}}</text>
+            </view>
+        </view>
+    </view>
+    <view catch:tap="addClick" class="nuc" wx:else>
+        <image class="nuz" src="{{plusDisabled?'/assets/images/svgicon/num-control-add-disabled.svg':IconNumControlAdd}}"></image>
+        <view class="nu3" wx:if="{{num}}">{{num}}</view>
+    </view>
+</view>

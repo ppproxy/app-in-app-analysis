@@ -1,0 +1,9 @@
+.nq5 {
+    display: flex;
+    justify-content: center;
+}
+
+.nqw {
+    height: 280rpx;
+    width: 750rpx;
+}

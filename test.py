@@ -69,10 +69,14 @@ def walk(tree):
 #                             print(s)
 
 import re
-line = "index?q="
-# res = re.search(r'(.*)(\\?q=)?',line)
-# if res:
-#     print(res.group())
-# else:
-#     print("error")
-print(line.split("?")[0])
+# line = "index?q="
+# # res = re.search(r'(.*)(\\?q=)?',line)
+# # if res:
+# #     print(res.group())
+# # else:
+# #     print("error")
+# print(line.split("?")[0])
+
+s1 = "$abc"
+s2 = "abc"
+print(s1.__contains__(s2))

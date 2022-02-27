@@ -1,0 +1,13 @@
+<view class="n85" wx:if="{{dishes.length>0}}">
+    <view class="n8w" wx:if="{{showTitle}}">
+        <component-title textAlign="{{titleType==='text'?'left':'center'}}" title="{{name}}" titleUrl="{{titleImage}}" type="{{titleType}}"></component-title>
+    </view>
+    <scroll-view>
+        <view class="n83">
+            <view bindtap="onTapOrderInfo" class="n86 {{styles[dishes.length]}}" data-url="{{item.jumpUrl}}" wx:for="{{dishes}}" wx:key="index">
+                <recommend-dish-item-v2 addBtnType="{{dishes.length===1?'TEXT':'ICON'}}" aspectWidth="{{utils.getAspectWidth(dishes.length)}}" bind:handleRootInstance="handleRootInstance" dish="{{item}}" dishCount="{{dishes.length}}" flexDirection="{{dishes.length===1?'row':''}}" memberFlag="{{memberFlag}}" showContentGap="{{showContentGap}}" showCrosssPrice="{{dishes.length!==3}}"></recommend-dish-item-v2>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<wxs module="utils" src="zl.wxs" />

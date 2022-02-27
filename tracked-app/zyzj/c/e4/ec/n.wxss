@@ -1,0 +1,60 @@
+.ex2 {
+    background-color: #fff;
+    border-radius: 24rpx;
+    position: relative;
+    width: 600rpx;
+    z-index: 1000;
+}
+
+.exs {
+    background-image: url("https://img.alicdn.com/tfs/TB1cbhujPMZ7e4jSZFOXXX7epXa-1200-548.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 274rpx;
+    width: 100%;
+}
+
+.exf {
+    padding: 48rpx 48rpx 0rpx;
+}
+
+.ex7,.exf {
+    color: #333;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.ex7 {
+    padding: 0rpx 48rpx;
+}
+
+.exk {
+    padding: 32rpx 48rpx 48rpx;
+}
+
+.enw,.exk {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.enw {
+    border-radius: 40rpx;
+    color: #fff;
+    flex: 1;
+    font-size: 28rpx;
+    height: 80rpx;
+}
+
+.exp {
+    padding: 40rpx;
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+}
+
+.exp image {
+    display: block;
+    height: 23rpx;
+    width: 23rpx;
+}

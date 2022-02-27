@@ -1,0 +1,29 @@
+<view catchtouchmove="forbidMove" class="cm4 cm6" style="--primary: {{themeColor}}">
+    <view bind:tap="handleCancel" class="cme {{visible?'cmn':''}}"></view>
+    <view class="cmc cm9 {{visible?'cm5':''}}">
+        <view class="cm2">
+            <view class="n3h">优惠规则</view>
+            <view bind:tap="handleCancel" class="cg4">
+                <image class="cge" src="https://img.alicdn.com/imgextra/i4/O1CN01XC3nIA1VJxUw4pqRZ_!!6000000002633-55-tps-30-30.svg"></image>
+            </view>
+        </view>
+        <scroll-view class="cms" scrollX="{{false}}" scrollY="{{true}}">
+            <view class="cmf">
+                <view class="ewx"> 活动 </view>
+                <view class="cm7">
+                    <view class="cmk" wx:for="{{rulesList}}" wx:key="index">
+                        <view class="cmp">
+                            <view class="cmo">
+                                <image class="cma" src="https://img.alicdn.com/imgextra/i2/O1CN01ZqI2sd1HBnpH4mcwu_!!6000000000720-55-tps-32-32.svg"></image>
+                            </view>
+                        </view>
+                        <view class="cmy">
+                            <view class="n3h">{{item.title}}</view>
+                            <view class="cmh"> {{item.content}} </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,107 @@
+<custom-full-picture-modal useFullSlot id="customFullPictureModal" modalType="picture">
+    <view class="nlx" slot="full" wx:if="{{enable&&template===1}}">
+        <cook-image bindtap="jumpApp" class="nl7" mode="widthFix" src="{{imageUrl}}"></cook-image>
+    </view>
+    <view class="nlx" slot="full" wx:if="{{enable&&template===2&&contentType==='common'&&(actionType==='inner_app'||actionType==='promotion')}}">
+        <cook-image bindtap="jumpApp" class="nl7" mode="widthFix" src="{{imageUrl}}"></cook-image>
+    </view>
+</custom-full-picture-modal>
+<custom-show-full-slot-modal useFullSlot id="customShowFullSlotModal" modalType="picture">
+    <view slot="full">
+        <view class="nl1">
+            <image class="nlg" src="https://img.alicdn.com/tfs/TB1lk5A3Nz1gK0jSZSgXXavwpXa-582-650.svg"></image>
+            <view class="nlm" onTap="redEnvelopeInfo">
+                <image class="nl0" src="https://img.alicdn.com/tfs/TB13J8y3.Y1gK0jSZFMXXaWcVXa-470-146.svg"></image>
+                <view class="nll" wx:if="{{loading===false}}">立即领取</view>
+                <image class="nll nlq" src="https://img.alicdn.com/tfs/TB1ZihO3.T1gK0jSZFrXXcNCXXa-42-42.svg" wx:else></image>
+            </view>
+            <view class="nlr"> {{totalAmount}} </view>
+        </view>
+    </view>
+</custom-show-full-slot-modal>
+<custom-picture-modal useBodySlot id="customPictureModal" modalType="picture">
+    <view slot="body" wx:if="{{enable&&template===2&&contentType==='common'&&actionType==='goods'}}">
+        <view wx:if="{{actionContent.goods.saleStatus==='ON_SALE'}}">
+            <view class="nly">
+                <view class="nlo" wx:if="{{actionContent.goods.curPrice}}">
+                    <view class="nla" style="color: {{actionContent.goods.benefitType==='MEMBER_PRICE'?'#BE8B5E':'#FF301E'}}">
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType==='MEMBER_PRICE'}}">会员价¥</text>
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType!=='MEMBER_PRICE'}}">¥</text>
+                        <text class="nl9">{{actionContent.goods.curPrice}}</text>
+                    </view>
+                    <view class="nlu">
+                        <text>¥</text>
+                        <text class="nlv">{{actionContent.goods.orgPrice}}</text>
+                    </view>
+                </view>
+                <view class="nlo" wx:else>
+                    <view class="nla" style="color: {{actionContent.goods.benefitType==='MEMBER_PRICE'?'#BE8B5E':'#FF301E'}}">
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType==='MEMBER_PRICE'}}">会员价¥</text>
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType!=='MEMBER_PRICE'}}">¥</text>
+                        <text class="nl9">{{actionContent.goods.orgPrice}}</text>
+                    </view>
+                </view>
+                <view class="nlt">{{actionContent.goods.itemName}}</view>
+                <view class="nlb" wx:if="{{saleNum>20}}">已售{{saleNum}}</view>
+            </view>
+        </view>
+        <view wx:if="{{actionContent.goods.saleStatus!=='ON_SALE'}}">
+            <view class="nlk"></view>
+            <image class="nlp" src="https://img.alicdn.com/tfs/TB1jDnaTxv1gK0jSZFFXXb0sXXa-384-384.png" wx:if="{{actionContent.goods.saleStatus==='NO_QUANTITY'}}"></image>
+            <image class="nlp" src="https://img.alicdn.com/tfs/TB1jDnaTxv1gK0jSZFFXXb0sXXa-384-384.png" wx:if="{{actionContent.goods.saleStatus==='OFF_SALE'}}"></image>
+            <view class="nly">
+                <view class="nlo" wx:if="{{actionContent.goods.curPrice}}">
+                    <view class="nla" style="color: #999999">
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType==='MEMBER_PRICE'}}">会员价¥</text>
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType!=='MEMBER_PRICE'}}">¥</text>
+                        <text class="nl9">{{actionContent.goods.curPrice}}</text>
+                    </view>
+                    <view class="nlu">
+                        <text>¥</text>
+                        <text class="nlv">{{actionContent.goods.orgPrice}}</text>
+                    </view>
+                </view>
+                <view class="nlo" wx:else>
+                    <view class="nla" style="color: #999999">
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType==='MEMBER_PRICE'}}">会员价¥</text>
+                        <text class="nlh" wx:if="{{actionContent.goods.benefitType!=='MEMBER_PRICE'}}">¥</text>
+                        <text class="nl9">{{actionContent.goods.orgPrice}}</text>
+                    </view>
+                </view>
+                <view class="nlt" style="color: #999999">{{actionContent.goods.itemName}}</view>
+                <view class="nlb" wx:if="{{saleNum>20}}">已售{{saleNum}}</view>
+            </view>
+        </view>
+        <view wx:if="{{enable&&template===2&&contentType==='common'&&actionType==='goods'}}">
+            <button bindtap="jumpApp" class="nli" style="background-color: {{themeColor}}" wx:if="{{actionContent.goods.saleStatus==='ON_SALE'}}"> 立即抢购 </button>
+            <button bindtap="jumpApp" class="nli" style="background-color: {{themeColor}}" wx:if="{{actionContent.goods.saleStatus!=='ON_SALE'}}"> 再逛逛 </button>
+        </view>
+    </view>
+    <view slot="body" wx:if="{{enable&&template===2&&contentType==='common'&&actionType==='dish'}}">
+        <view class="nly">
+            <view class="nld">{{actionContent.dish.dishName}}</view>
+            <view class="nlo" style="color: #FF301E" wx:if="{{actionContent.dish.bestPrice}}">
+                <view class="nla">
+                    <text class="nlh">¥</text>
+                    <text class="nl9">{{actionContent.dish.bestPrice}}</text>
+                </view>
+                <view class="nlu">
+                    <text>¥</text>
+                    <text class="nlv">{{actionContent.dish.originPrice}}</text>
+                </view>
+            </view>
+            <view class="nlo" wx:else>
+                <view class="nla" style="color: #FF301E">
+                    <text class="nlh">¥</text>
+                    <text class="nl9">{{actionContent.dish.originPrice}}</text>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{enable&&template===2&&contentType==='common'&&actionType==='dish'}}">
+            <button bindtap="jumpApp" class="nli" style="background-color: {{themeColor}}"> 立即抢购 </button>
+        </view>
+    </view>
+</custom-picture-modal>
+<member-join-pop autoClose="{{false}}" bind:handleChange="handleChange" bind:handleRootInstance="handleRootInstance" wx:if="{{enable&&template===2&&contentType==='member'}}"></member-join-pop>
+<consumption-send-popup bind:handleConsumptionSendPopup="handleConsumptionSendPopup" bind:handleRootInstance="handleRootInstance" id="consumptionSendPopup" orderNo="{{orderNo}}"></consumption-send-popup>
+<toast id="toast"></toast>

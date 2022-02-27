@@ -1,0 +1,14 @@
+.exy {
+    color: #999;
+    font-size: 24rpx;
+    margin: 24rpx auto;
+    text-align: center;
+}
+
+.exy>view {
+    display: inline-block;
+}
+
+.exa {
+    color: var(--primary);
+}
