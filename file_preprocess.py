@@ -198,7 +198,7 @@ def parse_component(app_name, page_list):
     for component in components_set:
         component_file = component + ".js"
         if not os.path.isfile(component_file):
-            print(component_file + " 不存在")
+            print(component_file + " 组件js文件不存在")
         else:
             clean_js(component + ".js")
 
