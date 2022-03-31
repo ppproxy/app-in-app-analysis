@@ -67,7 +67,8 @@ def clean_js(file_path):
         while True:
             try:
                 line = next(it)
-                match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*: function\(.*\)', line)
+                # match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function\(.*\)', line)
+                match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function(\s*)\(.*\)(\s*)', line)
                 if match:
                     s = []
                     s_split = file_path.rsplit(".", 1)
@@ -173,8 +174,9 @@ def parse_component(app_name, page_list):
         page_one_json = BASE_PATH + app_name + "/" + page + ".json"
         with open(page_one_json, encoding="utf-8") as f:
             json_file = json.load(f)
-
-        if json_file:
+        # d = dict()
+        # d.__contains__()
+        if json_file and json_file.__contains__('usingComponents'):
             for _, component in json_file['usingComponents'].items():
                 now_path = os.path.dirname(page_one_json)
                 component_path = ""

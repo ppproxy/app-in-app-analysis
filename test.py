@@ -1,5 +1,5 @@
 import json
-
+import re
 # with open(".\jsonfile\ymylist-ast.json", encoding='utf-8') as f:
 #     json_file = json.load(f)
 # # # todo 从xml文件中解析
@@ -76,7 +76,13 @@ import re
 # # else:
 # #     print("error")
 # print(line.split("?")[0])
+#
+# s1 = "$abc"
+# s2 = "abc"
+# print(s1.__contains__(s2))
 
-s1 = "$abc"
-s2 = "abc"
-print(s1.__contains__(s2))
+match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function(\s*)\(.*\)(\s*)', "swiperchange:function(e) {")
+if match:
+    print(match.group(0))
+else:
+    print("unmatch")
