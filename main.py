@@ -22,7 +22,7 @@ def demo1():
     有组件方式
     :return:
     """
-    app_name = "mall-master"
+    app_name = "wbdemo"
     # 拿到所有主包页面，tar_bar页面，子包和子包页面
     page_list, tab_bar_list, sub_page_list_root, sub_page_list_pages = file_preprocess.parse_app_json(app_name)
     # print("******************page_list******************")
@@ -50,8 +50,8 @@ def demo1():
         page_result = analysis.process(app_name, page, page_components_map)
         analysis_result.append(page_result)
 
-    ##file_preprocess.delete_js_files(app_name, page_list)
-    #file_preprocess.delete_component_files(components_set)
+    file_preprocess.delete_js_files(app_name, page_list)
+    file_preprocess.delete_component_files(components_set)
     paint.create_graph(app_name, page_list, analysis_result, tab_bar_list, sub_page_list_pages)
 
 
