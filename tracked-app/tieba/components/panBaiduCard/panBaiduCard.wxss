@@ -1,0 +1,92 @@
+.pan-baidu-card {
+    margin-bottom: 16rpx;
+    padding: 14rpx 16rpx 0;
+    border-radius: 8rpx;
+    background: #fbf7fa;
+}
+
+.content {
+    display: flex;
+    border-bottom: 1rpx solid #e3e3e6;
+}
+
+.content .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 112rpx;
+    height: 112rpx;
+    margin: 0 24rpx 16rpx 0;
+    border-radius: 8rpx;
+    background: no-repeat center center / cover;
+}
+
+.content .text {
+    flex: 1;
+}
+
+.content .title {
+    display: -webkit-box;
+    overflow: hidden;
+    height: 30rpx;
+    margin: 22rpx 0 14rpx;
+    color: #141414;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.content .content-pan {
+    color: #8f8e94;
+    font-size: 24rpx;
+    line-height: 24rpx;
+}
+
+.content-pan .size {
+    margin-right: 16rpx;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    padding: 16rpx 0;
+    color: #8f8e94;
+    font-size: 24rpx;
+    line-height: 32rpx;
+}
+
+.text-content {
+    display: flex;
+    padding: 14rpx 0;
+}
+
+.text-content>image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 16rpx;
+}
+
+.info .btn-content {
+    display: flex;
+    margin-left: auto;
+}
+
+.info .btn {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 56rpx;
+    margin-left: 16rpx;
+    padding: 0 24rpx;
+    border: 1rpx solid #7559ff;
+    border-radius: 30rpx;
+    color: #7559ff;
+    font-size: 26rpx;
+}
+
+.video-icon {
+    width: 60rpx;
+    height: 60rpx;
+}

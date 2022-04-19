@@ -1,0 +1,16 @@
+<view bindtap="goPb" class="popular-item" data-tid="{{item.thread_id}}">
+    <view class="popular-top {{index===0?'top-first':index===1?'top-second':index===2?'top-third':'top-other'}}">
+        {{index+1}}
+    </view>
+    <view class="popular-text">
+        <view class="popular-text-title">
+            {{item.title}}
+        </view>
+        <view class="popular-text-heat">
+            热度{{item.hotNum}}w
+        </view>
+    </view>
+    <view class="popular-img">
+        <view class="{{!item.media[0].small_pic?'default-img':''}}" style="background-image:url({{item.media[0].small_pic||defaultImg}})"></view>
+    </view>
+</view>

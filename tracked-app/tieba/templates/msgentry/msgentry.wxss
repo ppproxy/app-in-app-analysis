@@ -1,0 +1,48 @@
+.msg-entry {
+    position: relative;
+    height: 100rpx;
+    text-align: center;
+}
+
+.msg-entry-core {
+    position: absolute;
+    top: 50%;
+    z-index: 300;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 68rpx;
+    margin: 0 auto;
+    padding-right: 44rpx;
+    padding-left: 10rpx;
+    border-radius: 18px;
+    background: url(https://tb5.bdstatic.com/xcx/icon_arrow10_blue_right@3x.png) no-repeat 90% center;
+    background-color: #fff;
+    background-size: 20rpx;
+    color: #7559ff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    line-height: 68rpx;
+    text-align: left;
+    opacity: .95;
+    transform: translate(-50%,-50%);
+}
+
+.blue {
+    background-color: #38f;
+}
+
+.white {
+    padding-bottom: 16rpx;
+    background-color: #fff;
+}
+
+.msg-avatar {
+    position: relative;
+    top: 10rpx;
+    display: inline-block;
+    width: 44rpx;
+    height: 44rpx;
+    margin-right: 4rpx;
+    border-radius: 50%;
+}

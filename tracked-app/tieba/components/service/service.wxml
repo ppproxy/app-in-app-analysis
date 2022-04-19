@@ -1,0 +1,11 @@
+<mask showmask="{{isServiceModal}}" wx:if="{{isServiceModal}}">
+    <view class="wx-service">
+        <view class="lead-app-title">请按以下引导打开APP</view>
+        <image catchtap="closeService" class="close-service" src="{{IMG_CDN}}/icon_topbar_close_n@3x.png"></image>
+        <view class="lead-app-txt">请在客服会话中发送卡片，下载贴吧APP</view>
+        <image class="lead-app-gif" src="{{IMG_CDN}}/lead-app.gif"></image>
+        <button class="lead-app-btn" openType="contact" sendMessageImg="{{IMG_CDN}}/dianjifasong.png" sendMessagePath="{{path}}" sendMessageTitle="{{title}}" showMessageCard="true">
+            好的，前往打开
+        </button>
+    </view>
+</mask>

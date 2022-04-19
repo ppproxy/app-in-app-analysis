@@ -1,0 +1,32 @@
+<import src="/templates/msgcard/msgcard.wxml"></import>
+<import src="/templates/fallback/fallback.wxml"></import>
+<view class="msgtab-wrap">
+    <view class="msg-container">
+        <view class="msg-tabs">
+            <login-component bindloginSuccess="goMsglist" data-say="atme">
+                <view bindtap="goMsglist" class="msg-tab-item at {{atCount>0?'red-point':''}}" data-say="atme">
+                        @我的
+                    </view>
+            </login-component>
+            <login-component bindloginSuccess="goMsglist" data-say="agreeme">
+                <view bindtap="goMsglist" class="msg-tab-item good {{agreeCount>0?'red-point':''}}" data-say="agreeme">
+                        点赞
+                    </view>
+            </login-component>
+        </view>
+        <view class="msg-content" wx:for="{{msgList}}" wx:for-item="msg" wx:key="index">
+            <template is="msgcard" data="{{...msg,IMG_CDN:IMG_CDN}}"></template>
+        </view>
+        <template is="fallback" data="{{errorMsg:'数据加载失败'}}" wx:if="{{isBroken}}"></template>
+        <template is="fallback" data="{{errorMsg:'你还没有新的消息哦～'}}" wx:if="{{isEmpty}}"></template>
+        <template is="fallback" data="{{errorMsg:'还没有登录哦～'}}" wx:if="{{isLogin===false}}"></template>
+        <view class="msgtab-loading-style" wx:if="{{isMore}}">
+            <image class="loading-image-style" src="/images/loading@2x.gif"></image>
+        </view>
+        <view class="no-more" wx:if="{{!hasMore&&!isEmpty}}">暂无更多回复</view>
+    </view>
+    <view wx:if="{{isShowInput}}">
+        <reply-textarea bindblur="hideInput" bindcollect="collect" bindfocus="focus" bindsubmit="submit" isFocus="{{true}}" isProThread="{{isProThread}}" parentPlaceHolder="{{placeholderTxt}}"></reply-textarea>
+    </view>
+</view>
+<login-modal id="login-com" showLoginModal="{{showLoginModal}}"></login-modal>

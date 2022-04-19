@@ -1,0 +1,14 @@
+<view>
+    <view class="download-app">
+        <image class="logo-png" src="https://tb5.bdstatic.com/xcx/new-logo.png"></image>
+        <view class="download-text">
+            <view>百度贴吧</view>
+            <view>聊兴趣 上贴吧</view>
+        </view>
+        <view>
+            <tb-wakeup config="{{wakeupConfig}}" page="{{page}}" trackAnalysis="launch_app_top">
+                <view class="callApp">立即打开</view>
+            </tb-wakeup>
+        </view>
+    </view>
+</view>

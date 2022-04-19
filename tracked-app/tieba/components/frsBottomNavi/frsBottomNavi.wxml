@@ -1,0 +1,12 @@
+<view bindtap="clickModel" class="tab-bar-model" style="display: {{isShowMenu?'':'none'}}"></view>
+<view class="tab-bar border-top" wx:if="{{bottomMenu&&bottomMenu.length>0}}">
+    <view bindtap="clickTab" class="tab-bar-item {{index+1===bottomMenu.length?'':'border-right'}} {{isShowMenu&&showMenuIndex===index?'tab-bar-item-active':''}}" data-has-submenu="{{item.submenu&&item.submenu.length>0}}" data-index="{{index}}" data-type="{{item.type}}" data-url="{{item.url}}" hoverClass="tab-bar-item-hover" hoverStayTime="200" wx:for="{{bottomMenu}}" wx:key="index">
+        <text class="tab-item-content tab-item-icon" wx:if="{{item.submenu&&item.submenu.length>0}}"></text>
+        <text class="tab-item-content">{{item.name}}</text>
+        <view class="menu-list {{showMenuIndex===index?menuAnimation:''}}" style="display: {{isShowMenu&&showMenuIndex===index?'':'none'}}">
+            <view bindtap="clickMenu" class="menu-item border-bottom" data-type="{{menuItem.type}}" data-url="{{menuItem.url}}" hoverClass="menu-item-hover" wx:for="{{item.submenu}}" wx:for-item="menuItem" wx:key="index">
+                {{menuItem.name}}
+            </view>
+        </view>
+    </view>
+</view>

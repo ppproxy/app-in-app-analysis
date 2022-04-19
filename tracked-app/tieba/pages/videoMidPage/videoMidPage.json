@@ -1,0 +1,11 @@
+{
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#000000",
+    "navigationBarTitleText": "贴吧",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#000000",
+    "usingComponents": {
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

@@ -1,0 +1,14 @@
+<template name="morepics">
+    <view class="more-pics-wrap smallapp-morepics" wx:if="{{item.imageMedia.length>1}}">
+        <view class="forum-content multiple-image-content" data-tid="{{item.tid}}">
+            <view class="multiple-image-item" wx:for="{{item.imageMedia}}" wx:for-item="innerItem" wx:key="index">
+                <img-viewer class="forum-content-image" isGif="{{innerItem.isGif}}" mode="aspectFill" src="{{isUseThumbnail?innerItem.small_pic:innerItem.big_pic}}" staticImg="{{innerItem.static_img||innerItem.big_pic}}" tid="{{item.tid}}" totalNum="{{index===2&&item.allPicLens-item.imageMedia.length}}"></img-viewer>
+            </view>
+        </view>
+    </view>
+    <view class="single-image-content" wx:if="{{item.imageMedia.length===1}}">
+        <view class="single-image-item" style="width: {{item.imageMedia[0].width}}px; height: {{item.imageMedia[0].height}}px;">
+            <img-viewer isGif="{{item.imageMedia[0].isGif}}" mode="aspectFill" src="{{item.imageMedia[0].static_img||item.imageMedia[0].big_pic}}" staticImg="{{item.imageMedia[0].static_img||item.imageMedia[0].big_pic}}" tid="{{item.tid}}"></img-viewer>
+        </view>
+    </view>
+</template>

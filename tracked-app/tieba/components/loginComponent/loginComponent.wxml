@@ -1,0 +1,7 @@
+<view class="login" wx:if="{{isBaidu&&!isLogin&&canIUseLoginButton}}">
+    <button bindlogin="toLogin" class="login-btn" openType="login"></button>
+    <slot></slot>
+</view>
+<view class="login" wx:else>
+    <slot></slot>
+</view>

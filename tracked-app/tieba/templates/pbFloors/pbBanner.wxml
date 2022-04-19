@@ -1,0 +1,73 @@
+<view bindtap="bannerClickHandler" class="t-banner" data-metadata="{{item.originBanner}}">
+    <view class="t-banner__wrapper" wx:if="{{item.isEmptyGoods===false}}">
+        <view class="t-banner__header">
+            <view class="t-media">
+                <view class="t-media__left">
+                    <image class="t-banner__icon" lazyLoad="true" src="{{item.avatar}}"></image>
+                </view>
+                <view class="t-media__body">
+                    <view class="t-banner__title" data-locate="image">
+                            {{item.name}}
+                        </view>
+                    <view class="t-banner__subtitle">
+                            刚刚
+                        </view>
+                </view>
+                <view class="t-media__right"></view>
+            </view>
+        </view>
+        <view class="t-banner__body">
+            <view class="t-text">
+                <view class="t-text__paragraph">
+                        {{item.title}}
+                    </view>
+            </view>
+            <view class="t-atlas t-atlas-{{item.mediaComposeType===3?3:1}}" wx:if="{{!item.isVideo}}">
+                <view class="t-row">
+                    <view class="t-col-{{item.mediaComposeType===3?4:12}}" wx:for="{{item.media}}" wx:for-index="idx" wx:for-item="media">
+                        <view class="t-atlas__item">
+                            <view class="t-image t-image--{{idx===0?'first-child':idx===item.media.length-1?'last-child':'middle-child'}}">
+                                <view class="t-image__container">
+                                    <view class="t-image__cover" style="padding-top: {{media.height/media.width*100}}%">
+                                        <image bindtap="return false" class="t-image__img" src="{{media.src}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="t-atlas t-atlas-1 t-atlas-{{item.isVertical?'vertical':'horizontal'}}" wx:else>
+                <view class="t-row">
+                    <view class="t-col-12">
+                        <view class="t-atlas__item">
+                            <view class="t-image">
+                                <view class="t-image__container">
+                                    <view class="t-image__cover" style="padding-top: {{item.video.height/item.video.width*100}}%">
+                                        <image bindtap="return false" class="t-image__img" lazyLoad="true" src="{{item.video.src}}"></image>
+                                    </view>
+                                </view>
+                                <image bindtap="return false" class="t-image__playbtn" lazyLoad="true" src="{{IMG_CDN}}/play.png"></image>
+                                <view class="t-image__duration">
+                                            {{item.video.duration}}
+                                        </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="t-banner__footer">
+            <view class="t-banner__name">
+                    {{item.name}}
+                </view>
+            <view class="t-banner__banner-type">
+                    {{item.text}}
+                </view>
+            <view class="t-banner__dnbtn-box">
+                <view class="t-banner__dn-btn" data-locate="download" wx:if="{{item.isDownload}}">立即下载</view>
+                <view class="t-banner__dn-btn" wx:else>立即查看</view>
+            </view>
+        </view>
+    </view>
+</view>

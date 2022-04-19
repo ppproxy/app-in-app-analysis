@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "mask": "/components/mask/mask",
+        "scroll-item": "/components/scrollItem/scrollItem",
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "ios-wakeup-component": "/components/iosWakeUpComponent/iosWakeUpComponent",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

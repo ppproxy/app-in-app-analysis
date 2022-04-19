@@ -1,0 +1,12 @@
+<view class="wx-auth-mask" wx:if="{{isShow&&appType!=='baidu'}}">
+    <view class="wx-auth-modal">
+        <view bindtap="closeModal" class="close"></view>
+        <view class="title">授权百度贴吧</view>
+        <image class="tb-logo" src="{{IMG_CDN}}/new-logo.png"></image>
+        <view class="content">需要{{appType==='weixin'?'微信':'QQ'}}授权后登陆</view>
+        <view class="txt">登陆后可以体验更多精彩功能哦</view>
+        <view bindtap="goAgreement" class="agreement">点击查看 <text>隐私说明</text>
+        </view>
+        <button bindgetuserinfo="bindGetUserInfo" class="auth auth-btn" hoverClass="hover-class" openType="getUserInfo">立即授权</button>
+    </view>
+</view>

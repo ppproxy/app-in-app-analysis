@@ -1,0 +1,1 @@
+<text catchtap="goLink" class="text-copy {{isPan||jumpUrl?'link':''}}">{{jumpUrl?'网页链接':linkText}}</text>

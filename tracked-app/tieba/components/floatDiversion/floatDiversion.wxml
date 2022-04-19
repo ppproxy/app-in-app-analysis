@@ -1,0 +1,6 @@
+<view class="float-icon {{isScrolling?'is-scroll':''}}" wx:if="{{isShow&&leftCount>=0}}">
+    <tb-wakeup bindwakeupClick="wakeupClick" class="wake-up" config="{{wakeupConfig}}" isOpenApp="{{!!wakeupConfig}}" page="{{page}}">
+        <image class="main-icon" mode="aspectFill" src="{{imgUrl}}"></image>
+    </tb-wakeup>
+    <image bindtap="closeFloatDiversion" class="close" mode="aspectFit" src="../../images/icon_post_image_delete_n@3x.png"></image>
+</view>

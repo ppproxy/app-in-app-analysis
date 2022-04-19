@@ -1,0 +1,10 @@
+<view class="select-wrap">
+    <view catchtap="toggleSpread" class="select-title">{{defaultValue}}</view>
+    <view class="left-icon {{selfShowList?'up':'down'}}"></view>
+    <view class="select-list {{selfShowList?'show':'hide'}}" wx:if="{{selfShowList}}">
+        <view catchtap="change" class="select-item {{index!==0?'border-top':''}} {{item.default?'active':''}}" data-item="{{item}}" wx:for="{{selfSelectDatas}}" wx:key="index">
+            {{item.value}}
+        </view>
+    </view>
+</view>
+<view catchtouchstart="close" class="select-mask" wx:if="{{selfShowList}}"></view>

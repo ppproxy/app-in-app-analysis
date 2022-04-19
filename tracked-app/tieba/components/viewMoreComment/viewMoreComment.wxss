@@ -1,0 +1,24 @@
+.comment-more {
+    position: relative;
+    width: 100%;
+    height: 196rpx;
+    background-image: linear-gradient(180deg,rgba(255,255,255,) 0%,#fff 63%,#fff 100%);
+}
+
+.comment-more-text {
+    position: absolute;
+    bottom: 16rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #614ec2;
+    font-size: 26rpx;
+}
+
+.arrow {
+    width: 30rpx;
+    height: 30rpx;
+    background: url(https://tb3.bdstatic.com/public/img/icon_double_right.670f568f.png) center center no-repeat;
+    background-size: contain;
+}

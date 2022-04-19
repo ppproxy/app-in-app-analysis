@@ -1,0 +1,14 @@
+<view bindtap="closeDialog" class="mask" wx:if="{{showJumpPage}}">
+    <view catchtap="empty" class="jump-dialog-wrap {{isVideo?'video-dialog':''}}">
+        <view class="page-num-wrap">
+            <text class="page-num">跳转至</text>
+            <input adjustPosition="false" bindinput="change" class="page-num page-num-input" type="number" value="{{jumpPageNum}}"></input>
+            <text class="page-num">页</text>
+        </view>
+        <view class="current-page-info">当前{{currentPage}}/{{totalPage}}页</view>
+        <view class="dialog-btn-wrap border-top">
+            <view catchtap="closeDialog" class="dialog-btn border-right">取消</view>
+            <view catchtap="sure" class="dialog-btn dialog-submit">确定</view>
+        </view>
+    </view>
+</view>

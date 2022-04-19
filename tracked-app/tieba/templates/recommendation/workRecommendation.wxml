@@ -1,0 +1,13 @@
+<view class="work-recommendation-item">
+    <view class="left-box">
+        <view class="headtitle">{{item.title}}</view>
+        <view class="subtitle">
+            <text>{{item.author.name_show}}</text>
+            <text class="reply-txt">评论{{item.reply_num}}<text></text>
+            </text>
+        </view>
+    </view>
+    <view class="right-box">
+        <image class="image" mode="aspectFill" src="{{item.feedImg}}"></image>
+    </view>
+</view>

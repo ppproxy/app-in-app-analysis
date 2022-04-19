@@ -1,0 +1,21 @@
+.error-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-style .error-image-style {
+    display: block;
+    width: 452rpx;
+    margin-top: 140rpx;
+    text-align: center;
+}
+
+.error-style .error-text-style {
+    display: block;
+    width: 100%;
+    margin-top: 100rpx;
+    color: #000;
+    font-size: 32rpx;
+    text-align: center;
+}

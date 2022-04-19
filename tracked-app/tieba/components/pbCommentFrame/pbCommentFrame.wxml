@@ -1,0 +1,13 @@
+<view catchtap="togglemask" class="mask" style="display: {{showComments?'block':'none'}}">
+    <view catchtap="empty" class="pb-comments-container {{isIPX?'pb-comments-container-ipx':''}}">
+        <view catchtap="close" class="close">
+            <image class="close-pic" src="/images/icon_close12_gray60@3x.png"></image>
+        </view>
+        <view class="pb-comments-number">{{commentsNums}}条回复</view>
+        <view class="comments-content">
+            <pb-comments bindchangeComments="changeComments" bindcollect="collect" bindgoFirstOrFetchMore="goFirstOrFetchMore" bindinputFocus="inputFocus" bindonBottom="onBottom" bindshare="share" bindsortBy="sortBy" commentsNums="{{commentsNums}}" concatData="{{concatData}}" concatType="{{concatType}}" floorDatas="{{floorDatas}}" hasMore="{{hasMore}}" isVertical="{{true}}" needScroll="{{true}}" page="pages/videoPb/videoPb" replyMainFloor="{{replyMainFloor}}" scene="pbCommentFrame" showAds="{{false}}" showFolder="{{false}}" showJumpBar="{{showJumpBar}}"></pb-comments>
+        </view>
+        <view class="mock-input-wrap {{isIPX?'IPX-bottom':''}}"></view>
+    </view>
+</view>
+<jump-page bindchange="jumpPageNumChange" bindcloseJumpPage="closeJumpPage" bindsure="jumpPage" currentPage="{{pageInfo.current_page}}" jumpPageNum="{{jumpPageNum}}" showJumpPage="{{isShowPageJumpDialog}}" totalPage="{{pageInfo.total_page}}"></jump-page>

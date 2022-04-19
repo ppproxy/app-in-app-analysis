@@ -1,0 +1,9 @@
+<view class="next-forum-wrap">
+    <view class="next-forum-container">
+        <view class="next-forum-title" wx:if="{{title}}">{{title}}</view>
+        <view class="next-forum-abstract" wx:if="{{abstract}}">{{abstract}}</view>
+        <image class="content-image" src="{{contentImage}}" wx:if="{{contentImage}}"></image>
+        <view class="next-forum-mask"></view>
+    </view>
+    <view class="next-tip" id="next-tip-flag">上拉看下一条帖子</view>
+</view>

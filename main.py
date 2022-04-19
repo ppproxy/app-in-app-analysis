@@ -15,6 +15,8 @@ import paint
         页面关系，只需分析主包。
         组件，分析子包和主包    
 '''
+
+
 # todo 解决正常源代码情况下对于各种不同函数的 匹配，例如 getNote(){}  async getNum(){} 这类函数定义
 
 def demo1():
@@ -22,7 +24,7 @@ def demo1():
     有组件方式
     :return:
     """
-    app_name = "wbdemo"
+    app_name = "tieba"
     # 拿到所有主包页面，tar_bar页面，子包和子包页面
     page_list, tab_bar_list, sub_page_list_root, sub_page_list_pages = file_preprocess.parse_app_json(app_name)
     # print("******************page_list******************")
@@ -60,7 +62,7 @@ def demo2():
     无组件方式
     :return:
     """
-    app_name = "ng"
+    app_name = "wb"
     all_pages, tab_bar_list = file_preprocess.parse_app_json(app_name)
     file_preprocess.parse_js(app_name, all_pages)
     file_preprocess.generate_js_ast(app_name, all_pages)
@@ -78,3 +80,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# 辅助开发者去除漏洞
+# 自动化诊断漏洞

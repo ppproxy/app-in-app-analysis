@@ -1,0 +1,3 @@
+<view class="star">
+    <image src="{{item.src}}" wx:for="{{starList}}" wx:key="index"></image>
+</view>

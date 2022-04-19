@@ -1,0 +1,34 @@
+<view class="reply-container {{isIPX?'IPX-bottom':'noIPX-bottom'}}">
+    <view class="items-wrap">
+        <view class="textarea-wrap">
+            <view bindtap="forBidden" class="mock-textarea" wx:if="{{isProThread}}">
+                {{placeholder}}
+            </view>
+            <input adjustPosition="{{true}}" autoFocus="{{isFocus}}" bindblur="blur" bindconfirm="commit" bindfocus="focus" bindinput="keyup" class="textarea" cursorSpacing="{{8}}" disabled="{{false}}" focus="{{isFocus}}" placeholder="{{placeholder}}" placeholderClass="plh" showConfirmBar="{{false}}" value="{{inputData}}" wx:else></input>
+        </view>
+        <view catchtap="toWhere" class="comment" wx:if="{{!isFocus&&showComment}}">
+            <view class="icon-num" wx:if="{{commentNum&&commentNum>=1}}">
+                {{commentNum-1>999?'999+':commentNum-1}}
+            </view>
+            <image class="icon" src="{{IMG_CDN}}/icon_comment_grey.png"></image>
+        </view>
+        <login-component bindloginSuccess="collect" data-type="{{isCollect?0:1}}" wx:if="{{!isFocus&&showCollect}}">
+            <view catchtap="collect" class="collect">
+                <image class="icon" data-type="0" src="{{IMG_CDN}}/icon_collect_yellow.png" wx:if="{{isCollect}}"></image>
+                <image class="icon" data-type="1" src="{{IMG_CDN}}/icon_collect_grey.png" wx:else></image>
+            </view>
+        </login-component>
+        <view class="button-wrap">
+            <login-component bindloginSuccess="loginSuccessCommit">
+                <view bindtouchstart="btncommit" class="send-btn {{!inputData?'noval':''}}" wx:if="{{isFocus}}">
+                    发送
+                </view>
+            </login-component>
+        </view>
+        <button catchtap="share" class="button-wrap {{!isBaidu?'reply-share-btn':'swan-reply-share-btn'}}" data-forum-name="{{forumName}}" data-index="{{index}}" data-item="{{item}}" data-tid="{{tid}}" data-track="share_bar_icon" openType="share" wx:if="{{isShare&&!isFocus}}">
+            <image class="icon share-icon" src="{{IMG_CDN}}/icon_share_wechat26.png" wx:if="{{!isBaidu&&isOpenApp}}"></image>
+            <image class="icon share-icon" src="{{IMG_CDN}}/icon_share_grey18.png" wx:else></image>
+        </button>
+    </view>
+</view>
+<view class="mask" wx:if="{{isFocus}}"></view>

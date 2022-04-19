@@ -4,6 +4,16 @@ import re
 
 BASE_PATH = "./tracked-app/"
 
+KEY_WORDS = {"abstract", "arguments", "boolean", "break", "byte", "case", "catch", "char", "class*", "const"
+                                                                                                     "continue",
+             "debugger", "default", "delete", "do", "double", "else", "enum*", "eval", "export*",
+             "extends*", "false", "final", "finally", "float", "for", "function", "goto", "if", "implements",
+             "import*", "in", "instanceof", "int", "interface", "let", "long", "native", "new", "null",
+             "package", "private", "protected", "public", "return", "short", "static", "super*", "switch",
+             "synchronized", "this", "throw", "throws", "transient", "true", "try", "typeof", "var", "void",
+             "volatile", "while", "with", "yield"
+             }
+
 
 def parse_app_json(app_name):
     """
@@ -60,6 +70,7 @@ def parse_js(app_name, page_list):
             clean_js(page_path)
 
 
+# todo: 更改正则表达式，让正则表达式来使用不同场景的代码分析
 def clean_js(file_path):
     with open(file_path, encoding="utf-8") as f:
         lines = f.readlines()
@@ -68,26 +79,37 @@ def clean_js(file_path):
             try:
                 line = next(it)
                 # match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function\(.*\)', line)
-                match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function(\s*)\(.*\)(\s*)', line)
+                if line.strip().startswith("//"):
+                    continue
+                # match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function(\s*)\(.*\)(\s*)', line)
+                match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function(\s*)(.*?)\(.*\)(\s*)', line)
                 if match:
                     s = []
                     s_split = file_path.rsplit(".", 1)
                     # clean_js_file = BASE_PATH + app_name + "/" + page + "-clean" + ".js"
                     clean_js_file = s_split[0] + "-clean." + s_split[1]
-                    with open(clean_js_file, "a", encoding="utf-8") as f:
+                    with open(clean_js_file, "a", encoding="utf-8") as c_f:
+                        # 这一部分用来检测空函数 onLoad : function(){},
                         for c in line:
                             if c == '{':
                                 s.append('{')
                             elif c == '}':
                                 s.pop()
-                        if len(s) <= 0 and line.__contains__("},"):
-                            line = line.replace("},", "}").strip() + "\n"
+                        if len(s) <= 0 and "}," in line:
+                            line = "\n" + line.replace("},", "}").strip() + "\n"
                         func_info = line.split(":")
-                        func_name = func_info[0]
+
+                        func_name = func_info[0].strip()
+                        # 增加方法名是不是JS关键字的检测
+                        if func_name in KEY_WORDS:
+                            func_name = "_" + func_name
+
+
                         param = func_info[1]
                         param_info = param.split("(")[1]
                         # print("function " + func_name.strip() + "(" + param_info)
-                        f.write("function " + func_name.strip() + "(" + param_info)
+                        c_f.write("function " + func_name + "(" + param_info)
+                        # 从这里开始检测非空函数
                         while len(s) > 0:
                             ne = next(it)
                             for c in ne:
@@ -96,8 +118,8 @@ def clean_js(file_path):
                                 elif c == '}':
                                     s.pop()
                             if len(s) == 0:
-                                ne = ne.replace("},", "}").strip() + "\n"
-                            f.write(ne)
+                                ne = "\n" + ne.replace("},", "}").strip() + "\n"
+                            c_f.write(ne)
                             # print(ne)
             except StopIteration:
                 break
@@ -248,3 +270,6 @@ def tmp_delete(file_path):
 # # (\s+)?function(\s+)?\\(.*\\)
 # match = re.findall(r'[a-zA-Z][a-zA-Z0-9_]*: function\(.*\)', s)
 # print(match)
+# line = "func},func"
+# print("}," in line)
+# clean_js("E:\WorkSpace\\app-in-app-analysis\\test_file\\test.js")

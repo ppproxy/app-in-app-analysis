@@ -1,0 +1,31 @@
+<template name="msgcard">
+    <view bindtap="goPb" class="msg-card" data-fid="{{forum_id}}" data-lzl="{{is_floor?true:false}}" data-pid="{{post_id}}" data-qid="{{quote_pid}}" data-tid="{{thread_id}}">
+        <image class="portrait" lazyLoad="true" src="{{showPortrait||''}}"></image>
+        <view class="summary {{!!isLast?'last-summary':''}}">
+            <view class="msgcard-title">{{showTitle}}</view>
+            <view class="content" wx:if="{{!is_floor||msgType!=='reply_list'}}">{{showContent}}</view>
+            <view class="content" wx:if="{{is_floor&&msgType=='reply_list'}}">{{showContent}}</view>
+            <view class="lzl-content" wx:if="{{is_floor&&msgType=='reply_list'}}">{{quote_content}}</view>
+            <view class="yy {{yyInfo>30?'long-yy':''}}" wx:if="{{yyInfo}}">
+                <view class="yy-duration">{{yyInfo}}"</view>
+            </view>
+            <view class="from">
+                <view class="from-info" wx:if="{{forumName!==undefined}}">
+                    {{forumName}}
+                </view>
+                <view class="from-info" wx:else>
+                    {{post_from}}
+                    <text class="{{post_from?'from-circle':''}}">{{barName}}</text>
+                    <text class="{{barName!==''?'from-circle':''}}">{{showTime}}</text>
+                </view>
+                <view catchtap="reply" class="replybtn" data-authorname="{{subject.name}}" data-fid="{{forum_id}}" data-fname="{{fname}}" data-isProThread="{{is_pro_thread}}" data-tid="{{thread_id}}" wx:if="{{msgType=='reply_list'&&!isHybrid}}">
+                    回复
+                </view>
+            </view>
+        </view>
+        <view catchtap="goMain" class="thumbnail {{!!isLast?'last-summary':''}}" data-pid="{{post_id}}" data-tid="{{thread_id}}" wx:if="{{msgType!=='at_list'}}">
+            <image lazyload class="thumbnail-img {{thread_type==40?'thumbnail-video':''}}" lazyLoad="true" src="{{thumbnail}}" wx:if="{{thumbnail}}"></image>
+            <view class="thumbnail-placeholder" wx:else>{{title||thread_info.title}}</view>
+        </view>
+    </view>
+</template>

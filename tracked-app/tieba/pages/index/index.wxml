@@ -1,0 +1,90 @@
+<import src="/templates/sharecard/sharecard.wxml"></import>
+<import src="/templates/msgentry/msgentry.wxml"></import>
+<import src="/templates/toTopBtn/toTopBtn.wxml"></import>
+<navigation binddoubleTap="doubleTap" showBackIcon="{{false}}" showHomeIcon="{{false}}" title="{{'贴吧'}}"></navigation>
+<template is="msgentry" data="{{IMG_CDN:IMG_CDN,bgcolor:'white',msgCount:msgCount}}" wx:if="{{msgCount>0}}"></template>
+<view class="container" wx:if="{{!isBroken}}">
+    <custompull bindpageScroll="pageScroll" bindpull="onPull" bindscrolltolower="scrolltolower" hasNaviBg="{{false}}" isToTop="{{isToTop}}" pageName="index" stopPullDown="{{stopPullDown}}" wx:if="{{threads.length}}">
+        <view class="index">
+            <view bindtap="onSearchClick" class="search-container">
+                <view class="search-input">
+                    <image class="search-icon-style" src="/images/icon_input_search@3x.png"></image>
+                    <text class="search-hint-style">输入关键词搜索</text>
+                </view>
+            </view>
+            <index-navibar bindswitchNavi="switchNavi" naviDatas="{{naviDatas}}" wx:if="{{naviDatas.length}}"></index-navibar>
+            <view class="refresh-tip-style {{hasNewInfos?'show-refresh-tip':''}}">为你更新了{{newInfoNum}}条信息</view>
+            <view style="background:#f5f5f5;padding-top:4px;">
+                <view class="card-style" wx:for="{{threads}}" wx:key="index">
+                    <view class="border-bottom" params="{{item.statisticParam}}" type="index-feed">
+                        <view bindtap="onItemClick" class="card-item" data-index="{{index}}" data-tid="{{item.tid}}" data-videoinfo="{{item.videoInfo}}" userId="{{item.author.portraitId}}">
+                            <view bindtap="avatarTrack" class="card-user-info">
+                                <tb-wakeup config="{{page:'usercenter',param:{ portrait:item.author.portraitId,locate:'profile_sb',track:'profile_sb',custom:{obj_type:'usercenter'} },androidSource:'1025493n'}}" isOpenApp="{{canWakeUp}}" page="pages/index/index">
+                                    <image class="user-avatar" lazyLoad="true" src="{{item.author.portrait}}"></image>
+                                </tb-wakeup>
+                                <text class="user-name">{{item.author.userName}}</text>
+                            </view>
+                            <view class="card-content card-title {{item.isRead?'had-readed':''}}">{{item.title}}</view>
+                            <view class="card-content {{item.isRead?'had-readed':''}} {{item.noTitle?'':'card-only-abstract'}}">{{item.abstract}}</view>
+                            <view class="card-imgs" wx:if="{{item.pics&&item.pics.length>0}}">
+                                <view class="card-imgs-wrap" wx:if="{{item.videoInfo||item.pics.length>1}}">
+                                    <view class="card-img" wx:for="{{item.pics}}" wx:for-index="imgIndex" wx:for-item="img" wx:key="imgIndex">
+                                        <img-viewer class="image-in-list-with-preview" isGif="{{img.is_gif&&!item.videoInfo}}" mode="aspectFill" src="{{img.url}}" staticImg="{{img.static_img||img.big_pic}}" tid="{{item.tid}}" totalNum="{{imgIndex===2&&item.picsNum-item.pics.length}}" wx:if="{{!item.videoInfo}}"></img-viewer>
+                                        <image catchtap="goVideoMidPage" class="image-in-list-with-preview" data-tid="{{item.tid}}" data-videoinfo="{{item.videoInfo}}" lazyLoad="true" mode="aspectFill" src="{{img.url}}" wx:if="{{item.videoInfo}}"></image>
+                                    </view>
+                                </view>
+                                <view class="card-single-img-wrap" style="width: {{item.pics[0].width}}px; height: {{item.pics[0].height}}px" wx:if="{{!item.videoInfo&&item.pics.length===1}}">
+                                    <img-viewer class="image-in-list-with-preview" isGif="{{item.pics[0].is_gif}}" mode="aspectFill" src="{{item.pics[0].url}}" staticImg="{{item.pics[0].static_img||item.pics[0].big_pic}}" tid="{{item.tid}}"></img-viewer>
+                                </view>
+                                <image catchtap="goVideoMidPage" class="card-video-logo" data-tid="{{item.tid}}" data-videoinfo="{{item.videoInfo}}" lazyLoad="true" src="{{IMG_CDN}}/play.png" wx:if="{{item.videoInfo}}"></image>
+                                <text catchtap="goVideoMidPage" class="card-video-info" data-tid="{{item.tid}}" data-videoinfo="{{item.videoInfo}}" wx:if="{{item.videoInfo}}">{{item.videoInfo.duration}} | 播放{{item.videoInfo.playCount}}</text>
+                            </view>
+                            <view class="card-tags" wx:if="{{item.forumName}}">
+                                <view catchtap="goFrs" class="card-tag-item" data-forum-name="{{item.forumName}}">
+                                    <image src="{{IMG_CDN}}/icon_pure_ba.png"></image>
+                                {{item.forumName}}吧
+                            </view>
+                            </view>
+                            <view class="card-good-reply" wx:if="{{item.goodReply}}">
+                                <image class="card-good-reply-logo" lazyLoad="true" src="{{IMG_CDN}}/pic_comment_god_big@2x.png"></image>
+                                <view class="card-good-reply-user-info">
+                                    <image class="card-good-reply-user-avatar" lazyLoad="true" src="{{item.goodReply.userAvatar}}"></image>
+                                    <text class="card-good-reply-user-name">{{item.goodReply.userName}}</text>
+                                    <view catchtap="addFlower" class="card-good-reply-fabulous-icon" data-fid="{{item.fid}}" data-has-agree="{{item.goodReply.has_agree}}" data-index="{{index}}" data-pid="{{item.goodReply.pid}}" data-tid="{{item.tid}}" data-type="1">
+                                        <text class="num {{item.goodReply.has_agree?'red':''}}">{{item.goodReply.formatAgree}}</text>
+                                        <image class="icon" lazyLoad="true" src="{{item.goodReply.has_agree?IMG_CDN+'/icon_like_red26.png':IMG_CDN+'/icon_like_grey26.png'}}"></image>
+                                    </view>
+                                </view>
+                                <view class="card-good-reply-content" wx:if="{{item.goodReply.content}}">{{item.goodReply.content}}</view>
+                                <view class="card-good-reply-imgs" wx:if="{{item.goodReply.totalPicsNum>0}}">
+                                    <view class="card-good-reply-imgs-wrap">
+                                        <view class="card-good-reply-img" wx:for="{{item.goodReply.pics}}" wx:for-index="replyImgIndex" wx:for-item="img" wx:key="replyImgIndex">
+                                            <img-viewer class="image-in-list-with-preview" isGif="{{img.is_gif}}" mode="aspectFill" seeLz="0" src="{{img.src}}" staticImg="{{img.static_img||img.big_pic}}" tid="{{item.tid}}" totalNum="{{replyImgIndex===4&&item.goodReply.totalPicsNum-5}}"></img-viewer>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <template is="sharecard" data="{{IMG_CDN:IMG_CDN,videoInfo:item.videoInfo,index:index,tid:item.tid,forumName:item.forumName,fid:item.fid,shareNum:item.shareNum,hasAgree:item.has_agree,replyNum:item.replyNum,agreeNum:item.formatAgree}}" wx:if="{{!item.swanInfo}}"></template>
+                        <view class="card-interact" wx:if="{{item.swanInfo}}">
+                            <view class="left-btn">
+                                <image class="icon share-icon" lazyLoad="true" src="/images/smallapplogo.png"></image>
+                                <text class="num">智能小程序</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="index-loading-style" wx:if="{{!nothing}}">
+            <image class="index-loading-image-style" src="/images/loading@2x.gif"></image>
+        </view>
+    </custompull>
+</view>
+<view class="index-error-style" wx:else>
+    <image class="index-error-image-style" mode="aspectFill" src="/images/pic_emotion_08@3x.png"></image>
+    <text class="index-error-text-style">数据加载失败 {{err_code}}</text>
+    <button bindtap="refreshbybtn" class="index-error-button-style">重新加载</button>
+</view>
+<template is="toTopBtn" data="{{page:'index',IMG_CDN:IMG_CDN}}" wx:if="{{showToTopBtn&&0}}"></template>
+<login-modal id="login-com" showLoginModal="{{showLoginModal}}"></login-modal>

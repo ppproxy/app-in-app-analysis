@@ -1,0 +1,6 @@
+{
+    "pages/frs/frs": "skeleton/page/frs",
+    "pages/pb1/pb1": "skeleton/page/pb",
+    "pages/commentSeoPage/commentSeoPage": "skeleton/page/commentSeoPage",
+    "pages/searchres/searchres": "skeleton/page/searchres"
+}

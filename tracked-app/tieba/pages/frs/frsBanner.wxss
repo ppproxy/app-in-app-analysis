@@ -1,0 +1,326 @@
+.t-media,.t-media__body {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.t-media__left,.t-media__body,.t-media__right {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.t-media__body {
+    width: 10000px;
+}
+
+.t-media__left {
+    padding-right: 12px;
+}
+
+.t-row {
+    margin-right: -2px;
+    margin-left: -2px;
+}
+
+.t-row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.t-col-1,.t-col-2,.t-col-3,.t-col-4,.t-col-5,.t-col-6,.t-col-7,.t-col-8,.t-col-9,.t-col-10,.t-col-11,.t-col-12 {
+    float: left;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.t-col-12 {
+    width: 100%;
+}
+
+.t-col-11 {
+    width: 91.66666667%;
+}
+
+.t-col-10 {
+    width: 83.33333333%;
+}
+
+.t-col-9 {
+    width: 75%;
+}
+
+.t-col-8 {
+    width: 66.66666667%;
+}
+
+.t-col-7 {
+    width: 58.33333333%;
+}
+
+.t-col-6 {
+    width: 50%;
+}
+
+.t-col-5 {
+    width: 41.66666667%;
+}
+
+.t-col-4 {
+    width: 33.33333333%;
+}
+
+.t-col-3 {
+    width: 25%;
+}
+
+.t-col-2 {
+    width: 16.66666667%;
+}
+
+.t-col-1 {
+    width: 8.33333333%;
+}
+
+.t-icon {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+}
+
+.t-text {
+    width: 100%;
+}
+
+.t-text .t-text__paragraph {
+    color: #272829;
+    font-size: 16px;
+    font-family: PingFangSC-Regular;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.t-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.t-image .t-image__playbtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%,-50%);
+}
+
+.t-image .t-image__duration {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 20px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.t-image .t-image__container {
+    position: relative;
+}
+
+.t-image .t-image__cover {
+    position: relative;
+    max-width: 100%;
+    background-color: #f2f4f5;
+}
+
+.t-image .t-image__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.t-button {
+    position: relative;
+    width: 33%;
+    color: #545454;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+}
+
+.t-button .t-button__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.t-button .t-button__icon,.t-button .t-button__text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.t-button .t-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.t-button .t-button__text {
+    height: 16px;
+    margin-left: 7px;
+    line-height: 16px;
+}
+
+.t-banner {
+    margin-bottom: 6px;
+    background-color: #fff;
+}
+
+.t-banner__wrapper {
+    padding: 17px 17px 0 17px;
+}
+
+.t-banner .t-media {
+    font-size: 0;
+}
+
+.t-banner__body {
+    margin-top: 4px;
+}
+
+.t-banner__icon {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url("https://tb3.bdstatic.com/public/img/wap_ad_avatar.dc9c41aa.png");
+    background-size: 36px;
+}
+
+.t-banner__title {
+    color: #131314;
+    font-size: 15px;
+    line-height: 36px;
+}
+
+.t-close-button {
+    margin-top: 7px;
+}
+
+.t-close-button .t-button__icon {
+    width: 22px;
+    height: 22px;
+}
+
+.t-banner__close-image {
+    position: relative;
+    top: 3px;
+    left: 3px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.t-atlas {
+    margin-top: 8px;
+}
+
+.t-atlas-1 .t-image {
+    border-radius: 4px;
+}
+
+.t-atlas-3 .t-image--first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.t-atlas-3 .t-image--last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.t-atlas-vertical {
+    width: 66.66%;
+}
+
+.t-banner__footer {
+    margin-top: 13px;
+}
+
+.t-banner__footer::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.t-banner__footer .t-banner__name,.t-banner__footer .t-banner__banner-type {
+    float: left;
+    height: 29px;
+    color: #a2a6a8;
+    font-size: 12px;
+    line-height: 29px;
+}
+
+.t-banner__footer .t-banner__name+.t-banner__banner-type {
+    margin-left: 10px;
+}
+
+.t-banner__footer .t-banner__dnbtn-box {
+    float: right;
+}
+
+.t-banner__dnbtn-box {
+    font-size: 0;
+}
+
+.t-banner__dn-btn {
+    position: relative;
+    display: inline-block;
+    width: 76px;
+    height: 29px;
+    border-radius: 16px;
+    background-color: rgba(117,89,255,.08);
+    color: #7559ff;
+    font-size: 13px;
+    line-height: 29px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.t-banner__toolbar {
+    display: flex;
+    width: 100%;
+    margin-top: 8px;
+    padding: 11px 0;
+}
+
+.t-banner__toolbar::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.t-banner__toolbar .t-button {
+    float: left;
+}
+
+.t-banner__toolbar .t-button__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.t-banner__toolbar .t-button__text {
+    height: 24px;
+    line-height: 24px;
+}
+
+.t-banner__toolbar .t-thumbsup-button {
+    float: right;
+}

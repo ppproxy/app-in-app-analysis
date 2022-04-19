@@ -1,0 +1,26 @@
+.float-icon {
+    position: fixed;
+    right: 36rpx;
+    bottom: 232rpx;
+    z-index: 1000;
+    width: 100rpx;
+    height: 100rpx;
+    transition: right 1s;
+}
+
+.float-icon.is-scroll {
+    right: -66rpx;
+}
+
+.main-icon {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.close {
+    position: absolute;
+    top: -40rpx;
+    right: -20rpx;
+    width: 40rpx;
+    height: 40rpx;
+}

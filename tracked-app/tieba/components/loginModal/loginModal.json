@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "weixin-auth": "/components/weixinAuth/weixinAuth",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

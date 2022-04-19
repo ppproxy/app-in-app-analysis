@@ -1,0 +1,250 @@
+block,view,scroll-view,swiper,movable-area,cover-view,cover-image,icon,text,rich-text,progress,animation-view,button,checkbox,form,input,label,picker,radio,slider,switch,textarea,navigator,audio,image,video,camera,live-player,map,canvas {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    font-size: 100px;
+    font-family: PingFangSC-Regular,Helvetica Neue,Helvetica,sans-serif;
+}
+
+@media screen and (max-width:360px) {
+    html {
+        font-size: 90px;
+    }
+}
+
+swan-wrapper {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    font-size: .16rem;
+}
+
+.ensp {
+    white-space: normal;
+}
+
+.page-body {
+    margin-top: .42rem;
+}
+
+button {
+}
+
+.title {
+    margin: .3rem .22rem .18rem .22rem;
+    color: #666;
+    font-size: .15rem;
+}
+
+.input {
+    box-sizing: content-box;
+    height: .38rem;
+    margin: 0 22.67px .15rem;
+    padding-left: .1rem;
+    font-size: .18rem;
+    line-height: .38rem;
+}
+
+.page-title {
+    margin: 1rem 0 .3rem 0;
+    text-align: center;
+}
+
+.page-title-line {
+    width: .83rem;
+    height: .02rem;
+    margin: 0 auto;
+    background-color: #e6e6e6;
+}
+
+.page-title-text {
+    margin-top: .07rem;
+    color: #ccc;
+}
+
+.border-top {
+    position: relative;
+    border: 0;
+}
+
+.border-top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: #f0f0f0;
+    transform-origin: 0 0;
+}
+
+.border-right {
+    position: relative;
+}
+
+.border-right::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background: #f0f0f0;
+    transform-origin: 100% 0;
+}
+
+.border-bottom {
+    position: relative;
+    border: 0;
+}
+
+.border-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f0f0f0;
+    transform-origin: 0 100%;
+}
+
+.border-left {
+    position: relative;
+    border: 0;
+}
+
+.border-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: #f0f0f0;
+    transform-origin: left center;
+}
+
+.border-all {
+    position: relative;
+    border: 0;
+}
+
+.border-all::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+    border-radius: 0;
+    background: 0 0;
+    font-size: 0;
+    line-height: 0;
+    transform-origin: 0 0;
+}
+
+.wxad-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    background: #fff;
+}
+
+.text-copy {
+    white-space: pre-wrap;
+    user-select: text;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),not all {
+    .border-top::before,.border-bottom::after {
+        transform: scaleY(.66666667);
+    }
+
+    .border-right::after,.border-left::before {
+        transform: scaleX(.66666667);
+    }
+
+    .border-all::before {
+        width: 150%;
+        height: 150%;
+        transform: scale(.66666667);
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2),not all {
+    .border-top::before,.border-bottom::after {
+        transform: scaleY(.5);
+    }
+
+    .border-right::after,.border-left::before {
+        transform: scaleX(.5);
+    }
+
+    .border-all::before {
+        width: 200%;
+        height: 200%;
+        transform: scale(.48);
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:3),not all {
+    .border-top::before,.border-bottom::after {
+        transform: scaleY(.33333333);
+    }
+
+    .border-right::after,.border-left::before {
+        transform: scaleX(.33333333);
+    }
+
+    .border-all::before {
+        width: 300%;
+        height: 300%;
+        transform: scale(.3326);
+    }
+}
+
+.hover-class {
+    background-color: #f5f5f5;
+}
+
+.ad-track {
+    display: block;
+    height: 0;
+}
+
+.card-interact .right-btn {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.nothing {
+    overflow: hidden;
+    width: 240rpx;
+    height: 240rpx;
+    margin: 140rpx auto 0;
+}
+
+.nothing .icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.nothing .nothing-slogen {
+    margin-top: 100rpx;
+    color: #333;
+    font-size: 32rpx;
+    text-align: center;
+}

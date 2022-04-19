@@ -1,0 +1,450 @@
+.regular-menu {
+    position: absolute;
+    top: 42rpx;
+    right: 34rpx;
+    z-index: 1;
+    width: 176rpx;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    text-align: center;
+}
+
+.menu-item {
+    border-bottom: 1rpx solid #f5f5f5;
+    color: #333;
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    line-height: 44px;
+}
+
+.hover-class {
+    color: #7559ff;
+}
+
+.enterpage {
+    overflow: hidden;
+    min-height: 100vh;
+    border-radius: 4rpx;
+    background-color: #f5f5f5;
+}
+
+.enterpage ::-webkit-scrollbar {
+    display: none;
+}
+
+.enterpage.is-setting {
+    background: linear-gradient(#f5f5f5,#fff);
+}
+
+.enterpage .search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 88rpx;
+    margin: 34rpx 34rpx 0;
+    border-radius: 44rpx;
+    background: #fff;
+}
+
+.enterpage .search-container .search-icon-style {
+    width: 48rpx;
+    height: 48rpx;
+    margin-left: 20rpx;
+}
+
+.enterpage .search-container .search-hint-style {
+    margin-left: 8rpx;
+    color: #999;
+    font-size: 32rpx;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap,.enterpage .regular-frs-wrap .title-wrap,.enterpage .focus-frs-wrap .title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 36rpx;
+    margin: 34rpx 34rpx 26rpx;
+    font-size: 36rpx;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap .right-icon,.enterpage .regular-frs-wrap .title-wrap .right-icon,.enterpage .focus-frs-wrap .title-wrap .right-icon {
+    width: 44rpx;
+    height: 44rpx;
+    background-image: url(https://tb5.bdstatic.com/xcx/icon_ba_more_n@3x.png);
+    background-size: contain;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap .hide-edit,.enterpage .regular-frs-wrap .title-wrap .hide-edit,.enterpage .focus-frs-wrap .title-wrap .hide-edit {
+    width: 44rpx;
+    height: 44rpx;
+    background: url(https://tb5.bdstatic.com/xcx/icon_ba_hide_n@3x.png);
+    background-size: contain;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap .close-edit,.enterpage .regular-frs-wrap .title-wrap .close-edit,.enterpage .focus-frs-wrap .title-wrap .close-edit {
+    color: #38f;
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap-no-shadow,.enterpage .regular-frs-wrap .title-wrap-no-shadow,.enterpage .focus-frs-wrap .title-wrap-no-shadow {
+    margin: 14rpx 34rpx 28rpx;
+}
+
+.enterpage .may-like-frs-wrap .add-margin,.enterpage .regular-frs-wrap .add-margin,.enterpage .focus-frs-wrap .add-margin {
+    margin-top: 44rpx;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list,.enterpage .regular-frs-wrap .regular-frs-list,.enterpage .focus-frs-wrap .regular-frs-list {
+    height: 342rpx!important;
+    white-space: nowrap;
+    transition: width 2s;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card {
+    position: relative;
+    display: inline-block;
+    width: 220rpx;
+    margin-top: 28rpx;
+    margin-right: 16rpx;
+    border-radius: 16rpx;
+    background: #fff;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card:last-child,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card:last-child,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card:last-child {
+    margin-right: 34rpx;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card:first-child,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card:first-child,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card:first-child {
+    margin-left: 34rpx;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-head-wrap,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-head-wrap,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-head-wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 128rpx;
+    border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx;
+    background-color: #fff;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-head-wrap .card-head,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-head-wrap .card-head,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-head-wrap .card-head {
+    width: 100%;
+    height: 100%;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-head-logo,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-head-logo,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-head-logo {
+    position: absolute;
+    top: 38rpx;
+    left: 50%;
+    display: block;
+    box-sizing: content-box;
+    width: 80rpx;
+    height: 80rpx;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 30rpx;
+    transform: translateX(-50%);
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-delete-btn,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-delete-btn,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-delete-btn {
+    position: absolute;
+    top: -16rpx;
+    right: -16rpx;
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-content,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-content,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-content {
+    overflow: hidden;
+    padding: 0 20rpx;
+    background-color: #fff;
+    font-size: 0;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-name,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-name,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-name {
+    display: flex;
+    justify-content: center;
+    margin: 20rpx auto 10rpx;
+    color: #000;
+    font-size: 26rpx;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-slogen,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-slogen,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-slogen {
+    display: -webkit-box;
+    overflow: hidden;
+    height: 52rpx;
+    color: #999;
+    font-size: 20rpx;
+    line-height: 26rpx;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: initial;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.enterpage .may-like-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-focus-num,.enterpage .regular-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-focus-num,.enterpage .focus-frs-wrap .regular-frs-list .regular-frs-card .card-content .frs-focus-num {
+    display: block;
+    margin: 18rpx auto 40rpx;
+    color: #999;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+}
+
+.enterpage .may-like-frs-wrap .focus-no-frs,.enterpage .regular-frs-wrap .focus-no-frs,.enterpage .focus-frs-wrap .focus-no-frs {
+    font-size: 0;
+    text-align: center;
+}
+
+.enterpage .may-like-frs-wrap .focus-no-frs .focus-no-frs-tip,.enterpage .regular-frs-wrap .focus-no-frs .focus-no-frs-tip,.enterpage .focus-frs-wrap .focus-no-frs .focus-no-frs-tip {
+    color: #999;
+    font-size: 24rpx;
+    line-height: 80rpx;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list,.enterpage .regular-frs-wrap .focus-frs-list,.enterpage .focus-frs-wrap .focus-frs-list {
+    position: relative;
+    padding: 10rpx 0;
+    padding-top: 14rpx;
+    background-color: #fff;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .focus-frs-card,.enterpage .regular-frs-wrap .focus-frs-list .focus-frs-card,.enterpage .focus-frs-wrap .focus-frs-list .focus-frs-card {
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+    padding: 0 34rpx;
+    color: #000;
+    font-family: PingFangSC-Regular;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-logo,.enterpage .regular-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-logo,.enterpage .focus-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-logo {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 26rpx;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-name,.enterpage .regular-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-name,.enterpage .focus-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-name {
+    flex-grow: 1;
+    margin: 0 16rpx;
+    margin-left: 24rpx;
+    color: #000;
+    font-size: 28rpx;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-check-in,.enterpage .regular-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-check-in,.enterpage .focus-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-check-in {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-level,.enterpage .regular-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-level,.enterpage .focus-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-level {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 36rpx;
+    height: 32rpx;
+    margin-left: 12rpx;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-top,.enterpage .regular-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-top,.enterpage .focus-frs-wrap .focus-frs-list .focus-frs-card .focus-frs-top {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 48rpx;
+    height: 48rpx;
+    margin-left: 12rpx;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .top-forum::before,.enterpage .regular-frs-wrap .focus-frs-list .top-forum::before,.enterpage .focus-frs-wrap .focus-frs-list .top-forum::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 6rpx;
+    height: 90rpx;
+    background: #3385ff;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .first::before,.enterpage .regular-frs-wrap .focus-frs-list .first::before,.enterpage .focus-frs-wrap .focus-frs-list .first::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 6rpx;
+    height: 116rpx;
+    background: #3385ff;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .last-top,.enterpage .regular-frs-wrap .focus-frs-list .last-top,.enterpage .focus-frs-wrap .focus-frs-list .last-top {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.enterpage .may-like-frs-wrap .focus-frs-list .last-focus,.enterpage .regular-frs-wrap .focus-frs-list .last-focus,.enterpage .focus-frs-wrap .focus-frs-list .last-focus {
+    margin-bottom: 50rpx;
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list,.enterpage .regular-frs-wrap .may-like-frs-list,.enterpage .focus-frs-wrap .may-like-frs-list {
+    margin: 0 34rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    box-shadow: 0 4rpx 8rpx rgba(0,0,0,.1);
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list .may-like-frs-card,.enterpage .regular-frs-wrap .may-like-frs-list .may-like-frs-card,.enterpage .focus-frs-wrap .may-like-frs-list .may-like-frs-card {
+    display: flex;
+    align-items: center;
+    height: 140rpx;
+    padding: 0 20rpx;
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-logo,.enterpage .regular-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-logo,.enterpage .focus-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-logo {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 36rpx;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-btn,.enterpage .regular-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-btn,.enterpage .focus-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-btn {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 114rpx;
+    padding: 15rpx 0;
+    border: 1px solid #3c76ff;
+    border-radius: 6rpx;
+    color: #3c76ff;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    text-align: center;
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list .may-like-frs-card .have-like-frs-btn,.enterpage .regular-frs-wrap .may-like-frs-list .may-like-frs-card .have-like-frs-btn,.enterpage .focus-frs-wrap .may-like-frs-list .may-like-frs-card .have-like-frs-btn {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 114rpx;
+    padding: 15rpx 0;
+    border: 1px solid #333;
+    border-radius: 6rpx;
+    color: #333;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    text-align: center;
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info,.enterpage .regular-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info,.enterpage .focus-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0 24rpx;
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info .frs-name,.enterpage .regular-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info .frs-name,.enterpage .focus-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info .frs-name {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.enterpage .may-like-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info .frs-abstract,.enterpage .regular-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info .frs-abstract,.enterpage .focus-frs-wrap .may-like-frs-list .may-like-frs-card .may-like-frs-info .frs-abstract {
+    overflow: hidden;
+    width: 380rpx;
+    color: #999;
+    font-size: 24rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.enterpage .focus-frs-wrap {
+    position: relative;
+    color: #000;
+    font-size: 17px;
+    font-family: PingFangSC-Medium;
+}
+
+.enterpage .focus-frs-wrap.only-have-focus {
+    margin-top: 44rpx;
+    padding-bottom: 20rpx;
+}
+
+.enterpage .regular-frs-wrap {
+    position: relative;
+    color: #000;
+    font-size: 17px;
+    font-family: PingFangSC-Medium;
+}
+
+.enterpage .regular-frs-wrap .title-wrap {
+    margin-bottom: 0;
+}
+
+.enterpage .regular-frs-wrap .regular-frs-menu {
+    position: absolute;
+    top: 40rpx;
+    right: 34rpx;
+    z-index: 100;
+    border-radius: 8rpx;
+    background-color: #fff;
+    box-shadow: 0 2rpx 2rpx rgba(0,0,0,.1);
+}
+
+.enterpage .regular-frs-wrap .regular-frs-menu .menu-item {
+    display: flex;
+    align-items: center;
+    width: 240rpx;
+    height: 90rpx;
+    padding: 0 34rpx;
+}
+
+.enterpage .regular-frs-wrap .regular-frs-menu .menu-item .menu-item-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 32rpx;
+    margin-bottom: 2rpx;
+}
+
+.enterpage .regular-frs-wrap .regular-frs-menu .menu-item .menu-title {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.enterpage .hide-bottom {
+    margin-bottom: 70rpx;
+}
+
+.enterpage .may-like-frs-wrap {
+    padding-bottom: 20rpx;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap .may-like-title {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap .middle-icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 12rpx;
+}
+
+.enterpage .may-like-frs-wrap .title-wrap .may-like-change {
+    flex-grow: 0;
+    flex-shrink: 0;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.regular-frs-wrap .title-wrap {
+    margin-top: 46rpx!important;
+}
+
+.frs-name {
+    display: block!important;
+    overflow: hidden;
+}

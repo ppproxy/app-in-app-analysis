@@ -1,0 +1,24 @@
+<view class="pan-baidu-card">
+    <view catchtap="openSmartProgram" class="content" data-action="{{canPreview?'preview_file':'view_list'}}" data-from="1025511n_1025511o" data-locate="button_bdwpclick">
+        <view class="icon" style="background-image: url({{icon}})"></view>
+        <view class="text" wx:if="{{card.errno==0}}">
+            <view class="title">{{title}}</view>
+            <view class="content-pan">
+                <text class="size" wx:if="{{size}}">{{size}}</text>
+                <text class="from">来自:百度网盘</text>
+            </view>
+        </view>
+        <view class="text" wx:else>
+            <view class="title">内容已失效</view>
+            <view class="size">内容已于{{expiredDate}}失效</view>
+        </view>
+    </view>
+    <view class="info">
+        <view class="text-content">
+            <text wx:if="{{card.url_info}}">提取码：{{card.url_info.value}}</text>
+        </view>
+        <view class="btn-content">
+            <text catchtap="openSmartProgram" class="btn" data-action="view_list" data-from="1025538o_1025538p" data-locate="button_bdwpcode">复制提取码跳转</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "pb-comments": "/components/pbComments/pbComments",
+        "jump-page": "/components/jumpPage/jumpPage",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

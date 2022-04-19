@@ -1,0 +1,7 @@
+<template name="error">
+    <view class="error-wrap">
+        <view class="error-icon"></view>
+        <view class="error-msg">数据加载失败 {{err_code}}</view>
+        <button bindtap="refresh" class="error-btn">重新加载</button>
+    </view>
+</template>

@@ -1,0 +1,122 @@
+{
+    "rules": [
+        {
+            "action": "allow",
+            "page": "pages/applist/applist",
+            "params": [
+                "fid"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/applist/applist"
+        },
+        {
+            "action": "allow",
+            "page": "pages/searchres/searchres",
+            "params": [
+                "word"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "allow",
+            "page": "pages/searchbarres/searchbarres",
+            "params": [
+                "word"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "allow",
+            "page": "pages/frs/frs",
+            "params": [
+                "kw"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/frs/frs"
+        },
+        {
+            "action": "allow",
+            "page": "pages/post/post",
+            "params": [
+                "type",
+                "fid",
+                "fname"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/post/post"
+        },
+        {
+            "action": "allow",
+            "page": "pages/pb/pb",
+            "params": [
+                "tid"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/pb/pb"
+        },
+        {
+            "action": "allow",
+            "page": "pages/lzl/lzl",
+            "params": [
+                "pid"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/lzl/lzl"
+        },
+        {
+            "action": "allow",
+            "page": "pages/webview/webview",
+            "params": [
+                "url"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/webview/webview"
+        },
+        {
+            "action": "allow",
+            "page": "pages/msg/msg",
+            "params": [
+                "category"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/msg/msg"
+        },
+        {
+            "action": "allow",
+            "page": "pages/accountlist/accountlist",
+            "params": [
+                "category"
+            ],
+            "matching": "inclusive"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/accountlist/accountlist"
+        },
+        {
+            "action": "allow",
+            "page": "*"
+        }
+    ]
+}

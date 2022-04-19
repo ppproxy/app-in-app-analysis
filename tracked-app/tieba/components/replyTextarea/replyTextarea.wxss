@@ -1,0 +1,159 @@
+.reply-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 17px;
+    background: #fff;
+    box-shadow: 0 -2px 6px 0 rgba(0,0,0,.08);
+}
+
+.IPX-bottom {
+    padding-bottom: 34px;
+}
+
+.noIPX-bottom {
+    padding-bottom: 0;
+}
+
+.items-wrap {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.danmu,.comment,.weixin-icon,.collect {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.danmu {
+    margin-right: 17px;
+}
+
+.comment,.collect {
+    margin-left: 17px;
+}
+
+.weixin-icon {
+    margin-right: 17px;
+}
+
+.icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.comment {
+    position: relative;
+}
+
+.icon-num {
+    position: absolute;
+    top: -6px;
+    left: 12px;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.2vw;
+    height: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 8px;
+    background: #f34f18;
+    color: #fff;
+    font-size: 12px;
+}
+
+.weixin-share-btn {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    margin-left: 17px;
+    padding: 0;
+    background: #fff url(https://tb5.bdstatic.com/xcx/icon_pb_bottom_weixin3x.png) center no-repeat;
+    background-size: 180% auto;
+    line-height: 0;
+}
+
+.weixin-share-btn::after {
+    margin: none;
+    padding: none;
+    border: none;
+}
+
+.textarea-wrap {
+    flex: 1;
+    padding: 7px 0 6px;
+}
+
+.mock-textarea,.textarea {
+    width: 100%;
+    height: 36px;
+    padding-left: 10px;
+    border-radius: 18px;
+    background: #ecedef;
+    color: #000;
+    font-size: 15px;
+    line-height: 18px;
+    text-overflow: ellipsis;
+}
+
+.mock-textarea {
+    color: #999;
+}
+
+.plh {
+    color: #999;
+    font-size: 15px;
+}
+
+.send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 104rpx;
+    height: 58rpx;
+    margin-left: 34rpx;
+    border: none;
+    border-radius: 29rpx;
+    background: #7559ff;
+    color: #fff;
+    font-size: 26rpx;
+    line-height: 58rpx;
+}
+
+.noval {
+    opacity: .2;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0);
+}
+
+.reply-share-btn {
+    margin-left: 17px;
+}
+
+.reply-share-btn:hover {
+    background: none;
+}
+
+.swan-reply-share-btn {
+    margin-right: 0;
+    padding-right: 0;
+}

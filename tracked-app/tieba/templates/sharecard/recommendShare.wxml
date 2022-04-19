@@ -1,0 +1,16 @@
+<template name="recommendShare">
+    <view class="card-interact">
+        <view class="left-btn">
+            <image class="icon share-icon" lazyLoad="true" src="{{IMG_CDN}}/icon_share_grey24.png"></image>
+            <text class="num">{{shareNum||'分享'}}</text>
+        </view>
+        <view class="left-btn">
+            <image class="icon commont-icon" lazyLoad="true" src="{{IMG_CDN}}/icon_comment_grey.png"></image>
+            <text class="num">{{replyNum||'回复'}}</text>
+        </view>
+        <view class="right-btn fabulous-icon">
+            <image class="icon" lazyLoad="true" src="{{hasAgree?IMG_CDN+'/icon_like_red26.png':IMG_CDN+'/icon_like_grey26.png'}}"></image>
+            <text class="num {{hasAgree?'red':''}}">{{agreeNum||'赞'}}</text>
+        </view>
+    </view>
+</template>

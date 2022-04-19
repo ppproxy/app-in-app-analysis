@@ -1,0 +1,18 @@
+<template name="tiebatoast">
+    <view class="tieba-toast-wrap" wx:if="{{type!==0}}">
+        <view class="tieba-toast-content" wx:if="{{type===1}}">
+            <image class="tieba-tosat-img" lazyLoad="true" src="{{src}}"></image>
+        </view>
+        <view class="tieba-toast-content" wx:if="{{type===2}}">
+            <text class="tieba-toast-title">{{title}}</text>
+            <view class="tieba-toast-level">
+                <text class="current-level">Lv{{extend.userLevel}}</text>
+                <view class="progress-wrap">
+                    <view class="progress" style="width: {{extend.currentNum*100/extend.totalNum}}%;"></view>
+                </view>
+                <text class="add-to-next-level red-word">+{{extend.addNum}}</text>
+            </view>
+            <text class="tieba-toast-desec">经验值<text class="red-word">{{extend.currentNum}}</text>/ {{extend.totalNum}}</text>
+        </view>
+    </view>
+</template>

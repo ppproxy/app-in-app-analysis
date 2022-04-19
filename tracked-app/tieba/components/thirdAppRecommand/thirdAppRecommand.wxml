@@ -1,0 +1,19 @@
+<view class="third-app-recommand" wx:if="{{allCards.length>0}}">
+    <view class="third-app-recommand-title">相关推荐</view>
+    <view class="third-app-recommand-list">
+        <view bindtap="goThirdApp" data-index="{{index}}" data-tid="{{item.thread_id}}" wx:for="{{allCards}}" wx:key="index">
+            <view class="third-app-recommand-card border-bottom" wx:if="{{item.thread_id!==tid}}">
+                <view class="third-app-recommand-content">
+                    <view class="recommand-title">{{item.title||item.content}}</view>
+                    <view class="recommand-from">来自：{{item.app_name}}</view>
+                </view>
+                <view class="third-app-recommand-pics">
+                    <image class="third-app-recommand-image-wrap" mode="aspectFill" src="{{item.img_url}}"></image>
+                    <view class="third-app-recommand-video" wx:if="{{item.is_video==1}}">
+                        <image class="third-app-recommand-video-btn" mode="aspectFill" src="{{IMG_CDN}}/video-play.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

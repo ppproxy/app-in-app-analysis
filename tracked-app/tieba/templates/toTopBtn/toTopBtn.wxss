@@ -1,0 +1,59 @@
+.add-btn-style-wrap {
+    position: fixed;
+    right: 10px;
+    bottom: 120px;
+    width: 50px;
+    height: 50px;
+}
+
+.index-btn {
+    bottom: 75px;
+}
+
+.pb-btn {
+    bottom: 120px;
+}
+
+.iphonex-pb-btn {
+    bottom: 130px;
+}
+
+.frs-btn {
+    bottom: 180px;
+}
+
+.frs-top-flag {
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-radius: 2px;
+}
+
+.add-btn-style-wrap .add-btn-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: rgba(0,0,0,.1) 0 1px 2px 0;
+    transform: rotate(45deg);
+}
+
+.add-btn-style-wrap .add-btn-style .add-btn-img {
+    width: 30px;
+    height: 30px;
+    transform: rotate(-45deg);
+}
+
+.showToTopBtnFlag {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 2px;
+    background: red;
+}

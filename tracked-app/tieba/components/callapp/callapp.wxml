@@ -1,0 +1,11 @@
+<view wx:if="{{text.length>0}}">
+    <view class="mainFloor-callApp-wrap-container callappWidth">
+        <view class="mainFloor-callApp-wrap {{isVideo?'set-margin':''}}" wx:if="{{showMainCallApp}}">
+            <view class="mainFloor-callApp">
+                <view class="openAPP">
+                    <scroll-item animText="{{text}}"></scroll-item>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

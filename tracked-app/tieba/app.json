@@ -1,0 +1,180 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/frs/frs",
+        "pages/pb/pb",
+        "pages/enterpage/enterpage",
+        "pages/msgtab/msgtab",
+        "pages/account/account"
+    ],
+    "window": {
+        "navigationStyle": "default",
+        "navigationBarBackgroundColor": "#fffffe",
+        "navigationBarTitleText": "贴吧",
+        "navigationBarTextStyle": "black",
+        "backgroundTextStyle": "dark",
+        "enablePullDownRefresh": false,
+        "backgroundColor": "#f5f5f5",
+        "onReachBottomDistance": 5
+    },
+    "tabBar": {
+        "color": "#999999",
+        "backgroundColor": "#f5f5f5",
+        "selectedColor": "#333333",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/icon_tabbar_home_n.png",
+                "selectedIconPath": "images/icon_tabbar_home_s.png"
+            },
+            {
+                "pagePath": "pages/enterpage/enterpage",
+                "text": "进吧",
+                "iconPath": "images/icon_tabbar_jinba_n.png",
+                "selectedIconPath": "images/icon_tabbar_jinba_s.png"
+            },
+            {
+                "pagePath": "pages/msgtab/msgtab",
+                "text": "消息",
+                "iconPath": "images/icon_tabbar_xiaoxi_n.png",
+                "selectedIconPath": "images/icon_tabbar_xiaoxi_s.png"
+            },
+            {
+                "pagePath": "pages/account/account",
+                "text": "我的",
+                "iconPath": "images/icon_tabbar_mine_n.png",
+                "selectedIconPath": "images/icon_tabbar_mine_s.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "subPackages": [
+        {
+            "root": "pages/applist/",
+            "name": "pages_applist",
+            "independent": false,
+            "pages": [
+                "applist"
+            ]
+        },
+        {
+            "root": "pages/searchres/",
+            "name": "pages_searchres",
+            "independent": false,
+            "pages": [
+                "searchres"
+            ]
+        },
+        {
+            "root": "pages/search/",
+            "name": "pages_search",
+            "independent": false,
+            "pages": [
+                "search"
+            ]
+        },
+        {
+            "root": "pages/searchbarres/",
+            "name": "pages_searchbarres",
+            "independent": false,
+            "pages": [
+                "searchbarres"
+            ]
+        },
+        {
+            "root": "pages/post/",
+            "name": "pages_post",
+            "independent": false,
+            "pages": [
+                "post"
+            ]
+        },
+        {
+            "root": "pages/lzl/",
+            "name": "pages_lzl",
+            "independent": false,
+            "pages": [
+                "lzl"
+            ]
+        },
+        {
+            "root": "pages/webview/",
+            "name": "pages_webview",
+            "independent": false,
+            "pages": [
+                "webview"
+            ]
+        },
+        {
+            "root": "pages/msg/",
+            "name": "pages_msg",
+            "independent": false,
+            "pages": [
+                "msg"
+            ]
+        },
+        {
+            "root": "pages/login/",
+            "name": "pages_login",
+            "independent": false,
+            "pages": [
+                "login"
+            ]
+        },
+        {
+            "root": "pages/accountlist/",
+            "name": "pages_accountlist",
+            "independent": false,
+            "pages": [
+                "accountlist"
+            ]
+        },
+        {
+            "root": "pages/videopb/",
+            "name": "pages_videopb",
+            "independent": false,
+            "pages": [
+                "videopb"
+            ]
+        },
+        {
+            "root": "pages/videoMidPage/",
+            "name": "pages_videoMidPage",
+            "independent": false,
+            "pages": [
+                "videoMidPage"
+            ]
+        },
+        {
+            "root": "pages/pass_normal/",
+            "name": "pages_pass_normal",
+            "independent": false,
+            "pages": [
+                "normal"
+            ]
+        },
+        {
+            "root": "pages/pbComments/",
+            "name": "pages_pbComments",
+            "independent": false,
+            "pages": [
+                "pbComments"
+            ]
+        },
+        {
+            "root": "pages/videoGuide/",
+            "name": "pages_videoGuide",
+            "independent": false,
+            "pages": [
+                "videoGuide"
+            ]
+        }
+    ],
+    "debug": false
+}

@@ -1,0 +1,16 @@
+<view class="search-input-wrap">
+    <view class="search-input-con">
+        <input bindconfirm="onSearch" bindinput="onSug" class="search-input" placeholder="输入关键词搜索" placeholderClass="input-place-holder" style="padding-left: {{from==='frs'?116:28}}rpx" value="{{searchKey}}"></input>
+        <image bindtap="clearInput" class="search-clear-icon" mode="aspectFill" src="/images/icon_input_close_n@3x.png" wx:if="{{searchKey}}"></image>
+        <view class="select-wrap" wx:if="{{from==='frs'}}">
+            <view bindtap="toggleSelect" class="selects-title">
+                <view class="select-res"> {{selectRes}} </view>
+                <view class="select-flag"></view>
+            </view>
+            <view class="selects" style="display: {{showSelect?'flex':'none'}}">
+                <view bindtap="selectItem" class="select-item {{item.name===selectRes?'select-active':''}}" data-item="{{item}}" wx:for="{{selects}}" wx:key="index">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="cancelSearch" class="search-back-btn">取消</view>
+</view>

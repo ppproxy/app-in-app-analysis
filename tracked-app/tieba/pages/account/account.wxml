@@ -1,0 +1,28 @@
+<navigation showBackIcon="{{false}}" showHomeIcon="{{false}}" title="{{'我的'}}"></navigation>
+<view class="account-wrap" wx:if="{{!isLoading}}">
+    <view class="error-style" wx:if="{{!isLogin&&!isWx}}">
+        <image class="error-image-style" mode="aspectFill" src="/images/pic_emotion_08@3x.png"></image>
+        <view class="error-text-style">还没有登录哦~</view>
+        <login-component bindloginSuccess="login">
+            <view bindtap="login" class="btn">立即登录</view>
+        </login-component>
+    </view>
+    <view class="account-container" wx:else>
+        <view class="account-self">
+            <image bindtap="showVersion" class="account-portrait {{!isAuth?'no-border':''}}" src="{{portrait}}"></image>
+            <image class="wx-logo {{isAuth?'wx-hide':'wx-hide'}}" src="{{IMG_CDN}}/icon_mine_wechat.png" wx:if="{{isWx&&!isLogin}}"></image>
+            <text class="account-name">{{name}}</text>
+            <button bindtap="switchAccount" class="switch" wx:if="{{isWx&&isLogin}}">切换账号</button>
+        </view>
+        <view class="account-tabs" wx:if="{{isWx&&!isLogin}}">
+            <view class="wx-txt">登录后，体验更多精彩功能</view>
+            <view bindtap="login" class="wx-btn">登录</view>
+        </view>
+        <view class="account-tabs" wx:if="{{isLogin}}">
+            <view bindtap="goAccountList" class="account-tab-item at" data-category="posts">我的贴子</view>
+            <view bindtap="goAccountList" class="account-tab-item good" data-category="keeps">我的收藏</view>
+            <view bindtap="goAccountList" class="account-tab-item complaint" data-category="complaint">投诉反馈</view>
+        </view>
+    </view>
+</view>
+<login-modal id="login-com" showLoginModal="{{showLoginModal}}"></login-modal>

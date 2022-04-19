@@ -1,0 +1,196 @@
+.msg-card {
+    position: relative;
+    display: flex;
+    padding-top: 34rpx;
+    padding-left: 34rpx;
+    background: #fff;
+    color: #333;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+}
+
+.portrait {
+    display: block;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+
+.summary {
+    display: block;
+    flex: 1;
+    overflow: hidden;
+    margin-top: 1rpx;
+    margin-left: 16rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.msgcard-title {
+    margin: 0;
+    margin-top: 2rpx;
+    color: #333;
+    font-size: 12px;
+}
+
+.content {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-top: 17rpx;
+    margin-right: 34rpx;
+    font-size: 16px;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.from {
+    display: flex;
+    margin-top: 25rpx;
+    margin-bottom: 12rpx;
+    color: #999;
+}
+
+.thumbnail {
+    padding-right: 34rpx;
+    padding-left: 45rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.thumbnail-img {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 2px;
+}
+
+.thumbnail-video::before {
+    content: "";
+    position: absolute;
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 2px;
+    background: linear-gradient(rgba(255,255,255,.5),rgba(0,0,0,.5));
+}
+
+.thumbnail-video::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 auto;
+    background: url(https://tb5.bdstatic.com/xcx/icon_share_play20_n@3x.png) no-repeat center;
+    background-size: cover;
+    transform: translate(75%,-175%);
+}
+
+.thumbnail-placeholder {
+    display: -webkit-box;
+    overflow: hidden;
+    width: 96rpx;
+    height: 96rpx;
+    padding: 8rpx;
+    border-radius: 2px;
+    background: #f5f5f5;
+    color: #999;
+    font-size: 10px;
+    font-family: PingFangSC-Regular;
+    line-height: 14px;
+    text-align: justify;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.from-info {
+    flex-grow: 1;
+    overflow: hidden;
+    max-width: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.from-circle::before {
+    content: "";
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: 6rpx;
+    height: 6rpx;
+    margin: 0 12rpx;
+    border-radius: 50%;
+    background: #999;
+}
+
+.replybtn {
+    position: absolute;
+    right: 34rpx;
+    bottom: 6rpx;
+    height: 50rpx;
+    padding-left: 48rpx;
+    background: url(https://tb5.bdstatic.com/xcx/icon_card_comment_n@3x.png) no-repeat 2px 4rpx;
+    background-size: 32rpx;
+    color: #999;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+    line-height: 22px;
+}
+
+.more-agree {
+    position: relative;
+    right: -140rpx;
+    color: #999;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+    line-height: 12px;
+}
+
+.lzl-content {
+    display: block;
+    overflow: hidden;
+    margin-top: 18rpx;
+    padding-bottom: 8rpx;
+    color: #999;
+    font-size: 16px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.yy {
+    position: relative;
+    box-sizing: border-box;
+    width: 168rpx;
+    height: 64rpx;
+    margin-top: 18rpx;
+    padding: 0 20rpx;
+    background: url(https://tb5.bdstatic.com/xcx/icon_share_play20_n@3x.png) no-repeat 23rpx,linear-gradient(-90deg,#2bbcff 0%,#2b87ff 100%);
+    background-size: 23rpx,100%;
+    color: #fff;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+    line-height: 64rpx;
+    text-align: right;
+}
+
+.long-yy {
+    width: 504rpx;
+}
+
+.yy-duration {
+    position: absolute;
+    top: 0;
+    right: 20rpx;
+}
+
+.yy-play {
+    width: 22.8rpx;
+    height: 22.8rpx;
+    border: #fff;
+}
+
+.last-summary {
+    border-bottom: none;
+}

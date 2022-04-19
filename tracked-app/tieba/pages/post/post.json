@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "发贴",
+    "backgroundColor": "#fff",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

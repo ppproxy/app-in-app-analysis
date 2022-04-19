@@ -1,0 +1,19 @@
+<template name="pbMutualArea">
+    <view class="pb-mutual-area {{isIphoneX?'IPX-bottom':''}}">
+        <view catchtap="openComment" class="comment item-wrap" data-type="isFocus">
+            {{placeholderTxt}}
+        </view>
+        <view catchtap="openComment" class="reply item-wrap">
+            <view class="icon-num" wx:if="{{replyNum>0}}">
+                {{replyNum||0}}
+            </view>
+            <image class="icon" src="{{IMG_CDN}}/icon_comment_grey.png"></image>
+        </view>
+        <view catchtap="collectPost" class="collect item-wrap">
+            <image class="icon" src="{{IMG_CDN+(isCollect?'/icon_collect_yellow.png':'/icon_collect_grey.png')}}"></image>
+        </view>
+        <button class="item-wrap reply-share-btn" data-track="share_bar_icon" openType="share">
+            <image class="icon share-icon" src="{{IMG_CDN+(isOpenApp?'/icon_share_wechat26.png':'/icon_share_grey18.png')}}"></image>
+        </button>
+    </view>
+</template>

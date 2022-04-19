@@ -1,0 +1,21 @@
+<template name="godcard">
+    <view class="card-good-reply" data-tid="{{item.tid}}">
+        <view class="card-good-reply-user-info">
+            <image class="card-good-reply-user-avatar" lazyLoad="true" src="{{item.gadPortrait}}"></image>
+            <text class="card-good-reply-user-name">{{item.gadUserName}}</text>
+            <view class="card-good-reply-fabulous-icon">
+                <text class="num">{{item.gadAgree||'赞'}}</text>
+                <image class="icon" lazyLoad="true" src="{{IMG_CDN}}/icon_like_grey26.png"></image>
+            </view>
+        </view>
+        <rich-text class="text card-good-reply-content" nodes="{{item.gadContent.text}}" wx:if="{{item.gadContent.text}}"></rich-text>
+        <view class="card-good-reply-imgs" wx:if="{{item.gadContent.pics.length>0}}">
+            <view class="card-good-reply-imgs-wrap">
+                <img-viewer class="card-good-reply-img" isGif="{{item.isGif}}" mode="aspectFill" seeLz="0" src="{{item.big_pic}}" staticImg="{{item.static_img||item.big_pic}}" tid="{{item.tid}}" totalNum="{{index===4&&item.gadContent.picsLen-item.gadContent.pics.length}}" wx:for="{{item.gadContent.pics}}" wx:key="index"></img-viewer>
+            </view>
+        </view>
+        <view class="god-voice" wx:for="{{item.gadContent.voice}}" wx:for-index="voiceIndex" wx:for-item="voice" wx:key="voiceIndex">
+            <voice-content duration="{{voice.during_time}}" md5="{{voice.voice_md5}}"></voice-content>
+        </view>
+    </view>
+</template>

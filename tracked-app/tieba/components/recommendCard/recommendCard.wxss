@@ -1,0 +1,71 @@
+.recommend-wrap {
+    margin-bottom: 12px;
+    padding: 0 17px;
+}
+
+.recommend-title {
+    padding: 24rpx 0 16rpx;
+    border-top: 1rpx solid #eeedf0;
+    color: #8f8e94;
+    font-size: 13px;
+}
+
+.recommend-card {
+    position: relative;
+    padding: 8px;
+    border-radius: 6px;
+    background: #f8f7fa;
+}
+
+.recommend-card image {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+}
+
+.recommend-card .card-info {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 80px;
+    color: #131313;
+    font-size: 15px;
+}
+
+.recommend-card .card-info .star {
+    display: flex;
+    margin: 2px 0;
+}
+
+.recommend-card .card-info .star .score {
+    margin-left: 2px;
+    padding-bottom: 1px;
+}
+
+.recommend-card .card-info .gray {
+    color: #9e9da3;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.recommend-card .card-info .gray text {
+    margin-right: 6px;
+}
+
+.reservation {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+}
+
+.btn {
+    height: 30px;
+    padding: 0 21px;
+    border-radius: 15px;
+    background: #7559ff;
+    color: #fff;
+    font-size: 13px;
+    line-height: 30px;
+}

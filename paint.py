@@ -16,6 +16,7 @@ def create_graph(app_name, page_list, analysis_results, tab_bar_list, sub_page_l
     # 先把主包中的页面放入集合
     for s_page in page_list:
         page_set.add("/" + s_page)
+
     start_page = "/" + page_list[0]
     # 从集合中遍历主包中的所有节点，然后创建节点对应的node
     for page_s in page_set:
@@ -33,21 +34,32 @@ def create_graph(app_name, page_list, analysis_results, tab_bar_list, sub_page_l
         for tb in tab_bar_list:
             if tb != tab_bar:
                 dot.edge("/" + tab_bar, "/" + tb, "switch", color="green")
-    print(analysis_results)
+    print("analysis_results : ", analysis_results)
+    for item in analysis_results:
+        print(item)
+    print(page_set)
     for analysis_result in analysis_results:
         page = list(analysis_result.keys())[0]
         if len(analysis_result[page]) > 0:
             for destination in analysis_result[page]:
                 # 这样在集合中重新遍历寻找的原因是：保证解准确
-                for p in page_set:
-                    if p.__contains__(destination[0]):
-                        # dot.edge(page, p,  destination[1])
-                        func_name = destination[1]
-                        if func_name in LIFE_CYCLE:
-                            dot.edge("/" + page, p, destination[1], color="red")
-                        else:
-                            dot.edge("/" + page, p, destination[1])
+                p_page = destination[0]
+                if p_page in page_set:
+                    func_name = destination[1]
+                    if func_name in LIFE_CYCLE:
+                        dot.edge("/" + page, p_page, destination[1], color="red")
+                    else:
+                        dot.edge("/" + page, p_page, destination[1])
+                # for p in page_set:
+                #     if p.__contains__(destination[0]):
+                #         # dot.edge(page, p,  destination[1])
+                #         func_name = destination[1]
+                #         if func_name in LIFE_CYCLE:
+                #             dot.edge("/" + page, p, destination[1], color="red")
+                #         else:
+                #             dot.edge("/" + page, p, destination[1])
 
+    # 图生成有问题
     print(dot.source)
     # dot.view()
     dot.render("./graph/" + app_name + "-table.gv", view=True)

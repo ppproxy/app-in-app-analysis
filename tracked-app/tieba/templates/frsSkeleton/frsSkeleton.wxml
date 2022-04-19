@@ -1,0 +1,29 @@
+<template name="frsVoidBody">
+    <view class="frs-void-body-container">
+        <view class="frs-void-body-top"></view>
+        <view class="frs-void-body-toplist">
+            <view class="toplist-body"></view>
+            <view class="toplist-legends">
+                <view class="toplist-legends-item"></view>
+                <view class="toplist-legends-item active"></view>
+                <view class="toplist-legends-item"></view>
+            </view>
+        </view>
+        <view class="frs-void-body-content">
+            <view class="frs-void-body-filter"></view>
+            <view class="frs-void-body-lists">
+                <view class="body-lists-sort-wrap">
+                    <view class="body-lists-sort"></view>
+                    <view class="body-lists-sort"></view>
+                </view>
+                <view class="frs-void-body-users">
+                    <view class="frs-void-user-logo"></view>
+                    <view class="frs-void-user-name"></view>
+                </view>
+                <view class="frs-void-body-title-1"></view>
+                <view class="frs-void-body-title-2"></view>
+                <view class="frs-void-body-images"></view>
+            </view>
+        </view>
+    </view>
+</template>

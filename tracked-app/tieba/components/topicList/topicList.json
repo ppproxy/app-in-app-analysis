@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

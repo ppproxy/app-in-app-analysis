@@ -1,0 +1,18 @@
+{
+    "navigationBarTitleText": "贴吧",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#f5f5f5",
+    "disableScroll": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "index-navibar": "/components/indexNavibar/indexNavibar",
+        "navigation": "/components/navigation/navigation",
+        "custompull": "/components/custompull/custompull",
+        "img-viewer": "/components/imgViewer/imgViewer",
+        "search-input": "/components/indexTopInput/indexTopInput",
+        "login-component": "/components/loginComponent/loginComponent",
+        "float-wake-btn": "/components/floatWakeBtn/floatWakeBtn",
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

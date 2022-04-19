@@ -1,0 +1,25 @@
+<template name="frsHeader">
+    <view class="frs-header">
+        <view class="frs-header-cont">
+            <view class="header-userInfo">
+                <view class="user-logo">
+                    <image class="user-logo-pic" lazyLoad="true" src="{{forumData.avatar}}"></image>
+                </view>
+                <view class="user-info">
+                    <view class="user-name"> {{forumData.name}}吧 </view>
+                    <view class="tie-info">
+                        <view class="tie-focus-num">
+                            <text class="focus-num-title">关注</text>
+                            <text class="focus-num-num">{{forumData.member_num}}</text>
+                        </view>
+                        <view class="tie-num">
+                            <text class="tie-num-title">贴子</text>
+                            <text class="tie-num-num">{{forumData.post_num}}</text>
+                        </view>
+                    </view>
+                </view>
+                <sign bindchangeToastData="changeToastData" bindsignAfterLogin="signAfterLogin" forumData="{{signDatas}}" userData="{{userData}}"></sign>
+            </view>
+        </view>
+    </view>
+</template>

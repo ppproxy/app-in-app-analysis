@@ -1,0 +1,17 @@
+{
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#fff",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation",
+        "pb-comment-frame": "/components/pbCommentFrame/pbCommentFrame",
+        "share-friends": "/components/shareFriends/shareFriends",
+        "mask": "/components/mask/mask",
+        "reply-textarea": "/components/replyTextarea/replyTextarea",
+        "service": "/components/service/service",
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "login-modal": "/components/loginModal/loginModal"
+    },
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#000000"
+}

@@ -1,0 +1,21 @@
+.wake-up {
+    position: relative;
+}
+
+.wake-up .wake-up-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.wake-up .wake-up-btn:hover {
+    background: transparent;
+}
+
+.wake-up .wake-up-btn::after {
+    border: none;
+}

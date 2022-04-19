@@ -1,0 +1,15 @@
+<template name="cardVideo">
+    <view class="card-video-wrap" wx:if="{{videoInfo}}">
+        <view class="video-img">
+            <image class="img" lazyLoad="true" mode="aspectFill" src="{{videoInfo.vpic}}"></image>
+            <view class="video-play-icon">
+                <image class="img" lazyLoad="true" mode="aspectFill" src="{{IMG_CDN}}/play.png"></image>
+            </view>
+            <view class="video-play-info" wx:if="{{videoInfo.data.duration||videoInfo.data.play_count}}">
+                <text class="video-duration" wx:if="{{videoInfo.data.duration}}">{{videoInfo.data.duration}}</text>
+                <view class="margin-buffer" wx:if="{{videoInfo.data.duration&&videoInfo.data.play_count}}"></view>
+                <text class="video-play-times" wx:if="{{videoInfo.data.play_count}}">播放{{videoInfo.data.play_count}}</text>
+            </view>
+        </view>
+    </view>
+</template>

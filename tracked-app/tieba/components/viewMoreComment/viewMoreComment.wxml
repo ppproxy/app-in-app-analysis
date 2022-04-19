@@ -1,0 +1,6 @@
+<view bindtap="viewMore" class="comment-more ad-expose-track" data-track-id="viewmore" data-track-info="{{trackInfo}}" data-track-locate="viewmore">
+    <view class="comment-more-text">
+        查看更多
+        <view class="arrow"></view>
+    </view>
+</view>

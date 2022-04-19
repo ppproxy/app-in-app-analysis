@@ -1,0 +1,9 @@
+<template name="tipoffTextarea">
+    <view class="textrea-container">
+        <textarea bindinput="keyup" class="tipoff-textarea" maxlength="200" placeholder="{{placeholder}}"></textarea>
+        <view class="num-tip">
+            <text>{{reason.length}}</text>
+            <text>/200</text>
+        </view>
+    </view>
+</template>

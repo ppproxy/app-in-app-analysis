@@ -1,0 +1,111 @@
+.card-user-info {
+    display: flex;
+}
+
+.card-user-info .portrait-wrap {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.card-user-info .card-user-content {
+    margin-left: 12px;
+    font-size: 13px;
+}
+
+.card-user-info .card-user-content .card-user-name {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 280px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-user-info .card-user-content .create-time {
+    color: #999;
+}
+
+.card-user-info .user-forum-name {
+    color: #999;
+    font-size: 13px;
+    font-family: PingFangSC-Regular;
+    line-height: 13px;
+}
+
+.user-name-wrap {
+    display: flex;
+}
+
+.card-user-info .user-forum-name::after {
+    content: " ";
+    position: relative;
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 8px;
+    background: #ccc;
+}
+
+.floor-num-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.line-location-wrap {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.user-time-location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #999;
+}
+
+.split-line-wrap {
+    display: flex;
+    justify-content: center;
+    width: 15px;
+    height: 11px;
+}
+
+.split-line {
+    box-sizing: border-box;
+    width: 1px;
+    height: 22px;
+    border: 1px solid #999;
+    transform: scale(.5,.5);
+    transform-origin: 0 0;
+}
+
+.user-location {
+    display: flex;
+    flex: 1;
+}
+
+.user-post-time {
+    flex: 1;
+    overflow: hidden;
+    width: 120px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-nowrap {
+    white-space: nowrap;
+}
+
+button::after {
+    border: 0 none;
+}

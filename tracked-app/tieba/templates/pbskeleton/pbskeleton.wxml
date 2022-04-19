@@ -1,0 +1,17 @@
+<template name="pbskeleton">
+    <view class="pb-head"></view>
+    <view class="ske-pb-wrap">
+        <view class="ske-wrap">
+            <view class="ske-pb-round"></view>
+            <view class="ske-pb-2"></view>
+        </view>
+        <view class="ske-pb-3"></view>
+        <view class="ske-pb-4"></view>
+        <view class="ske-pb-3"></view>
+        <view class="ske-pb-3"></view>
+        <view class="ske-pb-3"></view>
+        <view class="ske-pb-4"></view>
+        <view class="ske-pb-img"></view>
+        <view class="ske-pb-img"></view>
+    </view>
+</template>

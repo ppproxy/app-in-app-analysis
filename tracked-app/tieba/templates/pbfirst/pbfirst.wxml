@@ -1,0 +1,147 @@
+<template name="pbfirst">
+    <view class="pb-first-floor {{mainFloor.isVideo?'video-header':'common-header'}}" id="floor-1">
+        <block wx:if="{{!mainFloor.isVideo}}">
+            <view class="pb-user-info clearfix">
+                <view class="avatar">
+                    <tb-wakeup config="{{page:'usercenter',param:{ portrait:mainFloor.portraitId,locate:'profile_sb',track:'profile_sb',custom:{obj_type:'usercenter'} },androidSource:'1025493n'}}" isOpenApp="{{canWakeUp}}">
+                        <image lazyLoad="true" src="{{mainFloor.author.portrait_url}}"></image>
+                    </tb-wakeup>
+                </view>
+                <view class="infos">
+                    <view class="name">
+                        {{mainFloor.author.userName}}
+                    </view>
+                    <view class="time">
+                        {{mainFloor.time}}
+                    </view>
+                </view>
+                <view class="manage">
+                    <text data-type bindtap="deletePb" class="manage-delete" data-index="0" data-pid="{{mainFloor.pid}}" wx:if="{{!user.admintype&&user.id===mainFloor.author.id}}">
+                        删除
+                    </text>
+                    <text bindtap="callBawu" class="manage-bawu" wx:if="{{author.is_forum_business_account!=1&&(!isProThread&&user.admintype||user.admintype&&user.id===mainFloor.author.id)}}">
+                        管理
+                    </text>
+                </view>
+            </view>
+            <view class="pb-title" wx:if="{{mainFloor.title!==''&&mainFloor.title!=='无标题贴'&&!thread.item}}">
+                <view class="text-copy">{{mainFloor.title}}</view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="pb-title">
+                <view class="pb-title-content">
+                    <view class="icon">
+                        <text class="high-quality" wx:if="{{thread.works_info&&thread.works_info.is_works}}">作品</text>
+                    </view>
+                    {{mainFloor.title}}
+                </view>
+            </view>
+            <view class="pb-user-info clearfix">
+                <view class="avatar border-all">
+                    <image lazyLoad="true" mode="aspectFit" src="{{mainFloor.author.portrait_url}}"></image>
+                </view>
+                <view class="infos">
+                    <view class="name">
+                        {{mainFloor.author.userName}}
+                    </view>
+                    <view class="time">
+                        {{mainFloor.time}}
+                    </view>
+                </view>
+                <view class="manage">
+                    <text class="play-num">
+                        {{videoInfo.play_count}}次播放
+                    </text>
+                    <text data-type bindtap="deletePb" class="video-manage-delete" data-index="0" data-pid="{{mainFloor.pid}}" wx:if="{{!user.admintype&&user.id===mainFloor.author.id}}">
+                        删除
+                    </text>
+                    <text bindtap="callBawu" class="manage-bawu" wx:if="{{!isProThread&&user.admintype||user.admintype&&user.id===mainFloor.author.id}}">
+                        管理
+                    </text>
+                </view>
+            </view>
+            <view class="video-type-recommend" wx:if="{{from!=='frs'&&forum.name}}">
+                <template is="recommend" data="{{IMG_CDN:IMG_CDN,data:forum,startAnimation:startAnimation,isVideo:true}}"></template>
+            </view>
+        </block>
+        <view bindtap="onItemClick" class="pb-content" wx:if="{{!mainFloor.isVideo}}">
+            <view class="pb-share-post" wx:if="{{mainFloor.is_share_thread!==0}}">
+                该类型贴子暂不支持在小程序中查看，请下载贴吧客户端
+            </view>
+            <view wx:else>
+                <view class="pb-comment-post" wx:if="{{thread.item}}">
+                    <view wx:for="{{thread.item_star}}" wx:key="index">
+                        <view wx:if="{{item.type==1}}">
+                            <text wx:if="{{item.name}}">
+                                {{item.name}}：
+                            </text>
+                            <text wx:else></text>
+                            {{item.content}}
+                        </view>
+                        <view wx:elif="{{item.type==2}}">
+                            <text wx:if="{{item.name}}">
+                                {{item.name}}：
+                            </text>
+                            <text wx:else></text>
+                            <star active="{{item.content}}" total="5"></star>
+                        </view>
+                    </view>
+                </view>
+                <block wx:for="{{mainFloor.content}}" wx:key="index">
+                    <rich-text class="text text-copy" nodes="{{item.text}}" wx:if="{{item.type==0&&item.text!=='<br/>'}}"></rich-text>
+                    <rich-text class="text text-copy" nodes="{{item.text}}" wx:elif="{{item.type==1&&!item.link}}"></rich-text>
+                    <my-link linkText="{{item.text}}" wx:elif="{{item.type==1&&item.link}}"></my-link>
+                    <image lazyLoad class="emoji text-copy" src="{{item.src}}" wx:elif="{{item.type==2}}"></image>
+                    <view class="pb-content-img-container" wx:elif="{{item.type==3||item.type==20}}">
+                        <view class="pb-content-img-wrap">
+                            <img-viewer isGif="{{item.isGif}}" mode="widthFix" seeLz="1" src="{{item.big_pic||item.src}}" staticImg="{{item.static_img||''}}" tid="{{tid}}" type="{{item.type}}" word="{{forum.name}}"></img-viewer>
+                        </view>
+                    </view>
+                    <rich-text class="text text-copy" nodes="{{item.text}}" wx:elif="{{item.type==4}}"></rich-text>
+                    <rich-text class="text text-copy" nodes="{{item.text}}" wx:elif="{{item.type==5}}"></rich-text>
+                    <view class="voice-content" wx:elif="{{item.type===10}}">
+                        <voice-content duration="{{item.during_time}}" md5="{{item.voice_md5}}"></voice-content>
+                    </view>
+                    <view bindtap="goShareApp" class="pb-share" data-app-id="{{item.app_id}}" data-app-link="{{item.app_link}}" wx:elif="{{item.type===21}}">
+                        <view class="pb-share-title">
+                            <image lazyLoad="true" mode="aspectFit" src="{{item.app_avatar}}"></image>
+                            <text>
+                                {{item.app_name}}
+                            </text>
+                        </view>
+                        <view class="pb-share-pic">
+                            <image lazyLoad="true" mode="aspectFit" src="{{item.app_pic}}"></image>
+                        </view>
+                        <view class="pb-share-footer">
+                            <image lazyLoad="true" src="/images/smallapplogo.png"></image>
+                            <text>
+                                小程序
+                            </text>
+                        </view>
+                    </view>
+                    <rich-text class="text" nodes="{{item.text}}" wx:else></rich-text>
+                </block>
+                <view class="comment-card" wx:if="{{thread.item}}">
+                    <image lazyLoad="true" src="{{thread.item.icon_url}}"></image>
+                    <view class="card-info">
+                        <view>
+                            {{thread.item.item_name}}
+                        </view>
+                        <view class="gray star">
+                            <star active="{{thread.item.star}}" total="5"></star>
+                            <text class="score">
+                                {{thread.item.score}}
+                            </text>
+                        </view>
+                        <view class="gray">
+                            <text wx:for="{{thread.item.tags}}" wx:for-item="value" wx:key="index">
+                                {{value}}
+                            </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,122 @@
+<import src="/templates/msgentry/msgentry.wxml"></import>
+<import src="/templates/user/user.wxml"></import>
+<import src="/templates/applist/applist.wxml"></import>
+<import src="/templates/frsHeader/frsHeader.wxml"></import>
+<import src="/templates/cardsType/shareForum/shareForum.wxml"></import>
+<import src="/templates/cardsType/morepics/morepics.wxml"></import>
+<import src="/templates/cardsType/video/video.wxml"></import>
+<import src="/templates/cardsType/godcard/godcard.wxml"></import>
+<import src="/templates/sharecard/sharecard.wxml"></import>
+<import src="/templates/tiebatoast/tiebatoast.wxml"></import>
+<import src="/templates/error/error.wxml"></import>
+<import src="/templates/empty/empty.wxml"></import>
+<import src="/templates/toTopBtn/toTopBtn.wxml"></import>
+<import src="/templates/frsSkeleton/frsSkeleton.wxml"></import>
+<view class="frs-container" wx:if="{{forumData&&status!==-2}}">
+    <view class="{{bgFilter?'filter':''}}">
+        <navigation binddoubleTap="doubleTap" border="none" commoncolor="{{forumData.theme.common_color}}" darkcolor="{{forumData.theme.dark_color}}" forumname="{{forumData.name}}" hasBg="{{false}}" isFrs="{{true}}" lightcolor="{{forumData.theme.light_color}}" opacity="{{1}}" showBackIcon="{{showBackIcon}}" showInput="{{true}}" statusBg="#{{forumData.theme.common_color||'2B80FF'}}" titleBg="#{{forumData.theme.common_color||'2B80FF'}}"></navigation>
+        <custompull bindpageScroll="pageScroll" bindpull="pull" bindscrolltolower="scrolltolower" isToTop="{{isToTop}}" stopPullDown="{{stopPullDown}}" wx:if="{{forumData}}">
+            <template is="msgentry" data="{{IMG_CDN:IMG_CDN,commoncolor:forumData.theme.common_color||'2B80FF',msgCount:msgCount,top:allH,lightcolor:forumData.theme.light_color,darkcolor:forumData.theme.dark_color}}" wx:if="{{msgCount>0}}"></template>
+            <view class="frs-header-all" style="background-color:#{{forumData.theme.common_color}}; background: linear-gradient(to right, #{{forumData.theme.light_color}}, #{{forumData.theme.dark_color}});">
+                <view>
+                    <template is="frsHeader" data="{{IMG_CDN:IMG_CDN,forumData:forumData,signDatas:signDatas,userData:userData}}"></template>
+                </view>
+            </view>
+            <view class="frs-topforum-wrap" wx:if="{{topList.length>0}}">
+                <view class="frs-topforum-content">
+                    <frs-topforum bindclickThread="clickThread" binditemSwiper="itemSwiper" fontcolor="{{forumData.theme.font_color}}" topLists="{{topList}}"></frs-topforum>
+                </view>
+            </view>
+            <view>
+                <template is="applist" data="{{IMG_CDN:IMG_CDN,forumData:forumData}}"></template>
+            </view>
+            <view>
+                <frs-data-filter bindchangeTab="changeTab" bindselect="selectchange" filterTypeId="{{filterTypeId}}" id="frs-data-filter" navTabList="{{frsNavTabList}}" showSortNav="{{showSortNav}}" sortTabData="{{frsSortTabData}}"></frs-data-filter>
+            </view>
+            <view class="scroll-wrap">
+                <view class="frs-content-all {{bottomMenu&&bottomMenu.length?'bottomMenu-padding':''}}">
+                    <view class="forum-list-all" wx:if="{{status===1&&(threadList.length>0||topList.length>0)}}">
+                        <view class="frs-content-container">
+                            <view class="cards-container">
+                                <view class="cards-content">
+                                    <block wx:for="{{threadList}}" wx:key="index">
+                                        <view class="wxad-wrap wxad-frs-wrap" style="display: {{item.closead?'none':''}}" wx:if="{{item.isAd}}">
+                                            <ad-custom bindclose="closewxad" class="wxad-content" data-index="{{index}}" unitId="adunit-7a0d2b6389809b32"></ad-custom>
+                                        </view>
+                                        <view class="not-ad-container" wx:if="{{!item.isAd}}">
+                                            <block wx:if="{{!isBaidu||filterTypeId!==4||isBaidu&&index<6||!canWakeUp}}">
+                                                <view bindtap="clickThread" class="not-ad-inner" data-isvertival="{{item.videoMedia[0].videoInfo.isVertical}}" data-isvideo="{{item.videoMedia.length>0}}" data-tid="{{item.tid}}">
+                                                    <view class="user-wrap">
+                                                        <template is="user" data="{{AUTHOR:item.author,IMG_CDN:IMG_CDN,canWakeUp:canWakeUp,...item.userInfo}}"></template>
+                                                    </view>
+                                                    <view class="forum-card-content {{item.isRead?'read-thread':''}}" data-tid="{{item.tid}}">
+                                                        <view class="card-content card-title {{item.isRead?'had-readed':''}}">
+                                                            {{item.title}}</view>
+                                                        <view class="card-content {{item.isRead?'had-readed':''}} {{item.noTitle?'':'card-only-abstract'}}">
+                                                            <block wx:if="{{item.abstractArr.length>1}}">
+                                                                <block wx:for="{{item.abstractArr}}" wx:for-item="abs">
+                                                                    <my-link linkText="{{abs.match}}" wx:if="{{abs.isLink}}"></my-link>
+                                                                    <text wx:else>{{abs}}</text>
+                                                                </block>
+                                                            </block>
+                                                            <block wx:else>{{item.abstract}}</block>
+                                                        </view>
+                                                        <view wx:if="{{item.thirdAppInfo&&item.thirdAppInfo.app_id}}">
+                                                            <template is="shareForum" data="{{item:item,IMG_CDN:IMG_CDN}}"></template>
+                                                        </view>
+                                                        <view wx:elif="{{item.imageMedia.length!==0}}">
+                                                            <template is="morepics" data="{{item:item,IMG_CDN:IMG_CDN,isUseThumbnail:isUseThumbnail}}"></template>
+                                                        </view>
+                                                        <view catchtap="goVideoMidPage" class="video-container forum-content video-content {{item.voiceInfo&&item.voiceInfo.length>0?'forum-content-top':''}}" data-isvertival="{{item.videoMedia[0].videoInfo.isVertical}}" data-isvideo="{{item.videoMedia.length>0}}" data-tid="{{item.tid}}" wx:elif="{{item.videoMedia.length>0}}">
+                                                            <template is="video" data="{{ IMG_CDN:IMG_CDN,...item.videoMedia[0] }}"></template>
+                                                        </view>
+                                                        <block wx:elif="{{item.voiceInfo&&item.voiceInfo.length>0}}">
+                                                            <view class="voice-content-wrap" wx:for="{{item.voiceInfo}}" wx:for-item="voiceItem" wx:key="index">
+                                                                <voice-content duration="{{voiceItem.during_time}}" md5="{{voiceItem.voice_md5}}"></voice-content>
+                                                            </view>
+                                                        </block>
+                                                        <view wx:if="{{item.isTopGad}}">
+                                                            <template is="godcard" data="{{IMG_CDN:IMG_CDN,item:item,index:index}}"></template>
+                                                        </view>
+                                                    </view>
+                                                </view>
+                                                <template is="sharecard" data="{{IMG_CDN:IMG_CDN,isVideo:item.videoMedia.length>0,isVertical:item.videoMedia[0].videoInfo.isVertical,item:item,shareNum:item.shareNum,replyNum:item.replyNum,agreeNum:item.agree.formatAgree,index:index,tid:item.tid,hasAgree:item.agree.has_agree}}"></template>
+                                            </block>
+                                        </view>
+                                    </block>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="loading-style" wx:if="{{isLoadingMore==1&&!(isBaidu&&filterTypeId===4&&canWakeUp)}}">
+                        <image class="loading-image-style" src="/images/loading@2x.gif"></image>
+                    </view>
+                    <callapp page="page/frs/frs" showMainCallApp="{{showMainCallApp}}" track="frs_jinghua_daoliu" wakeupConfig="{{wakeupConfig}}" wx:if="{{isBaidu&&filterTypeId===4&&threadList.length>6&&canWakeUp}}"></callapp>
+                    <view class="hasNoMore" wx:elif="{{isLoadingMore==0}}"> 暂无更多了... </view>
+                    <template is="error" data wx:if="{{status==-1}}"></template>
+                </view>
+            </view>
+            <view class="nolite-style" wx:if="{{noFrsLite}}">
+                <image class="nolite-image-style" mode="aspectFill" src="/images/pic_emotion_08@3x.png"></image>
+                <text class="nolite-text-style">暂时没有帖子哦</text>
+            </view>
+        </custompull>
+    </view>
+    <template is="tiebatoast" data="{{...toastData,IMG_CDN:IMG_CDN}}"></template>
+    <frs-bottom-navi bottomMenu="{{bottomMenu}}"></frs-bottom-navi>
+    <template is="toTopBtn" data="{{page:'frs',color:forumData.theme.common_color,IMG_CDN:IMG_CDN}}" wx:if="{{showToTopBtn&&0}}"></template>
+    <send-ties-type bindshowPost="showPost" forumData="{{forumData}}" wx:if="{{showPostBtn}}"></send-ties-type>
+    <login-modal id="login-com" showLoginModal="{{showLoginModal}}"></login-modal>
+    <view bindtouchstart="closeWrap" class="select-comp-wrap" wx:if="{{false}}"></view>
+</view>
+<view class="frs-page-error" wx:elif="{{status===-2||isBroken}}">
+    <navigation showBackIcon="{{true}}" statusBg="#ccc" titleBg="#ccc"></navigation>
+    <view class="error-style">
+        <image class="error-image-style" mode="aspectFill" src="/images/pic_emotion_08@3x.png"></image>
+        <text class="error-text-style">{{noFrsLite?'本贴吧还没有精品贴，先去随便逛逛吧':'数据加载失败'}} {{err_code}}</text>
+        <button bindtap="errBtnclick" class="frs-error-button-style">{{noFrsLite?'返回':'重新加载'}}</button>
+    </view>
+</view>
+<view wx:elif="{{forumData==null}}">
+    <template is="frsVoidBody" data></template>
+</view>

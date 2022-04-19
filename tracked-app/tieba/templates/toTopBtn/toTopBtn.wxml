@@ -1,0 +1,7 @@
+<template name="toTopBtn">
+    <view catchtap="toTop" class="add-btn-style-wrap {{page==='index'?'index-btn':''}} {{page==='frs'?'frs-btn':''}} {{page==='pb'?'pb-btn':''}} {{page==='pb'&&isIphoneX?'iphonex-pb-btn':''}}">
+        <view class="add-btn-style">
+            <image class="add-btn-img" src="{{IMG_CDN}}/totop.png"></image>
+        </view>
+    </view>
+</template>

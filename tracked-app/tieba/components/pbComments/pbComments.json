@@ -1,0 +1,14 @@
+{
+    "component": true,
+    "usingComponents": {
+        "select": "/components/select/select",
+        "img-viewer": "/components/imgViewer/imgViewer",
+        "my-link": "/components/link/link",
+        "voice-content": "/components/voiceContent/voiceContent",
+        "reply-textarea": "/components/replyTextarea/replyTextarea",
+        "barrage": "/components/barrage/barrage",
+        "login-component": "/components/loginComponent/loginComponent",
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

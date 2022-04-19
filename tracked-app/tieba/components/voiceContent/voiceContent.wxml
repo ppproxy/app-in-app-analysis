@@ -1,0 +1,4 @@
+<view catchtap="play" class="voice active-{{audioStatus+'-'+voiceLen}} {{isLzl?'lzl':''}}" data-during="{{duration}}" data-md5="{{md5}}" style="width: {{voiceLen}}px">
+    <view class="voice-{{audioStatus}}-{{isLzl?'lzl':'nolzl'}} {{isLzl?'lzl-play':'play'}}  btn-{{audioStatus}}"></view>
+    <view class="duration">{{duringTime}}</view>
+</view>

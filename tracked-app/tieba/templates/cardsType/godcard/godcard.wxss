@@ -1,0 +1,125 @@
+.card-good-reply {
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 10px 10px 0;
+    background-color: #f5f5f5;
+    background-image: url(https://tb5.bdstatic.com/xcx/pic_comment_god_big@2x.png);
+    background-position: top 17px right 44px;
+    background-size: 66px 41px;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+
+.card-good-reply-user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-good-reply-user-avatar {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.card-good-reply-user-name {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.card-good-reply-fabulous-icon {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.card-good-reply-fabulous-icon>.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.card-good-reply-fabulous-icon>.num {
+    margin-right: 5px;
+    color: #333;
+    font-size: 13px;
+}
+
+.card-good-reply-content {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.card-good-reply-imgs {
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 0;
+}
+
+.card-good-reply-imgs-wrap {
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.card-good-reply-imgs-num {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    padding: 0 9px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.5);
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.card-good-reply-imgs-num image {
+    width: 9px;
+    height: 8px;
+}
+
+.card-good-reply-imgs-num text {
+    margin-left: 3px;
+    color: #fff;
+}
+
+.card-good-reply-img {
+    width: calc((100vw - 50px) / 5);
+    height: calc((100vw - 50px) / 5);
+    margin-right: 4px;
+    background-color: #999;
+}
+
+.card-good-reply-img:last-child {
+    overflow: hidden;
+    margin-right: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.card-good-reply-img:first-child {
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.card-good-reply-img::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.god-voice {
+    padding-bottom: 10px;
+}

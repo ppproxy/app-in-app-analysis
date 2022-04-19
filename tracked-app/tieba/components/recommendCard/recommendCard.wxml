@@ -1,0 +1,23 @@
+<view class="recommend-wrap">
+    <view class="recommend-title">
+        相关推荐
+    </view>
+    <view bindtap="launchApp" class="recommend-card">
+        <image src="{{recommend.icon_url}}"></image>
+        <view class="card-info">
+            <view>{{recommend.item_name}}</view>
+            <view class="gray star">
+                <star active="{{recommend.star}}" total="5"></star>
+                <text class="score">{{recommend.score}}</text>
+            </view>
+            <view class="gray">
+                <text wx:for="{{recommend.tags}}" wx:for-item="value" wx:key="index">{{value}}</text>
+            </view>
+            <view class="reservation">
+                <tb-wakeup config="{{wakeupConfig}}" page="pages/pb/pb">
+                    <view class="btn">预约</view>
+                </tb-wakeup>
+            </view>
+        </view>
+    </view>
+</view>

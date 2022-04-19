@@ -1,0 +1,104 @@
+<import src="/templates/error/error.wxml"></import>
+<import src="/templates/msgentry/msgentry.wxml"></import>
+<import src="/templates/sharecard/sharecard.wxml"></import>
+<import src="/templates/pbfirst/pbfirst.wxml"></import>
+<import src="/templates/fallback/fallback.wxml"></import>
+<import src="/templates/pbskeleton/pbskeleton.wxml"></import>
+<import src="/templates/pbMutualArea/pbMutualArea.wxml"></import>
+<template is="pbskeleton" data wx:if="{{isSkeleton}}"></template>
+<import src="/templates/sharecard/weixinShare.wxml"></import>
+<view class="loading-page" style="height:{{loadingHeight}}" wx:if="{{myloading}}">
+    <image src="/images/loading@2x.gif"></image>
+    <text class="txt">努力加载中，请稍候...</text>
+</view>
+<view wx:if="{{isBroken}}">
+    <navigation binddoubleTap="doubleTap" showBackIcon="{{showBackIcon}}" showHomeIcon="{{true}}"></navigation>
+    <template is="error" data="{{err_code:err_code}}"></template>
+</view>
+<view wx:elif="{{failFetchData}}">
+    <navigation binddoubleTap="doubleTap" showBackIcon="{{showBackIcon}}" showHomeIcon="{{true}}"></navigation>
+    <template is="fallback" data="{{errorMsg:errorMsg}}"></template>
+    <button bindtap="refreshbybtn" class="pb-error-button-style">{{isPostDeleted?'返回':'重新加载'}}</button>
+</view>
+<view class="pb-page-wrap" wx:else>
+    <navigation binddoubleTap="doubleTap" showBackIcon="{{showBackIcon}}" showHomeIcon="{{true}}">
+        <view class="forum-name-con">
+            <view bindtap="toFrs" class="forum-name-text" data-name="{{forum.name}}">
+                {{topForumName?topForumName+'吧':'贴吧动态'}}
+            </view>
+            <image bindtap="toFrs" class="right-arrow" data-name="{{forum.name}}" lazyLoad="true" src="/images/icon_common_arrow36_right_n.png" wx:if="{{forum.name}}"></image>
+        </view>
+    </navigation>
+    <view class="pb" style="height: calc(100vh - {{allH+(mainFloor.isVideo?videoH:0)}}px);">
+        <view class="video-wrap" style="top: {{allH}}px" wx:if="{{mainFloor.isVideo}}">
+            <video autoplay="true" class="pb-video-tag" id="myVideo" initialTime="1" objectFit="contain" poster="{{videoInfo.thumbnail_url}}" src="{{videoInfo.video_url}}"></video>
+        </view>
+        <scroll-view scrollY bindscroll="getScrollInfo" bindscrolltolower="onReachBottom" class="pb-container {{mainFloor.isVideo?'pb-video-container':''}}" lowerThreshold="100" scrollIntoView="{{toIndex}}" scrollTop="{{viewScrollTop}}" scrollWithAnimation="{{scrollWithAnimation}}" wx:if="{{mainFloor&&!failFetchData}}">
+            <view id="pb-top">
+                <view>
+                    <view wx:if="{{!mainFloor.isVideo}}"></view>
+                    <view wx:elif="{{!needPbCut}}"></view>
+                    <template is="msgentry" data="{{IMG_CDN:IMG_CDN,bgcolor:'white',msgCount:msgCount}}" wx:if="{{msgCount>0}}"></template>
+                    <template is="pbfirst" data="{{isBaidu:isBaidu,canWakeUp:canWakeUp,openTiebaAppUrl:openTiebaAppUrl,IMG_CDN:IMG_CDN,qqWakeupConfig:qqWakeupConfig,author:author,mainFloor:mainFloor,videoInfo:videoInfo,user:user,isProThread:isProThread,startAnimation:startAnimation,forum:forum,tid:tid,showMainCallApp:showMainCallApp,thread:thread,pbContentWidth:pbContentWidth,isOpenApp:isOpenApp}}"></template>
+                    <view class="vote" wx:if="{{thread.is_bazhu_apply}}">
+                        <view class="vote-inner">当前用户正在参加{{forum.name}}吧吧主竞选，打开贴吧客户端，参与吧主投票/竞选。</view>
+                    </view>
+                    <view class="t-mount-list-wrapper" wx:for="{{mountList}}" wx:key="index">
+                        <view class="t-mount-wrapper">
+                            <view class="t-mount">
+                                <view class="t-mount__left">
+                                    <image class="t-mount__avatar" src="{{item.icon_url}}"></image>
+                                </view>
+                                <view class="t-mount__body">
+                                    <view class="t-mount__desc-wrapper">
+                                        <view class="t-mount__desc-name">{{item.item_name}}</view>
+                                        <view class="t-mount__desc-star"></view>
+                                        <view class="t-mount__desc-mark">{{item.score}}</view>
+                                    </view>
+                                    <view class="t-mount__desc-wrapper">
+                                        <view class="t-mount__desc-type">{{item.tags}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <template is="weixinShare" data="{{IMG_CDN:IMG_CDN,pid:pid,fid:item.fid,shareNum:thread.shareNum,hasAgree:thread.agree.has_agree,replyNum:thread.replyNum,agreeNum:thread.agree.agreeNum}}" wx:if="{{isOpenApp}}"></template>
+                    <template is="sharecard" data="{{IMG_CDN:IMG_CDN,pid:pid,fid:item.fid,shareNum:thread.shareNum,hasAgree:thread.agree.has_agree,replyNum:thread.replyNum,agreeNum:thread.agree.agreeNum}}" wx:else></template>
+                    <view class="wxad-wrap" wx:if="{{!hideWxAd}}">
+                        <ad bindclose="closeAd" data-index="{{index}}" unitId="adunit-4fcfc634a897bbf4"></ad>
+                    </view>
+                    <view wx:if="{{!needPbCut&&!isBrowser}}"></view>
+                    <recommend-card recommend="{{thread.outer_item}}" wakeupConfig="{{page:'pb',param:{ tid:thread.id,obj_type:'pb',locate:'item_cut_sb',track:'item_cut_sb',custom:{obj_param1:mainFloor.isVideo?'shipin':'tuwen'} },androidSource:'1025493c'}}" wx:if="{{isBrowser&&thread.outer_item&&thread.outer_item.item_id}}"></recommend-card>
+                    <view class="pb-other-floor {{isIphoneX?'iphoneX-other-floor':''}}" id="comments-area">
+                        <pb-comments bindbannerClickListener="bannerClickListener" bindchangeComments="changeComments" bindcollect="collect" bindgoBottomPos="goBottomPos" bindgoCommentBottom="goCommentBottom" bindgoFirstOrFetchMore="goFirstOrFetchMore" bindgoOldPos="goOldPos" bindinputFocus="inputFocus" bindonBottom="onBottom" bindshare="share" bindsortBy="sortBy" bindtoCommentsArea="toCommentsArea" bindtoWhere="toCommentsArea" commentsNums="{{thread.replyNum}}" concatData="{{concatData}}" concatType="{{concatType}}" floorDatas="{{floorDatas}}" hasMore="{{hasMore}}" id="pb-comments" isGaokaoAla="{{isGaokaoAla}}" isNeedSticky="{{true}}" isOpenApp="{{isOpenApp}}" isPb="{{true}}" isVideo="{{mainFloor.isVideo}}" maxCommentsLength="{{maxCommentsLength}}" needPbCut="{{needPbCut}}" needScroll="{{false}}" page="pages/pb/pb" qqWakeupConfig="{{qqWakeupConfig}}" recommendQuery="{{recommendQuery}}" replyMainFloor="{{replyMainFloor}}" showAds="{{true}}" showJumpBar="{{showJumpBar}}" showTypeBar="{{isBaidu}}" subchainAd="{{subchainAd}}"></pb-comments>
+                        <view class="open-comment" wx:if="{{needPbCut}}">
+                            <view bindtap="openComment">
+                                查看全部{{thread.valid_post_num-1}}条评论
+                            </view>
+                        </view>
+                        <recommendation class="ad-expose" isNeedSticky="{{false}}" tid="{{tid}}"></recommendation>
+                    </view>
+                    <view id="mock-floor"></view>
+                </view>
+            </view>
+        </scroll-view>
+        <template is="pbMutualArea" data="{{IMG_CDN:IMG_CDN,pid:pid,fid:item.fid,shareNum:thread.shareNum,replyNum:thread.replyNum,isCollect:isCollect,placeholderTxt:placeholderTxt,isIphoneX:isIphoneX,qqWakeupConfig:qqWakeupConfig,isOpenApp:isOpenApp}}" wx:if="{{!isBaidu}}"></template>
+    </view>
+</view>
+<view>
+    <view catchtap="closeModal" class="modal" wx:if="{{isShowModal}}"></view>
+    <action-sheet bindactionSheet="actionSheet" bindhideActionSheet="hideActionSheet" itemList="{{bawuItemList}}" showActionSheet="{{showActionSheet}}"></action-sheet>
+    <dialog bindcloseDialog="closeDialog" bindsure="deletePbByBawu" isVideo="{{mainFloor.isVideo}}" showDialog="{{showDialog}}">
+        <view class="reason-wrap">
+            <view catchtap="selectDeleteReason" class="reason {{item.active?'active':''}}" data-id="{{item.text_id}}" data-index="{{index}}" wx:for="{{antiReason}}" wx:key="index">
+                {{item.text_info}}
+            </view>
+        </view>
+    </dialog>
+    <login-modal id="login-com" showLoginModal="{{showLoginModal}}"></login-modal>
+    <service isServiceModal="{{showContact}}" path="{{'/pages/pb/pb?tid='+tid}}" title="{{mainFloor.title}}"></service>
+</view>
+<jump-page bindchange="jumpPageNumChange" bindcloseJumpPage="closeJumpPage" bindsure="jumpPage" currentPage="{{pageInfo.current_page}}" jumpPageNum="{{jumpPageNum}}" showJumpPage="{{isShowPageJumpDialog}}" totalPage="{{pageInfo.total_page}}"></jump-page>
+<mask bindtogglemask="togglemask" showmask="{{showmask}}">
+    <share-friends bindwxCloseFrame="wxCloseFrame" reportPIcData="{{reportPIcData}}" showShareFrame="{{showmask}}" tid="{{tid}}"></share-friends>
+</mask>

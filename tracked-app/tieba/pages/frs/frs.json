@@ -1,0 +1,23 @@
+{
+    "navigationBarTitleText": "贴吧",
+    "backgroundColor": "#f5f5f5",
+    "disableScroll": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation",
+        "custompull": "/components/custompull/custompull",
+        "frs-topforum": "/components/frsTopforum/frsTopforum",
+        "voice-content": "/components/voiceContent/voiceContent",
+        "frs-data-filter": "/components/frsDataFilter/frsDataFilter",
+        "sign": "/components/sign/sign",
+        "send-ties-type": "/components/sendTiesType/sendTiesType",
+        "frs-bottom-navi": "/components/frsBottomNavi/frsBottomNavi",
+        "img-viewer": "/components/imgViewer/imgViewer",
+        "my-link": "/components/link/link",
+        "login-component": "/components/loginComponent/loginComponent",
+        "callapp": "/components/callapp/callapp",
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "float-wake-btn": "/components/floatWakeBtn/floatWakeBtn",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

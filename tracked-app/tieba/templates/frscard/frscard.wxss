@@ -1,0 +1,449 @@
+.card-user-info {
+    display: flex;
+}
+
+.card-user-info .portrait-wrap {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.card-user-info .card-user-content {
+    margin-left: 12px;
+    font-size: 13px;
+}
+
+.card-user-info .card-user-content .card-user-name {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 280px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-user-info .card-user-content .create-time {
+    color: #999;
+}
+
+.card-user-info .user-forum-name {
+    color: #999;
+    font-size: 13px;
+    font-family: PingFangSC-Regular;
+    line-height: 13px;
+}
+
+.user-name-wrap {
+    display: flex;
+}
+
+.card-user-info .user-forum-name::after {
+    content: " ";
+    position: relative;
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 8px;
+    background: #ccc;
+}
+
+.floor-num-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.line-location-wrap {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.user-time-location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #999;
+}
+
+.split-line-wrap {
+    display: flex;
+    justify-content: center;
+    width: 15px;
+    height: 11px;
+}
+
+.split-line {
+    box-sizing: border-box;
+    width: 1px;
+    height: 22px;
+    border: 1px solid #999;
+    transform: scale(.5,.5);
+    transform-origin: 0 0;
+}
+
+.user-location {
+    display: flex;
+    flex: 1;
+}
+
+.user-post-time {
+    flex: 1;
+    overflow: hidden;
+    width: 120px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-nowrap {
+    white-space: nowrap;
+}
+
+button::after {
+    border: 0 none;
+}
+
+.card-video-wrap {
+    overflow: hidden;
+    height: 384rpx;
+    margin-top: 6rpx;
+    border-radius: 8rpx;
+    background-color: #fff;
+}
+
+.card-video-wrap .video-img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 384rpx;
+    background-color: #000;
+}
+
+.card-video-wrap .item-video-style {
+    width: 100%;
+    height: 384rpx;
+}
+
+.card-video-wrap .video-img .img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-video-wrap .video-img .video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 96rpx;
+    height: 96rpx;
+    transform: translate(-50%,-50%);
+}
+
+.card-video-wrap .video-img .video-play-info {
+    position: absolute;
+    right: 16rpx;
+    bottom: 16rpx;
+    display: flex;
+    align-items: center;
+    height: 36rpx;
+    padding: 0 16rpx;
+    border-radius: 18rpx;
+    background-color: rgba(0,0,0,.65);
+    color: #fff;
+    font-size: 0;
+    line-height: 36rpx;
+}
+
+.card-video-wrap .video-img .video-play-info .video-duration {
+    font-size: 20rpx;
+}
+
+.card-video-wrap .video-img .video-play-info .video-play-times {
+    font-size: 20rpx;
+}
+
+.card-video-wrap .video-img .video-play-info .margin-buffer {
+    width: 1px;
+    height: 16rpx;
+    margin: 0 12rpx;
+    background-color: rgba(255,255,255,.4);
+}
+
+.forum-card {
+    position: relative;
+    padding: 34rpx 34rpx 0 34rpx;
+    padding-left: 120rpx;
+    background: #fff;
+    box-shadow: 0 0 0 0 #f2f2f2;
+}
+
+.frs-forum-name {
+    color: #666;
+    font-size: 13px;
+    font-family: PingFangSC-Regular;
+    line-height: 13px;
+}
+
+.forum-card-hover {
+    background: #f5f5f5;
+}
+
+.forum-card-content {
+    margin-top: 17rpx;
+}
+
+.read-thread {
+    color: #999!important;
+}
+
+.forum-card-content .forum-title {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 36rpx;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.forum-card-content .forum-content {
+    margin-top: 12rpx;
+}
+
+.forum-card-content .forum-content-top {
+    margin-top: 18rpx;
+}
+
+.forum-card-content .forum-content-image {
+    width: 100%;
+    height: 100%;
+    border: 1rpx solid rgba(0,0,0,.08);
+    background: #f5f5f5;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.video-content .play-info-split {
+    margin: 0 14rpx;
+    color: rgba(255,255,255,.4);
+}
+
+.forum-card-content .single-image-content {
+    overflow: hidden;
+    height: 384rpx;
+    border-radius: 8rpx;
+}
+
+.split::after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 110%;
+    height: 1px;
+    background: #f2f2f2;
+}
+
+.forum-card-content .multiple-image-content {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 8rpx;
+}
+
+.multiple-image-content .multiple-image-item {
+    flex: 1;
+}
+
+.multiple-image-content .multiple-image-item:not(:last-child) {
+    margin-right: 8rpx;
+}
+
+.multiple-image-content .item-height {
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.multiple-image-content .forum-content-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.forum-card-content .audio-info {
+    display: inline-block;
+    margin-left: 6rpx;
+    padding: 6rpx 22rpx 6rpx 8rpx;
+    border: solid 2rpx #3385ff;
+    border-radius: 1rpx;
+    color: #7559ff;
+    font-size: 0;
+}
+
+.audio-info .during {
+    display: inline-block;
+    vertical-align: middle;
+    height: 48rpx;
+    margin-left: 18rpx;
+    font-size: 28rpx;
+    line-height: 48rpx;
+}
+
+.forum-card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.forum-card-footer .footer-item {
+    position: relative;
+    height: 88rpx;
+    margin-left: 32rpx;
+    background-position: left 26rpx;
+    background-size: 36rpx 36rpx;
+    background-repeat: no-repeat;
+    color: #999;
+    font-size: 24rpx;
+    line-height: 88rpx;
+}
+
+.forum-card-footer .footer-item .footer-item-key {
+    margin-right: 8rpx;
+}
+
+.forum-card-footer .footer-item-click {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-width: 80rpx;
+}
+
+.forum-card-footer .comment-item {
+    background-image: url(https://tb5.bdstatic.com/xcx/icon_comment_grey.png);
+}
+
+.forum-card-footer .like-item {
+    min-width: 58rpx;
+    background-image: url(https://tb5.bdstatic.com/xcx/icon_like_grey26.png);
+}
+
+.forum-card-footer .has-like-item {
+    background-image: url(https://tb5.bdstatic.com/xcx/icon_like_red26.png);
+    color: #f24f18;
+}
+
+.forum-small-app-pic-wrap {
+    height: 470rpx;
+    background-color: #f5f5f5;
+}
+
+.forum-small-app-pic-wrap .forum-small-app-pic-title-wrap {
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    padding: 0 16rpx;
+}
+
+.forum-small-app-pic-wrap .forum-small-app-pic-title-wrap .user-avatar-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 28rpx;
+}
+
+.forum-small-app-pic-wrap .forum-small-app-pic-title-wrap .user-avatar-wrap .user-avatar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.forum-small-app-pic-wrap .forum-small-app-pic-title-wrap .user-name {
+    margin-left: 16rpx;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.forum-small-app-pic-wrap .post-img-wrap {
+    overflow: hidden;
+    height: 310rpx;
+    margin: 0 20rpx;
+    background-color: #fff;
+}
+
+.forum-small-app-pic-wrap .post-img-wrap .post-img {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+.forum-small-app-pic-wrap .small-app-logo-wrap {
+    display: flex;
+    align-items: center;
+    height: 74rpx;
+    padding: 0 16rpx;
+    padding-top: 4rpx;
+    padding-bottom: 8rpx;
+}
+
+.forum-small-app-pic-wrap .small-app-logo-wrap .logo-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 22rpx;
+}
+
+.forum-small-app-pic-wrap .small-app-logo-wrap .logo-wrap .small-app-logo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.forum-small-app-pic-wrap .small-app-logo-wrap .small-app-slogen {
+    margin-left: 13rpx;
+    color: #999;
+    font-size: 26rpx;
+}
+
+.frs-yy {
+    margin-top: 10rpx;
+}
+
+.frs-long-yy {
+    width: 504rpx;
+}
+
+.frs-yy-duration {
+    position: absolute;
+    top: 0;
+    right: 20rpx;
+}
+
+.yy-play {
+    width: 22.8rpx;
+    height: 22.8rpx;
+    border: #fff;
+}
+
+.account-share-post {
+    display: flex;
+    align-items: center;
+    height: 122rpx;
+    padding-left: 20rpx;
+    background: #f5f5f5;
+    color: #000;
+    font-size: 15px;
+    font-family: PingFangSC-Regular;
+    line-height: 20px;
+}

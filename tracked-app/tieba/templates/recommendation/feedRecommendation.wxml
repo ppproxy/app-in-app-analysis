@@ -1,0 +1,21 @@
+<view class="feed-recommendation-item">
+    <view class="user-info">
+        <view class="user-avatar">
+            <image class="image" lazyLoad="true" mode="aspectFill" src="{{item.forum.img}}"></image>
+        </view>
+        <view class="forum-info">
+            <view class="forum-name">{{item.forum.name}}吧<image lazyLoad class="forum-name-icon" src="https://tb3.bdstatic.com/xcx/icon_ba_15@3x.png"></image>
+            </view>
+            <view class="recommendation-forum-sub-txt">关注 {{item.forum.member_txt}} 帖子 {{item.forum.thread_txt}}</view>
+        </view>
+        <view class="recommendation-jinba">进吧</view>
+    </view>
+    <view class="post-info">
+        {{item.title}}
+    </view>
+    <view class="post-img {{item.isVideo?'video-img':''}}" wx:if="{{item.feedImg}}">
+        <image class="image" lazyLoad="true" mode="aspectFill" src="{{item.feedImg}}"></image>
+        <image class="video-logo" lazyLoad="true" mode="aspectFill" src="{{IMG_CDN}}/play.png" wx:if="{{item.isVideo}}"></image>
+        <text class="video-info" wx:if="{{item.isVideo}}">播放{{item.playCount}}</text>
+    </view>
+</view>

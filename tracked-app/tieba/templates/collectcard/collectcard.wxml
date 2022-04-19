@@ -1,0 +1,18 @@
+<template name="collectcard">
+    <view bindtap="clickThread" class="collect-wrap" data-tid="{{thread_id}}">
+        <template is="user" data="{{...author,IMG_CDN:IMG_CDN}}"></template>
+        <image catchtap="toggleCollect" class="mine-collect-icon" data-index="{{index}}" data-pid="{{mark_pid}}" data-status="{{isCollect}}" data-tid="{{thread_id}}" lazyLoad="true" src="{{!isCollect?IMG_CDN+'/icon_mine_list_collect@1x.png':IMG_CDN+'/icon_mine_list_collect_s.png'}}"></image>
+        <view class="collect-item-content" wx:if="{{is_deleted}}">
+            <view class="delete-wrap">
+                <image class="delete-png" src="{{IMG_CDN}}/icon_frs_delete_n@3x.png"></image>
+            </view>
+            <view class="collect-item-text">抱歉，此贴已被屏蔽或删除</view>
+        </view>
+        <view class="collect-item-content {{media[0]||voice_info?'':'no-radius'}}" wx:else>
+            <image class="voice-image" lazyLoad="true" src="{{IMG_CDN}}/icon_frs_voice_n@3x.png" wx:if="{{voice_info}}"></image>
+            <image class="collect-item-img {{mediaType?'play':''}}" lazyLoad="true" src="{{media[0].cover_img}}" wx:if="{{media[0]}}"></image>
+            <view class="collect-item-text">{{title}}</view>
+        </view>
+    </view>
+</template>
+<import src="/templates/user/user.wxml"></import>

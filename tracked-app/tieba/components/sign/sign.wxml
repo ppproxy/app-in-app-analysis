@@ -1,0 +1,16 @@
+<import src="/templates/tiebatoast/tiebatoast.wxml"></import>
+<view>
+    <login-component bindloginSuccess="clickLike" wx:if="{{signStatus===0}}">
+        <view bindtap="clickLike" class="frs-header-btn normal-btn">
+            关注
+        </view>
+    </login-component>
+    <view bindtap="clickSign" class="frs-header-btn sign-btn" wx:if="{{signStatus===1}}">
+        <image class="sign-logo" src="{{IMG_CDN}}/icon_frs_sign_n@3x.png"></image>
+        <text>签到</text>
+    </view>
+    <view class="frs-header-btn has-sign-btn" wx:if="{{signStatus===2}}">
+        <image class="sign-logo" src="{{IMG_CDN}}/icon_frs_sign_end_n@3x.png"></image>
+        <text>已签到</text>
+    </view>
+</view>

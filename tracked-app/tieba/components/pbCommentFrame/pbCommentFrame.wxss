@@ -1,0 +1,90 @@
+.pb-comments-container {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    height: 70vh;
+    border-radius: 24rpx 24rpx 0 0;
+    background: #fff;
+    animation: addheight .2s linear;
+}
+
+.pb-comments-container-ipx {
+    padding-top: 25px;
+}
+
+.IPX-bottom {
+    margin-bottom: 34px;
+}
+
+.pb-comments-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 88rpx;
+    color: #272829;
+    font-size: 30rpx;
+    touch-action: none;
+}
+
+.close {
+    position: absolute;
+    top: 8rpx;
+    left: 0;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88rpx;
+    height: 88rpx;
+    background: #fff;
+}
+
+.close-pic {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.comments-content {
+    flex: 1;
+    width: 100%;
+}
+
+.mock-input-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 49px;
+    color: #7559ff;
+    font-size: 17px;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
+    background: rgba(0,0,0,0);
+}
+
+@keyframes addheight {
+    0% {
+        height: 0;
+    }
+
+    50% {
+        height: 33.3vh;
+    }
+
+    100% {
+        height: 66.6vh;
+    }
+}

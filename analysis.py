@@ -65,7 +65,8 @@ def analysis(nodes_in_func, func_name):
                 if type(line) == str:
                     # 需要优化，不一定必须是/xx/xx/xx的格式。
                     # match = re.search(r'/(.*)/(.*)/(.*)(\\?q=)?', line)
-                    match = re.search(r'/(.*)(\\?q=)?', line)
+                    # match = re.search(r'/(.*)(\\?q=)?', line)
+                    match = re.search(r'/(.*)(\\?(.*)=)?', line)
                     if match:
                         # 跳转函数的方式
                         # res.append((match.group().split("?")[0], callee['property']['name']))
@@ -106,3 +107,12 @@ def process(app_name, page_name, page_component_map):
 # 有一种问题出现了，那就是在wxml中没有进行跳转函数的绑定，但是在小程序的生命周期函数中，
 # 出现了根据某些初始化条件来判断进行跳转的情况
 # 见ymy list.js
+# line = "/pages/msg/msg"
+# match = re.search(r'/(.*)(\\?(.*)=)?', line)
+# if match:
+#     print(match.group().split("?")[0])
+# else:
+#     print("None Match")
+# line = "},"
+# line = line.replace("},","\n}")
+# print(line)

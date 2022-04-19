@@ -1,0 +1,10 @@
+<view bindtap="close" class="mask" wx:if="{{showLoginModal}}">
+    <view class="modal">
+        <image class="modal-icon" src="/images/icon_tieba@3x.png"></image>
+        <view class="login-btn">
+            <view bindtap="accountLogin" class="login-authorize login-baidu" wx:if="{{appType==='weixin'}}">百度账号登录</view>
+            <view bindtap="wxLogin" class="login-authorize login-{{appType}}">{{appType==='weixin'?'微信':'QQ'}}一键登录</view>
+        </view>
+    </view>
+</view>
+<weixin-auth isShow="{{isAuth===false}}"></weixin-auth>

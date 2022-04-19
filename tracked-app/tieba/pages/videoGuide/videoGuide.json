@@ -1,0 +1,8 @@
+{
+    "navigationBarTextStyle": "white",
+    "disableScroll": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

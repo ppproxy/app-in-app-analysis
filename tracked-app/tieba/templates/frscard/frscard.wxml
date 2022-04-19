@@ -1,0 +1,70 @@
+<template name="frscard">
+    <view bindtap="clickThread" class="forum-card {{isLast?'':'split'}}" data-tid="{{thread_id}}" hoverClass="forum-card-hover">
+        <view class="frs-forum-name">{{(forum_name?forum_name+'吧':'')||'个人主页'}}</view>
+        <view class="forum-card-content" data-tid="{{thread_id}}">
+            <view class="forum-title" wx:if="{{!is_share_thread}}">
+                {{title}}
+            </view>
+            <view class="account-share-post" wx:if="{{is_share_thread}}">
+                该类型贴子暂不支持在小程序中查看，请下载贴吧客户端
+            </view>
+            <view class="forum-content forum-small-app" wx:if="{{third_app_info}}">
+                <view catchtap="goShareApp" class="forum-small-app-pic-wrap" data-app-id="{{third_app_info.app_id}}" data-third-app-link="{{third_app_info.app_link}}">
+                    <view class="forum-small-app-pic-title-wrap">
+                        <view class="user-avatar-wrap">
+                            <image class="user-avatar" lazyLoad="true" src="{{third_app_info.app_avatar}}"></image>
+                        </view>
+                        <view class="user-name">{{third_app_info.app_name}}</view>
+                    </view>
+                    <view class="post-img-wrap">
+                        <image class="post-img" lazyLoad="true" src="{{third_app_info.app_pic}}"></image>
+                    </view>
+                    <view class="small-app-logo-wrap">
+                        <view class="logo-wrap">
+                            <image class="small-app-logo" lazyLoad="true" src="/images/smallapplogo.png"></image>
+                        </view>
+                        <view class="small-app-slogen">小程序</view>
+                    </view>
+                </view>
+            </view>
+            <view class="frs-yy" wx:if="{{voice_info&&voice_info.length>0}}">
+                <voice-content disablePlay="{{true}}" duration="{{voice_info[0].during_time}}"></voice-content>
+            </view>
+            <view class="forum-content multiple-image-content" data-tid="{{thread_id}}" wx:if="{{thread_type==0&&media.length>1}}">
+                <view class="multiple-image-item">
+                    <view class="item-height" wx:if="{{media.length>=1}}">
+                        <image catchtap="clickImage" class="forum-content-image" data-src="{{media[0].src_pic}}" data-tid="{{thread_id}}" lazyLoad="true" mode="aspectFill" src="{{media[0].src_pic}}"></image>
+                    </view>
+                </view>
+                <view class="multiple-image-item">
+                    <view class="item-height" wx:if="{{media.length>=2}}">
+                        <image catchtap="clickImage" class="forum-content-image" data-src="{{media[1].src_pic}}" data-tid="{{thread_id}}" lazyLoad="true" mode="aspectFill" src="{{media[1].src_pic}}"></image>
+                    </view>
+                </view>
+                <view class="multiple-image-item">
+                    <view class="item-height" wx:if="{{media.length>=3}}">
+                        <image catchtap="clickImage" class="forum-content-image" data-src="{{media[2].src_pic}}" data-tid="{{thread_id}}" lazyLoad="true" mode="aspectFill" src="{{media[2].src_pic}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="forum-content single-image-content" wx:elif="{{media.length==1}}">
+                <image catchtap="clickImage" class="forum-content-image" data-src="{{media[0].small_pic}}" data-tid="{{thread_id}}" lazyLoad="true" mode="aspectFill" src="{{media[0].big_pic}}"></image>
+            </view>
+            <view class="video-container forum-content video-content" data-tid="{{thread_id}}" id="{{''+index}}" wx:if="{{thread_type==40}}">
+                <template is="cardVideo" data="{{...videoInfo,IMG_CDN:IMG_CDN}}"></template>
+            </view>
+            <view class="forum-card-footer">
+                <text class="footer-item">
+                    <text class="footer-item-key">评论</text>{{reply_num}}
+                    <text catchtap="clickThread" class="footer-item-click" data-click-target="comment" data-tid="{{thread_id}}"></text>
+                </text>
+                <text class="footer-item">
+                    <text class="footer-item-key">赞</text>{{agree_num||0}}
+                    <text class="footer-item-click" data-index="{{index}}"></text>
+                </text>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/templates/user/user.wxml"></import>
+<import src="/templates/cardVideo/cardVideo.wxml"></import>

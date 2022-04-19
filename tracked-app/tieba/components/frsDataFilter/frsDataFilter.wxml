@@ -1,0 +1,22 @@
+<view class="content-filter-container" id="content-filter-container-id">
+    <view class="content-filter-wrap" style="position:{{position}};top:{{allH}}px">
+        <view class="content-filter">
+            <view bindtap="clickFilter" class="filter-item {{filterTypeId===item.tab_id?'filter-active':''}}" data-id="{{item.tab_id}}" data-name="{{item.tab_name}}" wx:for="{{navTabList}}" wx:key="index">{{item.tab_name}}</view>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="content-filter-time" wx:if="{{filterTypeId==1&&showSortNav}}">
+            <view>筛选条件</view>
+            <view bindtap="showSort" class="content-filter-time-flag">
+                <text>{{sortTabData[sortType].tab_name}}</text>
+                <view class="filter-flag-wrap">
+                    <image class="filter-flag-down" src="{{IMG_CDN}}/icon_common_arrow_down_n@3x.png" wx:if="{{!showSortComp}}"></image>
+                    <image class="filter-flag-down" src="{{IMG_CDN}}/icon_common_arrow_up_n@3x.png" wx:else></image>
+                </view>
+            </view>
+            <view class="select-comp-container" wx:if="{{showSortComp}}">
+                <view bindtap="select" class="select-item {{index!==sortTabData.length-1?'select-border-bottom':''}} {{sortType===item.sort_type?'fontcolor':''}}" data-item="{{item}}" wx:for="{{sortTabData}}" wx:key="index">{{item.tab_name}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtouchstart="closeMask" class="filter-mask" wx:if="{{showSortComp}}"></view>

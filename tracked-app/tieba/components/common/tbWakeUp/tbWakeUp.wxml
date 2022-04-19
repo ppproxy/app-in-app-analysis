@@ -1,0 +1,3 @@
+<view class="wake-up">
+    <slot></slot>
+</view>

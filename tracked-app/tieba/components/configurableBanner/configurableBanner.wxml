@@ -1,0 +1,5 @@
+<view class="banner">
+    <tb-wakeup class="wake-up" config="{{wakeupConfig}}" page="{{page}}">
+        <image mode="aspectFit" src="{{imgUrl}}"></image>
+    </tb-wakeup>
+</view>

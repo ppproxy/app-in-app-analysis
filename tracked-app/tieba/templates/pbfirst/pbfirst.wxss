@@ -1,0 +1,243 @@
+.pb-first-floor {
+    position: relative;
+    overflow: hidden;
+    padding: 0 17px;
+    background-color: #fff;
+}
+
+.pb-first-floor .pb-title {
+    padding: 12px 0 9.5px;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 27px;
+    word-break: break-word;
+}
+
+.pb-first-floor .pb-user-info {
+    position: relative;
+    padding: 15px 0;
+}
+
+.pb-first-floor .pb-share-post {
+    padding-top: 15px;
+    color: #333;
+    font-size: 17px;
+    text-align: center;
+}
+
+.pb-first-floor .pb-user-info .avatar {
+    float: left;
+    overflow: hidden;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.pb-first-floor .pb-user-info .avatar image {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.pb-first-floor .pb-user-info .infos {
+    float: left;
+    margin-left: 13px;
+}
+
+.pb-first-floor .pb-user-info .manage {
+    float: right;
+    color: #999;
+    font-size: 13px;
+}
+
+.pb-first-floor .pb-user-info .infos .name {
+    overflow: hidden;
+    width: 140%;
+    color: #000;
+    font-size: 16px;
+    font-family: PingFangSC-Medium;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pb-first-floor .pb-user-info .infos .video-user-name {
+    width: 120px;
+}
+
+.pb-first-floor .pb-user-info .infos .time {
+    color: #999;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.pb-video-tag {
+    z-index: 1;
+}
+
+.pb-first-floor .pb-share {
+    width: 100%;
+    margin-top: 18px;
+    padding: 0 8px;
+    background-color: #f5f5f5;
+}
+
+.pb-first-floor .pb-share .pb-share-title {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    font-size: 14px;
+    line-height: 44px;
+}
+
+.pb-first-floor .pb-share .pb-share-title image {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.pb-first-floor .pb-share .pb-share-pic {
+    overflow: hidden;
+    width: 100%;
+    height: 181px;
+}
+
+.pb-first-floor .pb-share .pb-share-pic image {
+    width: 100%;
+    min-height: 100%;
+}
+
+.pb-first-floor .pb-share .pb-share-footer {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    font-size: 16px;
+}
+
+.pb-first-floor .pb-share .pb-share-footer image {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.pb-first-floor .pb-share .pb-share-footer text {
+    color: #999;
+    font-size: 13px;
+}
+
+.pb-first-floor .pb-content {
+    font-size: 17px;
+    line-height: 27px;
+    word-break: break-word;
+}
+
+.pb-first-floor .pb-content .emoji {
+    display: inline-block;
+}
+
+.pb-first-floor .pb-content .text {
+    margin-bottom: 5px;
+    line-height: 27px;
+}
+
+.pb-first-floor .share-container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.pb-first-floor .flower-container .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.pb-first-floor .flower-container .icon image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.pb-first-floor .flower-container .text {
+    min-width: 15px;
+    height: 39px;
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+}
+
+.pb-first-floor .flower-container::before {
+    border: 1px solid #999;
+    border-radius: 78px;
+}
+
+.pb-first-floor .flower-container.active::before {
+    border: 1px solid #f34f18;
+}
+
+.pb-first-floor .flower-container.active text {
+    color: #f34f18;
+}
+
+.video-header .pb-title {
+    padding-bottom: 27px;
+    color: #333;
+    font-size: 17px;
+    line-height: 26px;
+}
+
+.video-header .pb-user-info {
+    padding-top: 0;
+}
+
+.ihponeX-container {
+    padding-bottom: 74px;
+}
+
+.pb-first-floor .pb-content {
+    font-size: 17px;
+    line-height: 27px;
+    word-break: break-word;
+}
+
+.pb-first-floor .pb-content .emoji {
+    display: inline-block;
+}
+
+.pb-first-floor .pb-content .text {
+    margin-bottom: 5px;
+    line-height: 27px;
+}
+
+.pb-title-content {
+    display: flex;
+    align-items: top;
+}
+
+.pb-title-content .icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 27px;
+    margin-top: -2px;
+    margin-right: 4px;
+}
+
+.high-quality {
+    display: block;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 5px;
+    background: #ff392b;
+    color: #fff;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.pan-card {
+    margin-top: 15rpx;
+}

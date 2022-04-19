@@ -1,0 +1,19 @@
+<template name="shareForum">
+    <view catchtap="goShareApp" class="forum-small-app-pic-wrap" data-app-id="{{item.thirdAppInfo.app_id}}" data-third-app-link="{{item.thirdAppInfo.app_link}}">
+        <view class="forum-small-app-pic-title-wrap">
+            <view class="user-avatar-wrap">
+                <image class="user-avatar" src="{{item.thirdAppInfo.app_avatar}}"></image>
+            </view>
+            <view class="user-name">{{item.thirdAppInfo.app_name}}</view>
+        </view>
+        <view class="post-img-wrap">
+            <image class="post-img" mode="aspectFit" src="{{item.thirdAppInfo.app_pic}}"></image>
+        </view>
+        <view class="small-app-logo-wrap">
+            <view class="logo-wrap">
+                <image class="small-app-logo" src="/images/smallapplogo.png"></image>
+            </view>
+            <view class="small-app-slogen">小程序</view>
+        </view>
+    </view>
+</template>

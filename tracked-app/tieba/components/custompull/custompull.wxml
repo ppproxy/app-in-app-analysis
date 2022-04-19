@@ -1,0 +1,20 @@
+<scroll-view bindscroll="scroll" bindscrolltolower="scrolltolower" class="s-view" scrollIntoView="{{scrollToWhere}}" scrollWithAnimation="{{true}}" scrollY="{{!frezenPage}}" style="{{pageName=='index'?'position:fixed':''}}">
+    <view id="highest"></view>
+    <view style="height: {{allH}}px" wx:if="{{hasNaviBg}}"></view>
+    <view class="pull-comp-wrap">
+        <view class="top-pull-section">
+            <slot name="no-pull-section"></slot>
+        </view>
+        <view bindtouchend="tend" bindtouchmove="tmove" bindtouchstart="tstart" class="bottom-pull-section">
+            <view class="pull-comp-bg" wx:if="{{showBg}}">
+                <view class="pull-comp-loading-wrap" style="padding: {{loadingPadding}}px 0">
+                    <image class="pull-comp-loading" src="/images/loading@2x.gif" style="height: {{gapHeight-2*loadingPadding}}px; width: {{gapHeight-2*loadingPadding}}px;"></image>
+                </view>
+            </view>
+            <view class="pull-comp-content" id="pullCompContent" style="transform: translateY({{scrollDistance}}px);">
+                <slot></slot>
+                <view id="lowermost"></view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

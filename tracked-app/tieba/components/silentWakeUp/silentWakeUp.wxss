@@ -1,0 +1,81 @@
+.silent-wake {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 0 26rpx;
+    border-radius: 24rpx 24rpx 0 0;
+    background: #fff;
+}
+
+.silent-wake .title {
+    padding: 32rpx 0 16rpx 0;
+    font-size: 30rpx;
+    line-height: 1;
+}
+
+.list .item {
+    display: flex;
+    align-items: center;
+    padding: 24rpx 0;
+}
+
+.item .logo {
+    width: 120rpx;
+    height: 120rpx;
+    background: center / contain no-repeat url(https://tb3.bdstatic.com/public/img/tieba_square.80490b53.png?t=1639122099317);
+}
+
+.item .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    line-height: 1;
+}
+
+.item .content .item-title {
+    font-size: 34rpx;
+}
+
+.item .content .item-subtitle {
+    margin-top: 16rpx;
+    font-size: 26rpx;
+}
+
+.item .btn {
+    box-sizing: border-box;
+    width: 184rpx;
+    height: 66rpx;
+    border: 1rpx solid rgba(0,0,0,.16);
+    border-radius: 32rpx;
+    color: #8f8e94;
+    font-size: 28rpx;
+    line-height: 66rpx;
+    text-align: center;
+}
+
+.item .btn.btn-primary {
+    background: #7559ff;
+    color: #fff;
+}
+
+.logo.shoubai {
+    background: center / contain no-repeat url(https://tb3.bdstatic.com/public/img/shoubai.379a42e5.png?t=1638966777494);
+}
+
+.logo.vivo {
+    background: center / contain no-repeat url(https://tb3.bdstatic.com/public/img/vivo.9e4b0026.png?t=1638966777496);
+}
+
+.logo.oppo {
+    background: center / contain no-repeat url(https://tb3.bdstatic.com/public/img/oppo.5c36a0d2.png?t=1638966777496);
+}
+
+.logo.xiaomi {
+    background: center / contain no-repeat url(https://tb3.bdstatic.com/public/img/xiaomi.ca5501de.png?t=1638966664906);
+}

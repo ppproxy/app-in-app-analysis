@@ -1,0 +1,5 @@
+<view bindtap="closeMask" class="mask" wx:if="{{showActionSheet}}">
+    <view animation="{{animation}}" class="action-sheet-wrap {{isIphoneX?'sheet-bottom-padding':''}}">
+        <view catchtap="clickItem" class="action-sheet-btn {{index!==itemList.length-1?'border-bottom':''}} {{item.key==currentKey?'sort-active':''}} {{item.value==4?'cancel-sort':''}}" data-item="{{item}}" data-sort="{{item.key}}" hoverClass="hover-class" wx:for="{{itemList}}" wx:key="index">{{item.value}}</view>
+    </view>
+</view>

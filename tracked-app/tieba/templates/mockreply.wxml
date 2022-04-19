@@ -1,0 +1,54 @@
+<template name=""></template>
+<template name="mockreply">
+    <view catchtap="backView" class="fold-wrap" wx:if="{{mockReplyData.isShowBack}}">
+        <text class="back-view">返回浏览位置</text>
+        <image class="back-view-img" lazyLoad="true" src="{{IMG_CDN}}/icon_arrow12_gray60_up@3x.png"></image>
+    </view>
+    <view class="floor border-top" data-author-name="{{mockReplyData.user.name_show}}" data-pid="{{mockReplyData.pid}}" hoverClass="hover-class" id="{{'floor-mock'+mockReplyData.pid}}" wx:if="{{page=='pb'}}">
+        <view class="floor-top">
+            <view class="avatar" data-author-name="{{mockReplyData.user.name_show}}" data-pid="{{mockReplyData.pid}}">
+                <image lazyLoad="true" mode="aspectFit" src="{{mockReplyData.user.portrait}}"></image>
+            </view>
+            <view class="infos">
+                <view class="name">{{mockReplyData.user.name_show}}</view>
+                <view class="other-info">
+                    <text class="time">{{mockReplyData.time}}</text>
+                </view>
+            </view>
+            <view catchtap="addFlower" class="flower" data-has-agree="{{mockReplyData.agree.has_agree}}" data-index="{{-1}}" data-pid="{{mockReplyData.pid}}" data-type="1">
+                <view class="icon">
+                    <image lazyLoad="true" src="{{IMG_CDN}}/icon_like_grey26.png" wx:if="{{!mockReplyData.agree.has_agree}}"></image>
+                    <image lazyLoad="true" src="{{IMG_CDN}}/icon_like_red26.png" wx:if="{{mockReplyData.agree.has_agree}}"></image>
+                </view>
+                {{mockReplyData.agree.has_agree}}/{{mockReplyData.agree.agree_num}}
+                <text class="active" wx:if="{{mockReplyData.agree.has_agree}}">{{mockReplyData.agree.agree_num}}</text>
+                <text wx:else>{{mockReplyData.agree.agree_num}}</text>
+            </view>
+        </view>
+        <view class="floor-bottom">
+            <view class="top-content">
+                <rich-text class="text text-copy" nodes="{{mockReplyData.content}}"></rich-text>
+                <text catchtap="delete" class="del-btn" data-index="{{-1}}" data-pid="{{mockReplyData.pid}}">删除</text>
+            </view>
+        </view>
+    </view>
+    <view class="reply-container no-border border-bottom" hoverClass="hover-class" wx:if="{{page=='lzl'}}">
+        <view class="reply-info">
+            <view class="user-img-wrap">
+                <image class="user-img" lazyLoad="true" src="{{mockReplyData.user.user_pic}}"></image>
+            </view>
+            <view class="author-info">
+                <text class="author-name">{{mockReplyData.user.name_show}}</text>
+                <view class="post-info">
+                    <text class="floor-date">{{mockReplyData.time}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="reply-content" data-input-val="{{'回复 '+mockReplyData.user.name_show+' :'}}" data-src="3" data-uname="{{mockReplyData.user.name_show}}" id="{{'floor-mock-'+mockReplyData.pid}}">
+            <rich-text class="content-text" nodes="{{mockReplyData.content}}"></rich-text>
+            <text catchtap="del" class="blue-text del-btn" data-index="{{-1}}" data-is-l="0" data-pid="{{mockReplyData.pid}}" data-src="3">
+                删除
+            </text>
+        </view>
+    </view>
+</template>

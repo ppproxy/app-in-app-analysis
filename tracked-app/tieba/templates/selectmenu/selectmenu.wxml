@@ -1,0 +1,7 @@
+<template name="selectmenu">
+    <view class="regular-menu">
+        <view catchtap="{{item.tabEvent}}" class="menu-item" data-sort="{{item.text}}" hoverClass="hover-class" wx:for="{{menus}}" wx:key="index">
+            <text class="menu-title">{{item.text}}</text>
+        </view>
+    </view>
+</template>

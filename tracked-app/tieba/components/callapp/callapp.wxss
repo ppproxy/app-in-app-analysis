@@ -1,0 +1,97 @@
+.mainFloor-callApp-wrap-container {
+    overflow: hidden;
+    width: 100vw;
+    padding: 0 17px;
+    background: #fff;
+}
+
+.mainFloor-callApp-wrap {
+    margin: 17px 0;
+    background: #fff;
+}
+
+.wx-padding {
+    padding: 0 17px;
+}
+
+.mainFloor-callApp {
+    display: block;
+    height: 40px;
+    border-radius: 20px;
+    background: #7559ff;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.weixin-share-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 17px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.weixin-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 152px;
+    height: 36px;
+    border: 1px solid #999;
+    border-radius: 100px;
+    background: #fff;
+    color: #333;
+}
+
+.weixin-share-friend {
+    margin-right: 26px;
+}
+
+.weixin-share-img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+.button {
+    background: #fff!important;
+    color: #333!important;
+    font-size: 12px!important;
+}
+
+.wx-service {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 298px;
+    height: 348px;
+    border-radius: 12px;
+    background: #fff;
+    transform: translate(-50%,-50%);
+}
+
+.download-icon-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.download-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.openAPP {
+    flex: 1;
+    overflow: hidden;
+    height: 44px;
+}
+
+.set-margin {
+    padding-bottom: 0;
+}

@@ -1,0 +1,29 @@
+<view class="top-ties-container">
+    <swiper autoplay="{{false}}" bindchange="move" class="s-swiper" indicatorActiveColor="{{'yellow'}}" indicatorColor="{{'red'}}" indicatorDots="{{false}}">
+        <swiper-item wx:for="{{topList}}" wx:key="index">
+            <view class="header-top-ties">
+                <view class="top-ties-wrap">
+                    <view class="top-ties-con">
+                        <block wx:if="{{item.length===2}}">
+                            <view bindtap="clickThread" class="top-ties-item {{innerIndex===0?'border-bottom':''}}" data-link="{{innerItem.title_link}}" data-tid="{{innerItem.tid}}" wx:for="{{item}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key="innerIndex">
+                                <view style="color: #{{fontcolor}}">{{innerItem.topType}}</view>
+                                <view class="tie-text">{{innerItem.title}}</view>
+                            </view>
+                        </block>
+                        <block wx:if="{{item.length===1}}">
+                            <view bindtap="clickThread" class="top-ties-item-one" data-link="{{innerItem.title_link}}" data-tid="{{innerItem.tid}}" wx:for="{{item}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key="innerIndex">
+                                <view style="color: #{{fontcolor}}">{{innerItem.topType}}</view>
+                                <view class="tie-text">{{innerItem.title}}</view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="frs-topforum-legend">
+        <view class="topforum-legend-item" wx:for="{{topList}}" wx:key="index">
+            <view class="legend-item-active" wx:if="{{currIndex===index}}"></view>
+        </view>
+    </view>
+</view>

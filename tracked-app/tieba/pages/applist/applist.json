@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "小程序",
+    "navigationStyle": "custom",
+    "backgroundColor": "#f5f5f5",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

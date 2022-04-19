@@ -1,0 +1,8 @@
+<view bindtap="launchApp" class="add-btn-style-wrap" wx:if="{{isBrowser}}">
+    <tb-wakeup config="{{config}}" page="{{page}}">
+        <view class="add-btn-style">
+            <view>打开</view>
+            <view>APP</view>
+        </view>
+    </tb-wakeup>
+</view>

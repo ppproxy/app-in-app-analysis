@@ -1,0 +1,8 @@
+<template name="msgentry">
+    <view class="msg-entry {{bgcolor}}" style="background: #{{commoncolor}};background:linear-gradient(to right, #{{lightcolor}},#{{darkcolor}})">
+        <view bindtap="goMsg" class="msg-entry-core">
+            <image class="msg-avatar" lazyLoad="true" src="{{IMG_CDN}}/icon_top_remind_new@3x.png"></image>
+            {{msgCount||3}}条新消息
+        </view>
+    </view>
+</template>

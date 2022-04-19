@@ -1,0 +1,28 @@
+<view class="topic-list ad-expose-track" data-track-id="topic_list" data-track-info="{{trackInfo}}" data-track-locate="{{locate}}">
+    <view class="top">
+        <view class="title">贴吧话题榜</view>
+        <view class="open-app">
+            <tb-wakeup config="{{page:'homepage',param:{obj_type:'index',locate:'topic_list',track:'topic_list'},androidSource:'1026519o'}}" page="pages/pb/pb">
+                打开APP查看更多
+            </tb-wakeup>
+        </view>
+    </view>
+    <view class="list">
+        <view class="item single-column" wx:for="{{topicShowList}}">
+            <tb-wakeup config="{{page:'topicdetail',param:{ topic_id:item.topicId,locate:'topic_list',track:'topic_list',custom:{obj_type:'topicdetail'} },androidSource:'1026519o'}}" page="pages/pb/pb">
+                <view class="topic-item">
+                    <view class="rank icon">{{index+1}}</view>
+                    <view class="text {{!item.topicTag.tag?'fill':''}}">
+                        {{item.topicName}}
+                    </view>
+                    <view class="status" wx:if="{{item.topicTag.tag}}">
+                        <view class="icon {{item.topicTag.tagClass}}">{{item.topicTag.tag}}</view>
+                    </view>
+                    <view class="count">
+                        <view class="hot-icon"></view>{{item.discussNum}}
+                    </view>
+                </view>
+            </tb-wakeup>
+        </view>
+    </view>
+</view>

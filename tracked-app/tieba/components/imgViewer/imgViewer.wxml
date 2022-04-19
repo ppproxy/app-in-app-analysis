@@ -1,0 +1,11 @@
+<view class="img-viewer" style="{{style}}">
+    <image binderror="getImgErr" catchtap="preview" class="img-viewer-pics" lazyLoad="true" mode="{{mode}}" seeLz="{{seeLz}}" src="{{isGif?staticImg:src}}" style="height:{{imageHeight}}" wx:if="{{isImg}}"></image>
+    <view class="img-icon" wx:if="{{isGif&&!totalNum}}">GIF</view>
+    <view class="img-icon" wx:if="{{totalNum}}">
+        <image class="more-pics" src="{{IMG_CDN}}/icon_card_image_n.png"></image>
+        <text class="img-txt">{{totalNum}}图</text>
+    </view>
+    <view catchtap="preview" wx:if="{{!isImg}}">
+        <slot></slot>
+    </view>
+</view>

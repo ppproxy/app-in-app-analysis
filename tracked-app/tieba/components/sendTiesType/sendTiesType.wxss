@@ -1,0 +1,89 @@
+.add-btn-style-wrap {
+    position: fixed;
+    right: 0;
+    bottom: 110px;
+    width: 60px;
+    height: 60px;
+}
+
+.add-btn-style-wrap .add-btn-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: rgba(0,0,0,.16) 0 2px 4px 0;
+}
+
+.add-btn-style-wrap .add-btn-style .add-btn-img {
+    width: 30px;
+    height: 30px;
+}
+
+.add-select-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: #fff;
+    opacity: .7;
+}
+
+.add-select-wrap .add-select-container {
+    z-index: 300;
+    display: flex;
+    justify-content: space-between;
+    width: 558rpx;
+    height: 174rpx;
+    margin-bottom: 342rpx;
+}
+
+.add-select-wrap .add-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120rpx;
+}
+
+.add-type .image {
+    width: 128rpx;
+    height: 128rpx;
+}
+
+.add-type .text {
+    display: flex;
+    justify-content: center;
+    height: 26rpx;
+    margin-top: 16rpx;
+    font-size: 26rpx;
+    line-height: 26rpx;
+}
+
+.add-close-wrap {
+    position: absolute;
+    bottom: 0;
+    z-index: 300;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 100rpx;
+}
+
+.add-select-wrap .add-close {
+    bottom: 16rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.fadein {
+    top: 0;
+    bottom: 0;
+    opacity: .9;
+}

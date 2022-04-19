@@ -1,0 +1,3 @@
+<view class="play-btn" wx:if="{{showSpeak}}">
+    <image bindtap="startSpeak" src="{{IMG_CDN}}/tts2_dark.png"></image>
+</view>

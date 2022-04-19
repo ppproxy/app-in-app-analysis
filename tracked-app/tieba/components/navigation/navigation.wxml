@@ -1,0 +1,23 @@
+<view wx:if="{{isSupportHead}}">
+    <view bindtap="clickNav" class="custom-navigation {{border!=='none'?'border-bottom':''}}" style="padding-top:{{statusH}}px; background:{{statusBg}}; position:{{position}}; opacity:{{opacity}}; background-color:#{{commoncolor}};background:linear-gradient(to right,#{{lightcolor}},#{{darkcolor}})">
+        <view class="custom-navigation-content" style="height:{{titleH}}px; background: {{titleBg}}; color:{{titleColor}};background-color:#{{forumData.theme.common_color}};background:linear-gradient(to right,#{{lightcolor}},#{{darkcolor}})">
+            <view class="custom-navigation-title">
+                <view class="icon-container">
+                    <view catchtap="back" class="back-icon-con" wx:if="{{showBackIcon}}">
+                        <image class="back-icon" src="{{isFrs?'/images/icon_back_white_n.png':'/images/icon_back_n.png'}} "></image>
+                    </view>
+                    <view catchtap="goHome" class="home-icon-con {{!showBackIcon&&showBackPlace?'margin-to-back':''}}" wx:if="{{showHomeIcon}}">
+                        <image class="home-icon" src="{{isFrs?'/images/icon_home_white_n.png':'/images/icon_home_n.png'}}"></image>
+                    </view>
+                </view>
+                <slot></slot>
+                <view bindtap="toSearch" class="navigation-input {{isFrs?'frs-input':'pb-input'}}" style="margin-right: {{capsule}}px" wx:if="{{showInput}}">
+                    <image class="navigation-search-btn {{!isFrs?'pb-btn':''}}" src="{{isFrs?'/images/icon_home_search_white_n@3x.png':'/images/icon_input_search@3x.png'}}"></image>
+                    <view class="{{isFrs?'frs-placeholder':'pb-placeholder'}}">输入关键词搜索</view>
+                </view>
+                <view class="navigation-title" wx:if="{{title}}"> {{title}} </view>
+            </view>
+        </view>
+    </view>
+    <view class="statusBg" style="height: {{allH}}px" wx:if="{{hasBg}}"></view>
+</view>

@@ -1,0 +1,27 @@
+<import src="/templates/sharecard/sharecard.wxml"></import>
+<import src="/templates/sharecard/recommendShare.wxml"></import>
+<view class="feed-recommendation">
+    <view class="recommendation-B" wx:if="{{siteList.length}}">
+        <view class="recommendation-title {{isNeedSticky?'sticky-style':''}}">相关推荐</view>
+        <view bindtap="onItemClick" class="recommendation-item ad-expose-track {{index<siteList.length-1?'bottom-line':''}}" data-track-id="{{item.thread_id}}" data-track-info="{{item.trackInfo}}" data-track-locate="siterecommend_sb" data-track-name="pb_recommend_expose" wx:for="{{siteList}}" wx:key="index">
+            <tb-wakeup config="{{page:'pb',param:{ tid:item.thread_id,obj_type:'pb',locate:'siterecommend_sb',track:'siterecommend_sb',custom:{obj_param1:item.isVideo?'shipin':'tuwen'} },androidSource:'1025493p'}}" data-type="site" isOpenApp="{{canWakeUp}}" page="pages/pb/pb">
+                <view bindtap="onItemClick" data-fid="{{item.forum_id}}" data-isvertical="{{item.isVideo&&item.video_info.isVertical}}" data-obj-source="site" data-tid="{{item.thread_id}}" dateIsvideo="{{item.isVideo}}">
+                    <include src="/templates/recommendation/feedRecommendation.wxml"></include>
+                </view>
+                <template is="sharecard" data="{{item:item,IMG_CDN:IMG_CDN,videoInfo:item.video_info,isVideo:item.isVideo,isVertical:item.isVideo&&item.video_info.isVertical,index:index+siteList.length,tid:item.thread_id,forumName:item.forum.name,fid:item.forum_id,shareNum:item.share_num,hasAgree:item.has_agree,replyNum:item.reply_num,agreeNum:item.agree_num_txt}}"></template>
+            </tb-wakeup>
+        </view>
+    </view>
+    <view class="recommendation-B" wx:if="{{hotList.length}}">
+        <view class="recommendation-title {{isNeedSticky?'sticky-style':''}}">热门推荐</view>
+        <view bindtap="onItemClick" class="recommendation-item ad-expose-track {{index<hotList.length-1?'bottom-line':''}}" data-track-id="{{item.thread_id}}" data-track-info="{{item.trackInfo}}" data-track-locate="hotrecommend_sb" data-track-name="pb_recommend_expose" wx:for="{{hotList}}" wx:key="index">
+            <tb-wakeup config="{{page:'pb',param:{ tid:item.thread_id,obj_type:'pb',locate:'hotrecommend_sb',track:'hotrecommend_sb',custom:{obj_param1:item.isVideo?'shipin':'tuwen'} },androidSource:'1025493o'}}" data-type="hot" isOpenApp="{{canWakeUp}}" page="pages/pb/pb">
+                <view bindtap="onItemClick" data-fid="{{item.forum_id}}" data-isvertical="{{item.isVideo&&item.video_info.isVertical}}" data-obj-source="hot" data-tid="{{item.thread_id}}" data-track-info="{{item.trackInfo}}" dateIsvideo="{{item.isVideo}}">
+                    <include src="/templates/recommendation/feedRecommendation.wxml"></include>
+                </view>
+                <template is="sharecard" data="{{item:item,IMG_CDN:IMG_CDN,videoInfo:item.video_info,isVideo:item.isVideo,isVertical:item.isVideo&&item.video_info.isVertical,index:index+siteList.length,tid:item.thread_id,forumName:item.forum.name,fid:item.forum_id,shareNum:item.share_num,hasAgree:item.has_agree,replyNum:item.reply_num,agreeNum:item.agree_num_txt}}"></template>
+            </tb-wakeup>
+        </view>
+    </view>
+    <view class="no-more">暂无更多推荐</view>
+</view>

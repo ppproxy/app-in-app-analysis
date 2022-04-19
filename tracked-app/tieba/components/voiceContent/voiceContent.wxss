@@ -1,0 +1,112 @@
+.voice {
+    position: relative;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0 10px;
+    border: 1.5px solid #7559ff;
+    border-radius: 8px;
+    background-size: 100%;
+    color: #7559ff;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+    line-height: 32px;
+    text-align: right;
+}
+
+.duration {
+    position: absolute;
+    top: 0;
+    right: 2.6666666666666665vw;
+}
+
+.lzl {
+    height: 20px;
+    margin-top: 0;
+    border-radius: 2px;
+    background: #fff;
+    color: #333;
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.lzl-play {
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: url(https://tb5.bdstatic.com/xcx/icon_audio_play@3x.png) no-repeat left center;
+    background-size: contain;
+    color: #333;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+    transform: translateY(-50%);
+}
+
+.play {
+    position: absolute;
+    top: 50%;
+    width: 11.4px;
+    height: 11.4px;
+    background: url(https://tb5.bdstatic.com/xcx/icon_share_play20_n@3x.png) no-repeat left center;
+    background-size: contain;
+    transform: translateY(-50%);
+}
+
+.btn-playing {
+    position: absolute;
+    top: 50%;
+    width: 11.4px;
+    height: 11.4px;
+    background: url(https://tb5.bdstatic.com/xcx/icon_use_stop_n@3x.png) no-repeat left center;
+    background-size: contain;
+    transform: translateY(-50%);
+}
+
+.btn-stop {
+    position: absolute;
+    top: 50%;
+    width: 11.4px;
+    height: 11.4px;
+    background: url(https://tb5.bdstatic.com/xcx/icon_share_play20_n@3x.png) no-repeat left center;
+    background-size: contain;
+    transform: translateY(-50%);
+}
+
+.voice-playing-nolzl {
+    background: url(https://tb5.bdstatic.com/xcx/icon_use_stop_n@3x.png) no-repeat left center;
+    background-size: 10px 11px;
+}
+
+.voice-playing-lzl {
+    background: url(https://tb5.bdstatic.com/xcx/icon_tower_voice_suspend_n@3x.png) no-repeat left center;
+    background-size: 6px 8px;
+}
+
+.active-playing-124 {
+    background: url(https://tb5.bdstatic.com/xcx/voice-small.gif) no-repeat center,linear-gradient(-90deg,#2b87ff 0%,#2bbcff 100%) no-repeat left center;
+    background-size: 52px 32px,100%;
+}
+
+.active-playing-252 {
+    background: url(https://tb5.bdstatic.com/xcx/voice-big.gif) no-repeat center,linear-gradient(-90deg,#2b87ff 0%,#2bbcff 100%) no-repeat left center;
+    background-size: 173px 32px,100%;
+}
+
+.active-playing-190 {
+    background: url(https://tb6.bdstatic.com/xcx/voice-medium-loop.gif) no-repeat center,linear-gradient(-90deg,#2b87ff 0%,#2bbcff 100%) no-repeat left center;
+    background-size: 100px 32px,100%;
+}
+
+.active-playing-90 {
+    background-image: url(https://tb5.bdstatic.com/xcx/sm-voice-short.gif);
+    background-position: 40% center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+.active-playing-110 {
+    background-image: url(https://tb5.bdstatic.com/xcx/sm-voice-long.gif);
+    background-position: 40% center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}

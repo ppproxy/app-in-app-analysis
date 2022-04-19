@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "贴吧",
+    "usingComponents": {
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

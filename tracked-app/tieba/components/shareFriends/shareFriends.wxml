@@ -1,0 +1,9 @@
+<view catchtap="empty" class="weixin-share-frame {{isIPX?'IPX-bottom':''}}" wx:if="{{showShareFrame}}">
+    <image catchtap="close" class="close" src="{{IMG_CDN}}/icon_topbar_close_n@3x.png"></image>
+    <view class="weixin-share-frame-title">分享图片至朋友圈</view>
+    <view class="image-content" id="image-content-id" style="align-items: {{isCenter?'center':'flex-start'}}">
+        <image class="share-pic" src="{{pic}}" style="height:{{imageH}}px;"></image>
+    </view>
+    <view catchtap="authorize" class="weixin-share-frame-bottom border-top" wx:if="{{pic}}">保存</view>
+    <view class="weixin-share-frame-bottom-no border-top" wx:else>保存</view>
+</view>

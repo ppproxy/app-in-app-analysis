@@ -1,0 +1,34 @@
+<template name="user">
+    <view class="card-user-info">
+        <tb-wakeup config="{{page:'usercenter',param:{ portrait:portraitId,locate:'profile_sb',track:'profile_sb',custom:{obj_type:'usercenter'} },androidSource:'1025493n'}}" isOpenApp="{{canWakeUp}}">
+            <image class="portrait-wrap" lazyLoad="true" mode="scaleToFill" src="{{portrait}}"></image>
+        </tb-wakeup>
+        <view class="card-user-content">
+            <view class="user-name-wrap">
+                <text class="card-user-name">{{userName}}</text>
+            </view>
+            <view class="user-time-location">
+                <view class="floor-num-wrap" wx:if="{{floorNum}}">
+                    <view class="floor-num">
+                        <text class="floor-num-text">第{{floorNum}}楼</text>
+                    </view>
+                    <view class="split-line-wrap">
+                        <view class="split-line"></view>
+                    </view>
+                </view>
+                <view class="create-time">
+                    <text class="user-forum-name" wx:if="{{forumName&&forumName!==''}}">{{forumName}}</text>
+                    <text class="user-nowrap">{{time}}</text>
+                </view>
+                <view class="line-location-wrap" wx:if="{{location}}">
+                    <view class="split-line-wrap">
+                        <view class="split-line"></view>
+                    </view>
+                    <view class="user-location">
+                        <text class="user-nowrap user-post-time">{{location}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

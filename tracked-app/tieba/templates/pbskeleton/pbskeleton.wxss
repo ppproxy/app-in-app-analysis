@@ -1,0 +1,54 @@
+.ske-pb-wrap {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 17px;
+    background: #fff;
+}
+
+.pb-head {
+    height: 64px;
+    background: #fff;
+}
+
+.ske-wrap {
+    display: flex;
+    align-items: center;
+    margin-top: 17px;
+    margin-bottom: 26px;
+}
+
+.ske-pb-round {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f2f2f2;
+}
+
+.ske-pb-2 {
+    width: 80px;
+    height: 15px;
+    margin-left: 12px;
+    background: #f2f2f2;
+}
+
+.ske-pb-3 {
+    height: 17px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    background: #f2f2f2;
+}
+
+.ske-pb-4 {
+    width: 261px;
+    height: 17px;
+    margin-bottom: 20px;
+    background: #f2f2f2;
+}
+
+.ske-pb-img {
+    height: 213px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background: #f2f2f2;
+}

@@ -1,0 +1,6 @@
+<template name="fallback">
+    <view class="error-style">
+        <image class="error-image-style" lazyLoad="true" mode="aspectFill" src="/images/pic_emotion_08@3x.png"></image>
+        <text class="error-text-style">{{isBroken?'网络出错了':errorMsg||'网络错误，请重试'}} </text>
+    </view>
+</template>

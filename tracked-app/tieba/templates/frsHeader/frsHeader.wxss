@@ -1,0 +1,107 @@
+.frs-header {
+    height: 136px;
+    padding: 0 17px;
+}
+
+.header-userInfo {
+    display: flex;
+    align-items: center;
+    padding-top: 34px;
+}
+
+.user-logo {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    border-radius: 18px;
+}
+
+.user-logo-pic {
+    width: 50px;
+    height: 50px;
+    border: 2rpx solid rgba(255,255,255,.8);
+    border-radius: 18px;
+}
+
+.user-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 50px;
+    padding-bottom: 3px;
+    color: #fff;
+}
+
+.user-name {
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tie-info {
+    display: inline-block;
+    overflow: hidden;
+    padding-right: 10px;
+    font-size: 13px;
+    line-height: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tie-focus-num,.tie-num {
+    display: inline-block;
+}
+
+.tie-focus-num {
+    margin-right: 18px;
+}
+
+.focus-num-title,.tie-num-title {
+    margin-right: 6px;
+}
+
+.frs-header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 57px;
+    min-height: 28px;
+    margin-left: 17px;
+    padding: 0 9px;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-size: 13px;
+    opacity: .95;
+}
+
+.sign-logo {
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+}
+
+.sign-btn {
+    opacity: .5;
+}
+
+.has-sign-btn {
+    background: none;
+    color: #fff;
+    opacity: 1;
+}
+
+@media screen and (width:320px) {
+    .tie-focus-num {
+        margin-right: 12px;
+    }
+
+    .focus-num-title,.tie-num-title {
+        margin-right: 4px;
+    }
+}

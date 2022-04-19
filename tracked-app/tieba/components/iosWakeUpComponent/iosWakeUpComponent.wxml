@@ -1,0 +1,17 @@
+<view class="component">
+    <slot></slot>
+    <view bindtap="showLaunch" class="substitute"></view>
+    <mask catchtap="maskClick" showmask="{{showDialog}}" wx:if="{{showDialog}}">
+        <view class="dialog">
+            <view class="tip">打开APP查看更多精彩评论</view>
+            <view catchtap="cancel" class="cancel">
+                取消
+            </view>
+            <view catchtap="confirm" class="confirm">
+                <tb-wakeup bindlaunchAppError="launchTieBaAppError" bindwakeupClick="confirm" class="callApp" config="{{wakeupConfig}}" isCustomizeFail="{{isCustomize}}" page="{{page}}">
+                    确定
+                </tb-wakeup>
+            </view>
+        </view>
+    </mask>
+</view>

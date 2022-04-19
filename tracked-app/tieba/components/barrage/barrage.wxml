@@ -1,0 +1,12 @@
+<view>
+    <view class="scroll-container {{isIPX?'IPX-bottom':''}}" wx:if="{{startScroll}}">
+        <view class="scroll-content" id="animation-wrap">
+            <view bindtap="clickDanMu" class="scroll-items animation-items" data-pid="{{item.pid}}" wx:for="{{arr}}" wx:key="item.timestamp">
+                <image class="image" lazyLoad="true" src="{{item.logo}}"></image>
+                <view class="text">
+                    <view class="words">{{item.text}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

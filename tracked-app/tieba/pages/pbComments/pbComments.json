@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "评论",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#fff",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "reply-textarea": "/components/replyTextarea/replyTextarea",
+        "navigation": "/components/navigation/navigation",
+        "pb-comments": "/components/pbComments/pbComments",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

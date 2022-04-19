@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "star": "/components/star/star",
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

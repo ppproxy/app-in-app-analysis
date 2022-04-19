@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "进吧",
+    "backgroundColor": "#f5f5f5",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation",
+        "custompull": "/components/custompull/custompull",
+        "login-component": "/components/loginComponent/loginComponent",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

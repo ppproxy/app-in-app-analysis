@@ -1,0 +1,29 @@
+<view class="comments-wrap">
+    <view class="comments-change-bar sticky-style {{isNeedSticky?'sticky-style':''}}" wx:if="{{showTypeBar}}">
+        <view bindtap="lookComments" class="all-comments {{!commentsType?'active':''}}" data-type="0">
+            全部回复
+        </view>
+        <view bindtap="lookComments" class="only-author {{commentsType?'active':''}}" data-type="1">
+            只看楼主
+        </view>
+        <view class="sort-wrap">
+            <view class="sort" wx:if="{{showSelect}}">
+                <select bindsortBy="sortBy" hidenList="{{maskStatus}}" selectDatas="{{selectDatas}}"></select>
+            </view>
+            <view class="text-select" wx:else>
+                <view>{{'时间正序'}}</view>
+                <view class="left-icon"></view>
+            </view>
+        </view>
+    </view>
+    <view class="single-comment" wx:else>评论</view>
+    <scroll-view scrollY bindscroll="scroll" bindscrolltolower="scrolltolower" class="floors-scroll" id="floors-scroll" scrollIntoView="{{scrollToWhereEle}}" scrollTop="{{viewScrollTop}}" scrollWithAnimation="{{true}}" style="height: {{floorHeight}}px" wx:if="{{needScroll}}">
+        <include src="/templates/pbFloors/floors.wxml"></include>
+    </scroll-view>
+    <view class="floors-scroll" wx:else>
+        <include src="/templates/pbFloors/floors.wxml"></include>
+    </view>
+</view>
+<view wx:if="{{isBaidu||scene==='pbCommentFrame'}}">
+    <reply-textarea bindblur="blur" bindcollect="collect" bindfocus="focus" bindshare="share" bindsubmit="submit" bindtoWhere="toWhere" bindtoggleDanmu="toggleDanmu" commentNum="{{commentNum}}" isCollect="{{isCollect}}" isFocus="{{isFocus}}" isOpenApp="{{isOpenApp}}" isOpenDanmu="{{isOpenDanmu}}" isProThread="{{isProThread}}" isShare="{{true}}" parentPlaceHolder="{{parentPlaceHolder}}" showCollect="{{showCollect}}" showComment="{{showComment}}" showDanmu="{{showDanmu}}"></reply-textarea>
+</view>

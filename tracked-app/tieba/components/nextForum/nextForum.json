@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "img-viewer": "/components/imgViewer/imgViewer",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

@@ -1,0 +1,24 @@
+<view class="index-bar-container">
+    <view class="navibar-wrap {{isShowMore?'':'border-bottom'}}">
+        <scroll-view scrollX class="scroll-view" scrollIntoView="{{scrollIntoView}}" scrollWithAnimation="{{true}}">
+            <view animation="{{animationData}}" class="navis">
+                <view class="mid-item" id="mid-item" style="left:{{currOffset}}px"></view>
+                <view bindtap="toNavi" class="items {{index===naviInitData.length-1?'last-items':''}} {{item.active?'active':''}}" data-navidata="{{item}}" data-naviindex="{{index}}" wx:for="{{naviInitData}}" wx:key="index">
+                    <text>{{item.name}}</text>
+                    <view class="inner-mid-flag" id="{{'scrollto'+index}}"></view>
+                </view>
+            </view>
+        </scroll-view>
+        <view bindtap="showMore" class="navi-spread-icon">
+            <view class="icon up-icon" wx:if="{{isShowMore}}"></view>
+            <view class="icon down-icon" wx:else></view>
+        </view>
+        <view class="gradient-item"></view>
+    </view>
+    <view class="more-wrap" wx:if="{{isShowMore}}">
+        <view class="more">
+            <view bindtap="toNavi" class="btn {{item.active?'btn-active':''}}" data-navidata="{{item}}" data-naviindex="{{index}}" data-type="more" wx:for="{{naviInitData}}" wx:key="index">{{item.name}}</view>
+        </view>
+    </view>
+    <view bindtouchstart="showMore" class="navibar-mask" wx:if="{{isShowMore}}"></view>
+</view>

@@ -1,0 +1,6 @@
+<view class="wrap {{isOver?'':'contentText'}}">
+    <view animation="{{animationData}}" class="anim-block">
+        <image class="download-icon" src="https://tb5.bdstatic.com/xcx/new-logo.png"></image>
+        <span>{{animText}}</span>
+    </view>
+</view>

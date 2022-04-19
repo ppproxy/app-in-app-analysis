@@ -1,0 +1,28 @@
+<view wx:if="{{isShow}}">
+    <mask showmask="{{true}}">
+        <view class="silent-wake">
+            <view class="title"></view>
+            <view class="list">
+                <view class="item">
+                    <view class="logo" mode="scaleToFill"></view>
+                    <view class="content">
+                        <view class="item-title">{{title}}</view>
+                        <view class="item-subtitle">{{subTitle}}</view>
+                    </view>
+                    <view>
+                        <tb-wakeup bindwakeupClick="wakeupClick" config="{{wakeupPopupConfig}}" page="{{page}}">
+                            <view class="btn btn-primary">打开</view>
+                        </tb-wakeup>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="logo {{envHostInfo.name}}" mode="scaleToFill"></view>
+                    <view class="content">
+                        <view class="item-title">{{envHostInfo.title}}</view>
+                    </view>
+                    <view catchtap="cancel" class="btn">继续</view>
+                </view>
+            </view>
+        </view>
+    </mask>
+</view>

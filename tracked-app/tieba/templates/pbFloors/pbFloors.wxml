@@ -1,0 +1,42 @@
+<import src="/templates/user/user.wxml"></import>
+<view class="pb-floor-card {{isGodThread?'god-thread-flag':''}} {{isPb&&index!==0?'pb-floor-card-forumdetail':''}}" id="{{item.isMock?'mock-floor':''}}">
+    <view catchtap="backPrevPos" class="beforePos" data-to="{{'up'}}" wx:if="{{isPb&&item.isFirstMock&&!hideBackPos}}">
+            返回浏览位置
+        </view>
+    <view class="pb-card-container" wx:if="{{item}}">
+        <view class="card-top">
+            <template is="user" data="{{portraitId:item.portraitId,portrait:item.portrait,canWakeUp:canWakeUp,userName:item.author.show_nickname||item.author.name_show||item.author.name,time:item.time,floorNum:isGodThread||showFloorNum?item.floor:false,showFloorNum:showFloorNum}}"></template>
+            <login-component bindloginSuccess="agree" data-index="{{index}}" data-item="{{item}}" data-page="{{page}}">
+                <view catchtap="agree" class="agree" data-index="{{index}}" data-item="{{item}}" data-page="{{page}}">
+                    <image class="icon" lazyLoad="true" src="{{IMG_CDN}}/icon_like_grey26.png" wx:if="{{!item.agree.has_agree}}"></image>
+                    <image class="icon" lazyLoad="true" src="{{IMG_CDN}}/icon_like_red26.png" wx:if="{{item.agree.has_agree}}"></image>
+                    <text class="agree-num" wx:if="{{!item.agree.has_agree}}">{{item.agree.formatAgree||'赞'}}
+                        </text>
+                    <text class="agree-num agree-num-active" wx:if="{{item.agree.has_agree}}">{{item.agree.formatAgree||'赞'}}
+                        </text>
+                </view>
+            </login-component>
+        </view>
+        <view bindtap="relpy" class="card-content-wrap" data-index="{{index}}" data-item="{{item}}" data-page="{{page}}">
+            <view>
+                <block wx:for="{{item.contNodeArr}}" wx:for-item="content" wx:key="index">
+                    <view class="pb-img-container" wx:if="{{content.type==3||content.type==20}}">
+                        <view class="pb-img-wrap" style="width: {{content.WHInfo.w}}px; height: {{content.WHInfo.h}}px">
+                            <img-viewer imgWidth="{{640}}" isGif="{{content.isGif}}" mode="aspectFill" seeLz="{{commentsType==0?0:1}}" src="{{content.static_img||content.big_pic||content.src}}" staticImg="{{content.static_img||content.big_pic||''}}" tid="{{tid}}" type="{{content.type}}" word="{{forum.name}}"></img-viewer>
+                        </view>
+                    </view>
+                    <view class="voice-content" wx:elif="{{content.type===10}}">
+                        <voice-content duration="{{content.during_time}}" md5="{{content.voice_md5}}"></voice-content>
+                    </view>
+                    <my-link linkText="{{content.text}}" wx:elif="{{content.type===1}}"></my-link>
+                    <rich-text class="text text-copy" nodes="{{content}}" wx:elif="{{content.length}}"></rich-text>
+                </block>
+                <text catchtap="delete" class="del-btn" data-index="{{index}}" data-isMock="{{item.isMock}}" data-item="{{item}}" data-page="{{page}}" data-pid="{{item.pid}}" wx:if="{{(userId===mainFloorId||userId===item.author.id)&&!isGad}}">删除</text>
+            </view>
+            <include src="./lzlFloors.wxml"></include>
+        </view>
+    </view>
+    <view catchtap="backPrevPos" class="afterPos" data-to="{{'down'}}" wx:if="{{!isPb&&item.isMock&&!hideBackPos}}">
+            返回浏览位置
+        </view>
+</view>

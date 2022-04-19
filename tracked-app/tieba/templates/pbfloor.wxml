@@ -1,0 +1,67 @@
+<template name="pbfloor">
+    <view catchtap="replay" class="floor {{!isBaidu||item.noTopLine?'':'pb-border-top'}} {{isGad?'pb-gad-reply':''}} {{item.pid==targetId?'target-post':''}}" data-author-name="{{item.author.show_nickname||item.author.name_show||item.author.name||item.username}}" data-pid="{{item.pid}}" id="floor-{{item.pid}}">
+        <view class="floor-top">
+            <view class="avatar" data-author-name="{{item.user_nickname||item.usernmae||item.author.name}}" data-pid="{{item.pid}}">
+                <image lazyLoad="true" mode="aspectFit" src="{{item.portrait}}"></image>
+            </view>
+            <view class="infos">
+                <view class="name">{{item.show_nickname||item.user_nickname||item.username||item.author.name_show||item.author.name}}</view>
+                <view class="other-info" wx:if="{{isGad||sortValue==2}}">
+                    <text class="gad-time">{{item.time}}</text>
+                </view>
+                <view class="other-info" wx:else>
+                    <text class="floor-level">第{{item.floor}}楼</text>
+                    <view class="gap"></view>
+                    <text class="time">{{item.time}}</text>
+                </view>
+            </view>
+            <view catchtap="addFlower" class="flower" data-gad="{{isGad}}" data-has-agree="{{item.agree.has_agree}}" data-index="{{index}}" data-pid="{{item.pid}}" data-type="1" wx:if="{{!item.isAd}}">
+                <view class="icon">
+                    <image lazyLoad="true" src="{{IMG_CDN}}/icon_like_grey26.png" wx:if="{{!item.agree.has_agree}}"></image>
+                    <image lazyLoad="true" src="{{IMG_CDN}}/icon_like_red26.png" wx:if="{{item.agree.has_agree}}"></image>
+                </view>
+                <text class="flower-zan-num" wx:if="{{!item.agree.has_agree}}">{{item.agree.formatAgree||'赞'}}</text>
+                <text class="active" wx:if="{{item.agree.has_agree}}">{{item.agree.formatAgree||'赞'}}</text>
+            </view>
+        </view>
+        <view class="floor-bottom">
+            <view class="top-content" id="{{isGad?'gad-top':''}}">
+                <block wx:for="{{item.contNodeArr}}" wx:for-item="content" wx:key="index">
+                    <view class="pb-img-container" wx:if="{{content.type==3||content.type==20}}">
+                        <view class="pb-img-wrap" style="width: {{content.WHInfo.w}}px; height: {{content.WHInfo.h}}px">
+                            <img-viewer imgWidth="{{640}}" isGif="{{content.isGif}}" mode="aspectFill" seeLz="{{curTab==0?0:1}}" src="{{content.big_pic||content.src}}" staticImg="{{content.static_img||content.big_img||''}}" tid="{{tid}}" type="{{content.type}}" word="{{forum.name}}"></img-viewer>
+                        </view>
+                    </view>
+                    <view class="voice-content" wx:elif="{{content.type===10}}">
+                        <voice-content duration="{{content.during_time}}" md5="{{content.voice_md5}}"></voice-content>
+                    </view>
+                    <my-link linkText="{{content.text}}" wx:elif="{{content.type===1}}"></my-link>
+                    <rich-text class="text text-copy" nodes="{{content}}" wx:elif="{{content.length}}"></rich-text>
+                </block>
+                <text catchtap="delete" class="del-btn" data-index="{{index}}" data-pid="{{item.pid}}" wx:if="{{(userId===mainFloor.author.id||userId===item.author.id)&&!isGad}}">删除</text>
+            </view>
+            <block wx:if="{{!isGad}}">
+                <view catchtap="tolzl" class="floor-footers" data-pid="{{item.pid}}" data-reply-num="{{item.reply_num}}" wx:if="{{item.sub_post_list.length||item.reply_num>0}}">
+                    <view class="floor-footer" wx:for="{{item.sub_post_list}}" wx:for-index="subIndex" wx:for-item="sub" wx:key="subIndex">
+                        <view class="bottom-content">
+                            <block wx:for="{{sub.node}}" wx:for-index="subNodeIndex" wx:for-item="cont" wx:key="subNodeIndex">
+                                <view class="voice-content" wx:if="{{cont.type===10}}">
+                                    <voice-content duration="{{cont.during_time}}" isLzl="{{true}}" md5="{{cont.voice_md5}}"></voice-content>
+                                </view>
+                                <my-link linkText="{{cont.text}}" wx:elif="{{cont.type===1}}"></my-link>
+                                <rich-text class="text" nodes="{{cont}}" wx:else></rich-text>
+                            </block>
+                            <text catchtap="delete" class="del-btn" data-index="{{index}}" data-pid="{{sub.pid}}" data-sub-index="{{subIndex}}" data-type="3" wx:if="{{userId===sub.user_id}}">删除</text>
+                        </view>
+                    </view>
+                    <view class="to-lzl-btn" wx:if="{{item.reply_num>2||item.reply_num>0&&item.reply_num<3&&item.sub_post_list.length!==item.reply_num}}">
+                        查看全部{{item.reply_num}}条评论
+                        <image lazyLoad="true" src="{{IMG_CDN}}/icon_arrow12_gray60_right@3x.png"></image>
+                    </view>
+                </view>
+                <view class="pb-floor-reply" wx:else>回复</view>
+            </block>
+        </view>
+    </view>
+    <view catchtap="tolzl" class="gad-comment-len" data-pid="{{item.pid}}" wx:if="{{item.comment_num>0&&isGad}}">{{item.comment_num}}条回复</view>
+</template>

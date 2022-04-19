@@ -1,0 +1,11 @@
+<view bindtouchend="tend" bindtouchmove="tmove" bindtouchstart="tstart" class="pull-up-wrap">
+    <view class="top-fix-section">
+        <slot name="top-fix-section"></slot>
+    </view>
+    <view class="pull-up-container {{slideup?'slideup':''}}" style="transform: translateY({{scrollDistance}}px);" wx:if="{{isShow}}">
+        <slot></slot>
+    </view>
+    <view class="bottom-fix-section">
+        <slot name="bottom-fix-section"></slot>
+    </view>
+</view>

@@ -1,0 +1,22 @@
+<template name="weixinShare">
+    <view class="weixin-share">
+        <button class="left-btn" data-forum-name="{{forumName}}" data-index="{{index}}" data-item="{{item}}" data-tid="{{tid}}" openType="share">
+            <image class="icon share-icon" src="{{IMG_CDN}}/icon_share_wechat26.png"></image>
+            <view class="num">
+                微信好友
+            </view>
+        </button>
+        <button bindtap="openComment" class="left-btn" data-index="{{index}}" data-isvertival="{{isVertical}}" data-isvideo="{{isVideo}}" data-tid="{{tid}}" data-videoinfo="{{videoInfo}}">
+            <image class="icon commont-icon" src="{{IMG_CDN}}/icon_comment_grey.png"></image>
+            <view class="num">
+                {{replyNum||'回复'}}
+            </view>
+        </button>
+        <button catchtap="addFlower" class="right-btn fabulous-icon" data-fid="{{fid}}" data-has-agree="{{hasAgree}}" data-index="{{index}}" data-item="{{item}}" data-pid="{{pid}}" data-tid="{{tid}}" data-type="3">
+            <image class="icon" src="{{hasAgree?IMG_CDN+'/icon_like_red26.png':IMG_CDN+'/icon_like_grey26.png'}}"></image>
+            <view class="num {{hasAgree?'red':''}}">
+                {{agreeNum||'赞'}}
+            </view>
+        </button>
+    </view>
+</template>

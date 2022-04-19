@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "mask": "/components/mask/mask",
+        "tb-wakeup": "/components/common/tbWakeUp/tbWakeUp",
+        "scroll-item": "/components/scrollItem/scrollItem",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

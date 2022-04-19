@@ -1,0 +1,173 @@
+.index-bar-container {
+    position: relative;
+    width: 100%;
+    height: 80rpx;
+    background: #fff;
+    font-size: 32rpx;
+}
+
+.navibar-wrap {
+    z-index: 200;
+    display: flex;
+    padding-left: 17px;
+    background: #fff;
+}
+
+.scroll-view {
+    position: relative;
+    width: 636rpx;
+    height: 80rpx;
+    box-shadow: 0 0 0 0 #f2f2f2;
+    white-space: nowrap;
+}
+
+.mid-item {
+    position: fixed;
+    top: 30px;
+    left: -1px;
+    width: 0;
+    height: 50px;
+}
+
+.navis {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80rpx;
+}
+
+.items {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 80rpx;
+    margin-right: 48rpx;
+    color: #666;
+}
+
+.inner-mid-flag {
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 100%;
+}
+
+.active {
+    color: #000;
+    font-size: 18px;
+}
+
+.last-items {
+    margin-right: 0;
+}
+
+.gradient-item {
+    position: absolute;
+    top: 0;
+    right: 80rpx;
+    width: 40rpx;
+    height: 80rpx;
+    background-image: linear-gradient(-90deg,#fff 0%,rgba(255,255,255,0) 100%);
+    opacity: .95;
+}
+
+.navi-spread-icon {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80rpx;
+    height: 80rpx;
+    background: #fff;
+    box-shadow: 0 0 0 0 #f2f2f2;
+}
+
+.icon {
+    width: 14rpx;
+    height: 14rpx;
+    border: 1rpx solid #666;
+}
+
+.up-icon {
+    border-right: 0;
+    border-bottom: 0;
+    transform: rotate(45deg);
+}
+
+.down-icon {
+    border-top: 0;
+    border-right: 0;
+    transform: rotate(-45deg);
+}
+
+.more-wrap {
+    position: absolute;
+    top: 80rpx;
+    z-index: 300;
+    width: 100%;
+    padding-right: 34rpx;
+    padding-left: 34rpx;
+    background: #fff;
+}
+
+.more {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 24rpx 0 32rpx 0;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 158rpx;
+    height: 72rpx;
+    margin-bottom: 16rpx;
+    margin-left: 16rpx;
+    border: 1rpx solid #999;
+    border-radius: 3px;
+    background: #fff;
+    color: #545454;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.btn:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.btn-active {
+    border: 1rpx solid #2b80ff;
+    color: #2b80ff;
+}
+
+.navibar-mask {
+    position: fixed;
+    top: 200rpx;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,.5);
+}
+
+.border-bottom {
+    position: relative;
+    border: 0;
+}
+
+.border-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f0f0f0;
+    transform-origin: 0 100%;
+}

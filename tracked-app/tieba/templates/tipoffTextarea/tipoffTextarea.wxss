@@ -1,0 +1,20 @@
+.textrea-container {
+    position: relative;
+}
+
+.num-tip {
+    position: absolute;
+    right: 17px;
+    bottom: 17px;
+    background: #fff;
+    color: #999;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.tipoff-textarea {
+    width: 100%;
+    height: 136px;
+    padding: 17px;
+    border: 1px solid #efefef;
+}

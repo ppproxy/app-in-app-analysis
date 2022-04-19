@@ -1,0 +1,43 @@
+.weixin-share {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px;
+    padding: 40rpx 90rpx;
+    background: #fff;
+    font-size: 0;
+}
+
+.weixin-share .right-btn {
+    justify-content: flex-end;
+}
+
+.weixin-share>view,.weixin-share>button {
+    width: 48px;
+    text-align: center;
+}
+
+.weixin-share>button:hover {
+    background: none;
+}
+
+.weixin-share .icon {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: 0 auto;
+}
+
+.weixin-share .num {
+    margin-top: 7px;
+    color: #333;
+    font-size: 12px;
+}
+
+.weixin-share .num.red {
+    color: #ff392b;
+}
+
+button::after {
+    border: none;
+}

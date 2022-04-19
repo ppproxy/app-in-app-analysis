@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "我的",
+    "backgroundColor": "#f5f5f5",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation",
+        "img-viewer": "/components/imgViewer/imgViewer",
+        "voice-content": "/components/voiceContent/voiceContent",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

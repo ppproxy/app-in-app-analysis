@@ -1,0 +1,31 @@
+.pull-up-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #fff;
+}
+
+.pull-up-container {
+    position: relative;
+    flex: 1;
+    background: #fff;
+}
+
+.top-fix-section {
+    position: relative;
+}
+
+.slideup {
+    animation: up .6s ease-in-out;
+}
+
+@keyframes up {
+    0% {
+        top: 100vh;
+    }
+
+    100% {
+        top: 0;
+    }
+}

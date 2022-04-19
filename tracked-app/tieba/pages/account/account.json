@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我的",
+    "backgroundColor": "#fff",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "weixin-auth": "/components/weixinAuth/weixinAuth",
+        "navigation": "/components/navigation/navigation",
+        "login-component": "/components/loginComponent/loginComponent",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

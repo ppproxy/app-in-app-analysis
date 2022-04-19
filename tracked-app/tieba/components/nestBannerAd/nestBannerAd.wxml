@@ -1,0 +1,49 @@
+<view class="nestBannerAd" wx:if="{{adList.length}}">
+    <view bindtap="loadWebview" class="ad-expose-track" data-track-id="{{item.url}}" data-track-info="{{item.trackInfo}}" data-track-name="pb_nest_expose" data-url="{{item.url}}" wx:for="{{adList}}" wx:key="index">
+        <view class="ad-title">{{item.title}}</view>
+        <view class="ad-img-box" wx:if="{{item.imgNum}}">
+            <image class="ad-img {{index>0?'margin-left-4':''}} {{item.imgNum===1?'one-img':'three-imgs'}}" mode="aspectFill" src="{{img.image_url}}" wx:for="{{item.imgList}}" wx:for-item="img" wx:key="index"></image>
+        </view>
+        <view class="ad-link">
+            <view class="ad-download display-flex" wx:if="{{item.appFlag}}">
+                <view class="font-size-12">
+                    <view class="display-flex display-flex-start">
+                        <view class="font-size-15">{{item.appName}}</view>
+                        <view class="display-flex" wx:if="{{item.stars}}">
+                            <view class="ad-star-box margin-left-7">
+                                <view class="ad-star">
+                                    <image class="icon-star" mode="aspectFill" src="/images/icon_star_grey@3x.png"></image>
+                                </view>
+                                <view class="ad-star ad-star-rate" style="width:{{item.stars*20}}%;">
+                                    <image class="icon-star" mode="aspectFill" src="/images/icon_star_yellow@3x.png"></image>
+                                </view>
+                            </view>
+                            <view>{{item.stars}}</view>
+                        </view>
+                        <view class="margin-left-7" wx:if="{{item.version}}">版本{{item.version}}</view>
+                    </view>
+                    <view class="app-dev-info display-flex display-flex-start">
+                        <view>{{item.developer}}</view>
+                        <view catchtap="loadWebview" class="margin-left-7" data-track-info="{{item.trackInfo}}" data-url="{{item.privacyUrl}}" wx:if="{{item.privacyUrl}}">
+                            隐私
+                        </view>
+                        <view catchtap="loadWebview" class="margin-left-7" data-track-info="{{item.trackInfo}}" data-url="{{item.permissionUrl}}" wx:if="{{item.permissionUrl}}">
+                            权限
+                        </view>
+                    </view>
+                </view>
+                <view catchtap="downloadApp" class="font-size-13" data-app-id="{{item.appId}}" data-link="{{item.link}}" data-track-info="{{item.trackInfo}}" data-url="{{item.download}}">
+                    {{item.text}}
+                </view>
+            </view>
+            <view class="ad-normal display-flex">
+                <view class="font-size-12">
+                    {{item.name}} 广告
+                </view>
+                <view catchtap="loadWebview" class="font-size-13" data-track-info="{{item.trackInfo}}" data-url="{{item.link}}" wx:if="{{!item.appFlag}}">
+                    {{item.text}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

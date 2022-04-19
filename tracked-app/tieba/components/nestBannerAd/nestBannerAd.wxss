@@ -1,0 +1,116 @@
+.nestBannerAd {
+    padding: 32rpx 34rpx 0 34rpx;
+    border-top: 12rpx solid #f2f2f2;
+}
+
+.nestBannerAd .ad-title {
+    display: -webkit-box;
+    overflow: hidden;
+    color: #141414;
+    font-size: 30rpx;
+    line-height: 44rpx;
+    letter-spacing: 0;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.nestBannerAd .ad-img-box {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 16rpx 0;
+}
+
+.nestBannerAd .ad-img-box .one-img {
+    width: 760rpx;
+    height: 427rpx;
+    border-radius: 4px;
+}
+
+.nestBannerAd .ad-img-box .three-imgs {
+    width: 248rpx;
+    height: 166rpx;
+}
+
+.nestBannerAd .ad-img-box .three-imgs:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.nestBannerAd .ad-img-box .three-imgs:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.nestBannerAd .ad-link {
+    margin-top: 16rpx;
+    color: #a2a6a8;
+}
+
+.ad-link .ad-download {
+    padding: 20rpx;
+    border-radius: 12rpx;
+    background: #f7f8fa;
+}
+
+.ad-link .ad-normal {
+    padding: 24rpx 0;
+}
+
+.ad-star-box {
+    position: relative;
+    width: 140rpx;
+    height: 22rpx;
+    margin-right: 4rpx;
+    line-height: 22rpx;
+}
+
+.ad-star-box .ad-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ad-star-box .ad-star-rate {
+    overflow: hidden;
+}
+
+.ad-star-box .icon-star {
+    width: 140rpx;
+    height: 22rpx;
+}
+
+.margin-left-4 {
+    margin-left: 8rpx;
+}
+
+.margin-left-7 {
+    margin-left: 14rpx;
+}
+
+.font-size-12 {
+    font-size: 24rpx;
+}
+
+.font-size-13 {
+    padding: 12rpx 20rpx;
+    border-radius: 32rpx;
+    background-color: rgba(56,151,240,.08);
+    color: #7559ff;
+    font-size: 26rpx;
+}
+
+.font-size-15 {
+    color: #515154;
+    font-size: 30rpx;
+}
+
+.display-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display-flex-start {
+    justify-content: flex-start;
+}

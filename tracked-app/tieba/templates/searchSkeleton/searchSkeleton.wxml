@@ -1,0 +1,35 @@
+<template name="searchSkeleton">
+    <view class="all-bg">
+        <view class="input-bg bg-color"></view>
+        <view class="search-tip">
+            <view class="search-tip-image bg-color"></view>
+            <view class="search-tip-con">
+                <view class="search-tipCon-one bg-color"></view>
+                <view class="search-tipCon-two bg-color"></view>
+                <view class="search-tipCon-three bg-color"></view>
+            </view>
+        </view>
+        <view class="search-mini-con">
+            <view class="search-mini" wx:for="{{[1,2,3,4]}}" wx:key="index">
+                <view class="search-mini-image bg-color"></view>
+                <view class="search-mini-titleCon">
+                    <view class="search-mini-one bg-color"></view>
+                    <view class="search-mini-two bg-color"></view>
+                </view>
+            </view>
+        </view>
+        <view class="search-mini-one bg-color single"></view>
+        <view class="split-line bg-color"></view>
+        <view class="card-con">
+            <view class="card-logo bg-color"></view>
+            <view class="search-mini-titleCon">
+                <view class="search-mini-one bg-color"></view>
+                <view class="search-mini-two bg-color"></view>
+            </view>
+        </view>
+        <view class="card-cont bg-color"></view>
+        <view class="card-image-wrap">
+            <view class="card-image bg-color"></view>
+        </view>
+    </view>
+</template>

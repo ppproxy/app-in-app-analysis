@@ -1,0 +1,11 @@
+.star {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.star image {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+}

@@ -1,0 +1,10 @@
+{
+    "backgroundColor": "#f5f5f5",
+    "navigationBarTitleText": "搜索",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation",
+        "search-input": "/components/searchInput/searchInput",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

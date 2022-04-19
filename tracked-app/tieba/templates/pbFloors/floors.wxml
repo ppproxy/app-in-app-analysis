@@ -1,0 +1,48 @@
+<view class="floors">
+    <view class="floor-fold-btn-wrap" wx:if="{{showJumpBar}}">
+        <view bindtap="goFirstOrFetchMore" class="fold-btn border-right" data-type="0">
+            回到顶部并刷新
+        </view>
+        <view bindtap="goFirstOrFetchMore" class="fold-btn" data-type="1">
+            加载上一页
+        </view>
+    </view>
+</view>
+<view class="robSofa" wx:if="{{robSofa}}">
+    <image src="{{IMG_CDN}}/emotion.png"></image>
+    <view class="robSofa-text">
+        成为第一个评论的人吧
+    </view>
+</view>
+<view>
+    <include src="./pbFloors.wxml" wx:if="{{commentsType===0}}" wx:for="{{topPosts}}" wx:key="index"></include>
+    <view bindtap="showAllTopPosts" class="showAllTag" wx:if="{{getTopPostParam.length>0&&hideMoreGad&&commentsType==0}}">
+        查看全部神评
+    </view>
+    <view wx:if="{{floorLists.length>0}}">
+        <view wx:if="{{floorList.length>0}}" wx:for="{{floorLists}}" wx:for-index="page" wx:for-item="floorList" wx:key="page">
+            <view wx:if="{{maxCommentsLength&&needPbCut?index<maxCommentsLength+adCount:true}}" wx:for="{{floorList}}" wx:key="index">
+                <view wx:if="{{!item.isAd}}">
+                    <include src="./pbFloors.wxml"></include>
+                </view>
+            </view>
+            <view></view>
+        </view>
+        <view></view>
+        <third-app-recommand adParams="{{adParams}}" bindtoThirdApp="toThirdApp" tid="{{tid}}" weiboCards="{{weiboData}}" wx:if="{{isPB}}"></third-app-recommand>
+    </view>
+    <view class="loading-style" wx:if="{{hasMore&&!changeTabLoading}}">
+        <image class="loading-image-style" src="/images/loading@2x.gif"></image>
+    </view>
+    <view class="no-more" wx:elif="{{!hasMore&&!changeTabLoading&&!robSofa}}">
+        <view wx:if="{{showNomoreIcon}}">
+            <image class="loading-nomore-image-style" src="{{IMG_CDN}}/emotion.png"></image>
+            <view class="comments-no-moretxt">
+            暂无更多回复
+        </view>
+        </view>
+        <view class="comments-no-moretxt" wx:if="{{!maxCommentsLength&&!showNomoreIcon}}">
+        暂无更多回复
+    </view>
+    </view>
+</view>

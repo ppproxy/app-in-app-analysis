@@ -1,0 +1,14 @@
+<template name="applist">
+    <scroll-view wx:if="{{forumData.appList&&forumData.appList.length>0}}">
+        <view class="small-app-list-wrap">
+            <view bindtap="goSmallapp" class="small-app-item" data-id="{{item.app_id}}" data-key="{{item.app_key}}" data-path="{{item.app_index_path||''}}" wx:for="{{forumData.appList}}" wx:key="index">
+                <image class="small-app-avatar" mode="aspectFill" src="{{item.app_icon}}"></image>
+                <view class="small-app-name">{{item.app_name}}</view>
+            </view>
+            <view bindtap="goMoreSmallapp" class="small-app-item small-app-item-more">
+                <image class="small-app-avatar" hoverClass="hover-class" mode="aspectFill" src="{{IMG_CDN}}/frs_icon_more@3x.png"></image>
+                <view class="small-app-name">小程序</view>
+            </view>
+        </view>
+    </scroll-view>
+</template>

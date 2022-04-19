@@ -1,0 +1,75 @@
+<import src="/templates/selectmenu/selectmenu.wxml"></import>
+<navigation showBackIcon="{{false}}" showHomeIcon="{{false}}" title="{{'进吧'}}"></navigation>
+<custompull bindpull="onPull" hasNaviBg="{{false}}" stopPullDown="{{stopPullDown}}" wx:if="{{regularFrsList}}">
+    <view bindtap="closeMenuShow" class="enterpage {{isSetTop?'is-setting':''}}">
+        <view bindtap="goSearch" class="search-container" wx:if="{{!isSetTop}}">
+            <image class="search-icon-style" lazyLoad="true" mode="aspectFill" src="/images/icon_input_search@3x.png"></image>
+            <text class="search-hint-style">输入关键词搜索</text>
+        </view>
+        <view class="regular-frs-wrap {{isHideRecent?'hide-bottom':''}}" wx:if="{{regularFrsList.length>0&&!isSetTop}}">
+            <view class="title-wrap">
+                <text>最近逛的吧</text>
+                <view catchtap="toggleMenu" class="right-icon" wx:if="{{!isEditStatus&&!isHideRecent}}"></view>
+                <text catchtap="closeEditStatus" class="close-edit" wx:if="{{isEditStatus}}">完成</text>
+                <view catchtap="toggleMenu" class="hide-edit" wx:if="{{isHideRecent}}"></view>
+            </view>
+            <template is="selectmenu" data="{{menus:recentMenu,IMG_CDN:IMG_CDN}}" wx:if="{{isMenuShow}}"></template>
+            <scroll-view scrollX class="regular-frs-list" wx:if="{{!isHideRecent}}">
+                <view bindtap="goFrs" class="regular-frs-card" data-fid="{{item.fid}}" data-forum="{{item.forum}}" data-locate="recent" wx:for="{{regularFrsList}}" wx:key="index">
+                    <view class="card-head-wrap"></view>
+                    <image class="card-head-logo" lazyLoad="true" mode="aspectFill" src="{{item.avatar}}"></image>
+                    <image catchtap="deleteFrs" class="card-delete-btn" data-fid="{{item.fid}}" lazyLoad="true" mode="aspectFill" src="{{IMG_CDN}}/icon_use_delete@3x.png" wx:if="{{isEditStatus}}"></image>
+                    <view class="card-content">
+                        <text class="frs-name">{{item.forum}}</text>
+                        <view class="frs-slogen">{{item.slogen||'吧主很懒，没有留下任何简介...'}}</view>
+                        <text class="frs-focus-num">关注 {{item.memberNum||'-'}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="focus-frs-wrap {{focusFrsList.length>0?'only-have-focus':''}} ">
+            <view class="title-wrap {{regularFrsList.length>0?'title-wrap-no-shadow':''}} {{focusFrsList.length===0?'add-margin':''}}" wx:if="{{isLogin}}">
+                <text>关注的吧</text>
+                <view catchtap="toggleSort" class="right-icon" wx:if="{{focusFrsList.length>0&&!isSetTop}}"></view>
+                <text catchtap="setTop" class="close-edit" wx:if="{{isSetTop}}">完成</text>
+            </view>
+            <template is="selectmenu" data="{{menus:focusMenu,IMG_CDN:IMG_CDN}}" wx:if="{{isSortEdit&&focusFrsList.length>0}}"></template>
+            <view class="focus-frs-list" wx:if="{{focusFrsList.length>0}}">
+                <view bindtap="goFrs" class="focus-frs-card {{item.isSetTop&&!isSetTop?'top-forum':''}} {{index==0&&!isSetTop&&item.isSetTop?'first':''}} {{index==focusFrsList.length-1?'last-focus':''}} {{item.lastTop&&isSetTop?'last-top':''}}" data-fid="{{item.forum_id}}" data-forum="{{item.forum_name}}" data-locate="follow" wx:for="{{focusFrsList}}" wx:key="index">
+                    <image class="focus-frs-logo" lazyLoad="true" mode="aspectFill" src="{{item.forum_avatar}}"></image>
+                    <view class="focus-frs-name">{{item.forum_name}}</view>
+                    <image class="focus-frs-level" lazyLoad="true" mode="aspectFill" src="{{item.levelImg}}" wx:if="{{!isSetTop}}"></image>
+                    <image class="focus-frs-level" lazyLoad="true" mode="aspectFill" src="{{IMG_CDN}}/icon_enterpage_sign_h_n@3x.png" wx:if="{{item.is_sign&&!isSetTop}}"></image>
+                    <image catchtap="changeSort" class="focus-frs-top" data-fid="{{item.forum_id}}" data-istop="{{item.isSetTop}}" lazyLoad="true" mode="aspectFill" src="{{IMG_CDN}}/icon_jinba_canceltop_n@3x.png" wx:if="{{isSetTop&&item.isSetTop}}"></image>
+                    <image catchtap="changeSort" class="focus-frs-top" data-fid="{{item.forum_id}}" data-istop="{{item.isSetTop}}" lazyLoad="true" mode="aspectFill" src="{{IMG_CDN}}/icon_jinba_topnormal_n@3x.png" wx:if="{{isSetTop&&!item.isSetTop}}"></image>
+                </view>
+            </view>
+            <view class="focus-no-frs" wx:if="{{isLogin&&focusFrsList.length===0}}">
+                <text class="focus-no-frs-tip">你还没有关注的吧</text>
+            </view>
+        </view>
+        <view class="may-like-frs-wrap" wx:if="{{mayLikeFrsList.length>0}}">
+            <view class="title-wrap">
+                <text class="may-like-title">你可能喜欢</text>
+                <image class="middle-icon" mode="aspectFill" src="{{IMG_CDN}}/icon_change@3x.png"></image>
+                <text bindtap="changeMayLikeFrs" class="may-like-change">换一批</text>
+            </view>
+            <view class="may-like-frs-list">
+                <view bindtap="goFrs" class="may-like-frs-card" data-forum="{{item.forum_name}}" hoverClass="hover-class" wx:for="{{mayLikeFrsList}}" wx:key="index">
+                    <image class="may-like-frs-logo" mode="aspectFill" src="{{item.forum_avatar}}"></image>
+                    <view class="may-like-frs-info">
+                        <view class="frs-name">{{item.forum_name}}</view>
+                        <view class="frs-abstract">{{item.forum_intro}}</view>
+                    </view>
+                    <login-component bindloginSuccess="focusFrs" catchtap="empty" data-fid="{{item.forum_id}}" data-kw="{{item.forum_name}}" wx:if="{{!item.is_liked}}">
+                        <view catchtap="focusFrs" class="may-like-frs-btn" data-fid="{{item.forum_id}}" data-kw="{{item.forum_name}}">
+                            关注
+                        </view>
+                    </login-component>
+                    <view class="have-like-frs-btn" wx:if="{{item.is_liked}}">已关注</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</custompull>
+<login-modal id="login-com" showLoginModal="{{showLoginModal}}"></login-modal>

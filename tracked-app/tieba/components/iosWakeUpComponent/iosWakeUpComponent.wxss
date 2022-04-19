@@ -1,0 +1,50 @@
+.component {
+    position: relative;
+}
+
+.dialog {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: 70vw;
+    height: 300rpx;
+    margin: auto;
+    padding: 80rpx 0 0;
+    border-radius: 10rpx;
+    background: #fff;
+    font-size: 15px;
+}
+
+.tip {
+    margin-bottom: 60rpx;
+    text-align: center;
+}
+
+.cancel,.confirm {
+    float: left;
+    width: 50%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.cancel {
+    color: #7e7e7e;
+}
+
+.confirm>button {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: inherit;
+}
+
+.substitute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

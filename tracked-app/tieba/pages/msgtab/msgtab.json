@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "消息",
+    "backgroundColor": "#f5f5f5",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "default",
+    "usingComponents": {
+        "reply-textarea": "/components/replyTextarea/replyTextarea",
+        "navigation": "/components/navigation/navigation",
+        "custompull": "/components/custompull/custompull",
+        "login-component": "/components/loginComponent/loginComponent",
+        "login-modal": "/components/loginModal/loginModal"
+    }
+}

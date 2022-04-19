@@ -1,0 +1,3 @@
+<view bindshowwrap="showwrap" bindtap="toggle" catchtouchmove="preventTouchMove" class="mask" style="background: {{bgcolor}}" wx:if="{{showmask}}">
+    <slot></slot>
+</view>

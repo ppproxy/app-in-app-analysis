@@ -1,0 +1,61 @@
+.mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
+    background-color: rgba(0,0,0,.65);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    width: 582rpx;
+    padding-bottom: 27px;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+
+.modal-icon {
+    display: inline-block;
+    width: 60px;
+    height: 81px;
+    margin-top: 43px;
+    margin-bottom: 27px;
+}
+
+.login-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-authorize {
+    width: 61.8%;
+    height: 40px;
+    margin: 13px auto;
+    border-radius: 23px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.login-baidu {
+    border: 1px solid rgba(41,41,41,.5);
+    color: #000;
+}
+
+.login-weixin {
+    background: #12b852;
+}
+
+.login-qq {
+    background: #7559ff;
+}

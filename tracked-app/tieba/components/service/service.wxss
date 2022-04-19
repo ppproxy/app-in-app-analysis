@@ -1,0 +1,52 @@
+.wx-service {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 298px;
+    height: 348px;
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+
+.lead-app-gif {
+    display: inline-block;
+    width: 264px;
+    height: 198px;
+    margin-top: 10px;
+}
+
+.lead-app-title {
+    margin-top: 20px;
+    color: #000;
+    font-size: 17px;
+    text-align: center;
+}
+
+.lead-app-txt {
+    margin-top: 9px;
+    color: #808080;
+    font-size: 13px;
+    text-align: center;
+}
+
+.lead-app-btn {
+    width: 154px;
+    height: 39px;
+    margin: 10px auto;
+    border-radius: 19px;
+    background: #2b87ff;
+    color: #fff;
+    font-size: 15px;
+    line-height: 39px;
+    text-align: center;
+}
+
+.close-service {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+}

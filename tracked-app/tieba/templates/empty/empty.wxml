@@ -1,0 +1,6 @@
+<template name="empty">
+    <view class="empty-wrap">
+        <view class="empty-icon"></view>
+        <view class="empty-msg">本吧还没有贴子哦~</view>
+    </view>
+</template>

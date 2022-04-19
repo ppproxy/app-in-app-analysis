@@ -1,0 +1,28 @@
+<view class="add-btn-style-wrap">
+    <login-component bindloginSuccess="showPost">
+        <view catchtap="showPost" class="add-btn-style" style="background-color:#{{forumData.theme.common_color}};background:linear-gradient(to right,#{{forumData.theme.light_color}},#{{forumData.theme.dark_color}})">
+            <image class="add-btn-img" src="{{IMG_CDN}}/icon_post_add@3x.png"></image>
+        </view>
+    </login-component>
+</view>
+<view wx:if="{{selectData}}">
+    <view catchtap="hidePost" class="add-select-wrap">
+        <view class="add-select-container">
+            <view bindtap="intoPost" class="add-type" data-type="1">
+                <image class="image" src="/images/icon_post_type_text_n@3x.png"></image>
+                <view class="text">文字</view>
+            </view>
+            <view catchtap="showVideoGuide" class="add-type">
+                <image class="image" src="/images/icon_post_type_photograph_n@3x.png"></image>
+                <view class="text">拍摄</view>
+            </view>
+            <view bindtap="intoPost" class="add-type" data-type="3">
+                <image class="image" src="/images/icon_post_type_image_n@3x.png"></image>
+                <view class="text">相册</view>
+            </view>
+        </view>
+        <view class="add-close-wrap">
+            <image catchtap="hidePost" class="add-close" src="/images/icon_post_type_close_n@3x.png"></image>
+        </view>
+    </view>
+</view>

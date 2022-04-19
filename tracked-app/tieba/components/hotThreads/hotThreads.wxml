@@ -1,0 +1,13 @@
+<view class="popular-list">
+    <view class="popular-title">
+        贴吧热榜
+    </view>
+    <view class="popular-update">
+        按内容热度排行，每小时更新一次
+    </view>
+    <view class="popular-content">
+        <view wx:for="{{hotThreads}}" wx:key="index">
+            <include src="./hotThreadsItem.wxml"></include>
+        </view>
+    </view>
+</view>

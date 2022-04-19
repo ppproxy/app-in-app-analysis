@@ -1,0 +1,9 @@
+<template name="user">
+    <view class="user-info">
+        <image class="portrait-wrap" lazyLoad="true" mode="scaleToFill" src="{{portrait}}"></image>
+        <view class="user-content">
+            <text class="user-name">{{userName}}</text>
+            <text class="create-time">{{time}}</text>
+        </view>
+    </view>
+</template>

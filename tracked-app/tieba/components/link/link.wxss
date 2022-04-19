@@ -1,0 +1,8 @@
+.link {
+    color: #3e6394;
+}
+
+.text-copy {
+    white-space: pre-wrap;
+    user-select: text;
+}
