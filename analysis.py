@@ -1,6 +1,7 @@
 import json
 import re
 import os
+import collections
 
 JUMP_FUNCTIONS = {
     'switchTab', 'reLaunch', 'redirectTo', 'navigateTo', 'navigateBack',  # 路由
@@ -46,7 +47,7 @@ def walk(tree):
     return ret
 
 
-def analysis(nodes_in_func, func_name):
+def analysis(nodes_in_func, func_name, ast_path):
     literal_nodes = []
     for node in nodes_in_func:
         if node['type'] == 'Literal':
@@ -66,6 +67,10 @@ def analysis(nodes_in_func, func_name):
                     # 需要优化，不一定必须是/xx/xx/xx的格式。
                     # match = re.search(r'/(.*)/(.*)/(.*)(\\?q=)?', line)
                     # match = re.search(r'/(.*)(\\?q=)?', line)
+                    # 为了适应相对路径的页面增加了一个策略 ../question/question
+                    if line.startswith("../") or line.startswith("./"):
+                        line = reconstruct_str(line,ast_path)
+
                     match = re.search(r'/(.*)(\\?(.*)=)?', line)
                     if match:
                         # 跳转函数的方式
@@ -90,16 +95,53 @@ def process(app_name, page_name, page_component_map):
             with open(ast_path, encoding='utf-8') as f:
                 json_file = json.load(f)
             # print(json_file)
+            base_dir = os.path.dirname(ast_path)
             funcs = get_tap_function(json_file)
             for func in funcs:
                 func_name = func['id']['name']
                 ast_nodes = walk(func)
-                result = analysis(ast_nodes, func_name)
+                result = analysis(ast_nodes, func_name, os.path.dirname(base_dir))
                 for res in result:
                     analysis_result[page_name].add(res)
     # print(analysis_result)
     return analysis_result
 
+
+def reconstruct_str(un_full_name, parent_dir_path):
+    name = collections.deque()
+    while un_full_name.startswith("../") or un_full_name.startswith("./"):
+        if un_full_name.startswith("./"):
+            un_full_name = un_full_name.replace("./", "", 1)
+        elif un_full_name.startswith("../"):
+            un_full_name = un_full_name.replace("../", "", 1)
+            name.appendleft(os.path.basename(parent_dir_path) + "/")
+            parent_dir_path = os.path.dirname(parent_dir_path)
+    name_str = "".join(name)
+    un_full_name = name_str + un_full_name
+    return "/" + un_full_name
+
+# str = reconstruct_str("../../question/question","tracked-app/weapp-wechat-zhihu/pages")
+# print(str)
+# str = name_str + str
+# return "/" + str
+# s = "../../question/question"
+# dir_path = "tracked-app/weapp-wechat-zhihu/pages"
+# print(os.path.dirname(dir_path))
+# print(os.path.basename(dir_path))
+# paths_arr = dir_path.split("/")
+# print(paths_arr)
+# name = collections.deque()
+# while s.startswith("../") or s.startswith("./"):
+#     if s.startswith("./"):
+#         s = s.replace("./", "", 1)
+#         print(s)
+#     elif s.startswith("../"):
+#         s = s.replace("../", "", 1)
+#         name.appendleft(os.path.basename(dir_path) + "/")
+#         dir_path = os.path.dirname(dir_path)
+# name_str = "".join(name)
+# s = name_str + s
+# print(s)
 # tap_function_list = ['gotoRank', 'gotoExercise', 'gotoExam', 'gotoRank', 'goCompetitionOne', 'goCompetitionTwo']
 # tap_function_list = ["cardClick"]
 # tap_function_list = ['open2', 'bookClick', 'close2', 'loadGroup', 'confirmSuccess']

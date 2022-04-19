@@ -30,10 +30,15 @@ def create_graph(app_name, page_list, analysis_results, tab_bar_list, sub_page_l
         dot.node(name=sub_page, label=sub_page, color="purple")
         page_set.add(sub_page)
 
-    for tab_bar in tab_bar_list:
-        for tb in tab_bar_list:
-            if tb != tab_bar:
-                dot.edge("/" + tab_bar, "/" + tb, "switch", color="green")
+    for i in range(len(tab_bar_list)):
+        for j in range(i + 1, len(tab_bar_list)):
+            dot.edge("/" + tab_bar_list[i],"/" + tab_bar_list[j],"switch",color="green",_attributes={'dir':'both'})
+
+    # for tab_bar in tab_bar_list:
+    #     for tb in tab_bar_list:
+    #         if tb != tab_bar:
+    #             dot.edge("/" + tab_bar, "/" + tb, "switch", color="green")
+
     print("analysis_results : ", analysis_results)
     for item in analysis_results:
         print(item)

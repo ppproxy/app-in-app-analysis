@@ -24,7 +24,9 @@ def demo1():
     有组件方式
     :return:
     """
-    app_name = "tieba"
+    # app_name = "weapp-wechat-zhihu"
+    # app_name = "hdr"
+    app_name = "ng"
     # 拿到所有主包页面，tar_bar页面，子包和子包页面
     page_list, tab_bar_list, sub_page_list_root, sub_page_list_pages = file_preprocess.parse_app_json(app_name)
     # print("******************page_list******************")

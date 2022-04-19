@@ -5,9 +5,17 @@ automator.launch({
   projectPath: 'E:\\WorkSpace\\tracked-app\\weapp-wechat-zhihu', // 项目文件地址
 }).then(async miniProgram => {
   page = await miniProgram.reLaunch('/pages/index/index')
-  await page.waitFor(500)
-  console.log(page)
-  console.log(page.path)
+  const element = await page.$$()
+  console.log(element)
+  // await page.waitFor(500)
+  // console.log(page)
+  // console.log(page.path)
+  // page.
+
+
+
+
+
   // //获取当前页的class为subpackA的button
   // const elementA = await page.$('.subpackA')
   // // console.log(await element.attribute('class'))

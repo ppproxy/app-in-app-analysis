@@ -81,8 +81,8 @@ import re
 # s2 = "abc"
 # print(s1.__contains__(s2))
 
-match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function(\s*)\(.*\)(\s*)', "swiperchange:function(e) {")
-if match:
-    print(match.group(0))
-else:
-    print("unmatch")
+# match = re.search(r'[a-zA-Z][a-zA-Z0-9_]*:(\s*)function(\s*)\(.*\)(\s*)', "swiperchange:function(e) {")
+# if match:
+#     print(match.group(0))
+# else:
+#     print("unmatch")
