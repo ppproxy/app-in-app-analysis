@@ -64,8 +64,6 @@ def parse_js(app_name, page_list):
         page_path = BASE_PATH + app_name + "/" + page + ".js"
         if not os.path.isfile(page_path):
             raise TypeError(page_path + "does not exist")
-        if not os.path.isfile(page_path):
-            print(page_path + " 不存在")
         else:
             clean_js(page_path)
 
@@ -233,43 +231,3 @@ def tmp_delete(file_path):
     if os.path.isfile(file_path):
         os.remove(file_path)
 
-# s = "./tracked-app/wbdemo/pages/index/index.json"
-# './tracked-app/wbdemo/pages/comprehensiveSearch/index.json'
-# arr = s.rsplit(".",1)
-# print(arr)
-# page_list, _ = parse_app_json("wbdemo")
-# components, _ = parse_json("wbdemo", page_list)
-# print(components)
-# for component in components:
-#     tmp_delete(component + "-ast.json")
-# for component in components:
-#     tmp_delete(component + "-clean.js")
-
-# s = "../../components/commonFooter/index"
-# while s.startswith(".."):
-#     s = s.replace("../","",1)
-# print(s)
-# s = "./tracked-app/wbdemo/pages/index/index.json"
-# root_path = os.path.dirname(s)
-# print(os.path.basename(root_path))
-# r_path = os.path.dirname(root_path)
-# print(root_path)
-# print(r_path)
-# page_list = parse_app_json("ng")
-# generate_ast("ng", page_list)
-
-# g = os.walk(r"G:\TrackedMiniProgram\qccdemo")
-# for path, dir_list, file_list in g:
-#     for file_name in file_list:
-#         print(os.path.join(path, file_name))
-# ([a-zA-z]\w+):\s+?function\s+\\(.*?\\)
-# s = 'read: function() {'
-# s = 'read_f:function()'
-# s = '         0r_0ead: function(a,b) {'
-# s = 'methods: {'
-# # (\s+)?function(\s+)?\\(.*\\)
-# match = re.findall(r'[a-zA-Z][a-zA-Z0-9_]*: function\(.*\)', s)
-# print(match)
-# line = "func},func"
-# print("}," in line)
-# clean_js("E:\WorkSpace\\app-in-app-analysis\\test_file\\test.js")
